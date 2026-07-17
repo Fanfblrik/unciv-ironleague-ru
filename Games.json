@@ -963,6 +963,102 @@
       "playerCount": 9,
       "endedOnTurn": "123",
       "victoryType": ""
+    },
+    {
+      "id": 22,
+      "version": "4.20.1 (Build 1212)",
+      "number": "Game 25",
+      "players": [
+        {
+          "name": "Click4x",
+          "nation": "Celts"
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Papal State"
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Shoshone"
+        },
+        {
+          "name": "Lvxvcs",
+          "nation": "Prussia"
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Mongolia"
+        },
+        {
+          "name": "n9306867842",
+          "nation": "Romania"
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Nabataea"
+        }
+      ],
+      "winner": "Papal State",
+      "map": "Inner Sea",
+      "playerCount": 7,
+      "endedOnTurn": "180",
+      "victoryType": ""
+    },
+    {
+      "id": 23,
+      "version": "4.20.7 (Build 1219)",
+      "number": "Game 26",
+      "players": [
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Korea"
+        },
+        {
+          "name": "den_stu",
+          "nation": "Austria"
+        },
+        {
+          "name": "Click4x",
+          "nation": "Chile"
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Tonga"
+        }
+      ],
+      "winner": "Chile",
+      "map": "Fractal",
+      "playerCount": 4,
+      "endedOnTurn": "162",
+      "victoryType": ""
+    },
+    {
+      "id": 24,
+      "version": "4.20.15 (Build 1229)",
+      "number": "Game 27",
+      "players": [
+        {
+          "name": "Click4x",
+          "nation": "Japan"
+        },
+        {
+          "name": "EmperorPenguin01",
+          "nation": "Aztecs"
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Denmark"
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Brunei"
+        }
+      ],
+      "winner": "Aztecs",
+      "map": "Pangaea",
+      "playerCount": 4,
+      "endedOnTurn": "125",
+      "victoryType": ""
     }
   ]
 }
