@@ -963,6 +963,114 @@
       "playerCount": 9,
       "endedOnTurn": "123",
       "victoryType": ""
+    },
+    {
+      "id": 22,
+      "version": "4.20.1 (Build 1212)",
+      "number": "Game 25",
+      "players": [
+        {
+          "name": "konoval_mik",
+          "nation": "Шошоны"
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Папская область"
+        },
+        {
+          "name": "Lvxvcs",
+          "nation": "Пруссия"
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Монголия"
+        },
+        {
+          "name": "n9306867842",
+          "nation": "Румыния"
+        },
+        {
+          "name": "PVL01011900",
+          "nation": "Нидерланды"
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Набатея"
+        },
+        {
+          "name": "Click4x",
+          "nation": "Кельты"
+        }
+      ],
+      "winner": "Папская область",
+      "map": "Inner Sea",
+      "playerCount": 8,
+      "endedOnTurn": "180",
+      "victoryType": ""
+    },
+    {
+      "id": 23,
+      "version": "4.20.7 (Build 1219)",
+      "number": "Game 26",
+      "players": [
+        {
+          "name": "Click4x",
+          "nation": "Чили"
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Корея"
+        },
+        {
+          "name": "den_stu",
+          "nation": "Австрия"
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Тонга"
+        }
+      ],
+      "winner": "Чили",
+      "map": "Fractal",
+      "playerCount": 4,
+      "endedOnTurn": "162",
+      "victoryType": ""
+    },
+    {
+      "id": 24,
+      "version": "4.20.15 (Build 1229)",
+      "number": "Game 27",
+      "players": [
+        {
+          "name": "Click4x",
+          "nation": "Япония"
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Буры"
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Дания"
+        },
+        {
+          "name": "EmperorPenguin01",
+          "nation": "Ацтеки"
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Бруней"
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Колумбия"
+        }
+      ],
+      "winner": "Ацтеки",
+      "map": "Pangaea",
+      "playerCount": 6,
+      "endedOnTurn": "125",
+      "victoryType": ""
     }
   ]
 }
