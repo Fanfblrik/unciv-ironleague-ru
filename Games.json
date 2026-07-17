@@ -86,7 +86,7 @@
       "winner": "Сиам",
       "map": "Пангея",
       "playerCount": 9,
-      "endedOnTurn": "",
+      "endedOnTurn": "176",
       "victoryType": "",
       "gif": "Replays/Unciv_AK9rHvt6pu.gif"
     },
@@ -139,7 +139,7 @@
       "winner": "Румыния",
       "map": "Внутреннее море",
       "playerCount": 10,
-      "endedOnTurn": "",
+      "endedOnTurn": "163",
       "victoryType": "",
       "gif": "Replays/Unciv_HerAj4t3dU.gif"
     },
@@ -192,7 +192,7 @@
       "winner": "Германия",
       "map": "Пангея",
       "playerCount": 10,
-      "endedOnTurn": "",
+      "endedOnTurn": "180",
       "victoryType": "",
       "gif": "Replays/Unciv_rnRLKzpTAR.gif"
     },
@@ -237,7 +237,7 @@
       "winner": "Бирма",
       "map": "Пангея",
       "playerCount": 8,
-      "endedOnTurn": "",
+      "endedOnTurn": "150",
       "victoryType": "",
       "gif": "Replays/Unciv_8ZeyOE7GY6.gif"
     },
@@ -290,7 +290,7 @@
       "winner": "Ирландия",
       "map": "Внутреннее море",
       "playerCount": 10,
-      "endedOnTurn": "",
+      "endedOnTurn": "216",
       "victoryType": "",
       "gif": "Replays/Unciv_SmLNtdEynV.gif"
     },
@@ -327,7 +327,7 @@
       "winner": "Шумеры",
       "map": "Пангея",
       "playerCount": 6,
-      "endedOnTurn": "",
+      "endedOnTurn": "173",
       "victoryType": "",
       "gif": "Replays/Unciv_6niXfWeFrx.gif"
     },
@@ -401,7 +401,7 @@
       "winner": "Бирма",
       "map": "Внутреннее море",
       "playerCount": 6,
-      "endedOnTurn": "",
+      "endedOnTurn": "168",
       "victoryType": "",
       "gif": "Replays/Unciv_eBara9ycka.gif"
     },
@@ -438,8 +438,8 @@
       "winner": "Португалия",
       "map": "Архипелаги",
       "playerCount": 6,
-      "endedOnTurn": "",
-      "victoryType": "",
+      "endedOnTurn": "204",
+      "victoryType": "Science",
       "gif": "Replays/Unciv_HxUtYpKTjN.gif"
     },
     {
@@ -491,7 +491,7 @@
       "winner": "Нидерланды",
       "map": "Шум перлина",
       "playerCount": 10,
-      "endedOnTurn": "",
+      "endedOnTurn": "159",
       "victoryType": "",
       "gif": "Replays/Unciv_Zt7U9zfGRG.gif"
     },
@@ -544,7 +544,7 @@
       "winner": "Византия",
       "map": "Шум Перлина",
       "playerCount": 10,
-      "endedOnTurn": "",
+      "endedOnTurn": "163",
       "victoryType": "",
       "gif": "Replays/Unciv_WRUgAToypZ.gif"
     },
@@ -958,16 +958,16 @@
           "nation": "Македония"
         },
         {
+          "name": "Overslidishe",
+          "nation": "Зулусы"
+        },
+        {
           "name": "Click4x",
           "nation": "Колумбия"
         },
         {
           "name": "AlexUnderHill",
           "nation": "Италия"
-        },
-        {
-          "name": "Overslidishe",
-          "nation": "Зулусы"
         }
       ],
       "winner": "Колумбия",
