@@ -917,43 +917,67 @@
       "gif": "Replays/Unciv_Wy7gVl9zgl.gif"
     },
     {
-      "id": 24,
-      "version": "4.20.15 (Build 1229)",
-      "number": "Game 27",
+      "id": 21,
+      "version": "4.19.18 (Build 1209)",
+      "number": "Game 24",
       "players": [
         {
-          "name": "Click4x",
-          "nation": "Япония"
-        },
-        {
-          "name": "Bahahanchiklkm",
-          "nation": "Буры"
-        },
-        {
-          "name": "AlexUnderHill",
-          "nation": "Дания"
-        },
-        {
-          "name": "EmperorPenguin01",
-          "nation": "Ацтеки"
+          "name": "Fanfblrik",
+          "nation": "Персия"
         },
         {
           "name": "REPUNZEL2882",
-          "nation": "Бруней"
+          "nation": "Болгария"
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Бирма"
+        },
+        {
+          "name": "den_stu",
+          "nation": "Португалия"
+        },
+        {
+          "name": "PVL01011900",
+          "nation": "Бельгия"
         },
         {
           "name": "konoval_mik",
+          "nation": "Айюбиды"
+        },
+        {
+          "name": "Lvxvcs",
+          "nation": "Дания"
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Филиппины"
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Македония"
+        },
+        {
+          "name": "Click4x",
           "nation": "Колумбия"
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Италия"
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Зулусы"
         }
       ],
-      "winner": "Ацтеки",
-      "map": "Pangaea",
-      "playerCount": 6,
-      "endedOnTurn": "125",
+      "winner": "Колумбия",
+      "map": "Perlin",
+      "playerCount": 12,
+      "endedOnTurn": "123",
       "victoryType": ""
     },
     {
-      "id": 25,
+      "id": 22,
       "version": "4.20.1 (Build 1212)",
       "number": "Game 25",
       "players": [
@@ -1001,7 +1025,7 @@
       "victoryType": ""
     },
     {
-      "id": 26,
+      "id": 23,
       "version": "4.20.7 (Build 1219)",
       "number": "Game 26",
       "players": [
@@ -1049,55 +1073,39 @@
       "victoryType": ""
     },
     {
-      "id": 27,
-      "version": "4.19.18 (Build 1209)",
-      "number": "Game 24",
+      "id": 24,
+      "version": "4.20.15 (Build 1229)",
+      "number": "Game 27",
       "players": [
         {
-          "name": "Fanfblrik",
-          "nation": "Персия"
-        },
-        {
-          "name": "REPUNZEL2882",
-          "nation": "Болгария"
+          "name": "Click4x",
+          "nation": "Япония"
         },
         {
           "name": "Bahahanchiklkm",
-          "nation": "Бирма"
+          "nation": "Буры"
         },
         {
-          "name": "den_stu",
-          "nation": "Португалия"
-        },
-        {
-          "name": "PVL01011900",
-          "nation": "Бельгия"
-        },
-        {
-          "name": "konoval_mik",
-          "nation": "Айюбиды"
-        },
-        {
-          "name": "Lvxvcs",
+          "name": "AlexUnderHill",
           "nation": "Дания"
         },
         {
-          "name": "VlaterRogue",
-          "nation": "Филиппины"
+          "name": "EmperorPenguin01",
+          "nation": "Ацтеки"
         },
         {
-          "name": "Ouni0",
-          "nation": "Македония"
+          "name": "REPUNZEL2882",
+          "nation": "Бруней"
         },
         {
-          "name": "Click4x",
+          "name": "konoval_mik",
           "nation": "Колумбия"
         }
       ],
-      "winner": "Колумбия",
-      "map": "Perlin",
-      "playerCount": 10,
-      "endedOnTurn": "123",
+      "winner": "Ацтеки",
+      "map": "Pangaea",
+      "playerCount": 6,
+      "endedOnTurn": "125",
       "victoryType": ""
     }
   ]
