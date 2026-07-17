@@ -1047,6 +1047,58 @@
       "playerCount": 9,
       "endedOnTurn": "162",
       "victoryType": ""
+    },
+    {
+      "id": 27,
+      "version": "4.19.18 (Build 1209)",
+      "number": "Game 24",
+      "players": [
+        {
+          "name": "Fanfblrik",
+          "nation": "Персия"
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Болгария"
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Бирма"
+        },
+        {
+          "name": "den_stu",
+          "nation": "Португалия"
+        },
+        {
+          "name": "PVL01011900",
+          "nation": "Бельгия"
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Айюбиды"
+        },
+        {
+          "name": "Lvxvcs",
+          "nation": "Дания"
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Филиппины"
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Македония"
+        },
+        {
+          "name": "Click4x",
+          "nation": "Колумбия"
+        }
+      ],
+      "winner": "Колумбия",
+      "map": "Perlin",
+      "playerCount": 10,
+      "endedOnTurn": "123",
+      "victoryType": ""
     }
   ]
 }
