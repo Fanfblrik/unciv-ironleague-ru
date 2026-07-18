@@ -311,7 +311,7 @@
 
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
             gap: 25px;
             margin-top: 20px;
         }
@@ -494,7 +494,8 @@
         .survivor-meta {
             font-size: 0.85rem;
             color: rgba(255, 255, 255, 0.7);
-            margin-left: 30px;
+            margin-left: 0;
+            padding-left: 2px;
         }
 
         .survivor-ideology {
@@ -906,35 +907,39 @@
         }
 
         .survivor-stats-list {
-            margin: 8px 0 0 30px;
+            margin: 8px 0 0 0;
             padding: 0;
             list-style: none;
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-            gap: 4px 12px;
-            font-size: 0.82rem;
-            color: rgba(255, 252, 240, 0.96);
+            gap: 5px 14px;
+            font-size: 0.88rem;
+            color: rgba(255, 252, 240, 0.98);
         }
 
         .survivor-stats-list li {
             display: grid;
             grid-template-columns: minmax(0, 1fr) auto;
-            column-gap: 8px;
+            column-gap: 10px;
             align-items: baseline;
             min-width: 0;
-            padding: 3px 0;
+            padding: 4px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .survivor-stats-list li.wide {
             grid-column: 1 / -1;
-            grid-template-columns: auto minmax(0, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: flex-start;
+            gap: 6px 12px;
         }
 
         .survivor-stats-list .sk {
             min-width: 0;
-            color: rgba(255, 230, 150, 0.92);
-            line-height: 1.25;
+            color: rgba(255, 236, 170, 0.98);
+            line-height: 1.3;
         }
 
         .survivor-stats-list .sv {
@@ -944,11 +949,19 @@
             color: #ffffff;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
             font-variant-numeric: tabular-nums;
-            line-height: 1.25;
+            line-height: 1.3;
+            white-space: nowrap;
+        }
+
+        .survivor-stats-list li.wide .sk {
+            flex: 0 0 auto;
+            white-space: nowrap;
         }
 
         .survivor-stats-list li.wide .sv {
+            flex: 1 1 12rem;
             text-align: left;
+            white-space: normal;
             overflow-wrap: anywhere;
         }
 
@@ -1165,13 +1178,13 @@
         }
 
         .rating-intro, .stats-intro {
-            background: rgba(0, 0, 0, 0.28);
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            background: rgba(0, 0, 0, 0.42);
+            border: 1px solid rgba(255, 215, 0, 0.28);
             border-radius: 12px;
-            padding: 14px 16px;
+            padding: 16px 18px;
             margin-bottom: 18px;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.45;
+            color: rgba(255, 248, 230, 0.95);
+            line-height: 1.55;
         }
 
         .rating-k-row {
@@ -1219,8 +1232,8 @@
         }
 
         .rating-k-note {
-            font-size: 0.82rem;
-            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.92rem;
+            color: rgba(255, 240, 200, 0.88);
         }
 
         .rating-intro,
@@ -1230,13 +1243,28 @@
         }
 
         #viewRating .hint {
-            line-height: 1.5;
-            max-width: 920px;
+            font-size: 0.98rem;
+            line-height: 1.55;
+            max-width: none;
+            width: 100%;
+            color: rgba(255, 248, 230, 0.94);
+            background: rgba(0, 0, 0, 0.34);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 10px;
+            padding: 12px 14px;
         }
 
         .rating-intro {
-            line-height: 1.55;
-            max-width: 920px;
+            font-size: 1.02rem;
+            line-height: 1.6;
+            max-width: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        #viewRating .rating-k-row {
+            width: 100%;
+            box-sizing: border-box;
         }
 
 
@@ -1550,8 +1578,8 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=rating-docs-1"></script>
-<script src="js/rating.js?v=rating-docs-1"></script>
+<script src="js/i18n.js?v=ui-layout-1"></script>
+<script src="js/rating.js?v=ui-layout-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -2116,7 +2144,7 @@
         if (Number.isFinite(Number(row.population))) push(tt('stat.population'), row.population);
         if (isAlive && Number.isFinite(Number(row.techs))) push(tt('stat.techs'), row.techs);
         if (isAlive && Number.isFinite(Number(row.policies))) push(tt('stat.policies'), row.policies);
-        if (row.first_policy) push(tt('stat.firstPolicy'), displayPolicyName(row.first_policy));
+        if (row.first_policy) push(tt('stat.firstPolicy'), displayPolicyName(row.first_policy), { wide: true });
         const branches = Array.isArray(row.policy_branches)
             ? row.policy_branches.filter(Boolean) : [];
         if (branches.length) {
