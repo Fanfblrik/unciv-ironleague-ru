@@ -1092,8 +1092,20 @@
         }
 
         .lang-btn .lang-flag {
-            font-size: 0.95rem;
-            line-height: 1;
+            display: inline-block;
+            width: 16px;
+            height: 12px;
+            border-radius: 2px;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+            line-height: 0;
+        }
+
+        .lang-btn .lang-flag svg {
+            display: block;
+            width: 100%;
+            height: 100%;
         }
 
         .lang-btn.active {
@@ -1162,6 +1174,72 @@
             line-height: 1.45;
         }
 
+        .rating-k-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px 14px;
+            margin: 0 0 16px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.22);
+            background: rgba(0, 0, 0, 0.28);
+        }
+
+        .rating-k-label {
+            color: rgba(255, 230, 150, 0.95);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .rating-k-switch {
+            display: inline-flex;
+            gap: 4px;
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 8px;
+            padding: 3px;
+        }
+
+        .rating-k-btn {
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.75);
+            cursor: pointer;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .rating-k-btn.active {
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+        }
+
+        .rating-k-note {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .rating-intro,
+        #viewRating .hint,
+        .rating-k-note {
+            white-space: pre-line;
+        }
+
+        #viewRating .hint {
+            line-height: 1.5;
+            max-width: 920px;
+        }
+
+        .rating-intro {
+            line-height: 1.55;
+            max-width: 920px;
+        }
+
+
         .site-nav.is-stuck {
             /* marker for IntersectionObserver */
         }
@@ -1170,8 +1248,8 @@
 </head>
 <body>
 <div class="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="Язык">
-    <button type="button" class="lang-btn active" data-lang="ru" title="Русский"><span class="lang-flag" aria-hidden="true">🇷🇺</span>RU</button>
-    <button type="button" class="lang-btn" data-lang="en" title="English">EN<span class="lang-flag" aria-hidden="true">🇬🇧</span></button>
+    <button type="button" class="lang-btn active" data-lang="ru" title="Русский"><span class="lang-flag" aria-hidden="true"><svg viewBox="0 0 9 6" xmlns="http://www.w3.org/2000/svg"><rect width="9" height="6" fill="#fff"/><rect y="2" width="9" height="2" fill="#0039a6"/><rect y="4" width="9" height="2" fill="#d52b1e"/></svg></span>RU</button>
+    <button type="button" class="lang-btn" data-lang="en" title="English">EN<span class="lang-flag" aria-hidden="true"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><clipPath id="s"><path d="M0,0v30h60V0z"/></clipPath><g clip-path="url(#s)"><path d="M0,0v30h60V0z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></g></svg></span></button>
 </div>
 <button type="button" class="back-to-top" id="backToTop" data-i18n="backTop">Наверх</button>
 <div class="container">
@@ -1331,6 +1409,15 @@
 
     <div class="view-panel" id="viewRating">
         <p class="rating-intro" id="ratingIntro" data-i18n="rating.intro">Рейтинг считается из архива при каждой загрузке.</p>
+        <div class="rating-k-row" role="group" data-i18n-aria="rating.kLabel" aria-label="Коэффициент K">
+            <span class="rating-k-label" data-i18n="rating.kLabel">Коэффициент K</span>
+            <div class="rating-k-switch">
+                <button type="button" class="rating-k-btn" data-k="20">20</button>
+                <button type="button" class="rating-k-btn active" data-k="24">24</button>
+                <button type="button" class="rating-k-btn" data-k="32">32</button>
+            </div>
+            <span class="rating-k-note" data-i18n="rating.kHint">Влияет на Elo FFA и pairwise (не на рейтинг по финишу). По умолчанию 24.</span>
+        </div>
         <div class="faq-toc" data-i18n-aria="rating.toc" aria-label="Разделы рейтинга">
             <a href="#rating-combined" data-i18n="rating.combined">Сводный рейтинг</a>
             <a href="#rating-ffa" data-i18n="rating.ffa">Elo FFA</a>
@@ -1362,7 +1449,7 @@
 
         <div class="stats-section" id="rating-ffa">
             <h2 data-i18n="rating.ffa">Elo FFA (линейное место)</h2>
-            <p class="hint" data-i18n="rating.ffaHint">K=32, Actual 1..0.</p>
+            <p class="hint" data-i18n="rating.ffaHint">K настраивается, Actual 1..0.</p>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="ratingFfaTable">
                     <thead>
@@ -1463,8 +1550,8 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=map-ru-1"></script>
-<script src="js/rating.js?v=map-ru-1"></script>
+<script src="js/i18n.js?v=rating-docs-1"></script>
+<script src="js/rating.js?v=rating-docs-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -2496,9 +2583,43 @@
         if (footer) footer.textContent = footers[view] || footers.archive;
     }
 
+    const RATING_K_KEY = 'ironleague_rating_k';
+    let ratingK = 24;
+
+    function loadRatingK() {
+        let saved = 24;
+        try {
+            saved = Number(localStorage.getItem(RATING_K_KEY));
+        } catch (e) { /* ignore */ }
+        if (window.IronLeagueRating && IronLeagueRating.normalizeK) {
+            ratingK = IronLeagueRating.normalizeK(saved);
+        } else {
+            ratingK = [20, 24, 32].includes(saved) ? saved : 24;
+        }
+        document.querySelectorAll('.rating-k-btn').forEach((btn) => {
+            btn.classList.toggle('active', Number(btn.dataset.k) === ratingK);
+        });
+        return ratingK;
+    }
+
+    function setRatingK(next) {
+        if (window.IronLeagueRating && IronLeagueRating.normalizeK) {
+            ratingK = IronLeagueRating.normalizeK(next);
+        } else {
+            ratingK = [20, 24, 32].includes(Number(next)) ? Number(next) : 24;
+        }
+        try {
+            localStorage.setItem(RATING_K_KEY, String(ratingK));
+        } catch (e) { /* ignore */ }
+        document.querySelectorAll('.rating-k-btn').forEach((btn) => {
+            btn.classList.toggle('active', Number(btn.dataset.k) === ratingK);
+        });
+        renderRatingTables();
+    }
+
     function renderRatingTables() {
         if (!window.IronLeagueRating || !gamesData.length) return;
-        const result = IronLeagueRating.computeAll(gamesData);
+        const result = IronLeagueRating.computeAll(gamesData, ratingK);
         const simpleRow = (r) => `<tr>
             <td class="num">${r.place}</td>
             <td>${r.name}</td>
@@ -2530,6 +2651,10 @@
     (async function boot() {
         await initAssetCacheBust();
         if (window.IronLeagueI18n) IronLeagueI18n.initLang();
+        loadRatingK();
+        document.querySelectorAll('.rating-k-btn').forEach((btn) => {
+            btn.addEventListener('click', () => setRatingK(btn.dataset.k));
+        });
         await loadGamesData();
         await Promise.all([loadFaqData(), loadTierlistData()]);
         renderStatsTables();

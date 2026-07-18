@@ -204,20 +204,23 @@
       'stats.col.techs': 'Технологии',
       'stats.col.topPolicies': 'Топ‑3 института',
       'rating.intro':
-        'Рейтинг считается на клиенте из Games.json при каждой загрузке страницы (добавление/удаление игры в архиве автоматически меняет таблицы). Учитываются только актуальные FFA-игры без флагов teams/scrap. Места в игре: победитель первый, далее живые по очкам, затем выбывшие.',
+        'Рейтинг считается в браузере из Games.json при каждой загрузке страницы (добавили или убрали игру в архиве — таблицы пересчитаются сами).\n\nКакие игры входят\n• Только актуальные FFA без флагов teams / scrap (и без excludeFromStats).\n• Игры обрабатываются по номеру по возрастанию (хронология лиги).\n\nКак определяется место в одной партии\n1) Победитель (нация winner) — всегда 1-е место.\n2) Среди остальных: сначала живые, потом выбывшие.\n3) Внутри группы — по очкам финала (score) по убыванию; если очков нет — по нику.\n\nСтартовый рейтинг каждого игрока: 1000. Ниже — три независимых метода и сводная таблица.',
       'rating.toc': 'Разделы рейтинга',
       'rating.combined': 'Сводный рейтинг',
       'rating.combinedHint':
-        'Среднее арифметическое трёх рейтингов ниже. Также показано среднее место в трёх таблицах (меньше — лучше).',
+        'Сводный рейтинг = среднее арифметическое трёх чисел: Elo FFA, Elo pairwise и рейтинга по финишу.\nКолонка «Ср. место» — среднее мест игрока в этих трёх таблицах (меньше — лучше).\nТакже показаны отдельные места в каждой методике, чтобы видеть расхождения.',
       'rating.ffa': 'Elo FFA (линейное место)',
       'rating.ffaHint':
-        'Как в Google Sheet ratingv2: старт 1000, K=32. Actual — место от 1 (первое) до 0 (последнее). Expected — среднее Elo-ожидание против каждого соперника. ΔR = K × (Actual − Expected).',
+        'Метод как в Google Sheet ratingv2 (линейное место).\n\nДля лобби из N игроков место i (0 = победитель, N−1 = последний) даёт Actual = (N−1−i) / (N−1): победитель = 1, последний = 0, остальные равномерно между ними.\n\nExpected для игрока A — среднее классических Elo-ожиданий против каждого соперника B:\nE(A,B) = 1 / (1 + 10^((Rb−Ra)/400)).\n\nОбновление после игры: Ra ← Ra + K × (Actual − Expected).\nСумма изменений по лобби не обязана быть нулевой (это не попарный zero-sum).',
       'rating.pairwise': 'Elo pairwise',
       'rating.pairwiseHint':
-        'Старт 1000, суммарный K=32 на игру. Каждый вышестоящий «побеждает» каждого ниже; K делится на число пар. Классический FFA-Elo с нулевой суммой попарно.',
+        'Классический FFA-Elo с нулевой суммой по парам.\n\nВ лобби из N игроков строится C(N,2) = N(N−1)/2 виртуальных дуэлей: каждый вышестоящий «побеждает» каждого нижестоящего.\nНа одну дуэль идёт k_pair = K / C(N,2), чтобы суммарный масштаб за игру оставался порядка K.\n\nДля пары (выше A, ниже B):\nΔA = k_pair × (1 − E(A,B)),  ΔB = k_pair × (0 − (1 − E(A,B))) = −ΔA,\nгде E(A,B) = 1 / (1 + 10^((Rb−Ra)/400)).\n\nИтог за игру — сумма Δ по всем парам. Сумма изменений рейтинга по всем игрокам партии = 0.',
+      'rating.kLabel': 'Коэффициент K',
+      'rating.kHint':
+        'K задаёт «жёсткость» обновления Elo за одну игру для FFA и pairwise.\n• 20 — спокойнее, меньше скачков.\n• 24 — значение по умолчанию.\n• 32 — как в старом Google Sheet ratingv2, сильнее реагирует на результат.\nНа «Рейтинг по финишу» K не влияет. Выбор сохраняется в браузере.',
       'rating.finish': 'Рейтинг по финишу',
       'rating.finishHint':
-        'Средний скор места (1…0) по всем играм переводится в шкалу около 1000 (±200 за стабильно первое/последнее). Больше игр — ближе к долгосрочному среднему.',
+        'Не Elo, а оценка среднего финиша на шкале ~1000.\n\nВ каждой игре место даёт placeScore = (N−1−i)/(N−1) (1 = победа … 0 = последнее).\nСчитается среднее placeScore по всем учтённым играм игрока: avg.\nЦелевой рейтинг: target = 1000 + 400 × (avg − 0.5)\n(стабильно первые ≈ 1200, стабильно последние ≈ 800).\n\nСмешивание с текущим значением: вес w = min(1, games/8), R ← R×(1−w) + target×w — чем больше игр, тем ближе к долгосрочному среднему.\nK на этот метод не влияет.',
       'rating.col.place': '#',
       'rating.col.player': 'Игрок',
       'rating.col.rating': 'Рейтинг',
@@ -370,20 +373,23 @@
       'stats.col.techs': 'Techs',
       'stats.col.topPolicies': 'Top-3 policies',
       'rating.intro':
-        'Ratings are computed in the browser from Games.json on every page load (adding/removing a game in the archive updates the tables). Only ranked FFA games without teams/scrap flags count. Placement: winner first, then living players by score, then eliminated.',
+        'Ratings are computed in the browser from Games.json on every page load (adding/removing an archive game recalculates the tables).\n\nWhich games count\n• Ranked FFA only — no teams / scrap flags (and no excludeFromStats).\n• Games are processed in ascending game-number order (league chronology).\n\nPlacement inside one game\n1) The winner (winner nation) is always 1st.\n2) Among the rest: living players first, then eliminated.\n3) Within a group — by finale score descending; if score is missing — by nickname.\n\nEveryone starts at 1000. Below: three independent methods plus a combined table.',
       'rating.toc': 'Rating sections',
       'rating.combined': 'Combined rating',
       'rating.combinedHint':
-        'Arithmetic mean of the three ratings below. Also shows average place across the three tables (lower is better).',
+        'Combined rating = arithmetic mean of FFA Elo, pairwise Elo, and finish-place rating.\n“Avg place” is the mean of the player’s ranks in those three tables (lower is better).\nPer-method places are shown so you can see where methods disagree.',
       'rating.ffa': 'FFA Elo (linear place)',
       'rating.ffaHint':
-        'As in Google Sheet ratingv2: start 1000, K=32. Actual is place from 1 (first) to 0 (last). Expected is the average Elo expectancy vs each opponent. ΔR = K × (Actual − Expected).',
+        'Same idea as Google Sheet ratingv2 (linear place).\n\nIn a lobby of N players, place i (0 = winner, N−1 = last) gives Actual = (N−1−i)/(N−1): winner = 1, last = 0, others spaced evenly.\n\nExpected for player A is the average classic Elo expectancy vs each opponent B:\nE(A,B) = 1 / (1 + 10^((Rb−Ra)/400)).\n\nUpdate after the game: Ra ← Ra + K × (Actual − Expected).\nLobby deltas need not sum to zero (this is not pairwise zero-sum).',
       'rating.pairwise': 'Pairwise Elo',
       'rating.pairwiseHint':
-        'Start 1000, total K=32 per game. Each higher place “beats” each lower; K is split across pairs. Classic zero-sum FFA Elo.',
+        'Classic zero-sum FFA Elo via pairs.\n\nIn a lobby of N players there are C(N,2) = N(N−1)/2 virtual duels: each higher place “beats” each lower place.\nEach duel uses k_pair = K / C(N,2) so the total scale per game stays about K.\n\nFor pair (higher A, lower B):\nΔA = k_pair × (1 − E(A,B)),  ΔB = −ΔA,\nwhere E(A,B) = 1 / (1 + 10^((Rb−Ra)/400)).\n\nA player’s game delta is the sum over all pairs. Sum of rating changes in the lobby = 0.',
+      'rating.kLabel': 'K factor',
+      'rating.kHint':
+        'K controls how hard Elo moves after one game for FFA and pairwise.\n• 20 — calmer, smaller swings.\n• 24 — default.\n• 32 — as in the old Google Sheet ratingv2, more reactive.\nFinish-place rating ignores K. Your choice is stored in the browser.',
       'rating.finish': 'Finish-place rating',
       'rating.finishHint':
-        'Average place score (1…0) across games maps to a ~1000 scale (±200 for always-first / always-last). More games pull toward the long-run average.',
+        'Not Elo — a finish-average mapped onto a ~1000 scale.\n\nEach game awards placeScore = (N−1−i)/(N−1) (1 = win … 0 = last).\navg = mean placeScore over the player’s counted games.\ntarget = 1000 + 400 × (avg − 0.5)\n(always 1st ≈ 1200, always last ≈ 800).\n\nBlend: w = min(1, games/8), R ← R×(1−w) + target×w — more games pull toward the long-run average.\nK does not affect this method.',
       'rating.col.place': '#',
       'rating.col.player': 'Player',
       'rating.col.rating': 'Rating',

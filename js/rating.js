@@ -9,7 +9,8 @@
   'use strict';
 
   const START_ELO = 1000;
-  const K = 32;
+  const START_K = 24;
+  const ALLOWED_K = [20, 24, 32];
 
   function gameFlags(game) {
     const flags = Array.isArray(game.flags) ? game.flags.map(String) : [];
@@ -80,7 +81,13 @@
   }
 
   /** Method A: FFA Elo from ratingv2 sheet (Actual 1..0, Expected avg pairwise). */
-  function rateFfaLinear(games) {
+  function normalizeK(k) {
+    const n = Number(k);
+    return ALLOWED_K.includes(n) ? n : START_K;
+  }
+
+  function rateFfaLinear(games, k) {
+    const K = normalizeK(k);
     const ratings = new Map();
     const gamesPlayed = new Map();
     for (const game of eligibleGames(games)) {
@@ -109,7 +116,8 @@
   }
 
   /** Method B: pairwise Elo — each higher place beats each lower. */
-  function ratePairwise(games) {
+  function ratePairwise(games, k) {
+    const K = normalizeK(k);
     const ratings = new Map();
     const gamesPlayed = new Map();
     for (const game of eligibleGames(games)) {
@@ -194,9 +202,10 @@
     return m;
   }
 
-  function computeAll(games) {
-    const ffa = rateFfaLinear(games);
-    const pairwise = ratePairwise(games);
+  function computeAll(games, k) {
+    const K = normalizeK(k);
+    const ffa = rateFfaLinear(games, K);
+    const pairwise = ratePairwise(games, K);
     const finish = rateFinishPlace(games);
     const rFfa = ratingMap(ffa);
     const rPair = ratingMap(pairwise);
@@ -254,6 +263,7 @@
       pairwise,
       finish,
       combined,
+      k: K,
       eligibleCount: eligibleGames(games).length,
       excludedCount: (games || []).filter(isExcludedGame).length,
     };
@@ -261,7 +271,9 @@
 
   global.IronLeagueRating = {
     START_ELO,
-    K,
+    START_K,
+    ALLOWED_K,
+    normalizeK,
     isExcludedGame,
     eligibleGames,
     placementOrder,
