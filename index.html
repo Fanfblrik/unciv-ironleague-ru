@@ -158,11 +158,45 @@
             color: #ffd700;
         }
 
+        /* Unciv-style portrait: outerColor fill, innerColor ring + icon tint */
+        .nation-portrait {
+            --outer: #505050;
+            --inner: #ffffff;
+            --icon: none;
+            position: relative;
+            display: inline-block;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: var(--outer);
+            box-shadow: 0 0 0 2px var(--inner);
+            vertical-align: middle;
+        }
+
+        .nation-portrait::after {
+            content: '';
+            position: absolute;
+            inset: 12%;
+            background-color: var(--inner);
+            -webkit-mask-image: var(--icon);
+            mask-image: var(--icon);
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+        }
+
         .nation-icon-small {
             width: 24px;
             height: 24px;
-            border-radius: 50%;
-            object-fit: cover;
+        }
+
+        .player-nation-mini.nation-portrait,
+        .nation-portrait.player-nation-mini {
+            width: 20px;
+            height: 20px;
+            box-shadow: 0 0 0 1.5px var(--inner);
         }
 
         .players-list {
@@ -182,13 +216,6 @@
 
         .player-item:last-child {
             border-bottom: none;
-        }
-
-        .player-nation-mini {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            object-fit: cover;
         }
 
         .player-name {
@@ -372,6 +399,7 @@
     // Конфигурация
     const CONFIG = {
         nationsPath: 'Nation_icons/',
+        colorsPath: 'nation_colors.json',
         replaysPath: 'replays/'
     };
 
@@ -497,19 +525,45 @@
         nationMap.set(item.rus, item.eng);
     });
 
+    // Цвета наций (Unciv + RekMOD): eng -> {outer, inner}
+    let nationColors = {};
+    let nationColorFallback = { outer: [80, 80, 80], inner: [255, 255, 255] };
+
     // Глобальные переменные
     let gamesData = [];
     let allNations = new Set();
+
+    function rgbCss(rgb) {
+        if (!Array.isArray(rgb) || rgb.length < 3) return '#808080';
+        return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+    }
 
     // Функция для получения пути к иконке нации
     function getNationIconPath(russianName) {
         const englishName = nationMap.get(russianName);
         if (englishName) {
             return `${CONFIG.nationsPath}${encodeURIComponent(englishName)}.png`;
-        } else {
-            console.warn(`Иконка для нации "${russianName}" не найдена`);
-            return `${CONFIG.nationsPath}Unknown.png`;
         }
+        console.warn(`Иконка для нации "${russianName}" не найдена`);
+        return `${CONFIG.nationsPath}Unknown.png`;
+    }
+
+    function getNationColors(russianName) {
+        const englishName = nationMap.get(russianName);
+        if (englishName && nationColors[englishName]) {
+            return nationColors[englishName];
+        }
+        return nationColorFallback;
+    }
+
+    /** Unciv PortraitNation: круг outerColor, кольцо+силуэт innerColor. */
+    function renderNationPortrait(russianName, extraClass) {
+        const colors = getNationColors(russianName);
+        const iconUrl = getNationIconPath(russianName);
+        const cls = ['nation-portrait', extraClass].filter(Boolean).join(' ');
+        return `<span class="${cls}" role="img" aria-label="${russianName}" ` +
+            `style="--outer:${rgbCss(colors.outer)};--inner:${rgbCss(colors.inner)};` +
+            `--icon:url('${iconUrl}')"></span>`;
     }
 
     // Заполняем фильтр наций
@@ -562,8 +616,7 @@
 
                 return `
                     <div class="player-item ${isHighlighted ? 'highlighted' : ''}">
-                        <img class="player-nation-mini" src="${getNationIconPath(player.nation)}"
-                             alt="${player.nation}" onerror="this.src='https://via.placeholder.com/20?text=?'">
+                        ${renderNationPortrait(player.nation, 'player-nation-mini')}
                         <span class="player-name">${player.name}</span>
                         ${isWinner ? '<span class="player-status">👑 Победитель</span>' : ''}
                     </div>
@@ -581,8 +634,7 @@
                 <div class="winner-section">
                     <span class="winner-label">🏆 ПОБЕДИТЕЛЬ:</span>
                     <span class="winner-nation">
-                        <img class="nation-icon-small" src="${getNationIconPath(game.winner)}"
-                             alt="${game.winner}" onerror="this.src='https://via.placeholder.com/24?text=?'">
+                        ${renderNationPortrait(game.winner, 'nation-icon-small')}
                         ${game.winner}
                     </span>
                 </div>
@@ -631,10 +683,23 @@
     // Загрузка данных
     async function loadGamesData() {
         try {
-            const response = await fetch('Games.json');
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const [gamesResponse, colorsResponse] = await Promise.all([
+                fetch('Games.json'),
+                fetch(CONFIG.colorsPath),
+            ]);
+            if (!gamesResponse.ok) throw new Error(`HTTP ${gamesResponse.status}`);
 
-            const data = await response.json();
+            if (colorsResponse.ok) {
+                const colorsData = await colorsResponse.json();
+                nationColors = colorsData.colors || {};
+                if (colorsData.fallback) {
+                    nationColorFallback = colorsData.fallback;
+                }
+            } else {
+                console.warn('nation_colors.json не загружен, иконки без tint');
+            }
+
+            const data = await gamesResponse.json();
             gamesData = data.games;
 
             gamesData.forEach(game => {
