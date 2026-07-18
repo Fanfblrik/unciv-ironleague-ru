@@ -6,6 +6,9 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
     <title>Iron League — Архив и FAQ</title>
     <style>
         * {
@@ -489,6 +492,111 @@
             font-size: 0.95rem;
         }
 
+        .stats-section {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 14px;
+            padding: 18px 20px;
+            margin-bottom: 20px;
+        }
+
+        .stats-section h2 {
+            color: #ffd700;
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .stats-section .hint {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 0.85rem;
+            margin-bottom: 14px;
+        }
+
+        .stats-table-wrap {
+            overflow-x: auto;
+        }
+
+        table.stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+        }
+
+        table.stats-table th,
+        table.stats-table td {
+            padding: 8px 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            white-space: nowrap;
+        }
+
+        table.stats-table th {
+            color: #ffd700;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        table.stats-table th:hover {
+            color: #ffe566;
+        }
+
+        table.stats-table tr:hover td {
+            background: rgba(255, 215, 0, 0.06);
+        }
+
+        table.stats-table .num {
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .nation-cell {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tier-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .tier-pill {
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.25);
+            font-size: 0.85rem;
+        }
+
+        .tier-stars {
+            color: #ffd700;
+            letter-spacing: 1px;
+        }
+
+        .tier-source {
+            margin-bottom: 14px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .tier-source a {
+            color: #ffd700;
+        }
+
+        .future-ideas {
+            margin-top: 8px;
+            padding-left: 1.2rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+        }
+
+        .future-ideas li {
+            margin-bottom: 6px;
+        }
+
         /* Unciv-style portrait: canvas paints outer/inner colors + centered icon */
         .nation-portrait {
             display: inline-block;
@@ -671,6 +779,8 @@
 
     <nav class="site-nav" aria-label="Разделы сайта">
         <button type="button" class="site-nav-btn active" data-view="archive">Архив игр</button>
+        <button type="button" class="site-nav-btn" data-view="stats">Статистика</button>
+        <button type="button" class="site-nav-btn" data-view="tierlist">Тирлист</button>
         <button type="button" class="site-nav-btn" data-view="faq">FAQ</button>
     </nav>
 
@@ -713,6 +823,102 @@
     <div class="games-grid" id="gamesGrid">
         <div class="loading">Загрузка данных...</div>
     </div>
+    </div>
+
+    <div class="view-panel" id="viewStats">
+        <div class="stats-section">
+            <h2>Винрейт игроков</h2>
+            <p class="hint">Победы / участия в играх из архива. Минимум 1 игра.</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="playerWinrateTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name">Игрок</th>
+                            <th class="num" data-sort="games">Игр</th>
+                            <th class="num" data-sort="wins">Побед</th>
+                            <th class="num" data-sort="winrate">Винрейт</th>
+                            <th class="num" data-sort="capitalLosses">Потерь столицы</th>
+                            <th class="num" data-sort="eliminated">Выбываний</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <h2>Нации: пики и винрейт</h2>
+            <p class="hint">Сколько раз нация попадала в состав и как часто побеждала.</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="nationStatsTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="nation">Нация</th>
+                            <th class="num" data-sort="picks">Пиков</th>
+                            <th class="num" data-sort="wins">Побед</th>
+                            <th class="num" data-sort="winrate">Винрейт</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <h2>Игроки: нации и финал</h2>
+            <p class="hint">Кого брали чаще, чудеса и захваченные столицы (по данным вкладки «Финал», где они есть).</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="playerDetailTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name">Игрок</th>
+                            <th data-sort="topNation">Чаще всего</th>
+                            <th class="num" data-sort="uniqueNations">Уник. наций</th>
+                            <th class="num" data-sort="wonders">Чудес (сумма)</th>
+                            <th class="num" data-sort="conquered">Столиц захвачено</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <h2>Что ещё можно тянуть из сейва (идеи)</h2>
+            <p class="hint">Сейчас считается из Games.json. Ниже — кандидаты для доработки цив-бота и бэкапа финала.</p>
+            <ul class="future-ideas">
+                <li>Ход выбывания / ход потери столицы</li>
+                <li>Эра, очки, сила армии и наука/ход на финише</li>
+                <li>Число городов и население на финише</li>
+                <li>Основана ли религия, принята ли идеология и когда</li>
+                <li>Части корабля / прогресс научной победы</li>
+                <li>Войны объявленные / полученные, CS в союзе</li>
+                <li>Порядок драфта, рероллы, вето и СС-голоса из логов бота</li>
+                <li>Тип карты, мод/версия уже есть — можно сводить отдельно</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="view-panel" id="viewTierlist">
+        <div class="stats-section">
+            <h2>Тирлист наций</h2>
+            <div class="tier-source" id="tierlistSource">Загрузка тирлиста...</div>
+            <div class="tier-legend" id="tierlistLegend"></div>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="tierlistTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="civ">Нация</th>
+                            <th class="num" data-sort="avg">Среднее</th>
+                            <th class="num" data-sort="Community">Community</th>
+                            <th class="num" data-sort="Click">Click</th>
+                            <th class="num" data-sort="Sharpe">Sharpe</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <div class="view-panel" id="viewFaq">
@@ -1353,6 +1559,7 @@
             populateNationFilter();
             updateStats();
             filterGames();
+            renderStatsTables();
 
         } catch (error) {
             console.error('Ошибка:', error);
@@ -1364,9 +1571,28 @@
     // Запуск
     (async function boot() {
         await initAssetCacheBust();
-        loadGamesData();
-        loadFaqData();
+        await Promise.all([loadGamesData(), loadFaqData(), loadTierlistData()]);
+        renderStatsTables();
     })();
+
+    const VIEW_META = {
+        archive: {
+            title: '⚔️ Архив игр 🛡️',
+            footer: '📁 Хранилище реплеев | Нажмите на кнопку "Смотреть реплей" чтобы загрузить GIF',
+        },
+        stats: {
+            title: '📊 Статистика',
+            footer: 'Статистика по архиву Iron League',
+        },
+        tierlist: {
+            title: '⭐ Тирлист',
+            footer: 'Тирлист наций Iron League',
+        },
+        faq: {
+            title: '📖 FAQ',
+            footer: 'Правила и подсказки Iron League',
+        },
+    };
 
     // Переключение разделов
     document.querySelectorAll('.site-nav-btn').forEach(btn => {
@@ -1376,14 +1602,257 @@
                 b.classList.toggle('active', b === btn);
             });
             document.getElementById('viewArchive').classList.toggle('active', view === 'archive');
+            document.getElementById('viewStats').classList.toggle('active', view === 'stats');
+            document.getElementById('viewTierlist').classList.toggle('active', view === 'tierlist');
             document.getElementById('viewFaq').classList.toggle('active', view === 'faq');
-            const title = document.getElementById('pageTitle');
-            title.textContent = view === 'faq' ? '📖 FAQ' : '⚔️ Архив игр 🛡️';
-            document.querySelector('footer p').textContent = view === 'faq'
-                ? 'Правила и подсказки Iron League'
-                : '📁 Хранилище реплеев | Нажмите на кнопку "Смотреть реплей" чтобы загрузить GIF';
+            const meta = VIEW_META[view] || VIEW_META.archive;
+            document.getElementById('pageTitle').textContent = meta.title;
+            document.querySelector('footer p').textContent = meta.footer;
+            if (view === 'stats') renderStatsTables();
         });
     });
+
+    function engToRusNation(eng) {
+        const hit = nations.find(n => n.eng.toLowerCase() === String(eng || '').toLowerCase());
+        if (hit) return hit.rus;
+        // common aliases in the sheet
+        const aliases = {
+            Aztec: 'Ацтеки',
+            Aztecs: 'Ацтеки',
+            Maya: 'Майя',
+            'The Maya': 'Майя',
+            Huns: 'Гунны',
+            'The Huns': 'Гунны',
+            Netherlands: 'Нидерланды',
+            'The Netherlands': 'Нидерланды',
+            Yugolslavia: 'Югославия',
+            Yugoslavia: 'Югославия',
+        };
+        return aliases[eng] || eng;
+    }
+
+    function starsHtml(n) {
+        if (n == null || Number.isNaN(n)) return '—';
+        return `<span class="tier-stars">${'⭐'.repeat(n)}</span>`;
+    }
+
+    function pct(wins, games) {
+        if (!games) return 0;
+        return Math.round((wins / games) * 1000) / 10;
+    }
+
+    function computeArchiveStats(games) {
+        const players = new Map();
+        const nationStats = new Map();
+
+        const ensurePlayer = (name) => {
+            if (!players.has(name)) {
+                players.set(name, {
+                    name,
+                    games: 0,
+                    wins: 0,
+                    capitalLosses: 0,
+                    eliminated: 0,
+                    nationCounts: new Map(),
+                    wonders: 0,
+                    conquered: 0,
+                });
+            }
+            return players.get(name);
+        };
+
+        const ensureNation = (nation) => {
+            if (!nationStats.has(nation)) {
+                nationStats.set(nation, { nation, picks: 0, wins: 0 });
+            }
+            return nationStats.get(nation);
+        };
+
+        for (const game of games || []) {
+            const roster = Array.isArray(game.players) ? game.players : [];
+            const winnerNation = game.winner || '';
+            let winnerName = '';
+            for (const p of roster) {
+                const name = (p.name || '').trim();
+                const nation = (p.nation || '').trim();
+                if (!name || !nation) continue;
+                const row = ensurePlayer(name);
+                row.games += 1;
+                row.nationCounts.set(nation, (row.nationCounts.get(nation) || 0) + 1);
+                const nat = ensureNation(nation);
+                nat.picks += 1;
+                if (nation === winnerNation) {
+                    row.wins += 1;
+                    winnerName = name;
+                    nat.wins += 1;
+                }
+            }
+
+            for (const s of Array.isArray(game.survivors) ? game.survivors : []) {
+                const name = (s.name || '').trim();
+                if (!name) continue;
+                const row = ensurePlayer(name);
+                if (s.has_capital === false) row.capitalLosses += 1;
+                if (s.alive === false) row.eliminated += 1;
+                if (Array.isArray(s.wonders)) row.wonders += s.wonders.length;
+                if (Array.isArray(s.conquered_capitals)) row.conquered += s.conquered_capitals.length;
+            }
+        }
+
+        const playerRows = [...players.values()].map((p) => {
+            let topNation = '—';
+            let topCount = 0;
+            for (const [nation, count] of p.nationCounts.entries()) {
+                if (count > topCount) {
+                    topCount = count;
+                    topNation = nation;
+                }
+            }
+            return {
+                ...p,
+                winrate: pct(p.wins, p.games),
+                topNation,
+                uniqueNations: p.nationCounts.size,
+            };
+        });
+
+        const nationRows = [...nationStats.values()].map((n) => ({
+            ...n,
+            winrate: pct(n.wins, n.picks),
+        }));
+
+        return { playerRows, nationRows };
+    }
+
+    function fillSortableTable(table, rows, renderRow, defaultSort, defaultDir) {
+        if (!table) return;
+        const tbody = table.querySelector('tbody');
+        let sortKey = defaultSort;
+        let sortDir = defaultDir || 'desc';
+
+        const paint = () => {
+            const sorted = [...rows].sort((a, b) => {
+                const av = a[sortKey];
+                const bv = b[sortKey];
+                if (typeof av === 'string' || typeof bv === 'string') {
+                    return sortDir === 'asc'
+                        ? String(av).localeCompare(String(bv), 'ru')
+                        : String(bv).localeCompare(String(av), 'ru');
+                }
+                return sortDir === 'asc' ? (av - bv) : (bv - av);
+            });
+            tbody.innerHTML = sorted.map(renderRow).join('');
+            hydrateNationPortraits(tbody);
+        };
+
+        table.querySelectorAll('th[data-sort]').forEach((th) => {
+            th.onclick = () => {
+                const key = th.dataset.sort;
+                if (sortKey === key) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+                else {
+                    sortKey = key;
+                    sortDir = th.classList.contains('num') ? 'desc' : 'asc';
+                }
+                paint();
+            };
+        });
+        paint();
+    }
+
+    function renderStatsTables() {
+        if (!gamesData.length) return;
+        const { playerRows, nationRows } = computeArchiveStats(gamesData);
+
+        fillSortableTable(
+            document.getElementById('playerWinrateTable'),
+            playerRows.filter((p) => p.games > 0),
+            (p) => `<tr>
+                <td>${p.name}</td>
+                <td class="num">${p.games}</td>
+                <td class="num">${p.wins}</td>
+                <td class="num">${p.winrate}%</td>
+                <td class="num">${p.capitalLosses}</td>
+                <td class="num">${p.eliminated}</td>
+            </tr>`,
+            'winrate',
+            'desc',
+        );
+
+        fillSortableTable(
+            document.getElementById('nationStatsTable'),
+            nationRows.filter((n) => n.picks > 0),
+            (n) => `<tr>
+                <td><span class="nation-cell">${renderNationPortrait(n.nation, 'player-nation-mini')}${n.nation}</span></td>
+                <td class="num">${n.picks}</td>
+                <td class="num">${n.wins}</td>
+                <td class="num">${n.winrate}%</td>
+            </tr>`,
+            'picks',
+            'desc',
+        );
+
+        fillSortableTable(
+            document.getElementById('playerDetailTable'),
+            playerRows.filter((p) => p.games > 0),
+            (p) => `<tr>
+                <td>${p.name}</td>
+                <td><span class="nation-cell">${p.topNation !== '—' ? renderNationPortrait(p.topNation, 'player-nation-mini') : ''}${p.topNation}</span></td>
+                <td class="num">${p.uniqueNations}</td>
+                <td class="num">${p.wonders}</td>
+                <td class="num">${p.conquered}</td>
+            </tr>`,
+            'games',
+            'desc',
+        );
+    }
+
+    let tierlistData = null;
+
+    async function loadTierlistData() {
+        const sourceEl = document.getElementById('tierlistSource');
+        const legendEl = document.getElementById('tierlistLegend');
+        try {
+            const response = await fetchFresh('tierlist.json');
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            tierlistData = await response.json();
+            if (tierlistData.source) {
+                sourceEl.innerHTML =
+                    `Источник: <a href="${tierlistData.source}" target="_blank" rel="noopener">Google Sheet</a>`;
+            } else {
+                sourceEl.textContent = '';
+            }
+            legendEl.innerHTML = (tierlistData.legend || []).map((item) =>
+                `<span class="tier-pill">${starsHtml(item.stars)} ${item.label}</span>`
+            ).join('');
+
+            const rows = (tierlistData.entries || []).map((e) => ({
+                civ: e.civ,
+                civRu: engToRusNation(e.civ),
+                avg: e.avg || 0,
+                Community: e.ratings?.Community,
+                Click: e.ratings?.Click,
+                Sharpe: e.ratings?.Sharpe,
+                note: e.note || '',
+            }));
+
+            fillSortableTable(
+                document.getElementById('tierlistTable'),
+                rows,
+                (r) => `<tr title="${(r.note || '').replace(/"/g, '&quot;')}">
+                    <td><span class="nation-cell">${renderNationPortrait(r.civRu, 'player-nation-mini')}${r.civRu}</span></td>
+                    <td class="num">${r.avg ? r.avg.toFixed(2) : '—'}</td>
+                    <td class="num">${starsHtml(r.Community)}</td>
+                    <td class="num">${starsHtml(r.Click)}</td>
+                    <td class="num">${starsHtml(r.Sharpe)}</td>
+                </tr>`,
+                'avg',
+                'desc',
+            );
+        } catch (error) {
+            console.error('Tierlist error:', error);
+            sourceEl.textContent = 'Не удалось загрузить тирлист';
+        }
+    }
 
     async function loadFaqData() {
         const content = document.getElementById('faqContent');
