@@ -23,7 +23,7 @@
     },
     {
       "title": "Полезные ссылки",
-      "html": "<ul>\n<li>\n<a href=\"https://docs.google.com/document/d/1Yy9z-pe9D4S_poTCRzLxmWCalY3QAo2MhGbuV17HmYM/edit\" target=\"_blank\" rel=\"noopener\">Описание наций мода</a><br>Master list of Civilizations (LEK V31.4)\n</li>\n<li>\n<a href=\"https://docs.google.com/spreadsheets/d/1iObdFIcKJQPDswqMiWmXBpJoVe-xf2xy2cyKnUvJd0s/edit#gid=0\" target=\"_blank\" rel=\"noopener\">Тир лист наций</a><br>Lekmod tier list\n</li>\n<li>\n<a href=\"https://yairm210.github.io/Unciv/\" target=\"_blank\" rel=\"noopener\">Вики Unciv (для разработчиков)</a>\n</li>\n</ul>"
+      "html": "<ul>\n<li>\nОписание наций мода<br><a href=\"https://docs.google.com/document/d/1Yy9z-pe9D4S_poTCRzLxmWCalY3QAo2MhGbuV17HmYM/edit\" target=\"_blank\" rel=\"noopener\">Master list of Civilizations (LEK V31.4)</a>\n</li>\n<li>\nТир лист наций<br><a href=\"https://docs.google.com/spreadsheets/d/1iObdFIcKJQPDswqMiWmXBpJoVe-xf2xy2cyKnUvJd0s/edit#gid=0\" target=\"_blank\" rel=\"noopener\">Lekmod tier list</a>\n</li>\n<li>\n<a href=\"https://yairm210.github.io/Unciv/\" target=\"_blank\" rel=\"noopener\">Вики Unciv (для разработчиков)</a>\n</li>\n</ul>"
     },
     {
       "title": "FAQ по известным проблемам",

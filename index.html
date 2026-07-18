@@ -277,25 +277,32 @@
         }
 
         .winner-section {
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(40, 36, 28, 0.85);
             border-radius: 10px;
-            padding: 10px;
+            padding: 12px 14px;
             margin: 15px 0;
-            text-align: center;
-            border: 1px solid rgba(255, 215, 0, 0.3);
+            text-align: left;
+            border: 1px solid rgba(255, 215, 0, 0.55);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .winner-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
             color: #ffd700;
-            margin-right: 10px;
         }
 
         .winner-nation {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            font-size: 1.2rem;
+            gap: 10px;
+            font-size: 1.15rem;
             font-weight: bold;
             color: #ffd700;
         }
@@ -359,10 +366,25 @@
         }
 
         .survivor-wonders {
-            margin: 4px 0 0 30px;
+            margin: 6px 0 0 30px;
             font-size: 0.85rem;
             color: rgba(255, 255, 255, 0.85);
             line-height: 1.35;
+        }
+
+        .survivor-wonders-list {
+            margin: 4px 0 0;
+            padding-left: 1.1rem;
+        }
+
+        .survivor-wonders-list li {
+            margin-bottom: 2px;
+        }
+
+        .survivor-stats {
+            margin: 4px 0 0 30px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .survivors-empty {
@@ -616,8 +638,11 @@
     const CONFIG = {
         nationsPath: 'Nation_icons/',
         colorsPath: 'nation_colors.json',
+        wonderNamesPath: 'wonder_names_ru.json',
         replaysPath: 'replays/'
     };
+
+    let wonderNamesRu = {};
 
     // Массив соответствия русских и английских названий наций
     const nations = [
@@ -890,11 +915,16 @@
         return dataUrl;
     }
 
+    function wonderNameRu(englishName) {
+        return wonderNamesRu[englishName] || englishName;
+    }
+
     function renderNationPortrait(russianName, extraClass) {
         const size = extraClass && extraClass.includes('player-nation-mini') ? 20 : 24;
         const cls = ['nation-portrait', extraClass].filter(Boolean).join(' ');
-        return `<span class="${cls}" data-nation="${russianName}" data-size="${size}" ` +
-            `role="img" aria-label="${russianName}"></span>`;
+        const safe = String(russianName || '').replace(/"/g, '&quot;');
+        return `<span class="${cls}" data-nation="${safe}" data-size="${size}" ` +
+            `title="${safe}" role="img" aria-label="${safe}"></span>`;
     }
 
     async function hydrateNationPortraits(root) {
@@ -908,6 +938,7 @@
                 const img = document.createElement('img');
                 img.src = src;
                 img.alt = name;
+                img.title = name;
                 el.appendChild(img);
             } catch (e) {
                 console.warn('hydrate portrait failed', name, e);
@@ -979,6 +1010,16 @@
                     const ideology = (row.ideology || '').trim();
                     const wonders = Array.isArray(row.wonders) ? row.wonders.filter(Boolean) : [];
                     const name = (row.name || '').trim() || '—';
+                    const techs = Number.isFinite(Number(row.techs)) ? Number(row.techs) : null;
+                    const policies = Number.isFinite(Number(row.policies)) ? Number(row.policies) : null;
+                    const statsParts = [];
+                    if (techs !== null) statsParts.push(`Технологий: ${techs}`);
+                    if (policies !== null) statsParts.push(`Институтов: ${policies}`);
+                    const wondersBlock = wonders.length
+                        ? `<div class="survivor-wonders">Чудеса:<ul class="survivor-wonders-list">${
+                            wonders.map(w => `<li>${wonderNameRu(w)}</li>`).join('')
+                          }</ul></div>`
+                        : '<div class="survivor-wonders">Чудес нет</div>';
                     return `
                         <div class="survivor-item">
                             <div class="survivor-head">
@@ -990,9 +1031,8 @@
                                 ${row.nation || ''}
                                 ${ideology ? ` · <span class="survivor-ideology">${ideology}</span>` : ' · идеология не принята'}
                             </div>
-                            <div class="survivor-wonders">
-                                ${wonders.length ? `Чудеса: ${wonders.join(', ')}` : 'Чудес нет'}
-                            </div>
+                            ${statsParts.length ? `<div class="survivor-stats">${statsParts.join(' · ')}</div>` : ''}
+                            ${wondersBlock}
                         </div>
                     `;
                 }).join('')
@@ -1007,11 +1047,11 @@
                 </div>
                 ${game.map ? `<div class="game-map">🗺️ ${game.map}</div>` : ''}
                 <div class="winner-section">
-                    <span class="winner-label">🏆 ПОБЕДИТЕЛЬ:</span>
-                    <span class="winner-nation">
+                    <div class="winner-label">🏆 ПОБЕДИТЕЛЬ:</div>
+                    <div class="winner-nation">
                         ${renderNationPortrait(game.winner, 'nation-icon-small')}
-                        ${game.winner}
-                    </span>
+                        <span>${game.winner}</span>
+                    </div>
                 </div>
                 <div class="card-tabs">
                     <button type="button" class="card-tab active" data-tab="roster">Состав</button>
@@ -1081,9 +1121,10 @@
     // Загрузка данных
     async function loadGamesData() {
         try {
-            const [gamesResponse, colorsResponse] = await Promise.all([
+            const [gamesResponse, colorsResponse, wondersResponse] = await Promise.all([
                 fetch('Games.json'),
                 fetch(CONFIG.colorsPath),
+                fetch(CONFIG.wonderNamesPath),
             ]);
             if (!gamesResponse.ok) throw new Error(`HTTP ${gamesResponse.status}`);
 
@@ -1095,6 +1136,13 @@
                 }
             } else {
                 console.warn('nation_colors.json не загружен, иконки без tint');
+            }
+
+            if (wondersResponse.ok) {
+                const wondersData = await wondersResponse.json();
+                wonderNamesRu = wondersData.names || wondersData || {};
+            } else {
+                console.warn('wonder_names_ru.json не загружен');
             }
 
             const data = await gamesResponse.json();
