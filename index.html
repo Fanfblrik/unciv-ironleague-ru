@@ -19,7 +19,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+            background: #12121c;
             color: #f0f0f0;
             padding: 20px;
             min-height: 100vh;
@@ -72,11 +72,43 @@
 
         .view-panel {
             display: none;
+            position: relative;
         }
 
         .view-panel.active {
             display: block;
         }
+
+        .view-panel::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+        }
+
+        .view-panel.active::before {
+            opacity: 1;
+        }
+
+        .view-panel::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(180deg, rgba(14,14,24,0.72), rgba(14,14,24,0.88));
+            pointer-events: none;
+        }
+
+        #viewArchive::before { background-image: url('bg/archive.png'); }
+        #viewStats::before { background-image: url('bg/stats.png'); }
+        #viewTierlist::before { background-image: url('bg/tierlist.png'); }
+        #viewFaq::before { background-image: url('bg/faq.png'); }
 
         .faq-toolbar {
             display: flex;
@@ -1504,6 +1536,15 @@
     }
 
 
+    function sortSurvivorsByScore(rows) {
+        return [...(rows || [])].sort((a, b) => {
+            const as = (a && Number.isFinite(Number(a.score))) ? Number(a.score) : -1;
+            const bs = (b && Number.isFinite(Number(b.score))) ? Number(b.score) : -1;
+            if (bs !== as) return bs - as;
+            return String((a && a.nation) || '').localeCompare(String((b && b.nation) || ''), 'ru');
+        });
+    }
+
     function isKnownTurn(value) {
         if (value === null || value === undefined || value === '') return false;
         const n = Number(value);
@@ -1716,7 +1757,7 @@
             </div>`;
         }).join('');
 
-        const survivors = Array.isArray(game.survivors) ? game.survivors : [];
+        const survivors = sortSurvivorsByScore(Array.isArray(game.survivors) ? game.survivors : []);
         const survivorsHtml = survivors.length
             ? survivors.map((row) => renderSurvivorBlock(row, game, 'full')).join('')
             : '<div class="survivors-empty">Нет данных о финале</div>';
@@ -1780,7 +1821,7 @@
                 `;
             }).join('');
 
-            const survivors = Array.isArray(game.survivors) ? game.survivors : [];
+            const survivors = sortSurvivorsByScore(Array.isArray(game.survivors) ? game.survivors : []);
             const survivorsHtml = survivors.length
                 ? survivors.map(row => renderSurvivorBlock(row, game, 'compact')).join('')
                 : '<div class="survivors-empty">Нет данных о финале (появится после синка из сейва)</div>';
