@@ -322,6 +322,18 @@
             color: #ffd700;
         }
 
+        .finale-ending {
+            margin: 0 0 12px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            background: rgba(255, 215, 0, 0.08);
+            color: #ffd700;
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
         .card-tabs {
             display: flex;
             gap: 8px;
@@ -996,6 +1008,22 @@
         return dataUrl;
     }
 
+    function victoryTypeRu(victoryType) {
+        const key = String(victoryType || '').trim();
+        const map = {
+            Scientific: 'Научная победа',
+            Science: 'Научная победа',
+            Cultural: 'Культурная победа',
+            Domination: 'Военная победа',
+            Diplomatic: 'Дипломатическая победа',
+            Time: 'Победа по времени',
+            CC: 'Досрочное окончание (СС)',
+            SS: 'Досрочное окончание (СС)',
+        };
+        if (!key) return map.CC;
+        return map[key] || key;
+    }
+
     function wonderNameRu(englishName) {
         return wonderNamesRu[englishName] || englishName;
     }
@@ -1084,7 +1112,7 @@
             const card = document.createElement('div');
             card.className = 'game-card';
 
-            const playersHtml = game.players.map(player => {
+            const playersHtml = (Array.isArray(game.players) ? game.players : []).map(player => {
                 const isWinner = player.nation === game.winner;
                 const isHighlighted = searchQuery && player.name.toLowerCase().includes(searchQuery);
 
@@ -1100,6 +1128,7 @@
             const survivors = Array.isArray(game.survivors) ? game.survivors : [];
             const survivorsHtml = survivors.length
                 ? survivors.map(row => {
+                    const isWinner = row.nation === game.winner;
                     const isAlive = Object.prototype.hasOwnProperty.call(row, 'alive')
                         ? Boolean(row.alive)
                         : true;
@@ -1192,6 +1221,7 @@
                     <div class="players-list">${playersHtml}</div>
                 </div>
                 <div class="card-tab-panel" data-panel="survivors">
+                    <div class="finale-ending">🏁 ${victoryTypeRu(game.victoryType)}</div>
                     <div class="players-list">${survivorsHtml}</div>
                 </div>
                 ${hasGif ? `
