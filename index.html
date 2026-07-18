@@ -586,17 +586,6 @@
             color: #ffd700;
         }
 
-        .future-ideas {
-            margin-top: 8px;
-            padding-left: 1.2rem;
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.5;
-        }
-
-        .future-ideas li {
-            margin-bottom: 6px;
-        }
-
         /* Unciv-style portrait: canvas paints outer/inner colors + centered icon */
         .nation-portrait {
             display: inline-block;
@@ -848,7 +837,7 @@
 
         <div class="stats-section">
             <h2>Нации: пики и винрейт</h2>
-            <p class="hint">Сколько раз нация попадала в состав и как часто побеждала.</p>
+            <p class="hint">Все нации мода. Не пикнутые — 0 пиков и 0% винрейта.</p>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="nationStatsTable">
                     <thead>
@@ -881,21 +870,6 @@
                     <tbody></tbody>
                 </table>
             </div>
-        </div>
-
-        <div class="stats-section">
-            <h2>Что ещё можно тянуть из сейва (идеи)</h2>
-            <p class="hint">Сейчас считается из Games.json. Ниже — кандидаты для доработки цив-бота и бэкапа финала.</p>
-            <ul class="future-ideas">
-                <li>Ход выбывания / ход потери столицы</li>
-                <li>Эра, очки, сила армии и наука/ход на финише</li>
-                <li>Число городов и население на финише</li>
-                <li>Основана ли религия, принята ли идеология и когда</li>
-                <li>Части корабля / прогресс научной победы</li>
-                <li>Войны объявленные / полученные, CS в союзе</li>
-                <li>Порядок драфта, рероллы, вето и СС-голоса из логов бота</li>
-                <li>Тип карты, мод/версия уже есть — можно сводить отдельно</li>
-            </ul>
         </div>
     </div>
 
@@ -1381,8 +1355,36 @@
                     const techs = Number.isFinite(Number(row.techs)) ? Number(row.techs) : null;
                     const policies = Number.isFinite(Number(row.policies)) ? Number(row.policies) : null;
                     const statsParts = [];
+                    if (row.era) statsParts.push(`Эра: ${row.era}`);
+                    if (Number.isFinite(Number(row.score))) statsParts.push(`Очки: ${row.score}`);
+                    if (Number.isFinite(Number(row.strength))) statsParts.push(`Сила: ${row.strength}`);
+                    if (Number.isFinite(Number(row.science))) statsParts.push(`Наука: ${row.science}`);
+                    if (Number.isFinite(Number(row.cities))) statsParts.push(`Города: ${row.cities}`);
+                    if (Number.isFinite(Number(row.population))) statsParts.push(`Население: ${row.population}`);
                     if (isAlive && techs !== null) statsParts.push(`Технологий: ${techs}`);
                     if (isAlive && policies !== null) statsParts.push(`Институтов: ${policies}`);
+                    if (row.religion) {
+                        const relState = (row.religion_state || '').trim();
+                        statsParts.push(relState ? `Религия: ${row.religion} (${relState})` : `Религия: ${row.religion}`);
+                    } else if (row.religion_state) {
+                        statsParts.push(`Религия: ${row.religion_state}`);
+                    }
+                    if (Number.isFinite(Number(row.ideology_turn))) {
+                        statsParts.push(`Идеология с хода ${row.ideology_turn}`);
+                    }
+                    if (Number.isFinite(Number(row.eliminated_turn))) {
+                        statsParts.push(`Выбыл на ходе ${row.eliminated_turn}`);
+                    }
+                    if (Number.isFinite(Number(row.capital_lost_turn))) {
+                        statsParts.push(`Столица потеряна на ходе ${row.capital_lost_turn}`);
+                    }
+                    if (Number.isFinite(Number(row.wars_declared)) || Number.isFinite(Number(row.wars_received))) {
+                        const wd = Number.isFinite(Number(row.wars_declared)) ? row.wars_declared : 0;
+                        const wr = Number.isFinite(Number(row.wars_received)) ? row.wars_received : 0;
+                        statsParts.push(`Войны: ${wd} объявлено / ${wr} получено`);
+                    }
+                    const spaceship = Array.isArray(row.spaceship) ? row.spaceship.filter(Boolean) : [];
+                    if (spaceship.length) statsParts.push(`Корабль: ${spaceship.join(', ')}`);
                     const hasCapital = Object.prototype.hasOwnProperty.call(row, 'has_capital')
                         ? Boolean(row.has_capital)
                         : true;
@@ -1428,9 +1430,9 @@
                             </div>
                             <div class="survivor-meta">
                                 ${row.nation || ''}
-                                ${isAlive
-                                    ? (ideology ? ` · <span class="survivor-ideology">${ideology}</span>` : ' · идеология не принята')
-                                    : ''}
+                                ${ideology
+                                    ? ` · <span class="survivor-ideology">${ideology}</span>`
+                                    : (isAlive ? ' · идеология не принята' : '')}
                             </div>
                             ${flagHtml}
                             ${statsParts.length ? `<div class="survivor-stats">${statsParts.join(' · ')}</div>` : ''}
@@ -1440,6 +1442,32 @@
                     `;
                 }).join('')
                 : '<div class="survivors-empty">Нет данных о финале (появится после синка из сейва)</div>';
+
+            const league = game.league && typeof game.league === 'object' ? game.league : null;
+            let leagueHtml = '';
+            if (league) {
+                const bits = [];
+                if (league.cc && league.cc.nation) {
+                    const cc = league.cc;
+                    bits.push(
+                        `СС: ${cc.nation} (ход ${cc.start ?? '—'})`
+                        + (cc.plus && cc.plus.length ? ` · за: ${cc.plus.join(', ')}` : '')
+                        + (cc.minus && cc.minus.length ? ` · против: ${cc.minus.join(', ')}` : '')
+                        + (cc.abstain && cc.abstain.length ? ` · воздержались: ${cc.abstain.join(', ')}` : ''),
+                    );
+                }
+                if (league.draft && league.draft.selected) {
+                    const picks = Object.values(league.draft.selected).filter(Boolean);
+                    if (picks.length) bits.push(`Драфт (выборы): ${picks.join(', ')}`);
+                }
+                if (league.draft && league.draft.banned) {
+                    const bans = Object.values(league.draft.banned).filter(Boolean);
+                    if (bans.length) bits.push(`Баны: ${bans.join(', ')}`);
+                }
+                if (bits.length) {
+                    leagueHtml = `<div class="survivor-stats" style="margin-top:10px">${bits.join('<br>')}</div>`;
+                }
+            }
 
             const hasGif = game.gif && game.gif.trim() !== '';
 
@@ -1466,6 +1494,7 @@
                 <div class="card-tab-panel" data-panel="survivors">
                     <div class="finale-ending">🏁 ${victoryTypeRu(game.victoryType)}</div>
                     <div class="players-list">${survivorsHtml}</div>
+                    ${leagueHtml}
                 </div>
                 ${hasGif ? `
                     <button class="replay-button" data-replay="${game.gif}">🎬 Смотреть реплей</button>
@@ -1668,6 +1697,11 @@
             return nationStats.get(nation);
         };
 
+        // Seed every mod nation so unpicked civs show 0 / 0%.
+        for (const n of nations) {
+            if (n && n.rus) ensureNation(n.rus);
+        }
+
         for (const game of games || []) {
             const roster = Array.isArray(game.players) ? game.players : [];
             const winnerNation = game.winner || '';
@@ -1780,7 +1814,7 @@
 
         fillSortableTable(
             document.getElementById('nationStatsTable'),
-            nationRows.filter((n) => n.picks > 0),
+            nationRows,
             (n) => `<tr>
                 <td><span class="nation-cell">${renderNationPortrait(n.nation, 'player-nation-mini')}${n.nation}</span></td>
                 <td class="num">${n.picks}</td>
