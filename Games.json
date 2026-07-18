@@ -45,9 +45,9 @@
           "name": "munlait21",
           "nation": "Вавилон",
           "ideology": "",
-          "wonders": [
-            "Notre Dame"
-          ]
+          "wonders": [],
+          "techs": 20,
+          "policies": 5
         },
         {
           "name": "ICanSeeForever",
@@ -56,27 +56,32 @@
           "wonders": [
             "Statue of Zeus",
             "Temple of Artemis"
-          ]
+          ],
+          "techs": 17,
+          "policies": 5
         },
         {
           "name": "Click4x",
           "nation": "Корея",
           "ideology": "",
           "wonders": [
-            "Terracotta Army",
-            "Colossus"
-          ]
+            "Terracotta Army"
+          ],
+          "techs": 21,
+          "policies": 7
         },
         {
           "name": "den_stu",
           "nation": "Норвегия",
           "ideology": "",
           "wonders": [
+            "Mausoleum of Halicarnassus",
             "The Oracle",
             "The Great Lighthouse",
-            "Great Mosque of Djenne",
-            "Mausoleum of Halicarnassus"
-          ]
+            "Great Mosque of Djenne"
+          ],
+          "techs": 26,
+          "policies": 10
         },
         {
           "name": "Ouni0",
@@ -85,7 +90,9 @@
           "wonders": [
             "The Pyramids",
             "Great Wall"
-          ]
+          ],
+          "techs": 18,
+          "policies": 5
         },
         {
           "name": "Overslidishe",
@@ -94,17 +101,19 @@
           "wonders": [
             "The Great Library",
             "Stonehenge"
-          ]
+          ],
+          "techs": 23,
+          "policies": 7
         },
         {
           "name": "VlaterRogue",
           "nation": "Шотландия",
           "ideology": "",
           "wonders": [
-            "Chichen Itza",
-            "Hanging Gardens",
             "Petra"
-          ]
+          ],
+          "techs": 20,
+          "policies": 6
         }
       ]
     },
@@ -160,36 +169,44 @@
         {
           "name": "ICanSeeForever",
           "nation": "Америка",
-          "ideology": "Порядок",
+          "ideology": "",
           "wonders": [
             "Machu Picchu"
-          ]
+          ],
+          "techs": 24,
+          "policies": 8
         },
         {
           "name": "Click4x",
           "nation": "Аргентина",
-          "ideology": "Свобода",
+          "ideology": "",
           "wonders": [
             "The Great Lighthouse",
-            "Colossus",
-            "Great Mosque of Djenne",
-            "Hagia Sophia"
-          ]
+            "Colossus"
+          ],
+          "techs": 25,
+          "policies": 10
         },
         {
           "name": "freedomanarhy",
           "nation": "Золотая Орда",
-          "ideology": "Автократия",
+          "ideology": "",
           "wonders": [
-            "Himeji Castle",
             "Temple of Artemis"
-          ]
+          ],
+          "techs": 22,
+          "policies": 8
         },
         {
           "name": "Overslidishe",
           "nation": "Иерусалим",
           "ideology": "",
-          "wonders": []
+          "wonders": [
+            "Great Mosque of Djenne",
+            "Hagia Sophia"
+          ],
+          "techs": 27,
+          "policies": 7
         },
         {
           "name": "VlaterRogue",
@@ -197,20 +214,22 @@
           "ideology": "",
           "wonders": [
             "Great Wall"
-          ]
+          ],
+          "techs": 23,
+          "policies": 8
         },
         {
           "name": "den_stu",
           "nation": "Пруссия",
-          "ideology": "Порядок",
+          "ideology": "",
           "wonders": [
-            "Stonehenge",
             "Notre Dame",
+            "Stonehenge",
             "The Pyramids",
-            "Porcelain Tower",
-            "Brandenburg Gate",
             "Terracotta Army"
-          ]
+          ],
+          "techs": 25,
+          "policies": 9
         },
         {
           "name": "khtoyaaty",
@@ -218,30 +237,24 @@
           "ideology": "",
           "wonders": [
             "Statue of Zeus"
-          ]
+          ],
+          "techs": 20,
+          "policies": 6
         },
         {
           "name": "munlait21",
           "nation": "Сиам",
-          "ideology": "Свобода",
+          "ideology": "",
           "wonders": [
-            "Alhambra",
-            "Petra",
-            "Leaning Tower of Pisa",
-            "Forbidden Palace",
             "The Oracle",
-            "Chichen Itza",
-            "Taj Mahal",
-            "Eiffel Tower",
-            "Sistine Chapel",
             "Angkor Wat",
-            "Cristo Redentor",
+            "Chichen Itza",
+            "Petra",
             "Hanging Gardens",
-            "Statue of Liberty",
-            "Neuschwanstein",
-            "Big Ben",
             "Mausoleum of Halicarnassus"
-          ]
+          ],
+          "techs": 27,
+          "policies": 10
         },
         {
           "name": "Ouni0",
@@ -249,7 +262,9 @@
           "ideology": "",
           "wonders": [
             "The Great Library"
-          ]
+          ],
+          "techs": 23,
+          "policies": 9
         }
       ]
     },
@@ -313,13 +328,17 @@
           "wonders": [
             "Hanging Gardens",
             "Machu Picchu"
-          ]
+          ],
+          "techs": 25,
+          "policies": 7
         },
         {
           "name": "VlaterRogue",
           "nation": "Италия",
           "ideology": "",
-          "wonders": []
+          "wonders": [],
+          "techs": 21,
+          "policies": 7
         },
         {
           "name": "Nepherthos",
@@ -329,7 +348,9 @@
             "Terracotta Army",
             "Stonehenge",
             "Great Wall"
-          ]
+          ],
+          "techs": 20,
+          "policies": 7
         },
         {
           "name": "khtoyaaty",
@@ -337,51 +358,59 @@
           "ideology": "",
           "wonders": [
             "Mausoleum of Halicarnassus"
-          ]
+          ],
+          "techs": 19,
+          "policies": 7
         },
         {
           "name": "munlait21",
           "nation": "Персия",
           "ideology": "",
           "wonders": [
-            "Angkor Wat",
             "Chichen Itza",
-            "Petra"
-          ]
+            "Petra",
+            "Angkor Wat"
+          ],
+          "techs": 25,
+          "policies": 8
         },
         {
           "name": "Overslidishe",
           "nation": "Польша",
           "ideology": "",
           "wonders": [
-            "Great Mosque of Djenne",
-            "Hagia Sophia"
-          ]
+            "Hagia Sophia",
+            "Great Mosque of Djenne"
+          ],
+          "techs": 21,
+          "policies": 9
         },
         {
           "name": "den_stu",
           "nation": "Румыния",
           "ideology": "",
-          "wonders": [
-            "Notre Dame",
-            "Himeji Castle"
-          ]
+          "wonders": [],
+          "techs": 25,
+          "policies": 9
         },
         {
           "name": "Click4x",
           "nation": "Сонгай",
           "ideology": "",
-          "wonders": []
+          "wonders": [],
+          "techs": 23,
+          "policies": 8
         },
         {
           "name": "ICanSeeForever",
           "nation": "Тимуриды",
           "ideology": "",
           "wonders": [
-            "Alhambra",
             "Statue of Zeus",
             "The Pyramids"
-          ]
+          ],
+          "techs": 20,
+          "policies": 7
         },
         {
           "name": "freedomanarhy",
@@ -393,7 +422,9 @@
             "Temple of Artemis",
             "The Great Lighthouse",
             "Colossus"
-          ]
+          ],
+          "techs": 24,
+          "policies": 9
         }
       ]
     },
@@ -720,7 +751,9 @@
             "Cristo Redentor",
             "CN Tower",
             "The Oracle"
-          ]
+          ],
+          "techs": 73,
+          "policies": 25
         },
         {
           "name": "YukiHino98",
@@ -732,7 +765,9 @@
             "Colossus",
             "Statue of Zeus",
             "Great Wall"
-          ]
+          ],
+          "techs": 61,
+          "policies": 23
         },
         {
           "name": "Fanfblrik",
@@ -742,13 +777,17 @@
             "Pentagon",
             "Mausoleum of Halicarnassus",
             "Himeji Castle"
-          ]
+          ],
+          "techs": 63,
+          "policies": 18
         },
         {
           "name": "AlexUnderHill",
           "nation": "Норвегия",
           "ideology": "Свобода",
-          "wonders": []
+          "wonders": [],
+          "techs": 75,
+          "policies": 37
         },
         {
           "name": "VlaterRogue",
@@ -764,7 +803,9 @@
             "Hubble Space Telescope",
             "Big Ben",
             "Hagia Sophia"
-          ]
+          ],
+          "techs": 75,
+          "policies": 32
         }
       ]
     },
@@ -835,7 +876,9 @@
             "The Pyramids",
             "Great Mosque of Djenne",
             "Eiffel Tower"
-          ]
+          ],
+          "techs": 62,
+          "policies": 29
         },
         {
           "name": "YukiHino98",
@@ -849,7 +892,9 @@
             "Cristo Redentor",
             "Hanging Gardens",
             "Great Wall"
-          ]
+          ],
+          "techs": 60,
+          "policies": 32
         },
         {
           "name": "Overslidishe",
@@ -857,7 +902,9 @@
           "ideology": "Порядок",
           "wonders": [
             "The Louvre"
-          ]
+          ],
+          "techs": 56,
+          "policies": 26
         },
         {
           "name": "VlaterRogue",
@@ -871,7 +918,9 @@
             "Mausoleum of Halicarnassus",
             "Big Ben",
             "Petra"
-          ]
+          ],
+          "techs": 53,
+          "policies": 25
         },
         {
           "name": "EmperorPenguin01",
@@ -888,7 +937,9 @@
             "Leaning Tower of Pisa",
             "Stonehenge",
             "Kremlin"
-          ]
+          ],
+          "techs": 62,
+          "policies": 31
         },
         {
           "name": "n9306867842",
@@ -896,7 +947,9 @@
           "ideology": "Автократия",
           "wonders": [
             "Terracotta Army"
-          ]
+          ],
+          "techs": 56,
+          "policies": 20
         }
       ]
     },
@@ -971,7 +1024,9 @@
             "Eiffel Tower",
             "Great Wall",
             "Petra"
-          ]
+          ],
+          "techs": 61,
+          "policies": 37
         },
         {
           "name": "Click4x",
@@ -983,7 +1038,9 @@
             "Brandenburg Gate",
             "The Pyramids",
             "Neuschwanstein"
-          ]
+          ],
+          "techs": 57,
+          "policies": 20
         },
         {
           "name": "munlait21",
@@ -991,7 +1048,9 @@
           "ideology": "Автократия",
           "wonders": [
             "Porcelain Tower"
-          ]
+          ],
+          "techs": 54,
+          "policies": 18
         },
         {
           "name": "VlaterRogue",
@@ -1002,7 +1061,9 @@
             "Stonehenge",
             "Hagia Sophia",
             "Big Ben"
-          ]
+          ],
+          "techs": 52,
+          "policies": 24
         },
         {
           "name": "konoval_mik",
@@ -1011,13 +1072,17 @@
           "wonders": [
             "Himeji Castle",
             "Notre Dame"
-          ]
+          ],
+          "techs": 53,
+          "policies": 27
         },
         {
           "name": "AlexUnderHill",
           "nation": "Сиам",
           "ideology": "Автократия",
-          "wonders": []
+          "wonders": [],
+          "techs": 53,
+          "policies": 23
         },
         {
           "name": "den_stu",
@@ -1031,7 +1096,9 @@
             "Mausoleum of Halicarnassus",
             "Forbidden Palace",
             "Alhambra"
-          ]
+          ],
+          "techs": 56,
+          "policies": 26
         }
       ]
     },
@@ -1084,7 +1151,9 @@
           "name": "",
           "nation": "Trieste",
           "ideology": "Свобода",
-          "wonders": []
+          "wonders": [],
+          "techs": 53,
+          "policies": 13
         },
         {
           "name": "AlexUnderHill",
@@ -1098,7 +1167,9 @@
             "Notre Dame",
             "Leaning Tower of Pisa",
             "Mausoleum of Halicarnassus"
-          ]
+          ],
+          "techs": 50,
+          "policies": 19
         },
         {
           "name": "EmperorPenguin01",
@@ -1115,7 +1186,9 @@
             "Temple of Artemis",
             "Stonehenge",
             "Great Wall"
-          ]
+          ],
+          "techs": 53,
+          "policies": 25
         },
         {
           "name": "den_stu",
@@ -1129,7 +1202,9 @@
             "Neuschwanstein",
             "The Pyramids",
             "Petra"
-          ]
+          ],
+          "techs": 55,
+          "policies": 22
         },
         {
           "name": "Click4x",
@@ -1141,7 +1216,9 @@
             "Colossus",
             "Forbidden Palace",
             "Hagia Sophia"
-          ]
+          ],
+          "techs": 50,
+          "policies": 19
         }
       ]
     },
@@ -1194,7 +1271,9 @@
           "name": "Click4x",
           "nation": "Ацтеки",
           "ideology": "Свобода",
-          "wonders": []
+          "wonders": [],
+          "techs": 64,
+          "policies": 38
         },
         {
           "name": "Fanfblrik",
@@ -1202,7 +1281,9 @@
           "ideology": "Порядок",
           "wonders": [
             "Terracotta Army"
-          ]
+          ],
+          "techs": 58,
+          "policies": 22
         },
         {
           "name": "den_stu",
@@ -1225,13 +1306,17 @@
             "Forbidden Palace",
             "Chichen Itza",
             "Eiffel Tower"
-          ]
+          ],
+          "techs": 68,
+          "policies": 30
         },
         {
           "name": "konoval_mik",
           "nation": "Галлы",
           "ideology": "Автократия",
-          "wonders": []
+          "wonders": [],
+          "techs": 62,
+          "policies": 22
         },
         {
           "name": "AlexUnderHill",
@@ -1241,7 +1326,9 @@
             "The Louvre",
             "Big Ben",
             "The Pyramids"
-          ]
+          ],
+          "techs": 60,
+          "policies": 25
         },
         {
           "name": "Overslidishe",
@@ -1261,7 +1348,9 @@
             "Machu Picchu",
             "Hagia Sophia",
             "Neuschwanstein"
-          ]
+          ],
+          "techs": 66,
+          "policies": 29
         },
         {
           "name": "munlait21",
@@ -1272,7 +1361,9 @@
             "The Great Lighthouse",
             "Taj Mahal",
             "Stonehenge"
-          ]
+          ],
+          "techs": 63,
+          "policies": 24
         }
       ]
     },
@@ -1345,7 +1436,9 @@
             "Stonehenge",
             "Notre Dame",
             "Petra"
-          ]
+          ],
+          "techs": 54,
+          "policies": 26
         },
         {
           "name": "EmperorPenguin01",
@@ -1356,7 +1449,9 @@
             "Hagia Sophia",
             "CN Tower",
             "Kremlin"
-          ]
+          ],
+          "techs": 59,
+          "policies": 27
         },
         {
           "name": "AlexUnderHill",
@@ -1367,7 +1462,9 @@
             "The Great Lighthouse",
             "Big Ben",
             "Neuschwanstein"
-          ]
+          ],
+          "techs": 52,
+          "policies": 19
         },
         {
           "name": "Fanfblrik",
@@ -1375,7 +1472,9 @@
           "ideology": "Порядок",
           "wonders": [
             "Great Mosque of Djenne"
-          ]
+          ],
+          "techs": 48,
+          "policies": 19
         },
         {
           "name": "Click4x",
@@ -1386,7 +1485,9 @@
             "Colossus",
             "Mausoleum of Halicarnassus",
             "Great Wall"
-          ]
+          ],
+          "techs": 49,
+          "policies": 23
         },
         {
           "name": "Overslidishe",
@@ -1396,7 +1497,9 @@
             "Terracotta Army",
             "Statue of Zeus",
             "Machu Picchu"
-          ]
+          ],
+          "techs": 47,
+          "policies": 19
         },
         {
           "name": "n9306867842",
@@ -1406,13 +1509,17 @@
             "Porcelain Tower",
             "Taj Mahal",
             "Temple of Artemis"
-          ]
+          ],
+          "techs": 54,
+          "policies": 22
         },
         {
           "name": "munlait21",
           "nation": "Тимуриды",
           "ideology": "Свобода",
-          "wonders": []
+          "wonders": [],
+          "techs": 49,
+          "policies": 16
         }
       ]
     },
@@ -1461,7 +1568,9 @@
             "Sistine Chapel",
             "Great Mosque of Djenne",
             "Notre Dame"
-          ]
+          ],
+          "techs": 50,
+          "policies": 23
         },
         {
           "name": "Click4x",
@@ -1478,7 +1587,9 @@
             "The Pyramids",
             "Stonehenge",
             "Mausoleum of Halicarnassus"
-          ]
+          ],
+          "techs": 45,
+          "policies": 22
         },
         {
           "name": "konoval_mik",
@@ -1491,7 +1602,9 @@
             "Great Wall",
             "Petra",
             "Hagia Sophia"
-          ]
+          ],
+          "techs": 38,
+          "policies": 13
         },
         {
           "name": "n9306867842",
@@ -1504,19 +1617,25 @@
             "Angkor Wat",
             "Colossus",
             "The Great Library"
-          ]
+          ],
+          "techs": 43,
+          "policies": 20
         },
         {
           "name": "Fanfblrik",
           "nation": "Россия",
           "ideology": "",
-          "wonders": []
+          "wonders": [],
+          "techs": 34,
+          "policies": 11
         },
         {
           "name": "AlexUnderHill",
           "nation": "Украина",
           "ideology": "",
-          "wonders": []
+          "wonders": [],
+          "techs": 32,
+          "policies": 12
         }
       ]
     },
@@ -1575,7 +1694,9 @@
           "ideology": "Порядок",
           "wonders": [
             "CN Tower"
-          ]
+          ],
+          "techs": 73,
+          "policies": 26
         },
         {
           "name": "VlaterRogue",
@@ -1586,7 +1707,9 @@
             "Temple of Artemis",
             "Stonehenge",
             "Petra"
-          ]
+          ],
+          "techs": 72,
+          "policies": 29
         },
         {
           "name": "AlexUnderHill",
@@ -1611,7 +1734,9 @@
             "Taj Mahal",
             "Eiffel Tower",
             "Hagia Sophia"
-          ]
+          ],
+          "techs": 77,
+          "policies": 36
         },
         {
           "name": "den_stu",
@@ -1625,7 +1750,9 @@
             "Great Firewall",
             "Machu Picchu",
             "Mausoleum of Halicarnassus"
-          ]
+          ],
+          "techs": 77,
+          "policies": 26
         },
         {
           "name": "Click4x",
@@ -1640,7 +1767,9 @@
             "Leaning Tower of Pisa",
             "Brandenburg Gate",
             "Porcelain Tower"
-          ]
+          ],
+          "techs": 73,
+          "policies": 32
         }
       ]
     },
@@ -1704,7 +1833,9 @@
           "wonders": [
             "Brandenburg Gate",
             "Kremlin"
-          ]
+          ],
+          "techs": 57,
+          "policies": 23
         },
         {
           "name": "munlait21",
@@ -1712,7 +1843,9 @@
           "ideology": "Свобода",
           "wonders": [
             "Statue of Zeus"
-          ]
+          ],
+          "techs": 55,
+          "policies": 25
         },
         {
           "name": "den_stu",
@@ -1723,7 +1856,9 @@
             "The Great Lighthouse",
             "Porcelain Tower",
             "Petra"
-          ]
+          ],
+          "techs": 60,
+          "policies": 24
         },
         {
           "name": "Fanfblrik",
@@ -1734,7 +1869,9 @@
             "Temple of Artemis",
             "Neuschwanstein",
             "Colossus"
-          ]
+          ],
+          "techs": 59,
+          "policies": 23
         },
         {
           "name": "Ouni0",
@@ -1744,7 +1881,9 @@
             "Big Ben",
             "Notre Dame",
             "Machu Picchu"
-          ]
+          ],
+          "techs": 51,
+          "policies": 17
         },
         {
           "name": "AlexUnderHill",
@@ -1756,7 +1895,9 @@
             "Angkor Wat",
             "Great Wall",
             "The Louvre"
-          ]
+          ],
+          "techs": 57,
+          "policies": 30
         },
         {
           "name": "Click4x",
@@ -1775,7 +1916,9 @@
             "Hanging Gardens",
             "Mausoleum of Halicarnassus",
             "Hagia Sophia"
-          ]
+          ],
+          "techs": 58,
+          "policies": 40
         }
       ]
     },
@@ -1841,7 +1984,9 @@
             "Hagia Sophia",
             "Great Mosque of Djenne",
             "Great Wall"
-          ]
+          ],
+          "techs": 65,
+          "policies": 32
         },
         {
           "name": "Ouni0",
@@ -1862,7 +2007,9 @@
             "Notre Dame",
             "CN Tower",
             "Big Ben"
-          ]
+          ],
+          "techs": 70,
+          "policies": 25
         },
         {
           "name": "Fanfblrik",
@@ -1871,7 +2018,9 @@
           "wonders": [
             "Leaning Tower of Pisa",
             "Kremlin"
-          ]
+          ],
+          "techs": 62,
+          "policies": 21
         }
       ]
     },
@@ -1931,7 +2080,9 @@
           "wonders": [
             "Forbidden Palace",
             "Big Ben"
-          ]
+          ],
+          "techs": 51,
+          "policies": 20
         },
         {
           "name": "Overslidishe",
@@ -1941,7 +2092,9 @@
             "The Great Lighthouse",
             "Colossus",
             "Leaning Tower of Pisa"
-          ]
+          ],
+          "techs": 51,
+          "policies": 23
         },
         {
           "name": "konoval_mik",
@@ -1952,7 +2105,9 @@
             "Hanging Gardens",
             "Angkor Wat",
             "Hagia Sophia"
-          ]
+          ],
+          "techs": 47,
+          "policies": 20
         },
         {
           "name": "Bahahanchiklkm",
@@ -1962,7 +2117,9 @@
             "Great Mosque of Djenne",
             "Stonehenge",
             "Temple of Artemis"
-          ]
+          ],
+          "techs": 60,
+          "policies": 28
         },
         {
           "name": "Lvxvcs",
@@ -1970,7 +2127,9 @@
           "ideology": "Свобода",
           "wonders": [
             "The Great Library"
-          ]
+          ],
+          "techs": 43,
+          "policies": 16
         },
         {
           "name": "Click4x",
@@ -1995,7 +2154,9 @@
             "Himeji Castle",
             "Brandenburg Gate",
             "Kremlin"
-          ]
+          ],
+          "techs": 60,
+          "policies": 27
         }
       ]
     },
@@ -2065,7 +2226,9 @@
           "ideology": "",
           "wonders": [
             "Statue of Zeus"
-          ]
+          ],
+          "techs": 36,
+          "policies": 15
         },
         {
           "name": "Bahahanchiklkm",
@@ -2078,7 +2241,9 @@
             "Stonehenge",
             "Machu Picchu",
             "Hagia Sophia"
-          ]
+          ],
+          "techs": 42,
+          "policies": 20
         },
         {
           "name": "REPUNZEL2882",
@@ -2088,7 +2253,9 @@
             "Sistine Chapel",
             "Mausoleum of Halicarnassus",
             "Petra"
-          ]
+          ],
+          "techs": 41,
+          "policies": 18
         },
         {
           "name": "Lvxvcs",
@@ -2096,7 +2263,9 @@
           "ideology": "",
           "wonders": [
             "The Great Lighthouse"
-          ]
+          ],
+          "techs": 39,
+          "policies": 10
         },
         {
           "name": "Click4x",
@@ -2109,7 +2278,9 @@
             "Himeji Castle",
             "The Oracle",
             "The Great Library"
-          ]
+          ],
+          "techs": 47,
+          "policies": 23
         },
         {
           "name": "Ouni0",
@@ -2118,7 +2289,9 @@
           "wonders": [
             "Chichen Itza",
             "Hanging Gardens"
-          ]
+          ],
+          "techs": 37,
+          "policies": 14
         },
         {
           "name": "Fanfblrik",
@@ -2126,7 +2299,9 @@
           "ideology": "Порядок",
           "wonders": [
             "Terracotta Army"
-          ]
+          ],
+          "techs": 40,
+          "policies": 17
         },
         {
           "name": "den_stu",
@@ -2139,7 +2314,9 @@
             "Big Ben",
             "Colossus",
             "Great Mosque of Djenne"
-          ]
+          ],
+          "techs": 44,
+          "policies": 20
         },
         {
           "name": "VlaterRogue",
@@ -2147,7 +2324,9 @@
           "ideology": "",
           "wonders": [
             "Angkor Wat"
-          ]
+          ],
+          "techs": 40,
+          "policies": 12
         }
       ]
     },
@@ -2206,7 +2385,9 @@
           "wonders": [
             "The Oracle",
             "Sistine Chapel"
-          ]
+          ],
+          "techs": 48,
+          "policies": 28
         },
         {
           "name": "AlexUnderHill",
@@ -2216,13 +2397,17 @@
             "Alhambra",
             "Temple of Artemis",
             "The Great Lighthouse"
-          ]
+          ],
+          "techs": 44,
+          "policies": 21
         },
         {
           "name": "REPUNZEL2882",
           "nation": "Набатея",
           "ideology": "Порядок",
-          "wonders": []
+          "wonders": [],
+          "techs": 45,
+          "policies": 16
         },
         {
           "name": "Bahahanchiklkm",
@@ -2238,7 +2423,9 @@
             "Terracotta Army",
             "Neuschwanstein",
             "Great Wall"
-          ]
+          ],
+          "techs": 51,
+          "policies": 24
         },
         {
           "name": "Lvxvcs",
@@ -2251,7 +2438,9 @@
             "Kremlin",
             "Machu Picchu",
             "Leaning Tower of Pisa"
-          ]
+          ],
+          "techs": 48,
+          "policies": 17
         },
         {
           "name": "n9306867842",
@@ -2264,7 +2453,9 @@
             "Chichen Itza",
             "Eiffel Tower",
             "Stonehenge"
-          ]
+          ],
+          "techs": 48,
+          "policies": 19
         },
         {
           "name": "konoval_mik",
@@ -2275,7 +2466,9 @@
             "The Great Library",
             "Statue of Zeus",
             "The Pyramids"
-          ]
+          ],
+          "techs": 41,
+          "policies": 14
         }
       ]
     },
@@ -2344,7 +2537,9 @@
             "Brandenburg Gate",
             "Kremlin",
             "The Great Lighthouse"
-          ]
+          ],
+          "techs": 64,
+          "policies": 22
         },
         {
           "name": "REPUNZEL2882",
@@ -2356,7 +2551,9 @@
             "The Great Library",
             "The Louvre",
             "Great Wall"
-          ]
+          ],
+          "techs": 57,
+          "policies": 25
         },
         {
           "name": "AlexUnderHill",
@@ -2370,7 +2567,9 @@
             "Chichen Itza",
             "Eiffel Tower",
             "Neuschwanstein"
-          ]
+          ],
+          "techs": 63,
+          "policies": 26
         },
         {
           "name": "Click4x",
@@ -2389,98 +2588,9 @@
             "Great Mosque of Djenne",
             "Cristo Redentor",
             "Petra"
-          ]
-        }
-      ]
-    },
-    {
-      "id": 24,
-      "version": "4.20.15 (Build 1229)",
-      "number": "Game 27",
-      "players": [
-        {
-          "name": "Click4x",
-          "nation": "Япония"
-        },
-        {
-          "name": "Bahahanchiklkm",
-          "nation": "Буры"
-        },
-        {
-          "name": "EmperorPenguin01",
-          "nation": "Ацтеки"
-        },
-        {
-          "name": "AlexUnderHill",
-          "nation": "Дания"
-        },
-        {
-          "name": "konoval_mik",
-          "nation": "Колумбия"
-        },
-        {
-          "name": "REPUNZEL2882",
-          "nation": "Бруней"
-        }
-      ],
-      "winner": "Ацтеки",
-      "map": "Pangaea",
-      "playerCount": 6,
-      "endedOnTurn": "125",
-      "victoryType": "",
-      "survivors": [
-        {
-          "name": "EmperorPenguin01",
-          "nation": "Ацтеки",
-          "ideology": "Автократия",
-          "wonders": [
-            "Alhambra",
-            "Hanging Gardens",
-            "Taj Mahal",
-            "Temple of Artemis",
-            "Chichen Itza",
-            "Mausoleum of Halicarnassus",
-            "Stonehenge",
-            "Machu Picchu",
-            "Sistine Chapel",
-            "The Oracle"
-          ]
-        },
-        {
-          "name": "REPUNZEL2882",
-          "nation": "Бруней",
-          "ideology": "Свобода",
-          "wonders": [
-            "The Great Library",
-            "The Pyramids",
-            "Angkor Wat",
-            "Notre Dame"
-          ]
-        },
-        {
-          "name": "AlexUnderHill",
-          "nation": "Дания",
-          "ideology": "Свобода",
-          "wonders": [
-            "Leaning Tower of Pisa",
-            "Terracotta Army",
-            "Statue of Zeus",
-            "The Great Lighthouse",
-            "Colossus"
-          ]
-        },
-        {
-          "name": "Click4x",
-          "nation": "Япония",
-          "ideology": "Порядок",
-          "wonders": [
-            "Great Mosque of Djenne",
-            "Brandenburg Gate",
-            "Kremlin",
-            "Himeji Castle",
-            "Great Wall",
-            "Petra"
-          ]
+          ],
+          "techs": 68,
+          "policies": 26
         }
       ]
     }
