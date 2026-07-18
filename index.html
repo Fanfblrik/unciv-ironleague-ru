@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Iron League — Архив и FAQ</title>
     <style>
         * {
@@ -735,6 +738,40 @@
         replaysPath: 'replays/'
     };
 
+    // Bust stale browser/CDN cache after GitHub Pages deploys.
+    // Build id is loaded from build-id.txt (changed every deploy) with a
+    // timestamp fallback so JSON is never served from an old disk cache.
+    let assetCacheBust = String(Date.now());
+
+    function assetUrl(path) {
+        const sep = path.includes('?') ? '&' : '?';
+        return `${path}${sep}v=${encodeURIComponent(assetCacheBust)}`;
+    }
+
+    async function fetchFresh(path, init) {
+        const opts = Object.assign({ cache: 'no-store' }, init || {});
+        return fetch(assetUrl(path), opts);
+    }
+
+    async function initAssetCacheBust() {
+        try {
+            const response = await fetch(`build-id.txt?v=${Date.now()}`, { cache: 'no-store' });
+            if (!response.ok) return;
+            const text = (await response.text()).trim();
+            if (text) assetCacheBust = text.split(/\r?\n/)[0].trim() || assetCacheBust;
+        } catch (e) {
+            // keep Date.now() fallback
+        }
+        if ('caches' in window) {
+            try {
+                const keys = await caches.keys();
+                await Promise.all(keys.map((key) => caches.delete(key)));
+            } catch (e) {
+                // ignore
+            }
+        }
+    }
+
     let wonderNamesRu = {};
 
     // Массив соответствия русских и английских названий наций
@@ -1283,9 +1320,9 @@
     async function loadGamesData() {
         try {
             const [gamesResponse, colorsResponse, wondersResponse] = await Promise.all([
-                fetch('Games.json'),
-                fetch(CONFIG.colorsPath),
-                fetch(CONFIG.wonderNamesPath),
+                fetchFresh('Games.json'),
+                fetchFresh(CONFIG.colorsPath),
+                fetchFresh(CONFIG.wonderNamesPath),
             ]);
             if (!gamesResponse.ok) throw new Error(`HTTP ${gamesResponse.status}`);
 
@@ -1325,8 +1362,11 @@
     }
 
     // Запуск
-    loadGamesData();
-    loadFaqData();
+    (async function boot() {
+        await initAssetCacheBust();
+        loadGamesData();
+        loadFaqData();
+    })();
 
     // Переключение разделов
     document.querySelectorAll('.site-nav-btn').forEach(btn => {
@@ -1350,7 +1390,7 @@
         const toc = document.getElementById('faqToc');
         const sourceEl = document.getElementById('faqSource');
         try {
-            const response = await fetch('faq.json');
+            const response = await fetchFresh('faq.json');
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             const data = await response.json();
             const sections = Array.isArray(data.sections) ? data.sections : [];
