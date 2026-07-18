@@ -952,7 +952,13 @@
     </div>
 
     <div class="view-panel" id="viewStats">
-        <div class="stats-section">
+        <div class="faq-toc" id="statsToc" aria-label="Разделы статистики">
+            <a href="#stats-winrate">Винрейт игроков</a>
+            <a href="#stats-nations">Нации: пики и винрейт</a>
+            <a href="#stats-player-detail">Игроки: нации и финал</a>
+            <a href="#stats-player-averages">Игроки: средние показатели</a>
+        </div>
+        <div class="stats-section" id="stats-winrate">
             <h2>Винрейт игроков</h2>
             <p class="hint">Победы / участия в играх из архива. Минимум 1 игра.</p>
             <div class="stats-table-wrap">
@@ -972,7 +978,7 @@
             </div>
         </div>
 
-        <div class="stats-section">
+        <div class="stats-section" id="stats-nations">
             <h2>Нации: пики и винрейт</h2>
             <p class="hint">Все нации мода. Не пикнутые — 0 пиков и 0% винрейта.</p>
             <div class="stats-table-wrap">
@@ -990,7 +996,7 @@
             </div>
         </div>
 
-        <div class="stats-section">
+        <div class="stats-section" id="stats-player-detail">
             <h2>Игроки: нации и финал</h2>
             <p class="hint">Кого брали чаще, чудеса и захваченные столицы (по данным вкладки «Финал», где они есть).</p>
             <div class="stats-table-wrap">
@@ -1002,6 +1008,30 @@
                             <th class="num" data-sort="uniqueNations">Уник. наций</th>
                             <th class="num" data-sort="wonders">Чудес (сумма)</th>
                             <th class="num" data-sort="conquered">Столиц захвачено</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="stats-section" id="stats-player-averages">
+            <h2>Игроки: средние показатели</h2>
+            <p class="hint">Средние по финалу (где есть survivors). Топ‑3 первых институтов — по первому открытому институту.</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="playerAveragesTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name">Игрок</th>
+                            <th class="num" data-sort="gamesWithStats">Игр со статой</th>
+                            <th class="num" data-sort="avgScore">Очки</th>
+                            <th class="num" data-sort="avgUnits">Юниты</th>
+                            <th class="num" data-sort="avgStrength">Сила</th>
+                            <th class="num" data-sort="avgScience">Наука</th>
+                            <th class="num" data-sort="avgCities">Города</th>
+                            <th class="num" data-sort="avgPopulation">Население</th>
+                            <th class="num" data-sort="avgTechs">Технологии</th>
+                            <th data-sort="topPolicies">Топ‑3 института</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -1521,6 +1551,10 @@
         if (isAlive && Number.isFinite(Number(row.policies))) push('Институты', row.policies);
         const ship = Array.isArray(row.spaceship) ? row.spaceship.filter(Boolean) : [];
         if (ship.length) push('Корабль', ship.join(', '));
+        if (row.first_policy) push('Первый институт', row.first_policy);
+        const branches = Array.isArray(row.policy_branches)
+            ? row.policy_branches.filter(Boolean) : [];
+        if (branches.length) push('Институты', branches.join(', '));
         return items;
     }
 
@@ -1969,6 +2003,26 @@
         return Math.round((wins / games) * 1000) / 10;
     }
 
+
+    function numOrNull(value) {
+        if (value === null || value === undefined || value === '') return null;
+        const n = Number(value);
+        return Number.isFinite(n) ? n : null;
+    }
+
+    function avg(sum, count) {
+        if (!count) return null;
+        return Math.round((sum / count) * 10) / 10;
+    }
+
+    function topNFromCounts(countsMap, n) {
+        return [...countsMap.entries()]
+            .sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0]), 'ru'))
+            .slice(0, n)
+            .map(([name, count]) => `${name} (${count})`)
+            .join(', ') || '—';
+    }
+
     function computeArchiveStats(games) {
         const players = new Map();
         const nationStats = new Map();
@@ -1984,6 +2038,22 @@
                     nationCounts: new Map(),
                     wonders: 0,
                     conquered: 0,
+                    statsGames: 0,
+                    sumScore: 0,
+                    sumUnits: 0,
+                    sumStrength: 0,
+                    sumScience: 0,
+                    sumCities: 0,
+                    sumPopulation: 0,
+                    sumTechs: 0,
+                    nScore: 0,
+                    nUnits: 0,
+                    nStrength: 0,
+                    nScience: 0,
+                    nCities: 0,
+                    nPopulation: 0,
+                    nTechs: 0,
+                    firstPolicyCounts: new Map(),
                 });
             }
             return players.get(name);
@@ -2029,6 +2099,29 @@
                 if (s.alive === false) row.eliminated += 1;
                 if (Array.isArray(s.wonders)) row.wonders += s.wonders.length;
                 if (Array.isArray(s.conquered_capitals)) row.conquered += s.conquered_capitals.length;
+
+                row.statsGames += 1;
+                const add = (keySum, keyN, raw) => {
+                    const v = numOrNull(raw);
+                    if (v === null) return;
+                    row[keySum] += v;
+                    row[keyN] += 1;
+                };
+                add('sumScore', 'nScore', s.score);
+                add('sumUnits', 'nUnits', s.units);
+                add('sumStrength', 'nStrength', s.strength);
+                add('sumScience', 'nScience', s.science);
+                add('sumCities', 'nCities', s.cities);
+                add('sumPopulation', 'nPopulation', s.population);
+                add('sumTechs', 'nTechs', s.techs);
+
+                const firstPol = (s.first_policy || '').trim();
+                if (firstPol) {
+                    row.firstPolicyCounts.set(
+                        firstPol,
+                        (row.firstPolicyCounts.get(firstPol) || 0) + 1,
+                    );
+                }
             }
         }
 
@@ -2046,6 +2139,15 @@
                 winrate: pct(p.wins, p.games),
                 topNation,
                 uniqueNations: p.nationCounts.size,
+                gamesWithStats: p.statsGames,
+                avgScore: avg(p.sumScore, p.nScore),
+                avgUnits: avg(p.sumUnits, p.nUnits),
+                avgStrength: avg(p.sumStrength, p.nStrength),
+                avgScience: avg(p.sumScience, p.nScience),
+                avgCities: avg(p.sumCities, p.nCities),
+                avgPopulation: avg(p.sumPopulation, p.nPopulation),
+                avgTechs: avg(p.sumTechs, p.nTechs),
+                topPolicies: topNFromCounts(p.firstPolicyCounts, 3),
             };
         });
 
@@ -2135,6 +2237,26 @@
                 <td class="num">${p.conquered}</td>
             </tr>`,
             'games',
+            'desc',
+        );
+
+        const fmtAvg = (v) => (v === null || v === undefined ? '—' : v);
+        fillSortableTable(
+            document.getElementById('playerAveragesTable'),
+            playerRows.filter((p) => p.gamesWithStats > 0),
+            (p) => `<tr>
+                <td>${p.name}</td>
+                <td class="num">${p.gamesWithStats}</td>
+                <td class="num">${fmtAvg(p.avgScore)}</td>
+                <td class="num">${fmtAvg(p.avgUnits)}</td>
+                <td class="num">${fmtAvg(p.avgStrength)}</td>
+                <td class="num">${fmtAvg(p.avgScience)}</td>
+                <td class="num">${fmtAvg(p.avgCities)}</td>
+                <td class="num">${fmtAvg(p.avgPopulation)}</td>
+                <td class="num">${fmtAvg(p.avgTechs)}</td>
+                <td>${p.topPolicies || '—'}</td>
+            </tr>`,
+            'gamesWithStats',
             'desc',
         );
     }
