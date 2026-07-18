@@ -268,6 +268,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
             margin-bottom: 15px;
             padding-bottom: 10px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -744,6 +746,141 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
+        .game-expand-btn {
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 215, 0, 0.45);
+            background: rgba(255, 215, 0, 0.12);
+            color: #ffd700;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .game-expand-btn:hover {
+            background: rgba(255, 215, 0, 0.22);
+        }
+
+        .survivor-stats-list {
+            margin: 8px 0 0 30px;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 16px;
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .survivor-stats-list li {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 3px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .survivor-stats-list .sk {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .survivor-stats-list .sv {
+            font-weight: 600;
+            text-align: right;
+        }
+
+        @media (max-width: 560px) {
+            .survivor-stats-list {
+                grid-template-columns: 1fr;
+                margin-left: 0;
+            }
+        }
+
+        .game-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(8, 8, 16, 0.88);
+            padding: 16px;
+            overflow: auto;
+        }
+
+        .game-modal.open {
+            display: block;
+        }
+
+        .game-modal-inner {
+            max-width: 980px;
+            margin: 0 auto 40px;
+            background: linear-gradient(160deg, #252538, #1a1a28);
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            border-radius: 16px;
+            padding: 20px 22px 28px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+        }
+
+        .game-modal-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .game-modal-close {
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(0, 0, 0, 0.25);
+            color: #fff;
+            border-radius: 8px;
+            padding: 8px 14px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .game-modal-section {
+            margin-top: 18px;
+        }
+
+        .game-modal-section h3 {
+            color: #ffd700;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+        }
+
+        .finale-table-wrap {
+            overflow-x: auto;
+        }
+
+        .finale-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.86rem;
+        }
+
+        .finale-table th,
+        .finale-table td {
+            padding: 8px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .finale-table th {
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .finale-table tr.elim-row {
+            background: rgba(80, 80, 90, 0.35);
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
         /* Подсветка найденного игрока */
         .player-item.highlighted {
             background: rgba(255, 215, 0, 0.3);
@@ -903,6 +1040,19 @@
         <div id="faqContent"></div>
     </div>
 </div>
+
+    <div class="game-modal" id="gameModal" aria-hidden="true">
+        <div class="game-modal-inner" role="dialog" aria-modal="true" aria-labelledby="gameModalTitle">
+            <div class="game-modal-top">
+                <div>
+                    <h2 id="gameModalTitle" style="color:#ffd700;margin:0 0 6px;font-size:1.4rem;"></h2>
+                    <div id="gameModalMeta" style="color:rgba(255,255,255,0.65);font-size:0.9rem;"></div>
+                </div>
+                <button type="button" class="game-modal-close" id="gameModalClose">Закрыть</button>
+            </div>
+            <div id="gameModalBody"></div>
+        </div>
+    </div>
 
 <footer>
     <p>📁 Хранилище реплеев | Нажмите на кнопку "Смотреть реплей" чтобы загрузить GIF</p>
@@ -1096,7 +1246,7 @@
             return `${CONFIG.nationsPath}${encodeURIComponent(englishName)}.png`;
         }
         console.warn(`Иконка для нации "${russianName}" не найдена`);
-        return `${CONFIG.nationsPath}Unknown.png`;
+        return `${CONFIG.nationsPath}Random.png`;
     }
 
     function getNationColors(russianName) {
@@ -1115,7 +1265,17 @@
         const promise = new Promise((resolve, reject) => {
             const img = new Image();
             img.onload = () => resolve(img);
-            img.onerror = reject;
+            img.onerror = () => {
+                const fallback = `${CONFIG.nationsPath}Random.png`;
+                if (url === fallback) {
+                    reject(new Error('icon missing'));
+                    return;
+                }
+                const fb = new Image();
+                fb.onload = () => resolve(fb);
+                fb.onerror = reject;
+                fb.src = fallback;
+            };
             img.src = url;
         });
         imageCache.set(url, promise);
@@ -1313,6 +1473,228 @@
         document.getElementById('uniquePlayers').textContent = allPlayers.size;
     }
 
+
+    function dash(value) {
+        if (value === null || value === undefined || value === '') return '—';
+        return value;
+    }
+
+    function turnOrDash(value, aliveLabel) {
+        if (Number.isFinite(Number(value))) return String(Number(value));
+        return aliveLabel || '—';
+    }
+
+    function compactSurvivorStats(row, isAlive) {
+        const items = [];
+        const push = (label, value) => {
+            if (value === null || value === undefined || value === '') return;
+            items.push({ label, value });
+        };
+        if (Number.isFinite(Number(row.score))) push('Очки', row.score);
+        if (Number.isFinite(Number(row.strength))) push('Сила', row.strength);
+        if (Number.isFinite(Number(row.science))) push('Наука', row.science);
+        if (Number.isFinite(Number(row.cities))) push('Города', row.cities);
+        if (Number.isFinite(Number(row.population))) push('Население', row.population);
+        if (isAlive && Number.isFinite(Number(row.techs))) push('Технологии', row.techs);
+        if (isAlive && Number.isFinite(Number(row.policies))) push('Институты', row.policies);
+        const ship = Array.isArray(row.spaceship) ? row.spaceship.filter(Boolean) : [];
+        if (ship.length) push('Корабль', ship.join(', '));
+        return items;
+    }
+
+    function fullSurvivorStats(row, isAlive) {
+        const items = compactSurvivorStats(row, isAlive);
+        const push = (label, value) => items.push({ label, value });
+        push('Эра', dash(row.era));
+        if (row.religion || row.religion_state) {
+            const rel = [row.religion, row.religion_state].filter(Boolean).join(' · ');
+            push('Религия', rel || '—');
+        } else {
+            push('Религия', '—');
+        }
+        push('Идеология', dash(row.ideology) || (isAlive ? 'не принята' : '—'));
+        push('Ход идеологии', turnOrDash(row.ideology_turn, '—'));
+        push('Ход выбывания', turnOrDash(row.eliminated_turn, isAlive ? 'не выбыл' : '—'));
+        push('Ход потери столицы', turnOrDash(row.capital_lost_turn, row.has_capital === false ? '—' : 'не терял'));
+        const wd = Number.isFinite(Number(row.wars_declared)) ? row.wars_declared : '—';
+        const wr = Number.isFinite(Number(row.wars_received)) ? row.wars_received : '—';
+        push('Войны (объявлено / получено)', `${wd} / ${wr}`);
+        const atWar = Array.isArray(row.wars) ? row.wars.filter(Boolean) : [];
+        if (atWar.length) push('В войне с', atWar.join(', '));
+        return items;
+    }
+
+    function renderStatsList(items) {
+        if (!items.length) return '';
+        return `<ul class="survivor-stats-list">${items.map((it) =>
+            `<li><span class="sk">${it.label}</span><span class="sv">${it.value}</span></li>`
+        ).join('')}</ul>`;
+    }
+
+    function renderSurvivorBlock(row, game, mode) {
+        const isWinner = row.nation === game.winner;
+        const isAlive = Object.prototype.hasOwnProperty.call(row, 'alive')
+            ? Boolean(row.alive)
+            : true;
+        const ideology = (row.ideology || '').trim();
+        const wonders = Array.isArray(row.wonders) ? row.wonders.filter(Boolean) : [];
+        const name = (row.name || '').trim() || '—';
+        const hasCapital = Object.prototype.hasOwnProperty.call(row, 'has_capital')
+            ? Boolean(row.has_capital)
+            : true;
+        const takenBy = (row.capital_taken_by || '').trim();
+        const conquered = Array.isArray(row.conquered_capitals)
+            ? row.conquered_capitals.filter(c => c && (c.nation || c.city))
+            : [];
+
+        let flagHtml = '';
+        if (isAlive && !hasCapital) {
+            flagHtml = '<div class="survivor-flag">Нет столицы</div>';
+        } else if (!isAlive && takenBy) {
+            flagHtml = `<div class="survivor-flag">Столицу захватил: ${takenBy}</div>`;
+        } else if (!isAlive) {
+            flagHtml = '<div class="survivor-flag">Выбыл (столица уничтожена или неизвестна)</div>';
+        }
+
+        const stats = mode === 'full'
+            ? fullSurvivorStats(row, isAlive)
+            : compactSurvivorStats(row, isAlive);
+        const statsHtml = renderStatsList(stats);
+
+        const capturedHtml = (isAlive && conquered.length)
+            ? `<div class="survivor-captured">Захваченные столицы:<ul class="survivor-captured-list">${
+                conquered.map(c => {
+                    const nat = c.nation || '';
+                    const city = c.city || '';
+                    return `<li>${renderNationPortrait(nat, 'player-nation-mini')}<span class="survivor-captured-city">${city || nat}</span></li>`;
+                }).join('')
+              }</ul></div>`
+            : '';
+
+        const wondersBlock = isAlive
+            ? (wonders.length
+                ? `<div class="survivor-wonders">Чудеса:<ul class="survivor-wonders-list">${
+                    wonders.map(w => renderWonderItem(w)).join('')
+                  }</ul></div>`
+                : '<div class="survivor-wonders">Чудес нет</div>')
+            : '';
+
+        const ideologyMeta = ideology
+            ? ` · <span class="survivor-ideology">${ideology}</span>`
+            : (isAlive ? ' · идеология не принята' : '');
+
+        return `
+            <div class="survivor-item ${isAlive ? '' : 'eliminated'}">
+                <div class="survivor-head">
+                    ${renderNationPortrait(row.nation, 'player-nation-mini')}
+                    <span class="player-name">${name}</span>
+                    ${isWinner ? '<span class="player-status">👑 Победитель</span>' : ''}
+                    ${!isAlive ? '<span class="player-status">💀 Выбыл</span>' : ''}
+                </div>
+                <div class="survivor-meta">
+                    ${row.nation || ''}${ideologyMeta}
+                </div>
+                ${flagHtml}
+                ${statsHtml}
+                ${capturedHtml}
+                ${wondersBlock}
+            </div>
+        `;
+    }
+
+    function renderLeagueBlock(game) {
+        const league = game.league && typeof game.league === 'object' ? game.league : null;
+        if (!league) return '';
+        const bits = [];
+        if (league.cc && league.cc.nation) {
+            const cc = league.cc;
+            bits.push(
+                `СС: ${cc.nation} (ход ${cc.start ?? '—'})`
+                + (cc.plus && cc.plus.length ? ` · за: ${cc.plus.join(', ')}` : '')
+                + (cc.minus && cc.minus.length ? ` · против: ${cc.minus.join(', ')}` : '')
+                + (cc.abstain && cc.abstain.length ? ` · воздержались: ${cc.abstain.join(', ')}` : ''),
+            );
+        }
+        if (league.draft && league.draft.selected) {
+            const picks = Object.values(league.draft.selected).filter(Boolean);
+            if (picks.length) bits.push(`Драфт (выборы): ${picks.join(', ')}`);
+        }
+        if (league.draft && league.draft.banned) {
+            const bans = Object.values(league.draft.banned).filter(Boolean);
+            if (bans.length) bits.push(`Баны: ${bans.join(', ')}`);
+        }
+        if (!bits.length) return '';
+        return `<div class="survivor-stats" style="margin-top:10px">${bits.join('<br>')}</div>`;
+    }
+
+    function closeGameModal() {
+        const modal = document.getElementById('gameModal');
+        if (!modal) return;
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        document.getElementById('gameModalBody').innerHTML = '';
+    }
+
+    function openGameModal(gameId) {
+        const game = gamesData.find((g) => String(g.id) === String(gameId));
+        if (!game) return;
+        const modal = document.getElementById('gameModal');
+        const title = document.getElementById('gameModalTitle');
+        const meta = document.getElementById('gameModalMeta');
+        const body = document.getElementById('gameModalBody');
+        title.textContent = game.number || `Session ${game.id}`;
+        meta.textContent = [
+            game.version || '',
+            game.map || '',
+            `Финиш: ${victoryTypeRu(game.victoryType)}`,
+            game.endedOnTurn ? `ход ${game.endedOnTurn}` : '',
+        ].filter(Boolean).join(' · ');
+
+        const roster = (Array.isArray(game.players) ? game.players : []).map((player) => {
+            const isWinner = player.nation === game.winner;
+            return `<div class="player-item">
+                ${renderNationPortrait(player.nation, 'player-nation-mini')}
+                <span class="player-name">${player.name}</span>
+                ${isWinner ? '<span class="player-status">👑 Победитель</span>' : ''}
+            </div>`;
+        }).join('');
+
+        const survivors = Array.isArray(game.survivors) ? game.survivors : [];
+        const survivorsHtml = survivors.length
+            ? survivors.map((row) => renderSurvivorBlock(row, game, 'full')).join('')
+            : '<div class="survivors-empty">Нет данных о финале</div>';
+
+        const hasGif = game.gif && game.gif.trim() !== '';
+        body.innerHTML = `
+            <div class="winner-section">
+                <div class="winner-label">🏆 ПОБЕДИТЕЛЬ:</div>
+                <div class="winner-nation">
+                    ${renderNationPortrait(game.winner, 'nation-icon-small')}
+                    <span>${game.winner || '—'}</span>
+                </div>
+            </div>
+            <div class="game-modal-section">
+                <h3>Состав</h3>
+                <div class="players-list">${roster}</div>
+            </div>
+            <div class="game-modal-section">
+                <h3>Финал (полная статистика)</h3>
+                <div class="finale-ending">🏁 ${victoryTypeRu(game.victoryType)}</div>
+                <div class="players-list">${survivorsHtml}</div>
+                ${renderLeagueBlock(game)}
+            </div>
+            ${hasGif ? `<div class="game-modal-section"><h3>Реплей</h3>
+                <img class="replay-gif show" src="${game.gif}" alt="Replay" style="max-width:100%;border-radius:10px;">
+            </div>` : ''}
+        `;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        hydrateNationPortraits(body);
+    }
+
+
     // Отображение игр
     function displayGames(gamesToShow) {
         const grid = document.getElementById('gamesGrid');
@@ -1344,137 +1726,20 @@
 
             const survivors = Array.isArray(game.survivors) ? game.survivors : [];
             const survivorsHtml = survivors.length
-                ? survivors.map(row => {
-                    const isWinner = row.nation === game.winner;
-                    const isAlive = Object.prototype.hasOwnProperty.call(row, 'alive')
-                        ? Boolean(row.alive)
-                        : true;
-                    const ideology = (row.ideology || '').trim();
-                    const wonders = Array.isArray(row.wonders) ? row.wonders.filter(Boolean) : [];
-                    const name = (row.name || '').trim() || '—';
-                    const techs = Number.isFinite(Number(row.techs)) ? Number(row.techs) : null;
-                    const policies = Number.isFinite(Number(row.policies)) ? Number(row.policies) : null;
-                    const statsParts = [];
-                    if (row.era) statsParts.push(`Эра: ${row.era}`);
-                    if (Number.isFinite(Number(row.score))) statsParts.push(`Очки: ${row.score}`);
-                    if (Number.isFinite(Number(row.strength))) statsParts.push(`Сила: ${row.strength}`);
-                    if (Number.isFinite(Number(row.science))) statsParts.push(`Наука: ${row.science}`);
-                    if (Number.isFinite(Number(row.cities))) statsParts.push(`Города: ${row.cities}`);
-                    if (Number.isFinite(Number(row.population))) statsParts.push(`Население: ${row.population}`);
-                    if (isAlive && techs !== null) statsParts.push(`Технологий: ${techs}`);
-                    if (isAlive && policies !== null) statsParts.push(`Институтов: ${policies}`);
-                    if (row.religion) {
-                        const relState = (row.religion_state || '').trim();
-                        statsParts.push(relState ? `Религия: ${row.religion} (${relState})` : `Религия: ${row.religion}`);
-                    } else if (row.religion_state) {
-                        statsParts.push(`Религия: ${row.religion_state}`);
-                    }
-                    if (Number.isFinite(Number(row.ideology_turn))) {
-                        statsParts.push(`Идеология с хода ${row.ideology_turn}`);
-                    }
-                    if (Number.isFinite(Number(row.eliminated_turn))) {
-                        statsParts.push(`Выбыл на ходе ${row.eliminated_turn}`);
-                    }
-                    if (Number.isFinite(Number(row.capital_lost_turn))) {
-                        statsParts.push(`Столица потеряна на ходе ${row.capital_lost_turn}`);
-                    }
-                    if (Number.isFinite(Number(row.wars_declared)) || Number.isFinite(Number(row.wars_received))) {
-                        const wd = Number.isFinite(Number(row.wars_declared)) ? row.wars_declared : 0;
-                        const wr = Number.isFinite(Number(row.wars_received)) ? row.wars_received : 0;
-                        statsParts.push(`Войны: ${wd} объявлено / ${wr} получено`);
-                    }
-                    const spaceship = Array.isArray(row.spaceship) ? row.spaceship.filter(Boolean) : [];
-                    if (spaceship.length) statsParts.push(`Корабль: ${spaceship.join(', ')}`);
-                    const hasCapital = Object.prototype.hasOwnProperty.call(row, 'has_capital')
-                        ? Boolean(row.has_capital)
-                        : true;
-                    const takenBy = (row.capital_taken_by || '').trim();
-                    const conquered = Array.isArray(row.conquered_capitals)
-                        ? row.conquered_capitals.filter(c => c && (c.nation || c.city))
-                        : [];
-
-                    let flagHtml = '';
-                    if (isAlive && !hasCapital) {
-                        flagHtml = '<div class="survivor-flag">Нет столицы</div>';
-                    } else if (!isAlive && takenBy) {
-                        flagHtml = `<div class="survivor-flag">Столицу захватил: ${takenBy}</div>`;
-                    } else if (!isAlive) {
-                        flagHtml = '<div class="survivor-flag">Выбыл (столица уничтожена или неизвестна)</div>';
-                    }
-
-                    const capturedHtml = (isAlive && conquered.length)
-                        ? `<div class="survivor-captured">Захваченные столицы:<ul class="survivor-captured-list">${
-                            conquered.map(c => {
-                                const nat = c.nation || '';
-                                const city = c.city || '';
-                                return `<li>${renderNationPortrait(nat, 'player-nation-mini')}<span class="survivor-captured-city">${city || nat}</span></li>`;
-                            }).join('')
-                          }</ul></div>`
-                        : '';
-
-                    const wondersBlock = isAlive
-                        ? (wonders.length
-                            ? `<div class="survivor-wonders">Чудеса:<ul class="survivor-wonders-list">${
-                                wonders.map(w => renderWonderItem(w)).join('')
-                              }</ul></div>`
-                            : '<div class="survivor-wonders">Чудес нет</div>')
-                        : '';
-
-                    return `
-                        <div class="survivor-item ${isAlive ? '' : 'eliminated'}">
-                            <div class="survivor-head">
-                                ${renderNationPortrait(row.nation, 'player-nation-mini')}
-                                <span class="player-name">${name}</span>
-                                ${isWinner ? '<span class="player-status">👑 Победитель</span>' : ''}
-                                ${!isAlive ? '<span class="player-status">💀 Выбыл</span>' : ''}
-                            </div>
-                            <div class="survivor-meta">
-                                ${row.nation || ''}
-                                ${ideology
-                                    ? ` · <span class="survivor-ideology">${ideology}</span>`
-                                    : (isAlive ? ' · идеология не принята' : '')}
-                            </div>
-                            ${flagHtml}
-                            ${statsParts.length ? `<div class="survivor-stats">${statsParts.join(' · ')}</div>` : ''}
-                            ${capturedHtml}
-                            ${wondersBlock}
-                        </div>
-                    `;
-                }).join('')
+                ? survivors.map(row => renderSurvivorBlock(row, game, 'compact')).join('')
                 : '<div class="survivors-empty">Нет данных о финале (появится после синка из сейва)</div>';
 
-            const league = game.league && typeof game.league === 'object' ? game.league : null;
-            let leagueHtml = '';
-            if (league) {
-                const bits = [];
-                if (league.cc && league.cc.nation) {
-                    const cc = league.cc;
-                    bits.push(
-                        `СС: ${cc.nation} (ход ${cc.start ?? '—'})`
-                        + (cc.plus && cc.plus.length ? ` · за: ${cc.plus.join(', ')}` : '')
-                        + (cc.minus && cc.minus.length ? ` · против: ${cc.minus.join(', ')}` : '')
-                        + (cc.abstain && cc.abstain.length ? ` · воздержались: ${cc.abstain.join(', ')}` : ''),
-                    );
-                }
-                if (league.draft && league.draft.selected) {
-                    const picks = Object.values(league.draft.selected).filter(Boolean);
-                    if (picks.length) bits.push(`Драфт (выборы): ${picks.join(', ')}`);
-                }
-                if (league.draft && league.draft.banned) {
-                    const bans = Object.values(league.draft.banned).filter(Boolean);
-                    if (bans.length) bits.push(`Баны: ${bans.join(', ')}`);
-                }
-                if (bits.length) {
-                    leagueHtml = `<div class="survivor-stats" style="margin-top:10px">${bits.join('<br>')}</div>`;
-                }
-            }
+            const leagueHtml = renderLeagueBlock(game);
 
             const hasGif = game.gif && game.gif.trim() !== '';
 
             card.innerHTML = `
                 <div class="game-header">
-                    <span class="game-number">🌍 ${game.number || `Session ${game.id}`}</span>
-                    <span class="game-version">${game.version || 'Версия не указана'}</span>
+                    <div style="display:flex;flex-direction:column;gap:4px;">
+                        <span class="game-number">🌍 ${game.number || `Session ${game.id}`}</span>
+                        <span class="game-version">${game.version || 'Версия не указана'}</span>
+                    </div>
+                    <button type="button" class="game-expand-btn" data-expand-id="${game.id}">⛶ На весь экран</button>
                 </div>
                 ${game.map ? `<div class="game-map">🗺️ ${game.map}</div>` : ''}
                 <div class="winner-section">
@@ -1518,6 +1783,10 @@
                     panels.forEach(p => p.classList.toggle('active', p.dataset.panel === target));
                 });
             });
+            const expandBtn = card.querySelector('[data-expand-id]');
+            if (expandBtn) {
+                expandBtn.addEventListener('click', () => openGameModal(expandBtn.dataset.expandId));
+            }
         });
 
         // Обработчики для кнопок реплея
@@ -1596,6 +1865,14 @@
                 '<div class="error">❌ Ошибка загрузки данных. Проверьте консоль (F12)</div>';
         }
     }
+
+    document.getElementById('gameModalClose')?.addEventListener('click', closeGameModal);
+    document.getElementById('gameModal')?.addEventListener('click', (ev) => {
+        if (ev.target && ev.target.id === 'gameModal') closeGameModal();
+    });
+    document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape') closeGameModal();
+    });
 
     // Запуск
     (async function boot() {
