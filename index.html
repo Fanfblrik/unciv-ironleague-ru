@@ -1505,18 +1505,14 @@
             items.push({ label, value });
         };
         if (Number.isFinite(Number(row.score))) push('Очки', row.score);
-        if (Number.isFinite(Number(row.units)) || Number.isFinite(Number(row.strength))) {
-            const unitsPart = (row.units !== null && row.units !== undefined && row.units !== ''
-                && Number.isFinite(Number(row.units))) ? Number(row.units) : '—';
-            const forcePart = (row.strength !== null && row.strength !== undefined && row.strength !== ''
-                && Number.isFinite(Number(row.strength)) && !(row.units == null && Number(row.strength) === 0))
-                ? Number(row.strength) : '—';
-            // Prefer units/force when both exist; Number(null)===0 must not fake a force.
-            const units = (row.units !== null && row.units !== undefined && Number.isFinite(Number(row.units)))
-                ? Number(row.units) : '—';
-            const force = (row.strength !== null && row.strength !== undefined && Number.isFinite(Number(row.strength)))
-                ? Number(row.strength) : '—';
-            push('Сила', `${units} / ${force}`);
+        {
+            const hasUnits = row.units !== null && row.units !== undefined && Number.isFinite(Number(row.units));
+            const hasForce = row.strength !== null && row.strength !== undefined && Number.isFinite(Number(row.strength));
+            if (hasUnits || hasForce) {
+                const units = hasUnits ? Number(row.units) : '—';
+                const force = hasForce ? Number(row.strength) : '—';
+                push('Сила', `${units} / ${force}`);
+            }
         }
         if (Number.isFinite(Number(row.science))) push('Наука', row.science);
         if (Number.isFinite(Number(row.cities))) push('Города', row.cities);
