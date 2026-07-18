@@ -374,11 +374,23 @@
 
         .survivor-wonders-list {
             margin: 4px 0 0;
-            padding-left: 1.1rem;
+            padding-left: 0;
+            list-style: none;
         }
 
         .survivor-wonders-list li {
-            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .wonder-icon {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+            flex-shrink: 0;
+            image-rendering: pixelated;
         }
 
         .survivor-stats {
@@ -637,6 +649,7 @@
     // Конфигурация
     const CONFIG = {
         nationsPath: 'Nation_icons/',
+        wonderIconsPath: 'Wonder_icons/',
         colorsPath: 'nation_colors.json',
         wonderNamesPath: 'wonder_names_ru.json',
         replaysPath: 'replays/'
@@ -919,6 +932,19 @@
         return wonderNamesRu[englishName] || englishName;
     }
 
+    function wonderIconUrl(englishName) {
+        return CONFIG.wonderIconsPath + encodeURIComponent(englishName) + '.png';
+    }
+
+    function renderWonderItem(englishName) {
+        const ru = wonderNameRu(englishName);
+        const src = wonderIconUrl(englishName);
+        return `<li>` +
+            `<img class="wonder-icon" src="${src}" alt="${ru}" title="${ru}" ` +
+            `loading="lazy" onerror="this.style.display='none'">` +
+            `<span>${ru}</span></li>`;
+    }
+
     function renderNationPortrait(russianName, extraClass) {
         const size = extraClass && extraClass.includes('player-nation-mini') ? 20 : 24;
         const cls = ['nation-portrait', extraClass].filter(Boolean).join(' ');
@@ -1017,7 +1043,7 @@
                     if (policies !== null) statsParts.push(`Институтов: ${policies}`);
                     const wondersBlock = wonders.length
                         ? `<div class="survivor-wonders">Чудеса:<ul class="survivor-wonders-list">${
-                            wonders.map(w => `<li>${wonderNameRu(w)}</li>`).join('')
+                            wonders.map(w => renderWonderItem(w)).join('')
                           }</ul></div>`
                         : '<div class="survivor-wonders">Чудес нет</div>';
                     return `
