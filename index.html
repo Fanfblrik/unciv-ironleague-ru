@@ -1112,7 +1112,7 @@
             const card = document.createElement('div');
             card.className = 'game-card';
 
-            const playersHtml = game.players.map(player => {
+            const playersHtml = (Array.isArray(game.players) ? game.players : []).map(player => {
                 const isWinner = player.nation === game.winner;
                 const isHighlighted = searchQuery && player.name.toLowerCase().includes(searchQuery);
 
@@ -1128,6 +1128,7 @@
             const survivors = Array.isArray(game.survivors) ? game.survivors : [];
             const survivorsHtml = survivors.length
                 ? survivors.map(row => {
+                    const isWinner = row.nation === game.winner;
                     const isAlive = Object.prototype.hasOwnProperty.call(row, 'alive')
                         ? Boolean(row.alive)
                         : true;

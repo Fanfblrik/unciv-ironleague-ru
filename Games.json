@@ -38,7 +38,7 @@
       "map": "Пангея",
       "playerCount": 7,
       "endedOnTurn": "",
-      "victoryType": "CC",
+      "victoryType": "",
       "gif": "Replays/Unciv_OuBoHPoKhe.gif",
       "survivors": [
         {
@@ -191,7 +191,7 @@
       "map": "Пангея",
       "playerCount": 9,
       "endedOnTurn": "176",
-      "victoryType": "CC",
+      "victoryType": "",
       "gif": "Replays/Unciv_AK9rHvt6pu.gif",
       "survivors": [
         {
@@ -382,7 +382,7 @@
       "map": "Внутреннее море",
       "playerCount": 10,
       "endedOnTurn": "163",
-      "victoryType": "CC",
+      "victoryType": "",
       "gif": "Replays/Unciv_HerAj4t3dU.gif",
       "survivors": [
         {
@@ -582,7 +582,7 @@
       "map": "Пангея",
       "playerCount": 10,
       "endedOnTurn": "180",
-      "victoryType": "CC",
+      "victoryType": "",
       "gif": "Replays/Unciv_rnRLKzpTAR.gif"
     },
     {
@@ -627,7 +627,7 @@
       "map": "Пангея",
       "playerCount": 8,
       "endedOnTurn": "150",
-      "victoryType": "CC",
+      "victoryType": "",
       "gif": "Replays/Unciv_8ZeyOE7GY6.gif"
     },
     {
@@ -680,7 +680,7 @@
       "map": "Внутреннее море",
       "playerCount": 10,
       "endedOnTurn": "216",
-      "victoryType": "CC",
+      "victoryType": "",
       "gif": "Replays/Unciv_SmLNtdEynV.gif"
     },
     {
@@ -717,7 +717,7 @@
       "map": "Пангея",
       "playerCount": 6,
       "endedOnTurn": "173",
-      "victoryType": "CC",
+      "victoryType": "",
       "gif": "Replays/Unciv_6niXfWeFrx.gif"
     },
     {
@@ -754,7 +754,7 @@
       "map": "Пангея",
       "playerCount": 6,
       "endedOnTurn": "",
-      "victoryType": "CC",
+      "victoryType": "",
       "gif": "Replays/Unciv_FyZRZVLifg.gif"
     },
     {
@@ -791,7 +791,7 @@
       "map": "Внутреннее море",
       "playerCount": 6,
       "endedOnTurn": "168",
-      "victoryType": "CC",
+      "victoryType": "",
       "gif": "Replays/Unciv_eBara9ycka.gif"
     },
     {
@@ -828,7 +828,7 @@
       "map": "Архипелаги",
       "playerCount": 6,
       "endedOnTurn": "204",
-      "victoryType": "Scientific",
+      "victoryType": "Science",
       "gif": "Replays/Unciv_HxUtYpKTjN.gif",
       "survivors": [
         {
@@ -1004,7 +1004,7 @@
       "map": "Шум перлина",
       "playerCount": 10,
       "endedOnTurn": "159",
-      "victoryType": "CC",
+      "victoryType": "",
       "gif": "Replays/Unciv_Zt7U9zfGRG.gif",
       "survivors": [
         {
@@ -1243,7 +1243,7 @@
       "map": "Шум Перлина",
       "playerCount": 10,
       "endedOnTurn": "163",
-      "victoryType": "CC",
+      "victoryType": "",
       "gif": "Replays/Unciv_WRUgAToypZ.gif",
       "survivors": [
         {
@@ -2230,7 +2230,7 @@
       "map": "Шум Перлина",
       "playerCount": 9,
       "endedOnTurn": "192",
-      "victoryType": "Scientific",
+      "victoryType": "Science",
       "gif": "Replays/Unciv_r3NqbWLVTc.gif",
       "survivors": [
         {
@@ -3071,7 +3071,7 @@
       "map": "Perlin",
       "playerCount": 12,
       "endedOnTurn": "123",
-      "victoryType": "CC",
+      "victoryType": "",
       "survivors": [
         {
           "name": "konoval_mik",
@@ -3315,7 +3315,7 @@
       "map": "Inner Sea",
       "playerCount": 9,
       "endedOnTurn": "180",
-      "victoryType": "CC",
+      "victoryType": "",
       "survivors": [
         {
           "name": "Click4x",
@@ -3523,7 +3523,7 @@
       "map": "Fractal",
       "playerCount": 9,
       "endedOnTurn": "162",
-      "victoryType": "CC",
+      "victoryType": "",
       "survivors": [
         {
           "name": "den_stu",
