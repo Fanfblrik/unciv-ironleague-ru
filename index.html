@@ -201,13 +201,25 @@
 
         .filter-group select, .filter-group input {
             width: 100%;
-            padding: 10px;
+            padding: 10px 36px 10px 10px;
             border-radius: 8px;
             border: none;
             background: rgba(255, 255, 255, 0.2);
             color: white;
             font-size: 1rem;
             cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23ffd700' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 12px 8px;
+        }
+
+        .filter-group input {
+            padding-right: 10px;
+            background-image: none;
         }
 
         .filter-group select option {
@@ -281,16 +293,18 @@
             border-radius: 10px;
             padding: 12px 14px;
             margin: 15px 0;
-            text-align: left;
+            text-align: center;
             border: 1px solid rgba(255, 215, 0, 0.55);
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 8px;
         }
 
         .winner-label {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 6px;
             font-size: 0.9rem;
             font-weight: 600;
@@ -301,6 +315,7 @@
         .winner-nation {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             font-size: 1.15rem;
             font-weight: bold;
@@ -340,12 +355,26 @@
         }
 
         .survivor-item {
-            padding: 10px 0;
+            padding: 10px 12px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-bottom: 6px;
         }
 
         .survivor-item:last-child {
             border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .survivor-item.eliminated {
+            background: rgba(80, 80, 90, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            opacity: 0.92;
+        }
+
+        .survivor-item.eliminated .player-name,
+        .survivor-item.eliminated .survivor-meta {
+            color: rgba(220, 220, 220, 0.75);
         }
 
         .survivor-head {
@@ -363,6 +392,45 @@
 
         .survivor-ideology {
             color: #ffd700;
+        }
+
+        .survivor-flag {
+            margin: 4px 0 0 30px;
+            font-size: 0.85rem;
+            color: #ffb4b4;
+        }
+
+        .survivor-item.eliminated .survivor-flag {
+            color: rgba(255, 200, 200, 0.85);
+        }
+
+        .survivor-captured {
+            margin: 6px 0 0 30px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .survivor-captured-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 6px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .survivor-captured-list li {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 8px;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .survivor-captured-city {
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .survivor-wonders {
@@ -1032,32 +1100,69 @@
             const survivors = Array.isArray(game.survivors) ? game.survivors : [];
             const survivorsHtml = survivors.length
                 ? survivors.map(row => {
-                    const isWinner = row.nation === game.winner;
+                    const isAlive = Object.prototype.hasOwnProperty.call(row, 'alive')
+                        ? Boolean(row.alive)
+                        : true;
                     const ideology = (row.ideology || '').trim();
                     const wonders = Array.isArray(row.wonders) ? row.wonders.filter(Boolean) : [];
                     const name = (row.name || '').trim() || '—';
                     const techs = Number.isFinite(Number(row.techs)) ? Number(row.techs) : null;
                     const policies = Number.isFinite(Number(row.policies)) ? Number(row.policies) : null;
                     const statsParts = [];
-                    if (techs !== null) statsParts.push(`Технологий: ${techs}`);
-                    if (policies !== null) statsParts.push(`Институтов: ${policies}`);
-                    const wondersBlock = wonders.length
-                        ? `<div class="survivor-wonders">Чудеса:<ul class="survivor-wonders-list">${
-                            wonders.map(w => renderWonderItem(w)).join('')
+                    if (isAlive && techs !== null) statsParts.push(`Технологий: ${techs}`);
+                    if (isAlive && policies !== null) statsParts.push(`Институтов: ${policies}`);
+                    const hasCapital = Object.prototype.hasOwnProperty.call(row, 'has_capital')
+                        ? Boolean(row.has_capital)
+                        : true;
+                    const takenBy = (row.capital_taken_by || '').trim();
+                    const conquered = Array.isArray(row.conquered_capitals)
+                        ? row.conquered_capitals.filter(c => c && (c.nation || c.city))
+                        : [];
+
+                    let flagHtml = '';
+                    if (isAlive && !hasCapital) {
+                        flagHtml = '<div class="survivor-flag">Нет столицы</div>';
+                    } else if (!isAlive && takenBy) {
+                        flagHtml = `<div class="survivor-flag">Столицу захватил: ${takenBy}</div>`;
+                    } else if (!isAlive) {
+                        flagHtml = '<div class="survivor-flag">Выбыл (столица уничтожена или неизвестна)</div>';
+                    }
+
+                    const capturedHtml = (isAlive && conquered.length)
+                        ? `<div class="survivor-captured">Захваченные столицы:<ul class="survivor-captured-list">${
+                            conquered.map(c => {
+                                const nat = c.nation || '';
+                                const city = c.city || '';
+                                return `<li>${renderNationPortrait(nat, 'player-nation-mini')}<span class="survivor-captured-city">${city || nat}</span></li>`;
+                            }).join('')
                           }</ul></div>`
-                        : '<div class="survivor-wonders">Чудес нет</div>';
+                        : '';
+
+                    const wondersBlock = isAlive
+                        ? (wonders.length
+                            ? `<div class="survivor-wonders">Чудеса:<ul class="survivor-wonders-list">${
+                                wonders.map(w => renderWonderItem(w)).join('')
+                              }</ul></div>`
+                            : '<div class="survivor-wonders">Чудес нет</div>')
+                        : '';
+
                     return `
-                        <div class="survivor-item">
+                        <div class="survivor-item ${isAlive ? '' : 'eliminated'}">
                             <div class="survivor-head">
                                 ${renderNationPortrait(row.nation, 'player-nation-mini')}
                                 <span class="player-name">${name}</span>
                                 ${isWinner ? '<span class="player-status">👑 Победитель</span>' : ''}
+                                ${!isAlive ? '<span class="player-status">💀 Выбыл</span>' : ''}
                             </div>
                             <div class="survivor-meta">
                                 ${row.nation || ''}
-                                ${ideology ? ` · <span class="survivor-ideology">${ideology}</span>` : ' · идеология не принята'}
+                                ${isAlive
+                                    ? (ideology ? ` · <span class="survivor-ideology">${ideology}</span>` : ' · идеология не принята')
+                                    : ''}
                             </div>
+                            ${flagHtml}
                             ${statsParts.length ? `<div class="survivor-stats">${statsParts.join(' · ')}</div>` : ''}
+                            ${capturedHtml}
                             ${wondersBlock}
                         </div>
                     `;

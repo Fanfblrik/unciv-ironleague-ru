@@ -44,6 +44,10 @@
         {
           "name": "munlait21",
           "nation": "Вавилон",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [],
           "techs": 20,
@@ -52,6 +56,10 @@
         {
           "name": "ICanSeeForever",
           "nation": "Галлы",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Statue of Zeus",
@@ -63,6 +71,10 @@
         {
           "name": "Click4x",
           "nation": "Корея",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Terracotta Army"
@@ -73,6 +85,10 @@
         {
           "name": "den_stu",
           "nation": "Норвегия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Mausoleum of Halicarnassus",
@@ -86,6 +102,10 @@
         {
           "name": "Ouni0",
           "nation": "Нормандия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "The Pyramids",
@@ -97,6 +117,10 @@
         {
           "name": "Overslidishe",
           "nation": "Россия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "The Great Library",
@@ -108,6 +132,10 @@
         {
           "name": "VlaterRogue",
           "nation": "Шотландия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Petra"
@@ -169,6 +197,10 @@
         {
           "name": "ICanSeeForever",
           "nation": "Америка",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Machu Picchu"
@@ -179,6 +211,10 @@
         {
           "name": "Click4x",
           "nation": "Аргентина",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "The Great Lighthouse",
@@ -190,6 +226,10 @@
         {
           "name": "freedomanarhy",
           "nation": "Золотая Орда",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Temple of Artemis"
@@ -200,6 +240,10 @@
         {
           "name": "Overslidishe",
           "nation": "Иерусалим",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Great Mosque of Djenne",
@@ -211,6 +255,10 @@
         {
           "name": "VlaterRogue",
           "nation": "Маурья",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Great Wall"
@@ -221,6 +269,10 @@
         {
           "name": "den_stu",
           "nation": "Пруссия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Notre Dame",
@@ -234,6 +286,10 @@
         {
           "name": "khtoyaaty",
           "nation": "Россия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Statue of Zeus"
@@ -244,6 +300,10 @@
         {
           "name": "munlait21",
           "nation": "Сиам",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "The Oracle",
@@ -259,6 +319,10 @@
         {
           "name": "Ouni0",
           "nation": "Франция",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "The Great Library"
@@ -324,6 +388,10 @@
         {
           "name": "Ouni0",
           "nation": "Аравия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Hanging Gardens",
@@ -335,6 +403,10 @@
         {
           "name": "VlaterRogue",
           "nation": "Италия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [],
           "techs": 21,
@@ -343,6 +415,10 @@
         {
           "name": "Nepherthos",
           "nation": "Майя",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Terracotta Army",
@@ -355,6 +431,10 @@
         {
           "name": "khtoyaaty",
           "nation": "Нидерланды",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Mausoleum of Halicarnassus"
@@ -365,6 +445,10 @@
         {
           "name": "munlait21",
           "nation": "Персия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Chichen Itza",
@@ -377,6 +461,10 @@
         {
           "name": "Overslidishe",
           "nation": "Польша",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Hagia Sophia",
@@ -388,6 +476,10 @@
         {
           "name": "den_stu",
           "nation": "Румыния",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [],
           "techs": 25,
@@ -396,6 +488,10 @@
         {
           "name": "Click4x",
           "nation": "Сонгай",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [],
           "techs": 23,
@@ -404,6 +500,10 @@
         {
           "name": "ICanSeeForever",
           "nation": "Тимуриды",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Statue of Zeus",
@@ -415,6 +515,10 @@
         {
           "name": "freedomanarhy",
           "nation": "Япония",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "The Oracle",
@@ -730,6 +834,19 @@
         {
           "name": "n9306867842",
           "nation": "Зимбабве",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Норвегия",
+              "city": "Oslo"
+            },
+            {
+              "nation": "Тонга",
+              "city": "Mu'a"
+            }
+          ],
           "ideology": "Порядок",
           "wonders": [
             "The Great Library",
@@ -758,6 +875,10 @@
         {
           "name": "YukiHino98",
           "nation": "Карфаген",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Terracotta Army",
@@ -772,6 +893,10 @@
         {
           "name": "Fanfblrik",
           "nation": "Майсур",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Pentagon",
@@ -784,6 +909,10 @@
         {
           "name": "AlexUnderHill",
           "nation": "Норвегия",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Зимбабве",
+          "conquered_capitals": [],
           "ideology": "Свобода",
           "wonders": [],
           "techs": 75,
@@ -792,6 +921,10 @@
         {
           "name": "VlaterRogue",
           "nation": "Португалия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Свобода",
           "wonders": [
             "Machu Picchu",
@@ -806,6 +939,18 @@
           ],
           "techs": 75,
           "policies": 32
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Тонга",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Зимбабве",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 25,
+          "policies": 8
         }
       ]
     },
@@ -865,6 +1010,19 @@
         {
           "name": "Click4x",
           "nation": "Англия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Айюбиды",
+              "city": "Cairo"
+            },
+            {
+              "nation": "Кильва",
+              "city": "Kilwa Kiswani"
+            }
+          ],
           "ideology": "Свобода",
           "wonders": [
             "The Great Lighthouse",
@@ -883,6 +1041,10 @@
         {
           "name": "YukiHino98",
           "nation": "Венгрия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Свобода",
           "wonders": [
             "Sistine Chapel",
@@ -899,6 +1061,10 @@
         {
           "name": "Overslidishe",
           "nation": "Кильва",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Англия",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [
             "The Louvre"
@@ -909,6 +1075,10 @@
         {
           "name": "VlaterRogue",
           "nation": "Марокко",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Свобода",
           "wonders": [
             "Hagia Sophia",
@@ -925,6 +1095,19 @@
         {
           "name": "EmperorPenguin01",
           "nation": "Нидерланды",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Ассирия",
+              "city": "Assur"
+            },
+            {
+              "nation": "Папская область",
+              "city": "Vatican City"
+            }
+          ],
           "ideology": "Автократия",
           "wonders": [
             "Angkor Wat",
@@ -944,12 +1127,69 @@
         {
           "name": "n9306867842",
           "nation": "Турция",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Аравия",
+              "city": "Mecca"
+            }
+          ],
           "ideology": "Автократия",
           "wonders": [
             "Terracotta Army"
           ],
           "techs": 56,
           "policies": 20
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Айюбиды",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Англия",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 22,
+          "policies": 8
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Аравия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Турция",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 31,
+          "policies": 9
+        },
+        {
+          "name": "munlait21",
+          "nation": "Ассирия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Нидерланды",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 39,
+          "policies": 19
+        },
+        {
+          "name": "den_stu",
+          "nation": "Папская область",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Нидерланды",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 60,
+          "policies": 26
         }
       ]
     },
@@ -1009,6 +1249,23 @@
         {
           "name": "EmperorPenguin01",
           "nation": "Византия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Майя",
+              "city": "Palenque"
+            },
+            {
+              "nation": "Мексика",
+              "city": "Славяне"
+            },
+            {
+              "nation": "Финикия",
+              "city": "Прекрасного настроения))"
+            }
+          ],
           "ideology": "Автократия",
           "wonders": [
             "The Oracle",
@@ -1031,6 +1288,10 @@
         {
           "name": "Click4x",
           "nation": "Инки",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Автократия",
           "wonders": [
             "Taj Mahal",
@@ -1045,6 +1306,10 @@
         {
           "name": "munlait21",
           "nation": "Ирландия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Автократия",
           "wonders": [
             "Porcelain Tower"
@@ -1055,6 +1320,10 @@
         {
           "name": "VlaterRogue",
           "nation": "Мадагаскар",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Свобода",
           "wonders": [
             "Statue of Liberty",
@@ -1068,6 +1337,10 @@
         {
           "name": "konoval_mik",
           "nation": "Майя",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Византия",
+          "conquered_capitals": [],
           "ideology": "Автократия",
           "wonders": [
             "Himeji Castle",
@@ -1079,6 +1352,10 @@
         {
           "name": "AlexUnderHill",
           "nation": "Сиам",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Швеция",
+          "conquered_capitals": [],
           "ideology": "Автократия",
           "wonders": [],
           "techs": 53,
@@ -1087,6 +1364,19 @@
         {
           "name": "den_stu",
           "nation": "Швеция",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Иерусалим",
+              "city": "Jerusalem"
+            },
+            {
+              "nation": "Сиам",
+              "city": "Sukhothai"
+            }
+          ],
           "ideology": "Автократия",
           "wonders": [
             "Sistine Chapel",
@@ -1099,6 +1389,42 @@
           ],
           "techs": 56,
           "policies": 26
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Иерусалим",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Швеция",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 40,
+          "policies": 15
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Мексика",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Византия",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 47,
+          "policies": 11
+        },
+        {
+          "name": "YukiHino98",
+          "nation": "Финикия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Византия",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 29,
+          "policies": 10
         }
       ]
     },
@@ -1148,16 +1474,17 @@
       "gif": "Replays/Unciv_kZiCWJW5nk.gif",
       "survivors": [
         {
-          "name": "",
-          "nation": "Trieste",
-          "ideology": "Свобода",
-          "wonders": [],
-          "techs": 53,
-          "policies": 13
-        },
-        {
           "name": "AlexUnderHill",
           "nation": "Готы",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Индия",
+              "city": "Delhi"
+            }
+          ],
           "ideology": "Автократия",
           "wonders": [
             "Sistine Chapel",
@@ -1174,6 +1501,15 @@
         {
           "name": "EmperorPenguin01",
           "nation": "Кхмеры",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Бирма",
+              "city": "Yangon"
+            }
+          ],
           "ideology": "Автократия",
           "wonders": [
             "Porcelain Tower",
@@ -1193,6 +1529,15 @@
         {
           "name": "den_stu",
           "nation": "Мавры",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Китай",
+              "city": "Beijing"
+            }
+          ],
           "ideology": "Порядок",
           "wonders": [
             "Alhambra",
@@ -1209,6 +1554,15 @@
         {
           "name": "Click4x",
           "nation": "Португалия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Франция",
+              "city": "Paris"
+            }
+          ],
           "ideology": "Автократия",
           "wonders": [
             "The Great Lighthouse",
@@ -1219,6 +1573,54 @@
           ],
           "techs": 50,
           "policies": 19
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Бирма",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Кхмеры",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 23,
+          "policies": 9
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Индия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Готы",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 21,
+          "policies": 8
+        },
+        {
+          "name": "munlait21",
+          "nation": "Китай",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Мавры",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 36,
+          "policies": 12
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Франция",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Португалия",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 17,
+          "policies": 5
         }
       ]
     },
@@ -1270,6 +1672,10 @@
         {
           "name": "Click4x",
           "nation": "Ацтеки",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Бруней",
+          "conquered_capitals": [],
           "ideology": "Свобода",
           "wonders": [],
           "techs": 64,
@@ -1278,6 +1684,10 @@
         {
           "name": "Fanfblrik",
           "nation": "Болгария",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [
             "Terracotta Army"
@@ -1288,6 +1698,19 @@
         {
           "name": "den_stu",
           "nation": "Бруней",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Ацтеки",
+              "city": "Tenochtitlan"
+            },
+            {
+              "nation": "Галлы",
+              "city": "Bibracte"
+            }
+          ],
           "ideology": "Свобода",
           "wonders": [
             "Leaning Tower of Pisa",
@@ -1313,6 +1736,10 @@
         {
           "name": "konoval_mik",
           "nation": "Галлы",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Бруней",
+          "conquered_capitals": [],
           "ideology": "Автократия",
           "wonders": [],
           "techs": 62,
@@ -1321,6 +1748,15 @@
         {
           "name": "AlexUnderHill",
           "nation": "Оман",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Югославия",
+              "city": "Сосунск"
+            }
+          ],
           "ideology": "Автократия",
           "wonders": [
             "The Louvre",
@@ -1333,6 +1769,10 @@
         {
           "name": "Overslidishe",
           "nation": "Сонгай",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [
             "The Oracle",
@@ -1355,6 +1795,10 @@
         {
           "name": "munlait21",
           "nation": "Япония",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Свобода",
           "wonders": [
             "The Great Library",
@@ -1364,6 +1808,18 @@
           ],
           "techs": 63,
           "policies": 24
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Югославия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Оман",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 59,
+          "policies": 20
         }
       ]
     },
@@ -1423,6 +1879,10 @@
         {
           "name": "den_stu",
           "nation": "Айюбиды",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Автократия",
           "wonders": [
             "Alhambra",
@@ -1443,6 +1903,19 @@
         {
           "name": "EmperorPenguin01",
           "nation": "Бразилия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Бельгия",
+              "city": "Brussels"
+            },
+            {
+              "nation": "Золотая Орда",
+              "city": "Sarai Batu"
+            }
+          ],
           "ideology": "Порядок",
           "wonders": [
             "The Pyramids",
@@ -1456,6 +1929,10 @@
         {
           "name": "AlexUnderHill",
           "nation": "Венеция",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Свобода",
           "wonders": [
             "Sistine Chapel",
@@ -1469,6 +1946,10 @@
         {
           "name": "Fanfblrik",
           "nation": "Грузия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [
             "Great Mosque of Djenne"
@@ -1479,6 +1960,10 @@
         {
           "name": "Click4x",
           "nation": "Монголия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Автократия",
           "wonders": [
             "Hanging Gardens",
@@ -1492,6 +1977,10 @@
         {
           "name": "Overslidishe",
           "nation": "Нормандия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Автократия",
           "wonders": [
             "Terracotta Army",
@@ -1504,6 +1993,10 @@
         {
           "name": "n9306867842",
           "nation": "Сиу",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Автократия",
           "wonders": [
             "Porcelain Tower",
@@ -1516,10 +2009,38 @@
         {
           "name": "munlait21",
           "nation": "Тимуриды",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Свобода",
           "wonders": [],
           "techs": 49,
           "policies": 16
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Бельгия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Бразилия",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 41,
+          "policies": 15
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Золотая Орда",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Бразилия",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 22,
+          "policies": 8
         }
       ]
     },
@@ -1563,6 +2084,10 @@
         {
           "name": "ICanSeeForever",
           "nation": "Германия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [
             "Sistine Chapel",
@@ -1575,6 +2100,10 @@
         {
           "name": "Click4x",
           "nation": "Греция",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [
             "Alhambra",
@@ -1594,6 +2123,10 @@
         {
           "name": "konoval_mik",
           "nation": "Гунны",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Statue of Zeus",
@@ -1609,6 +2142,10 @@
         {
           "name": "n9306867842",
           "nation": "Полинезия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Автократия",
           "wonders": [
             "Leaning Tower of Pisa",
@@ -1624,6 +2161,10 @@
         {
           "name": "Fanfblrik",
           "nation": "Россия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [],
           "techs": 34,
@@ -1632,6 +2173,10 @@
         {
           "name": "AlexUnderHill",
           "nation": "Украина",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [],
           "techs": 32,
@@ -1691,6 +2236,10 @@
         {
           "name": "munlait21",
           "nation": "Англия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [
             "CN Tower"
@@ -1701,6 +2250,15 @@
         {
           "name": "VlaterRogue",
           "nation": "Вьетнам",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Византия",
+              "city": "Constantinople"
+            }
+          ],
           "ideology": "Автократия",
           "wonders": [
             "Statue of Zeus",
@@ -1714,6 +2272,15 @@
         {
           "name": "AlexUnderHill",
           "nation": "Дания",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Мавры",
+              "city": "Córdoba"
+            }
+          ],
           "ideology": "Порядок",
           "wonders": [
             "The Great Lighthouse",
@@ -1741,6 +2308,15 @@
         {
           "name": "den_stu",
           "nation": "Ирокезы",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Османы",
+              "city": "Istanbul"
+            }
+          ],
           "ideology": "Порядок",
           "wonders": [
             "Terracotta Army",
@@ -1757,6 +2333,15 @@
         {
           "name": "Click4x",
           "nation": "Филиппины",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Китай",
+              "city": "Beijing"
+            }
+          ],
           "ideology": "Автократия",
           "wonders": [
             "Angkor Wat",
@@ -1770,6 +2355,54 @@
           ],
           "techs": 73,
           "policies": 32
+        },
+        {
+          "name": "Ashegg2",
+          "nation": "Византия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Вьетнам",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 35,
+          "policies": 16
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Китай",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Филиппины",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 43,
+          "policies": 12
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Мавры",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Дания",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 57,
+          "policies": 28
+        },
+        {
+          "name": "Fanfblrik",
+          "nation": "Османы",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Ирокезы",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 26,
+          "policies": 12
         }
       ]
     },
@@ -1829,6 +2462,10 @@
         {
           "name": "Overslidishe",
           "nation": "Бирма",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [
             "Brandenburg Gate",
@@ -1840,6 +2477,10 @@
         {
           "name": "munlait21",
           "nation": "Кхмеры",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Свобода",
           "wonders": [
             "Statue of Zeus"
@@ -1850,6 +2491,15 @@
         {
           "name": "den_stu",
           "nation": "Майсур",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Япония",
+              "city": "Kyoto"
+            }
+          ],
           "ideology": "Автократия",
           "wonders": [
             "Leaning Tower of Pisa",
@@ -1863,6 +2513,15 @@
         {
           "name": "Fanfblrik",
           "nation": "Монголия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Португалия",
+              "city": "Lisbon"
+            }
+          ],
           "ideology": "Порядок",
           "wonders": [
             "Terracotta Army",
@@ -1876,6 +2535,10 @@
         {
           "name": "Ouni0",
           "nation": "Румыния",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Автократия",
           "wonders": [
             "Big Ben",
@@ -1888,6 +2551,10 @@
         {
           "name": "AlexUnderHill",
           "nation": "Тонга",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Автократия",
           "wonders": [
             "The Pyramids",
@@ -1902,6 +2569,15 @@
         {
           "name": "Click4x",
           "nation": "Франция",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Венгрия",
+              "city": "Buda"
+            }
+          ],
           "ideology": "Свобода",
           "wonders": [
             "Alhambra",
@@ -1919,6 +2595,42 @@
           ],
           "techs": 58,
           "policies": 40
+        },
+        {
+          "name": "Ashegg2",
+          "nation": "Венгрия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Франция",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 34,
+          "policies": 11
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Португалия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Монголия",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 15,
+          "policies": 5
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Япония",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Майсур",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 38,
+          "policies": 13
         }
       ]
     },
@@ -1962,6 +2674,19 @@
         {
           "name": "AlexUnderHill",
           "nation": "Нидерланды",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Индия",
+              "city": "Delhi"
+            },
+            {
+              "nation": "Индонезия",
+              "city": "Jakarta"
+            }
+          ],
           "ideology": "Свобода",
           "wonders": [
             "Sistine Chapel",
@@ -1991,6 +2716,15 @@
         {
           "name": "Ouni0",
           "nation": "Рим",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Франки",
+              "city": "Aachen"
+            }
+          ],
           "ideology": "Порядок",
           "wonders": [
             "Statue of Zeus",
@@ -2014,6 +2748,10 @@
         {
           "name": "Fanfblrik",
           "nation": "Шумеры",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [
             "Leaning Tower of Pisa",
@@ -2021,6 +2759,42 @@
           ],
           "techs": 62,
           "policies": 21
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Индия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Нидерланды",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 55,
+          "policies": 22
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Индонезия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Нидерланды",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 40,
+          "policies": 14
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Франки",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Рим",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 34,
+          "policies": 11
         }
       ]
     },
@@ -2076,6 +2850,10 @@
         {
           "name": "den_stu",
           "nation": "Иерусалим",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Автократия",
           "wonders": [
             "Forbidden Palace",
@@ -2087,6 +2865,15 @@
         {
           "name": "Overslidishe",
           "nation": "Карфаген",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Ирландия",
+              "city": "Dublin"
+            }
+          ],
           "ideology": "Порядок",
           "wonders": [
             "The Great Lighthouse",
@@ -2099,6 +2886,10 @@
         {
           "name": "konoval_mik",
           "nation": "Мавры",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Автократия",
           "wonders": [
             "Alhambra",
@@ -2112,6 +2903,15 @@
         {
           "name": "Bahahanchiklkm",
           "nation": "Майя",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Финляндия",
+          "conquered_capitals": [
+            {
+              "nation": "Зимбабве",
+              "city": "Great Zimbabwe"
+            }
+          ],
           "ideology": "Порядок",
           "wonders": [
             "Great Mosque of Djenne",
@@ -2124,6 +2924,10 @@
         {
           "name": "Lvxvcs",
           "nation": "Сиам",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Свобода",
           "wonders": [
             "The Great Library"
@@ -2134,6 +2938,19 @@
         {
           "name": "Click4x",
           "nation": "Финляндия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Аравия",
+              "city": "Mecca"
+            },
+            {
+              "nation": "Майя",
+              "city": "Palenque"
+            }
+          ],
           "ideology": "Порядок",
           "wonders": [
             "Terracotta Army",
@@ -2157,6 +2974,42 @@
           ],
           "techs": 60,
           "policies": 27
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Аравия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Финляндия",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 27,
+          "policies": 9
+        },
+        {
+          "name": "PVL01011900",
+          "nation": "Зимбабве",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Майя",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 27,
+          "policies": 10
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Ирландия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Карфаген",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 46,
+          "policies": 13
         }
       ]
     },
@@ -2223,6 +3076,10 @@
         {
           "name": "konoval_mik",
           "nation": "Айюбиды",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Statue of Zeus"
@@ -2233,6 +3090,10 @@
         {
           "name": "Bahahanchiklkm",
           "nation": "Бирма",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [
             "Taj Mahal",
@@ -2248,6 +3109,10 @@
         {
           "name": "REPUNZEL2882",
           "nation": "Болгария",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [
             "Sistine Chapel",
@@ -2260,6 +3125,10 @@
         {
           "name": "Lvxvcs",
           "nation": "Дания",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "The Great Lighthouse"
@@ -2270,6 +3139,19 @@
         {
           "name": "Click4x",
           "nation": "Колумбия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Бельгия",
+              "city": "Brussels"
+            },
+            {
+              "nation": "Зулусы",
+              "city": "Павлентий-град"
+            }
+          ],
           "ideology": "Автократия",
           "wonders": [
             "The Pyramids",
@@ -2285,6 +3167,15 @@
         {
           "name": "Ouni0",
           "nation": "Македония",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Италия",
+              "city": "чат бы создать"
+            }
+          ],
           "ideology": "",
           "wonders": [
             "Chichen Itza",
@@ -2296,6 +3187,10 @@
         {
           "name": "Fanfblrik",
           "nation": "Персия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [
             "Terracotta Army"
@@ -2306,6 +3201,10 @@
         {
           "name": "den_stu",
           "nation": "Португалия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Свобода",
           "wonders": [
             "Alhambra",
@@ -2321,12 +3220,52 @@
         {
           "name": "VlaterRogue",
           "nation": "Филиппины",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Angkor Wat"
           ],
           "techs": 40,
           "policies": 12
+        },
+        {
+          "name": "PVL01011900",
+          "nation": "Бельгия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Колумбия",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 27,
+          "policies": 12
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Зулусы",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Колумбия",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 26,
+          "policies": 12
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Италия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Македония",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 28,
+          "policies": 10
         }
       ]
     },
@@ -2381,6 +3320,10 @@
         {
           "name": "Click4x",
           "nation": "Кельты",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Свобода",
           "wonders": [
             "The Oracle",
@@ -2392,6 +3335,15 @@
         {
           "name": "AlexUnderHill",
           "nation": "Монголия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Нидерланды",
+              "city": "Amsterdam"
+            }
+          ],
           "ideology": "Порядок",
           "wonders": [
             "Alhambra",
@@ -2404,6 +3356,10 @@
         {
           "name": "REPUNZEL2882",
           "nation": "Набатея",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Папская область",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [],
           "techs": 45,
@@ -2412,6 +3368,19 @@
         {
           "name": "Bahahanchiklkm",
           "nation": "Папская область",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Набатея",
+              "city": "Petra"
+            },
+            {
+              "nation": "Нормандия",
+              "city": "名誉は死よりも重い"
+            }
+          ],
           "ideology": "Автократия",
           "wonders": [
             "Himeji Castle",
@@ -2430,6 +3399,10 @@
         {
           "name": "Lvxvcs",
           "nation": "Пруссия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [
             "Brandenburg Gate",
@@ -2445,6 +3418,10 @@
         {
           "name": "n9306867842",
           "nation": "Румыния",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Порядок",
           "wonders": [
             "Hanging Gardens",
@@ -2460,6 +3437,10 @@
         {
           "name": "konoval_mik",
           "nation": "Шошоны",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "",
           "wonders": [
             "Mausoleum of Halicarnassus",
@@ -2469,6 +3450,30 @@
           ],
           "techs": 41,
           "policies": 14
+        },
+        {
+          "name": "PVL01011900",
+          "nation": "Нидерланды",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Монголия",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 31,
+          "policies": 11
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Нормандия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Папская область",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 39,
+          "policies": 15
         }
       ]
     },
@@ -2523,6 +3528,15 @@
         {
           "name": "den_stu",
           "nation": "Австрия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Рим",
+              "city": "Rome"
+            }
+          ],
           "ideology": "Порядок",
           "wonders": [
             "Leaning Tower of Pisa",
@@ -2544,6 +3558,10 @@
         {
           "name": "REPUNZEL2882",
           "nation": "Корея",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
           "ideology": "Свобода",
           "wonders": [
             "Statue of Zeus",
@@ -2558,6 +3576,15 @@
         {
           "name": "AlexUnderHill",
           "nation": "Тонга",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Бразилия",
+              "city": "Rio de Janeiro"
+            }
+          ],
           "ideology": "Порядок",
           "wonders": [
             "Sistine Chapel",
@@ -2574,6 +3601,23 @@
         {
           "name": "Click4x",
           "nation": "Чили",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Венгрия",
+              "city": "Buda"
+            },
+            {
+              "nation": "Германия",
+              "city": "Berlin"
+            },
+            {
+              "nation": "Украина",
+              "city": "Kiev"
+            }
+          ],
           "ideology": "Порядок",
           "wonders": [
             "Terracotta Army",
@@ -2591,6 +3635,66 @@
           ],
           "techs": 68,
           "policies": 26
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Бразилия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Тонга",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 52,
+          "policies": 27
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Венгрия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Чили",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 65,
+          "policies": 25
+        },
+        {
+          "name": "Lvxvcs",
+          "nation": "Германия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Чили",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 34,
+          "policies": 11
+        },
+        {
+          "name": "PVL01011900",
+          "nation": "Рим",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Австрия",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 36,
+          "policies": 10
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Украина",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Чили",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 49,
+          "policies": 19
         }
       ]
     }
