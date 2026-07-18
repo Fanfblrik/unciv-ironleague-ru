@@ -1578,8 +1578,8 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=ui-layout-1"></script>
-<script src="js/rating.js?v=ui-layout-1"></script>
+<script src="js/i18n.js?v=tier-legend-ru-1"></script>
+<script src="js/rating.js?v=tier-legend-ru-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -3058,9 +3058,11 @@
             } else {
                 sourceEl.textContent = '';
             }
-            legendEl.innerHTML = (tierlistData.legend || []).map((item) =>
-                `<span class="tier-pill">${starsHtml(item.stars)} ${item.label}</span>`
-            ).join('');
+            legendEl.innerHTML = (tierlistData.legend || []).map((item) => {
+                const stars = Number(item.stars) || 0;
+                const label = tt(`tier.legend.${stars}`) || item.label || '';
+                return `<span class="tier-pill">${starsHtml(stars)} ${label}</span>`;
+            }).join('');
 
             const rows = (tierlistData.entries || []).map((e) => ({
                 civ: e.civ,
