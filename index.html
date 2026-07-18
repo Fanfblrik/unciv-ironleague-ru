@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Архив игр</title>
+    <title>Iron League — Архив и FAQ</title>
     <style>
         * {
             margin: 0;
@@ -27,10 +27,135 @@
         h1 {
             text-align: center;
             font-size: 2.5rem;
-            margin: 30px 0;
+            margin: 30px 0 16px;
             color: #ffd700;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
             letter-spacing: 2px;
+        }
+
+        .site-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .site-nav-btn {
+            padding: 10px 22px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s, color 0.2s;
+        }
+
+        .site-nav-btn:hover {
+            border-color: rgba(255, 215, 0, 0.45);
+            color: #ffd700;
+        }
+
+        .site-nav-btn.active {
+            background: rgba(255, 215, 0, 0.15);
+            border-color: rgba(255, 215, 0, 0.55);
+            color: #ffd700;
+        }
+
+        .view-panel {
+            display: none;
+        }
+
+        .view-panel.active {
+            display: block;
+        }
+
+        .faq-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .faq-source {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.9rem;
+        }
+
+        .faq-source a {
+            color: #ffd700;
+        }
+
+        .faq-toc {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 22px;
+        }
+
+        .faq-toc a {
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .faq-toc a:hover {
+            border-color: rgba(255, 215, 0, 0.45);
+            color: #ffd700;
+        }
+
+        .faq-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 22px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 18px;
+        }
+
+        .faq-section h2 {
+            color: #ffd700;
+            font-size: 1.35rem;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .faq-body p {
+            margin: 0 0 10px;
+            line-height: 1.55;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .faq-body ul,
+        .faq-body ol {
+            margin: 0 0 12px 1.25rem;
+            padding: 0;
+            line-height: 1.55;
+        }
+
+        .faq-body li {
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .faq-body a {
+            color: #ffd700;
+            word-break: break-word;
+        }
+
+        .faq-body code,
+        .faq-body .cmd {
+            font-family: Consolas, 'Courier New', monospace;
+            color: #ffe08a;
         }
 
         .filters {
@@ -408,8 +533,14 @@
 </head>
 <body>
 <div class="container">
-    <h1>⚔️ Архив игр 🛡️</h1>
+    <h1 id="pageTitle">⚔️ Архив игр 🛡️</h1>
 
+    <nav class="site-nav" aria-label="Разделы сайта">
+        <button type="button" class="site-nav-btn active" data-view="archive">Архив игр</button>
+        <button type="button" class="site-nav-btn" data-view="faq">FAQ</button>
+    </nav>
+
+    <div class="view-panel active" id="viewArchive">
     <div class="filters">
         <div class="filter-group">
             <label>Фильтр по нации</label>
@@ -447,6 +578,15 @@
 
     <div class="games-grid" id="gamesGrid">
         <div class="loading">Загрузка данных...</div>
+    </div>
+    </div>
+
+    <div class="view-panel" id="viewFaq">
+        <div class="faq-toolbar">
+            <div class="faq-source" id="faqSource">Загрузка FAQ...</div>
+        </div>
+        <div class="faq-toc" id="faqToc"></div>
+        <div id="faqContent"></div>
     </div>
 </div>
 
@@ -960,6 +1100,62 @@
 
     // Запуск
     loadGamesData();
+    loadFaqData();
+
+    // Переключение разделов
+    document.querySelectorAll('.site-nav-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const view = btn.dataset.view;
+            document.querySelectorAll('.site-nav-btn').forEach(b => {
+                b.classList.toggle('active', b === btn);
+            });
+            document.getElementById('viewArchive').classList.toggle('active', view === 'archive');
+            document.getElementById('viewFaq').classList.toggle('active', view === 'faq');
+            const title = document.getElementById('pageTitle');
+            title.textContent = view === 'faq' ? '📖 FAQ' : '⚔️ Архив игр 🛡️';
+            document.querySelector('footer p').textContent = view === 'faq'
+                ? 'Правила и подсказки Iron League'
+                : '📁 Хранилище реплеев | Нажмите на кнопку "Смотреть реплей" чтобы загрузить GIF';
+        });
+    });
+
+    async function loadFaqData() {
+        const content = document.getElementById('faqContent');
+        const toc = document.getElementById('faqToc');
+        const sourceEl = document.getElementById('faqSource');
+        try {
+            const response = await fetch('faq.json');
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const data = await response.json();
+            const sections = Array.isArray(data.sections) ? data.sections : [];
+
+            if (data.source) {
+                sourceEl.innerHTML =
+                    `Источник: <a href="${data.source}" target="_blank" rel="noopener">Google Doc</a>`;
+            } else {
+                sourceEl.textContent = '';
+            }
+
+            toc.innerHTML = sections.map((section, idx) => {
+                const id = `faq-sec-${idx}`;
+                return `<a href="#${id}">${section.title}</a>`;
+            }).join('');
+
+            content.innerHTML = sections.map((section, idx) => {
+                const id = `faq-sec-${idx}`;
+                return `
+                    <section class="faq-section" id="${id}">
+                        <h2>${section.title}</h2>
+                        <div class="faq-body">${section.html || ''}</div>
+                    </section>
+                `;
+            }).join('');
+        } catch (error) {
+            console.error('FAQ error:', error);
+            sourceEl.textContent = '';
+            content.innerHTML = '<div class="error">❌ Не удалось загрузить FAQ</div>';
+        }
+    }
 
     // События фильтров
     document.getElementById('nationFilter').addEventListener('change', filterGames);
