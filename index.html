@@ -158,33 +158,21 @@
             color: #ffd700;
         }
 
-        /* Unciv-style portrait: outerColor fill, innerColor ring + icon tint */
+        /* Unciv-style portrait: canvas paints outer/inner colors + centered icon */
         .nation-portrait {
-            --outer: #505050;
-            --inner: #ffffff;
-            --icon: none;
-            position: relative;
             display: inline-block;
             flex-shrink: 0;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
-            background: var(--outer);
-            box-shadow: 0 0 0 2px var(--inner);
             vertical-align: middle;
+            overflow: hidden;
         }
 
-        .nation-portrait::after {
-            content: '';
-            position: absolute;
-            inset: 12%;
-            background-color: var(--inner);
-            -webkit-mask-image: var(--icon);
-            mask-image: var(--icon);
-            -webkit-mask-size: contain;
-            mask-size: contain;
-            -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
-            -webkit-mask-position: center;
-            mask-position: center;
+        .nation-portrait img {
+            display: block;
+            width: 100%;
+            height: 100%;
         }
 
         .nation-icon-small {
@@ -196,7 +184,6 @@
         .nation-portrait.player-nation-mini {
             width: 20px;
             height: 20px;
-            box-shadow: 0 0 0 1.5px var(--inner);
         }
 
         .players-list {
@@ -556,14 +543,125 @@
         return nationColorFallback;
     }
 
-    /** Unciv PortraitNation: круг outerColor, кольцо+силуэт innerColor. */
-    function renderNationPortrait(russianName, extraClass) {
+    const portraitCache = new Map();
+    const imageCache = new Map();
+
+    function loadImage(url) {
+        if (imageCache.has(url)) return imageCache.get(url);
+        const promise = new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve(img);
+            img.onerror = reject;
+            img.src = url;
+        });
+        imageCache.set(url, promise);
+        return promise;
+    }
+
+    /** Opaque-pixel bbox (alpha >= thr); used to center off-balance PNGs. */
+    function getAlphaBBox(img, thr = 40) {
+        const w = img.naturalWidth || img.width;
+        const h = img.naturalHeight || img.height;
+        const c = document.createElement('canvas');
+        c.width = w;
+        c.height = h;
+        const ctx = c.getContext('2d', { willReadFrequently: true });
+        ctx.drawImage(img, 0, 0);
+        const data = ctx.getImageData(0, 0, w, h).data;
+        let minX = w, minY = h, maxX = -1, maxY = -1;
+        for (let y = 0; y < h; y++) {
+            for (let x = 0; x < w; x++) {
+                if (data[(y * w + x) * 4 + 3] < thr) continue;
+                if (x < minX) minX = x;
+                if (y < minY) minY = y;
+                if (x > maxX) maxX = x;
+                if (y > maxY) maxY = y;
+            }
+        }
+        if (maxX < 0) return { x: 0, y: 0, w, h };
+        return { x: minX, y: minY, w: maxX - minX + 1, h: maxY - minY + 1 };
+    }
+
+    /**
+     * Unciv PortraitNation: outerColor fill, innerColor ring + silhouette.
+     * Icon art is centered by its alpha bbox (fixes RekMOD off-center PNGs).
+     */
+    async function buildNationPortraitDataUrl(russianName, size) {
         const colors = getNationColors(russianName);
         const iconUrl = getNationIconPath(russianName);
+        const cacheKey = `${iconUrl}|${colors.outer}|${colors.inner}|${size}`;
+        if (portraitCache.has(cacheKey)) return portraitCache.get(cacheKey);
+
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        const cx = size / 2;
+        const cy = size / 2;
+        const ring = Math.max(1.5, size * 0.08);
+        const outerR = size / 2 - ring / 2;
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, outerR, 0, Math.PI * 2);
+        ctx.fillStyle = rgbCss(colors.outer);
+        ctx.fill();
+        ctx.lineWidth = ring;
+        ctx.strokeStyle = rgbCss(colors.inner);
+        ctx.stroke();
+
+        try {
+            const img = await loadImage(iconUrl);
+            const box = getAlphaBBox(img);
+            const pad = size * 0.18;
+            const avail = size - pad * 2;
+            const scale = Math.min(avail / box.w, avail / box.h);
+            const dw = box.w * scale;
+            const dh = box.h * scale;
+            const dx = cx - dw / 2;
+            const dy = cy - dh / 2;
+
+            const iconCanvas = document.createElement('canvas');
+            iconCanvas.width = size;
+            iconCanvas.height = size;
+            const ictx = iconCanvas.getContext('2d');
+            ictx.drawImage(img, box.x, box.y, box.w, box.h, dx, dy, dw, dh);
+            ictx.globalCompositeOperation = 'source-in';
+            ictx.fillStyle = rgbCss(colors.inner);
+            ictx.fillRect(0, 0, size, size);
+
+            ctx.drawImage(iconCanvas, 0, 0);
+        } catch (e) {
+            console.warn('portrait icon failed', russianName, e);
+        }
+
+        const dataUrl = canvas.toDataURL('image/png');
+        portraitCache.set(cacheKey, dataUrl);
+        return dataUrl;
+    }
+
+    function renderNationPortrait(russianName, extraClass) {
+        const size = extraClass && extraClass.includes('player-nation-mini') ? 20 : 24;
         const cls = ['nation-portrait', extraClass].filter(Boolean).join(' ');
-        return `<span class="${cls}" role="img" aria-label="${russianName}" ` +
-            `style="--outer:${rgbCss(colors.outer)};--inner:${rgbCss(colors.inner)};` +
-            `--icon:url('${iconUrl}')"></span>`;
+        return `<span class="${cls}" data-nation="${russianName}" data-size="${size}" ` +
+            `role="img" aria-label="${russianName}"></span>`;
+    }
+
+    async function hydrateNationPortraits(root) {
+        const nodes = [...(root || document).querySelectorAll('.nation-portrait[data-nation]')];
+        await Promise.all(nodes.map(async (el) => {
+            if (el.querySelector('img')) return;
+            const name = el.dataset.nation;
+            const size = Number(el.dataset.size) || 24;
+            try {
+                const src = await buildNationPortraitDataUrl(name, size * 2);
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = name;
+                el.appendChild(img);
+            } catch (e) {
+                console.warn('hydrate portrait failed', name, e);
+            }
+        }));
     }
 
     // Заполняем фильтр наций
@@ -648,6 +746,8 @@
 
             grid.appendChild(card);
         });
+
+        hydrateNationPortraits(grid);
 
         // Обработчики для кнопок реплея
         document.querySelectorAll('.replay-button').forEach(button => {
