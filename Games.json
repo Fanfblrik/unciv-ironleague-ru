@@ -39,7 +39,74 @@
       "playerCount": 7,
       "endedOnTurn": "",
       "victoryType": "",
-      "gif": "Replays/Unciv_OuBoHPoKhe.gif"
+      "gif": "Replays/Unciv_OuBoHPoKhe.gif",
+      "survivors": [
+        {
+          "name": "munlait21",
+          "nation": "Вавилон",
+          "ideology": "",
+          "wonders": [
+            "Notre Dame"
+          ]
+        },
+        {
+          "name": "ICanSeeForever",
+          "nation": "Галлы",
+          "ideology": "",
+          "wonders": [
+            "Statue of Zeus",
+            "Temple of Artemis"
+          ]
+        },
+        {
+          "name": "Click4x",
+          "nation": "Корея",
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army",
+            "Colossus"
+          ]
+        },
+        {
+          "name": "den_stu",
+          "nation": "Норвегия",
+          "ideology": "",
+          "wonders": [
+            "The Oracle",
+            "The Great Lighthouse",
+            "Great Mosque of Djenne",
+            "Mausoleum of Halicarnassus"
+          ]
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Нормандия",
+          "ideology": "",
+          "wonders": [
+            "The Pyramids",
+            "Great Wall"
+          ]
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Россия",
+          "ideology": "",
+          "wonders": [
+            "The Great Library",
+            "Stonehenge"
+          ]
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Шотландия",
+          "ideology": "",
+          "wonders": [
+            "Chichen Itza",
+            "Hanging Gardens",
+            "Petra"
+          ]
+        }
+      ]
     },
     {
       "id": 2,
@@ -88,7 +155,103 @@
       "playerCount": 9,
       "endedOnTurn": "176",
       "victoryType": "",
-      "gif": "Replays/Unciv_AK9rHvt6pu.gif"
+      "gif": "Replays/Unciv_AK9rHvt6pu.gif",
+      "survivors": [
+        {
+          "name": "ICanSeeForever",
+          "nation": "Америка",
+          "ideology": "Порядок",
+          "wonders": [
+            "Machu Picchu"
+          ]
+        },
+        {
+          "name": "Click4x",
+          "nation": "Аргентина",
+          "ideology": "Свобода",
+          "wonders": [
+            "The Great Lighthouse",
+            "Colossus",
+            "Great Mosque of Djenne",
+            "Hagia Sophia"
+          ]
+        },
+        {
+          "name": "freedomanarhy",
+          "nation": "Золотая Орда",
+          "ideology": "Автократия",
+          "wonders": [
+            "Himeji Castle",
+            "Temple of Artemis"
+          ]
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Иерусалим",
+          "ideology": "",
+          "wonders": []
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Маурья",
+          "ideology": "",
+          "wonders": [
+            "Great Wall"
+          ]
+        },
+        {
+          "name": "den_stu",
+          "nation": "Пруссия",
+          "ideology": "Порядок",
+          "wonders": [
+            "Stonehenge",
+            "Notre Dame",
+            "The Pyramids",
+            "Porcelain Tower",
+            "Brandenburg Gate",
+            "Terracotta Army"
+          ]
+        },
+        {
+          "name": "khtoyaaty",
+          "nation": "Россия",
+          "ideology": "",
+          "wonders": [
+            "Statue of Zeus"
+          ]
+        },
+        {
+          "name": "munlait21",
+          "nation": "Сиам",
+          "ideology": "Свобода",
+          "wonders": [
+            "Alhambra",
+            "Petra",
+            "Leaning Tower of Pisa",
+            "Forbidden Palace",
+            "The Oracle",
+            "Chichen Itza",
+            "Taj Mahal",
+            "Eiffel Tower",
+            "Sistine Chapel",
+            "Angkor Wat",
+            "Cristo Redentor",
+            "Hanging Gardens",
+            "Statue of Liberty",
+            "Neuschwanstein",
+            "Big Ben",
+            "Mausoleum of Halicarnassus"
+          ]
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Франция",
+          "ideology": "",
+          "wonders": [
+            "The Great Library"
+          ]
+        }
+      ]
     },
     {
       "id": 3,
@@ -141,7 +304,98 @@
       "playerCount": 10,
       "endedOnTurn": "163",
       "victoryType": "",
-      "gif": "Replays/Unciv_HerAj4t3dU.gif"
+      "gif": "Replays/Unciv_HerAj4t3dU.gif",
+      "survivors": [
+        {
+          "name": "Ouni0",
+          "nation": "Аравия",
+          "ideology": "",
+          "wonders": [
+            "Hanging Gardens",
+            "Machu Picchu"
+          ]
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Италия",
+          "ideology": "",
+          "wonders": []
+        },
+        {
+          "name": "Nepherthos",
+          "nation": "Майя",
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army",
+            "Stonehenge",
+            "Great Wall"
+          ]
+        },
+        {
+          "name": "khtoyaaty",
+          "nation": "Нидерланды",
+          "ideology": "",
+          "wonders": [
+            "Mausoleum of Halicarnassus"
+          ]
+        },
+        {
+          "name": "munlait21",
+          "nation": "Персия",
+          "ideology": "",
+          "wonders": [
+            "Angkor Wat",
+            "Chichen Itza",
+            "Petra"
+          ]
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Польша",
+          "ideology": "",
+          "wonders": [
+            "Great Mosque of Djenne",
+            "Hagia Sophia"
+          ]
+        },
+        {
+          "name": "den_stu",
+          "nation": "Румыния",
+          "ideology": "",
+          "wonders": [
+            "Notre Dame",
+            "Himeji Castle"
+          ]
+        },
+        {
+          "name": "Click4x",
+          "nation": "Сонгай",
+          "ideology": "",
+          "wonders": []
+        },
+        {
+          "name": "ICanSeeForever",
+          "nation": "Тимуриды",
+          "ideology": "",
+          "wonders": [
+            "Alhambra",
+            "Statue of Zeus",
+            "The Pyramids"
+          ]
+        },
+        {
+          "name": "freedomanarhy",
+          "nation": "Япония",
+          "ideology": "",
+          "wonders": [
+            "The Oracle",
+            "The Great Library",
+            "Temple of Artemis",
+            "The Great Lighthouse",
+            "Colossus"
+          ]
+        }
+      ]
     },
     {
       "id": 4,
@@ -440,7 +694,79 @@
       "playerCount": 6,
       "endedOnTurn": "204",
       "victoryType": "Science",
-      "gif": "Replays/Unciv_HxUtYpKTjN.gif"
+      "gif": "Replays/Unciv_HxUtYpKTjN.gif",
+      "survivors": [
+        {
+          "name": "n9306867842",
+          "nation": "Зимбабве",
+          "ideology": "Порядок",
+          "wonders": [
+            "The Great Library",
+            "Notre Dame",
+            "Kremlin",
+            "The Pyramids",
+            "Taj Mahal",
+            "Brandenburg Gate",
+            "Leaning Tower of Pisa",
+            "Alhambra",
+            "The Great Lighthouse",
+            "Sydney Opera House",
+            "Great Mosque of Djenne",
+            "Statue of Liberty",
+            "Porcelain Tower",
+            "The Louvre",
+            "Chichen Itza",
+            "Eiffel Tower",
+            "Cristo Redentor",
+            "CN Tower",
+            "The Oracle"
+          ]
+        },
+        {
+          "name": "YukiHino98",
+          "nation": "Карфаген",
+          "ideology": "",
+          "wonders": [
+            "Terracotta Army",
+            "Stonehenge",
+            "Colossus",
+            "Statue of Zeus",
+            "Great Wall"
+          ]
+        },
+        {
+          "name": "Fanfblrik",
+          "nation": "Майсур",
+          "ideology": "",
+          "wonders": [
+            "Pentagon",
+            "Mausoleum of Halicarnassus",
+            "Himeji Castle"
+          ]
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Норвегия",
+          "ideology": "Свобода",
+          "wonders": []
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Португалия",
+          "ideology": "Свобода",
+          "wonders": [
+            "Machu Picchu",
+            "Neuschwanstein",
+            "Petra",
+            "Sistine Chapel",
+            "Hanging Gardens",
+            "Angkor Wat",
+            "Hubble Space Telescope",
+            "Big Ben",
+            "Hagia Sophia"
+          ]
+        }
+      ]
     },
     {
       "id": 11,
@@ -493,7 +819,86 @@
       "playerCount": 10,
       "endedOnTurn": "159",
       "victoryType": "",
-      "gif": "Replays/Unciv_Zt7U9zfGRG.gif"
+      "gif": "Replays/Unciv_Zt7U9zfGRG.gif",
+      "survivors": [
+        {
+          "name": "Click4x",
+          "nation": "Англия",
+          "ideology": "Свобода",
+          "wonders": [
+            "The Great Lighthouse",
+            "Statue of Liberty",
+            "Taj Mahal",
+            "Temple of Artemis",
+            "Colossus",
+            "Brandenburg Gate",
+            "The Pyramids",
+            "Great Mosque of Djenne",
+            "Eiffel Tower"
+          ]
+        },
+        {
+          "name": "YukiHino98",
+          "nation": "Венгрия",
+          "ideology": "Свобода",
+          "wonders": [
+            "Sistine Chapel",
+            "The Oracle",
+            "Porcelain Tower",
+            "Himeji Castle",
+            "Cristo Redentor",
+            "Hanging Gardens",
+            "Great Wall"
+          ]
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Кильва",
+          "ideology": "Порядок",
+          "wonders": [
+            "The Louvre"
+          ]
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Марокко",
+          "ideology": "Свобода",
+          "wonders": [
+            "Hagia Sophia",
+            "Alhambra",
+            "The Great Library",
+            "Machu Picchu",
+            "Mausoleum of Halicarnassus",
+            "Big Ben",
+            "Petra"
+          ]
+        },
+        {
+          "name": "EmperorPenguin01",
+          "nation": "Нидерланды",
+          "ideology": "Автократия",
+          "wonders": [
+            "Angkor Wat",
+            "Chichen Itza",
+            "Notre Dame",
+            "CN Tower",
+            "Neuschwanstein",
+            "Statue of Zeus",
+            "Forbidden Palace",
+            "Leaning Tower of Pisa",
+            "Stonehenge",
+            "Kremlin"
+          ]
+        },
+        {
+          "name": "n9306867842",
+          "nation": "Турция",
+          "ideology": "Автократия",
+          "wonders": [
+            "Terracotta Army"
+          ]
+        }
+      ]
     },
     {
       "id": 12,
@@ -546,7 +951,89 @@
       "playerCount": 10,
       "endedOnTurn": "163",
       "victoryType": "",
-      "gif": "Replays/Unciv_WRUgAToypZ.gif"
+      "gif": "Replays/Unciv_WRUgAToypZ.gif",
+      "survivors": [
+        {
+          "name": "EmperorPenguin01",
+          "nation": "Византия",
+          "ideology": "Автократия",
+          "wonders": [
+            "The Oracle",
+            "Angkor Wat",
+            "Pentagon",
+            "The Great Library",
+            "Chichen Itza",
+            "Terracotta Army",
+            "Statue of Zeus",
+            "The Great Lighthouse",
+            "Colossus",
+            "Great Mosque of Djenne",
+            "Eiffel Tower",
+            "Great Wall",
+            "Petra"
+          ]
+        },
+        {
+          "name": "Click4x",
+          "nation": "Инки",
+          "ideology": "Автократия",
+          "wonders": [
+            "Taj Mahal",
+            "Machu Picchu",
+            "Brandenburg Gate",
+            "The Pyramids",
+            "Neuschwanstein"
+          ]
+        },
+        {
+          "name": "munlait21",
+          "nation": "Ирландия",
+          "ideology": "Автократия",
+          "wonders": [
+            "Porcelain Tower"
+          ]
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Мадагаскар",
+          "ideology": "Свобода",
+          "wonders": [
+            "Statue of Liberty",
+            "Stonehenge",
+            "Hagia Sophia",
+            "Big Ben"
+          ]
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Майя",
+          "ideology": "Автократия",
+          "wonders": [
+            "Himeji Castle",
+            "Notre Dame"
+          ]
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Сиам",
+          "ideology": "Автократия",
+          "wonders": []
+        },
+        {
+          "name": "den_stu",
+          "nation": "Швеция",
+          "ideology": "Автократия",
+          "wonders": [
+            "Sistine Chapel",
+            "Hanging Gardens",
+            "Leaning Tower of Pisa",
+            "Temple of Artemis",
+            "Mausoleum of Halicarnassus",
+            "Forbidden Palace",
+            "Alhambra"
+          ]
+        }
+      ]
     },
     {
       "id": 13,
@@ -591,7 +1078,72 @@
       "playerCount": 8,
       "endedOnTurn": "133",
       "victoryType": "CC",
-      "gif": "Replays/Unciv_kZiCWJW5nk.gif"
+      "gif": "Replays/Unciv_kZiCWJW5nk.gif",
+      "survivors": [
+        {
+          "name": "",
+          "nation": "Trieste",
+          "ideology": "Свобода",
+          "wonders": []
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Готы",
+          "ideology": "Автократия",
+          "wonders": [
+            "Sistine Chapel",
+            "Statue of Zeus",
+            "Big Ben",
+            "Eiffel Tower",
+            "Notre Dame",
+            "Leaning Tower of Pisa",
+            "Mausoleum of Halicarnassus"
+          ]
+        },
+        {
+          "name": "EmperorPenguin01",
+          "nation": "Кхмеры",
+          "ideology": "Автократия",
+          "wonders": [
+            "Porcelain Tower",
+            "Chichen Itza",
+            "Machu Picchu",
+            "Taj Mahal",
+            "Angkor Wat",
+            "Terracotta Army",
+            "The Great Library",
+            "Temple of Artemis",
+            "Stonehenge",
+            "Great Wall"
+          ]
+        },
+        {
+          "name": "den_stu",
+          "nation": "Мавры",
+          "ideology": "Порядок",
+          "wonders": [
+            "Alhambra",
+            "The Oracle",
+            "Hanging Gardens",
+            "Himeji Castle",
+            "Neuschwanstein",
+            "The Pyramids",
+            "Petra"
+          ]
+        },
+        {
+          "name": "Click4x",
+          "nation": "Португалия",
+          "ideology": "Автократия",
+          "wonders": [
+            "The Great Lighthouse",
+            "Great Mosque of Djenne",
+            "Colossus",
+            "Forbidden Palace",
+            "Hagia Sophia"
+          ]
+        }
+      ]
     },
     {
       "id": 14,
@@ -636,7 +1188,93 @@
       "playerCount": 8,
       "endedOnTurn": "172",
       "victoryType": "CC",
-      "gif": "Replays/Unciv_wwiabovy1p.gif"
+      "gif": "Replays/Unciv_wwiabovy1p.gif",
+      "survivors": [
+        {
+          "name": "Click4x",
+          "nation": "Ацтеки",
+          "ideology": "Свобода",
+          "wonders": []
+        },
+        {
+          "name": "Fanfblrik",
+          "nation": "Болгария",
+          "ideology": "Порядок",
+          "wonders": [
+            "Terracotta Army"
+          ]
+        },
+        {
+          "name": "den_stu",
+          "nation": "Бруней",
+          "ideology": "Свобода",
+          "wonders": [
+            "Leaning Tower of Pisa",
+            "Statue of Liberty",
+            "Cristo Redentor",
+            "Great Firewall",
+            "Colossus",
+            "Notre Dame",
+            "CN Tower",
+            "Statue of Zeus",
+            "Great Wall",
+            "Temple of Artemis",
+            "Sistine Chapel",
+            "Alhambra",
+            "Hanging Gardens",
+            "Forbidden Palace",
+            "Chichen Itza",
+            "Eiffel Tower"
+          ]
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Галлы",
+          "ideology": "Автократия",
+          "wonders": []
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Оман",
+          "ideology": "Автократия",
+          "wonders": [
+            "The Louvre",
+            "Big Ben",
+            "The Pyramids"
+          ]
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Сонгай",
+          "ideology": "Порядок",
+          "wonders": [
+            "The Oracle",
+            "Porcelain Tower",
+            "Angkor Wat",
+            "Himeji Castle",
+            "Great Mosque of Djenne",
+            "Pentagon",
+            "Mausoleum of Halicarnassus",
+            "Brandenburg Gate",
+            "Petra",
+            "Kremlin",
+            "Machu Picchu",
+            "Hagia Sophia",
+            "Neuschwanstein"
+          ]
+        },
+        {
+          "name": "munlait21",
+          "nation": "Япония",
+          "ideology": "Свобода",
+          "wonders": [
+            "The Great Library",
+            "The Great Lighthouse",
+            "Taj Mahal",
+            "Stonehenge"
+          ]
+        }
+      ]
     },
     {
       "id": 15,
@@ -689,7 +1327,94 @@
       "playerCount": 10,
       "endedOnTurn": "136",
       "victoryType": "CC",
-      "gif": "Replays/Unciv_kd6lUrZElU.gif"
+      "gif": "Replays/Unciv_kd6lUrZElU.gif",
+      "survivors": [
+        {
+          "name": "den_stu",
+          "nation": "Айюбиды",
+          "ideology": "Автократия",
+          "wonders": [
+            "Alhambra",
+            "Leaning Tower of Pisa",
+            "The Oracle",
+            "The Great Library",
+            "Angkor Wat",
+            "Chichen Itza",
+            "Himeji Castle",
+            "Brandenburg Gate",
+            "Stonehenge",
+            "Notre Dame",
+            "Petra"
+          ]
+        },
+        {
+          "name": "EmperorPenguin01",
+          "nation": "Бразилия",
+          "ideology": "Порядок",
+          "wonders": [
+            "The Pyramids",
+            "Hagia Sophia",
+            "CN Tower",
+            "Kremlin"
+          ]
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Венеция",
+          "ideology": "Свобода",
+          "wonders": [
+            "Sistine Chapel",
+            "The Great Lighthouse",
+            "Big Ben",
+            "Neuschwanstein"
+          ]
+        },
+        {
+          "name": "Fanfblrik",
+          "nation": "Грузия",
+          "ideology": "Порядок",
+          "wonders": [
+            "Great Mosque of Djenne"
+          ]
+        },
+        {
+          "name": "Click4x",
+          "nation": "Монголия",
+          "ideology": "Автократия",
+          "wonders": [
+            "Hanging Gardens",
+            "Colossus",
+            "Mausoleum of Halicarnassus",
+            "Great Wall"
+          ]
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Нормандия",
+          "ideology": "Автократия",
+          "wonders": [
+            "Terracotta Army",
+            "Statue of Zeus",
+            "Machu Picchu"
+          ]
+        },
+        {
+          "name": "n9306867842",
+          "nation": "Сиу",
+          "ideology": "Автократия",
+          "wonders": [
+            "Porcelain Tower",
+            "Taj Mahal",
+            "Temple of Artemis"
+          ]
+        },
+        {
+          "name": "munlait21",
+          "nation": "Тимуриды",
+          "ideology": "Свобода",
+          "wonders": []
+        }
+      ]
     },
     {
       "id": 16,
@@ -726,7 +1451,74 @@
       "playerCount": 6,
       "endedOnTurn": "128",
       "victoryType": "CC",
-      "gif": "Replays/Unciv_ZpMnOiLVsf.gif"
+      "gif": "Replays/Unciv_ZpMnOiLVsf.gif",
+      "survivors": [
+        {
+          "name": "ICanSeeForever",
+          "nation": "Германия",
+          "ideology": "Порядок",
+          "wonders": [
+            "Sistine Chapel",
+            "Great Mosque of Djenne",
+            "Notre Dame"
+          ]
+        },
+        {
+          "name": "Click4x",
+          "nation": "Греция",
+          "ideology": "Порядок",
+          "wonders": [
+            "Alhambra",
+            "The Oracle",
+            "Terracotta Army",
+            "Machu Picchu",
+            "Himeji Castle",
+            "Brandenburg Gate",
+            "Forbidden Palace",
+            "The Pyramids",
+            "Stonehenge",
+            "Mausoleum of Halicarnassus"
+          ]
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Гунны",
+          "ideology": "",
+          "wonders": [
+            "Statue of Zeus",
+            "Temple of Artemis",
+            "Chichen Itza",
+            "Great Wall",
+            "Petra",
+            "Hagia Sophia"
+          ]
+        },
+        {
+          "name": "n9306867842",
+          "nation": "Полинезия",
+          "ideology": "Автократия",
+          "wonders": [
+            "Leaning Tower of Pisa",
+            "The Great Lighthouse",
+            "Taj Mahal",
+            "Angkor Wat",
+            "Colossus",
+            "The Great Library"
+          ]
+        },
+        {
+          "name": "Fanfblrik",
+          "nation": "Россия",
+          "ideology": "",
+          "wonders": []
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Украина",
+          "ideology": "",
+          "wonders": []
+        }
+      ]
     },
     {
       "id": 17,
@@ -775,7 +1567,82 @@
       "playerCount": 9,
       "endedOnTurn": "192",
       "victoryType": "Science",
-      "gif": "Replays/Unciv_r3NqbWLVTc.gif"
+      "gif": "Replays/Unciv_r3NqbWLVTc.gif",
+      "survivors": [
+        {
+          "name": "munlait21",
+          "nation": "Англия",
+          "ideology": "Порядок",
+          "wonders": [
+            "CN Tower"
+          ]
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Вьетнам",
+          "ideology": "Автократия",
+          "wonders": [
+            "Statue of Zeus",
+            "Temple of Artemis",
+            "Stonehenge",
+            "Petra"
+          ]
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Дания",
+          "ideology": "Порядок",
+          "wonders": [
+            "The Great Lighthouse",
+            "Sydney Opera House",
+            "Himeji Castle",
+            "Cristo Redentor",
+            "Pentagon",
+            "The Louvre",
+            "Notre Dame",
+            "Kremlin",
+            "Neuschwanstein",
+            "Alhambra",
+            "Sistine Chapel",
+            "The Oracle",
+            "The Great Library",
+            "Hanging Gardens",
+            "Great Mosque of Djenne",
+            "Taj Mahal",
+            "Eiffel Tower",
+            "Hagia Sophia"
+          ]
+        },
+        {
+          "name": "den_stu",
+          "nation": "Ирокезы",
+          "ideology": "Порядок",
+          "wonders": [
+            "Terracotta Army",
+            "Forbidden Palace",
+            "Hubble Space Telescope",
+            "Big Ben",
+            "Great Firewall",
+            "Machu Picchu",
+            "Mausoleum of Halicarnassus"
+          ]
+        },
+        {
+          "name": "Click4x",
+          "nation": "Филиппины",
+          "ideology": "Автократия",
+          "wonders": [
+            "Angkor Wat",
+            "Chichen Itza",
+            "The Pyramids",
+            "Colossus",
+            "Great Wall",
+            "Leaning Tower of Pisa",
+            "Brandenburg Gate",
+            "Porcelain Tower"
+          ]
+        }
+      ]
     },
     {
       "id": 18,
@@ -828,7 +1695,89 @@
       "playerCount": 10,
       "endedOnTurn": "148",
       "victoryType": "Cultural",
-      "gif": "Replays/Unciv_l70yhbz9MB.gif"
+      "gif": "Replays/Unciv_l70yhbz9MB.gif",
+      "survivors": [
+        {
+          "name": "Overslidishe",
+          "nation": "Бирма",
+          "ideology": "Порядок",
+          "wonders": [
+            "Brandenburg Gate",
+            "Kremlin"
+          ]
+        },
+        {
+          "name": "munlait21",
+          "nation": "Кхмеры",
+          "ideology": "Свобода",
+          "wonders": [
+            "Statue of Zeus"
+          ]
+        },
+        {
+          "name": "den_stu",
+          "nation": "Майсур",
+          "ideology": "Автократия",
+          "wonders": [
+            "Leaning Tower of Pisa",
+            "The Great Lighthouse",
+            "Porcelain Tower",
+            "Petra"
+          ]
+        },
+        {
+          "name": "Fanfblrik",
+          "nation": "Монголия",
+          "ideology": "Порядок",
+          "wonders": [
+            "Terracotta Army",
+            "Temple of Artemis",
+            "Neuschwanstein",
+            "Colossus"
+          ]
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Румыния",
+          "ideology": "Автократия",
+          "wonders": [
+            "Big Ben",
+            "Notre Dame",
+            "Machu Picchu"
+          ]
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Тонга",
+          "ideology": "Автократия",
+          "wonders": [
+            "The Pyramids",
+            "Great Mosque of Djenne",
+            "Angkor Wat",
+            "Great Wall",
+            "The Louvre"
+          ]
+        },
+        {
+          "name": "Click4x",
+          "nation": "Франция",
+          "ideology": "Свобода",
+          "wonders": [
+            "Alhambra",
+            "Sistine Chapel",
+            "The Oracle",
+            "Statue of Liberty",
+            "Taj Mahal",
+            "Himeji Castle",
+            "Stonehenge",
+            "The Great Library",
+            "Chichen Itza",
+            "Hanging Gardens",
+            "Mausoleum of Halicarnassus",
+            "Hagia Sophia"
+          ]
+        }
+      ]
     },
     {
       "id": 19,
@@ -865,7 +1814,66 @@
       "playerCount": 6,
       "endedOnTurn": "178",
       "victoryType": "CC",
-      "gif": "Replays/Unciv_W76DZEWIiC.gif"
+      "gif": "Replays/Unciv_W76DZEWIiC.gif",
+      "survivors": [
+        {
+          "name": "AlexUnderHill",
+          "nation": "Нидерланды",
+          "ideology": "Свобода",
+          "wonders": [
+            "Sistine Chapel",
+            "Terracotta Army",
+            "Statue of Liberty",
+            "Angkor Wat",
+            "Stonehenge",
+            "Cristo Redentor",
+            "Mausoleum of Halicarnassus",
+            "The Louvre",
+            "Temple of Artemis",
+            "Petra",
+            "The Great Lighthouse",
+            "Colossus",
+            "Alhambra",
+            "The Oracle",
+            "The Great Library",
+            "Porcelain Tower",
+            "Himeji Castle",
+            "Hagia Sophia",
+            "Great Mosque of Djenne",
+            "Great Wall"
+          ]
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Рим",
+          "ideology": "Порядок",
+          "wonders": [
+            "Statue of Zeus",
+            "Chichen Itza",
+            "Eiffel Tower",
+            "Neuschwanstein",
+            "Hanging Gardens",
+            "Great Firewall",
+            "Pentagon",
+            "Taj Mahal",
+            "Machu Picchu",
+            "Hubble Space Telescope",
+            "Brandenburg Gate",
+            "Notre Dame",
+            "CN Tower",
+            "Big Ben"
+          ]
+        },
+        {
+          "name": "Fanfblrik",
+          "nation": "Шумеры",
+          "ideology": "Порядок",
+          "wonders": [
+            "Leaning Tower of Pisa",
+            "Kremlin"
+          ]
+        }
+      ]
     },
     {
       "id": 20,
@@ -914,7 +1922,82 @@
       "playerCount": 9,
       "endedOnTurn": "139",
       "victoryType": "CC",
-      "gif": "Replays/Unciv_Wy7gVl9zgl.gif"
+      "gif": "Replays/Unciv_Wy7gVl9zgl.gif",
+      "survivors": [
+        {
+          "name": "den_stu",
+          "nation": "Иерусалим",
+          "ideology": "Автократия",
+          "wonders": [
+            "Forbidden Palace",
+            "Big Ben"
+          ]
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Карфаген",
+          "ideology": "Порядок",
+          "wonders": [
+            "The Great Lighthouse",
+            "Colossus",
+            "Leaning Tower of Pisa"
+          ]
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Мавры",
+          "ideology": "Автократия",
+          "wonders": [
+            "Alhambra",
+            "Hanging Gardens",
+            "Angkor Wat",
+            "Hagia Sophia"
+          ]
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Майя",
+          "ideology": "Порядок",
+          "wonders": [
+            "Great Mosque of Djenne",
+            "Stonehenge",
+            "Temple of Artemis"
+          ]
+        },
+        {
+          "name": "Lvxvcs",
+          "nation": "Сиам",
+          "ideology": "Свобода",
+          "wonders": [
+            "The Great Library"
+          ]
+        },
+        {
+          "name": "Click4x",
+          "nation": "Финляндия",
+          "ideology": "Порядок",
+          "wonders": [
+            "Terracotta Army",
+            "Porcelain Tower",
+            "Mausoleum of Halicarnassus",
+            "Great Wall",
+            "The Pyramids",
+            "Notre Dame",
+            "Petra",
+            "Statue of Zeus",
+            "Machu Picchu",
+            "Sistine Chapel",
+            "The Oracle",
+            "Taj Mahal",
+            "The Louvre",
+            "Chichen Itza",
+            "Eiffel Tower",
+            "Himeji Castle",
+            "Brandenburg Gate",
+            "Kremlin"
+          ]
+        }
+      ]
     },
     {
       "id": 21,
@@ -974,7 +2057,99 @@
       "map": "Perlin",
       "playerCount": 12,
       "endedOnTurn": "123",
-      "victoryType": ""
+      "victoryType": "",
+      "survivors": [
+        {
+          "name": "konoval_mik",
+          "nation": "Айюбиды",
+          "ideology": "",
+          "wonders": [
+            "Statue of Zeus"
+          ]
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Бирма",
+          "ideology": "Порядок",
+          "wonders": [
+            "Taj Mahal",
+            "Great Wall",
+            "Notre Dame",
+            "Stonehenge",
+            "Machu Picchu",
+            "Hagia Sophia"
+          ]
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Болгария",
+          "ideology": "Порядок",
+          "wonders": [
+            "Sistine Chapel",
+            "Mausoleum of Halicarnassus",
+            "Petra"
+          ]
+        },
+        {
+          "name": "Lvxvcs",
+          "nation": "Дания",
+          "ideology": "",
+          "wonders": [
+            "The Great Lighthouse"
+          ]
+        },
+        {
+          "name": "Click4x",
+          "nation": "Колумбия",
+          "ideology": "Автократия",
+          "wonders": [
+            "The Pyramids",
+            "Temple of Artemis",
+            "Brandenburg Gate",
+            "Himeji Castle",
+            "The Oracle",
+            "The Great Library"
+          ]
+        },
+        {
+          "name": "Ouni0",
+          "nation": "Македония",
+          "ideology": "",
+          "wonders": [
+            "Chichen Itza",
+            "Hanging Gardens"
+          ]
+        },
+        {
+          "name": "Fanfblrik",
+          "nation": "Персия",
+          "ideology": "Порядок",
+          "wonders": [
+            "Terracotta Army"
+          ]
+        },
+        {
+          "name": "den_stu",
+          "nation": "Португалия",
+          "ideology": "Свобода",
+          "wonders": [
+            "Alhambra",
+            "Leaning Tower of Pisa",
+            "Porcelain Tower",
+            "Big Ben",
+            "Colossus",
+            "Great Mosque of Djenne"
+          ]
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Филиппины",
+          "ideology": "",
+          "wonders": [
+            "Angkor Wat"
+          ]
+        }
+      ]
     },
     {
       "id": 22,
@@ -1022,7 +2197,87 @@
       "map": "Inner Sea",
       "playerCount": 9,
       "endedOnTurn": "180",
-      "victoryType": ""
+      "victoryType": "",
+      "survivors": [
+        {
+          "name": "Click4x",
+          "nation": "Кельты",
+          "ideology": "Свобода",
+          "wonders": [
+            "The Oracle",
+            "Sistine Chapel"
+          ]
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Монголия",
+          "ideology": "Порядок",
+          "wonders": [
+            "Alhambra",
+            "Temple of Artemis",
+            "The Great Lighthouse"
+          ]
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Набатея",
+          "ideology": "Порядок",
+          "wonders": []
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Папская область",
+          "ideology": "Автократия",
+          "wonders": [
+            "Himeji Castle",
+            "Great Mosque of Djenne",
+            "Hagia Sophia",
+            "Petra",
+            "Big Ben",
+            "Notre Dame",
+            "Terracotta Army",
+            "Neuschwanstein",
+            "Great Wall"
+          ]
+        },
+        {
+          "name": "Lvxvcs",
+          "nation": "Пруссия",
+          "ideology": "Порядок",
+          "wonders": [
+            "Brandenburg Gate",
+            "Angkor Wat",
+            "Colossus",
+            "Kremlin",
+            "Machu Picchu",
+            "Leaning Tower of Pisa"
+          ]
+        },
+        {
+          "name": "n9306867842",
+          "nation": "Румыния",
+          "ideology": "Порядок",
+          "wonders": [
+            "Hanging Gardens",
+            "Porcelain Tower",
+            "Taj Mahal",
+            "Chichen Itza",
+            "Eiffel Tower",
+            "Stonehenge"
+          ]
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Шошоны",
+          "ideology": "",
+          "wonders": [
+            "Mausoleum of Halicarnassus",
+            "The Great Library",
+            "Statue of Zeus",
+            "The Pyramids"
+          ]
+        }
+      ]
     },
     {
       "id": 23,
@@ -1070,7 +2325,73 @@
       "map": "Fractal",
       "playerCount": 9,
       "endedOnTurn": "162",
-      "victoryType": ""
+      "victoryType": "",
+      "survivors": [
+        {
+          "name": "den_stu",
+          "nation": "Австрия",
+          "ideology": "Порядок",
+          "wonders": [
+            "Leaning Tower of Pisa",
+            "The Oracle",
+            "Angkor Wat",
+            "Forbidden Palace",
+            "Himeji Castle",
+            "Stonehenge",
+            "Hagia Sophia",
+            "Pentagon",
+            "Machu Picchu",
+            "Brandenburg Gate",
+            "Kremlin",
+            "The Great Lighthouse"
+          ]
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Корея",
+          "ideology": "Свобода",
+          "wonders": [
+            "Statue of Zeus",
+            "Statue of Liberty",
+            "The Great Library",
+            "The Louvre",
+            "Great Wall"
+          ]
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Тонга",
+          "ideology": "Порядок",
+          "wonders": [
+            "Sistine Chapel",
+            "Hanging Gardens",
+            "Porcelain Tower",
+            "Taj Mahal",
+            "Chichen Itza",
+            "Eiffel Tower",
+            "Neuschwanstein"
+          ]
+        },
+        {
+          "name": "Click4x",
+          "nation": "Чили",
+          "ideology": "Порядок",
+          "wonders": [
+            "Terracotta Army",
+            "Great Firewall",
+            "Temple of Artemis",
+            "CN Tower",
+            "The Pyramids",
+            "Notre Dame",
+            "Alhambra",
+            "Colossus",
+            "Mausoleum of Halicarnassus",
+            "Great Mosque of Djenne",
+            "Cristo Redentor",
+            "Petra"
+          ]
+        }
+      ]
     },
     {
       "id": 24,
