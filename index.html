@@ -558,8 +558,11 @@
         return promise;
     }
 
-    /** Opaque-pixel bbox (alpha >= thr); used to center off-balance PNGs. */
-    function getAlphaBBox(img, thr = 40) {
+    /**
+     * Solid-pixel bbox (for scale) + alpha centroid (for centering).
+     * Soft halos (Ukraine etc.) skew a low-threshold bbox; mass stays stable.
+     */
+    function getAlphaLayout(img, solidThr = 128, massThr = 24) {
         const w = img.naturalWidth || img.width;
         const h = img.naturalHeight || img.height;
         const c = document.createElement('canvas');
@@ -568,28 +571,45 @@
         const ctx = c.getContext('2d', { willReadFrequently: true });
         ctx.drawImage(img, 0, 0);
         const data = ctx.getImageData(0, 0, w, h).data;
+
         let minX = w, minY = h, maxX = -1, maxY = -1;
+        let sumA = 0, sumX = 0, sumY = 0;
+
         for (let y = 0; y < h; y++) {
             for (let x = 0; x < w; x++) {
-                if (data[(y * w + x) * 4 + 3] < thr) continue;
-                if (x < minX) minX = x;
-                if (y < minY) minY = y;
-                if (x > maxX) maxX = x;
-                if (y > maxY) maxY = y;
+                const a = data[(y * w + x) * 4 + 3];
+                if (a >= solidThr) {
+                    if (x < minX) minX = x;
+                    if (y < minY) minY = y;
+                    if (x > maxX) maxX = x;
+                    if (y > maxY) maxY = y;
+                }
+                if (a >= massThr) {
+                    sumA += a;
+                    sumX += x * a;
+                    sumY += y * a;
+                }
             }
         }
-        if (maxX < 0) return { x: 0, y: 0, w, h };
-        return { x: minX, y: minY, w: maxX - minX + 1, h: maxY - minY + 1 };
+
+        const box = maxX < 0
+            ? { x: 0, y: 0, w, h }
+            : { x: minX, y: minY, w: maxX - minX + 1, h: maxY - minY + 1 };
+
+        const massX = sumA > 0 ? sumX / sumA : box.x + box.w / 2;
+        const massY = sumA > 0 ? sumY / sumA : box.y + box.h / 2;
+
+        return { box, massX, massY, imgW: w, imgH: h };
     }
 
     /**
      * Unciv PortraitNation: outerColor fill, innerColor ring + silhouette.
-     * Icon art is centered by its alpha bbox (fixes RekMOD off-center PNGs).
+     * Scale by solid alpha bbox; center by alpha centroid (RekMOD-safe).
      */
     async function buildNationPortraitDataUrl(russianName, size) {
         const colors = getNationColors(russianName);
         const iconUrl = getNationIconPath(russianName);
-        const cacheKey = `${iconUrl}|${colors.outer}|${colors.inner}|${size}`;
+        const cacheKey = `${iconUrl}|${colors.outer}|${colors.inner}|${size}|v2`;
         if (portraitCache.has(cacheKey)) return portraitCache.get(cacheKey);
 
         const canvas = document.createElement('canvas');
@@ -611,20 +631,22 @@
 
         try {
             const img = await loadImage(iconUrl);
-            const box = getAlphaBBox(img);
+            const { box, massX, massY } = getAlphaLayout(img);
             const pad = size * 0.18;
             const avail = size - pad * 2;
             const scale = Math.min(avail / box.w, avail / box.h);
-            const dw = box.w * scale;
-            const dh = box.h * scale;
-            const dx = cx - dw / 2;
-            const dy = cy - dh / 2;
+
+            // Place image so the alpha centroid lands on the circle center.
+            const dx = cx - massX * scale;
+            const dy = cy - massY * scale;
+            const dw = (img.naturalWidth || img.width) * scale;
+            const dh = (img.naturalHeight || img.height) * scale;
 
             const iconCanvas = document.createElement('canvas');
             iconCanvas.width = size;
             iconCanvas.height = size;
             const ictx = iconCanvas.getContext('2d');
-            ictx.drawImage(img, box.x, box.y, box.w, box.h, dx, dy, dw, dh);
+            ictx.drawImage(img, 0, 0, img.naturalWidth || img.width, img.naturalHeight || img.height, dx, dy, dw, dh);
             ictx.globalCompositeOperation = 'source-in';
             ictx.fillStyle = rgbCss(colors.inner);
             ictx.fillRect(0, 0, size, size);
