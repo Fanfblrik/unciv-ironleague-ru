@@ -10,6 +10,9 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     <title>Iron League — Архив и FAQ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -33,10 +36,47 @@
         h1 {
             text-align: center;
             font-size: 2.5rem;
-            margin: 30px 0 16px;
+            margin: 10px 0 16px;
             color: #ffd700;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
             letter-spacing: 2px;
+        }
+
+        .site-brand {
+            text-align: center;
+            margin: 8px 0 0;
+            padding: 6px 12px 2px;
+            font-family: 'Cinzel Decorative', 'Cinzel', 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: clamp(1.55rem, 4vw, 2.35rem);
+            letter-spacing: 0.28em;
+            text-indent: 0.28em;
+            line-height: 1.15;
+            text-transform: uppercase;
+            background: linear-gradient(
+                180deg,
+                #fff8d0 0%,
+                #ffe566 28%,
+                #ffd700 52%,
+                #c9a227 78%,
+                #8a6414 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 1px 0 rgba(40, 28, 0, 0.55))
+                    drop-shadow(0 0 14px rgba(255, 215, 0, 0.35));
+            user-select: none;
+        }
+
+        .site-brand-sub {
+            display: block;
+            margin-top: 2px;
+            font-family: 'Cinzel', 'Times New Roman', serif;
+            font-size: 0.55em;
+            letter-spacing: 0.55em;
+            text-indent: 0.55em;
+            opacity: 0.92;
         }
 
         .site-nav {
@@ -374,6 +414,20 @@
             font-size: 0.95rem;
         }
 
+        .finale-ending-title {
+            line-height: 1.35;
+        }
+
+        .finale-ending-cc {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 215, 0, 0.25);
+            font-size: 0.86rem;
+            font-weight: 500;
+            color: rgba(255, 236, 170, 0.95);
+            line-height: 1.4;
+        }
+
         .card-tabs {
             display: flex;
             gap: 8px;
@@ -505,9 +559,23 @@
             margin-bottom: 4px;
         }
 
+        .wonder-icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.18);
+            box-shadow: 0 0 0 1px rgba(255, 215, 0, 0.28);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
         .wonder-icon {
-            width: 22px;
-            height: 22px;
+            width: 18px;
+            height: 18px;
             object-fit: contain;
             flex-shrink: 0;
             image-rendering: pixelated;
@@ -516,7 +584,7 @@
         .survivor-stats {
             margin: 4px 0 0 30px;
             font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 248, 220, 0.92);
         }
 
         .survivors-empty {
@@ -844,7 +912,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 4px 16px;
             font-size: 0.82rem;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 252, 240, 0.96);
         }
 
         .survivor-stats-list li {
@@ -856,12 +924,14 @@
         }
 
         .survivor-stats-list .sk {
-            color: rgba(255, 255, 255, 0.55);
+            color: rgba(255, 230, 150, 0.92);
         }
 
         .survivor-stats-list .sv {
-            font-weight: 600;
+            font-weight: 700;
             text-align: right;
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
         }
 
         @media (max-width: 560px) {
@@ -1077,6 +1147,10 @@
 </div>
 <button type="button" class="back-to-top" id="backToTop" data-i18n="backTop">Наверх</button>
 <div class="container">
+    <div class="site-brand" aria-label="Iron League">
+        IronLeague
+        <span class="site-brand-sub">Unciv</span>
+    </div>
     <h1 id="pageTitle">⚔️ Архив игр 🛡️</h1>
 
     <nav class="site-nav" aria-label="Разделы сайта">
@@ -1784,8 +1858,10 @@
         const ru = wonderNameRu(englishName);
         const src = wonderIconUrl(englishName);
         return `<li>` +
+            `<span class="wonder-icon-wrap">` +
             `<img class="wonder-icon" src="${src}" alt="${ru}" title="${ru}" ` +
-            `loading="lazy" onerror="this.style.display='none'">` +
+            `loading="lazy" onerror="this.closest('.wonder-icon-wrap').style.display='none'">` +
+            `</span>` +
             `<span>${ru}</span></li>`;
     }
 
@@ -2008,26 +2084,45 @@
         `;
     }
 
+    function formatCcLine(game) {
+        const league = game.league && typeof game.league === 'object' ? game.league : null;
+        const cc = league && league.cc && typeof league.cc === 'object' ? league.cc : null;
+        if (!cc || !cc.nation) return '';
+        return (
+            `СС: ${displayNationName(cc.nation)} (ход ${cc.start ?? '—'})`
+            + (cc.plus && cc.plus.length
+                ? ` · за: ${cc.plus.map(displayNationName).join(', ')}`
+                : '')
+            + (cc.minus && cc.minus.length
+                ? ` · против: ${cc.minus.map(displayNationName).join(', ')}`
+                : '')
+            + (cc.abstain && cc.abstain.length
+                ? ` · воздержались: ${cc.abstain.map(displayNationName).join(', ')}`
+                : '')
+        );
+    }
+
+    function renderFinaleEnding(game) {
+        const ccLine = formatCcLine(game);
+        return `<div class="finale-ending">
+            <div class="finale-ending-title">🏁 ${victoryTypeRu(game.victoryType)}</div>
+            ${ccLine ? `<div class="finale-ending-cc">${ccLine}</div>` : ''}
+        </div>`;
+    }
+
     function renderLeagueBlock(game) {
         const league = game.league && typeof game.league === 'object' ? game.league : null;
         if (!league) return '';
         const bits = [];
-        if (league.cc && league.cc.nation) {
-            const cc = league.cc;
-            bits.push(
-                `СС: ${cc.nation} (ход ${cc.start ?? '—'})`
-                + (cc.plus && cc.plus.length ? ` · за: ${cc.plus.join(', ')}` : '')
-                + (cc.minus && cc.minus.length ? ` · против: ${cc.minus.join(', ')}` : '')
-                + (cc.abstain && cc.abstain.length ? ` · воздержались: ${cc.abstain.join(', ')}` : ''),
-            );
-        }
         if (league.draft && league.draft.selected) {
             const picks = Object.values(league.draft.selected).filter(Boolean);
-            if (picks.length) bits.push(`Драфт (выборы): ${picks.join(', ')}`);
+            if (picks.length) {
+                bits.push(`Драфт (выборы): ${picks.map(displayNationName).join(', ')}`);
+            }
         }
         if (league.draft && league.draft.banned) {
             const bans = Object.values(league.draft.banned).filter(Boolean);
-            if (bans.length) bits.push(`Баны: ${bans.join(', ')}`);
+            if (bans.length) bits.push(`Баны: ${bans.map(displayNationName).join(', ')}`);
         }
         if (!bits.length) return '';
         return `<div class="survivor-stats" style="margin-top:10px">${bits.join('<br>')}</div>`;
@@ -2087,7 +2182,7 @@
             </div>
             <div class="game-modal-section">
                 <h3>Финал (полная статистика)</h3>
-                <div class="finale-ending">🏁 ${victoryTypeRu(game.victoryType)}</div>
+                ${renderFinaleEnding(game)}
                 <div class="players-list">${survivorsHtml}</div>
                 ${renderLeagueBlock(game)}
             </div>
@@ -2173,7 +2268,7 @@
                     <div class="players-list">${playersHtml}</div>
                 </div>
                 <div class="card-tab-panel" data-panel="survivors">
-                    <div class="finale-ending">🏁 ${victoryTypeRu(game.victoryType)}</div>
+                    ${renderFinaleEnding(game)}
                     <div class="players-list">${survivorsHtml}</div>
                     ${leagueHtml}
                 </div>
