@@ -22,25 +22,32 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        html {
+            overflow-x: clip;
+        }
+
         body {
             background: #12121c;
             color: #f0f0f0;
             padding: 20px;
             min-height: 100vh;
+            overflow-x: clip;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
         }
 
         h1 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: clamp(1.45rem, 5vw, 2.5rem);
             margin: 10px 0 16px;
             color: #ffd700;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
             letter-spacing: 2px;
+            padding-inline: 8px;
         }
 
         .site-brand {
@@ -311,7 +318,7 @@
 
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
             gap: 25px;
             margin-top: 20px;
         }
@@ -969,10 +976,259 @@
             overflow-wrap: anywhere;
         }
 
+        @media (max-width: 900px) {
+            body {
+                padding: 14px 12px;
+            }
+
+            .site-nav {
+                gap: 8px;
+                margin-bottom: 20px;
+            }
+
+            .site-nav-btn {
+                padding: 9px 14px;
+                font-size: 0.92rem;
+            }
+
+            .games-grid {
+                gap: 16px;
+            }
+
+            .filters {
+                gap: 14px;
+                padding: 16px;
+            }
+
+            .faq-section {
+                padding: 18px 16px;
+            }
+
+            .stats-section {
+                padding: 14px 14px;
+            }
+
+            .game-modal {
+                padding: 10px;
+            }
+
+            .game-modal-inner {
+                padding: 16px 14px 22px;
+            }
+        }
+
         @media (max-width: 560px) {
+            body {
+                padding: 10px 8px 24px;
+            }
+
+            .site-brand {
+                letter-spacing: 0.16em;
+                text-indent: 0.16em;
+                padding: 4px 4px 2px;
+                margin-top: 36px;
+            }
+
+            .site-brand-sub {
+                letter-spacing: 0.28em;
+                text-indent: 0.28em;
+            }
+
+            h1 {
+                letter-spacing: 0.5px;
+                margin: 6px 0 12px;
+            }
+
+            .lang-switch {
+                top: 8px;
+                right: 8px;
+                padding: 3px;
+            }
+
+            .lang-btn {
+                padding: 6px 8px;
+                font-size: 0.8rem;
+            }
+
+            .site-nav {
+                gap: 6px;
+                margin-bottom: 16px;
+            }
+
+            .site-nav-btn {
+                flex: 1 1 calc(50% - 6px);
+                padding: 10px 8px;
+                font-size: 0.88rem;
+                text-align: center;
+            }
+
+            .filters {
+                flex-direction: column;
+                gap: 12px;
+                padding: 14px;
+                margin-bottom: 18px;
+            }
+
+            .filter-group {
+                min-width: 0;
+                width: 100%;
+                flex: none;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+                margin-top: 12px;
+            }
+
+            .game-card {
+                padding: 14px;
+                border-radius: 12px;
+            }
+
+            .game-card:hover {
+                transform: none;
+            }
+
+            .winner-nation {
+                font-size: 1.05rem;
+                flex-wrap: wrap;
+            }
+
+            .card-tabs {
+                gap: 6px;
+            }
+
+            .card-tab {
+                padding: 10px 8px;
+                font-size: 0.85rem;
+            }
+
+            .survivor-flag,
+            .survivor-captured,
+            .survivor-wonders,
+            .survivor-stats {
+                margin-left: 0;
+            }
+
             .survivor-stats-list {
                 grid-template-columns: 1fr;
                 margin-left: 0;
+                font-size: 0.84rem;
+            }
+
+            .survivor-stats-list .sv {
+                white-space: normal;
+                overflow-wrap: anywhere;
+            }
+
+            .survivor-head {
+                flex-wrap: wrap;
+            }
+
+            .player-item {
+                flex-wrap: wrap;
+                gap: 6px 10px;
+            }
+
+            .faq-section {
+                padding: 14px 12px;
+                border-radius: 12px;
+            }
+
+            .faq-section h2 {
+                font-size: 1.15rem;
+            }
+
+            .faq-body ul,
+            .faq-body ol {
+                margin-left: 1rem;
+            }
+
+            .stats-bar {
+                gap: 12px;
+                padding: 12px;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .rating-intro,
+            .stats-intro {
+                padding: 12px 12px;
+                font-size: 0.95rem;
+            }
+
+            #viewRating .hint {
+                padding: 10px 12px;
+                font-size: 0.9rem;
+            }
+
+            .rating-k-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+
+            .rating-k-switch {
+                display: flex;
+                width: 100%;
+            }
+
+            .rating-k-btn {
+                flex: 1;
+                text-align: center;
+            }
+
+            .tier-legend {
+                gap: 8px;
+            }
+
+            .game-modal {
+                padding: 6px;
+            }
+
+            .game-modal-inner {
+                margin-bottom: 24px;
+                padding: 14px 12px 20px;
+                border-radius: 12px;
+            }
+
+            .game-modal-top {
+                flex-wrap: wrap;
+            }
+
+            .finale-table {
+                font-size: 0.78rem;
+            }
+
+            .no-games,
+            .loading,
+            .error {
+                padding: 28px 12px;
+                font-size: 1rem;
+            }
+
+            footer {
+                margin-top: 28px;
+                padding: 14px 8px;
+            }
+
+            .back-to-top {
+                left: 10px;
+                bottom: 10px;
+                padding: 10px 12px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .site-nav-btn {
+                flex: 1 1 100%;
+            }
+
+            .site-brand {
+                font-size: clamp(1.25rem, 7vw, 1.7rem);
             }
         }
 
