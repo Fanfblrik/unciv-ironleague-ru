@@ -353,10 +353,10 @@
           "techs": 24,
           "policies": 8,
           "policy_branches": [
-            "Исследование",
-            "Традиция"
+            "Традиция",
+            "Исследование"
           ],
-          "first_policy": "Исследование",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Античность",
@@ -389,10 +389,10 @@
           "techs": 25,
           "policies": 10,
           "policy_branches": [
-            "Меценатство",
-            "Традиция"
+            "Традиция",
+            "Меценатство"
           ],
-          "first_policy": "Меценатство",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Средневековье",
@@ -424,10 +424,10 @@
           "techs": 22,
           "policies": 8,
           "policy_branches": [
-            "Честь",
-            "Традиция"
+            "Традиция",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Возрождение",
@@ -567,11 +567,11 @@
           "techs": 20,
           "policies": 6,
           "policy_branches": [
-            "Эстетика",
+            "Традиция",
             "Воля",
-            "Традиция"
+            "Эстетика"
           ],
-          "first_policy": "Эстетика",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Античность",
@@ -608,11 +608,11 @@
           "techs": 27,
           "policies": 10,
           "policy_branches": [
-            "Исследование",
+            "Традиция",
             "Меценатство",
-            "Традиция"
+            "Исследование"
           ],
-          "first_policy": "Исследование",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Средневековье",
@@ -644,10 +644,10 @@
           "techs": 23,
           "policies": 9,
           "policy_branches": [
-            "Воля",
-            "Традиция"
+            "Традиция",
+            "Воля"
           ],
-          "first_policy": "Воля",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Средневековье",
@@ -943,10 +943,10 @@
           "techs": 25,
           "policies": 9,
           "policy_branches": [
-            "Набожность",
-            "Воля"
+            "Воля",
+            "Набожность"
           ],
-          "first_policy": "Набожность",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Античность",
@@ -1050,11 +1050,11 @@
           "techs": 24,
           "policies": 9,
           "policy_branches": [
-            "Честь",
             "Традиция",
+            "Честь",
             "Исследование"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Средневековье",
@@ -3128,11 +3128,11 @@
           "techs": 61,
           "policies": 23,
           "policy_branches": [
-            "Исследование",
             "Воля",
+            "Исследование",
             "Рационализм"
           ],
-          "first_policy": "Исследование",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -3521,10 +3521,10 @@
           "techs": 56,
           "policies": 20,
           "policy_branches": [
-            "Честь",
-            "Традиция"
+            "Традиция",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -3590,12 +3590,12 @@
           "techs": 60,
           "policies": 26,
           "policy_branches": [
-            "Меценатство",
-            "Честь",
             "Набожность",
+            "Честь",
+            "Меценатство",
             "Рационализм"
           ],
-          "first_policy": "Меценатство",
+          "first_policy": "Набожность",
           "eliminated_turn": 155,
           "capital_lost_turn": 155,
           "era": "Атомная",
@@ -3625,11 +3625,11 @@
           "techs": 39,
           "policies": 19,
           "policy_branches": [
+            "Воля",
             "Коммерция",
-            "Набожность",
-            "Воля"
+            "Набожность"
           ],
-          "first_policy": "Коммерция",
+          "first_policy": "Воля",
           "eliminated_turn": 126,
           "capital_lost_turn": 126,
           "era": "Индустриальная",
@@ -3659,10 +3659,10 @@
           "techs": 22,
           "policies": 8,
           "policy_branches": [
-            "Честь",
-            "Воля"
+            "Воля",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Воля",
           "eliminated_turn": 91,
           "capital_lost_turn": 91,
           "era": "Античность",
@@ -3808,12 +3808,12 @@
           "techs": 61,
           "policies": 37,
           "policy_branches": [
+            "Набожность",
             "Эстетика",
             "Честь",
-            "Набожность",
             "Исследование"
           ],
-          "first_policy": "Эстетика",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Атомная",
@@ -3937,8 +3937,8 @@
           "policy_branches": [
             "Традиция",
             "Коммерция",
-            "Исследование",
-            "Рационализм"
+            "Рационализм",
+            "Исследование"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": null,
@@ -3975,12 +3975,12 @@
           "techs": 52,
           "policies": 24,
           "policy_branches": [
-            "Честь",
             "Набожность",
-            "Коммерция",
-            "Меценатство"
+            "Меценатство",
+            "Честь",
+            "Коммерция"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -4010,11 +4010,11 @@
           "techs": 53,
           "policies": 23,
           "policy_branches": [
-            "Честь",
             "Традиция",
+            "Честь",
             "Меценатство"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -4044,11 +4044,11 @@
           "techs": 54,
           "policies": 27,
           "policy_branches": [
-            "Честь",
             "Набожность",
+            "Честь",
             "Рационализм"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Набожность",
           "eliminated_turn": 163,
           "capital_lost_turn": 163,
           "era": "Современность",
@@ -4111,11 +4111,11 @@
           "techs": 40,
           "policies": 15,
           "policy_branches": [
-            "Честь",
             "Набожность",
+            "Честь",
             "Рационализм"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Набожность",
           "eliminated_turn": 126,
           "capital_lost_turn": 126,
           "era": "Индустриальная",
@@ -4243,8 +4243,8 @@
           "policies": 25,
           "policy_branches": [
             "Традиция",
-            "Честь",
             "Исследование",
+            "Честь",
             "Рационализм"
           ],
           "first_policy": "Традиция",
@@ -4336,11 +4336,11 @@
           "techs": 55,
           "policies": 22,
           "policy_branches": [
-            "Честь",
             "Традиция",
+            "Честь",
             "Рационализм"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -4381,12 +4381,12 @@
           "techs": 50,
           "policies": 19,
           "policy_branches": [
-            "Честь",
             "Набожность",
+            "Честь",
             "Исследование",
             "Меценатство"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -4449,11 +4449,11 @@
           "techs": 36,
           "policies": 12,
           "policy_branches": [
-            "Честь",
+            "Воля",
             "Набожность",
-            "Воля"
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Воля",
           "eliminated_turn": 112,
           "capital_lost_turn": 112,
           "era": "Возрождение",
@@ -4483,10 +4483,10 @@
           "techs": 21,
           "policies": 8,
           "policy_branches": [
-            "Традиция",
-            "Набожность"
+            "Набожность",
+            "Традиция"
           ],
-          "first_policy": "Традиция",
+          "first_policy": "Набожность",
           "eliminated_turn": 82,
           "capital_lost_turn": 82,
           "era": "Античность",
@@ -4516,10 +4516,10 @@
           "techs": 17,
           "policies": 5,
           "policy_branches": [
-            "Честь",
-            "Набожность"
+            "Набожность",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Набожность",
           "eliminated_turn": 65,
           "capital_lost_turn": 65,
           "era": "Античность",
@@ -4624,9 +4624,9 @@
           "policies": 30,
           "policy_branches": [
             "Воля",
-            "Честь",
             "Набожность",
             "Исследование",
+            "Честь",
             "Рационализм"
           ],
           "first_policy": "Воля",
@@ -4675,12 +4675,12 @@
           "techs": 66,
           "policies": 29,
           "policy_branches": [
-            "Традиция",
-            "Честь",
             "Набожность",
-            "Рационализм"
+            "Традиция",
+            "Рационализм",
+            "Честь"
           ],
-          "first_policy": "Традиция",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Атомная",
@@ -4792,11 +4792,11 @@
           "techs": 58,
           "policies": 22,
           "policy_branches": [
-            "Честь",
             "Воля",
-            "Эстетика"
+            "Эстетика",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -4827,10 +4827,10 @@
           "policies": 38,
           "policy_branches": [
             "Традиция",
-            "Меценатство",
             "Эстетика",
-            "Честь",
-            "Рационализм"
+            "Рационализм",
+            "Меценатство",
+            "Честь"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": null,
@@ -4862,10 +4862,10 @@
           "techs": 59,
           "policies": 20,
           "policy_branches": [
-            "Коммерция",
-            "Воля"
+            "Воля",
+            "Коммерция"
           ],
-          "first_policy": "Коммерция",
+          "first_policy": "Воля",
           "eliminated_turn": 171,
           "capital_lost_turn": 171,
           "era": "Современность",
@@ -5083,11 +5083,11 @@
           "techs": 49,
           "policies": 23,
           "policy_branches": [
-            "Честь",
             "Традиция",
+            "Честь",
             "Эстетика"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -5197,11 +5197,11 @@
           "techs": 52,
           "policies": 19,
           "policy_branches": [
-            "Честь",
             "Традиция",
-            "Коммерция"
+            "Коммерция",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -5267,11 +5267,11 @@
           "techs": 49,
           "policies": 16,
           "policy_branches": [
-            "Честь",
             "Традиция",
+            "Честь",
             "Рационализм"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -5301,11 +5301,11 @@
           "techs": 41,
           "policies": 15,
           "policy_branches": [
-            "Коммерция",
             "Воля",
-            "Эстетика"
+            "Эстетика",
+            "Коммерция"
           ],
-          "first_policy": "Коммерция",
+          "first_policy": "Воля",
           "eliminated_turn": 125,
           "capital_lost_turn": 125,
           "era": "Индустриальная",
@@ -5335,10 +5335,10 @@
           "techs": 22,
           "policies": 8,
           "policy_branches": [
-            "Честь",
-            "Традиция"
+            "Традиция",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": 78,
           "capital_lost_turn": 78,
           "era": "Античность",
@@ -5459,11 +5459,11 @@
           "techs": 38,
           "policies": 13,
           "policy_branches": [
-            "Честь",
             "Воля",
+            "Честь",
             "Рационализм"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -5497,11 +5497,11 @@
           "techs": 50,
           "policies": 23,
           "policy_branches": [
-            "Набожность",
             "Воля",
+            "Набожность",
             "Рационализм"
           ],
-          "first_policy": "Набожность",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -5538,11 +5538,11 @@
           "techs": 43,
           "policies": 20,
           "policy_branches": [
-            "Честь",
+            "Набожность",
             "Традиция",
-            "Набожность"
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -5572,10 +5572,10 @@
           "techs": 34,
           "policies": 11,
           "policy_branches": [
-            "Коммерция",
-            "Воля"
+            "Воля",
+            "Коммерция"
           ],
-          "first_policy": "Коммерция",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -5605,11 +5605,11 @@
           "techs": 32,
           "policies": 12,
           "policy_branches": [
-            "Честь",
+            "Воля",
             "Коммерция",
-            "Воля"
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -5896,10 +5896,10 @@
           "techs": 14,
           "policies": 6,
           "policy_branches": [
-            "Честь",
-            "Набожность"
+            "Набожность",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Античность",
@@ -6152,12 +6152,12 @@
           "techs": 77,
           "policies": 26,
           "policy_branches": [
-            "Коммерция",
             "Воля",
+            "Коммерция",
             "Меценатство",
             "Рационализм"
           ],
-          "first_policy": "Коммерция",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Будущее",
@@ -6204,10 +6204,10 @@
           "policies": 32,
           "policy_branches": [
             "Воля",
-            "Эстетика",
-            "Честь",
             "Набожность",
-            "Рационализм"
+            "Честь",
+            "Рационализм",
+            "Эстетика"
           ],
           "first_policy": "Воля",
           "eliminated_turn": null,
@@ -6244,8 +6244,8 @@
           "policies": 26,
           "policy_branches": [
             "Воля",
-            "Честь",
-            "Набожность"
+            "Набожность",
+            "Честь"
           ],
           "first_policy": "Воля",
           "eliminated_turn": null,
@@ -6289,11 +6289,11 @@
           "techs": 72,
           "policies": 29,
           "policy_branches": [
-            "Коммерция",
             "Честь",
+            "Коммерция",
             "Рационализм"
           ],
-          "first_policy": "Коммерция",
+          "first_policy": "Честь",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Информационная",
@@ -6325,11 +6325,11 @@
           "techs": 57,
           "policies": 28,
           "policy_branches": [
+            "Набожность",
             "Традиция",
-            "Коммерция",
-            "Набожность"
+            "Коммерция"
           ],
-          "first_policy": "Традиция",
+          "first_policy": "Набожность",
           "eliminated_turn": 148,
           "capital_lost_turn": 148,
           "era": "Современность",
@@ -6359,10 +6359,10 @@
           "techs": 43,
           "policies": 12,
           "policy_branches": [
-            "Честь",
-            "Воля"
+            "Воля",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Воля",
           "eliminated_turn": 147,
           "capital_lost_turn": 147,
           "era": "Индустриальная",
@@ -6392,11 +6392,11 @@
           "techs": 35,
           "policies": 16,
           "policy_branches": [
-            "Честь",
             "Набожность",
+            "Честь",
             "Эстетика"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Набожность",
           "eliminated_turn": 146,
           "capital_lost_turn": 146,
           "era": "Индустриальная",
@@ -6426,11 +6426,11 @@
           "techs": 26,
           "policies": 12,
           "policy_branches": [
+            "Воля",
             "Честь",
-            "Набожность",
-            "Воля"
+            "Набожность"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Воля",
           "eliminated_turn": 110,
           "capital_lost_turn": 110,
           "era": "Средневековье",
@@ -6619,11 +6619,11 @@
           "techs": 57,
           "policies": 30,
           "policy_branches": [
-            "Воля",
             "Набожность",
+            "Воля",
             "Исследование"
           ],
-          "first_policy": "Воля",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -6656,10 +6656,10 @@
           "techs": 57,
           "policies": 23,
           "policy_branches": [
-            "Честь",
-            "Набожность"
+            "Набожность",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -6699,10 +6699,10 @@
           "techs": 59,
           "policies": 23,
           "policy_branches": [
-            "Честь",
-            "Традиция"
+            "Традиция",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -6805,12 +6805,12 @@
           "techs": 38,
           "policies": 13,
           "policy_branches": [
-            "Честь",
             "Традиция",
+            "Меценатство",
             "Исследование",
-            "Меценатство"
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": 147,
           "capital_lost_turn": 147,
           "era": "Возрождение",
@@ -6840,10 +6840,10 @@
           "techs": 34,
           "policies": 11,
           "policy_branches": [
-            "Честь",
-            "Традиция"
+            "Традиция",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": 147,
           "capital_lost_turn": 147,
           "era": "Возрождение",
@@ -6976,9 +6976,9 @@
           "policies": 32,
           "policy_branches": [
             "Традиция",
-            "Эстетика",
             "Честь",
-            "Исследование"
+            "Исследование",
+            "Эстетика"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": null,
@@ -7068,11 +7068,11 @@
           "techs": 62,
           "policies": 21,
           "policy_branches": [
-            "Честь",
             "Традиция",
+            "Честь",
             "Рационализм"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Атомная",
@@ -7103,8 +7103,8 @@
           "policies": 22,
           "policy_branches": [
             "Традиция",
-            "Рационализм",
-            "Эстетика"
+            "Эстетика",
+            "Рационализм"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": 162,
@@ -7136,10 +7136,10 @@
           "techs": 40,
           "policies": 14,
           "policy_branches": [
-            "Честь",
-            "Набожность"
+            "Набожность",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Набожность",
           "eliminated_turn": 128,
           "capital_lost_turn": 128,
           "era": "Индустриальная",
@@ -7283,8 +7283,8 @@
           "policies": 27,
           "policy_branches": [
             "Воля",
-            "Честь",
             "Набожность",
+            "Честь",
             "Рационализм"
           ],
           "first_policy": "Воля",
@@ -7326,11 +7326,11 @@
           "techs": 51,
           "policies": 23,
           "policy_branches": [
-            "Честь",
             "Традиция",
+            "Честь",
             "Исследование"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -7365,10 +7365,10 @@
           "techs": 47,
           "policies": 20,
           "policy_branches": [
-            "Честь",
-            "Традиция"
+            "Традиция",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -7407,11 +7407,11 @@
           "techs": 60,
           "policies": 28,
           "policy_branches": [
-            "Честь",
             "Набожность",
-            "Исследование"
+            "Исследование",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -7444,13 +7444,13 @@
           "techs": 51,
           "policies": 20,
           "policy_branches": [
-            "Честь",
-            "Набожность",
-            "Коммерция",
             "Воля",
-            "Меценатство"
+            "Набожность",
+            "Честь",
+            "Меценатство",
+            "Коммерция"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -7482,11 +7482,11 @@
           "techs": 43,
           "policies": 16,
           "policy_branches": [
-            "Честь",
             "Традиция",
+            "Честь",
             "Коммерция"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -7516,11 +7516,11 @@
           "techs": 46,
           "policies": 13,
           "policy_branches": [
+            "Воля",
             "Честь",
-            "Исследование",
-            "Воля"
+            "Исследование"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Воля",
           "eliminated_turn": 134,
           "capital_lost_turn": 134,
           "era": "Индустриальная",
@@ -7695,10 +7695,10 @@
           "techs": 47,
           "policies": 23,
           "policy_branches": [
-            "Честь",
-            "Воля"
+            "Воля",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -7735,10 +7735,10 @@
           "techs": 42,
           "policies": 20,
           "policy_branches": [
-            "Набожность",
-            "Воля"
+            "Воля",
+            "Набожность"
           ],
-          "first_policy": "Набожность",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -7776,10 +7776,10 @@
           "techs": 37,
           "policies": 14,
           "policy_branches": [
-            "Честь",
-            "Традиция"
+            "Традиция",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -7852,11 +7852,11 @@
           "techs": 40,
           "policies": 12,
           "policy_branches": [
+            "Воля",
             "Честь",
-            "Коммерция",
-            "Воля"
+            "Коммерция"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -7961,11 +7961,11 @@
           "techs": 40,
           "policies": 17,
           "policy_branches": [
-            "Честь",
             "Воля",
+            "Честь",
             "Рационализм"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -7997,11 +7997,11 @@
           "techs": 39,
           "policies": 10,
           "policy_branches": [
-            "Рационализм",
             "Традиция",
-            "Исследование"
+            "Исследование",
+            "Рационализм"
           ],
-          "first_policy": "Рационализм",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -8031,10 +8031,10 @@
           "techs": 26,
           "policies": 12,
           "policy_branches": [
-            "Честь",
-            "Набожность"
+            "Набожность",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Набожность",
           "eliminated_turn": 97,
           "capital_lost_turn": 97,
           "era": "Средневековье",
@@ -8201,10 +8201,10 @@
           "techs": 51,
           "policies": 24,
           "policy_branches": [
-            "Честь",
-            "Набожность"
+            "Набожность",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -8282,11 +8282,11 @@
           "techs": 48,
           "policies": 17,
           "policy_branches": [
-            "Честь",
+            "Воля",
             "Коммерция",
-            "Воля"
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -8325,11 +8325,11 @@
           "techs": 44,
           "policies": 21,
           "policy_branches": [
-            "Честь",
             "Традиция",
+            "Честь",
             "Рационализм"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -8364,10 +8364,10 @@
           "techs": 41,
           "policies": 14,
           "policy_branches": [
-            "Честь",
-            "Воля"
+            "Воля",
+            "Честь"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Возрождение",
@@ -8400,11 +8400,11 @@
           "techs": 48,
           "policies": 28,
           "policy_branches": [
-            "Эстетика",
+            "Набожность",
             "Честь",
-            "Набожность"
+            "Эстетика"
           ],
-          "first_policy": "Эстетика",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -8434,11 +8434,11 @@
           "techs": 45,
           "policies": 16,
           "policy_branches": [
-            "Коммерция",
             "Воля",
+            "Коммерция",
             "Рационализм"
           ],
-          "first_policy": "Коммерция",
+          "first_policy": "Воля",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -8468,10 +8468,10 @@
           "techs": 39,
           "policies": 15,
           "policy_branches": [
-            "Коммерция",
-            "Воля"
+            "Воля",
+            "Коммерция"
           ],
-          "first_policy": "Коммерция",
+          "first_policy": "Воля",
           "eliminated_turn": 116,
           "capital_lost_turn": 116,
           "era": "Индустриальная",
@@ -8501,10 +8501,10 @@
           "techs": 31,
           "policies": 11,
           "policy_branches": [
-            "Набожность",
-            "Воля"
+            "Воля",
+            "Набожность"
           ],
-          "first_policy": "Набожность",
+          "first_policy": "Воля",
           "eliminated_turn": 118,
           "capital_lost_turn": 118,
           "era": "Возрождение",
@@ -8853,8 +8853,8 @@
           "policies": 10,
           "policy_branches": [
             "Традиция",
-            "Набожность",
-            "Меценатство"
+            "Меценатство",
+            "Набожность"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": 132,
@@ -8919,10 +8919,10 @@
           "techs": 34,
           "policies": 11,
           "policy_branches": [
-            "Набожность",
-            "Воля"
+            "Воля",
+            "Набожность"
           ],
-          "first_policy": "Набожность",
+          "first_policy": "Воля",
           "eliminated_turn": 128,
           "capital_lost_turn": 128,
           "era": "Возрождение",
@@ -8943,298 +8943,6 @@
       ],
       "gif": "Replays/Game_26.gif",
       "flags": []
-    },
-    {
-      "id": 27,
-      "version": "4.20.15 (Build 1229)",
-      "number": "Game 27",
-      "players": [
-        {
-          "name": "Click4x",
-          "nation": "Япония"
-        },
-        {
-          "name": "Bahahanchiklkm",
-          "nation": "Буры"
-        },
-        {
-          "name": "EmperorPenguin01",
-          "nation": "Ацтеки"
-        },
-        {
-          "name": "AlexUnderHill",
-          "nation": "Дания"
-        },
-        {
-          "name": "konoval_mik",
-          "nation": "Колумбия"
-        },
-        {
-          "name": "REPUNZEL2882",
-          "nation": "Бруней"
-        }
-      ],
-      "winner": "Ацтеки",
-      "map": "Pangaea",
-      "playerCount": 6,
-      "endedOnTurn": "125",
-      "victoryType": "CC",
-      "survivors": [
-        {
-          "name": "EmperorPenguin01",
-          "nation": "Ацтеки",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [
-            {
-              "nation": "Буры",
-              "city": "Pretoria"
-            }
-          ],
-          "ideology": "Автократия",
-          "wonders": [
-            "Alhambra",
-            "Hanging Gardens",
-            "Taj Mahal",
-            "Temple of Artemis",
-            "Chichen Itza",
-            "Mausoleum of Halicarnassus",
-            "Stonehenge",
-            "Machu Picchu",
-            "Sistine Chapel",
-            "The Oracle"
-          ],
-          "techs": 49,
-          "policies": 24,
-          "policy_branches": [
-            "Традиция",
-            "Честь",
-            "Рационализм"
-          ],
-          "first_policy": "",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 1080,
-          "units": 61,
-          "strength": 20240,
-          "science": 467,
-          "cities": 15,
-          "population": 222,
-          "religion": "Islam",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 4,
-          "wars_received": 1
-        },
-        {
-          "name": "Click4x",
-          "nation": "Япония",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [],
-          "ideology": "Порядок",
-          "wonders": [
-            "Great Mosque of Djenne",
-            "Brandenburg Gate",
-            "Kremlin",
-            "Himeji Castle",
-            "Great Wall",
-            "Petra"
-          ],
-          "techs": 48,
-          "policies": 23,
-          "policy_branches": [
-            "Воля",
-            "Честь",
-            "Набожность"
-          ],
-          "first_policy": "",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 659,
-          "units": 18,
-          "strength": 4632,
-          "science": 420,
-          "cities": 8,
-          "population": 118,
-          "religion": "Taoism",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 1,
-          "wars_received": 1
-        },
-        {
-          "name": "AlexUnderHill",
-          "nation": "Дания",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [
-            {
-              "nation": "Колумбия",
-              "city": "Bogotá"
-            }
-          ],
-          "ideology": "Свобода",
-          "wonders": [
-            "Leaning Tower of Pisa",
-            "Terracotta Army",
-            "Statue of Zeus",
-            "The Great Lighthouse",
-            "Colossus"
-          ],
-          "techs": 46,
-          "policies": 20,
-          "policy_branches": [
-            "Воля",
-            "Честь",
-            "Исследование"
-          ],
-          "first_policy": "",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 522,
-          "units": 18,
-          "strength": 2588,
-          "science": 290,
-          "cities": 6,
-          "population": 76,
-          "religion": "Датский штурвал",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 1,
-          "wars_received": 1
-        },
-        {
-          "name": "REPUNZEL2882",
-          "nation": "Бруней",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [],
-          "ideology": "Свобода",
-          "wonders": [
-            "The Great Library",
-            "The Pyramids",
-            "Angkor Wat",
-            "Notre Dame"
-          ],
-          "techs": 43,
-          "policies": 16,
-          "policy_branches": [
-            "Воля",
-            "Исследование"
-          ],
-          "first_policy": "Воля",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 497,
-          "units": 21,
-          "strength": 1705,
-          "science": 266,
-          "cities": 7,
-          "population": 95,
-          "religion": "Tengriism",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 0,
-          "wars_received": 1
-        },
-        {
-          "name": "konoval_mik",
-          "nation": "Колумбия",
-          "alive": false,
-          "has_capital": false,
-          "capital_taken_by": "Дания",
-          "conquered_capitals": [],
-          "ideology": "",
-          "wonders": [],
-          "techs": 17,
-          "policies": 7,
-          "policy_branches": [
-            "Традиция"
-          ],
-          "first_policy": "Традиция",
-          "eliminated_turn": 69,
-          "capital_lost_turn": 69,
-          "era": "Античность",
-          "score": 182,
-          "units": 0,
-          "strength": 259,
-          "science": 20,
-          "cities": 0,
-          "population": 18,
-          "religion": "Zoroastrianism",
-          "religion_state": "Religion",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 0,
-          "wars_received": 1
-        },
-        {
-          "name": "Bahahanchiklkm",
-          "nation": "Буры",
-          "alive": false,
-          "has_capital": false,
-          "capital_taken_by": "Ацтеки",
-          "conquered_capitals": [],
-          "ideology": "",
-          "wonders": [],
-          "techs": 34,
-          "policies": 12,
-          "policy_branches": [
-            "Традиция",
-            "Эстетика"
-          ],
-          "first_policy": "Традиция",
-          "eliminated_turn": 106,
-          "capital_lost_turn": 106,
-          "era": "Возрождение",
-          "score": 162,
-          "units": 0,
-          "strength": 110,
-          "science": 30,
-          "cities": 0,
-          "population": 12,
-          "religion": "Christianity",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 0,
-          "wars_received": 1
-        }
-      ],
-      "league": {
-        "cc": {
-          "nation": "Ацтеки",
-          "start": 125,
-          "plus": [
-            "Япония",
-            "Бруней",
-            "Дания"
-          ],
-          "minus": [],
-          "abstain": [],
-          "stop": true
-        }
-      },
-      "gif": "Replays/Game_27.gif"
     }
   ]
 }
