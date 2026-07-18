@@ -1,0 +1,270 @@
+/**
+ * Iron League rating engines.
+ * Recalculated client-side from Games.json whenever the archive loads.
+ *
+ * Excluded: games with flags containing "teams" or "scrap", or excludeFromStats=true.
+ * Placement: winner first; remaining by score (desc), then alive, then name.
+ */
+(function (global) {
+  'use strict';
+
+  const START_ELO = 1000;
+  const K = 32;
+
+  function gameFlags(game) {
+    const flags = Array.isArray(game.flags) ? game.flags.map(String) : [];
+    return flags;
+  }
+
+  function isExcludedGame(game) {
+    if (game && game.excludeFromStats) return true;
+    const flags = gameFlags(game).map((f) => f.toLowerCase());
+    return flags.includes('teams') || flags.includes('scrap') || flags.includes('team');
+  }
+
+  function parseGameNum(game) {
+    const m = String(game.number || '').match(/(\d+)/);
+    return m ? parseInt(m[1], 10) : (game.id || 0);
+  }
+
+  function eligibleGames(games) {
+    return (games || [])
+      .filter((g) => !isExcludedGame(g))
+      .filter((g) => Array.isArray(g.players) && g.players.length > 0)
+      .slice()
+      .sort((a, b) => parseGameNum(a) - parseGameNum(b));
+  }
+
+  /**
+   * Return ordered player names for a game (best → worst).
+   */
+  function placementOrder(game) {
+    const players = Array.isArray(game.players) ? game.players : [];
+    const byName = new Map(players.map((p) => [String(p.name || '').trim(), p]));
+    const survivors = Array.isArray(game.survivors) ? game.survivors : [];
+    const survByName = new Map(
+      survivors.map((s) => [String(s.name || '').trim(), s])
+    );
+    const winnerNation = String(game.winner || '').trim();
+
+    const names = [...byName.keys()].filter(Boolean);
+    names.sort((a, b) => {
+      const pa = byName.get(a);
+      const pb = byName.get(b);
+      const sa = survByName.get(a);
+      const sb = survByName.get(b);
+      const aWin = pa && pa.nation === winnerNation ? 1 : 0;
+      const bWin = pb && pb.nation === winnerNation ? 1 : 0;
+      if (aWin !== bWin) return bWin - aWin;
+      const aAlive = sa ? (sa.alive !== false ? 1 : 0) : 0;
+      const bAlive = sb ? (sb.alive !== false ? 1 : 0) : 0;
+      if (aAlive !== bAlive) return bAlive - aAlive;
+      const aScore = sa && Number.isFinite(Number(sa.score)) ? Number(sa.score) : null;
+      const bScore = sb && Number.isFinite(Number(sb.score)) ? Number(sb.score) : null;
+      if (aScore !== null && bScore !== null && aScore !== bScore) return bScore - aScore;
+      if (aScore !== null && bScore === null) return -1;
+      if (aScore === null && bScore !== null) return 1;
+      return a.localeCompare(b, 'en');
+    });
+    return names;
+  }
+
+  function expectedScore(ri, rj) {
+    return 1 / (1 + Math.pow(10, (rj - ri) / 400));
+  }
+
+  function ensureRatings(map, names) {
+    names.forEach((n) => {
+      if (!map.has(n)) map.set(n, START_ELO);
+    });
+  }
+
+  /** Method A: FFA Elo from ratingv2 sheet (Actual 1..0, Expected avg pairwise). */
+  function rateFfaLinear(games) {
+    const ratings = new Map();
+    const gamesPlayed = new Map();
+    for (const game of eligibleGames(games)) {
+      const order = placementOrder(game);
+      if (order.length < 2) continue;
+      ensureRatings(ratings, order);
+      const n = order.length;
+      const actual = order.map((_, i) => (n === 1 ? 1 : (n - 1 - i) / (n - 1)));
+      const expected = order.map((name, i) => {
+        let sum = 0;
+        let cnt = 0;
+        for (let j = 0; j < n; j++) {
+          if (i === j) continue;
+          sum += expectedScore(ratings.get(name), ratings.get(order[j]));
+          cnt += 1;
+        }
+        return cnt ? sum / cnt : 0.5;
+      });
+      order.forEach((name, i) => {
+        const next = ratings.get(name) + K * (actual[i] - expected[i]);
+        ratings.set(name, next);
+        gamesPlayed.set(name, (gamesPlayed.get(name) || 0) + 1);
+      });
+    }
+    return toRows(ratings, gamesPlayed);
+  }
+
+  /** Method B: pairwise Elo — each higher place beats each lower. */
+  function ratePairwise(games) {
+    const ratings = new Map();
+    const gamesPlayed = new Map();
+    for (const game of eligibleGames(games)) {
+      const order = placementOrder(game);
+      if (order.length < 2) continue;
+      ensureRatings(ratings, order);
+      const n = order.length;
+      const pairs = (n * (n - 1)) / 2;
+      const kPair = pairs > 0 ? K / pairs : K;
+      const delta = new Map(order.map((name) => [name, 0]));
+      for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+          const hi = order[i];
+          const lo = order[j];
+          const expHi = expectedScore(ratings.get(hi), ratings.get(lo));
+          delta.set(hi, delta.get(hi) + kPair * (1 - expHi));
+          delta.set(lo, delta.get(lo) + kPair * (0 - (1 - expHi)));
+        }
+      }
+      order.forEach((name) => {
+        ratings.set(name, ratings.get(name) + delta.get(name));
+        gamesPlayed.set(name, (gamesPlayed.get(name) || 0) + 1);
+      });
+    }
+    return toRows(ratings, gamesPlayed);
+  }
+
+  /**
+   * Method C: finish-place rating.
+   * Each game awards points from place (1.0 best … 0.0 worst), scaled by lobby size;
+   * running Elo-like average toward target 1000 + 400*(avgPlaceScore - 0.5).
+   */
+  function rateFinishPlace(games) {
+    const ratings = new Map();
+    const gamesPlayed = new Map();
+    const placeSum = new Map();
+    for (const game of eligibleGames(games)) {
+      const order = placementOrder(game);
+      if (order.length < 2) continue;
+      ensureRatings(ratings, order);
+      const n = order.length;
+      order.forEach((name, i) => {
+        const placeScore = (n - 1 - i) / (n - 1);
+        const gp = (gamesPlayed.get(name) || 0) + 1;
+        const prevSum = placeSum.get(name) || 0;
+        const nextSum = prevSum + placeScore;
+        placeSum.set(name, nextSum);
+        gamesPlayed.set(name, gp);
+        const avg = nextSum / gp;
+        // Blend toward place-based rating; more games → closer to long-run avg.
+        const target = START_ELO + 400 * (avg - 0.5);
+        const w = Math.min(1, gp / 8);
+        const cur = ratings.get(name);
+        ratings.set(name, cur * (1 - w) + target * w);
+      });
+    }
+    return toRows(ratings, gamesPlayed);
+  }
+
+  function toRows(ratings, gamesPlayed) {
+    const rows = [...ratings.entries()].map(([name, rating]) => ({
+      name,
+      rating: Math.round(rating * 100) / 100,
+      games: gamesPlayed.get(name) || 0,
+    }));
+    rows.sort((a, b) => b.rating - a.rating || a.name.localeCompare(b.name, 'en'));
+    rows.forEach((r, i) => {
+      r.place = i + 1;
+    });
+    return rows;
+  }
+
+  function rankMap(rows) {
+    const m = new Map();
+    rows.forEach((r) => m.set(r.name, r.place));
+    return m;
+  }
+
+  function ratingMap(rows) {
+    const m = new Map();
+    rows.forEach((r) => m.set(r.name, r.rating));
+    return m;
+  }
+
+  function computeAll(games) {
+    const ffa = rateFfaLinear(games);
+    const pairwise = ratePairwise(games);
+    const finish = rateFinishPlace(games);
+    const rFfa = ratingMap(ffa);
+    const rPair = ratingMap(pairwise);
+    const rFin = ratingMap(finish);
+    const pFfa = rankMap(ffa);
+    const pPair = rankMap(pairwise);
+    const pFin = rankMap(finish);
+
+    const names = new Set([
+      ...rFfa.keys(),
+      ...rPair.keys(),
+      ...rFin.keys(),
+    ]);
+    const combined = [...names].map((name) => {
+      const ratings = [rFfa.get(name), rPair.get(name), rFin.get(name)].filter(
+        (x) => x !== undefined
+      );
+      const places = [pFfa.get(name), pPair.get(name), pFin.get(name)].filter(
+        (x) => x !== undefined
+      );
+      const avgRating =
+        ratings.length > 0
+          ? Math.round((ratings.reduce((a, b) => a + b, 0) / ratings.length) * 100) / 100
+          : START_ELO;
+      const avgPlace =
+        places.length > 0
+          ? Math.round((places.reduce((a, b) => a + b, 0) / places.length) * 100) / 100
+          : null;
+      return {
+        name,
+        rating: avgRating,
+        avgPlace,
+        placeFfa: pFfa.get(name) || null,
+        placePairwise: pPair.get(name) || null,
+        placeFinish: pFin.get(name) || null,
+        ratingFfa: rFfa.get(name),
+        ratingPairwise: rPair.get(name),
+        ratingFinish: rFin.get(name),
+        games: Math.max(
+          ffa.find((x) => x.name === name)?.games || 0,
+          pairwise.find((x) => x.name === name)?.games || 0,
+          finish.find((x) => x.name === name)?.games || 0
+        ),
+      };
+    });
+    combined.sort(
+      (a, b) => b.rating - a.rating || (a.avgPlace || 99) - (b.avgPlace || 99)
+    );
+    combined.forEach((r, i) => {
+      r.place = i + 1;
+    });
+
+    return {
+      ffa,
+      pairwise,
+      finish,
+      combined,
+      eligibleCount: eligibleGames(games).length,
+      excludedCount: (games || []).filter(isExcludedGame).length,
+    };
+  }
+
+  global.IronLeagueRating = {
+    START_ELO,
+    K,
+    isExcludedGame,
+    eligibleGames,
+    placementOrder,
+    computeAll,
+  };
+})(typeof window !== 'undefined' ? window : globalThis);
