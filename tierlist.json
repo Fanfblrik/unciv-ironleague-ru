@@ -1,0 +1,915 @@
+{
+  "source": "https://docs.google.com/spreadsheets/d/1fMn3JPstcG_4xwjznxqfQtOMclgWGPwOl8poBgSeRb4/edit?gid=1563959833#gid=1563959833",
+  "raters": [
+    "Community",
+    "Click",
+    "Sharpe"
+  ],
+  "legend": [
+    {
+      "stars": 5,
+      "label": "Overpowered / Ban Worthy"
+    },
+    {
+      "stars": 4,
+      "label": "Strong"
+    },
+    {
+      "stars": 3,
+      "label": "Average"
+    },
+    {
+      "stars": 2,
+      "label": "Bad"
+    },
+    {
+      "stars": 1,
+      "label": "Bottom"
+    }
+  ],
+  "entries": [
+    {
+      "civ": "Aztec",
+      "ratings": {
+        "Community": 5,
+        "Click": 5,
+        "Sharpe": 5
+      },
+      "avg": 5.0
+    },
+    {
+      "civ": "Philippines",
+      "ratings": {
+        "Community": 5,
+        "Click": 5,
+        "Sharpe": null
+      },
+      "avg": 5.0
+    },
+    {
+      "civ": "Poland",
+      "ratings": {
+        "Community": 5,
+        "Click": 5,
+        "Sharpe": 5
+      },
+      "avg": 5.0
+    },
+    {
+      "civ": "Prussia",
+      "ratings": {
+        "Community": 5,
+        "Click": 5,
+        "Sharpe": null
+      },
+      "avg": 5.0
+    },
+    {
+      "civ": "America",
+      "ratings": {
+        "Community": 4,
+        "Click": 5,
+        "Sharpe": 5
+      },
+      "avg": 4.67
+    },
+    {
+      "civ": "Burma",
+      "ratings": {
+        "Community": 5,
+        "Click": 5,
+        "Sharpe": 4
+      },
+      "avg": 4.67
+    },
+    {
+      "civ": "Germany",
+      "ratings": {
+        "Community": 5,
+        "Click": 5,
+        "Sharpe": 4
+      },
+      "avg": 4.67
+    },
+    {
+      "civ": "Macedonia",
+      "ratings": {
+        "Community": 4,
+        "Click": 5,
+        "Sharpe": 5
+      },
+      "avg": 4.67
+    },
+    {
+      "civ": "Moors",
+      "ratings": {
+        "Community": 4,
+        "Click": 5,
+        "Sharpe": 5
+      },
+      "avg": 4.67
+    },
+    {
+      "civ": "Romania",
+      "ratings": {
+        "Community": 5,
+        "Click": 5,
+        "Sharpe": 4
+      },
+      "avg": 4.67
+    },
+    {
+      "civ": "Ukraine",
+      "ratings": {
+        "Community": 5,
+        "Click": 5,
+        "Sharpe": 4
+      },
+      "avg": 4.67
+    },
+    {
+      "civ": "Arabia",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 5
+      },
+      "avg": 4.33
+    },
+    {
+      "civ": "Belgium",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 5
+      },
+      "avg": 4.33
+    },
+    {
+      "civ": "Brunei",
+      "ratings": {
+        "Community": 5,
+        "Click": 4,
+        "Sharpe": 4
+      },
+      "avg": 4.33
+    },
+    {
+      "civ": "Ethiopia",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 5
+      },
+      "avg": 4.33
+    },
+    {
+      "civ": "Inca",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 5
+      },
+      "avg": 4.33
+    },
+    {
+      "civ": "Japan",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 5
+      },
+      "avg": 4.33
+    },
+    {
+      "civ": "Khmer",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 5
+      },
+      "avg": 4.33
+    },
+    {
+      "civ": "Maya",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 5
+      },
+      "avg": 4.33
+    },
+    {
+      "civ": "Netherlands",
+      "ratings": {
+        "Community": 4,
+        "Click": 5,
+        "Sharpe": 4
+      },
+      "avg": 4.33
+    },
+    {
+      "civ": "Persia",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 5
+      },
+      "avg": 4.33
+    },
+    {
+      "civ": "Assyria",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 4
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Austria",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 4
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Ayyubids",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 4
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Babylon",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 4
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "China",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 4
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Denmark",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 4
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "England",
+      "ratings": {
+        "Community": 4,
+        "Click": 5,
+        "Sharpe": 3
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Hungary",
+      "ratings": {
+        "Community": 4,
+        "Click": 5,
+        "Sharpe": 3
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Italy",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 4
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Jerusalem",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": null
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Madagascar",
+      "ratings": {
+        "Community": 5,
+        "Click": 4,
+        "Sharpe": 3
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Mongolia",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 4
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Ottomans",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 4
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Papal State",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": null
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Rome",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 4
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Russia",
+      "ratings": {
+        "Community": 4,
+        "Click": null,
+        "Sharpe": 4
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Sioux",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 4
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Songhai",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 4
+      },
+      "avg": 4.0
+    },
+    {
+      "civ": "Brazil",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 3
+      },
+      "avg": 3.67
+    },
+    {
+      "civ": "Bulgaria",
+      "ratings": {
+        "Community": 4,
+        "Click": 3,
+        "Sharpe": 4
+      },
+      "avg": 3.67
+    },
+    {
+      "civ": "Carthage",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 3
+      },
+      "avg": 3.67
+    },
+    {
+      "civ": "Goths",
+      "ratings": {
+        "Community": 4,
+        "Click": 3,
+        "Sharpe": 4
+      },
+      "avg": 3.67
+    },
+    {
+      "civ": "Indonesia",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 3
+      },
+      "avg": 3.67
+    },
+    {
+      "civ": "Ireland",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 3
+      },
+      "avg": 3.67
+    },
+    {
+      "civ": "Morocco",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 3
+      },
+      "avg": 3.67
+    },
+    {
+      "civ": "Mysore",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 3
+      },
+      "avg": 3.67
+    },
+    {
+      "civ": "Portugal",
+      "ratings": {
+        "Community": 4,
+        "Click": 3,
+        "Sharpe": 4
+      },
+      "avg": 3.67
+    },
+    {
+      "civ": "Sweden",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 3
+      },
+      "avg": 3.67
+    },
+    {
+      "civ": "Zimbabwe",
+      "ratings": {
+        "Community": 3,
+        "Click": 4,
+        "Sharpe": null
+      },
+      "avg": 3.5
+    },
+    {
+      "civ": "Akkad",
+      "ratings": {
+        "Community": 3,
+        "Click": 4,
+        "Sharpe": 3
+      },
+      "avg": 3.33
+    },
+    {
+      "civ": "Argentina",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 4
+      },
+      "avg": 3.33
+    },
+    {
+      "civ": "Byzantium",
+      "ratings": {
+        "Community": 4,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.33
+    },
+    {
+      "civ": "France",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 4
+      },
+      "avg": 3.33
+    },
+    {
+      "civ": "Franks",
+      "ratings": {
+        "Community": 3,
+        "Click": 4,
+        "Sharpe": 3
+      },
+      "avg": 3.33
+    },
+    {
+      "civ": "Phoenicia",
+      "ratings": {
+        "Community": 4,
+        "Click": 4,
+        "Sharpe": 2
+      },
+      "avg": 3.33
+    },
+    {
+      "civ": "Timurids",
+      "ratings": {
+        "Community": 4,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.33
+    },
+    {
+      "civ": "Turkey",
+      "ratings": {
+        "Community": 4,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.33
+    },
+    {
+      "civ": "Egypt",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.0
+    },
+    {
+      "civ": "Gauls",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.0
+    },
+    {
+      "civ": "Greece",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.0
+    },
+    {
+      "civ": "Hittites",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.0
+    },
+    {
+      "civ": "Huns",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": null
+      },
+      "avg": 3.0
+    },
+    {
+      "civ": "Iroquois",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.0
+    },
+    {
+      "civ": "Kilwa",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.0
+    },
+    {
+      "civ": "Kongo",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.0
+    },
+    {
+      "civ": "Mexico",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.0
+    },
+    {
+      "civ": "Polynesia",
+      "ratings": {
+        "Community": 3,
+        "Click": 4,
+        "Sharpe": 2
+      },
+      "avg": 3.0
+    },
+    {
+      "civ": "Scotland",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.0
+    },
+    {
+      "civ": "Shoshone",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.0
+    },
+    {
+      "civ": "Switzerland",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.0
+    },
+    {
+      "civ": "Vietnam",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 3.0,
+      "note": "Ап из каски во вьетконг стоит 30гА с верой на Леса и джунги, джунгли можно разогнать до 3 еды, 2зол, 2науки, 2культуры, 1веры (суммарно 10)Но я не видел джунглей у рек, мб больше."
+    },
+    {
+      "civ": "Zulu",
+      "ratings": {
+        "Community": 3,
+        "Click": 2,
+        "Sharpe": 4
+      },
+      "avg": 3.0
+    },
+    {
+      "civ": "Australia",
+      "ratings": {
+        "Community": 3,
+        "Click": 2,
+        "Sharpe": 3
+      },
+      "avg": 2.67
+    },
+    {
+      "civ": "Golden Horde",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 2
+      },
+      "avg": 2.67
+    },
+    {
+      "civ": "Korea",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 2
+      },
+      "avg": 2.67
+    },
+    {
+      "civ": "Maurya",
+      "ratings": {
+        "Community": 2,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 2.67
+    },
+    {
+      "civ": "Normandy",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 2
+      },
+      "avg": 2.67
+    },
+    {
+      "civ": "Norway",
+      "ratings": {
+        "Community": 3,
+        "Click": 2,
+        "Sharpe": 3
+      },
+      "avg": 2.67
+    },
+    {
+      "civ": "Nubia",
+      "ratings": {
+        "Community": 3,
+        "Click": 2,
+        "Sharpe": 3
+      },
+      "avg": 2.67
+    },
+    {
+      "civ": "Siam",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 2
+      },
+      "avg": 2.67
+    },
+    {
+      "civ": "Spain",
+      "ratings": {
+        "Community": 2,
+        "Click": 3,
+        "Sharpe": 3
+      },
+      "avg": 2.67
+    },
+    {
+      "civ": "Tibet",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 2
+      },
+      "avg": 2.67
+    },
+    {
+      "civ": "Tonga",
+      "ratings": {
+        "Community": 3,
+        "Click": 3,
+        "Sharpe": 2
+      },
+      "avg": 2.67
+    },
+    {
+      "civ": "Lithuania",
+      "ratings": {
+        "Community": 2,
+        "Click": 3,
+        "Sharpe": 2
+      },
+      "avg": 2.33
+    },
+    {
+      "civ": "Venice",
+      "ratings": {
+        "Community": 3,
+        "Click": 2,
+        "Sharpe": 2
+      },
+      "avg": 2.33
+    },
+    {
+      "civ": "Wales",
+      "ratings": {
+        "Community": 2,
+        "Click": 2,
+        "Sharpe": 3
+      },
+      "avg": 2.33
+    },
+    {
+      "civ": "Armenia",
+      "ratings": {
+        "Community": 2,
+        "Click": 2,
+        "Sharpe": 2
+      },
+      "avg": 2.0
+    },
+    {
+      "civ": "Boers",
+      "ratings": {
+        "Community": 2,
+        "Click": 2,
+        "Sharpe": 2
+      },
+      "avg": 2.0
+    },
+    {
+      "civ": "Canada",
+      "ratings": {
+        "Community": 2,
+        "Click": 2,
+        "Sharpe": 2
+      },
+      "avg": 2.0
+    },
+    {
+      "civ": "India",
+      "ratings": {
+        "Community": 2,
+        "Click": 2,
+        "Sharpe": 2
+      },
+      "avg": 2.0
+    },
+    {
+      "civ": "Israel",
+      "ratings": {
+        "Community": 2,
+        "Click": 2,
+        "Sharpe": 2
+      },
+      "avg": 2.0
+    },
+    {
+      "civ": "Manchuria",
+      "ratings": {
+        "Community": 2,
+        "Click": 2,
+        "Sharpe": 2
+      },
+      "avg": 2.0
+    },
+    {
+      "civ": "Oman",
+      "ratings": {
+        "Community": 2,
+        "Click": 2,
+        "Sharpe": 2
+      },
+      "avg": 2.0
+    },
+    {
+      "civ": "Sumeria",
+      "ratings": {
+        "Community": 3,
+        "Click": 1,
+        "Sharpe": 2
+      },
+      "avg": 2.0
+    },
+    {
+      "civ": "Yugolslavia",
+      "ratings": {
+        "Community": 2,
+        "Click": 2,
+        "Sharpe": null
+      },
+      "avg": 2.0
+    },
+    {
+      "civ": "Celts",
+      "ratings": {
+        "Community": 2,
+        "Click": 1,
+        "Sharpe": 2
+      },
+      "avg": 1.67
+    },
+    {
+      "civ": "Finland",
+      "ratings": {
+        "Community": 2,
+        "Click": 1,
+        "Sharpe": 1
+      },
+      "avg": 1.33
+    }
+  ]
+}
