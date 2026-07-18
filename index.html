@@ -1491,7 +1491,11 @@
             items.push({ label, value });
         };
         if (Number.isFinite(Number(row.score))) push('Очки', row.score);
-        if (Number.isFinite(Number(row.strength))) push('Сила', row.strength);
+        if (Number.isFinite(Number(row.units)) || Number.isFinite(Number(row.strength))) {
+            const units = Number.isFinite(Number(row.units)) ? row.units : '—';
+            const force = Number.isFinite(Number(row.strength)) ? row.strength : '—';
+            push('Сила', `${units} / ${force}`);
+        }
         if (Number.isFinite(Number(row.science))) push('Наука', row.science);
         if (Number.isFinite(Number(row.cities))) push('Города', row.cities);
         if (Number.isFinite(Number(row.population))) push('Население', row.population);
