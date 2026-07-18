@@ -721,6 +721,19 @@
             animation: fadeIn 0.3s;
         }
 
+        .replay-gif-full {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            max-height: none;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 2px solid #ffd700;
+            margin-top: 8px;
+            background: rgba(0, 0, 0, 0.35);
+        }
+
         .no-games {
             text-align: center;
             padding: 50px;
@@ -1782,7 +1795,9 @@
                 ${renderLeagueBlock(game)}
             </div>
             ${hasGif ? `<div class="game-modal-section"><h3>Реплей</h3>
-                <img class="replay-gif show" src="${game.gif}" alt="Replay" style="max-width:100%;border-radius:10px;">
+                <img class="replay-gif-full" src="${game.gif}" alt="Replay"
+                     loading="lazy"
+                     onerror="this.parentElement.style.display='none'">
             </div>` : ''}
         `;
         modal.classList.add('open');
