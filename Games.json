@@ -160,7 +160,7 @@
           "policies": 10,
           "policy_branches": [
             "Традиция",
-            "Благочестие",
+            "Набожность",
             "Исследование"
           ],
           "first_policy": "Традиция",
@@ -459,9 +459,9 @@
           "techs": 27,
           "policies": 7,
           "policy_branches": [
-            "Благочестие"
+            "Набожность"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Средневековье",
@@ -908,10 +908,10 @@
           "techs": 21,
           "policies": 9,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Коммерция"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Средневековье",
@@ -941,10 +941,10 @@
           "techs": 25,
           "policies": 9,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Античность",
@@ -975,7 +975,7 @@
           "policies": 8,
           "policy_branches": [
             "Традиция",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": null,
@@ -1312,10 +1312,10 @@
           "techs": 56,
           "policies": 20,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -1383,10 +1383,10 @@
           "techs": 48,
           "policies": 21,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -1607,10 +1607,10 @@
           "techs": 50,
           "policies": 19,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Коммерция"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -1642,10 +1642,10 @@
           "techs": 44,
           "policies": 21,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -1801,7 +1801,7 @@
           "policies": 12,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Меценатство"
           ],
           "first_policy": "Честь",
@@ -1838,10 +1838,10 @@
           "techs": 44,
           "policies": 19,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Коммерция"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -1930,7 +1930,7 @@
           "policies": 20,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
           "first_policy": "Честь",
@@ -2004,7 +2004,7 @@
           "policy_branches": [
             "Традиция",
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": null,
@@ -2199,10 +2199,10 @@
           "techs": 21,
           "policies": 8,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Коммерция"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": 107,
           "capital_lost_turn": 107,
           "era": "Средневековье",
@@ -2290,7 +2290,7 @@
           "policies": 34,
           "policy_branches": [
             "Традиция",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Традиция",
@@ -2524,7 +2524,7 @@
           "policies": 16,
           "policy_branches": [
             "Традиция",
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
           "first_policy": "Традиция",
@@ -2577,7 +2577,7 @@
           "policies": 25,
           "policy_branches": [
             "Традиция",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": null,
@@ -2705,7 +2705,7 @@
           "policies": 27,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Честь",
@@ -2859,11 +2859,11 @@
           "techs": 48,
           "policies": 19,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Рационализм",
             "Эстетика"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -3155,11 +3155,11 @@
           "techs": 75,
           "policies": 37,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Исследование",
             "Рационализм"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Будущее",
@@ -3510,11 +3510,11 @@
           "techs": 56,
           "policies": 26,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Исследование",
             "Рационализм"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Атомная",
@@ -3546,7 +3546,7 @@
           "policy_branches": [
             "Меценатство",
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Меценатство",
@@ -3580,7 +3580,7 @@
           "policies": 19,
           "policy_branches": [
             "Коммерция",
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
           "first_policy": "Коммерция",
@@ -3763,7 +3763,7 @@
           "policy_branches": [
             "Эстетика",
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Исследование"
           ],
           "first_policy": "Эстетика",
@@ -3929,7 +3929,7 @@
           "policies": 24,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Коммерция",
             "Меценатство"
           ],
@@ -3998,7 +3998,7 @@
           "policies": 27,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Честь",
@@ -4065,7 +4065,7 @@
           "policies": 15,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Честь",
@@ -4334,7 +4334,7 @@
           "policies": 19,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Исследование",
             "Меценатство"
           ],
@@ -4402,7 +4402,7 @@
           "policies": 12,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
           "first_policy": "Честь",
@@ -4436,7 +4436,7 @@
           "policies": 8,
           "policy_branches": [
             "Традиция",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": 82,
@@ -4469,7 +4469,7 @@
           "policies": 5,
           "policy_branches": [
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Честь",
           "eliminated_turn": 65,
@@ -4576,7 +4576,7 @@
           "policy_branches": [
             "Воля",
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Исследование",
             "Рационализм"
           ],
@@ -4628,7 +4628,7 @@
           "policy_branches": [
             "Традиция",
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Традиция",
@@ -5072,7 +5072,7 @@
           "policies": 22,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Честь",
@@ -5183,11 +5183,11 @@
           "techs": 48,
           "policies": 19,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля",
             "Рационализм"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -5446,11 +5446,11 @@
           "techs": 50,
           "policies": 23,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля",
             "Рационализм"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -5489,7 +5489,7 @@
           "policy_branches": [
             "Честь",
             "Традиция",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Честь",
           "eliminated_turn": null,
@@ -5767,7 +5767,7 @@
             "Воля",
             "Эстетика",
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Воля",
@@ -5806,7 +5806,7 @@
           "policy_branches": [
             "Воля",
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Воля",
           "eliminated_turn": null,
@@ -5888,7 +5888,7 @@
           "policy_branches": [
             "Традиция",
             "Коммерция",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": 148,
@@ -5954,7 +5954,7 @@
           "policies": 16,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Эстетика"
           ],
           "first_policy": "Честь",
@@ -5988,7 +5988,7 @@
           "policies": 12,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
           "first_policy": "Честь",
@@ -6180,7 +6180,7 @@
           "policies": 30,
           "policy_branches": [
             "Воля",
-            "Благочестие",
+            "Набожность",
             "Исследование"
           ],
           "first_policy": "Воля",
@@ -6217,7 +6217,7 @@
           "policies": 23,
           "policy_branches": [
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Честь",
           "eliminated_turn": null,
@@ -6433,9 +6433,9 @@
           "techs": 15,
           "policies": 5,
           "policy_branches": [
-            "Благочестие"
+            "Набожность"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": 68,
           "capital_lost_turn": 68,
           "era": "Античность",
@@ -6696,7 +6696,7 @@
           "policies": 14,
           "policy_branches": [
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Честь",
           "eliminated_turn": 128,
@@ -6729,7 +6729,7 @@
           "policies": 11,
           "policy_branches": [
             "Традиция",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": 124,
@@ -6842,7 +6842,7 @@
           "policy_branches": [
             "Воля",
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Воля",
@@ -6966,7 +6966,7 @@
           "policies": 28,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Исследование"
           ],
           "first_policy": "Честь",
@@ -7003,7 +7003,7 @@
           "policies": 20,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Коммерция",
             "Воля",
             "Меценатство"
@@ -7292,10 +7292,10 @@
           "techs": 42,
           "policies": 20,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -7373,11 +7373,11 @@
           "techs": 44,
           "policies": 20,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Коммерция",
             "Рационализм"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -7483,7 +7483,7 @@
           "policies": 15,
           "policy_branches": [
             "Традиция",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Традиция",
@@ -7589,7 +7589,7 @@
           "policies": 12,
           "policy_branches": [
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Честь",
           "eliminated_turn": 97,
@@ -7757,7 +7757,7 @@
           "policies": 24,
           "policy_branches": [
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Честь",
           "eliminated_turn": null,
@@ -7957,7 +7957,7 @@
           "policy_branches": [
             "Эстетика",
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Эстетика",
           "eliminated_turn": null,
@@ -8056,10 +8056,10 @@
           "techs": 31,
           "policies": 11,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": 118,
           "capital_lost_turn": 118,
           "era": "Возрождение",
@@ -8214,7 +8214,7 @@
           "policies": 26,
           "policy_branches": [
             "Воля",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Воля",
           "eliminated_turn": null,
@@ -8339,7 +8339,7 @@
           "policies": 25,
           "policy_branches": [
             "Воля",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Воля",
           "eliminated_turn": 161,
@@ -8406,7 +8406,7 @@
           "policies": 10,
           "policy_branches": [
             "Традиция",
-            "Благочестие",
+            "Набожность",
             "Меценатство"
           ],
           "first_policy": "Традиция",
@@ -8472,10 +8472,10 @@
           "techs": 34,
           "policies": 11,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": 128,
           "capital_lost_turn": 128,
           "era": "Возрождение",
