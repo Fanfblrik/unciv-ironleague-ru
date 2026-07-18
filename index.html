@@ -158,6 +158,78 @@
             color: #ffd700;
         }
 
+        .card-tabs {
+            display: flex;
+            gap: 8px;
+            margin: 12px 0 8px;
+        }
+
+        .card-tab {
+            flex: 1;
+            padding: 8px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .card-tab.active {
+            background: rgba(255, 215, 0, 0.15);
+            border-color: rgba(255, 215, 0, 0.5);
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        .card-tab-panel {
+            display: none;
+        }
+
+        .card-tab-panel.active {
+            display: block;
+        }
+
+        .survivor-item {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .survivor-item:last-child {
+            border-bottom: none;
+        }
+
+        .survivor-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .survivor-meta {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-left: 30px;
+        }
+
+        .survivor-ideology {
+            color: #ffd700;
+        }
+
+        .survivor-wonders {
+            margin: 4px 0 0 30px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.35;
+        }
+
+        .survivors-empty {
+            padding: 16px 8px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 0.95rem;
+        }
+
         /* Unciv-style portrait: canvas paints outer/inner colors + centered icon */
         .nation-portrait {
             display: inline-block;
@@ -743,6 +815,32 @@
                 `;
             }).join('');
 
+            const survivors = Array.isArray(game.survivors) ? game.survivors : [];
+            const survivorsHtml = survivors.length
+                ? survivors.map(row => {
+                    const isWinner = row.nation === game.winner;
+                    const ideology = (row.ideology || '').trim();
+                    const wonders = Array.isArray(row.wonders) ? row.wonders.filter(Boolean) : [];
+                    const name = (row.name || '').trim() || '—';
+                    return `
+                        <div class="survivor-item">
+                            <div class="survivor-head">
+                                ${renderNationPortrait(row.nation, 'player-nation-mini')}
+                                <span class="player-name">${name}</span>
+                                ${isWinner ? '<span class="player-status">👑 Победитель</span>' : ''}
+                            </div>
+                            <div class="survivor-meta">
+                                ${row.nation || ''}
+                                ${ideology ? ` · <span class="survivor-ideology">${ideology}</span>` : ' · идеология не принята'}
+                            </div>
+                            <div class="survivor-wonders">
+                                ${wonders.length ? `Чудеса: ${wonders.join(', ')}` : 'Чудес нет'}
+                            </div>
+                        </div>
+                    `;
+                }).join('')
+                : '<div class="survivors-empty">Нет данных о финале (появится после синка из сейва)</div>';
+
             const hasGif = game.gif && game.gif.trim() !== '';
 
             card.innerHTML = `
@@ -758,7 +856,16 @@
                         ${game.winner}
                     </span>
                 </div>
-                <div class="players-list">${playersHtml}</div>
+                <div class="card-tabs">
+                    <button type="button" class="card-tab active" data-tab="roster">Состав</button>
+                    <button type="button" class="card-tab" data-tab="survivors">Финал</button>
+                </div>
+                <div class="card-tab-panel active" data-panel="roster">
+                    <div class="players-list">${playersHtml}</div>
+                </div>
+                <div class="card-tab-panel" data-panel="survivors">
+                    <div class="players-list">${survivorsHtml}</div>
+                </div>
                 ${hasGif ? `
                     <button class="replay-button" data-replay="${game.gif}">🎬 Смотреть реплей</button>
                     <img class="replay-gif" src="${game.gif}" alt="Replay" data-game-id="${game.id}"
@@ -770,6 +877,18 @@
         });
 
         hydrateNationPortraits(grid);
+
+        grid.querySelectorAll('.game-card').forEach(card => {
+            const tabs = card.querySelectorAll('.card-tab');
+            const panels = card.querySelectorAll('.card-tab-panel');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = tab.dataset.tab;
+                    tabs.forEach(t => t.classList.toggle('active', t === tab));
+                    panels.forEach(p => p.classList.toggle('active', p.dataset.panel === target));
+                });
+            });
+        });
 
         // Обработчики для кнопок реплея
         document.querySelectorAll('.replay-button').forEach(button => {
