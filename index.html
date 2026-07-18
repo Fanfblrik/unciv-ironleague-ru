@@ -549,16 +549,20 @@
         }
 
         .survivor-wonders-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 14px;
             margin: 4px 0 0;
             padding-left: 0;
             list-style: none;
         }
 
         .survivor-wonders-list li {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 4px;
+            margin: 0;
+            max-width: 100%;
         }
 
         .wonder-icon-wrap {
@@ -1578,8 +1582,8 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=tier-legend-ru-1"></script>
-<script src="js/rating.js?v=tier-legend-ru-1"></script>
+<script src="js/i18n.js?v=wonders-wrap-1"></script>
+<script src="js/rating.js?v=wonders-wrap-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
