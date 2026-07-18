@@ -160,7 +160,7 @@
           "policies": 10,
           "policy_branches": [
             "Традиция",
-            "Благочестие",
+            "Набожность",
             "Исследование"
           ],
           "first_policy": "Традиция",
@@ -287,7 +287,8 @@
           "wars_declared": 0,
           "wars_received": 0
         }
-      ]
+      ],
+      "flags": []
     },
     {
       "id": 2,
@@ -459,9 +460,9 @@
           "techs": 27,
           "policies": 7,
           "policy_branches": [
-            "Благочестие"
+            "Набожность"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Средневековье",
@@ -664,7 +665,8 @@
           "wars_declared": 0,
           "wars_received": 0
         }
-      ]
+      ],
+      "flags": []
     },
     {
       "id": 3,
@@ -908,10 +910,10 @@
           "techs": 21,
           "policies": 9,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Коммерция"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Средневековье",
@@ -941,10 +943,10 @@
           "techs": 25,
           "policies": 9,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Античность",
@@ -975,7 +977,7 @@
           "policies": 8,
           "policy_branches": [
             "Традиция",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": null,
@@ -1070,7 +1072,8 @@
           "wars_declared": 0,
           "wars_received": 0
         }
-      ]
+      ],
+      "flags": []
     },
     {
       "id": 4,
@@ -1312,10 +1315,10 @@
           "techs": 56,
           "policies": 20,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -1383,10 +1386,10 @@
           "techs": 48,
           "policies": 21,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -1504,10 +1507,29 @@
           "wars_declared": 0,
           "wars_received": 3
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 5,
+      "version": "",
+      "number": "Game 5",
+      "players": [],
+      "winner": "",
+      "map": "",
+      "playerCount": 0,
+      "endedOnTurn": "",
+      "victoryType": "CC",
+      "flags": [
+        "teams"
+      ],
+      "excludeFromStats": true,
+      "gif": null,
+      "survivors": [],
+      "note": "Командная игра. Состав/финал не восстановлены (на проде нет game5).",
+      "id": 5
+    },
+    {
+      "id": 6,
       "version": "4.8.7 (Build 915)",
       "number": "Game 6",
       "players": [
@@ -1607,10 +1629,10 @@
           "techs": 50,
           "policies": 19,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Коммерция"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -1642,10 +1664,10 @@
           "techs": 44,
           "policies": 21,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -1801,7 +1823,7 @@
           "policies": 12,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Меценатство"
           ],
           "first_policy": "Честь",
@@ -1838,10 +1860,10 @@
           "techs": 44,
           "policies": 19,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Коммерция"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -1859,10 +1881,29 @@
           "wars_declared": 2,
           "wars_received": 1
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 6,
+      "version": "",
+      "number": "Game 7",
+      "players": [],
+      "winner": "",
+      "map": "",
+      "playerCount": 0,
+      "endedOnTurn": "",
+      "victoryType": "CC",
+      "flags": [
+        "scrap"
+      ],
+      "excludeFromStats": true,
+      "gif": null,
+      "survivors": [],
+      "note": "Скрап. Состав/финал не восстановлены из бэкапов (на проде нет game7).",
+      "id": 7
+    },
+    {
+      "id": 8,
       "version": "4.8.13 (Build 923)",
       "number": "Game 8",
       "players": [
@@ -1930,7 +1971,7 @@
           "policies": 20,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
           "first_policy": "Честь",
@@ -2004,7 +2045,7 @@
           "policy_branches": [
             "Традиция",
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": null,
@@ -2199,10 +2240,10 @@
           "techs": 21,
           "policies": 8,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Коммерция"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": 107,
           "capital_lost_turn": 107,
           "era": "Средневековье",
@@ -2290,7 +2331,7 @@
           "policies": 34,
           "policy_branches": [
             "Традиция",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Традиция",
@@ -2311,10 +2352,11 @@
           "wars_declared": 1,
           "wars_received": 1
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 7,
+      "id": 9,
       "version": "4.8.13 (Build 1036)",
       "number": "Game 9",
       "players": [
@@ -2524,7 +2566,7 @@
           "policies": 16,
           "policy_branches": [
             "Традиция",
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
           "first_policy": "Традиция",
@@ -2577,7 +2619,7 @@
           "policies": 25,
           "policy_branches": [
             "Традиция",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": null,
@@ -2597,10 +2639,11 @@
           "wars_declared": 1,
           "wars_received": 1
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 8,
+      "id": 10,
       "version": "4.13.1 (Build 1040)",
       "number": "Game 10",
       "players": [
@@ -2634,10 +2677,11 @@
       "playerCount": 6,
       "endedOnTurn": "",
       "victoryType": "CC",
-      "gif": "Replays/Unciv_FyZRZVLifg.gif"
+      "gif": "Replays/Unciv_FyZRZVLifg.gif",
+      "flags": []
     },
     {
-      "id": 9,
+      "id": 11,
       "version": "4.13.4 (Build 1043)",
       "number": "Game 11",
       "players": [
@@ -2705,7 +2749,7 @@
           "policies": 27,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Честь",
@@ -2859,11 +2903,11 @@
           "techs": 48,
           "policies": 19,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Рационализм",
             "Эстетика"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -2920,10 +2964,11 @@
           "wars_declared": 2,
           "wars_received": 0
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 10,
+      "id": 12,
       "version": "4.13.13 (Build 1055)",
       "number": "Game 12",
       "players": [
@@ -3155,11 +3200,11 @@
           "techs": 75,
           "policies": 37,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Исследование",
             "Рационализм"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Будущее",
@@ -3210,10 +3255,11 @@
           "wars_declared": 0,
           "wars_received": 0
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 11,
+      "id": 13,
       "version": "4.14.4 (Build 1067)",
       "number": "Game 13",
       "players": [
@@ -3510,11 +3556,11 @@
           "techs": 56,
           "policies": 26,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Исследование",
             "Рационализм"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Атомная",
@@ -3546,7 +3592,7 @@
           "policy_branches": [
             "Меценатство",
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Меценатство",
@@ -3580,7 +3626,7 @@
           "policies": 19,
           "policy_branches": [
             "Коммерция",
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
           "first_policy": "Коммерция",
@@ -3667,10 +3713,11 @@
           "wars_declared": 1,
           "wars_received": 0
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 12,
+      "id": 14,
       "version": "4.14.14 (Build 1081) -> 4.4.19 (Build 1087)",
       "number": "Game 14",
       "players": [
@@ -3763,7 +3810,7 @@
           "policy_branches": [
             "Эстетика",
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Исследование"
           ],
           "first_policy": "Эстетика",
@@ -3929,7 +3976,7 @@
           "policies": 24,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Коммерция",
             "Меценатство"
           ],
@@ -3998,7 +4045,7 @@
           "policies": 27,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Честь",
@@ -4065,7 +4112,7 @@
           "policies": 15,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Честь",
@@ -4119,10 +4166,11 @@
           "wars_declared": 1,
           "wars_received": 2
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 13,
+      "id": 15,
       "version": "4.15.12 (Build 1091)",
       "number": "Game 15",
       "players": [
@@ -4334,7 +4382,7 @@
           "policies": 19,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Исследование",
             "Меценатство"
           ],
@@ -4402,7 +4450,7 @@
           "policies": 12,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
           "first_policy": "Честь",
@@ -4436,7 +4484,7 @@
           "policies": 8,
           "policy_branches": [
             "Традиция",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": 82,
@@ -4469,7 +4517,7 @@
           "policies": 5,
           "policy_branches": [
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Честь",
           "eliminated_turn": 65,
@@ -4489,10 +4537,11 @@
           "wars_declared": 0,
           "wars_received": 1
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 14,
+      "id": 16,
       "version": "4.15.14 (Build 1107)",
       "number": "Game 16",
       "players": [
@@ -4576,7 +4625,7 @@
           "policy_branches": [
             "Воля",
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Исследование",
             "Рационализм"
           ],
@@ -4628,7 +4677,7 @@
           "policy_branches": [
             "Традиция",
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Традиция",
@@ -4868,10 +4917,11 @@
           "wars_declared": 0,
           "wars_received": 3
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 15,
+      "id": 17,
       "version": "4.16.4 (Build 1119)",
       "number": "Game 17",
       "players": [
@@ -5072,7 +5122,7 @@
           "policies": 22,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Честь",
@@ -5183,11 +5233,11 @@
           "techs": 48,
           "policies": 19,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля",
             "Рационализм"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Современность",
@@ -5306,10 +5356,11 @@
           "wars_declared": 2,
           "wars_received": 0
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 16,
+      "id": 18,
       "version": "4.16.9 (Build 1125)",
       "number": "Game 18",
       "players": [
@@ -5446,11 +5497,11 @@
           "techs": 50,
           "policies": 23,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля",
             "Рационализм"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -5489,7 +5540,7 @@
           "policy_branches": [
             "Честь",
             "Традиция",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Честь",
           "eliminated_turn": null,
@@ -5576,10 +5627,398 @@
           "wars_declared": 0,
           "wars_received": 2
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 17,
+      "version": "4.17.17-patch1 (Build 1159)",
+      "number": "Game 19",
+      "players": [
+        {
+          "name": "Ashegg2",
+          "nation": "Югославия"
+        },
+        {
+          "name": "Fanfblrik",
+          "nation": "Америка"
+        },
+        {
+          "name": "den_stu",
+          "nation": "Маньчжурия"
+        },
+        {
+          "name": "munlait21",
+          "nation": "Англия"
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Мавры"
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Австрия"
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Вавилон"
+        },
+        {
+          "name": "Click4x",
+          "nation": "Филиппины"
+        },
+        {
+          "name": "EmperorPenguin01",
+          "nation": "Буры"
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Китай"
+        }
+      ],
+      "winner": "Филиппины",
+      "map": "Perlin",
+      "playerCount": 10,
+      "endedOnTurn": "53",
+      "victoryType": "CC",
+      "flags": [
+        "scrap"
+      ],
+      "excludeFromStats": true,
+      "survivors": [
+        {
+          "name": "Click4x",
+          "nation": "Филиппины",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "The Pyramids"
+          ],
+          "techs": 13,
+          "policies": 5,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 185,
+          "units": 6,
+          "strength": 113,
+          "science": 26,
+          "cities": 6,
+          "population": 28,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 2,
+          "wars_received": 0
+        },
+        {
+          "name": "munlait21",
+          "nation": "Англия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "The Great Lighthouse"
+          ],
+          "techs": 16,
+          "policies": 5,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 170,
+          "units": 5,
+          "strength": 148,
+          "science": 29,
+          "cities": 4,
+          "population": 22,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1
+        },
+        {
+          "name": "EmperorPenguin01",
+          "nation": "Буры",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [
+            "Petra",
+            "Stonehenge"
+          ],
+          "techs": 14,
+          "policies": 5,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 170,
+          "units": 9,
+          "strength": 148,
+          "science": 23,
+          "cities": 4,
+          "population": 25,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 2
+        },
+        {
+          "name": "AlexUnderHill",
+          "nation": "Вавилон",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 13,
+          "policies": 5,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Древность",
+          "score": 158,
+          "units": 4,
+          "strength": 120,
+          "science": 21,
+          "cities": 7,
+          "population": 23,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1
+        },
+        {
+          "name": "VlaterRogue",
+          "nation": "Австрия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 12,
+          "policies": 5,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 141,
+          "units": 7,
+          "strength": 142,
+          "science": 24,
+          "cities": 5,
+          "population": 23,
+          "religion": "Confucianism",
+          "religion_state": "Religion",
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 2,
+          "wars_received": 0
+        },
+        {
+          "name": "konoval_mik",
+          "nation": "Китай",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 12,
+          "policies": 4,
+          "policy_branches": [
+            "Воля"
+          ],
+          "first_policy": "Воля",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 139,
+          "units": 5,
+          "strength": 105,
+          "science": 20,
+          "cities": 6,
+          "population": 17,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 0
+        },
+        {
+          "name": "den_stu",
+          "nation": "Маньчжурия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 14,
+          "policies": 6,
+          "policy_branches": [
+            "Честь",
+            "Набожность"
+          ],
+          "first_policy": "Честь",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 137,
+          "units": 7,
+          "strength": 172,
+          "science": 23,
+          "cities": 4,
+          "population": 21,
+          "religion": "Judaism",
+          "religion_state": "Religion",
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 1
+        },
+        {
+          "name": "Fanfblrik",
+          "nation": "Америка",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 13,
+          "policies": 5,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 132,
+          "units": 4,
+          "strength": 145,
+          "science": 22,
+          "cities": 4,
+          "population": 21,
+          "religion": "Плыли мы по морю",
+          "religion_state": "Religion",
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 0
+        },
+        {
+          "name": "Overslidishe",
+          "nation": "Мавры",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 13,
+          "policies": 7,
+          "policy_branches": [
+            "Набожность"
+          ],
+          "first_policy": "Набожность",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 131,
+          "units": 7,
+          "strength": 122,
+          "science": 21,
+          "cities": 4,
+          "population": 23,
+          "religion": "Islam",
+          "religion_state": "Усилена",
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 0
+        },
+        {
+          "name": "Ashegg2",
+          "nation": "Югославия",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "techs": 11,
+          "policies": 5,
+          "policy_branches": [
+            "Традиция"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Античность",
+          "score": 75,
+          "units": 3,
+          "strength": 99,
+          "science": 12,
+          "cities": 1,
+          "population": 9,
+          "religion": "",
+          "religion_state": "Пантеон",
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 0
+        }
+      ],
+      "gif": null,
+      "id": 19
+    },
+    {
+      "id": 20,
       "version": "4.17.17-patch1 (Build 1159)",
       "number": "Game 20",
       "players": [
@@ -5767,7 +6206,7 @@
             "Воля",
             "Эстетика",
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Воля",
@@ -5806,7 +6245,7 @@
           "policy_branches": [
             "Воля",
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Воля",
           "eliminated_turn": null,
@@ -5888,7 +6327,7 @@
           "policy_branches": [
             "Традиция",
             "Коммерция",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": 148,
@@ -5954,7 +6393,7 @@
           "policies": 16,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Эстетика"
           ],
           "first_policy": "Честь",
@@ -5988,7 +6427,7 @@
           "policies": 12,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
           "first_policy": "Честь",
@@ -6009,10 +6448,11 @@
           "wars_declared": 0,
           "wars_received": 1
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 18,
+      "id": 21,
       "version": "4.18.4 (Build 1166)",
       "number": "Game 21",
       "players": [
@@ -6180,7 +6620,7 @@
           "policies": 30,
           "policy_branches": [
             "Воля",
-            "Благочестие",
+            "Набожность",
             "Исследование"
           ],
           "first_policy": "Воля",
@@ -6217,7 +6657,7 @@
           "policies": 23,
           "policy_branches": [
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Честь",
           "eliminated_turn": null,
@@ -6433,9 +6873,9 @@
           "techs": 15,
           "policies": 5,
           "policy_branches": [
-            "Благочестие"
+            "Набожность"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": 68,
           "capital_lost_turn": 68,
           "era": "Античность",
@@ -6453,10 +6893,11 @@
           "wars_declared": 1,
           "wars_received": 0
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 19,
+      "id": 22,
       "version": "4.18.14-patch1",
       "number": "Game 22",
       "players": [
@@ -6696,7 +7137,7 @@
           "policies": 14,
           "policy_branches": [
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Честь",
           "eliminated_turn": 128,
@@ -6729,7 +7170,7 @@
           "policies": 11,
           "policy_branches": [
             "Традиция",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Традиция",
           "eliminated_turn": 124,
@@ -6749,10 +7190,11 @@
           "wars_declared": 1,
           "wars_received": 1
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 20,
+      "id": 23,
       "version": "4.19.12 (1200)",
       "number": "Game 23",
       "players": [
@@ -6842,7 +7284,7 @@
           "policy_branches": [
             "Воля",
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Воля",
@@ -6966,7 +7408,7 @@
           "policies": 28,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Исследование"
           ],
           "first_policy": "Честь",
@@ -7003,7 +7445,7 @@
           "policies": 20,
           "policy_branches": [
             "Честь",
-            "Благочестие",
+            "Набожность",
             "Коммерция",
             "Воля",
             "Меценатство"
@@ -7162,10 +7604,11 @@
           "wars_declared": 1,
           "wars_received": 3
         }
-      ]
+      ],
+      "flags": []
     },
     {
-      "id": 21,
+      "id": 24,
       "version": "4.19.18 (Build 1209)",
       "number": "Game 24",
       "players": [
@@ -7292,10 +7735,10 @@
           "techs": 42,
           "policies": 20,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -7373,11 +7816,11 @@
           "techs": 44,
           "policies": 20,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Коммерция",
             "Рационализм"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
@@ -7483,7 +7926,7 @@
           "policies": 15,
           "policy_branches": [
             "Традиция",
-            "Благочестие",
+            "Набожность",
             "Рационализм"
           ],
           "first_policy": "Традиция",
@@ -7589,7 +8032,7 @@
           "policies": 12,
           "policy_branches": [
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Честь",
           "eliminated_turn": 97,
@@ -7675,10 +8118,12 @@
           "wars_declared": 0,
           "wars_received": 3
         }
-      ]
+      ],
+      "gif": "Replays/Game_24.gif",
+      "flags": []
     },
     {
-      "id": 22,
+      "id": 25,
       "version": "4.20.1 (Build 1212)",
       "number": "Game 25",
       "players": [
@@ -7757,7 +8202,7 @@
           "policies": 24,
           "policy_branches": [
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Честь",
           "eliminated_turn": null,
@@ -7957,7 +8402,7 @@
           "policy_branches": [
             "Эстетика",
             "Честь",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Эстетика",
           "eliminated_turn": null,
@@ -8056,10 +8501,10 @@
           "techs": 31,
           "policies": 11,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": 118,
           "capital_lost_turn": 118,
           "era": "Возрождение",
@@ -8077,10 +8522,12 @@
           "wars_declared": 0,
           "wars_received": 3
         }
-      ]
+      ],
+      "gif": "Replays/Game_25.gif",
+      "flags": []
     },
     {
-      "id": 23,
+      "id": 26,
       "version": "4.20.7 (Build 1219)",
       "number": "Game 26",
       "players": [
@@ -8214,7 +8661,7 @@
           "policies": 26,
           "policy_branches": [
             "Воля",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Воля",
           "eliminated_turn": null,
@@ -8339,7 +8786,7 @@
           "policies": 25,
           "policy_branches": [
             "Воля",
-            "Благочестие"
+            "Набожность"
           ],
           "first_policy": "Воля",
           "eliminated_turn": 161,
@@ -8406,7 +8853,7 @@
           "policies": 10,
           "policy_branches": [
             "Традиция",
-            "Благочестие",
+            "Набожность",
             "Меценатство"
           ],
           "first_policy": "Традиция",
@@ -8472,10 +8919,10 @@
           "techs": 34,
           "policies": 11,
           "policy_branches": [
-            "Благочестие",
+            "Набожность",
             "Воля"
           ],
-          "first_policy": "Благочестие",
+          "first_policy": "Набожность",
           "eliminated_turn": 128,
           "capital_lost_turn": 128,
           "era": "Возрождение",
@@ -8493,298 +8940,9 @@
           "wars_declared": 8,
           "wars_received": 1
         }
-      ]
-    },
-    {
-      "id": 24,
-      "version": "4.20.15 (Build 1229)",
-      "number": "Game 27",
-      "players": [
-        {
-          "name": "Click4x",
-          "nation": "Япония"
-        },
-        {
-          "name": "Bahahanchiklkm",
-          "nation": "Буры"
-        },
-        {
-          "name": "EmperorPenguin01",
-          "nation": "Ацтеки"
-        },
-        {
-          "name": "AlexUnderHill",
-          "nation": "Дания"
-        },
-        {
-          "name": "konoval_mik",
-          "nation": "Колумбия"
-        },
-        {
-          "name": "REPUNZEL2882",
-          "nation": "Бруней"
-        }
       ],
-      "winner": "Ацтеки",
-      "map": "Pangaea",
-      "playerCount": 6,
-      "endedOnTurn": "125",
-      "victoryType": "CC",
-      "survivors": [
-        {
-          "name": "EmperorPenguin01",
-          "nation": "Ацтеки",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [
-            {
-              "nation": "Буры",
-              "city": "Pretoria"
-            }
-          ],
-          "ideology": "Автократия",
-          "wonders": [
-            "Alhambra",
-            "Hanging Gardens",
-            "Taj Mahal",
-            "Temple of Artemis",
-            "Chichen Itza",
-            "Mausoleum of Halicarnassus",
-            "Stonehenge",
-            "Machu Picchu",
-            "Sistine Chapel",
-            "The Oracle"
-          ],
-          "techs": 49,
-          "policies": 24,
-          "policy_branches": [
-            "Честь",
-            "Традиция",
-            "Рационализм"
-          ],
-          "first_policy": "Честь",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 1080,
-          "units": 61,
-          "strength": 20240,
-          "science": 467,
-          "cities": 15,
-          "population": 222,
-          "religion": "Islam",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 4,
-          "wars_received": 1
-        },
-        {
-          "name": "Click4x",
-          "nation": "Япония",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [],
-          "ideology": "Порядок",
-          "wonders": [
-            "Great Mosque of Djenne",
-            "Brandenburg Gate",
-            "Kremlin",
-            "Himeji Castle",
-            "Great Wall",
-            "Petra"
-          ],
-          "techs": 48,
-          "policies": 23,
-          "policy_branches": [
-            "Честь",
-            "Благочестие",
-            "Воля"
-          ],
-          "first_policy": "Честь",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 659,
-          "units": 18,
-          "strength": 4632,
-          "science": 420,
-          "cities": 8,
-          "population": 118,
-          "religion": "Taoism",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 1,
-          "wars_received": 1
-        },
-        {
-          "name": "AlexUnderHill",
-          "nation": "Дания",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [
-            {
-              "nation": "Колумбия",
-              "city": "Bogotá"
-            }
-          ],
-          "ideology": "Свобода",
-          "wonders": [
-            "Leaning Tower of Pisa",
-            "Terracotta Army",
-            "Statue of Zeus",
-            "The Great Lighthouse",
-            "Colossus"
-          ],
-          "techs": 46,
-          "policies": 20,
-          "policy_branches": [
-            "Честь",
-            "Исследование",
-            "Воля"
-          ],
-          "first_policy": "Честь",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 522,
-          "units": 18,
-          "strength": 2588,
-          "science": 290,
-          "cities": 6,
-          "population": 76,
-          "religion": "Датский штурвал",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 1,
-          "wars_received": 1
-        },
-        {
-          "name": "REPUNZEL2882",
-          "nation": "Бруней",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [],
-          "ideology": "Свобода",
-          "wonders": [
-            "The Great Library",
-            "The Pyramids",
-            "Angkor Wat",
-            "Notre Dame"
-          ],
-          "techs": 43,
-          "policies": 16,
-          "policy_branches": [
-            "Исследование",
-            "Воля"
-          ],
-          "first_policy": "Исследование",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 497,
-          "units": 21,
-          "strength": 1705,
-          "science": 266,
-          "cities": 7,
-          "population": 95,
-          "religion": "Tengriism",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 0,
-          "wars_received": 1
-        },
-        {
-          "name": "konoval_mik",
-          "nation": "Колумбия",
-          "alive": false,
-          "has_capital": false,
-          "capital_taken_by": "Дания",
-          "conquered_capitals": [],
-          "ideology": "",
-          "wonders": [],
-          "techs": 17,
-          "policies": 7,
-          "policy_branches": [
-            "Традиция"
-          ],
-          "first_policy": "Традиция",
-          "eliminated_turn": 69,
-          "capital_lost_turn": 69,
-          "era": "Античность",
-          "score": 182,
-          "units": 0,
-          "strength": 259,
-          "science": 20,
-          "cities": 0,
-          "population": 18,
-          "religion": "Zoroastrianism",
-          "religion_state": "Religion",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 0,
-          "wars_received": 1
-        },
-        {
-          "name": "Bahahanchiklkm",
-          "nation": "Буры",
-          "alive": false,
-          "has_capital": false,
-          "capital_taken_by": "Ацтеки",
-          "conquered_capitals": [],
-          "ideology": "",
-          "wonders": [],
-          "techs": 34,
-          "policies": 12,
-          "policy_branches": [
-            "Традиция",
-            "Эстетика"
-          ],
-          "first_policy": "Традиция",
-          "eliminated_turn": 106,
-          "capital_lost_turn": 106,
-          "era": "Возрождение",
-          "score": 162,
-          "units": 0,
-          "strength": 110,
-          "science": 30,
-          "cities": 0,
-          "population": 12,
-          "religion": "Christianity",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 0,
-          "wars_received": 1
-        }
-      ],
-      "league": {
-        "cc": {
-          "nation": "Ацтеки",
-          "start": 125,
-          "plus": [
-            "Япония",
-            "Бруней",
-            "Дания"
-          ],
-          "minus": [],
-          "abstain": [],
-          "stop": true
-        }
-      }
+      "gif": "Replays/Game_26.gif",
+      "flags": []
     }
   ]
 }

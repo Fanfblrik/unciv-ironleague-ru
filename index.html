@@ -10,6 +10,9 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     <title>Iron League — Архив и FAQ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -33,10 +36,47 @@
         h1 {
             text-align: center;
             font-size: 2.5rem;
-            margin: 30px 0 16px;
+            margin: 10px 0 16px;
             color: #ffd700;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
             letter-spacing: 2px;
+        }
+
+        .site-brand {
+            text-align: center;
+            margin: 8px 0 0;
+            padding: 6px 12px 2px;
+            font-family: 'Cinzel Decorative', 'Cinzel', 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: clamp(1.55rem, 4vw, 2.35rem);
+            letter-spacing: 0.28em;
+            text-indent: 0.28em;
+            line-height: 1.15;
+            text-transform: uppercase;
+            background: linear-gradient(
+                180deg,
+                #fff8d0 0%,
+                #ffe566 28%,
+                #ffd700 52%,
+                #c9a227 78%,
+                #8a6414 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 1px 0 rgba(40, 28, 0, 0.55))
+                    drop-shadow(0 0 14px rgba(255, 215, 0, 0.35));
+            user-select: none;
+        }
+
+        .site-brand-sub {
+            display: block;
+            margin-top: 2px;
+            font-family: 'Cinzel', 'Times New Roman', serif;
+            font-size: 0.55em;
+            letter-spacing: 0.55em;
+            text-indent: 0.55em;
+            opacity: 0.92;
         }
 
         .site-nav {
@@ -374,6 +414,20 @@
             font-size: 0.95rem;
         }
 
+        .finale-ending-title {
+            line-height: 1.35;
+        }
+
+        .finale-ending-cc {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 215, 0, 0.25);
+            font-size: 0.86rem;
+            font-weight: 500;
+            color: rgba(255, 236, 170, 0.95);
+            line-height: 1.4;
+        }
+
         .card-tabs {
             display: flex;
             gap: 8px;
@@ -505,9 +559,23 @@
             margin-bottom: 4px;
         }
 
+        .wonder-icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.18);
+            box-shadow: 0 0 0 1px rgba(255, 215, 0, 0.28);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
         .wonder-icon {
-            width: 22px;
-            height: 22px;
+            width: 18px;
+            height: 18px;
             object-fit: contain;
             flex-shrink: 0;
             image-rendering: pixelated;
@@ -516,7 +584,7 @@
         .survivor-stats {
             margin: 4px 0 0 30px;
             font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 248, 220, 0.92);
         }
 
         .survivors-empty {
@@ -706,19 +774,61 @@
             transform: scale(0.98);
         }
 
+        .replay-wrap {
+            margin-top: 15px;
+        }
+
+        .replay-wrap--modal {
+            margin-top: 8px;
+        }
+
         .replay-gif {
             width: 100%;
             max-height: 200px;
             object-fit: cover;
             border-radius: 10px;
-            margin-top: 15px;
+            margin-top: 0;
             display: none;
             border: 2px solid #ffd700;
+            cursor: pointer;
         }
 
         .replay-gif.show {
             display: block;
             animation: fadeIn 0.3s;
+        }
+
+        .replay-gif-full {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            max-height: none;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 2px solid #ffd700;
+            margin-top: 0;
+            background: rgba(0, 0, 0, 0.35);
+            cursor: pointer;
+        }
+
+        .replay-hint {
+            display: none;
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.65);
+            text-align: center;
+            transition: color 0.2s, opacity 0.2s;
+        }
+
+        .replay-wrap:has(.replay-gif.show) .replay-hint,
+        .replay-wrap--modal .replay-hint {
+            display: block;
+        }
+
+        .replay-wrap:hover .replay-hint {
+            color: #ffd700;
+            opacity: 1;
         }
 
         .no-games {
@@ -802,7 +912,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 4px 16px;
             font-size: 0.82rem;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 252, 240, 0.96);
         }
 
         .survivor-stats-list li {
@@ -814,12 +924,14 @@
         }
 
         .survivor-stats-list .sk {
-            color: rgba(255, 255, 255, 0.55);
+            color: rgba(255, 230, 150, 0.92);
         }
 
         .survivor-stats-list .sv {
-            font-weight: 600;
+            font-weight: 700;
             text-align: right;
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
         }
 
         @media (max-width: 560px) {
@@ -929,17 +1041,124 @@
             50% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); }
             100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
         }
+
+        #viewRating::before { background-image: url('bg/rating.png'); }
+
+        .lang-switch {
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            z-index: 40;
+            display: flex;
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 4px;
+        }
+
+        .lang-btn {
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.75);
+            cursor: pointer;
+            border-radius: 8px;
+            padding: 6px 8px;
+            font-size: 1.15rem;
+            line-height: 1;
+        }
+
+        .lang-btn.active {
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+        }
+
+        .back-to-top {
+            position: fixed;
+            left: 16px;
+            bottom: 16px;
+            z-index: 40;
+            display: none;
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.45);
+            background: rgba(20, 20, 30, 0.9);
+            color: #ffd700;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .back-to-top.visible {
+            display: block;
+        }
+
+        .game-flags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 8px 0 4px;
+        }
+
+        .game-flag-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .game-flag-badge.teams {
+            border-color: rgba(100, 180, 255, 0.55);
+            color: #9fd0ff;
+        }
+
+        .game-flag-badge.scrap {
+            border-color: rgba(255, 140, 100, 0.55);
+            color: #ffb08a;
+        }
+
+        .game-flag-badge.excluded {
+            border-color: rgba(255, 215, 0, 0.35);
+            color: rgba(255, 215, 0, 0.9);
+        }
+
+        .rating-intro, .stats-intro {
+            background: rgba(0, 0, 0, 0.28);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.45;
+        }
+
+        .site-nav.is-stuck {
+            /* marker for IntersectionObserver */
+        }
+
     </style>
 </head>
 <body>
+<div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" class="lang-btn active" data-lang="ru" title="Русский">🇷🇺</button>
+    <button type="button" class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+</div>
+<button type="button" class="back-to-top" id="backToTop" data-i18n="backTop">Наверх</button>
 <div class="container">
+    <div class="site-brand" aria-label="Iron League">
+        IronLeague
+        <span class="site-brand-sub">Unciv</span>
+    </div>
     <h1 id="pageTitle">⚔️ Архив игр 🛡️</h1>
 
     <nav class="site-nav" aria-label="Разделы сайта">
-        <button type="button" class="site-nav-btn active" data-view="archive">Архив игр</button>
-        <button type="button" class="site-nav-btn" data-view="stats">Статистика</button>
-        <button type="button" class="site-nav-btn" data-view="tierlist">Тирлист</button>
-        <button type="button" class="site-nav-btn" data-view="faq">FAQ</button>
+        <button type="button" class="site-nav-btn active" data-view="archive" data-i18n="nav.archive">Архив игр</button>
+        <button type="button" class="site-nav-btn" data-view="stats" data-i18n="nav.stats">Статистика</button>
+        <button type="button" class="site-nav-btn" data-view="rating" data-i18n="nav.rating">Рейтинг</button>
+        <button type="button" class="site-nav-btn" data-view="tierlist" data-i18n="nav.tierlist">Тирлист</button>
+        <button type="button" class="site-nav-btn" data-view="faq" data-i18n="nav.faq">FAQ</button>
     </nav>
 
     <div class="view-panel active" id="viewArchive">
@@ -955,10 +1174,18 @@
             <input type="text" id="playerSearch" placeholder="Введите никнейм...">
         </div>
         <div class="filter-group">
-            <label>Сортировка</label>
+            <label data-i18n="filter.sort">Сортировка</label>
             <select id="sortFilter">
-                <option value="newest">Сначала новые</option>
-                <option value="oldest">Сначала старые</option>
+                <option value="newest" data-i18n="filter.newest">Сначала новые</option>
+                <option value="oldest" data-i18n="filter.oldest">Сначала старые</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label data-i18n="filter.relevance">Неактуальные игры</label>
+            <select id="relevanceFilter">
+                <option value="all" data-i18n="filter.relevanceAll">Все игры</option>
+                <option value="hide" selected data-i18n="filter.relevanceHide">Скрыть teams/scrap</option>
+                <option value="only" data-i18n="filter.relevanceOnly">Только teams/scrap</option>
             </select>
         </div>
     </div>
@@ -984,6 +1211,7 @@
     </div>
 
     <div class="view-panel" id="viewStats">
+        <p class="stats-intro" id="statsIntro" data-i18n="stats.intro">В статистику не входят игры с пометками «командная» (teams) и «скрап» (scrap).</p>
         <div class="faq-toc" id="statsToc" aria-label="Разделы статистики">
             <a href="#stats-winrate">Винрейт игроков</a>
             <a href="#stats-nations">Нации: пики и винрейт</a>
@@ -1072,6 +1300,93 @@
         </div>
     </div>
 
+
+    <div class="view-panel" id="viewRating">
+        <p class="rating-intro" id="ratingIntro" data-i18n="rating.intro">Рейтинг считается из архива при каждой загрузке.</p>
+        <div class="faq-toc" aria-label="Rating sections">
+            <a href="#rating-combined" data-i18n="rating.combined">Сводный рейтинг</a>
+            <a href="#rating-ffa" data-i18n="rating.ffa">Elo FFA</a>
+            <a href="#rating-pairwise" data-i18n="rating.pairwise">Elo pairwise</a>
+            <a href="#rating-finish" data-i18n="rating.finish">Рейтинг по финишу</a>
+        </div>
+
+        <div class="stats-section" id="rating-combined">
+            <h2 data-i18n="rating.combined">Сводный рейтинг</h2>
+            <p class="hint" data-i18n="rating.combinedHint">Среднее трёх рейтингов.</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="ratingCombinedTable">
+                    <thead>
+                        <tr>
+                            <th class="num" data-sort="place" data-i18n="rating.col.place">#</th>
+                            <th data-sort="name" data-i18n="rating.col.player">Игрок</th>
+                            <th class="num" data-sort="rating" data-i18n="rating.col.rating">Рейтинг</th>
+                            <th class="num" data-sort="avgPlace" data-i18n="rating.col.avgPlace">Ср. место</th>
+                            <th class="num" data-sort="placeFfa" data-i18n="rating.col.pFfa">Место FFA</th>
+                            <th class="num" data-sort="placePairwise" data-i18n="rating.col.pPair">Место pair</th>
+                            <th class="num" data-sort="placeFinish" data-i18n="rating.col.pFin">Место finish</th>
+                            <th class="num" data-sort="games" data-i18n="rating.col.games">Игр</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="stats-section" id="rating-ffa">
+            <h2 data-i18n="rating.ffa">Elo FFA (линейное место)</h2>
+            <p class="hint" data-i18n="rating.ffaHint">K=32, Actual 1..0.</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="ratingFfaTable">
+                    <thead>
+                        <tr>
+                            <th class="num" data-sort="place" data-i18n="rating.col.place">#</th>
+                            <th data-sort="name" data-i18n="rating.col.player">Игрок</th>
+                            <th class="num" data-sort="rating" data-i18n="rating.col.rating">Рейтинг</th>
+                            <th class="num" data-sort="games" data-i18n="rating.col.games">Игр</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="stats-section" id="rating-pairwise">
+            <h2 data-i18n="rating.pairwise">Elo pairwise</h2>
+            <p class="hint" data-i18n="rating.pairwiseHint">Парные победы.</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="ratingPairwiseTable">
+                    <thead>
+                        <tr>
+                            <th class="num" data-sort="place" data-i18n="rating.col.place">#</th>
+                            <th data-sort="name" data-i18n="rating.col.player">Игрок</th>
+                            <th class="num" data-sort="rating" data-i18n="rating.col.rating">Рейтинг</th>
+                            <th class="num" data-sort="games" data-i18n="rating.col.games">Игр</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="stats-section" id="rating-finish">
+            <h2 data-i18n="rating.finish">Рейтинг по финишу</h2>
+            <p class="hint" data-i18n="rating.finishHint">Среднее место.</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="ratingFinishTable">
+                    <thead>
+                        <tr>
+                            <th class="num" data-sort="place" data-i18n="rating.col.place">#</th>
+                            <th data-sort="name" data-i18n="rating.col.player">Игрок</th>
+                            <th class="num" data-sort="rating" data-i18n="rating.col.rating">Рейтинг</th>
+                            <th class="num" data-sort="games" data-i18n="rating.col.games">Игр</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <div class="view-panel" id="viewTierlist">
         <div class="stats-section">
             <h2>Тирлист наций</h2>
@@ -1120,6 +1435,8 @@
     <p>📁 Хранилище реплеев | Нажмите на кнопку "Смотреть реплей" чтобы загрузить GIF</p>
 </footer>
 
+<script src="js/i18n.js"></script>
+<script src="js/rating.js"></script>
 <script>
     // Конфигурация
     const CONFIG = {
@@ -1296,6 +1613,43 @@
     let gamesData = [];
     let allNations = new Set();
 
+    function gameFlags(game) {
+        return Array.isArray(game && game.flags) ? game.flags.map(String) : [];
+    }
+
+    function isExcludedGame(game) {
+        if (window.IronLeagueRating && typeof IronLeagueRating.isExcludedGame === 'function') {
+            return IronLeagueRating.isExcludedGame(game);
+        }
+        if (game && game.excludeFromStats) return true;
+        const flags = gameFlags(game).map((f) => f.toLowerCase());
+        return flags.includes('teams') || flags.includes('scrap') || flags.includes('team');
+    }
+
+    function rankedGamesOnly(games) {
+        return (games || []).filter((g) => !isExcludedGame(g));
+    }
+
+    function renderGameFlags(game) {
+        const flags = gameFlags(game).map((f) => f.toLowerCase());
+        const parts = [];
+        const t = (k, fb) => (window.IronLeagueI18n && IronLeagueI18n.t(k)) || fb;
+        if (flags.includes('teams') || flags.includes('team')) {
+            parts.push(`<span class="game-flag-badge teams">${t('badge.teams', 'Командная')}</span>`);
+        }
+        if (flags.includes('scrap')) {
+            parts.push(`<span class="game-flag-badge scrap">${t('badge.scrap', 'Скрап')}</span>`);
+        }
+        if (isExcludedGame(game)) {
+            parts.push(`<span class="game-flag-badge excluded">${t('badge.excluded', 'Не в стате/рейтинге')}</span>`);
+        }
+        if (game && game.note) {
+            parts.push(`<span class="game-flag-badge">${String(game.note).replace(/</g, '&lt;')}</span>`);
+        }
+        return parts.length ? `<div class="game-flags">${parts.join('')}</div>` : '';
+    }
+
+
     function rgbCss(rgb) {
         if (!Array.isArray(rgb) || rgb.length < 3) return '#808080';
         return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
@@ -1464,6 +1818,9 @@
     }
 
     function wonderNameRu(englishName) {
+        if (window.IronLeagueI18n && IronLeagueI18n.getLang() === 'en') {
+            return englishName;
+        }
         return wonderNamesRu[englishName] || englishName;
     }
 
@@ -1471,12 +1828,40 @@
         return CONFIG.wonderIconsPath + encodeURIComponent(englishName) + '.png';
     }
 
+    /** Restart an animated GIF from the beginning by cache-busting its src. */
+    function restartAnimatedGif(img) {
+        if (!img) return;
+        const base = img.dataset.replaySrc || String(img.getAttribute('src') || '').split('?')[0];
+        if (!base) return;
+        img.dataset.replaySrc = base;
+        img.src = `${base}${base.includes('?') ? '&' : '?'}_r=${Date.now()}`;
+    }
+
+    /** Bind click-to-restart on replay GIFs inside a root element. */
+    function bindReplayRestart(root) {
+        if (!root) return;
+        root.querySelectorAll('.replay-gif, .replay-gif-full').forEach(img => {
+            if (img.dataset.replayBound === '1') return;
+            img.dataset.replayBound = '1';
+            if (!img.dataset.replaySrc) {
+                img.dataset.replaySrc = String(img.getAttribute('src') || '').split('?')[0];
+            }
+            img.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                restartAnimatedGif(img);
+            });
+        });
+    }
+
     function renderWonderItem(englishName) {
         const ru = wonderNameRu(englishName);
         const src = wonderIconUrl(englishName);
         return `<li>` +
+            `<span class="wonder-icon-wrap">` +
             `<img class="wonder-icon" src="${src}" alt="${ru}" title="${ru}" ` +
-            `loading="lazy" onerror="this.style.display='none'">` +
+            `loading="lazy" onerror="this.closest('.wonder-icon-wrap').style.display='none'">` +
+            `</span>` +
             `<span>${ru}</span></li>`;
     }
 
@@ -1582,7 +1967,7 @@
             if (hasUnits || hasForce) {
                 const units = hasUnits ? Number(row.units) : '—';
                 const force = hasForce ? Number(row.strength) : '—';
-                push('Сила', `${units} / ${force}`);
+                push((window.IronLeagueI18n && IronLeagueI18n.t('force.label')) || 'Сила (кол-во юнитов\\мощь)', `${units} / ${force}`);
             }
         }
         if (Number.isFinite(Number(row.science))) push('Наука', row.science);
@@ -1592,10 +1977,10 @@
         if (isAlive && Number.isFinite(Number(row.policies))) push('Институты', row.policies);
         const ship = Array.isArray(row.spaceship) ? row.spaceship.filter(Boolean) : [];
         if (ship.length) push('Корабль', ship.join(', '));
-        if (row.first_policy) push('Первый институт', row.first_policy);
+        if (row.first_policy) push('Первый институт', displayPolicyName(row.first_policy));
         const branches = Array.isArray(row.policy_branches)
             ? row.policy_branches.filter(Boolean) : [];
-        if (branches.length) push('Институты', branches.join(', '));
+        if (branches.length) push('Институты', branches.map(displayPolicyName).join(', '));
         return items;
     }
 
@@ -1689,7 +2074,7 @@
                     ${!isAlive ? '<span class="player-status">💀 Выбыл</span>' : ''}
                 </div>
                 <div class="survivor-meta">
-                    ${row.nation || ''}${ideologyMeta}
+                    ${displayNationName(row.nation) || ''}${ideologyMeta}
                 </div>
                 ${flagHtml}
                 ${statsHtml}
@@ -1699,26 +2084,45 @@
         `;
     }
 
+    function formatCcLine(game) {
+        const league = game.league && typeof game.league === 'object' ? game.league : null;
+        const cc = league && league.cc && typeof league.cc === 'object' ? league.cc : null;
+        if (!cc || !cc.nation) return '';
+        return (
+            `СС: ${displayNationName(cc.nation)} (ход ${cc.start ?? '—'})`
+            + (cc.plus && cc.plus.length
+                ? ` · за: ${cc.plus.map(displayNationName).join(', ')}`
+                : '')
+            + (cc.minus && cc.minus.length
+                ? ` · против: ${cc.minus.map(displayNationName).join(', ')}`
+                : '')
+            + (cc.abstain && cc.abstain.length
+                ? ` · воздержались: ${cc.abstain.map(displayNationName).join(', ')}`
+                : '')
+        );
+    }
+
+    function renderFinaleEnding(game) {
+        const ccLine = formatCcLine(game);
+        return `<div class="finale-ending">
+            <div class="finale-ending-title">🏁 ${victoryTypeRu(game.victoryType)}</div>
+            ${ccLine ? `<div class="finale-ending-cc">${ccLine}</div>` : ''}
+        </div>`;
+    }
+
     function renderLeagueBlock(game) {
         const league = game.league && typeof game.league === 'object' ? game.league : null;
         if (!league) return '';
         const bits = [];
-        if (league.cc && league.cc.nation) {
-            const cc = league.cc;
-            bits.push(
-                `СС: ${cc.nation} (ход ${cc.start ?? '—'})`
-                + (cc.plus && cc.plus.length ? ` · за: ${cc.plus.join(', ')}` : '')
-                + (cc.minus && cc.minus.length ? ` · против: ${cc.minus.join(', ')}` : '')
-                + (cc.abstain && cc.abstain.length ? ` · воздержались: ${cc.abstain.join(', ')}` : ''),
-            );
-        }
         if (league.draft && league.draft.selected) {
             const picks = Object.values(league.draft.selected).filter(Boolean);
-            if (picks.length) bits.push(`Драфт (выборы): ${picks.join(', ')}`);
+            if (picks.length) {
+                bits.push(`Драфт (выборы): ${picks.map(displayNationName).join(', ')}`);
+            }
         }
         if (league.draft && league.draft.banned) {
             const bans = Object.values(league.draft.banned).filter(Boolean);
-            if (bans.length) bits.push(`Баны: ${bans.join(', ')}`);
+            if (bans.length) bits.push(`Баны: ${bans.map(displayNationName).join(', ')}`);
         }
         if (!bits.length) return '';
         return `<div class="survivor-stats" style="margin-top:10px">${bits.join('<br>')}</div>`;
@@ -1768,27 +2172,36 @@
                 <div class="winner-label">🏆 ПОБЕДИТЕЛЬ:</div>
                 <div class="winner-nation">
                     ${renderNationPortrait(game.winner, 'nation-icon-small')}
-                    <span>${game.winner || '—'}</span>
+                    <span>${displayNationName(game.winner) || '—'}</span>
                 </div>
             </div>
+            ${renderGameFlags(game)}
             <div class="game-modal-section">
                 <h3>Состав</h3>
                 <div class="players-list">${roster}</div>
             </div>
             <div class="game-modal-section">
                 <h3>Финал (полная статистика)</h3>
-                <div class="finale-ending">🏁 ${victoryTypeRu(game.victoryType)}</div>
+                ${renderFinaleEnding(game)}
                 <div class="players-list">${survivorsHtml}</div>
                 ${renderLeagueBlock(game)}
             </div>
             ${hasGif ? `<div class="game-modal-section"><h3>Реплей</h3>
-                <img class="replay-gif show" src="${game.gif}" alt="Replay" style="max-width:100%;border-radius:10px;">
+                <div class="replay-wrap replay-wrap--modal">
+                    <img class="replay-gif-full" src="${game.gif}" alt="Replay"
+                         loading="lazy"
+                         title="Кликните, чтобы переиграть"
+                         data-replay-src="${game.gif}"
+                         onerror="this.closest('.game-modal-section').style.display='none'">
+                    <div class="replay-hint">Кликните по гифке, чтобы переиграть</div>
+                </div>
             </div>` : ''}
         `;
         modal.classList.add('open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-open');
         hydrateNationPortraits(body);
+        bindReplayRestart(body);
     }
 
 
@@ -1839,11 +2252,12 @@
                     <button type="button" class="game-expand-btn" data-expand-id="${game.id}">⛶ На весь экран</button>
                 </div>
                 ${game.map ? `<div class="game-map">🗺️ ${game.map}</div>` : ''}
+                ${renderGameFlags(game)}
                 <div class="winner-section">
                     <div class="winner-label">🏆 ПОБЕДИТЕЛЬ:</div>
                     <div class="winner-nation">
                         ${renderNationPortrait(game.winner, 'nation-icon-small')}
-                        <span>${game.winner}</span>
+                        <span>${displayNationName(game.winner)}</span>
                     </div>
                 </div>
                 <div class="card-tabs">
@@ -1854,14 +2268,19 @@
                     <div class="players-list">${playersHtml}</div>
                 </div>
                 <div class="card-tab-panel" data-panel="survivors">
-                    <div class="finale-ending">🏁 ${victoryTypeRu(game.victoryType)}</div>
+                    ${renderFinaleEnding(game)}
                     <div class="players-list">${survivorsHtml}</div>
                     ${leagueHtml}
                 </div>
                 ${hasGif ? `
                     <button class="replay-button" data-replay="${game.gif}">🎬 Смотреть реплей</button>
-                    <img class="replay-gif" src="${game.gif}" alt="Replay" data-game-id="${game.id}"
-                         onerror="this.style.display='none'; this.previousElementSibling.style.display='none';">
+                    <div class="replay-wrap">
+                        <img class="replay-gif" src="${game.gif}" alt="Replay" data-game-id="${game.id}"
+                             title="Кликните, чтобы переиграть"
+                             data-replay-src="${game.gif}"
+                             onerror="this.closest('.replay-wrap').style.display='none'; const b=this.closest('.replay-wrap').previousElementSibling; if(b) b.style.display='none';">
+                        <div class="replay-hint">Кликните по гифке, чтобы переиграть</div>
+                    </div>
                 ` : ''}
             `;
 
@@ -1888,15 +2307,21 @@
 
         // Обработчики для кнопок реплея
         document.querySelectorAll('.replay-button').forEach(button => {
-            const replayGif = button.nextElementSibling;
-            if (replayGif?.tagName === 'IMG') {
-                replayGif.addEventListener('error', () => button.style.display = 'none');
+            const wrap = button.nextElementSibling;
+            const replayGif = wrap?.querySelector?.('.replay-gif');
+            if (replayGif) {
+                replayGif.addEventListener('error', () => {
+                    button.style.display = 'none';
+                    if (wrap) wrap.style.display = 'none';
+                });
                 button.addEventListener('click', function() {
                     replayGif.classList.toggle('show');
                     this.textContent = replayGif.classList.contains('show') ? '🎬 Скрыть реплей' : '🎬 Смотреть реплей';
                 });
             }
         });
+
+        bindReplayRestart(grid);
     }
 
     // Фильтрация
@@ -1904,11 +2329,17 @@
         const nationFilter = document.getElementById('nationFilter').value;
         const playerSearch = document.getElementById('playerSearch').value.toLowerCase();
         const sortFilter = document.getElementById('sortFilter').value;
+        const relevanceEl = document.getElementById('relevanceFilter');
+        const relevance = relevanceEl ? relevanceEl.value : 'hide';
 
         let filtered = gamesData.filter(game => {
-            if (nationFilter !== 'all' && !game.players.some(p => p.nation === nationFilter))
+            const roster = Array.isArray(game.players) ? game.players : [];
+            const excluded = isExcludedGame(game);
+            if (relevance === 'hide' && excluded) return false;
+            if (relevance === 'only' && !excluded) return false;
+            if (nationFilter !== 'all' && !roster.some(p => p.nation === nationFilter))
                 return false;
-            if (playerSearch && !game.players.some(p => p.name.toLowerCase().includes(playerSearch)))
+            if (playerSearch && !roster.some(p => (p.name || '').toLowerCase().includes(playerSearch)))
                 return false;
             return true;
         });
@@ -1955,6 +2386,7 @@
             updateStats();
             filterGames();
             renderStatsTables();
+            renderRatingTables();
 
         } catch (error) {
             console.error('Ошибка:', error);
@@ -1971,31 +2403,69 @@
         if (ev.key === 'Escape') closeGameModal();
     });
 
+    function viewTitle(key, fallback) {
+        return (window.IronLeagueI18n && IronLeagueI18n.t(key)) || fallback;
+    }
+
+    function applyViewMeta(view) {
+        const titles = {
+            archive: viewTitle('title.archive', '⚔️ Архив игр 🛡️'),
+            stats: viewTitle('title.stats', '📊 Статистика лиги'),
+            rating: viewTitle('title.rating', '🏅 Рейтинг игроков'),
+            tierlist: viewTitle('title.tierlist', '⭐ Тирлист наций'),
+            faq: viewTitle('title.faq', '❓ FAQ'),
+        };
+        const footers = {
+            archive: viewTitle('footer.archive', 'Данные обновляются автоматически'),
+            stats: viewTitle('footer.stats', 'Статистика по играм архива (без teams/scrap)'),
+            rating: viewTitle('footer.rating', 'Рейтинг пересчитывается при каждой загрузке архива'),
+            tierlist: viewTitle('footer.tierlist', 'Тирлист наций лиги'),
+            faq: viewTitle('footer.faq', 'Частые вопросы'),
+        };
+        document.getElementById('pageTitle').textContent = titles[view] || titles.archive;
+        const footer = document.querySelector('footer p');
+        if (footer) footer.textContent = footers[view] || footers.archive;
+    }
+
+    function renderRatingTables() {
+        if (!window.IronLeagueRating || !gamesData.length) return;
+        const result = IronLeagueRating.computeAll(gamesData);
+        const simpleRow = (r) => `<tr>
+            <td class="num">${r.place}</td>
+            <td>${r.name}</td>
+            <td class="num">${r.rating.toFixed(2)}</td>
+            <td class="num">${r.games}</td>
+        </tr>`;
+        fillSortableTable(
+            document.getElementById('ratingCombinedTable'),
+            result.combined,
+            (r) => `<tr>
+                <td class="num">${r.place}</td>
+                <td>${r.name}</td>
+                <td class="num">${r.rating.toFixed(2)}</td>
+                <td class="num">${r.avgPlace != null ? r.avgPlace.toFixed(2) : '—'}</td>
+                <td class="num">${r.placeFfa ?? '—'}</td>
+                <td class="num">${r.placePairwise ?? '—'}</td>
+                <td class="num">${r.placeFinish ?? '—'}</td>
+                <td class="num">${r.games}</td>
+            </tr>`,
+            'rating',
+            'desc',
+        );
+        fillSortableTable(document.getElementById('ratingFfaTable'), result.ffa, simpleRow, 'rating', 'desc');
+        fillSortableTable(document.getElementById('ratingPairwiseTable'), result.pairwise, simpleRow, 'rating', 'desc');
+        fillSortableTable(document.getElementById('ratingFinishTable'), result.finish, simpleRow, 'rating', 'desc');
+    }
+
     // Запуск
     (async function boot() {
         await initAssetCacheBust();
-        await Promise.all([loadGamesData(), loadFaqData(), loadTierlistData()]);
+        if (window.IronLeagueI18n) IronLeagueI18n.initLang();
+        await loadGamesData();
+        await Promise.all([loadFaqData(), loadTierlistData()]);
         renderStatsTables();
+        renderRatingTables();
     })();
-
-    const VIEW_META = {
-        archive: {
-            title: '⚔️ Архив игр 🛡️',
-            footer: '📁 Хранилище реплеев | Нажмите на кнопку "Смотреть реплей" чтобы загрузить GIF',
-        },
-        stats: {
-            title: '📊 Статистика',
-            footer: 'Статистика по архиву Iron League',
-        },
-        tierlist: {
-            title: '⭐ Тирлист',
-            footer: 'Тирлист наций Iron League',
-        },
-        faq: {
-            title: '📖 FAQ',
-            footer: 'Правила и подсказки Iron League',
-        },
-    };
 
     // Переключение разделов
     document.querySelectorAll('.site-nav-btn').forEach(btn => {
@@ -2006,12 +2476,12 @@
             });
             document.getElementById('viewArchive').classList.toggle('active', view === 'archive');
             document.getElementById('viewStats').classList.toggle('active', view === 'stats');
+            document.getElementById('viewRating')?.classList.toggle('active', view === 'rating');
             document.getElementById('viewTierlist').classList.toggle('active', view === 'tierlist');
             document.getElementById('viewFaq').classList.toggle('active', view === 'faq');
-            const meta = VIEW_META[view] || VIEW_META.archive;
-            document.getElementById('pageTitle').textContent = meta.title;
-            document.querySelector('footer p').textContent = meta.footer;
+            applyViewMeta(view);
             if (view === 'stats') renderStatsTables();
+            if (view === 'rating') renderRatingTables();
         });
     });
 
@@ -2032,6 +2502,25 @@
             Yugoslavia: 'Югославия',
         };
         return aliases[eng] || eng;
+    }
+
+    function rusToEngNation(rus) {
+        const hit = nations.find(n => n.rus === rus);
+        return hit ? hit.eng : rus;
+    }
+
+    function displayNationName(russianName) {
+        if (window.IronLeagueI18n && IronLeagueI18n.getLang() === 'en') {
+            return rusToEngNation(russianName);
+        }
+        return russianName || '';
+    }
+
+    function displayPolicyName(name) {
+        if (window.IronLeagueI18n && IronLeagueI18n.translatePolicy) {
+            return IronLeagueI18n.translatePolicy(name);
+        }
+        return name;
     }
 
     function starsHtml(n) {
@@ -2113,6 +2602,7 @@
         }
 
         for (const game of games || []) {
+            if (isExcludedGame(game)) continue;
             const roster = Array.isArray(game.players) ? game.players : [];
             const winnerNation = game.winner || '';
             let winnerName = '';
@@ -2237,7 +2727,7 @@
 
     function renderStatsTables() {
         if (!gamesData.length) return;
-        const { playerRows, nationRows } = computeArchiveStats(gamesData);
+        const { playerRows, nationRows } = computeArchiveStats(rankedGamesOnly(gamesData));
 
         fillSortableTable(
             document.getElementById('playerWinrateTable'),
@@ -2258,7 +2748,7 @@
             document.getElementById('nationStatsTable'),
             nationRows,
             (n) => `<tr>
-                <td><span class="nation-cell">${renderNationPortrait(n.nation, 'player-nation-mini')}${n.nation}</span></td>
+                <td><span class="nation-cell">${renderNationPortrait(n.nation, 'player-nation-mini')}${displayNationName(n.nation)}</span></td>
                 <td class="num">${n.picks}</td>
                 <td class="num">${n.wins}</td>
                 <td class="num">${n.winrate}%</td>
@@ -2272,7 +2762,7 @@
             playerRows.filter((p) => p.games > 0),
             (p) => `<tr>
                 <td>${p.name}</td>
-                <td><span class="nation-cell">${p.topNation !== '—' ? renderNationPortrait(p.topNation, 'player-nation-mini') : ''}${p.topNation}</span></td>
+                <td><span class="nation-cell">${p.topNation !== '—' ? renderNationPortrait(p.topNation, 'player-nation-mini') : ''}${p.topNation !== '—' ? displayNationName(p.topNation) : '—'}</span></td>
                 <td class="num">${p.uniqueNations}</td>
                 <td class="num">${p.wonders}</td>
                 <td class="num">${p.conquered}</td>
@@ -2335,7 +2825,7 @@
                 document.getElementById('tierlistTable'),
                 rows,
                 (r) => `<tr title="${(r.note || '').replace(/"/g, '&quot;')}">
-                    <td><span class="nation-cell">${renderNationPortrait(r.civRu, 'player-nation-mini')}${r.civRu}</span></td>
+                    <td><span class="nation-cell">${renderNationPortrait(r.civRu, 'player-nation-mini')}${displayNationName(r.civRu)}</span></td>
                     <td class="num">${r.avg ? r.avg.toFixed(2) : '—'}</td>
                     <td class="num">${starsHtml(r.Community)}</td>
                     <td class="num">${starsHtml(r.Click)}</td>
@@ -2392,6 +2882,38 @@
     document.getElementById('nationFilter').addEventListener('change', filterGames);
     document.getElementById('playerSearch').addEventListener('input', filterGames);
     document.getElementById('sortFilter').addEventListener('change', filterGames);
+    document.getElementById('relevanceFilter')?.addEventListener('change', filterGames);
+
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            if (!window.IronLeagueI18n) return;
+            IronLeagueI18n.setLang(btn.dataset.lang);
+            const active = document.querySelector('.site-nav-btn.active');
+            applyViewMeta(active?.dataset.view || 'archive');
+            filterGames();
+            renderStatsTables();
+            renderRatingTables();
+        });
+    });
+
+    window.onIronLeagueLangChange = function () {
+        // static data-i18n already refreshed in setLang
+    };
+
+    // Back to top when site nav scrolls out of view
+    (function setupBackToTop() {
+        const btn = document.getElementById('backToTop');
+        const nav = document.querySelector('.site-nav');
+        if (!btn || !nav || !('IntersectionObserver' in window)) return;
+        const obs = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            btn.classList.toggle('visible', entry && !entry.isIntersecting);
+        }, { threshold: 0 });
+        obs.observe(nav);
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
 </script>
 </body>
 </html>
