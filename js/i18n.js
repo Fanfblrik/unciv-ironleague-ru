@@ -211,10 +211,12 @@
         'Среднее арифметическое трёх рейтингов ниже. Также показано среднее место в трёх таблицах (меньше — лучше).',
       'rating.ffa': 'Elo FFA (линейное место)',
       'rating.ffaHint':
-        'Как в Google Sheet ratingv2: старт 1000, K=32. Actual — место от 1 (первое) до 0 (последнее). Expected — среднее Elo-ожидание против каждого соперника. ΔR = K × (Actual − Expected).',
+        'Как в Google Sheet ratingv2: старт 1000, K настраивается ниже. Actual — место от 1 (первое) до 0 (последнее). Expected — среднее Elo-ожидание против каждого соперника. ΔR = K × (Actual − Expected).',
       'rating.pairwise': 'Elo pairwise',
       'rating.pairwiseHint':
-        'Старт 1000, суммарный K=32 на игру. Каждый вышестоящий «побеждает» каждого ниже; K делится на число пар. Классический FFA-Elo с нулевой суммой попарно.',
+        'Старт 1000, суммарный K на игру (см. переключатель). Каждый вышестоящий «побеждает» каждого ниже; K делится на число пар. Классический FFA-Elo с нулевой суммой попарно.',
+      'rating.kLabel': 'Коэффициент K',
+      'rating.kHint': 'Влияет на Elo FFA и pairwise (не на рейтинг по финишу). По умолчанию 24.',
       'rating.finish': 'Рейтинг по финишу',
       'rating.finishHint':
         'Средний скор места (1…0) по всем играм переводится в шкалу около 1000 (±200 за стабильно первое/последнее). Больше игр — ближе к долгосрочному среднему.',
@@ -377,10 +379,12 @@
         'Arithmetic mean of the three ratings below. Also shows average place across the three tables (lower is better).',
       'rating.ffa': 'FFA Elo (linear place)',
       'rating.ffaHint':
-        'As in Google Sheet ratingv2: start 1000, K=32. Actual is place from 1 (first) to 0 (last). Expected is the average Elo expectancy vs each opponent. ΔR = K × (Actual − Expected).',
+        'As in Google Sheet ratingv2: start 1000, K is chosen below. Actual is place from 1 (first) to 0 (last). Expected is the average Elo expectancy vs each opponent. ΔR = K × (Actual − Expected).',
       'rating.pairwise': 'Pairwise Elo',
       'rating.pairwiseHint':
-        'Start 1000, total K=32 per game. Each higher place “beats” each lower; K is split across pairs. Classic zero-sum FFA Elo.',
+        'Start 1000, total K per game (see switcher). Each higher place “beats” each lower; K is split across pairs. Classic zero-sum FFA Elo.',
+      'rating.kLabel': 'K factor',
+      'rating.kHint': 'Affects FFA Elo and pairwise (not finish-place rating). Default 24.',
       'rating.finish': 'Finish-place rating',
       'rating.finishHint':
         'Average place score (1…0) across games maps to a ~1000 scale (±200 for always-first / always-last). More games pull toward the long-run average.',
