@@ -1474,14 +1474,28 @@
     }
 
 
+    function isKnownTurn(value) {
+        if (value === null || value === undefined || value === '') return false;
+        const n = Number(value);
+        // Number(null) === 0 — treat 0 / NaN as unknown.
+        return Number.isFinite(n) && n > 0;
+    }
+
+    function formatIdeologyTurn(value) {
+        return isKnownTurn(value) ? String(Number(value)) : 'неизвестно';
+    }
+
+    function formatEliminatedTurn(value) {
+        return isKnownTurn(value) ? String(Number(value)) : 'не выбыл';
+    }
+
+    function formatCapitalLostTurn(value) {
+        return isKnownTurn(value) ? String(Number(value)) : 'не терял';
+    }
+
     function dash(value) {
         if (value === null || value === undefined || value === '') return '—';
         return value;
-    }
-
-    function turnOrDash(value, aliveLabel) {
-        if (Number.isFinite(Number(value))) return String(Number(value));
-        return aliveLabel || '—';
     }
 
     function compactSurvivorStats(row, isAlive) {
@@ -1513,9 +1527,9 @@
             push('Религия', '—');
         }
         push('Идеология', dash(row.ideology) || (isAlive ? 'не принята' : '—'));
-        push('Ход идеологии', turnOrDash(row.ideology_turn, '—'));
-        push('Ход выбывания', turnOrDash(row.eliminated_turn, isAlive ? 'не выбыл' : '—'));
-        push('Ход потери столицы', turnOrDash(row.capital_lost_turn, row.has_capital === false ? '—' : 'не терял'));
+        push('Ход идеологии', formatIdeologyTurn(row.ideology_turn));
+        push('Ход выбывания', formatEliminatedTurn(row.eliminated_turn));
+        push('Ход потери столицы', formatCapitalLostTurn(row.capital_lost_turn));
         const wd = Number.isFinite(Number(row.wars_declared)) ? row.wars_declared : '—';
         const wr = Number.isFinite(Number(row.wars_received)) ? row.wars_received : '—';
         push('Войны (объявлено / получено)', `${wd} / ${wr}`);
