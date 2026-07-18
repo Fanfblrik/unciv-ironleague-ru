@@ -19,7 +19,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+            background: #12121c;
             color: #f0f0f0;
             padding: 20px;
             min-height: 100vh;
@@ -72,11 +72,43 @@
 
         .view-panel {
             display: none;
+            position: relative;
         }
 
         .view-panel.active {
             display: block;
         }
+
+        .view-panel::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+        }
+
+        .view-panel.active::before {
+            opacity: 1;
+        }
+
+        .view-panel::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(180deg, rgba(14,14,24,0.72), rgba(14,14,24,0.88));
+            pointer-events: none;
+        }
+
+        #viewArchive::before { background-image: url('bg/archive.png'); }
+        #viewStats::before { background-image: url('bg/stats.png'); }
+        #viewTierlist::before { background-image: url('bg/tierlist.png'); }
+        #viewFaq::before { background-image: url('bg/faq.png'); }
 
         .faq-toolbar {
             display: flex;
@@ -952,7 +984,13 @@
     </div>
 
     <div class="view-panel" id="viewStats">
-        <div class="stats-section">
+        <div class="faq-toc" id="statsToc" aria-label="Разделы статистики">
+            <a href="#stats-winrate">Винрейт игроков</a>
+            <a href="#stats-nations">Нации: пики и винрейт</a>
+            <a href="#stats-player-detail">Игроки: нации и финал</a>
+            <a href="#stats-player-averages">Игроки: средние показатели</a>
+        </div>
+        <div class="stats-section" id="stats-winrate">
             <h2>Винрейт игроков</h2>
             <p class="hint">Победы / участия в играх из архива. Минимум 1 игра.</p>
             <div class="stats-table-wrap">
@@ -972,7 +1010,7 @@
             </div>
         </div>
 
-        <div class="stats-section">
+        <div class="stats-section" id="stats-nations">
             <h2>Нации: пики и винрейт</h2>
             <p class="hint">Все нации мода. Не пикнутые — 0 пиков и 0% винрейта.</p>
             <div class="stats-table-wrap">
@@ -990,7 +1028,7 @@
             </div>
         </div>
 
-        <div class="stats-section">
+        <div class="stats-section" id="stats-player-detail">
             <h2>Игроки: нации и финал</h2>
             <p class="hint">Кого брали чаще, чудеса и захваченные столицы (по данным вкладки «Финал», где они есть).</p>
             <div class="stats-table-wrap">
@@ -1002,6 +1040,30 @@
                             <th class="num" data-sort="uniqueNations">Уник. наций</th>
                             <th class="num" data-sort="wonders">Чудес (сумма)</th>
                             <th class="num" data-sort="conquered">Столиц захвачено</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="stats-section" id="stats-player-averages">
+            <h2>Игроки: средние показатели</h2>
+            <p class="hint">Средние по финалу (где есть survivors). Топ‑3 первых институтов — по первому открытому институту.</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="playerAveragesTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name">Игрок</th>
+                            <th class="num" data-sort="gamesWithStats">Игр со статой</th>
+                            <th class="num" data-sort="avgScore">Очки</th>
+                            <th class="num" data-sort="avgUnits">Юниты</th>
+                            <th class="num" data-sort="avgStrength">Сила</th>
+                            <th class="num" data-sort="avgScience">Наука</th>
+                            <th class="num" data-sort="avgCities">Города</th>
+                            <th class="num" data-sort="avgPopulation">Население</th>
+                            <th class="num" data-sort="avgTechs">Технологии</th>
+                            <th data-sort="topPolicies">Топ‑3 института</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -1474,14 +1536,37 @@
     }
 
 
+    function sortSurvivorsByScore(rows) {
+        return [...(rows || [])].sort((a, b) => {
+            const as = (a && Number.isFinite(Number(a.score))) ? Number(a.score) : -1;
+            const bs = (b && Number.isFinite(Number(b.score))) ? Number(b.score) : -1;
+            if (bs !== as) return bs - as;
+            return String((a && a.nation) || '').localeCompare(String((b && b.nation) || ''), 'ru');
+        });
+    }
+
+    function isKnownTurn(value) {
+        if (value === null || value === undefined || value === '') return false;
+        const n = Number(value);
+        // Number(null) === 0 — treat 0 / NaN as unknown.
+        return Number.isFinite(n) && n > 0;
+    }
+
+    function formatIdeologyTurn(value) {
+        return isKnownTurn(value) ? String(Number(value)) : 'неизвестно';
+    }
+
+    function formatEliminatedTurn(value) {
+        return isKnownTurn(value) ? String(Number(value)) : 'не выбыл';
+    }
+
+    function formatCapitalLostTurn(value) {
+        return isKnownTurn(value) ? String(Number(value)) : 'не терял';
+    }
+
     function dash(value) {
         if (value === null || value === undefined || value === '') return '—';
         return value;
-    }
-
-    function turnOrDash(value, aliveLabel) {
-        if (Number.isFinite(Number(value))) return String(Number(value));
-        return aliveLabel || '—';
     }
 
     function compactSurvivorStats(row, isAlive) {
@@ -1491,7 +1576,15 @@
             items.push({ label, value });
         };
         if (Number.isFinite(Number(row.score))) push('Очки', row.score);
-        if (Number.isFinite(Number(row.strength))) push('Сила', row.strength);
+        {
+            const hasUnits = row.units !== null && row.units !== undefined && Number.isFinite(Number(row.units));
+            const hasForce = row.strength !== null && row.strength !== undefined && Number.isFinite(Number(row.strength));
+            if (hasUnits || hasForce) {
+                const units = hasUnits ? Number(row.units) : '—';
+                const force = hasForce ? Number(row.strength) : '—';
+                push('Сила', `${units} / ${force}`);
+            }
+        }
         if (Number.isFinite(Number(row.science))) push('Наука', row.science);
         if (Number.isFinite(Number(row.cities))) push('Города', row.cities);
         if (Number.isFinite(Number(row.population))) push('Население', row.population);
@@ -1499,6 +1592,10 @@
         if (isAlive && Number.isFinite(Number(row.policies))) push('Институты', row.policies);
         const ship = Array.isArray(row.spaceship) ? row.spaceship.filter(Boolean) : [];
         if (ship.length) push('Корабль', ship.join(', '));
+        if (row.first_policy) push('Первый институт', row.first_policy);
+        const branches = Array.isArray(row.policy_branches)
+            ? row.policy_branches.filter(Boolean) : [];
+        if (branches.length) push('Институты', branches.join(', '));
         return items;
     }
 
@@ -1513,9 +1610,9 @@
             push('Религия', '—');
         }
         push('Идеология', dash(row.ideology) || (isAlive ? 'не принята' : '—'));
-        push('Ход идеологии', turnOrDash(row.ideology_turn, '—'));
-        push('Ход выбывания', turnOrDash(row.eliminated_turn, isAlive ? 'не выбыл' : '—'));
-        push('Ход потери столицы', turnOrDash(row.capital_lost_turn, row.has_capital === false ? '—' : 'не терял'));
+        push('Ход идеологии', formatIdeologyTurn(row.ideology_turn));
+        push('Ход выбывания', formatEliminatedTurn(row.eliminated_turn));
+        push('Ход потери столицы', formatCapitalLostTurn(row.capital_lost_turn));
         const wd = Number.isFinite(Number(row.wars_declared)) ? row.wars_declared : '—';
         const wr = Number.isFinite(Number(row.wars_received)) ? row.wars_received : '—';
         push('Войны (объявлено / получено)', `${wd} / ${wr}`);
@@ -1660,7 +1757,7 @@
             </div>`;
         }).join('');
 
-        const survivors = Array.isArray(game.survivors) ? game.survivors : [];
+        const survivors = sortSurvivorsByScore(Array.isArray(game.survivors) ? game.survivors : []);
         const survivorsHtml = survivors.length
             ? survivors.map((row) => renderSurvivorBlock(row, game, 'full')).join('')
             : '<div class="survivors-empty">Нет данных о финале</div>';
@@ -1724,7 +1821,7 @@
                 `;
             }).join('');
 
-            const survivors = Array.isArray(game.survivors) ? game.survivors : [];
+            const survivors = sortSurvivorsByScore(Array.isArray(game.survivors) ? game.survivors : []);
             const survivorsHtml = survivors.length
                 ? survivors.map(row => renderSurvivorBlock(row, game, 'compact')).join('')
                 : '<div class="survivors-empty">Нет данных о финале (появится после синка из сейва)</div>';
@@ -1947,6 +2044,26 @@
         return Math.round((wins / games) * 1000) / 10;
     }
 
+
+    function numOrNull(value) {
+        if (value === null || value === undefined || value === '') return null;
+        const n = Number(value);
+        return Number.isFinite(n) ? n : null;
+    }
+
+    function avg(sum, count) {
+        if (!count) return null;
+        return Math.round((sum / count) * 10) / 10;
+    }
+
+    function topNFromCounts(countsMap, n) {
+        return [...countsMap.entries()]
+            .sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0]), 'ru'))
+            .slice(0, n)
+            .map(([name, count]) => `${name} (${count})`)
+            .join(', ') || '—';
+    }
+
     function computeArchiveStats(games) {
         const players = new Map();
         const nationStats = new Map();
@@ -1962,6 +2079,22 @@
                     nationCounts: new Map(),
                     wonders: 0,
                     conquered: 0,
+                    statsGames: 0,
+                    sumScore: 0,
+                    sumUnits: 0,
+                    sumStrength: 0,
+                    sumScience: 0,
+                    sumCities: 0,
+                    sumPopulation: 0,
+                    sumTechs: 0,
+                    nScore: 0,
+                    nUnits: 0,
+                    nStrength: 0,
+                    nScience: 0,
+                    nCities: 0,
+                    nPopulation: 0,
+                    nTechs: 0,
+                    firstPolicyCounts: new Map(),
                 });
             }
             return players.get(name);
@@ -2007,6 +2140,29 @@
                 if (s.alive === false) row.eliminated += 1;
                 if (Array.isArray(s.wonders)) row.wonders += s.wonders.length;
                 if (Array.isArray(s.conquered_capitals)) row.conquered += s.conquered_capitals.length;
+
+                row.statsGames += 1;
+                const add = (keySum, keyN, raw) => {
+                    const v = numOrNull(raw);
+                    if (v === null) return;
+                    row[keySum] += v;
+                    row[keyN] += 1;
+                };
+                add('sumScore', 'nScore', s.score);
+                add('sumUnits', 'nUnits', s.units);
+                add('sumStrength', 'nStrength', s.strength);
+                add('sumScience', 'nScience', s.science);
+                add('sumCities', 'nCities', s.cities);
+                add('sumPopulation', 'nPopulation', s.population);
+                add('sumTechs', 'nTechs', s.techs);
+
+                const firstPol = (s.first_policy || '').trim();
+                if (firstPol) {
+                    row.firstPolicyCounts.set(
+                        firstPol,
+                        (row.firstPolicyCounts.get(firstPol) || 0) + 1,
+                    );
+                }
             }
         }
 
@@ -2024,6 +2180,15 @@
                 winrate: pct(p.wins, p.games),
                 topNation,
                 uniqueNations: p.nationCounts.size,
+                gamesWithStats: p.statsGames,
+                avgScore: avg(p.sumScore, p.nScore),
+                avgUnits: avg(p.sumUnits, p.nUnits),
+                avgStrength: avg(p.sumStrength, p.nStrength),
+                avgScience: avg(p.sumScience, p.nScience),
+                avgCities: avg(p.sumCities, p.nCities),
+                avgPopulation: avg(p.sumPopulation, p.nPopulation),
+                avgTechs: avg(p.sumTechs, p.nTechs),
+                topPolicies: topNFromCounts(p.firstPolicyCounts, 3),
             };
         });
 
@@ -2113,6 +2278,26 @@
                 <td class="num">${p.conquered}</td>
             </tr>`,
             'games',
+            'desc',
+        );
+
+        const fmtAvg = (v) => (v === null || v === undefined ? '—' : v);
+        fillSortableTable(
+            document.getElementById('playerAveragesTable'),
+            playerRows.filter((p) => p.gamesWithStats > 0),
+            (p) => `<tr>
+                <td>${p.name}</td>
+                <td class="num">${p.gamesWithStats}</td>
+                <td class="num">${fmtAvg(p.avgScore)}</td>
+                <td class="num">${fmtAvg(p.avgUnits)}</td>
+                <td class="num">${fmtAvg(p.avgStrength)}</td>
+                <td class="num">${fmtAvg(p.avgScience)}</td>
+                <td class="num">${fmtAvg(p.avgCities)}</td>
+                <td class="num">${fmtAvg(p.avgPopulation)}</td>
+                <td class="num">${fmtAvg(p.avgTechs)}</td>
+                <td>${p.topPolicies || '—'}</td>
+            </tr>`,
+            'gamesWithStats',
             'desc',
         );
     }
