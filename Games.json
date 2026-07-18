@@ -9008,11 +9008,11 @@
           "techs": 49,
           "policies": 24,
           "policy_branches": [
-            "Честь",
             "Традиция",
+            "Честь",
             "Рационализм"
           ],
-          "first_policy": "Честь",
+          "first_policy": "Традиция",
           "eliminated_turn": null,
           "capital_lost_turn": null,
           "era": "Индустриальная",
