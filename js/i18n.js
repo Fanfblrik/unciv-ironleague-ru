@@ -510,12 +510,12 @@
       'records.item.fewest_military_deaths.flavor': 'Юниты на вес золота',
       'records.item.fewest_military_deaths.body':
         'У {player} меньше всего боевых потерь среди игроков с ≥5 играми с данными: {value} (за {games} игр).',
-      'records.item.piety_first_count.title': 'Адепт Набожности',
-      'records.item.piety_first_count.flavor': 'Сначала храм',
+      'records.item.piety_first_count.title': 'Свидетель Иегов',
+      'records.item.piety_first_count.flavor': 'Amen.',
       'records.item.piety_first_count.body':
         '{player} чаще всех открывал первым институт «Набожность»: {value} раз(а).',
-      'records.item.piety_first_streak.title': 'Стрик Набожности',
-      'records.item.piety_first_streak.flavor': 'Аминь. И снова.',
+      'records.item.piety_first_streak.title': 'Жили в лесу, молились колесу',
+      'records.item.piety_first_streak.flavor': 'Amen. Again.',
       'records.item.piety_first_streak.body':
         'У {player} самый длинный стрик игр с первым институтом «Набожность»: {value}.',
       'records.item.tradition_first_count.title': 'Адепт Традиции',
@@ -942,11 +942,11 @@
       'records.item.fewest_military_deaths.flavor': 'Units are precious',
       'records.item.fewest_military_deaths.body':
         '{player} has the fewest combat losses among players with ≥5 games of death data: {value} (across {games} games).',
-      'records.item.piety_first_count.title': 'Piety devotee',
-      'records.item.piety_first_count.flavor': 'Temple first',
+      'records.item.piety_first_count.title': "Jehovah's Witness",
+      'records.item.piety_first_count.flavor': 'Amen.',
       'records.item.piety_first_count.body':
         '{player} opened Piety first most often: {value} time(s).',
-      'records.item.piety_first_streak.title': 'Piety streak',
+      'records.item.piety_first_streak.title': 'Lived in the woods, prayed to a wheel',
       'records.item.piety_first_streak.flavor': 'Amen. Again.',
       'records.item.piety_first_streak.body':
         '{player} holds the longest streak of games opening Piety first: {value}.',
