@@ -200,6 +200,71 @@
     return rows;
   }
 
+  /** Survivor row by player name (trimmed). */
+  function survivorByName(game, name) {
+    const survivors = Array.isArray(game.survivors) ? game.survivors : [];
+    const key = String(name || '').trim();
+    return survivors.find((s) => String(s.name || '').trim() === key) || null;
+  }
+
+  /**
+   * Avg of finale development stats for lobby-avg rating.
+   * Uses techs, policies, cities when finite numbers are present.
+   */
+  function finaleMetricsAvg(survivor) {
+    if (!survivor) return 0;
+    const vals = ['techs', 'policies', 'cities']
+      .map((k) => Number(survivor[k]))
+      .filter((n) => Number.isFinite(n));
+    if (!vals.length) return 0;
+    return vals.reduce((a, b) => a + b, 0) / vals.length;
+  }
+
+  /**
+   * Zero-based lobby points: participation (N−1) for everyone;
+   * winner gets an extra +10. N = lobby size (player count).
+   */
+  function rateLobbyWinBonus(games) {
+    const ratings = new Map();
+    const gamesPlayed = new Map();
+    for (const game of eligibleGames(games)) {
+      const order = placementOrder(game);
+      if (order.length < 2) continue;
+      ensureRatings(ratings, order, START_ELO_ZERO);
+      const n = order.length;
+      const base = n - 1;
+      order.forEach((name, i) => {
+        const delta = i === 0 ? base + 10 : base;
+        ratings.set(name, ratings.get(name) + delta);
+        gamesPlayed.set(name, (gamesPlayed.get(name) || 0) + 1);
+      });
+    }
+    return toRows(ratings, gamesPlayed);
+  }
+
+  /**
+   * Zero-based lobby points: (N−1) + Avg for every player,
+   * where Avg is the mean of available techs / policies / cities from finale.
+   */
+  function rateLobbyAvgBonus(games) {
+    const ratings = new Map();
+    const gamesPlayed = new Map();
+    for (const game of eligibleGames(games)) {
+      const order = placementOrder(game);
+      if (order.length < 2) continue;
+      ensureRatings(ratings, order, START_ELO_ZERO);
+      const n = order.length;
+      const base = n - 1;
+      order.forEach((name) => {
+        const avg = finaleMetricsAvg(survivorByName(game, name));
+        const delta = base + avg;
+        ratings.set(name, ratings.get(name) + delta);
+        gamesPlayed.set(name, (gamesPlayed.get(name) || 0) + 1);
+      });
+    }
+    return toRows(ratings, gamesPlayed);
+  }
+
   function rankMap(rows) {
     const m = new Map();
     rows.forEach((r) => m.set(r.name, r.place));
@@ -275,6 +340,8 @@
       pairwise,
       finish,
       combined,
+      lobbyWin: rateLobbyWinBonus(games),
+      lobbyAvg: rateLobbyAvgBonus(games),
       k: K,
       zeroBase,
       eligibleCount: eligibleGames(games).length,
@@ -291,6 +358,8 @@
     isExcludedGame,
     eligibleGames,
     placementOrder,
+    rateLobbyWinBonus,
+    rateLobbyAvgBonus,
     computeAll,
   };
 })(typeof window !== 'undefined' ? window : globalThis);
