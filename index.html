@@ -486,6 +486,11 @@
             opacity: 0.92;
         }
 
+        .survivor-item.survivor-barbarian {
+            background: rgba(90, 55, 30, 0.42);
+            border: 1px solid rgba(210, 150, 90, 0.35);
+        }
+
         .survivor-item.eliminated .player-name,
         .survivor-item.eliminated .survivor-meta {
             color: rgba(220, 220, 220, 0.75);
@@ -1201,7 +1206,8 @@
                 font-size: 0.95rem;
             }
 
-            #viewRating .hint {
+            #viewRating .hint,
+            #viewRatingZero .hint {
                 padding: 10px 12px;
                 font-size: 0.9rem;
             }
@@ -1217,7 +1223,9 @@
                 width: 100%;
             }
 
-            .rating-k-btn {
+            .rating-k-btn,
+            .rating-elim-btn,
+            .rating-mingames-btn {
                 flex: 1;
                 text-align: center;
             }
@@ -1374,7 +1382,8 @@
             100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
         }
 
-        #viewRating::before { background-image: url('bg/rating.png'); }
+        #viewRating::before,
+        #viewRatingZero::before { background-image: url('bg/rating.png'); }
 
         .lang-switch {
             position: fixed;
@@ -1515,7 +1524,9 @@
             padding: 3px;
         }
 
-        .rating-k-btn {
+        .rating-k-btn,
+        .rating-elim-btn,
+        .rating-mingames-btn {
             border: none;
             background: transparent;
             color: rgba(255, 255, 255, 0.75);
@@ -1527,7 +1538,9 @@
             letter-spacing: 0.03em;
         }
 
-        .rating-k-btn.active {
+        .rating-k-btn.active,
+        .rating-elim-btn.active,
+        .rating-mingames-btn.active {
             background: rgba(255, 215, 0, 0.2);
             color: #ffd700;
         }
@@ -1539,11 +1552,13 @@
 
         .rating-intro,
         #viewRating .hint,
+        #viewRatingZero .hint,
         .rating-k-note {
             white-space: pre-line;
         }
 
-        #viewRating .hint {
+        #viewRating .hint,
+        #viewRatingZero .hint {
             font-size: 0.98rem;
             line-height: 1.55;
             max-width: none;
@@ -1563,7 +1578,8 @@
             box-sizing: border-box;
         }
 
-        #viewRating .rating-k-row {
+        #viewRating .rating-k-row,
+        #viewRatingZero .rating-k-row {
             width: 100%;
             box-sizing: border-box;
         }
@@ -1591,7 +1607,8 @@
     <nav class="site-nav" data-i18n-aria="nav.aria" aria-label="Разделы сайта">
         <button type="button" class="site-nav-btn active" data-view="archive" data-i18n="nav.archive">Архив игр</button>
         <button type="button" class="site-nav-btn" data-view="stats" data-i18n="nav.stats">Статистика</button>
-        <button type="button" class="site-nav-btn" data-view="rating" data-i18n="nav.rating">Рейтинг</button>
+        <button type="button" class="site-nav-btn" data-view="rating" data-i18n="nav.rating">Рейтинг от 1000</button>
+        <button type="button" class="site-nav-btn" data-view="ratingZero" data-i18n="nav.ratingZero">Рейтинг от нуля</button>
         <button type="button" class="site-nav-btn" data-view="tierlist" data-i18n="nav.tierlist">Тирлист</button>
         <button type="button" class="site-nav-btn" data-view="faq" data-i18n="nav.faq">FAQ</button>
     </nav>
@@ -1708,6 +1725,7 @@
                             <th class="num" data-sort="wonders" data-i18n="stats.col.wonders">Чудес (сумма)</th>
                             <th class="num" data-sort="wondersBuilt" data-i18n="stats.col.wondersBuilt">Чудес своих</th>
                             <th class="num" data-sort="conquered" data-i18n="stats.col.conquered">Столиц захвачено</th>
+                            <th class="num" data-sort="militaryDeaths" data-i18n="stats.col.militaryDeaths">Потерь юнитов</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -1901,16 +1919,21 @@
                 <button type="button" class="rating-k-btn active" data-k="24">24</button>
                 <button type="button" class="rating-k-btn" data-k="32">32</button>
             </div>
-            <span class="rating-k-note" data-i18n="rating.kHint">Влияет на Elo FFA и pairwise (не на рейтинг по финишу). По умолчанию 24.</span>
+            <span class="rating-k-note" data-i18n="rating.kHint">Влияет на Elo FFA и pairwise. По умолчанию 24.</span>
+        </div>
+        <div class="rating-k-row" role="group" data-i18n-aria="rating.minGamesLabel" aria-label="Минимум игр">
+            <span class="rating-k-label" data-i18n="rating.minGamesLabel">Минимум игр</span>
+            <div class="rating-k-switch">
+                <button type="button" class="rating-mingames-btn active" data-mingames="0" data-i18n="rating.minGamesOff">Все</button>
+                <button type="button" class="rating-mingames-btn" data-mingames="5" data-i18n="rating.minGamesOn">≥5</button>
+            </div>
+            <span class="rating-k-note" data-i18n="rating.minGamesHint">Скрыть игроков с числом учтённых игр меньше порога. По умолчанию показаны все.</span>
         </div>
         <div class="faq-toc" data-i18n-aria="rating.toc" aria-label="Разделы рейтинга">
             <a href="#rating-combined" data-i18n="rating.combined">Сводный рейтинг</a>
             <a href="#rating-ffa" data-i18n="rating.ffa">Elo FFA</a>
             <a href="#rating-pairwise" data-i18n="rating.pairwise">Elo pairwise</a>
             <a href="#rating-finish" data-i18n="rating.finish">Рейтинг по финишу</a>
-            <a href="#rating-zero" data-i18n="rating.zero">Рейтинг от нуля</a>
-            <a href="#rating-lobby-win" data-i18n="rating.lobbyWin">Очки лобби (победа)</a>
-            <a href="#rating-lobby-avg" data-i18n="rating.lobbyAvg">Очки лобби (Avg)</a>
         </div>
 
         <div class="stats-section" id="rating-combined">
@@ -1988,10 +2011,44 @@
                 </table>
             </div>
         </div>
+    </div>
+
+    <div class="view-panel" id="viewRatingZero">
+        <p class="rating-intro" id="ratingZeroIntro" data-i18n="rating.introZero">Рейтинг от нуля и очки лобби.</p>
+        <div class="rating-k-row" role="group" data-i18n-aria="rating.kLabel" aria-label="Коэффициент K">
+            <span class="rating-k-label" data-i18n="rating.kLabel">Коэффициент K</span>
+            <div class="rating-k-switch">
+                <button type="button" class="rating-k-btn" data-k="20">20</button>
+                <button type="button" class="rating-k-btn active" data-k="24">24</button>
+                <button type="button" class="rating-k-btn" data-k="32">32</button>
+            </div>
+            <span class="rating-k-note" data-i18n="rating.kHintZero">Влияет на Elo FFA/pairwise от нуля. На очки лобби — нет.</span>
+        </div>
+        <div class="rating-k-row" role="group" data-i18n-aria="rating.elimLabel" aria-label="Штраф за выбывание">
+            <span class="rating-k-label" data-i18n="rating.elimLabel">Штраф за выбывание</span>
+            <div class="rating-k-switch">
+                <button type="button" class="rating-elim-btn active" data-elim="0" data-i18n="rating.elimOff">Выкл</button>
+                <button type="button" class="rating-elim-btn" data-elim="5" data-i18n="rating.elimOn">−5</button>
+            </div>
+            <span class="rating-k-note" data-i18n="rating.elimHint">Только для «Очки лобби». По умолчанию выкл.</span>
+        </div>
+        <div class="rating-k-row" role="group" data-i18n-aria="rating.minGamesLabel" aria-label="Минимум игр">
+            <span class="rating-k-label" data-i18n="rating.minGamesLabel">Минимум игр</span>
+            <div class="rating-k-switch">
+                <button type="button" class="rating-mingames-btn active" data-mingames="0" data-i18n="rating.minGamesOff">Все</button>
+                <button type="button" class="rating-mingames-btn" data-mingames="5" data-i18n="rating.minGamesOn">≥5</button>
+            </div>
+            <span class="rating-k-note" data-i18n="rating.minGamesHint">Скрыть игроков с числом учтённых игр меньше порога. По умолчанию показаны все.</span>
+        </div>
+        <div class="faq-toc" data-i18n-aria="rating.tocZero" aria-label="Разделы рейтинга от нуля">
+            <a href="#rating-zero" data-i18n="rating.zeroCombined">Сводный от нуля</a>
+            <a href="#rating-lobby-win" data-i18n="rating.lobbyWin">Очки лобби (победа)</a>
+            <a href="#rating-lobby-avg" data-i18n="rating.lobbyAvg">Очки лобби (Avg)</a>
+        </div>
 
         <div class="stats-section" id="rating-zero">
-            <h2 data-i18n="rating.zero">Рейтинг от нуля</h2>
-            <p class="hint" data-i18n="rating.zeroHint">Те же три метода, но старт Elo = 0 (без базы 1000). Финиш — среднее нормированное место × 100 (0…100).</p>
+            <h2 data-i18n="rating.zeroCombined">Сводный рейтинг от нуля</h2>
+            <p class="hint" data-i18n="rating.zeroHint">Те же три метода, но старт Elo = 0. Финиш — среднее placeScore × 100.</p>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="ratingZeroCombinedTable">
                     <thead>
@@ -2096,8 +2153,8 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=beliefs-combos-1"></script>
-<script src="js/rating.js?v=lobby-points-1"></script>
+<script src="js/i18n.js?v=rating-min5-1"></script>
+<script src="js/rating.js?v=rating-tabs-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -2662,6 +2719,9 @@
         if (Number.isFinite(Number(row.population))) push(tt('stat.population'), row.population);
         if (isAlive && Number.isFinite(Number(row.techs))) push(tt('stat.techs'), row.techs);
         if (isAlive && Number.isFinite(Number(row.policies))) push(tt('stat.policies'), row.policies);
+        if (Number.isFinite(Number(row.military_deaths))) {
+            push(tt('stat.militaryDeaths'), row.military_deaths);
+        }
         if (row.first_policy) push(tt('stat.firstPolicy'), displayPolicyName(row.first_policy), { wide: true });
         const branches = Array.isArray(row.policy_branches)
             ? row.policy_branches.filter(Boolean) : [];
@@ -2717,6 +2777,10 @@
 
     function renderSurvivorBlock(row, game, mode) {
         const isWinner = row.nation === game.winner;
+        const isBarbarian = !!(row.is_barbarian
+            || row.nation === 'Варвары'
+            || row.nation === 'Barbarians'
+            || row.name === 'Barbarians');
         const isAlive = Object.prototype.hasOwnProperty.call(row, 'alive')
             ? Boolean(row.alive)
             : true;
@@ -2799,20 +2863,21 @@
             : (isAlive ? ` · ${tt('flag.ideologyNone')}` : '');
 
         return `
-            <div class="survivor-item ${isAlive ? '' : 'eliminated'}">
+            <div class="survivor-item ${isAlive ? '' : 'eliminated'}${isBarbarian ? ' survivor-barbarian' : ''}">
                 <div class="survivor-head">
-                    ${renderNationPortrait(row.nation, 'player-nation-mini')}
+                    ${isBarbarian ? '' : renderNationPortrait(row.nation, 'player-nation-mini')}
                     <span class="player-name">${name}</span>
                     ${isWinner ? `<span class="player-status">${tt('status.winner')}</span>` : ''}
-                    ${!isAlive ? `<span class="player-status">${tt('status.eliminated')}</span>` : ''}
+                    ${!isAlive && !isBarbarian ? `<span class="player-status">${tt('status.eliminated')}</span>` : ''}
+                    ${isBarbarian ? `<span class="player-status">${tt('status.barbarian')}</span>` : ''}
                 </div>
                 <div class="survivor-meta">
-                    ${displayNationName(row.nation) || ''}${ideologyMeta}
+                    ${displayNationName(row.nation) || ''}${isBarbarian ? '' : ideologyMeta}
                 </div>
-                ${flagHtml}
+                ${isBarbarian ? '' : flagHtml}
                 ${statsHtml}
-                ${capturedHtml}
-                ${wondersBlock}
+                ${isBarbarian ? '' : capturedHtml}
+                ${isBarbarian ? '' : wondersBlock}
             </div>
         `;
     }
@@ -3144,14 +3209,16 @@
         const titles = {
             archive: viewTitle('title.archive', '⚔️ Архив игр 🛡️'),
             stats: viewTitle('title.stats', '📊 Статистика лиги'),
-            rating: viewTitle('title.rating', '🏅 Рейтинг игроков'),
+            rating: viewTitle('title.rating', '🏅 Рейтинг от 1000'),
+            ratingZero: viewTitle('title.ratingZero', '🏅 Рейтинг от нуля'),
             tierlist: viewTitle('title.tierlist', '⭐ Тирлист наций'),
             faq: viewTitle('title.faq', '❓ FAQ'),
         };
         const footers = {
             archive: viewTitle('footer.archive', 'Данные обновляются автоматически'),
             stats: viewTitle('footer.stats', 'Статистика по играм архива (без teams/scrap)'),
-            rating: viewTitle('footer.rating', 'Рейтинг пересчитывается при каждой загрузке архива'),
+            rating: viewTitle('footer.rating', 'Классическая шкала: старт Elo 1000'),
+            ratingZero: viewTitle('footer.ratingZero', 'Шкала от нуля и очки лобби'),
             tierlist: viewTitle('footer.tierlist', 'Тирлист наций лиги'),
             faq: viewTitle('footer.faq', 'Частые вопросы'),
         };
@@ -3161,25 +3228,37 @@
     }
 
     const RATING_K_KEY = 'ironleague_rating_k';
+    const RATING_ELIM_KEY = 'ironleague_rating_elim_penalty';
+    const RATING_MIN_GAMES_KEY = 'ironleague_rating_min_games';
     let ratingK = 24;
+    let lobbyElimPenalty = 0;
+    let ratingMinGames = 0;
 
     function loadRatingK() {
         let saved = 24;
         try {
             saved = Number(localStorage.getItem(RATING_K_KEY));
         } catch (e) { /* ignore */ }
-        if (window.IronLeagueRating && IronLeagueRating.normalizeK) {
-            ratingK = IronLeagueRating.normalizeK(saved);
-        } else {
-            ratingK = [20, 24, 32].includes(saved) ? saved : 24;
-        }
-        document.querySelectorAll('.rating-k-btn').forEach((btn) => {
-            btn.classList.toggle('active', Number(btn.dataset.k) === ratingK);
-        });
-        return ratingK;
+        setRatingK(saved, true);
     }
 
-    function setRatingK(next) {
+    function loadLobbyElimPenalty() {
+        let saved = 0;
+        try {
+            saved = Number(localStorage.getItem(RATING_ELIM_KEY));
+        } catch (e) { /* ignore */ }
+        setLobbyElimPenalty(saved, true);
+    }
+
+    function loadRatingMinGames() {
+        let saved = 0;
+        try {
+            saved = Number(localStorage.getItem(RATING_MIN_GAMES_KEY));
+        } catch (e) { /* ignore */ }
+        setRatingMinGames(saved, true);
+    }
+
+    function setRatingK(next, silent) {
         if (window.IronLeagueRating && IronLeagueRating.normalizeK) {
             ratingK = IronLeagueRating.normalizeK(next);
         } else {
@@ -3191,13 +3270,47 @@
         document.querySelectorAll('.rating-k-btn').forEach((btn) => {
             btn.classList.toggle('active', Number(btn.dataset.k) === ratingK);
         });
-        renderRatingTables();
+        if (!silent) renderRatingTables();
+    }
+
+    function setLobbyElimPenalty(next, silent) {
+        const n = Number(next);
+        lobbyElimPenalty = n === 5 ? 5 : 0;
+        try {
+            localStorage.setItem(RATING_ELIM_KEY, String(lobbyElimPenalty));
+        } catch (e) { /* ignore */ }
+        document.querySelectorAll('.rating-elim-btn').forEach((btn) => {
+            btn.classList.toggle('active', Number(btn.dataset.elim) === lobbyElimPenalty);
+        });
+        if (!silent) renderRatingTables();
+    }
+
+    function setRatingMinGames(next, silent) {
+        const n = Number(next);
+        ratingMinGames = n === 5 ? 5 : 0;
+        try {
+            localStorage.setItem(RATING_MIN_GAMES_KEY, String(ratingMinGames));
+        } catch (e) { /* ignore */ }
+        document.querySelectorAll('.rating-mingames-btn').forEach((btn) => {
+            btn.classList.toggle('active', Number(btn.dataset.mingames) === ratingMinGames);
+        });
+        if (!silent) renderRatingTables();
+    }
+
+    function filterRatingRows(rows) {
+        const list = Array.isArray(rows) ? rows : [];
+        if (!ratingMinGames) return list;
+        const filtered = list.filter((r) => Number(r.games || 0) >= ratingMinGames);
+        return filtered.map((r, i) => Object.assign({}, r, { place: i + 1 }));
     }
 
     function renderRatingTables() {
         if (!window.IronLeagueRating || !gamesData.length) return;
         const result = IronLeagueRating.computeAll(gamesData, ratingK);
-        const zero = IronLeagueRating.computeAll(gamesData, ratingK, { zeroBase: true });
+        const zero = IronLeagueRating.computeAll(gamesData, ratingK, {
+            zeroBase: true,
+            elimPenalty: lobbyElimPenalty,
+        });
         const simpleRow = (r) => `<tr>
             <td class="num">${r.place}</td>
             <td>${r.name}</td>
@@ -3216,31 +3329,49 @@
         </tr>`;
         fillSortableTable(
             document.getElementById('ratingCombinedTable'),
-            result.combined,
+            filterRatingRows(result.combined),
             combinedRow,
             'rating',
             'desc',
         );
-        fillSortableTable(document.getElementById('ratingFfaTable'), result.ffa, simpleRow, 'rating', 'desc');
-        fillSortableTable(document.getElementById('ratingPairwiseTable'), result.pairwise, simpleRow, 'rating', 'desc');
-        fillSortableTable(document.getElementById('ratingFinishTable'), result.finish, simpleRow, 'rating', 'desc');
+        fillSortableTable(
+            document.getElementById('ratingFfaTable'),
+            filterRatingRows(result.ffa),
+            simpleRow,
+            'rating',
+            'desc',
+        );
+        fillSortableTable(
+            document.getElementById('ratingPairwiseTable'),
+            filterRatingRows(result.pairwise),
+            simpleRow,
+            'rating',
+            'desc',
+        );
+        fillSortableTable(
+            document.getElementById('ratingFinishTable'),
+            filterRatingRows(result.finish),
+            simpleRow,
+            'rating',
+            'desc',
+        );
         fillSortableTable(
             document.getElementById('ratingZeroCombinedTable'),
-            zero.combined,
+            filterRatingRows(zero.combined),
             combinedRow,
             'rating',
             'desc',
         );
         fillSortableTable(
             document.getElementById('ratingLobbyWinTable'),
-            result.lobbyWin,
+            filterRatingRows(zero.lobbyWin),
             simpleRow,
             'rating',
             'desc',
         );
         fillSortableTable(
             document.getElementById('ratingLobbyAvgTable'),
-            result.lobbyAvg,
+            filterRatingRows(zero.lobbyAvg),
             simpleRow,
             'rating',
             'desc',
@@ -3252,8 +3383,16 @@
         await initAssetCacheBust();
         if (window.IronLeagueI18n) IronLeagueI18n.initLang();
         loadRatingK();
+        loadLobbyElimPenalty();
+        loadRatingMinGames();
         document.querySelectorAll('.rating-k-btn').forEach((btn) => {
             btn.addEventListener('click', () => setRatingK(btn.dataset.k));
+        });
+        document.querySelectorAll('.rating-elim-btn').forEach((btn) => {
+            btn.addEventListener('click', () => setLobbyElimPenalty(btn.dataset.elim));
+        });
+        document.querySelectorAll('.rating-mingames-btn').forEach((btn) => {
+            btn.addEventListener('click', () => setRatingMinGames(btn.dataset.mingames));
         });
         await loadGamesData();
         await Promise.all([loadFaqData(), loadTierlistData()]);
@@ -3271,11 +3410,12 @@
             document.getElementById('viewArchive').classList.toggle('active', view === 'archive');
             document.getElementById('viewStats').classList.toggle('active', view === 'stats');
             document.getElementById('viewRating')?.classList.toggle('active', view === 'rating');
+            document.getElementById('viewRatingZero')?.classList.toggle('active', view === 'ratingZero');
             document.getElementById('viewTierlist').classList.toggle('active', view === 'tierlist');
             document.getElementById('viewFaq').classList.toggle('active', view === 'faq');
             applyViewMeta(view);
             if (view === 'stats') renderStatsTables();
-            if (view === 'rating') renderRatingTables();
+            if (view === 'rating' || view === 'ratingZero') renderRatingTables();
         });
     });
 
@@ -3455,6 +3595,7 @@
                     wonders: 0,
                     wondersBuilt: 0,
                     conquered: 0,
+                    militaryDeaths: 0,
                     statsGames: 0,
                     sumScore: 0,
                     sumUnits: 0,
@@ -3513,6 +3654,12 @@
             }
 
             for (const s of Array.isArray(game.survivors) ? game.survivors : []) {
+                if (s.is_barbarian
+                    || s.nation === 'Варвары'
+                    || s.nation === 'Barbarians'
+                    || s.name === 'Barbarians') {
+                    continue;
+                }
                 const name = (s.name || '').trim();
                 if (!name) continue;
                 const row = ensurePlayer(name);
@@ -3522,6 +3669,9 @@
                 const built = Array.isArray(s.wonders_built) ? s.wonders_built : null;
                 if (built) row.wondersBuilt += built.length;
                 if (Array.isArray(s.conquered_capitals)) row.conquered += s.conquered_capitals.length;
+                if (Number.isFinite(Number(s.military_deaths))) {
+                    row.militaryDeaths += Number(s.military_deaths);
+                }
 
                 row.statsGames += 1;
                 const add = (keySum, keyN, raw) => {
@@ -3750,6 +3900,7 @@
                 <td class="num">${p.wonders}</td>
                 <td class="num">${p.wondersBuilt}</td>
                 <td class="num">${p.conquered}</td>
+                <td class="num">${p.militaryDeaths}</td>
             </tr>`,
             'games',
             'desc',
