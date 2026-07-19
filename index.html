@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=tidy-1">
+    <link rel="stylesheet" href="css/site.css?v=records-1">
 
 </head>
 <body>
@@ -36,6 +36,7 @@
         <button type="button" class="site-nav-btn" data-view="rating" data-i18n="nav.rating">Рейтинг от 1000</button>
         <button type="button" class="site-nav-btn" data-view="ratingZero" data-i18n="nav.ratingZero">Рейтинг от нуля</button>
         <button type="button" class="site-nav-btn" data-view="tierlist" data-i18n="nav.tierlist">Тирлист</button>
+        <button type="button" class="site-nav-btn" data-view="records" data-i18n="nav.records">Рекорды</button>
         <button type="button" class="site-nav-btn" data-view="faq" data-i18n="nav.faq">FAQ</button>
     </nav>
 
@@ -504,6 +505,7 @@
                             <th class="num" data-sort="place" data-i18n="rating.col.place">#</th>
                             <th data-sort="name" data-i18n="rating.col.player">Игрок</th>
                             <th class="num" data-sort="rating" data-i18n="rating.col.rating">Рейтинг</th>
+                            <th class="num" data-sort="perGame" data-i18n="rating.col.perGame">За игру</th>
                             <th class="num" data-sort="games" data-i18n="rating.col.games">Игр</th>
                         </tr>
                     </thead>
@@ -522,6 +524,7 @@
                             <th class="num" data-sort="place" data-i18n="rating.col.place">#</th>
                             <th data-sort="name" data-i18n="rating.col.player">Игрок</th>
                             <th class="num" data-sort="rating" data-i18n="rating.col.rating">Рейтинг</th>
+                            <th class="num" data-sort="perGame" data-i18n="rating.col.perGame">За игру</th>
                             <th class="num" data-sort="games" data-i18n="rating.col.games">Игр</th>
                         </tr>
                     </thead>
@@ -553,6 +556,34 @@
         </div>
     </div>
 
+    <div class="view-panel" id="viewRecords">
+        <p class="rating-intro" data-i18n="records.intro">
+            Рекорды считаются из архива при каждой загрузке. Игры с флагами teams / scrap не учитываются.
+        </p>
+        <div class="faq-toc" data-i18n-aria="records.toc" aria-label="Разделы рекордов">
+            <a href="#records-glory" data-i18n="records.section.glory">Слава</a>
+            <a href="#records-war" data-i18n="records.section.war">Война</a>
+            <a href="#records-style" data-i18n="records.section.style">Стиль</a>
+            <a href="#records-curious" data-i18n="records.section.curious">Курьёзы</a>
+        </div>
+        <div class="stats-section" id="records-glory">
+            <h2 data-i18n="records.section.glory">Слава</h2>
+            <div class="records-grid" id="recordsGlory"></div>
+        </div>
+        <div class="stats-section" id="records-war">
+            <h2 data-i18n="records.section.war">Война</h2>
+            <div class="records-grid" id="recordsWar"></div>
+        </div>
+        <div class="stats-section" id="records-style">
+            <h2 data-i18n="records.section.style">Стиль</h2>
+            <div class="records-grid" id="recordsStyle"></div>
+        </div>
+        <div class="stats-section" id="records-curious">
+            <h2 data-i18n="records.section.curious">Курьёзы</h2>
+            <div class="records-grid" id="recordsCurious"></div>
+        </div>
+    </div>
+
     <div class="view-panel" id="viewFaq">
         <div class="faq-toolbar">
             <div class="faq-source" id="faqSource" data-i18n="loading.faq">Загрузка FAQ...</div>
@@ -579,8 +610,9 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=rating-min5-1"></script>
-<script src="js/rating.js?v=rating-tabs-1"></script>
+<script src="js/i18n.js?v=records-1"></script>
+<script src="js/rating.js?v=lobby-pergame-1"></script>
+<script src="js/achievements.js?v=records-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -1638,6 +1670,7 @@
             rating: viewTitle('title.rating', '🏅 Рейтинг от 1000'),
             ratingZero: viewTitle('title.ratingZero', '🏅 Рейтинг от нуля'),
             tierlist: viewTitle('title.tierlist', '⭐ Тирлист наций'),
+            records: viewTitle('title.records', '🏆 Рекорды'),
             faq: viewTitle('title.faq', '❓ FAQ'),
         };
         const footers = {
@@ -1646,6 +1679,7 @@
             rating: viewTitle('footer.rating', 'Классическая шкала: старт Elo 1000'),
             ratingZero: viewTitle('footer.ratingZero', 'Шкала от нуля и очки лобби'),
             tierlist: viewTitle('footer.tierlist', 'Тирлист наций лиги'),
+            records: viewTitle('footer.records', 'Рекорды и достижения (без teams/scrap)'),
             faq: viewTitle('footer.faq', 'Частые вопросы'),
         };
         document.getElementById('pageTitle').textContent = titles[view] || titles.archive;
@@ -1743,6 +1777,13 @@
             <td class="num">${r.rating.toFixed(2)}</td>
             <td class="num">${r.games}</td>
         </tr>`;
+        const lobbyRow = (r) => `<tr>
+            <td class="num">${r.place}</td>
+            <td>${r.name}</td>
+            <td class="num">${r.rating.toFixed(2)}</td>
+            <td class="num">${r.perGame != null ? r.perGame.toFixed(2) : '—'}</td>
+            <td class="num">${r.games}</td>
+        </tr>`;
         const combinedRow = (r) => `<tr>
             <td class="num">${r.place}</td>
             <td>${r.name}</td>
@@ -1791,17 +1832,66 @@
         fillSortableTable(
             document.getElementById('ratingLobbyWinTable'),
             filterRatingRows(zero.lobbyWin),
-            simpleRow,
+            lobbyRow,
             'rating',
             'desc',
         );
         fillSortableTable(
             document.getElementById('ratingLobbyAvgTable'),
             filterRatingRows(zero.lobbyAvg),
-            simpleRow,
+            lobbyRow,
             'rating',
             'desc',
         );
+    }
+
+    const RECORD_SECTIONS = {
+        glory: ['most_wins', 'best_winrate', 'fastest_win'],
+        war: ['wins_all_with_caps', 'most_caps_single_win', 'most_caps', 'most_military_deaths'],
+        style: ['piety_first_count', 'piety_first_streak', 'most_wonders_built'],
+        curious: ['most_games_no_win', 'never_eliminated'],
+    };
+
+    function formatRecordCard(item) {
+        const title = tt(`records.item.${item.id}.title`);
+        let body = tt(`records.item.${item.id}.body`, {
+            player: item.player,
+            value: item.value,
+            games: item.games != null ? String(item.games) : '',
+            game: item.gameNumber != null ? String(item.gameNumber) : '',
+        });
+        if (body === `records.item.${item.id}.body`) {
+            body = `${item.player}: ${item.value}`;
+        }
+        return `<article class="record-card" id="record-${item.id}">
+            <h3 class="record-card-title">${title === `records.item.${item.id}.title` ? item.id : title}</h3>
+            <p class="record-card-player">${item.player}</p>
+            <p class="record-card-value">${item.value}</p>
+            <p class="record-card-body">${body}</p>
+        </article>`;
+    }
+
+    function renderRecords() {
+        if (!window.IronLeagueAchievements || !gamesData.length) return;
+        const items = IronLeagueAchievements.computeAchievements(gamesData);
+        const byId = new Map(items.map((x) => [x.id, x]));
+        const map = {
+            glory: document.getElementById('recordsGlory'),
+            war: document.getElementById('recordsWar'),
+            style: document.getElementById('recordsStyle'),
+            curious: document.getElementById('recordsCurious'),
+        };
+        Object.keys(RECORD_SECTIONS).forEach((section) => {
+            const el = map[section];
+            if (!el) return;
+            const cards = RECORD_SECTIONS[section]
+                .map((id) => byId.get(id))
+                .filter(Boolean)
+                .map(formatRecordCard);
+            el.innerHTML = cards.length
+                ? cards.join('')
+                : `<p class="hint">${tt('records.empty')}</p>`;
+        });
     }
 
     // Запуск
@@ -1824,6 +1914,7 @@
         await Promise.all([loadFaqData(), loadTierlistData()]);
         renderStatsTables();
         renderRatingTables();
+        renderRecords();
     })();
 
     // Переключение разделов
@@ -1838,10 +1929,12 @@
             document.getElementById('viewRating')?.classList.toggle('active', view === 'rating');
             document.getElementById('viewRatingZero')?.classList.toggle('active', view === 'ratingZero');
             document.getElementById('viewTierlist').classList.toggle('active', view === 'tierlist');
+            document.getElementById('viewRecords')?.classList.toggle('active', view === 'records');
             document.getElementById('viewFaq').classList.toggle('active', view === 'faq');
             applyViewMeta(view);
             if (view === 'stats') renderStatsTables();
             if (view === 'rating' || view === 'ratingZero') renderRatingTables();
+            if (view === 'records') renderRecords();
         });
     });
 
@@ -2538,6 +2631,7 @@
             filterGames();
             renderStatsTables();
             renderRatingTables();
+            renderRecords();
             if (tierlistData) loadTierlistData();
             loadFaqData();
             const openModal = document.getElementById('gameModal');

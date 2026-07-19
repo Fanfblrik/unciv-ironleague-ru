@@ -136,10 +136,10 @@
             pointer-events: none;
         }
 
-        #viewArchive::before { background-image: url('bg/archive.png'); }
-        #viewStats::before { background-image: url('bg/stats.png'); }
-        #viewTierlist::before { background-image: url('bg/tierlist.png'); }
-        #viewFaq::before { background-image: url('bg/faq.png'); }
+        #viewArchive::before { background-image: url('../bg/archive.png'); }
+        #viewStats::before { background-image: url('../bg/stats.png'); }
+        #viewTierlist::before { background-image: url('../bg/tierlist.png'); }
+        #viewFaq::before { background-image: url('../bg/faq.png'); }
 
         .faq-toolbar {
             display: flex;
@@ -1366,7 +1366,64 @@
         }
 
         #viewRating::before,
-        #viewRatingZero::before { background-image: url('bg/rating.png'); }
+        #viewRatingZero::before,
+        #viewRecords::before { background-image: url('../bg/rating.png'); }
+
+        .records-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .record-card {
+            border: 1px solid rgba(255, 215, 0, 0.28);
+            background: linear-gradient(165deg, rgba(28, 24, 40, 0.92), rgba(16, 14, 26, 0.88));
+            padding: 18px 18px 16px;
+            position: relative;
+        }
+
+        .record-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            bottom: 12px;
+            width: 3px;
+            background: #ffd700;
+            opacity: 0.85;
+        }
+
+        .record-card-title {
+            margin: 0 0 10px;
+            color: #ffd700;
+            font-family: 'Cinzel', serif;
+            font-size: 1.05rem;
+            letter-spacing: 0.04em;
+            font-weight: 700;
+        }
+
+        .record-card-player {
+            margin: 0 0 4px;
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .record-card-value {
+            margin: 0 0 10px;
+            color: rgba(255, 215, 0, 0.95);
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .record-card-body {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.92rem;
+            line-height: 1.45;
+        }
 
         .lang-switch {
             position: fixed;

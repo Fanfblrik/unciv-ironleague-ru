@@ -175,6 +175,7 @@
       'nav.rating': 'Рейтинг от 1000',
       'nav.ratingZero': 'Рейтинг от нуля',
       'nav.tierlist': 'Тирлист',
+      'nav.records': 'Рекорды',
       'nav.faq': 'FAQ',
       'nav.aria': 'Разделы сайта',
       'title.archive': '⚔️ Архив игр 🛡️',
@@ -182,6 +183,7 @@
       'title.rating': '🏅 Рейтинг от 1000',
       'title.ratingZero': '🏅 Рейтинг от нуля',
       'title.tierlist': '⭐ Тирлист наций',
+      'title.records': '🏆 Рекорды',
       'title.faq': '❓ FAQ',
       'title.doc': 'Iron League — Архив и FAQ',
       'footer.archive': 'Данные обновляются автоматически',
@@ -189,6 +191,7 @@
       'footer.rating': 'Классическая шкала: старт Elo 1000',
       'footer.ratingZero': 'Шкала от нуля и очки лобби',
       'footer.tierlist': 'Тирлист наций лиги',
+      'footer.records': 'Рекорды и достижения (без teams/scrap)',
       'footer.faq': 'Частые вопросы',
       'footer.default': '📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF',
       'filter.nation': 'Фильтр по нации',
@@ -388,11 +391,56 @@
       'rating.col.place': '#',
       'rating.col.player': 'Игрок',
       'rating.col.rating': 'Рейтинг',
+      'rating.col.perGame': 'За игру',
       'rating.col.games': 'Игр',
       'rating.col.avgPlace': 'Ср. место',
       'rating.col.pFfa': 'Место FFA',
       'rating.col.pPair': 'Место pair',
       'rating.col.pFin': 'Место finish',
+      'records.intro':
+        'Рекорды считаются из архива при каждой загрузке. Игры с флагами teams / scrap не учитываются.',
+      'records.toc': 'Разделы рекордов',
+      'records.empty': 'Пока нет данных для этого раздела.',
+      'records.section.glory': 'Слава',
+      'records.section.war': 'Война',
+      'records.section.style': 'Стиль',
+      'records.section.curious': 'Курьёзы',
+      'records.item.most_wins.title': 'Больше всего побед',
+      'records.item.most_wins.body':
+        '{player} лидирует по числу побед: {value} (из {games} учтённых игр).',
+      'records.item.best_winrate.title': 'Идеальный винрейт',
+      'records.item.best_winrate.body':
+        '{player} выиграл все учтённые игры: {value}.',
+      'records.item.fastest_win.title': 'Самая быстрая победа',
+      'records.item.fastest_win.body':
+        '{player} закрыл Game {game} на ходу {value}.',
+      'records.item.wins_all_with_caps.title': 'Победы только с трофеями',
+      'records.item.wins_all_with_caps.body':
+        'У {player} все {value} побед — с захватом хотя бы одной чужой столицы.',
+      'records.item.most_caps_single_win.title': 'Триумфальный разгром',
+      'records.item.most_caps_single_win.body':
+        '{player} в одной победе (Game {game}) забрал больше всего столиц: {value}.',
+      'records.item.most_caps.title': 'Охотник за столицами',
+      'records.item.most_caps.body':
+        '{player} суммарно захватил больше всего столиц: {value}.',
+      'records.item.most_military_deaths.title': 'Мясорубка',
+      'records.item.most_military_deaths.body':
+        '{player} потерял больше всего юнитов в бою: {value}.',
+      'records.item.piety_first_count.title': 'Адепт Набожности',
+      'records.item.piety_first_count.body':
+        '{player} чаще всех открывал первым институт «Набожность»: {value} раз(а).',
+      'records.item.piety_first_streak.title': 'Стрик Набожности',
+      'records.item.piety_first_streak.body':
+        'У {player} самый длинный стрик игр с первым институтом «Набожность»: {value}.',
+      'records.item.most_wonders_built.title': 'Зодчий',
+      'records.item.most_wonders_built.body':
+        '{player} построил больше всего своих чудес света: {value}.',
+      'records.item.most_games_no_win.title': 'Долгий путь к трону',
+      'records.item.most_games_no_win.body':
+        '{player} сыграл больше всех без единой победы: {value} игр.',
+      'records.item.never_eliminated.title': 'Неуязвимый',
+      'records.item.never_eliminated.body':
+        '{player} ни разу не выбывал в финале ({value} игр с данными финала).',
       'tier.title': 'Тирлист наций',
       'tier.col.nation': 'Нация',
       'tier.col.avg': 'Среднее',
@@ -414,6 +462,7 @@
       'nav.rating': 'Rating from 1000',
       'nav.ratingZero': 'Zero-based rating',
       'nav.tierlist': 'Tier list',
+      'nav.records': 'Records',
       'nav.faq': 'FAQ',
       'nav.aria': 'Site sections',
       'title.archive': '⚔️ Game archive 🛡️',
@@ -421,6 +470,7 @@
       'title.rating': '🏅 Rating from 1000',
       'title.ratingZero': '🏅 Zero-based rating',
       'title.tierlist': '⭐ Nation tier list',
+      'title.records': '🏆 Records',
       'title.faq': '❓ FAQ',
       'title.doc': 'Iron League — Archive & FAQ',
       'footer.archive': 'Data updates automatically',
@@ -428,6 +478,7 @@
       'footer.rating': 'Classic scale: Elo starts at 1000',
       'footer.ratingZero': 'Zero-based scale and lobby points',
       'footer.tierlist': 'League nation tier list',
+      'footer.records': 'Records and achievements (excluding teams/scrap)',
       'footer.faq': 'Frequently asked questions',
       'footer.default': '📁 Replay storage | Click “Watch replay” to load a GIF',
       'filter.nation': 'Filter by nation',
@@ -627,11 +678,56 @@
       'rating.col.place': '#',
       'rating.col.player': 'Player',
       'rating.col.rating': 'Rating',
+      'rating.col.perGame': 'Per game',
       'rating.col.games': 'Games',
       'rating.col.avgPlace': 'Avg place',
       'rating.col.pFfa': 'FFA place',
       'rating.col.pPair': 'Pair place',
       'rating.col.pFin': 'Finish place',
+      'records.intro':
+        'Records are computed from the archive on every load. Games flagged teams / scrap are ignored.',
+      'records.toc': 'Records sections',
+      'records.empty': 'No data for this section yet.',
+      'records.section.glory': 'Glory',
+      'records.section.war': 'War',
+      'records.section.style': 'Style',
+      'records.section.curious': 'Oddities',
+      'records.item.most_wins.title': 'Most wins',
+      'records.item.most_wins.body':
+        '{player} leads in wins: {value} (across {games} counted games).',
+      'records.item.best_winrate.title': 'Perfect win rate',
+      'records.item.best_winrate.body':
+        '{player} won every counted game: {value}.',
+      'records.item.fastest_win.title': 'Fastest win',
+      'records.item.fastest_win.body':
+        '{player} finished Game {game} on turn {value}.',
+      'records.item.wins_all_with_caps.title': 'Trophy wins only',
+      'records.item.wins_all_with_caps.body':
+        'All of {player}’s {value} wins came with at least one captured capital.',
+      'records.item.most_caps_single_win.title': 'Single-game capital haul',
+      'records.item.most_caps_single_win.body':
+        '{player} took the most capitals in one win (Game {game}): {value}.',
+      'records.item.most_caps.title': 'Capital hunter',
+      'records.item.most_caps.body':
+        '{player} captured the most capitals in total: {value}.',
+      'records.item.most_military_deaths.title': 'Meat grinder',
+      'records.item.most_military_deaths.body':
+        '{player} lost the most military units: {value}.',
+      'records.item.piety_first_count.title': 'Piety devotee',
+      'records.item.piety_first_count.body':
+        '{player} opened Piety first most often: {value} time(s).',
+      'records.item.piety_first_streak.title': 'Piety streak',
+      'records.item.piety_first_streak.body':
+        '{player} holds the longest streak of games opening Piety first: {value}.',
+      'records.item.most_wonders_built.title': 'Wonder builder',
+      'records.item.most_wonders_built.body':
+        '{player} self-built the most world wonders: {value}.',
+      'records.item.most_games_no_win.title': 'Long road to the throne',
+      'records.item.most_games_no_win.body':
+        '{player} played the most games without a win: {value}.',
+      'records.item.never_eliminated.title': 'Never eliminated',
+      'records.item.never_eliminated.body':
+        '{player} was never eliminated in finale ({value} games with finale data).',
       'tier.title': 'Nation tier list',
       'tier.col.nation': 'Nation',
       'tier.col.avg': 'Average',
