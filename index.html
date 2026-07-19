@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=home-1">
+    <link rel="stylesheet" href="css/site.css?v=home-2">
 
 </head>
 <body>
@@ -762,7 +762,8 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=home-1"></script>
+<script src="js/i18n.js?v=home-2"></script>
+<script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-pergame-1"></script>
 <script src="js/achievements.js?v=veteran-1"></script>
 <script>
@@ -1681,12 +1682,17 @@
                     ${leagueHtml}
                 </div>
                 ${hasGif ? `
+                    <div class="replay-preview" data-gif-preview="${game.gif}">
+                        <canvas class="replay-preview-canvas" hidden></canvas>
+                        <img class="replay-preview-fallback" alt="" loading="lazy" hidden>
+                        <span class="replay-preview-badge" hidden data-i18n="replay.previewTail">хвост реплея</span>
+                    </div>
                     <button class="replay-button" data-replay="${game.gif}">${tt('card.replay')}</button>
                     <div class="replay-wrap">
                         <img class="replay-gif" src="${game.gif}" alt="Replay" data-game-id="${game.id}"
                              title="${tt('replay.title')}"
                              data-replay-src="${game.gif}"
-                             onerror="this.closest('.replay-wrap').style.display='none'; const b=this.closest('.replay-wrap').previousElementSibling; if(b) b.style.display='none';">
+                             onerror="this.closest('.replay-wrap').style.display='none'; const b=this.closest('.replay-wrap').previousElementSibling; if(b) b.style.display='none'; const p=this.closest('.game-card')?.querySelector('.replay-preview'); if(p) p.style.display='none';">
                         <div class="replay-hint">${tt('replay.hint')}</div>
                     </div>
                 ` : ''}
@@ -1730,6 +1736,12 @@
         });
 
         bindReplayRestart(grid);
+        if (window.IronLeagueGifPreview) {
+            IronLeagueGifPreview.mount(grid);
+            grid.querySelectorAll('.replay-preview-badge').forEach((el) => {
+                el.textContent = tt('replay.previewTail');
+            });
+        }
     }
 
     // Фильтрация
@@ -2112,6 +2124,7 @@
     (async function boot() {
         await initAssetCacheBust();
         if (window.IronLeagueI18n) IronLeagueI18n.initLang();
+        applyViewMeta('home');
         loadRatingK();
         loadLobbyElimPenalty();
         loadRatingMinGames();
