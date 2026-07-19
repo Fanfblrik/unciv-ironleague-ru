@@ -233,6 +233,7 @@
       'replay.title': 'Кликните, чтобы переиграть',
       'status.winner': '👑 Победитель',
       'status.eliminated': '💀 Выбыл',
+      'status.barbarian': '🏴 Варвары',
       'flag.noCapital': 'Нет столицы',
       'flag.capitalTaken': 'Столицу захватил: {who}',
       'flag.eliminatedUnknown': 'Выбыл (столица уничтожена или неизвестна)',
@@ -250,6 +251,7 @@
       'stat.policies': 'Институты',
       'stat.policyBranches': 'Ветки',
       'stat.spaceship': 'Корабль',
+      'stat.militaryDeaths': 'Потери юнитов',
       'stat.firstPolicy': 'Первый институт',
       'stat.era': 'Эра',
       'stat.religion': 'Религия',
@@ -284,7 +286,7 @@
       'stats.nationsHint': 'Все нации мода. Не пикнутые — 0 пиков и 0% винрейта. Только актуальные игры.',
       'stats.detail': 'Игроки: нации и финал',
       'stats.detailHint':
-        'Частая нация и идеология, сумма владеемых чудес, сумма своих чудес (wonders_built) и захваченных столиц — по данным «Финал» (без teams/scrap).',
+        'Частая нация и идеология, сумма владеемых чудес, сумма своих чудес (wonders_built), захваченных столиц и боевых потерь юнитов (military_deaths) — по данным «Финал» (без teams/scrap).',
       'stats.averages': 'Игроки: средние показатели',
       'stats.averagesHint': 'Средние по финалу (survivors) только по актуальным играм. Топ‑3 первых институтов — по первому открытому институту.',
       'stats.policies': 'Институты и идеологии',
@@ -325,6 +327,7 @@
       'stats.col.wonders': 'Чудес (сумма)',
       'stats.col.wondersBuilt': 'Чудес своих',
       'stats.col.conquered': 'Столиц захвачено',
+      'stats.col.militaryDeaths': 'Потерь юнитов',
       'stats.col.gamesWithStats': 'Игр со статой',
       'stats.col.score': 'Очки',
       'stats.col.units': 'Юниты',
@@ -364,6 +367,11 @@
       'rating.elimOn': '−5',
       'rating.elimHint':
         'Только для таблиц «Очки лобби (победа)» и «Очки лобби (Avg)».\nЕсли включено: при alive=false (смерть / выбывание в финале) с начисленных за игру очков снимается 5.\nПо умолчанию выключено — выбывшие получают те же очки участия, что и живые не-победители. Выбор сохраняется в браузере.',
+      'rating.minGamesLabel': 'Минимум игр',
+      'rating.minGamesOff': 'Все',
+      'rating.minGamesOn': '≥5',
+      'rating.minGamesHint':
+        'Скрыть игроков с числом учтённых игр меньше порога во всех таблицах рейтинга на обеих вкладках.\nПо умолчанию показаны все. Места (#) пересчитываются среди видимых. Выбор сохраняется в браузере.',
       'rating.finish': 'Рейтинг по финишу',
       'rating.finishHint':
         'Не Elo, а оценка среднего финиша на шкале ~1000.\n\nВ каждой игре место даёт placeScore = (N−1−i)/(N−1) (1 = победа … 0 = последнее).\nСчитается среднее placeScore по всем учтённым играм игрока: avg.\nЦелевой рейтинг: target = 1000 + 400 × (avg − 0.5)\n(стабильно первые ≈ 1200, стабильно последние ≈ 800).\n\nСмешивание с текущим значением: вес w = min(1, games/8), R ← R×(1−w) + target×w — чем больше игр, тем ближе к долгосрочному среднему.\nK на этот метод не влияет.',
@@ -464,6 +472,7 @@
       'replay.title': 'Click to replay',
       'status.winner': '👑 Winner',
       'status.eliminated': '💀 Eliminated',
+      'status.barbarian': '🏴 Barbarians',
       'flag.noCapital': 'No capital',
       'flag.capitalTaken': 'Capital taken by: {who}',
       'flag.eliminatedUnknown': 'Eliminated (capital razed or unknown)',
@@ -481,6 +490,7 @@
       'stat.policies': 'Policies',
       'stat.policyBranches': 'Branches',
       'stat.spaceship': 'Spaceship',
+      'stat.militaryDeaths': 'Units lost',
       'stat.firstPolicy': 'First policy',
       'stat.era': 'Era',
       'stat.religion': 'Religion',
@@ -515,7 +525,7 @@
       'stats.nationsHint': 'All mod nations. Unpicked show 0 picks and 0% winrate. Ranked games only.',
       'stats.detail': 'Players: nations and finale',
       'stats.detailHint':
-        'Most-picked nation and ideology, sum of owned wonders, sum of self-built wonders (wonders_built), and captured capitals — from Finale data (no teams/scrap).',
+        'Most-picked nation and ideology, sum of owned wonders, sum of self-built wonders (wonders_built), captured capitals, and military units lost (military_deaths) — from Finale data (no teams/scrap).',
       'stats.averages': 'Players: averages',
       'stats.averagesHint': 'Finale averages (survivors) for ranked games only. Top-3 opener policies from first unlocked policy branch.',
       'stats.policies': 'Policies & ideologies',
@@ -556,6 +566,7 @@
       'stats.col.wonders': 'Wonders (sum)',
       'stats.col.wondersBuilt': 'Self-built',
       'stats.col.conquered': 'Capitals taken',
+      'stats.col.militaryDeaths': 'Units lost',
       'stats.col.gamesWithStats': 'Games with stats',
       'stats.col.score': 'Score',
       'stats.col.units': 'Units',
@@ -595,6 +606,11 @@
       'rating.elimOn': '−5',
       'rating.elimHint':
         'Only for “Lobby points (win)” and “Lobby points (Avg)”.\nWhen on: if alive=false (death / elimination in finale), subtract 5 from that game’s points.\nOff by default — eliminated players get the same participation points as living non-winners. Stored in the browser.',
+      'rating.minGamesLabel': 'Minimum games',
+      'rating.minGamesOff': 'All',
+      'rating.minGamesOn': '≥5',
+      'rating.minGamesHint':
+        'Hide players with fewer counted games than the threshold in every rating table on both tabs.\nAll players shown by default. Place (#) is renumbered among visible rows. Stored in the browser.',
       'rating.finish': 'Finish-place rating',
       'rating.finishHint':
         'Not Elo — a finish-average mapped onto a ~1000 scale.\n\nEach game awards placeScore = (N−1−i)/(N−1) (1 = win … 0 = last).\navg = mean placeScore over the player’s counted games.\ntarget = 1000 + 400 × (avg − 0.5)\n(always 1st ≈ 1200, always last ≈ 800).\n\nBlend: w = min(1, games/8), R ← R×(1−w) + target×w — more games pull toward the long-run average.\nK does not affect this method.',
