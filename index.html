@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=records-ui-3">
+    <link rel="stylesheet" href="css/site.css?v=ach-art-1">
 
 </head>
 <body>
@@ -2072,19 +2072,8 @@
     };
 
     function recordIconSrc(id) {
-        const pngIds = new Set([
-            'best_winrate',
-            'tradition_first_count',
-            'liberty_first_count',
-            'honor_first_count',
-            'piety_first_count',
-            'piety_first_streak',
-            'ideology_order_count',
-            'ideology_freedom_count',
-            'ideology_autocracy_count',
-        ]);
-        const ext = pngIds.has(id) ? 'png' : 'svg';
-        return `img/records/${id}.${ext}`;
+        // Prefer painted PNG badges; fall back to SVG silhouette if missing.
+        return `img/records/${id}.png`;
     }
 
     function formatRecordCard(item) {
@@ -2102,9 +2091,11 @@
             body = `${item.player}: ${item.value}`;
         }
         const iconSrc = recordIconSrc(item.id);
+        const iconFallback = `img/records/${item.id}.svg`;
         return `<article class="record-card" id="record-${item.id}">
             <div class="record-card-media">
-                <img class="record-card-icon" src="${iconSrc}" alt="" width="64" height="64" loading="lazy">
+                <img class="record-card-icon" src="${iconSrc}" alt="" width="80" height="80" loading="lazy"
+                     onerror="this.onerror=null;this.src='${iconFallback}'">
                 <p class="record-card-value">${item.value}</p>
             </div>
             <p class="record-card-flavor">${flavor}</p>
