@@ -1385,8 +1385,8 @@
             100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
         }
 
-        #viewRating::before,
-        #viewRecords::before { background-image: url('../bg/rating.png'); }
+        #viewRating::before { background-image: url('../bg/rating.png'); }
+        #viewRecords::before { background-image: url('../bg/records.png'); }
 
         .rating-scale-row {
             display: flex;
