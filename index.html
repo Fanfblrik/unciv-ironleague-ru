@@ -486,6 +486,11 @@
             opacity: 0.92;
         }
 
+        .survivor-item.survivor-barbarian {
+            background: rgba(90, 55, 30, 0.42);
+            border: 1px solid rgba(210, 150, 90, 0.35);
+        }
+
         .survivor-item.eliminated .player-name,
         .survivor-item.eliminated .survivor-meta {
             color: rgba(220, 220, 220, 0.75);
@@ -1708,6 +1713,7 @@
                             <th class="num" data-sort="wonders" data-i18n="stats.col.wonders">Чудес (сумма)</th>
                             <th class="num" data-sort="wondersBuilt" data-i18n="stats.col.wondersBuilt">Чудес своих</th>
                             <th class="num" data-sort="conquered" data-i18n="stats.col.conquered">Столиц захвачено</th>
+                            <th class="num" data-sort="militaryDeaths" data-i18n="stats.col.militaryDeaths">Потерь юнитов</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -2096,7 +2102,7 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=beliefs-combos-1"></script>
+<script src="js/i18n.js?v=military-deaths-1"></script>
 <script src="js/rating.js?v=lobby-points-1"></script>
 <script>
     // Конфигурация
@@ -2662,6 +2668,9 @@
         if (Number.isFinite(Number(row.population))) push(tt('stat.population'), row.population);
         if (isAlive && Number.isFinite(Number(row.techs))) push(tt('stat.techs'), row.techs);
         if (isAlive && Number.isFinite(Number(row.policies))) push(tt('stat.policies'), row.policies);
+        if (Number.isFinite(Number(row.military_deaths))) {
+            push(tt('stat.militaryDeaths'), row.military_deaths);
+        }
         if (row.first_policy) push(tt('stat.firstPolicy'), displayPolicyName(row.first_policy), { wide: true });
         const branches = Array.isArray(row.policy_branches)
             ? row.policy_branches.filter(Boolean) : [];
@@ -2717,6 +2726,10 @@
 
     function renderSurvivorBlock(row, game, mode) {
         const isWinner = row.nation === game.winner;
+        const isBarbarian = !!(row.is_barbarian
+            || row.nation === 'Варвары'
+            || row.nation === 'Barbarians'
+            || row.name === 'Barbarians');
         const isAlive = Object.prototype.hasOwnProperty.call(row, 'alive')
             ? Boolean(row.alive)
             : true;
@@ -2799,20 +2812,21 @@
             : (isAlive ? ` · ${tt('flag.ideologyNone')}` : '');
 
         return `
-            <div class="survivor-item ${isAlive ? '' : 'eliminated'}">
+            <div class="survivor-item ${isAlive ? '' : 'eliminated'}${isBarbarian ? ' survivor-barbarian' : ''}">
                 <div class="survivor-head">
-                    ${renderNationPortrait(row.nation, 'player-nation-mini')}
+                    ${isBarbarian ? '' : renderNationPortrait(row.nation, 'player-nation-mini')}
                     <span class="player-name">${name}</span>
                     ${isWinner ? `<span class="player-status">${tt('status.winner')}</span>` : ''}
-                    ${!isAlive ? `<span class="player-status">${tt('status.eliminated')}</span>` : ''}
+                    ${!isAlive && !isBarbarian ? `<span class="player-status">${tt('status.eliminated')}</span>` : ''}
+                    ${isBarbarian ? `<span class="player-status">${tt('status.barbarian')}</span>` : ''}
                 </div>
                 <div class="survivor-meta">
-                    ${displayNationName(row.nation) || ''}${ideologyMeta}
+                    ${displayNationName(row.nation) || ''}${isBarbarian ? '' : ideologyMeta}
                 </div>
-                ${flagHtml}
+                ${isBarbarian ? '' : flagHtml}
                 ${statsHtml}
-                ${capturedHtml}
-                ${wondersBlock}
+                ${isBarbarian ? '' : capturedHtml}
+                ${isBarbarian ? '' : wondersBlock}
             </div>
         `;
     }
@@ -3455,6 +3469,7 @@
                     wonders: 0,
                     wondersBuilt: 0,
                     conquered: 0,
+                    militaryDeaths: 0,
                     statsGames: 0,
                     sumScore: 0,
                     sumUnits: 0,
@@ -3513,6 +3528,12 @@
             }
 
             for (const s of Array.isArray(game.survivors) ? game.survivors : []) {
+                if (s.is_barbarian
+                    || s.nation === 'Варвары'
+                    || s.nation === 'Barbarians'
+                    || s.name === 'Barbarians') {
+                    continue;
+                }
                 const name = (s.name || '').trim();
                 if (!name) continue;
                 const row = ensurePlayer(name);
@@ -3522,6 +3543,9 @@
                 const built = Array.isArray(s.wonders_built) ? s.wonders_built : null;
                 if (built) row.wondersBuilt += built.length;
                 if (Array.isArray(s.conquered_capitals)) row.conquered += s.conquered_capitals.length;
+                if (Number.isFinite(Number(s.military_deaths))) {
+                    row.militaryDeaths += Number(s.military_deaths);
+                }
 
                 row.statsGames += 1;
                 const add = (keySum, keyN, raw) => {
@@ -3750,6 +3774,7 @@
                 <td class="num">${p.wonders}</td>
                 <td class="num">${p.wondersBuilt}</td>
                 <td class="num">${p.conquered}</td>
+                <td class="num">${p.militaryDeaths}</td>
             </tr>`,
             'games',
             'desc',

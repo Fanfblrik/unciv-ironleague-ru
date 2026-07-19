@@ -3930,7 +3930,8 @@
           "pantheon": "Starlight Guidance",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 2742
         },
         {
           "name": "VlaterRogue",
@@ -3995,7 +3996,8 @@
             "Viharas",
             "Pagodas"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 2899
         },
         {
           "name": "YukiHino98",
@@ -4052,7 +4054,8 @@
             "Gurdwaras",
             "Religious Community"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 1668
         },
         {
           "name": "Fanfblrik",
@@ -4099,7 +4102,8 @@
           "pantheon": "",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 1339
         },
         {
           "name": "AlexUnderHill",
@@ -4145,7 +4149,8 @@
             "Religious Center",
             "Holy Warriors"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 1995
         },
         {
           "name": "Overslidishe",
@@ -4187,7 +4192,45 @@
           "follower_beliefs": [
             "Synagogues"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 369
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 2793,
+          "is_barbarian": true
         }
       ],
       "flags": []
@@ -4314,7 +4357,8 @@
             "Religious Community",
             "Guruship"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 3771
         },
         {
           "name": "Click4x",
@@ -4385,7 +4429,8 @@
             "Cathedrals",
             "Devoted Elite"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 2702
         },
         {
           "name": "YukiHino98",
@@ -4440,7 +4485,8 @@
           "pantheon": "Sacred Path",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 1328
         },
         {
           "name": "VlaterRogue",
@@ -4495,7 +4541,8 @@
           "pantheon": "Alters of Worship",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 1382
         },
         {
           "name": "n9306867842",
@@ -4546,7 +4593,8 @@
             "Pagodas",
             "Sacred Waters"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 2527
         },
         {
           "name": "Overslidishe",
@@ -4596,7 +4644,8 @@
             "Gurdwaras",
             "Viharas"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 1506
         },
         {
           "name": "den_stu",
@@ -4643,7 +4692,8 @@
             "Feed the World",
             "Holy Warriors"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 3249
         },
         {
           "name": "munlait21",
@@ -4689,7 +4739,8 @@
             "Devout Performers",
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 722
         },
         {
           "name": "AlexUnderHill",
@@ -4727,7 +4778,8 @@
           "pantheon": "Religious Settlements",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 434
         },
         {
           "name": "Ouni0",
@@ -4765,7 +4817,45 @@
           "pantheon": "Ritual Sacrifice",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 899
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 5611,
+          "is_barbarian": true
         }
       ],
       "flags": []
@@ -4900,7 +4990,8 @@
             "Feed the World",
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 64
         },
         {
           "name": "den_stu",
@@ -4960,7 +5051,8 @@
           "pantheon": "Religious Settlements",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 15
         },
         {
           "name": "Click4x",
@@ -5009,7 +5101,8 @@
           "pantheon": "",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 30
         },
         {
           "name": "munlait21",
@@ -5053,7 +5146,8 @@
           "pantheon": "",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 29
         },
         {
           "name": "VlaterRogue",
@@ -5110,7 +5204,8 @@
             "Mosques",
             "Synagogues"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 52
         },
         {
           "name": "AlexUnderHill",
@@ -5153,7 +5248,8 @@
           "follower_beliefs": [
             "Devout Performers"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 41
         },
         {
           "name": "konoval_mik",
@@ -5205,7 +5301,8 @@
             "Gurdwaras",
             "Cathedrals"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 52
         },
         {
           "name": "Ouni0",
@@ -5249,7 +5346,8 @@
             "Followers of Refined Crafts",
             "Liturgical Drama"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 60
         },
         {
           "name": "Overslidishe",
@@ -5295,7 +5393,8 @@
             "Pagodas",
             "Holy Warriors"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 40
         },
         {
           "name": "YukiHino98",
@@ -5333,7 +5432,45 @@
           "pantheon": "Ocean's Bounty",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 16
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 139,
+          "is_barbarian": true
         }
       ],
       "flags": []
@@ -5449,7 +5586,8 @@
             "Religious Community",
             "Guruship"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 17
         },
         {
           "name": "AlexUnderHill",
@@ -5508,7 +5646,8 @@
           "pantheon": "Sun God",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 17
         },
         {
           "name": "den_stu",
@@ -5566,7 +5705,8 @@
           "pantheon": "Goddess of the Hunt",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 21
         },
         {
           "name": "Click4x",
@@ -5629,7 +5769,8 @@
             "Viharas",
             "Followers of Refined Crafts"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 12
         },
         {
           "name": "konoval_mik",
@@ -5667,7 +5808,8 @@
           "pantheon": "Alters of Worship",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 26
         },
         {
           "name": "munlait21",
@@ -5712,7 +5854,8 @@
             "Cathedrals",
             "Devout Performers"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 47
         },
         {
           "name": "VlaterRogue",
@@ -5757,7 +5900,8 @@
             "Gurdwaras",
             "Pagodas"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 9
         },
         {
           "name": "Overslidishe",
@@ -5800,7 +5944,45 @@
           "follower_beliefs": [
             "Synagogues"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 12
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 185,
+          "is_barbarian": true
         }
       ],
       "flags": []
@@ -5931,7 +6113,8 @@
             "Viharas",
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 68
         },
         {
           "name": "Overslidishe",
@@ -6006,7 +6189,8 @@
             "Gurdwaras",
             "Holy Warriors"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 61
         },
         {
           "name": "AlexUnderHill",
@@ -6055,7 +6239,8 @@
           "pantheon": "Ocean's Bounty",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 36
         },
         {
           "name": "munlait21",
@@ -6108,7 +6293,8 @@
             "Cathedrals",
             "Devout Performers"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 41
         },
         {
           "name": "Fanfblrik",
@@ -6151,7 +6337,8 @@
           "pantheon": "Rite of Spring",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 35
         },
         {
           "name": "Click4x",
@@ -6198,7 +6385,8 @@
             "Divine inspiration",
             "Peace Gardens"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 80
         },
         {
           "name": "VlaterRogue",
@@ -6236,7 +6424,8 @@
           "pantheon": "",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 39
         },
         {
           "name": "konoval_mik",
@@ -6281,7 +6470,45 @@
             "Mandirs",
             "Devoted Elite"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 58
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 206,
+          "is_barbarian": true
         }
       ],
       "flags": []
@@ -6406,7 +6633,8 @@
             "Divine inspiration",
             "Pagodas"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 15
         },
         {
           "name": "EmperorPenguin01",
@@ -6469,7 +6697,8 @@
             "Guruship",
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 33
         },
         {
           "name": "Click4x",
@@ -6524,7 +6753,8 @@
             "Cathedrals",
             "Devout Performers"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 57
         },
         {
           "name": "n9306867842",
@@ -6578,7 +6808,8 @@
             "Viharas",
             "Holy Warriors"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 49
         },
         {
           "name": "Overslidishe",
@@ -6624,7 +6855,8 @@
           "pantheon": "Oral Tradition",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 43
         },
         {
           "name": "AlexUnderHill",
@@ -6673,7 +6905,8 @@
           "pantheon": "Seafood Rituals",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 4
         },
         {
           "name": "Fanfblrik",
@@ -6723,7 +6956,8 @@
             "Synagogues",
             "Feed the World"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 3
         },
         {
           "name": "munlait21",
@@ -6762,7 +6996,8 @@
           "pantheon": "God of the Open Sky",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 5
         },
         {
           "name": "VlaterRogue",
@@ -6801,7 +7036,8 @@
           "pantheon": "Religious Idols",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 63
         },
         {
           "name": "konoval_mik",
@@ -6845,7 +7081,45 @@
             "Religious Community",
             "Devoted Elite"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 16
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 417,
+          "is_barbarian": true
         }
       ],
       "flags": []
@@ -6951,7 +7225,8 @@
             "Religious Community",
             "Guruship"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 7
         },
         {
           "name": "konoval_mik",
@@ -7010,7 +7285,8 @@
             "Pagodas",
             "Feed the World"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 16
         },
         {
           "name": "ICanSeeForever",
@@ -7124,7 +7400,8 @@
             "Holy Warriors",
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 11
         },
         {
           "name": "Fanfblrik",
@@ -7162,7 +7439,8 @@
           "pantheon": "Oral Tradition",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 2
         },
         {
           "name": "AlexUnderHill",
@@ -7205,7 +7483,45 @@
           "follower_beliefs": [
             "Devout Performers"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 17
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 187,
+          "is_barbarian": true
         }
       ],
       "flags": []
@@ -7425,7 +7741,8 @@
           "pantheon": "Ritual Sacrifice",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 2
         },
         {
           "name": "VlaterRogue",
@@ -7587,7 +7904,8 @@
           "follower_beliefs": [
             "Religious Community"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 5
         },
         {
           "name": "Overslidishe",
@@ -7668,7 +7986,45 @@
           "pantheon": "Sacred Path",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 1
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 125,
+          "is_barbarian": true
         }
       ],
       "gif": null,
@@ -7802,7 +8158,8 @@
             "Gurdwaras",
             "Devout Performers"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 80
         },
         {
           "name": "den_stu",
@@ -7871,7 +8228,8 @@
             "Guruship",
             "Followers of Refined Crafts"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 91
         },
         {
           "name": "Click4x",
@@ -7944,7 +8302,8 @@
             "Cathedrals",
             "Divine inspiration"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 22
         },
         {
           "name": "munlait21",
@@ -7996,7 +8355,8 @@
             "Choral Music",
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 68
         },
         {
           "name": "VlaterRogue",
@@ -8056,7 +8416,8 @@
             "Mandirs",
             "Holy Warriors"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 31
         },
         {
           "name": "Overslidishe",
@@ -8102,7 +8463,8 @@
             "Pagodas",
             "Feed the World"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 41
         },
         {
           "name": "konoval_mik",
@@ -8144,7 +8506,8 @@
           "follower_beliefs": [
             "Peace Gardens"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 37
         },
         {
           "name": "Ashegg2",
@@ -8191,7 +8554,8 @@
             "Mosques",
             "Synagogues"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 46
         },
         {
           "name": "Fanfblrik",
@@ -8236,7 +8600,45 @@
             "Religious Community",
             "Viharas"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 34
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 343,
+          "is_barbarian": true
         }
       ],
       "flags": []
@@ -8366,7 +8768,8 @@
             "Divine inspiration",
             "Liturgical Drama"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 37
         },
         {
           "name": "den_stu",
@@ -8423,7 +8826,8 @@
           "follower_beliefs": [
             "Guruship"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 56
         },
         {
           "name": "AlexUnderHill",
@@ -8481,7 +8885,8 @@
             "Gurdwaras",
             "Religious Community"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 62
         },
         {
           "name": "Overslidishe",
@@ -8532,7 +8937,8 @@
             "Viharas",
             "Pagodas"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 67
         },
         {
           "name": "Fanfblrik",
@@ -8590,7 +8996,8 @@
             "Devout Performers",
             "Peace Gardens"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 10
         },
         {
           "name": "Ouni0",
@@ -8640,7 +9047,8 @@
           "follower_beliefs": [
             "Followers of Refined Crafts"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 35
         },
         {
           "name": "munlait21",
@@ -8689,7 +9097,8 @@
             "Cathedrals",
             "Choral Music"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 11
         },
         {
           "name": "VlaterRogue",
@@ -8733,7 +9142,8 @@
           "follower_beliefs": [
             "Devoted Elite"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 37
         },
         {
           "name": "Ashegg2",
@@ -8777,7 +9187,8 @@
             "Synagogues",
             "Sacred Waters"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 42
         },
         {
           "name": "konoval_mik",
@@ -8821,7 +9232,45 @@
             "Feed the World",
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 9
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 172,
+          "is_barbarian": true
         }
       ],
       "flags": []
@@ -8948,7 +9397,8 @@
             "Devout Performers",
             "Liturgical Drama"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 67
         },
         {
           "name": "Ouni0",
@@ -9029,7 +9479,8 @@
             "Divine inspiration",
             "Peace Gardens"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 39
         },
         {
           "name": "Fanfblrik",
@@ -9078,7 +9529,8 @@
           "follower_beliefs": [
             "Guruship"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 3
         },
         {
           "name": "VlaterRogue",
@@ -9121,7 +9573,8 @@
           "follower_beliefs": [
             "Pagodas"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 57
         },
         {
           "name": "Overslidishe",
@@ -9166,7 +9619,8 @@
             "Choral Music",
             "Religious Community"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 57
         },
         {
           "name": "konoval_mik",
@@ -9211,7 +9665,45 @@
             "Feed the World",
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 26
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 236,
+          "is_barbarian": true
         }
       ],
       "flags": []
@@ -9345,7 +9837,8 @@
             "Guruship",
             "Holy Warriors"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 58
         },
         {
           "name": "Overslidishe",
@@ -9401,7 +9894,8 @@
             "Viharas",
             "Liturgical Drama"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 15
         },
         {
           "name": "konoval_mik",
@@ -9449,7 +9943,8 @@
           "pantheon": "Sun God",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 33
         },
         {
           "name": "Bahahanchiklkm",
@@ -9506,7 +10001,8 @@
             "Gurdwaras",
             "Pagodas"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 48
         },
         {
           "name": "den_stu",
@@ -9560,7 +10056,8 @@
             "Feed the World",
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 3
         },
         {
           "name": "Lvxvcs",
@@ -9607,7 +10104,8 @@
           "follower_beliefs": [
             "Followers of Refined Crafts"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 9
         },
         {
           "name": "AlexUnderHill",
@@ -9652,7 +10150,8 @@
             "Peace Gardens",
             "Sacred Waters"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 76
         },
         {
           "name": "Ouni0",
@@ -9696,7 +10195,8 @@
             "Divine inspiration",
             "Devout Performers"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 34
         },
         {
           "name": "PVL01011900",
@@ -9738,7 +10238,45 @@
           "follower_beliefs": [
             "Choral Music"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 21
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 163,
+          "is_barbarian": true
         }
       ],
       "flags": []
@@ -9866,7 +10404,8 @@
             "Viharas",
             "Liturgical Drama"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 30
         },
         {
           "name": "Bahahanchiklkm",
@@ -9924,7 +10463,8 @@
             "Guruship",
             "Holy Warriors"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 48
         },
         {
           "name": "Ouni0",
@@ -9970,7 +10510,8 @@
           "pantheon": "Rite of Spring",
           "founder_beliefs": [],
           "follower_beliefs": [],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 31
         },
         {
           "name": "den_stu",
@@ -10030,7 +10571,8 @@
             "Mosques",
             "Feed the World"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 4
         },
         {
           "name": "VlaterRogue",
@@ -10079,7 +10621,8 @@
             "Synagogues",
             "Followers of Refined Crafts"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 4
         },
         {
           "name": "REPUNZEL2882",
@@ -10131,7 +10674,8 @@
             "Divine inspiration",
             "Religious Community"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 27
         },
         {
           "name": "konoval_mik",
@@ -10181,7 +10725,8 @@
             "Gurdwaras",
             "Cathedrals"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 23
         },
         {
           "name": "Fanfblrik",
@@ -10228,7 +10773,8 @@
           "follower_beliefs": [
             "Pagodas"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 14
         },
         {
           "name": "Lvxvcs",
@@ -10275,7 +10821,8 @@
           "follower_beliefs": [
             "Peace Gardens"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 22
         },
         {
           "name": "Overslidishe",
@@ -10320,7 +10867,8 @@
             "Choral Music",
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 37
         },
         {
           "name": "PVL01011900",
@@ -10362,7 +10910,8 @@
           "follower_beliefs": [
             "Devout Performers"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 35
         },
         {
           "name": "AlexUnderHill",
@@ -10404,7 +10953,45 @@
           "follower_beliefs": [
             "Devoted Elite"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 30
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 289,
+          "is_barbarian": true
         }
       ],
       "gif": "Replays/Game_24.gif",
@@ -10525,7 +11112,8 @@
             "Mosques",
             "City of God"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 33
         },
         {
           "name": "n9306867842",
@@ -10584,7 +11172,8 @@
             "Devout Performers",
             "Viharas"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 16
         },
         {
           "name": "Lvxvcs",
@@ -10643,7 +11232,8 @@
             "Peace Gardens",
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 90
         },
         {
           "name": "AlexUnderHill",
@@ -10698,7 +11288,8 @@
           "follower_beliefs": [
             "Synagogues"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 39
         },
         {
           "name": "konoval_mik",
@@ -10750,7 +11341,8 @@
           "follower_beliefs": [
             "Feed the World"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 20
         },
         {
           "name": "Click4x",
@@ -10802,7 +11394,8 @@
             "Liturgical Drama",
             "Holy Warriors"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 48
         },
         {
           "name": "REPUNZEL2882",
@@ -10847,7 +11440,8 @@
             "Religious Community",
             "Pagodas"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 54
         },
         {
           "name": "Ouni0",
@@ -10889,7 +11483,8 @@
           "follower_beliefs": [
             "Guruship"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 48
         },
         {
           "name": "PVL01011900",
@@ -10931,7 +11526,45 @@
           "follower_beliefs": [
             "Choral Music"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 49
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 209,
+          "is_barbarian": true
         }
       ],
       "gif": "Replays/Game_25.gif",
@@ -11060,7 +11693,8 @@
             "Mandirs",
             "Holy Warriors"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 72
         },
         {
           "name": "AlexUnderHill",
@@ -11118,7 +11752,8 @@
             "Devout Performers",
             "Jesuit Education"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 31
         },
         {
           "name": "den_stu",
@@ -11193,7 +11828,8 @@
             "Pagodas",
             "Guruship"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 21
         },
         {
           "name": "REPUNZEL2882",
@@ -11250,7 +11886,8 @@
             "Divine inspiration",
             "Religious Community"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 30
         },
         {
           "name": "konoval_mik",
@@ -11295,7 +11932,8 @@
             "Work Ethic",
             "Religious Center"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 100
         },
         {
           "name": "Ouni0",
@@ -11340,7 +11978,8 @@
             "Cathedrals",
             "Liturgical Drama"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 29
         },
         {
           "name": "PVL01011900",
@@ -11385,7 +12024,8 @@
             "Synagogues",
             "Sacred Waters"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 51
         },
         {
           "name": "Bahahanchiklkm",
@@ -11429,7 +12069,8 @@
             "Mosques",
             "Viharas"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 62
         },
         {
           "name": "Lvxvcs",
@@ -11474,392 +12115,49 @@
             "Feed the World",
             "Peace Gardens"
           ],
-          "enhancer_beliefs": []
+          "enhancer_beliefs": [],
+          "military_deaths": 24
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 254,
+          "is_barbarian": true
         }
       ],
       "gif": "Replays/Game_26.gif",
       "flags": []
-    },
-    {
-      "id": 27,
-      "version": "4.20.15 (Build 1229)",
-      "number": "Game 27",
-      "players": [
-        {
-          "name": "Click4x",
-          "nation": "Япония"
-        },
-        {
-          "name": "Bahahanchiklkm",
-          "nation": "Буры"
-        },
-        {
-          "name": "EmperorPenguin01",
-          "nation": "Ацтеки"
-        },
-        {
-          "name": "AlexUnderHill",
-          "nation": "Дания"
-        },
-        {
-          "name": "konoval_mik",
-          "nation": "Колумбия"
-        },
-        {
-          "name": "REPUNZEL2882",
-          "nation": "Бруней"
-        }
-      ],
-      "winner": "Ацтеки",
-      "map": "Pangaea",
-      "playerCount": 6,
-      "endedOnTurn": "125",
-      "victoryType": "CC",
-      "survivors": [
-        {
-          "name": "EmperorPenguin01",
-          "nation": "Ацтеки",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [
-            {
-              "nation": "Буры",
-              "city": "Pretoria"
-            }
-          ],
-          "ideology": "Автократия",
-          "wonders": [
-            "Alhambra",
-            "Hanging Gardens",
-            "Taj Mahal",
-            "Temple of Artemis",
-            "Chichen Itza",
-            "Mausoleum of Halicarnassus",
-            "Stonehenge",
-            "Machu Picchu",
-            "Sistine Chapel",
-            "The Oracle"
-          ],
-          "wonders_built": [
-            "Alhambra",
-            "Hanging Gardens",
-            "Taj Mahal",
-            "Temple of Artemis",
-            "Chichen Itza",
-            "Mausoleum of Halicarnassus",
-            "Stonehenge",
-            "Machu Picchu"
-          ],
-          "techs": 49,
-          "policies": 24,
-          "policy_branches": [
-            "Традиция",
-            "Честь",
-            "Рационализм"
-          ],
-          "first_policy": "",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 1080,
-          "units": 61,
-          "strength": 20240,
-          "science": 467,
-          "cities": 15,
-          "population": 222,
-          "religion": "Islam",
-          "religion_state": "Усилена",
-          "pantheon": "Mystic Rituals",
-          "founder_beliefs": [
-            "Zakat",
-            "Just War"
-          ],
-          "follower_beliefs": [
-            "Viharas",
-            "Peace Gardens"
-          ],
-          "enhancer_beliefs": [],
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 4,
-          "wars_received": 1
-        },
-        {
-          "name": "Click4x",
-          "nation": "Япония",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [],
-          "ideology": "Порядок",
-          "wonders": [
-            "Great Mosque of Djenne",
-            "Brandenburg Gate",
-            "Kremlin",
-            "Himeji Castle",
-            "Great Wall",
-            "Petra"
-          ],
-          "wonders_built": [
-            "Great Mosque of Djenne",
-            "Brandenburg Gate",
-            "Kremlin",
-            "Himeji Castle",
-            "Great Wall",
-            "Petra"
-          ],
-          "techs": 48,
-          "policies": 23,
-          "policy_branches": [
-            "Воля",
-            "Честь",
-            "Набожность"
-          ],
-          "first_policy": "",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 659,
-          "units": 18,
-          "strength": 4632,
-          "science": 420,
-          "cities": 8,
-          "population": 118,
-          "religion": "Taoism",
-          "religion_state": "Усилена",
-          "pantheon": "Oral Tradition",
-          "founder_beliefs": [
-            "Messiah",
-            "Unity of the Prophets"
-          ],
-          "follower_beliefs": [
-            "City of God",
-            "Religious Community",
-            "Feed the World"
-          ],
-          "enhancer_beliefs": [],
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 1,
-          "wars_received": 1
-        },
-        {
-          "name": "AlexUnderHill",
-          "nation": "Дания",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [
-            {
-              "nation": "Колумбия",
-              "city": "Bogotá"
-            }
-          ],
-          "ideology": "Свобода",
-          "wonders": [
-            "Leaning Tower of Pisa",
-            "Terracotta Army",
-            "Statue of Zeus",
-            "The Great Lighthouse",
-            "Colossus"
-          ],
-          "wonders_built": [
-            "Leaning Tower of Pisa",
-            "Terracotta Army"
-          ],
-          "techs": 46,
-          "policies": 20,
-          "policy_branches": [
-            "Воля",
-            "Честь",
-            "Исследование"
-          ],
-          "first_policy": "",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 522,
-          "units": 18,
-          "strength": 2588,
-          "science": 290,
-          "cities": 6,
-          "population": 76,
-          "religion": "Датский штурвал",
-          "religion_state": "Усилена",
-          "pantheon": "God of the Sea",
-          "founder_beliefs": [
-            "Kotel",
-            "Dawah"
-          ],
-          "follower_beliefs": [
-            "Gurdwaras",
-            "Devout Performers"
-          ],
-          "enhancer_beliefs": [],
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 1,
-          "wars_received": 1
-        },
-        {
-          "name": "REPUNZEL2882",
-          "nation": "Бруней",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [],
-          "ideology": "Свобода",
-          "wonders": [
-            "The Great Library",
-            "The Pyramids",
-            "Angkor Wat",
-            "Notre Dame"
-          ],
-          "wonders_built": [
-            "The Great Library",
-            "The Pyramids",
-            "Angkor Wat",
-            "Notre Dame"
-          ],
-          "techs": 43,
-          "policies": 16,
-          "policy_branches": [
-            "Воля",
-            "Исследование"
-          ],
-          "first_policy": "Воля",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 497,
-          "units": 21,
-          "strength": 1705,
-          "science": 266,
-          "cities": 7,
-          "population": 95,
-          "religion": "Tengriism",
-          "religion_state": "Усилена",
-          "pantheon": "Work Spirituals",
-          "founder_beliefs": [
-            "Defender of the Faith",
-            "Tithe"
-          ],
-          "follower_beliefs": [
-            "Pagodas",
-            "Liturgical Drama"
-          ],
-          "enhancer_beliefs": [],
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 0,
-          "wars_received": 1
-        },
-        {
-          "name": "konoval_mik",
-          "nation": "Колумбия",
-          "alive": false,
-          "has_capital": false,
-          "capital_taken_by": "Дания",
-          "conquered_capitals": [],
-          "ideology": "",
-          "wonders": [],
-          "wonders_built": [],
-          "techs": 17,
-          "policies": 7,
-          "policy_branches": [
-            "Традиция"
-          ],
-          "first_policy": "Традиция",
-          "eliminated_turn": 69,
-          "capital_lost_turn": 69,
-          "era": "Античность",
-          "score": 182,
-          "units": 0,
-          "strength": 259,
-          "science": 20,
-          "cities": 0,
-          "population": 18,
-          "religion": "Zoroastrianism",
-          "religion_state": "Religion",
-          "pantheon": "Seafood Rituals",
-          "founder_beliefs": [
-            "Mithraea"
-          ],
-          "follower_beliefs": [
-            "Divine inspiration"
-          ],
-          "enhancer_beliefs": [],
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 0,
-          "wars_received": 1
-        },
-        {
-          "name": "Bahahanchiklkm",
-          "nation": "Буры",
-          "alive": false,
-          "has_capital": false,
-          "capital_taken_by": "Ацтеки",
-          "conquered_capitals": [],
-          "ideology": "",
-          "wonders": [],
-          "wonders_built": [],
-          "techs": 34,
-          "policies": 12,
-          "policy_branches": [
-            "Традиция",
-            "Эстетика"
-          ],
-          "first_policy": "Традиция",
-          "eliminated_turn": 106,
-          "capital_lost_turn": 106,
-          "era": "Возрождение",
-          "score": 162,
-          "units": 0,
-          "strength": 110,
-          "science": 30,
-          "cities": 0,
-          "population": 12,
-          "religion": "Christianity",
-          "religion_state": "Усилена",
-          "pantheon": "Goddess of the Fields",
-          "founder_beliefs": [
-            "Salat",
-            "Karma"
-          ],
-          "follower_beliefs": [
-            "Religious Art",
-            "Guruship"
-          ],
-          "enhancer_beliefs": [],
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 0,
-          "wars_received": 1
-        }
-      ],
-      "league": {
-        "cc": {
-          "nation": "Ацтеки",
-          "start": 125,
-          "plus": [
-            "Япония",
-            "Бруней",
-            "Дания"
-          ],
-          "minus": [],
-          "abstain": [],
-          "stop": true
-        }
-      },
-      "gif": "Replays/Game_27.gif"
     }
   ]
 }
