@@ -617,6 +617,7 @@
         <div class="faq-toc" data-i18n-aria="records.toc" aria-label="Разделы рекордов">
             <a href="#records-glory" data-i18n="records.section.glory">Слава</a>
             <a href="#records-war" data-i18n="records.section.war">Война</a>
+            <a href="#records-veteran" data-i18n="records.section.veteran">Ветеран</a>
             <a href="#records-style" data-i18n="records.section.style">Стиль</a>
             <a href="#records-peaks" data-i18n="records.section.peaks">Пики финала</a>
             <a href="#records-curious" data-i18n="records.section.curious">Курьёзы</a>
@@ -628,6 +629,10 @@
         <div class="stats-section" id="records-war">
             <h2 data-i18n="records.section.war">Война</h2>
             <div class="records-grid" id="recordsWar"></div>
+        </div>
+        <div class="stats-section" id="records-veteran">
+            <h2 data-i18n="records.section.veteran">Ветеран</h2>
+            <div class="records-grid" id="recordsVeteran"></div>
         </div>
         <div class="stats-section" id="records-style">
             <h2 data-i18n="records.section.style">Стиль</h2>
@@ -669,9 +674,9 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=records-icons-1"></script>
+<script src="js/i18n.js?v=veteran-1"></script>
 <script src="js/rating.js?v=lobby-pergame-1"></script>
-<script src="js/achievements.js?v=policy-filters-1"></script>
+<script src="js/achievements.js?v=veteran-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -1939,6 +1944,7 @@
             'most_wars_received',
             'most_military_deaths',
         ],
+        veteran: ['longest_play_streak'],
         style: [
             'piety_first_count',
             'piety_first_streak',
@@ -1994,6 +2000,7 @@
         const map = {
             glory: document.getElementById('recordsGlory'),
             war: document.getElementById('recordsWar'),
+            veteran: document.getElementById('recordsVeteran'),
             style: document.getElementById('recordsStyle'),
             peaks: document.getElementById('recordsPeaks'),
             curious: document.getElementById('recordsCurious'),

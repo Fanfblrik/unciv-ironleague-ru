@@ -414,6 +414,7 @@
       'records.empty': 'Пока нет данных для этого раздела.',
       'records.section.glory': 'Слава',
       'records.section.war': 'Война',
+      'records.section.veteran': 'Ветеран',
       'records.section.style': 'Стиль',
       'records.section.peaks': 'Пики финала',
       'records.section.curious': 'Курьёзы',
@@ -429,6 +430,10 @@
       'records.item.longest_win_streak.flavor': 'And again. And again.',
       'records.item.longest_win_streak.body':
         'У {player} самый длинный стрик побед подряд: {value}.',
+      'records.item.longest_play_streak.title': 'Ветеран',
+      'records.item.longest_play_streak.flavor': 'Железная явка',
+      'records.item.longest_play_streak.body':
+        'У {player} самый длинный стрик игр подряд без пропуска: {value} (из {games} учтённых).',
       'records.item.fastest_win.title': 'Самая быстрая победа',
       'records.item.fastest_win.flavor': 'Блицкриг',
       'records.item.fastest_win.body':
@@ -801,6 +806,7 @@
       'records.empty': 'No data for this section yet.',
       'records.section.glory': 'Glory',
       'records.section.war': 'War',
+      'records.section.veteran': 'Veteran',
       'records.section.style': 'Style',
       'records.section.peaks': 'Finale peaks',
       'records.section.curious': 'Oddities',
@@ -816,6 +822,10 @@
       'records.item.longest_win_streak.flavor': 'And again. And again.',
       'records.item.longest_win_streak.body':
         '{player} holds the longest consecutive win streak: {value}.',
+      'records.item.longest_play_streak.title': 'Veteran',
+      'records.item.longest_play_streak.flavor': 'Iron attendance',
+      'records.item.longest_play_streak.body':
+        '{player} holds the longest streak of consecutive games without a skip: {value} (of {games} counted).',
       'records.item.fastest_win.title': 'Fastest win',
       'records.item.fastest_win.flavor': 'Blitzkrieg',
       'records.item.fastest_win.body':
