@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=policy-filters-1">
+    <link rel="stylesheet" href="css/site.css?v=records-bg-1">
 
 </head>
 <body>
@@ -617,6 +617,7 @@
         <div class="faq-toc" data-i18n-aria="records.toc" aria-label="Разделы рекордов">
             <a href="#records-glory" data-i18n="records.section.glory">Слава</a>
             <a href="#records-war" data-i18n="records.section.war">Война</a>
+            <a href="#records-veteran" data-i18n="records.section.veteran">Ветеран</a>
             <a href="#records-style" data-i18n="records.section.style">Стиль</a>
             <a href="#records-peaks" data-i18n="records.section.peaks">Пики финала</a>
             <a href="#records-curious" data-i18n="records.section.curious">Курьёзы</a>
@@ -628,6 +629,10 @@
         <div class="stats-section" id="records-war">
             <h2 data-i18n="records.section.war">Война</h2>
             <div class="records-grid" id="recordsWar"></div>
+        </div>
+        <div class="stats-section" id="records-veteran">
+            <h2 data-i18n="records.section.veteran">Ветеран</h2>
+            <div class="records-grid" id="recordsVeteran"></div>
         </div>
         <div class="stats-section" id="records-style">
             <h2 data-i18n="records.section.style">Стиль</h2>
@@ -669,9 +674,9 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=policy-filters-1"></script>
+<script src="js/i18n.js?v=veteran-1"></script>
 <script src="js/rating.js?v=lobby-pergame-1"></script>
-<script src="js/achievements.js?v=policy-filters-1"></script>
+<script src="js/achievements.js?v=veteran-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -1939,6 +1944,7 @@
             'most_wars_received',
             'most_military_deaths',
         ],
+        veteran: ['longest_play_streak'],
         style: [
             'piety_first_count',
             'piety_first_streak',
@@ -1964,6 +1970,9 @@
 
     function formatRecordCard(item) {
         const title = tt(`records.item.${item.id}.title`);
+        const flavorKey = `records.item.${item.id}.flavor`;
+        let flavor = tt(flavorKey);
+        if (flavor === flavorKey) flavor = '';
         let body = tt(`records.item.${item.id}.body`, {
             player: item.player,
             value: item.value,
@@ -1973,7 +1982,10 @@
         if (body === `records.item.${item.id}.body`) {
             body = `${item.player}: ${item.value}`;
         }
+        const iconSrc = `img/records/${item.id}.svg`;
         return `<article class="record-card" id="record-${item.id}">
+            <img class="record-card-icon" src="${iconSrc}" alt="" width="64" height="64" loading="lazy">
+            <p class="record-card-flavor">${flavor}</p>
             <h3 class="record-card-title">${title === `records.item.${item.id}.title` ? item.id : title}</h3>
             <p class="record-card-player">${item.player}</p>
             <p class="record-card-value">${item.value}</p>
@@ -1988,6 +2000,7 @@
         const map = {
             glory: document.getElementById('recordsGlory'),
             war: document.getElementById('recordsWar'),
+            veteran: document.getElementById('recordsVeteran'),
             style: document.getElementById('recordsStyle'),
             peaks: document.getElementById('recordsPeaks'),
             curious: document.getElementById('recordsCurious'),

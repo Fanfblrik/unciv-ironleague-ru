@@ -147,6 +147,9 @@
       survivedNoCap: 0,
       winStreak: 0,
       winRun: 0,
+      playStreak: 0,
+      playRun: 0,
+      lastPlayIndex: -2,
       maxCities: 0,
       maxCitiesGame: null,
       maxScore: 0,
@@ -176,13 +179,18 @@
       return stats.get(name);
     }
 
-    for (const game of list) {
+    for (let gi = 0; gi < list.length; gi += 1) {
+      const game = list[gi];
       const wp = winnerPlayer(game);
       const turn = Number(game.endedOnTurn);
       const gNum = parseGameNum(game);
       for (const name of playerNames(game)) {
         const s = ensure(name);
         s.played += 1;
+        if (s.lastPlayIndex === gi - 1) s.playRun += 1;
+        else s.playRun = 1;
+        s.lastPlayIndex = gi;
+        s.playStreak = Math.max(s.playStreak, s.playRun);
         const row = survivorByName(game, name);
         const won = name === wp;
         let piety = false;
@@ -341,6 +349,13 @@
 
     const winStreak = pickMax(stats, (s) => s.winStreak, (s) => s.winStreak >= 2);
     if (winStreak) push('longest_win_streak', winStreak, String(winStreak.stat.winStreak));
+
+    const playStreak = pickMax(stats, (s) => s.playStreak, (s) => s.playStreak >= 3);
+    if (playStreak) {
+      push('longest_play_streak', playStreak, String(playStreak.stat.playStreak), {
+        games: playStreak.stat.played,
+      });
+    }
 
     let fastest = null;
     let slowest = null;
