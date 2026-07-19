@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=policy-filters-1">
+    <link rel="stylesheet" href="css/site.css?v=records-icons-1">
 
 </head>
 <body>
@@ -669,7 +669,7 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=policy-filters-1"></script>
+<script src="js/i18n.js?v=records-icons-1"></script>
 <script src="js/rating.js?v=lobby-pergame-1"></script>
 <script src="js/achievements.js?v=policy-filters-1"></script>
 <script>
@@ -1964,6 +1964,9 @@
 
     function formatRecordCard(item) {
         const title = tt(`records.item.${item.id}.title`);
+        const flavorKey = `records.item.${item.id}.flavor`;
+        let flavor = tt(flavorKey);
+        if (flavor === flavorKey) flavor = '';
         let body = tt(`records.item.${item.id}.body`, {
             player: item.player,
             value: item.value,
@@ -1973,7 +1976,10 @@
         if (body === `records.item.${item.id}.body`) {
             body = `${item.player}: ${item.value}`;
         }
+        const iconSrc = `img/records/${item.id}.svg`;
         return `<article class="record-card" id="record-${item.id}">
+            <img class="record-card-icon" src="${iconSrc}" alt="" width="64" height="64" loading="lazy">
+            <p class="record-card-flavor">${flavor}</p>
             <h3 class="record-card-title">${title === `records.item.${item.id}.title` ? item.id : title}</h3>
             <p class="record-card-player">${item.player}</p>
             <p class="record-card-value">${item.value}</p>
