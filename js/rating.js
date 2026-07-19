@@ -12,6 +12,8 @@
   const START_ELO_ZERO = 0;
   const START_K = 24;
   const ALLOWED_K = [20, 24, 32];
+  /** Default lobby elimination penalty when the UI toggle is on. */
+  const LOBBY_ELIM_PENALTY = 5;
 
   function gameFlags(game) {
     const flags = Array.isArray(game.flags) ? game.flags.map(String) : [];
@@ -207,6 +209,11 @@
     return survivors.find((s) => String(s.name || '').trim() === key) || null;
   }
 
+  /** Survivor is eliminated / dead in finale (`alive === false`). */
+  function isEliminated(survivor) {
+    return !!(survivor && survivor.alive === false);
+  }
+
   /**
    * Avg of finale development stats for lobby-avg rating.
    * Uses techs, policies, cities when finite numbers are present.
@@ -220,11 +227,19 @@
     return vals.reduce((a, b) => a + b, 0) / vals.length;
   }
 
+  function normalizeElimPenalty(options) {
+    const raw = options && options.elimPenalty;
+    const n = Number(raw);
+    return Number.isFinite(n) && n > 0 ? n : 0;
+  }
+
   /**
    * Zero-based lobby points: participation (N−1) for everyone;
-   * winner gets an extra +10. N = lobby size (player count).
+   * winner gets an extra +10. Optional elimPenalty subtracted if alive===false.
+   * N = lobby size (player count).
    */
-  function rateLobbyWinBonus(games) {
+  function rateLobbyWinBonus(games, options) {
+    const elimPenalty = normalizeElimPenalty(options);
     const ratings = new Map();
     const gamesPlayed = new Map();
     for (const game of eligibleGames(games)) {
@@ -234,7 +249,10 @@
       const n = order.length;
       const base = n - 1;
       order.forEach((name, i) => {
-        const delta = i === 0 ? base + 10 : base;
+        let delta = i === 0 ? base + 10 : base;
+        if (elimPenalty && isEliminated(survivorByName(game, name))) {
+          delta -= elimPenalty;
+        }
         ratings.set(name, ratings.get(name) + delta);
         gamesPlayed.set(name, (gamesPlayed.get(name) || 0) + 1);
       });
@@ -245,8 +263,10 @@
   /**
    * Zero-based lobby points: (N−1) + Avg for every player,
    * where Avg is the mean of available techs / policies / cities from finale.
+   * Optional elimPenalty subtracted if alive===false.
    */
-  function rateLobbyAvgBonus(games) {
+  function rateLobbyAvgBonus(games, options) {
+    const elimPenalty = normalizeElimPenalty(options);
     const ratings = new Map();
     const gamesPlayed = new Map();
     for (const game of eligibleGames(games)) {
@@ -257,7 +277,10 @@
       const base = n - 1;
       order.forEach((name) => {
         const avg = finaleMetricsAvg(survivorByName(game, name));
-        const delta = base + avg;
+        let delta = base + avg;
+        if (elimPenalty && isEliminated(survivorByName(game, name))) {
+          delta -= elimPenalty;
+        }
         ratings.set(name, ratings.get(name) + delta);
         gamesPlayed.set(name, (gamesPlayed.get(name) || 0) + 1);
       });
@@ -281,6 +304,8 @@
     const K = normalizeK(k);
     const zeroBase = !!(options && options.zeroBase);
     const start = zeroBase ? START_ELO_ZERO : START_ELO;
+    const elimPenalty = normalizeElimPenalty(options);
+    const lobbyOpts = { elimPenalty };
     const ffa = rateFfaLinear(games, K, start);
     const pairwise = ratePairwise(games, K, start);
     const finish = rateFinishPlace(games, { zeroBase });
@@ -340,10 +365,11 @@
       pairwise,
       finish,
       combined,
-      lobbyWin: rateLobbyWinBonus(games),
-      lobbyAvg: rateLobbyAvgBonus(games),
+      lobbyWin: rateLobbyWinBonus(games, lobbyOpts),
+      lobbyAvg: rateLobbyAvgBonus(games, lobbyOpts),
       k: K,
       zeroBase,
+      elimPenalty,
       eligibleCount: eligibleGames(games).length,
       excludedCount: (games || []).filter(isExcludedGame).length,
     };
@@ -354,8 +380,10 @@
     START_ELO_ZERO,
     START_K,
     ALLOWED_K,
+    LOBBY_ELIM_PENALTY,
     normalizeK,
     isExcludedGame,
+    isEliminated,
     eligibleGames,
     placementOrder,
     rateLobbyWinBonus,
