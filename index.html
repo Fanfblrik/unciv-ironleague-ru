@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=records-bg-1">
+    <link rel="stylesheet" href="css/site.css?v=records-layout-2">
 
 </head>
 <body>
@@ -617,7 +617,6 @@
         <div class="faq-toc" data-i18n-aria="records.toc" aria-label="Разделы рекордов">
             <a href="#records-glory" data-i18n="records.section.glory">Слава</a>
             <a href="#records-war" data-i18n="records.section.war">Война</a>
-            <a href="#records-veteran" data-i18n="records.section.veteran">Ветеран</a>
             <a href="#records-style" data-i18n="records.section.style">Стиль</a>
             <a href="#records-peaks" data-i18n="records.section.peaks">Пики финала</a>
             <a href="#records-curious" data-i18n="records.section.curious">Курьёзы</a>
@@ -629,10 +628,6 @@
         <div class="stats-section" id="records-war">
             <h2 data-i18n="records.section.war">Война</h2>
             <div class="records-grid" id="recordsWar"></div>
-        </div>
-        <div class="stats-section" id="records-veteran">
-            <h2 data-i18n="records.section.veteran">Ветеран</h2>
-            <div class="records-grid" id="recordsVeteran"></div>
         </div>
         <div class="stats-section" id="records-style">
             <h2 data-i18n="records.section.style">Стиль</h2>
@@ -1935,7 +1930,14 @@
     }
 
     const RECORD_SECTIONS = {
-        glory: ['most_wins', 'best_winrate', 'longest_win_streak', 'fastest_win', 'slowest_win'],
+        glory: [
+            'most_wins',
+            'best_winrate',
+            'longest_win_streak',
+            'longest_play_streak',
+            'fastest_win',
+            'slowest_win',
+        ],
         war: [
             'wins_all_with_caps',
             'most_caps_single_win',
@@ -1944,7 +1946,6 @@
             'most_wars_received',
             'most_military_deaths',
         ],
-        veteran: ['longest_play_streak'],
         style: [
             'piety_first_count',
             'piety_first_streak',
@@ -1984,11 +1985,13 @@
         }
         const iconSrc = `img/records/${item.id}.svg`;
         return `<article class="record-card" id="record-${item.id}">
-            <img class="record-card-icon" src="${iconSrc}" alt="" width="64" height="64" loading="lazy">
+            <div class="record-card-media">
+                <img class="record-card-icon" src="${iconSrc}" alt="" width="64" height="64" loading="lazy">
+                <p class="record-card-value">${item.value}</p>
+            </div>
             <p class="record-card-flavor">${flavor}</p>
             <h3 class="record-card-title">${title === `records.item.${item.id}.title` ? item.id : title}</h3>
             <p class="record-card-player">${item.player}</p>
-            <p class="record-card-value">${item.value}</p>
             <p class="record-card-body">${body}</p>
         </article>`;
     }
@@ -2000,7 +2003,6 @@
         const map = {
             glory: document.getElementById('recordsGlory'),
             war: document.getElementById('recordsWar'),
-            veteran: document.getElementById('recordsVeteran'),
             style: document.getElementById('recordsStyle'),
             peaks: document.getElementById('recordsPeaks'),
             curious: document.getElementById('recordsCurious'),
