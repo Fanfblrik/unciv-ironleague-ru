@@ -622,9 +622,15 @@
         }
 
         .stats-section .hint {
-            color: rgba(255, 255, 255, 0.55);
-            font-size: 0.85rem;
+            color: rgba(255, 248, 230, 0.9);
+            font-size: 0.9rem;
             margin-bottom: 14px;
+            line-height: 1.5;
+            white-space: pre-line;
+            background: rgba(0, 0, 0, 0.28);
+            border: 1px solid rgba(255, 215, 0, 0.18);
+            border-radius: 10px;
+            padding: 10px 12px;
         }
 
         .stats-table-wrap {
@@ -650,6 +656,22 @@
             font-weight: 600;
             cursor: pointer;
             user-select: none;
+        }
+
+        table.stats-table th[data-sort]::after {
+            content: ' ↕';
+            opacity: 0.35;
+            font-size: 0.85em;
+        }
+
+        table.stats-table th[data-sort].sort-asc::after {
+            content: ' ▲';
+            opacity: 1;
+        }
+
+        table.stats-table th[data-sort].sort-desc::after {
+            content: ' ▼';
+            opacity: 1;
         }
 
         table.stats-table th:hover {
@@ -1611,6 +1633,9 @@
             <a href="#stats-nations" data-i18n="stats.nations">Нации: пики и винрейт</a>
             <a href="#stats-player-detail" data-i18n="stats.detail">Игроки: нации и финал</a>
             <a href="#stats-player-averages" data-i18n="stats.averages">Игроки: средние показатели</a>
+            <a href="#stats-policies" data-i18n="stats.policies">Институты и идеологии</a>
+            <a href="#stats-wonders" data-i18n="stats.wondersBuilt">Чудеса (свои)</a>
+            <a href="#stats-beliefs" data-i18n="stats.beliefs">Религиозные верования</a>
         </div>
         <div class="stats-section" id="stats-winrate">
             <h2 data-i18n="stats.winrate">Винрейт игроков</h2>
@@ -1659,8 +1684,10 @@
                         <tr>
                             <th data-sort="name" data-i18n="stats.col.player">Игрок</th>
                             <th data-sort="topNation" data-i18n="stats.col.topNation">Чаще всего</th>
+                            <th data-sort="topIdeology" data-i18n="stats.col.topIdeology">Идеология</th>
                             <th class="num" data-sort="uniqueNations" data-i18n="stats.col.uniqueNations">Уник. наций</th>
                             <th class="num" data-sort="wonders" data-i18n="stats.col.wonders">Чудес (сумма)</th>
+                            <th class="num" data-sort="wondersBuilt" data-i18n="stats.col.wondersBuilt">Чудес своих</th>
                             <th class="num" data-sort="conquered" data-i18n="stats.col.conquered">Столиц захвачено</th>
                         </tr>
                     </thead>
@@ -1692,6 +1719,125 @@
                 </table>
             </div>
         </div>
+
+        <div class="stats-section" id="stats-policies">
+            <h2 data-i18n="stats.policies">Институты и идеологии</h2>
+            <p class="hint" data-i18n="stats.policiesHint">Первый институт, открытые ветки и идеологии. Ср. место — нормированное (1 = победа, 0 = последнее), чтобы уравнять лобби разного размера.</p>
+            <h3 data-i18n="stats.firstPolicies">Первый институт</h3>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="firstPolicyStatsTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name" data-i18n="stats.col.item">Институт</th>
+                            <th class="num" data-sort="picks" data-i18n="stats.col.picks">Пиков</th>
+                            <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
+                            <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="avgPlace" data-i18n="stats.col.avgPlaceNorm">Ср. место</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <h3 data-i18n="stats.policyBranches">Ветки институтов</h3>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="policyBranchStatsTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name" data-i18n="stats.col.item">Ветка</th>
+                            <th class="num" data-sort="picks" data-i18n="stats.col.picks">Пиков</th>
+                            <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
+                            <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="avgPlace" data-i18n="stats.col.avgPlaceNorm">Ср. место</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <h3 data-i18n="stats.ideologies">Идеологии</h3>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="ideologyStatsTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name" data-i18n="stats.col.ideology">Идеология</th>
+                            <th class="num" data-sort="picks" data-i18n="stats.col.picks">Пиков</th>
+                            <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
+                            <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="avgPlace" data-i18n="stats.col.avgPlaceNorm">Ср. место</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="stats-section" id="stats-wonders">
+            <h2 data-i18n="stats.wondersBuilt">Чудеса (свои)</h2>
+            <p class="hint" data-i18n="stats.wondersBuiltHint">Только чудеса в городах, основанных этой цивилизацией (без захваченных). Нужно поле wonders_built в Games.json.</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="wonderBuiltStatsTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name" data-i18n="stats.col.wonder">Чудо</th>
+                            <th class="num" data-sort="picks" data-i18n="stats.col.builds">Построек</th>
+                            <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
+                            <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="avgPlace" data-i18n="stats.col.avgPlaceNorm">Ср. место</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="stats-section" id="stats-beliefs">
+            <h2 data-i18n="stats.beliefs">Религиозные верования</h2>
+            <p class="hint" data-i18n="stats.beliefsHint">Пантеоны, верования основателя и последователей из финального сейва.</p>
+            <h3 data-i18n="stats.pantheons">Пантеоны</h3>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="pantheonStatsTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name" data-i18n="stats.col.belief">Верование</th>
+                            <th class="num" data-sort="picks" data-i18n="stats.col.picks">Пиков</th>
+                            <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
+                            <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="avgPlace" data-i18n="stats.col.avgPlaceNorm">Ср. место</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <h3 data-i18n="stats.founderBeliefs">Верования основателя</h3>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="founderBeliefStatsTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name" data-i18n="stats.col.belief">Верование</th>
+                            <th class="num" data-sort="picks" data-i18n="stats.col.picks">Пиков</th>
+                            <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
+                            <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="avgPlace" data-i18n="stats.col.avgPlaceNorm">Ср. место</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <h3 data-i18n="stats.followerBeliefs">Верования последователей</h3>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="followerBeliefStatsTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name" data-i18n="stats.col.belief">Верование</th>
+                            <th class="num" data-sort="picks" data-i18n="stats.col.picks">Пиков</th>
+                            <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
+                            <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="avgPlace" data-i18n="stats.col.avgPlaceNorm">Ср. место</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
 
@@ -1711,6 +1857,7 @@
             <a href="#rating-ffa" data-i18n="rating.ffa">Elo FFA</a>
             <a href="#rating-pairwise" data-i18n="rating.pairwise">Elo pairwise</a>
             <a href="#rating-finish" data-i18n="rating.finish">Рейтинг по финишу</a>
+            <a href="#rating-zero" data-i18n="rating.zero">Рейтинг от нуля</a>
         </div>
 
         <div class="stats-section" id="rating-combined">
@@ -1788,6 +1935,28 @@
                 </table>
             </div>
         </div>
+
+        <div class="stats-section" id="rating-zero">
+            <h2 data-i18n="rating.zero">Рейтинг от нуля</h2>
+            <p class="hint" data-i18n="rating.zeroHint">Те же три метода, но старт Elo = 0 (без базы 1000). Финиш — среднее нормированное место × 100 (0…100).</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="ratingZeroCombinedTable">
+                    <thead>
+                        <tr>
+                            <th class="num" data-sort="place" data-i18n="rating.col.place">#</th>
+                            <th data-sort="name" data-i18n="rating.col.player">Игрок</th>
+                            <th class="num" data-sort="rating" data-i18n="rating.col.rating">Рейтинг</th>
+                            <th class="num" data-sort="avgPlace" data-i18n="rating.col.avgPlace">Ср. место</th>
+                            <th class="num" data-sort="placeFfa" data-i18n="rating.col.pFfa">Место FFA</th>
+                            <th class="num" data-sort="placePairwise" data-i18n="rating.col.pPair">Место pair</th>
+                            <th class="num" data-sort="placeFinish" data-i18n="rating.col.pFin">Место finish</th>
+                            <th class="num" data-sort="games" data-i18n="rating.col.games">Игр</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <div class="view-panel" id="viewTierlist">
@@ -1838,8 +2007,8 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=wonders-wrap-1"></script>
-<script src="js/rating.js?v=wonders-wrap-1"></script>
+<script src="js/i18n.js?v=wonders-split-2"></script>
+<script src="js/rating.js?v=stats-zero-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -2464,6 +2633,7 @@
             : true;
         const ideology = (row.ideology || '').trim();
         const wonders = Array.isArray(row.wonders) ? row.wonders.filter(Boolean) : [];
+        const wondersBuiltRaw = Array.isArray(row.wonders_built) ? row.wonders_built.filter(Boolean) : null;
         const name = (row.name || '').trim() || '—';
         const hasCapital = Object.prototype.hasOwnProperty.call(row, 'has_capital')
             ? Boolean(row.has_capital)
@@ -2497,13 +2667,43 @@
               }</ul></div>`
             : '';
 
-        const wondersBlock = isAlive
-            ? (wonders.length
-                ? `<div class="survivor-wonders">${tt('wonders.title')}<ul class="survivor-wonders-list">${
-                    wonders.map(w => renderWonderItem(w)).join('')
-                  }</ul></div>`
-                : `<div class="survivor-wonders">${tt('wonders.none')}</div>`)
-            : '';
+        let wondersBlock = '';
+        if (isAlive) {
+            if (wondersBuiltRaw !== null) {
+                const builtSet = new Set(wondersBuiltRaw);
+                const built = wonders.filter((w) => builtSet.has(w));
+                for (const w of wondersBuiltRaw) {
+                    if (!built.includes(w)) built.push(w);
+                }
+                const taken = wonders.filter((w) => !builtSet.has(w));
+                if (!built.length && !taken.length) {
+                    wondersBlock = `<div class="survivor-wonders">${tt('wonders.none')}</div>`;
+                } else {
+                    const parts = [];
+                    if (built.length) {
+                        parts.push(
+                            `<div class="survivor-wonders">${tt('wonders.built')}<ul class="survivor-wonders-list">${
+                                built.map((w) => renderWonderItem(w)).join('')
+                            }</ul></div>`,
+                        );
+                    }
+                    if (taken.length) {
+                        parts.push(
+                            `<div class="survivor-wonders survivor-wonders-taken">${tt('wonders.taken')}<ul class="survivor-wonders-list">${
+                                taken.map((w) => renderWonderItem(w)).join('')
+                            }</ul></div>`,
+                        );
+                    }
+                    wondersBlock = parts.join('');
+                }
+            } else if (wonders.length) {
+                wondersBlock = `<div class="survivor-wonders">${tt('wonders.title')}<ul class="survivor-wonders-list">${
+                    wonders.map((w) => renderWonderItem(w)).join('')
+                }</ul></div>`;
+            } else {
+                wondersBlock = `<div class="survivor-wonders">${tt('wonders.none')}</div>`;
+            }
+        }
 
         const ideologyMeta = ideology
             ? ` · <span class="survivor-ideology">${displayPolicyName(ideology)}</span>`
@@ -2908,31 +3108,40 @@
     function renderRatingTables() {
         if (!window.IronLeagueRating || !gamesData.length) return;
         const result = IronLeagueRating.computeAll(gamesData, ratingK);
+        const zero = IronLeagueRating.computeAll(gamesData, ratingK, { zeroBase: true });
         const simpleRow = (r) => `<tr>
             <td class="num">${r.place}</td>
             <td>${r.name}</td>
             <td class="num">${r.rating.toFixed(2)}</td>
             <td class="num">${r.games}</td>
         </tr>`;
+        const combinedRow = (r) => `<tr>
+            <td class="num">${r.place}</td>
+            <td>${r.name}</td>
+            <td class="num">${r.rating.toFixed(2)}</td>
+            <td class="num">${r.avgPlace != null ? r.avgPlace.toFixed(2) : '—'}</td>
+            <td class="num">${r.placeFfa ?? '—'}</td>
+            <td class="num">${r.placePairwise ?? '—'}</td>
+            <td class="num">${r.placeFinish ?? '—'}</td>
+            <td class="num">${r.games}</td>
+        </tr>`;
         fillSortableTable(
             document.getElementById('ratingCombinedTable'),
             result.combined,
-            (r) => `<tr>
-                <td class="num">${r.place}</td>
-                <td>${r.name}</td>
-                <td class="num">${r.rating.toFixed(2)}</td>
-                <td class="num">${r.avgPlace != null ? r.avgPlace.toFixed(2) : '—'}</td>
-                <td class="num">${r.placeFfa ?? '—'}</td>
-                <td class="num">${r.placePairwise ?? '—'}</td>
-                <td class="num">${r.placeFinish ?? '—'}</td>
-                <td class="num">${r.games}</td>
-            </tr>`,
+            combinedRow,
             'rating',
             'desc',
         );
         fillSortableTable(document.getElementById('ratingFfaTable'), result.ffa, simpleRow, 'rating', 'desc');
         fillSortableTable(document.getElementById('ratingPairwiseTable'), result.pairwise, simpleRow, 'rating', 'desc');
         fillSortableTable(document.getElementById('ratingFinishTable'), result.finish, simpleRow, 'rating', 'desc');
+        fillSortableTable(
+            document.getElementById('ratingZeroCombinedTable'),
+            zero.combined,
+            combinedRow,
+            'rating',
+            'desc',
+        );
     }
 
     // Запуск
@@ -3064,9 +3273,69 @@
             .join(', ') || '—';
     }
 
+    function topKeyFromCounts(countsMap) {
+        let best = '';
+        let bestCount = 0;
+        for (const [name, count] of countsMap.entries()) {
+            if (count > bestCount) {
+                bestCount = count;
+                best = name;
+            }
+        }
+        return best || '—';
+    }
+
+    function ensurePickStat(map, name) {
+        if (!map.has(name)) {
+            map.set(name, { name, picks: 0, wins: 0, placeSum: 0, placeN: 0 });
+        }
+        return map.get(name);
+    }
+
+    function recordPick(map, name, won, placeScore) {
+        const key = String(name || '').trim();
+        if (!key) return;
+        const row = ensurePickStat(map, key);
+        row.picks += 1;
+        if (won) row.wins += 1;
+        if (placeScore !== null && placeScore !== undefined && Number.isFinite(placeScore)) {
+            row.placeSum += placeScore;
+            row.placeN += 1;
+        }
+    }
+
+    function finalizePickRows(map) {
+        return [...map.values()].map((row) => ({
+            ...row,
+            winrate: pct(row.wins, row.picks),
+            avgPlace: row.placeN ? Math.round((row.placeSum / row.placeN) * 1000) / 1000 : null,
+        }));
+    }
+
+    function pickStatRowHtml(row, labelFn) {
+        const label = labelFn ? labelFn(row.name) : row.name;
+        const avg = row.avgPlace === null || row.avgPlace === undefined
+            ? '—'
+            : row.avgPlace.toFixed(3);
+        return `<tr>
+            <td>${label}</td>
+            <td class="num">${row.picks}</td>
+            <td class="num">${row.wins}</td>
+            <td class="num">${row.winrate}%</td>
+            <td class="num">${avg}</td>
+        </tr>`;
+    }
+
     function computeArchiveStats(games) {
         const players = new Map();
         const nationStats = new Map();
+        const firstPolicyStats = new Map();
+        const policyBranchStats = new Map();
+        const ideologyStats = new Map();
+        const wonderBuiltStats = new Map();
+        const pantheonStats = new Map();
+        const founderBeliefStats = new Map();
+        const followerBeliefStats = new Map();
 
         const ensurePlayer = (name) => {
             if (!players.has(name)) {
@@ -3077,7 +3346,9 @@
                     capitalLosses: 0,
                     eliminated: 0,
                     nationCounts: new Map(),
+                    ideologyCounts: new Map(),
                     wonders: 0,
+                    wondersBuilt: 0,
                     conquered: 0,
                     statsGames: 0,
                     sumScore: 0,
@@ -3107,7 +3378,6 @@
             return nationStats.get(nation);
         };
 
-        // Seed every mod nation so unpicked civs show 0 / 0%.
         for (const n of nations) {
             if (n && n.rus) ensureNation(n.rus);
         }
@@ -3116,7 +3386,12 @@
             if (isExcludedGame(game)) continue;
             const roster = Array.isArray(game.players) ? game.players : [];
             const winnerNation = game.winner || '';
-            let winnerName = '';
+            const placeOrder = (window.IronLeagueRating && IronLeagueRating.placementOrder)
+                ? IronLeagueRating.placementOrder(game)
+                : roster.map((p) => String(p.name || '').trim()).filter(Boolean);
+            const placeIndex = new Map(placeOrder.map((name, i) => [name, i]));
+            const lobbyN = placeOrder.length;
+
             for (const p of roster) {
                 const name = (p.name || '').trim();
                 const nation = (p.nation || '').trim();
@@ -3128,7 +3403,6 @@
                 nat.picks += 1;
                 if (nation === winnerNation) {
                     row.wins += 1;
-                    winnerName = name;
                     nat.wins += 1;
                 }
             }
@@ -3140,6 +3414,8 @@
                 if (s.has_capital === false) row.capitalLosses += 1;
                 if (s.alive === false) row.eliminated += 1;
                 if (Array.isArray(s.wonders)) row.wonders += s.wonders.length;
+                const built = Array.isArray(s.wonders_built) ? s.wonders_built : null;
+                if (built) row.wondersBuilt += built.length;
                 if (Array.isArray(s.conquered_capitals)) row.conquered += s.conquered_capitals.length;
 
                 row.statsGames += 1;
@@ -3164,6 +3440,37 @@
                         (row.firstPolicyCounts.get(firstPol) || 0) + 1,
                     );
                 }
+                const ideology = (s.ideology || '').trim();
+                if (ideology) {
+                    row.ideologyCounts.set(
+                        ideology,
+                        (row.ideologyCounts.get(ideology) || 0) + 1,
+                    );
+                }
+
+                const idx = placeIndex.has(name) ? placeIndex.get(name) : null;
+                const placeScore = (idx !== null && lobbyN > 1)
+                    ? (lobbyN - 1 - idx) / (lobbyN - 1)
+                    : null;
+                const won = (s.nation || '') === winnerNation;
+
+                if (firstPol) recordPick(firstPolicyStats, firstPol, won, placeScore);
+                for (const branch of (Array.isArray(s.policy_branches) ? s.policy_branches : [])) {
+                    recordPick(policyBranchStats, branch, won, placeScore);
+                }
+                if (ideology) recordPick(ideologyStats, ideology, won, placeScore);
+                for (const wonder of (built || [])) {
+                    recordPick(wonderBuiltStats, wonder, won, placeScore);
+                }
+                if ((s.pantheon || '').trim()) {
+                    recordPick(pantheonStats, s.pantheon, won, placeScore);
+                }
+                for (const belief of (Array.isArray(s.founder_beliefs) ? s.founder_beliefs : [])) {
+                    recordPick(founderBeliefStats, belief, won, placeScore);
+                }
+                for (const belief of (Array.isArray(s.follower_beliefs) ? s.follower_beliefs : [])) {
+                    recordPick(followerBeliefStats, belief, won, placeScore);
+                }
             }
         }
 
@@ -3180,6 +3487,7 @@
                 ...p,
                 winrate: pct(p.wins, p.games),
                 topNation,
+                topIdeology: topKeyFromCounts(p.ideologyCounts),
                 uniqueNations: p.nationCounts.size,
                 gamesWithStats: p.statsGames,
                 avgScore: avg(p.sumScore, p.nScore),
@@ -3198,7 +3506,17 @@
             winrate: pct(n.wins, n.picks),
         }));
 
-        return { playerRows, nationRows };
+        return {
+            playerRows,
+            nationRows,
+            firstPolicyRows: finalizePickRows(firstPolicyStats),
+            policyBranchRows: finalizePickRows(policyBranchStats),
+            ideologyRows: finalizePickRows(ideologyStats),
+            wonderBuiltRows: finalizePickRows(wonderBuiltStats),
+            pantheonRows: finalizePickRows(pantheonStats),
+            founderBeliefRows: finalizePickRows(founderBeliefStats),
+            followerBeliefRows: finalizePickRows(followerBeliefStats),
+        };
     }
 
     function fillSortableTable(table, rows, renderRow, defaultSort, defaultDir) {
@@ -3207,18 +3525,35 @@
         let sortKey = defaultSort;
         let sortDir = defaultDir || 'desc';
 
+        const paintHeaders = () => {
+            table.querySelectorAll('th[data-sort]').forEach((th) => {
+                th.classList.remove('sort-asc', 'sort-desc');
+                if (th.dataset.sort === sortKey) {
+                    th.classList.add(sortDir === 'asc' ? 'sort-asc' : 'sort-desc');
+                }
+            });
+        };
+
         const paint = () => {
             const sorted = [...rows].sort((a, b) => {
                 const av = a[sortKey];
                 const bv = b[sortKey];
                 if (typeof av === 'string' || typeof bv === 'string') {
                     return sortDir === 'asc'
-                        ? String(av).localeCompare(String(bv), localeTag())
-                        : String(bv).localeCompare(String(av), localeTag());
+                        ? String(av ?? '').localeCompare(String(bv ?? ''), localeTag())
+                        : String(bv ?? '').localeCompare(String(av ?? ''), localeTag());
                 }
-                return sortDir === 'asc' ? (av - bv) : (bv - av);
+                const an = Number(av);
+                const bn = Number(bv);
+                const aNull = av === null || av === undefined || Number.isNaN(an);
+                const bNull = bv === null || bv === undefined || Number.isNaN(bn);
+                if (aNull && bNull) return 0;
+                if (aNull) return 1;
+                if (bNull) return -1;
+                return sortDir === 'asc' ? (an - bn) : (bn - an);
             });
             tbody.innerHTML = sorted.map(renderRow).join('');
+            paintHeaders();
             hydrateNationPortraits(tbody);
         };
 
@@ -3238,7 +3573,17 @@
 
     function renderStatsTables() {
         if (!gamesData.length) return;
-        const { playerRows, nationRows } = computeArchiveStats(rankedGamesOnly(gamesData));
+        const {
+            playerRows,
+            nationRows,
+            firstPolicyRows,
+            policyBranchRows,
+            ideologyRows,
+            wonderBuiltRows,
+            pantheonRows,
+            founderBeliefRows,
+            followerBeliefRows,
+        } = computeArchiveStats(rankedGamesOnly(gamesData));
 
         fillSortableTable(
             document.getElementById('playerWinrateTable'),
@@ -3274,8 +3619,10 @@
             (p) => `<tr>
                 <td>${p.name}</td>
                 <td><span class="nation-cell">${p.topNation !== '—' ? renderNationPortrait(p.topNation, 'player-nation-mini') : ''}${p.topNation !== '—' ? displayNationName(p.topNation) : '—'}</span></td>
+                <td>${p.topIdeology !== '—' ? displayPolicyName(p.topIdeology) : '—'}</td>
                 <td class="num">${p.uniqueNations}</td>
                 <td class="num">${p.wonders}</td>
+                <td class="num">${p.wondersBuilt}</td>
                 <td class="num">${p.conquered}</td>
             </tr>`,
             'games',
@@ -3299,6 +3646,58 @@
                 <td>${p.topPolicies || '—'}</td>
             </tr>`,
             'gamesWithStats',
+            'desc',
+        );
+
+        const policyLabel = (name) => displayPolicyName(name);
+        const wonderLabel = (name) => wonderNameRu(name);
+        fillSortableTable(
+            document.getElementById('firstPolicyStatsTable'),
+            firstPolicyRows,
+            (r) => pickStatRowHtml(r, policyLabel),
+            'picks',
+            'desc',
+        );
+        fillSortableTable(
+            document.getElementById('policyBranchStatsTable'),
+            policyBranchRows,
+            (r) => pickStatRowHtml(r, policyLabel),
+            'picks',
+            'desc',
+        );
+        fillSortableTable(
+            document.getElementById('ideologyStatsTable'),
+            ideologyRows,
+            (r) => pickStatRowHtml(r, policyLabel),
+            'picks',
+            'desc',
+        );
+        fillSortableTable(
+            document.getElementById('wonderBuiltStatsTable'),
+            wonderBuiltRows,
+            (r) => pickStatRowHtml(r, wonderLabel),
+            'picks',
+            'desc',
+        );
+        fillSortableTable(
+            document.getElementById('pantheonStatsTable'),
+            pantheonRows,
+            (r) => pickStatRowHtml(r),
+            'picks',
+            'desc',
+        );
+        fillSortableTable(
+            document.getElementById('founderBeliefStatsTable'),
+            founderBeliefRows,
+            (r) => pickStatRowHtml(r),
+            'picks',
+            'desc',
+        );
+        fillSortableTable(
+            document.getElementById('followerBeliefStatsTable'),
+            followerBeliefRows,
+            (r) => pickStatRowHtml(r),
+            'picks',
             'desc',
         );
     }

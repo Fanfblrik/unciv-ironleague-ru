@@ -49,7 +49,9 @@
           "capital_taken_by": "",
           "conquered_capitals": [],
           "ideology": "",
-          "wonders": [],
+          "wonders": [
+            "Notre Dame"
+          ],
           "techs": 20,
           "policies": 5,
           "policy_branches": [
@@ -71,7 +73,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Notre Dame"
+          ],
+          "pantheon": "Oral Tradition",
+          "founder_beliefs": [
+            "Swords into Ploughshares",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Liturgical Drama",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "ICanSeeForever",
@@ -106,7 +121,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Statue of Zeus",
+            "Temple of Artemis"
+          ],
+          "pantheon": "God of War",
+          "founder_beliefs": [
+            "Initiation Rites"
+          ],
+          "follower_beliefs": [
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Click4x",
@@ -117,7 +144,8 @@
           "conquered_capitals": [],
           "ideology": "",
           "wonders": [
-            "Terracotta Army"
+            "Terracotta Army",
+            "Colossus"
           ],
           "techs": 21,
           "policies": 7,
@@ -140,7 +168,21 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Terracotta Army",
+            "Colossus"
+          ],
+          "pantheon": "Earth Mother",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Devoted Elite",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -151,10 +193,10 @@
           "conquered_capitals": [],
           "ideology": "",
           "wonders": [
-            "Mausoleum of Halicarnassus",
             "The Oracle",
             "The Great Lighthouse",
-            "Great Mosque of Djenne"
+            "Great Mosque of Djenne",
+            "Mausoleum of Halicarnassus"
           ],
           "techs": 26,
           "policies": 10,
@@ -179,7 +221,23 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "The Oracle",
+            "The Great Lighthouse",
+            "Great Mosque of Djenne",
+            "Mausoleum of Halicarnassus"
+          ],
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Underground Sect",
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Devout Performers",
+            "Guruship"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ouni0",
@@ -214,7 +272,15 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "The Pyramids",
+            "Great Wall"
+          ],
+          "pantheon": "God-King",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -249,7 +315,21 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "The Great Library",
+            "Stonehenge"
+          ],
+          "pantheon": "Goddess of Love",
+          "founder_beliefs": [
+            "Indulgences",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Choral Music",
+            "Peace Gardens"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -260,6 +340,8 @@
           "conquered_capitals": [],
           "ideology": "",
           "wonders": [
+            "Chichen Itza",
+            "Hanging Gardens",
             "Petra"
           ],
           "techs": 20,
@@ -285,7 +367,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Chichen Itza",
+            "Hanging Gardens",
+            "Petra"
+          ],
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -372,7 +463,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Machu Picchu"
+          ],
+          "pantheon": "One with Nature",
+          "founder_beliefs": [
+            "Salat",
+            "Swords into Ploughshares"
+          ],
+          "follower_beliefs": [
+            "Devout Performers",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Click4x",
@@ -384,7 +488,9 @@
           "ideology": "",
           "wonders": [
             "The Great Lighthouse",
-            "Colossus"
+            "Colossus",
+            "Great Mosque of Djenne",
+            "Hagia Sophia"
           ],
           "techs": 25,
           "policies": 10,
@@ -408,7 +514,21 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "The Great Lighthouse",
+            "Colossus"
+          ],
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Dawah",
+            "Defender of the Faith"
+          ],
+          "follower_beliefs": [
+            "Peace Gardens",
+            "Cathedrals"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "freedomanarhy",
@@ -419,6 +539,7 @@
           "conquered_capitals": [],
           "ideology": "",
           "wonders": [
+            "Himeji Castle",
             "Temple of Artemis"
           ],
           "techs": 22,
@@ -443,7 +564,21 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Himeji Castle",
+            "Temple of Artemis"
+          ],
+          "pantheon": "Messenger of the Gods",
+          "founder_beliefs": [
+            "Zakat",
+            "Apostolic Palace"
+          ],
+          "follower_beliefs": [
+            "Devoted Elite",
+            "Sacred Waters"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -453,10 +588,7 @@
           "capital_taken_by": "",
           "conquered_capitals": [],
           "ideology": "",
-          "wonders": [
-            "Great Mosque of Djenne",
-            "Hagia Sophia"
-          ],
+          "wonders": [],
           "techs": 27,
           "policies": 7,
           "policy_branches": [
@@ -478,7 +610,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Ancestor Worship",
+          "founder_beliefs": [
+            "City of God",
+            "Underground Sect",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Holy Warriors",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -513,7 +657,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Great Wall"
+          ],
+          "pantheon": "Tears of the Gods",
+          "founder_beliefs": [
+            "Houses of Worship",
+            "World Church"
+          ],
+          "follower_beliefs": [
+            "Liturgical Drama",
+            "Gurdwaras"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -524,9 +681,11 @@
           "conquered_capitals": [],
           "ideology": "",
           "wonders": [
-            "Notre Dame",
             "Stonehenge",
+            "Notre Dame",
             "The Pyramids",
+            "Porcelain Tower",
+            "Brandenburg Gate",
             "Terracotta Army"
           ],
           "techs": 25,
@@ -551,7 +710,25 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Stonehenge",
+            "Notre Dame",
+            "The Pyramids",
+            "Porcelain Tower",
+            "Brandenburg Gate",
+            "Terracotta Army"
+          ],
+          "pantheon": "Oral Tradition",
+          "founder_beliefs": [
+            "Kotel",
+            "Church Property"
+          ],
+          "follower_beliefs": [
+            "Guruship",
+            "Followers of Refined Crafts"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "khtoyaaty",
@@ -587,7 +764,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Statue of Zeus"
+          ],
+          "pantheon": "God-King",
+          "founder_beliefs": [
+            "Initiation Rites",
+            "Disciples"
+          ],
+          "follower_beliefs": [
+            "Viharas",
+            "Feed the World"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "munlait21",
@@ -598,11 +788,21 @@
           "conquered_capitals": [],
           "ideology": "",
           "wonders": [
-            "The Oracle",
-            "Angkor Wat",
-            "Chichen Itza",
+            "Alhambra",
             "Petra",
+            "Leaning Tower of Pisa",
+            "Forbidden Palace",
+            "The Oracle",
+            "Chichen Itza",
+            "Taj Mahal",
+            "Eiffel Tower",
+            "Sistine Chapel",
+            "Angkor Wat",
+            "Cristo Redentor",
             "Hanging Gardens",
+            "Statue of Liberty",
+            "Neuschwanstein",
+            "Big Ben",
             "Mausoleum of Halicarnassus"
           ],
           "techs": 27,
@@ -628,7 +828,35 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Alhambra",
+            "Petra",
+            "Leaning Tower of Pisa",
+            "Forbidden Palace",
+            "The Oracle",
+            "Chichen Itza",
+            "Taj Mahal",
+            "Eiffel Tower",
+            "Sistine Chapel",
+            "Angkor Wat",
+            "Cristo Redentor",
+            "Hanging Gardens",
+            "Statue of Liberty",
+            "Neuschwanstein",
+            "Big Ben",
+            "Mausoleum of Halicarnassus"
+          ],
+          "pantheon": "Ocean's Bounty",
+          "founder_beliefs": [
+            "Jizya",
+            "Religious Unity"
+          ],
+          "follower_beliefs": [
+            "Choral Music",
+            "Religious Art"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ouni0",
@@ -663,7 +891,14 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "The Great Library"
+          ],
+          "pantheon": "Alters of Worship",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -754,7 +989,15 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Hanging Gardens",
+            "Machu Picchu"
+          ],
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -786,7 +1029,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Desert Folklore",
+          "founder_beliefs": [
+            "Houses of Worship",
+            "World Church"
+          ],
+          "follower_beliefs": [
+            "Pagodas",
+            "Liturgical Drama"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Nepherthos",
@@ -822,7 +1076,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Terracotta Army",
+            "Stonehenge",
+            "Great Wall"
+          ],
+          "pantheon": "Rite of Spring",
+          "founder_beliefs": [
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "khtoyaaty",
@@ -856,7 +1123,14 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Mausoleum of Halicarnassus"
+          ],
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "munlait21",
@@ -867,9 +1141,9 @@
           "conquered_capitals": [],
           "ideology": "",
           "wonders": [
+            "Angkor Wat",
             "Chichen Itza",
-            "Petra",
-            "Angkor Wat"
+            "Petra"
           ],
           "techs": 25,
           "policies": 8,
@@ -893,7 +1167,22 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Angkor Wat",
+            "Chichen Itza",
+            "Petra"
+          ],
+          "pantheon": "Sacred Path",
+          "founder_beliefs": [
+            "Zakat",
+            "Disciples"
+          ],
+          "follower_beliefs": [
+            "Choral Music",
+            "Peace Gardens"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -904,8 +1193,8 @@
           "conquered_capitals": [],
           "ideology": "",
           "wonders": [
-            "Hagia Sophia",
-            "Great Mosque of Djenne"
+            "Great Mosque of Djenne",
+            "Hagia Sophia"
           ],
           "techs": 21,
           "policies": 9,
@@ -929,7 +1218,22 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Great Mosque of Djenne",
+            "Hagia Sophia"
+          ],
+          "pantheon": "God of the Open Sky",
+          "founder_beliefs": [
+            "City of God",
+            "Unity of the Prophets",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Viharas",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -939,7 +1243,10 @@
           "capital_taken_by": "",
           "conquered_capitals": [],
           "ideology": "",
-          "wonders": [],
+          "wonders": [
+            "Notre Dame",
+            "Himeji Castle"
+          ],
           "techs": 25,
           "policies": 9,
           "policy_branches": [
@@ -962,7 +1269,22 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Notre Dame",
+            "Himeji Castle"
+          ],
+          "pantheon": "Ancestor Worship",
+          "founder_beliefs": [
+            "Kotel",
+            "Jesuit Education",
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Feed the World"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Click4x",
@@ -995,7 +1317,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Harvest Festival",
+          "founder_beliefs": [
+            "Apostolic Palace",
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Cathedrals",
+            "Devout Performers"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "ICanSeeForever",
@@ -1006,6 +1339,7 @@
           "conquered_capitals": [],
           "ideology": "",
           "wonders": [
+            "Alhambra",
             "Statue of Zeus",
             "The Pyramids"
           ],
@@ -1030,7 +1364,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Alhambra",
+            "Statue of Zeus",
+            "The Pyramids"
+          ],
+          "pantheon": "Religious Settlements",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "freedomanarhy",
@@ -1070,7 +1413,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "The Oracle",
+            "The Great Library",
+            "Temple of Artemis",
+            "The Great Lighthouse",
+            "Colossus"
+          ],
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -1170,7 +1524,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "The Great Lighthouse"
+          ],
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Just War",
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Cathedrals",
+            "Viharas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -1204,7 +1571,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Religious Settlements",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ouni0",
@@ -1241,7 +1613,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Sistine Chapel",
+            "Mausoleum of Halicarnassus",
+            "Himeji Castle"
+          ],
+          "pantheon": "Goddess of Protection",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -1290,7 +1671,32 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [
+            "The Oracle",
+            "Statue of Liberty",
+            "Porcelain Tower",
+            "Angkor Wat",
+            "Chichen Itza",
+            "Stonehenge",
+            "Hagia Sophia",
+            "Cristo Redentor",
+            "Alhambra",
+            "The Great Library",
+            "Hanging Gardens",
+            "Temple of Artemis",
+            "Big Ben"
+          ],
+          "pantheon": "Alters of Worship",
+          "founder_beliefs": [
+            "Salat",
+            "Disciples"
+          ],
+          "follower_beliefs": [
+            "Religious Community",
+            "Pagodas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "ICanSeeForever",
@@ -1334,7 +1740,23 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "The Pyramids",
+            "Great Mosque of Djenne",
+            "Brandenburg Gate"
+          ],
+          "pantheon": "Ancestor Worship",
+          "founder_beliefs": [
+            "Underground Sect",
+            "Jesuit Education",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Mosques",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "sarenkrit1",
@@ -1369,7 +1791,14 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Statue of Zeus"
+          ],
+          "pantheon": "Religious Idols",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "khtoyaaty",
@@ -1405,7 +1834,22 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Colossus",
+            "Great Wall"
+          ],
+          "pantheon": "Ocean's Bounty",
+          "founder_beliefs": [
+            "Kotel",
+            "Religious Troubadours",
+            "Religious Unity"
+          ],
+          "follower_beliefs": [
+            "Peace Gardens",
+            "Sacred Waters"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "freedomanarhy",
@@ -1438,7 +1882,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "Click4x",
@@ -1448,7 +1897,10 @@
           "capital_taken_by": "",
           "conquered_capitals": [],
           "ideology": "Свобода",
-          "wonders": [],
+          "wonders": [
+            "Eiffel Tower",
+            "Leaning Tower of Pisa"
+          ],
           "techs": 52,
           "policies": 23,
           "policy_branches": [
@@ -1471,7 +1923,21 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Eiffel Tower",
+            "Leaning Tower of Pisa"
+          ],
+          "pantheon": "Goddess of the Fields",
+          "founder_beliefs": [
+            "Zakat",
+            "Karma"
+          ],
+          "follower_beliefs": [
+            "Devout Performers",
+            "Synagogues"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "munlait21",
@@ -1505,7 +1971,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "God of the Open Sky",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -1606,7 +2077,14 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 3,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [
+            "Mausoleum of Halicarnassus"
+          ],
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "ICanSeeForever",
@@ -1648,7 +2126,21 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Great Mosque of Djenne"
+          ],
+          "pantheon": "One with Nature",
+          "founder_beliefs": [
+            "Jesuit Education",
+            "Sacred Sites",
+            "Church Property"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Viharas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -1683,7 +2175,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "Ancestor Worship",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Indulgences",
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Feed the World",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "sarenkrit1",
@@ -1720,7 +2224,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "The Oracle",
+            "Angkor Wat",
+            "Great Wall"
+          ],
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ouni0",
@@ -1760,7 +2273,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [
+            "Alhambra",
+            "Sistine Chapel",
+            "The Great Library",
+            "Taj Mahal",
+            "Chichen Itza",
+            "Petra"
+          ],
+          "pantheon": "Mystic Rituals",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "Click4x",
@@ -1808,7 +2333,17 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 3,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Hanging Gardens",
+            "Brandenburg Gate",
+            "Stonehenge",
+            "Machu Picchu"
+          ],
+          "pantheon": "Sun God",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -1842,7 +2377,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 4
+          "wars_received": 4,
+          "wonders_built": [],
+          "pantheon": "Spirit Trees",
+          "founder_beliefs": [
+            "City of God",
+            "Unity of the Prophets",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Synagogues",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -1879,7 +2426,23 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Statue of Zeus",
+            "Big Ben",
+            "Colossus"
+          ],
+          "pantheon": "God of War",
+          "founder_beliefs": [
+            "Underground Sect",
+            "Swords into Ploughshares",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Cathedrals",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -1990,7 +2553,22 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "The Great Library",
+            "Statue of Zeus"
+          ],
+          "pantheon": "Goddess of Love",
+          "founder_beliefs": [
+            "Zakat",
+            "Swords into Ploughshares",
+            "Apostolic Palace"
+          ],
+          "follower_beliefs": [
+            "Devout Performers",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "munlait21",
@@ -2022,7 +2600,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "sarenkrit1",
@@ -2063,7 +2646,21 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Great Mosque of Djenne"
+          ],
+          "pantheon": "Religious Idols",
+          "founder_beliefs": [
+            "Jesuit Education",
+            "Sacred Sites",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Viharas",
+            "Synagogues"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -2108,7 +2705,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [
+            "Sydney Opera House",
+            "Forbidden Palace",
+            "Temple of Artemis",
+            "Mausoleum of Halicarnassus",
+            "Statue of Liberty"
+          ],
+          "pantheon": "God of War",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -2160,7 +2768,28 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 4,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [
+            "Leaning Tower of Pisa",
+            "The Oracle",
+            "Pentagon",
+            "Big Ben",
+            "Himeji Castle",
+            "Brandenburg Gate",
+            "Great Wall",
+            "Notre Dame",
+            "Kremlin"
+          ],
+          "pantheon": "God of Craftsman",
+          "founder_beliefs": [
+            "Indulgences",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Cathedrals",
+            "Guruship"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ouni0",
@@ -2193,7 +2822,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "Ritual Sacrifice",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -2226,7 +2860,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "ICanSeeForever",
@@ -2259,7 +2898,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [
+            "Mithraea",
+            "Work Ethic",
+            "Just War"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Click4x",
@@ -2303,7 +2954,21 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 4,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "The Pyramids",
+            "Petra"
+          ],
+          "pantheon": "Ancestor Worship",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Mosques",
+            "Liturgical Drama"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -2350,7 +3015,32 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Sistine Chapel",
+            "Porcelain Tower",
+            "Angkor Wat",
+            "Eiffel Tower",
+            "Stonehenge",
+            "Hagia Sophia",
+            "Cristo Redentor",
+            "Alhambra",
+            "Taj Mahal",
+            "CN Tower",
+            "Machu Picchu",
+            "Neuschwanstein"
+          ],
+          "pantheon": "Tears of the Gods",
+          "founder_beliefs": [
+            "City of God",
+            "Messiah",
+            "Unity of the Prophets"
+          ],
+          "follower_beliefs": [
+            "Choral Music",
+            "Pagodas"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -2436,7 +3126,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Alhambra",
+            "Temple of Artemis",
+            "Brandenburg Gate",
+            "Notre Dame",
+            "Petra"
+          ],
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "sarenkrit1",
@@ -2477,7 +3178,27 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Leaning Tower of Pisa",
+            "The Great Lighthouse",
+            "Himeji Castle",
+            "Hagia Sophia",
+            "The Louvre",
+            "Colossus",
+            "Great Wall"
+          ],
+          "pantheon": "",
+          "founder_beliefs": [
+            "Kotel",
+            "Zakat"
+          ],
+          "follower_beliefs": [
+            "Mosques",
+            "Synagogues",
+            "Starlight Guidance"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -2513,7 +3234,21 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "The Pyramids",
+            "Forbidden Palace"
+          ],
+          "pantheon": "Ocean's Bounty",
+          "founder_beliefs": [
+            "Hajj",
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Devout Performers",
+            "Feed the World"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ouni0",
@@ -2547,7 +3282,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Mystic Rituals",
+          "founder_beliefs": [
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Peace Gardens"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "YukiHino98",
@@ -2585,7 +3329,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Statue of Zeus",
+            "The Great Library",
+            "Mausoleum of Halicarnassus"
+          ],
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -2637,7 +3390,28 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Terracotta Army",
+            "Great Mosque of Djenne",
+            "Taj Mahal",
+            "Angkor Wat",
+            "Eiffel Tower",
+            "Neuschwanstein",
+            "Cristo Redentor",
+            "Machu Picchu"
+          ],
+          "pantheon": "Oral Tradition",
+          "founder_beliefs": [
+            "City of God",
+            "Messiah",
+            "Unity of the Prophets"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -2768,7 +3542,30 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Sistine Chapel",
+            "Terracotta Army",
+            "The Oracle",
+            "Porcelain Tower",
+            "Angkor Wat",
+            "Eiffel Tower",
+            "Cristo Redentor",
+            "Brandenburg Gate",
+            "Kremlin",
+            "Machu Picchu"
+          ],
+          "pantheon": "God of War",
+          "founder_beliefs": [
+            "Underground Sect",
+            "Swords into Ploughshares",
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Viharas",
+            "Feed the World"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -2807,7 +3604,17 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Statue of Zeus",
+            "Forbidden Palace",
+            "Himeji Castle",
+            "Great Wall"
+          ],
+          "pantheon": "Religious Settlements",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "Fanfblrik",
@@ -2840,7 +3647,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "Messenger of the Gods",
+          "founder_beliefs": [
+            "Zakat"
+          ],
+          "follower_beliefs": [
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "sarenkrit1",
@@ -2889,7 +3705,17 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "The Great Library",
+            "Statue of Liberty",
+            "Leaning Tower of Pisa",
+            "Notre Dame"
+          ],
+          "pantheon": "Sacred Path",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "YukiHino98",
@@ -2923,7 +3749,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "Spirit Animals",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Jesuit Education",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Goddess of Protection",
+            "Synagogues"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -2962,7 +3801,24 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Alhambra",
+            "Taj Mahal",
+            "Temple of Artemis",
+            "Chichen Itza",
+            "Big Ben"
+          ],
+          "pantheon": "Religious Idols",
+          "founder_beliefs": [
+            "Mithraea",
+            "Just War"
+          ],
+          "follower_beliefs": [
+            "Mosques",
+            "Pagodas"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -3064,7 +3920,17 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "The Great Library",
+            "Notre Dame",
+            "Kremlin",
+            "The Pyramids"
+          ],
+          "pantheon": "Starlight Guidance",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -3108,7 +3974,28 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Machu Picchu",
+            "Neuschwanstein",
+            "Petra",
+            "Sistine Chapel",
+            "Hanging Gardens",
+            "Angkor Wat",
+            "Hubble Space Telescope",
+            "Big Ben",
+            "Hagia Sophia"
+          ],
+          "pantheon": "Seafood Rituals",
+          "founder_beliefs": [
+            "Mithraea",
+            "Religious Troubadours"
+          ],
+          "follower_beliefs": [
+            "Viharas",
+            "Pagodas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "YukiHino98",
@@ -3148,7 +4035,24 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Terracotta Army",
+            "Stonehenge",
+            "Colossus",
+            "Statue of Zeus",
+            "Great Wall"
+          ],
+          "pantheon": "Dance of the Aurora",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Zakat"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Fanfblrik",
@@ -3186,7 +4090,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Pentagon",
+            "Mausoleum of Halicarnassus",
+            "Himeji Castle"
+          ],
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -3220,7 +4133,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Jesuit Education",
+            "Unity of the Prophets",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Religious Center",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -3253,7 +4178,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Ocean's Bounty",
+          "founder_beliefs": [
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Synagogues"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -3363,7 +4297,24 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Angkor Wat",
+            "Chichen Itza",
+            "Notre Dame",
+            "CN Tower",
+            "Neuschwanstein"
+          ],
+          "pantheon": "Seafood Rituals",
+          "founder_beliefs": [
+            "Hajj",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Religious Community",
+            "Guruship"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Click4x",
@@ -3416,7 +4367,25 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 4,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "The Great Lighthouse",
+            "Statue of Liberty",
+            "Taj Mahal",
+            "Temple of Artemis",
+            "Colossus",
+            "Brandenburg Gate"
+          ],
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Mithraea",
+            "Karma"
+          ],
+          "follower_beliefs": [
+            "Cathedrals",
+            "Devoted Elite"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "YukiHino98",
@@ -3458,7 +4427,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Sistine Chapel",
+            "The Oracle",
+            "Porcelain Tower",
+            "Himeji Castle",
+            "Cristo Redentor",
+            "Hanging Gardens",
+            "Great Wall"
+          ],
+          "pantheon": "Sacred Path",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -3500,7 +4482,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Hagia Sophia",
+            "Alhambra",
+            "The Great Library",
+            "Machu Picchu",
+            "Mausoleum of Halicarnassus",
+            "Big Ben",
+            "Petra"
+          ],
+          "pantheon": "Alters of Worship",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "n9306867842",
@@ -3540,7 +4535,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "Spirit Animals",
+          "founder_beliefs": [
+            "Just War",
+            "Religious Unity"
+          ],
+          "follower_beliefs": [
+            "Pagodas",
+            "Sacred Waters"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -3576,7 +4582,21 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "The Louvre"
+          ],
+          "pantheon": "Ocean's Bounty",
+          "founder_beliefs": [
+            "Houses of Worship",
+            "Sacred Sites",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Viharas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -3611,7 +4631,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "Goddess of the Hunt",
+          "founder_beliefs": [
+            "City of God",
+            "Messiah",
+            "Unity of the Prophets"
+          ],
+          "follower_beliefs": [
+            "Feed the World",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "munlait21",
@@ -3645,7 +4677,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "Ancestor Worship",
+          "founder_beliefs": [
+            "Indulgences",
+            "Dawah",
+            "Disciples"
+          ],
+          "follower_beliefs": [
+            "Devout Performers",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -3678,7 +4722,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "Religious Settlements",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ouni0",
@@ -3711,7 +4760,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Ritual Sacrifice",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -3829,7 +4883,24 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 7
+          "wars_received": 7,
+          "wonders_built": [
+            "The Oracle",
+            "Angkor Wat",
+            "Pentagon"
+          ],
+          "pantheon": "Earth Mother",
+          "founder_beliefs": [
+            "Houses of Worship",
+            "Kotel",
+            "Hajj",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Feed the World",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -3880,7 +4951,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Sistine Chapel",
+            "Hanging Gardens",
+            "Leaning Tower of Pisa"
+          ],
+          "pantheon": "Religious Settlements",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "Click4x",
@@ -3919,7 +4999,17 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Taj Mahal",
+            "Machu Picchu",
+            "Brandenburg Gate",
+            "The Pyramids"
+          ],
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "munlait21",
@@ -3956,7 +5046,14 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Porcelain Tower"
+          ],
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -3996,7 +5093,24 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 4,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Statue of Liberty",
+            "Stonehenge",
+            "Hagia Sophia",
+            "Big Ben"
+          ],
+          "pantheon": "Desert Folklore",
+          "founder_beliefs": [
+            "Messiah",
+            "Unity of the Prophets",
+            "Religious Troubadours"
+          ],
+          "follower_beliefs": [
+            "Mosques",
+            "Synagogues"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -4030,7 +5144,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "God-King",
+          "founder_beliefs": [
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Devout Performers"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "konoval_mik",
@@ -4040,7 +5163,10 @@
           "capital_taken_by": "Византия",
           "conquered_capitals": [],
           "ideology": "Автократия",
-          "wonders": [],
+          "wonders": [
+            "Himeji Castle",
+            "Notre Dame"
+          ],
           "techs": 54,
           "policies": 27,
           "policy_branches": [
@@ -4064,7 +5190,22 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 3,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Himeji Castle",
+            "Notre Dame"
+          ],
+          "pantheon": "Tears of the Gods",
+          "founder_beliefs": [
+            "Work Ethic",
+            "Sacred Sites",
+            "Church Property"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Cathedrals"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ouni0",
@@ -4097,7 +5238,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "Alters of Worship",
+          "founder_beliefs": [
+            "Religious Unity",
+            "Disciples"
+          ],
+          "follower_beliefs": [
+            "Followers of Refined Crafts",
+            "Liturgical Drama"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -4131,7 +5283,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "Ancestor Worship",
+          "founder_beliefs": [
+            "City of God",
+            "Jesuit Education",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Pagodas",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "YukiHino98",
@@ -4164,7 +5328,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "Ocean's Bounty",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -4263,7 +5432,24 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 3,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Porcelain Tower",
+            "Chichen Itza",
+            "Machu Picchu",
+            "Taj Mahal",
+            "Angkor Wat"
+          ],
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Sanctified Innovations",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Religious Community",
+            "Guruship"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -4309,7 +5495,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Sistine Chapel",
+            "Statue of Zeus",
+            "Big Ben",
+            "Eiffel Tower",
+            "Notre Dame",
+            "Leaning Tower of Pisa",
+            "Mausoleum of Halicarnassus"
+          ],
+          "pantheon": "Sun God",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -4356,7 +5555,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Alhambra",
+            "The Oracle",
+            "Hanging Gardens",
+            "Himeji Castle",
+            "Neuschwanstein"
+          ],
+          "pantheon": "Goddess of the Hunt",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "Click4x",
@@ -4402,7 +5612,24 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 3,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "The Great Lighthouse",
+            "Great Mosque of Djenne",
+            "Colossus",
+            "Hagia Sophia"
+          ],
+          "pantheon": "Seafood Rituals",
+          "founder_beliefs": [
+            "Zakat",
+            "Jesuit Education",
+            "Just War"
+          ],
+          "follower_beliefs": [
+            "Viharas",
+            "Followers of Refined Crafts"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "konoval_mik",
@@ -4435,7 +5662,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Alters of Worship",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "munlait21",
@@ -4469,7 +5701,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "Desert Folklore",
+          "founder_beliefs": [
+            "Dawah",
+            "Karma"
+          ],
+          "follower_beliefs": [
+            "Cathedrals",
+            "Devout Performers"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -4502,7 +5745,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "Rain Dancing",
+          "founder_beliefs": [
+            "City of God",
+            "Mithraea",
+            "Unity of the Prophets"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Pagodas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -4535,7 +5790,17 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "God of War",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Synagogues"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -4647,7 +5912,26 @@
           ],
           "wars": [],
           "wars_declared": 3,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Leaning Tower of Pisa",
+            "Statue of Liberty",
+            "Cristo Redentor",
+            "Great Firewall",
+            "Colossus",
+            "Notre Dame",
+            "CN Tower"
+          ],
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Kotel",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Viharas",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -4696,7 +5980,33 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "The Oracle",
+            "Porcelain Tower",
+            "Angkor Wat",
+            "Himeji Castle",
+            "Great Mosque of Djenne",
+            "Pentagon",
+            "Mausoleum of Halicarnassus",
+            "Brandenburg Gate",
+            "Petra",
+            "Kremlin",
+            "Machu Picchu",
+            "Hagia Sophia",
+            "Neuschwanstein"
+          ],
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [
+            "City of God",
+            "Messiah",
+            "Unity of the Prophets"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -4738,7 +6048,14 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "The Louvre"
+          ],
+          "pantheon": "Ocean's Bounty",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "munlait21",
@@ -4776,7 +6093,22 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "The Great Library",
+            "The Great Lighthouse",
+            "Taj Mahal"
+          ],
+          "pantheon": "Seafood Rituals",
+          "founder_beliefs": [
+            "Dawah",
+            "Karma"
+          ],
+          "follower_beliefs": [
+            "Cathedrals",
+            "Devout Performers"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Fanfblrik",
@@ -4812,7 +6144,14 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Terracotta Army"
+          ],
+          "pantheon": "Rite of Spring",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "Click4x",
@@ -4848,7 +6187,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 5,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Oral Tradition",
+          "founder_beliefs": [
+            "Mithraea",
+            "Defender of the Faith"
+          ],
+          "follower_beliefs": [
+            "Divine inspiration",
+            "Peace Gardens"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -4881,7 +6231,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "konoval_mik",
@@ -4915,7 +6270,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "Earth Mother",
+          "founder_beliefs": [
+            "Just War",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Mandirs",
+            "Devoted Elite"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -5017,7 +6383,30 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Alhambra",
+            "Leaning Tower of Pisa",
+            "The Oracle",
+            "The Great Library",
+            "Angkor Wat",
+            "Chichen Itza",
+            "Himeji Castle",
+            "Brandenburg Gate",
+            "Stonehenge",
+            "Notre Dame",
+            "Petra"
+          ],
+          "pantheon": "Desert Folklore",
+          "founder_beliefs": [
+            "Kotel",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Divine inspiration",
+            "Pagodas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "EmperorPenguin01",
@@ -5064,7 +6453,23 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "The Pyramids",
+            "Hagia Sophia",
+            "CN Tower",
+            "Kremlin"
+          ],
+          "pantheon": "Goddess of Love",
+          "founder_beliefs": [
+            "Hajj",
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Guruship",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Click4x",
@@ -5103,7 +6508,23 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Hanging Gardens",
+            "Colossus",
+            "Mausoleum of Halicarnassus",
+            "Great Wall"
+          ],
+          "pantheon": "Earth Mother",
+          "founder_beliefs": [
+            "Dawah",
+            "Karma"
+          ],
+          "follower_beliefs": [
+            "Cathedrals",
+            "Devout Performers"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "n9306867842",
@@ -5141,7 +6562,23 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Porcelain Tower",
+            "Taj Mahal",
+            "Temple of Artemis"
+          ],
+          "pantheon": "Work Spirituals",
+          "founder_beliefs": [
+            "Mithraea",
+            "Swords into Ploughshares",
+            "Just War"
+          ],
+          "follower_beliefs": [
+            "Viharas",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -5178,7 +6615,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Terracotta Army",
+            "Statue of Zeus",
+            "Machu Picchu"
+          ],
+          "pantheon": "Oral Tradition",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -5217,7 +6663,17 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Sistine Chapel",
+            "The Great Lighthouse",
+            "Big Ben",
+            "Neuschwanstein"
+          ],
+          "pantheon": "Seafood Rituals",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "Fanfblrik",
@@ -5253,7 +6709,21 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Great Mosque of Djenne"
+          ],
+          "pantheon": "Ancestor Worship",
+          "founder_beliefs": [
+            "Jesuit Education",
+            "Sacred Sites",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Synagogues",
+            "Feed the World"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "munlait21",
@@ -5287,7 +6757,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "God of the Open Sky",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -5321,7 +6796,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 4,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "Religious Idols",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "konoval_mik",
@@ -5354,7 +6834,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Church Property"
+          ],
+          "follower_beliefs": [
+            "Religious Community",
+            "Devoted Elite"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -5438,7 +6929,29 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Alhambra",
+            "The Oracle",
+            "Terracotta Army",
+            "Machu Picchu",
+            "Himeji Castle",
+            "Brandenburg Gate",
+            "Forbidden Palace",
+            "The Pyramids",
+            "Stonehenge",
+            "Mausoleum of Halicarnassus"
+          ],
+          "pantheon": "Goddess of Love",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Church Property"
+          ],
+          "follower_beliefs": [
+            "Religious Community",
+            "Guruship"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "konoval_mik",
@@ -5479,7 +6992,25 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Statue of Zeus",
+            "Temple of Artemis",
+            "Chichen Itza",
+            "Great Wall",
+            "Petra",
+            "Hagia Sophia"
+          ],
+          "pantheon": "Vision Quests",
+          "founder_beliefs": [
+            "Dharma",
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Pagodas",
+            "Feed the World"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "ICanSeeForever",
@@ -5517,7 +7048,23 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Sistine Chapel",
+            "Great Mosque of Djenne",
+            "Notre Dame"
+          ],
+          "pantheon": "Ancestor Worship",
+          "founder_beliefs": [
+            "Work Ethic",
+            "Sacred Sites",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Viharas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "n9306867842",
@@ -5558,7 +7105,26 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Leaning Tower of Pisa",
+            "The Great Lighthouse",
+            "Taj Mahal",
+            "Angkor Wat",
+            "Colossus",
+            "The Great Library"
+          ],
+          "pantheon": "Seafood Rituals",
+          "founder_beliefs": [
+            "Kotel",
+            "Unity of the Prophets",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Holy Warriors",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Fanfblrik",
@@ -5591,7 +7157,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Oral Tradition",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -5625,7 +7196,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "Sun God",
+          "founder_beliefs": [
+            "Zakat"
+          ],
+          "follower_beliefs": [
+            "Devout Performers"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -5717,7 +7297,14 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "The Pyramids"
+          ],
+          "pantheon": "Goddess of Love",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "munlait21",
@@ -5751,7 +7338,14 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "The Great Lighthouse"
+          ],
+          "pantheon": "Seafood Rituals",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "EmperorPenguin01",
@@ -5786,7 +7380,15 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Petra",
+            "Stonehenge"
+          ],
+          "pantheon": "Religious Settlements",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -5818,7 +7420,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "Ritual Sacrifice",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -5850,7 +7457,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Tears of the Gods",
+          "founder_beliefs": [
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Mandirs"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "konoval_mik",
@@ -5882,7 +7498,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -5915,7 +7536,17 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "Mystic Rituals",
+          "founder_beliefs": [
+            "Mithraea",
+            "Disciples"
+          ],
+          "follower_beliefs": [
+            "Viharas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Fanfblrik",
@@ -5947,7 +7578,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "God-King",
+          "founder_beliefs": [
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Religious Community"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -5979,7 +7619,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Oral Tradition",
+          "founder_beliefs": [
+            "City of God",
+            "Messiah",
+            "Unity of the Prophets"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ashegg2",
@@ -6011,7 +7663,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Sacred Path",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         }
       ],
       "gif": null,
@@ -6125,7 +7782,27 @@
           ],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "The Great Lighthouse",
+            "Sydney Opera House",
+            "Himeji Castle",
+            "Cristo Redentor",
+            "Pentagon",
+            "The Louvre",
+            "Notre Dame",
+            "Kremlin"
+          ],
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Kotel",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Devout Performers"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -6175,7 +7852,26 @@
           ],
           "wars": [],
           "wars_declared": 4,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Terracotta Army",
+            "Forbidden Palace",
+            "Hubble Space Telescope",
+            "Big Ben",
+            "Great Firewall",
+            "Machu Picchu",
+            "Mausoleum of Halicarnassus"
+          ],
+          "pantheon": "Spirit Trees",
+          "founder_beliefs": [
+            "Hajj",
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Guruship",
+            "Followers of Refined Crafts"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Click4x",
@@ -6227,7 +7923,28 @@
           ],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Angkor Wat",
+            "Chichen Itza",
+            "The Pyramids",
+            "Colossus",
+            "Great Wall",
+            "Leaning Tower of Pisa",
+            "Brandenburg Gate",
+            "Porcelain Tower"
+          ],
+          "pantheon": "Goddess of Love",
+          "founder_beliefs": [
+            "Work Ethic",
+            "Karma",
+            "Church Property"
+          ],
+          "follower_beliefs": [
+            "Cathedrals",
+            "Divine inspiration"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "munlait21",
@@ -6265,7 +7982,21 @@
           ],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "CN Tower"
+          ],
+          "pantheon": "Seafood Rituals",
+          "founder_beliefs": [
+            "Underground Sect",
+            "Just War",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Choral Music",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -6311,7 +8042,21 @@
           ],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Statue of Zeus",
+            "Temple of Artemis"
+          ],
+          "pantheon": "Sacred Path",
+          "founder_beliefs": [
+            "Initiation Rites",
+            "Disciples"
+          ],
+          "follower_beliefs": [
+            "Mandirs",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -6345,7 +8090,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "Altars of Worship",
+          "founder_beliefs": [
+            "City of God",
+            "Messiah",
+            "Unity of the Prophets"
+          ],
+          "follower_beliefs": [
+            "Pagodas",
+            "Feed the World"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "konoval_mik",
@@ -6378,7 +8135,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "Vision Quests",
+          "founder_beliefs": [
+            "Missionary Zeal"
+          ],
+          "follower_beliefs": [
+            "Peace Gardens"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ashegg2",
@@ -6412,7 +8178,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "Harvest Festival",
+          "founder_beliefs": [
+            "Zakat",
+            "Swords into Ploughshares",
+            "Sacred Sites",
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Mosques",
+            "Synagogues"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Fanfblrik",
@@ -6446,7 +8225,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "Ancestor Worship",
+          "founder_beliefs": [
+            "Mithraea",
+            "Defender of the Faith"
+          ],
+          "follower_beliefs": [
+            "Religious Community",
+            "Viharas"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -6555,7 +8345,28 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 5
+          "wars_received": 5,
+          "wonders_built": [
+            "Alhambra",
+            "Sistine Chapel",
+            "The Oracle",
+            "Statue of Liberty",
+            "Taj Mahal",
+            "Himeji Castle",
+            "Stonehenge",
+            "The Great Library",
+            "Chichen Itza"
+          ],
+          "pantheon": "Altars of Worship",
+          "founder_beliefs": [
+            "Zakat",
+            "Sanctified Innovations"
+          ],
+          "follower_beliefs": [
+            "Divine inspiration",
+            "Liturgical Drama"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -6599,7 +8410,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 4,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Leaning Tower of Pisa",
+            "The Great Lighthouse",
+            "Porcelain Tower"
+          ],
+          "pantheon": "Religious Settlements",
+          "founder_beliefs": [
+            "Religious Unity"
+          ],
+          "follower_beliefs": [
+            "Guruship"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -6639,7 +8463,25 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 3,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "The Pyramids",
+            "Great Mosque of Djenne",
+            "Angkor Wat",
+            "Great Wall",
+            "The Louvre"
+          ],
+          "pantheon": "Ocean's Bounty",
+          "founder_beliefs": [
+            "Sacred Sites",
+            "Salat",
+            "Karma"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -6675,7 +8517,22 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Brandenburg Gate",
+            "Kremlin"
+          ],
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Swords into Ploughshares",
+            "Jesuit Education",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Viharas",
+            "Pagodas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Fanfblrik",
@@ -6718,7 +8575,22 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [
+            "Terracotta Army",
+            "Temple of Artemis",
+            "Neuschwanstein"
+          ],
+          "pantheon": "Mystic Rituals",
+          "founder_beliefs": [
+            "Kotel",
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Devout Performers",
+            "Peace Gardens"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ouni0",
@@ -6755,7 +8627,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 5,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Big Ben",
+            "Notre Dame",
+            "Machu Picchu"
+          ],
+          "pantheon": "Rite of Spring",
+          "founder_beliefs": [
+            "Initiation Rites"
+          ],
+          "follower_beliefs": [
+            "Followers of Refined Crafts"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "munlait21",
@@ -6791,7 +8676,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Statue of Zeus"
+          ],
+          "pantheon": "Oral Tradition",
+          "founder_beliefs": [
+            "Just War",
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Cathedrals",
+            "Choral Music"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -6826,7 +8724,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "Seafood Rituals",
+          "founder_beliefs": [
+            "World Church"
+          ],
+          "follower_beliefs": [
+            "Devoted Elite"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ashegg2",
@@ -6859,7 +8766,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [
+            "Church Property",
+            "Disciples"
+          ],
+          "follower_beliefs": [
+            "Synagogues",
+            "Sacred Waters"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "konoval_mik",
@@ -6891,7 +8809,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Goddess of the Fields",
+          "founder_beliefs": [
+            "Mithraea",
+            "Defender of the Faith",
+            "Hajj"
+          ],
+          "follower_beliefs": [
+            "Feed the World",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -6996,7 +8926,29 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 3,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Sistine Chapel",
+            "Terracotta Army",
+            "Statue of Liberty",
+            "Angkor Wat",
+            "Stonehenge",
+            "Cristo Redentor",
+            "Mausoleum of Halicarnassus",
+            "The Louvre",
+            "Temple of Artemis",
+            "Petra"
+          ],
+          "pantheon": "Mystic Rituals",
+          "founder_beliefs": [
+            "Hajj",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Devout Performers",
+            "Liturgical Drama"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ouni0",
@@ -7051,7 +9003,33 @@
           ],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Statue of Zeus",
+            "Chichen Itza",
+            "Eiffel Tower",
+            "Neuschwanstein",
+            "Hanging Gardens",
+            "Great Firewall",
+            "Pentagon",
+            "Taj Mahal",
+            "Machu Picchu",
+            "Hubble Space Telescope",
+            "Brandenburg Gate",
+            "Notre Dame",
+            "CN Tower",
+            "Big Ben"
+          ],
+          "pantheon": "Ritual Sacrifice",
+          "founder_beliefs": [
+            "Kotel",
+            "Zakat"
+          ],
+          "follower_beliefs": [
+            "Divine inspiration",
+            "Peace Gardens"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Fanfblrik",
@@ -7088,7 +9066,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Leaning Tower of Pisa",
+            "Kremlin"
+          ],
+          "pantheon": "Vision Quests",
+          "founder_beliefs": [
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Guruship"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -7122,7 +9112,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "Sun God",
+          "founder_beliefs": [
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Pagodas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -7155,7 +9154,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "Ocean's Bounty",
+          "founder_beliefs": [
+            "Mithraea",
+            "Work Ethic",
+            "Just War"
+          ],
+          "follower_beliefs": [
+            "Choral Music",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "konoval_mik",
@@ -7188,7 +9199,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "Earth Mother",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Jesuit Education",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Feed the World",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -7303,7 +9326,26 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 3,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Terracotta Army",
+            "Porcelain Tower",
+            "Mausoleum of Halicarnassus",
+            "Great Wall",
+            "The Pyramids",
+            "Notre Dame"
+          ],
+          "pantheon": "Sacred Path",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Just War",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Guruship",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -7346,7 +9388,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "The Great Lighthouse"
+          ],
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Mithraea",
+            "Karma"
+          ],
+          "follower_beliefs": [
+            "Viharas",
+            "Liturgical Drama"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "konoval_mik",
@@ -7384,7 +9439,17 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Alhambra",
+            "Hanging Gardens",
+            "Angkor Wat",
+            "Hagia Sophia"
+          ],
+          "pantheon": "Sun God",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "Bahahanchiklkm",
@@ -7427,7 +9492,21 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Great Mosque of Djenne"
+          ],
+          "pantheon": "Seafood Rituals",
+          "founder_beliefs": [
+            "City of God",
+            "Jesuit Education",
+            "Church Property"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Pagodas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -7466,7 +9545,22 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Forbidden Palace",
+            "Big Ben"
+          ],
+          "pantheon": "Goddess of Love",
+          "founder_beliefs": [
+            "Kotel",
+            "Work Ethic",
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Feed the World",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Lvxvcs",
@@ -7502,7 +9596,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "The Great Library"
+          ],
+          "pantheon": "Ocean's Bounty",
+          "founder_beliefs": [
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Followers of Refined Crafts"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -7536,7 +9641,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 3,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "Oral Tradition",
+          "founder_beliefs": [
+            "Zakat",
+            "Sanctified Innovations"
+          ],
+          "follower_beliefs": [
+            "Peace Gardens",
+            "Sacred Waters"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ouni0",
@@ -7569,7 +9685,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Religious Settlements",
+          "founder_beliefs": [
+            "Hajj",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Divine inspiration",
+            "Devout Performers"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "PVL01011900",
@@ -7602,7 +9729,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "Goddess of Protection",
+          "founder_beliefs": [
+            "Religious Unity"
+          ],
+          "follower_beliefs": [
+            "Choral Music"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "flags": []
@@ -7714,7 +9850,23 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 4,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "The Pyramids",
+            "Temple of Artemis",
+            "Brandenburg Gate",
+            "Himeji Castle"
+          ],
+          "pantheon": "Spirit Trees",
+          "founder_beliefs": [
+            "Tithe",
+            "Karma"
+          ],
+          "follower_beliefs": [
+            "Viharas",
+            "Liturgical Drama"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Bahahanchiklkm",
@@ -7754,7 +9906,25 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [
+            "Taj Mahal",
+            "Great Wall",
+            "Notre Dame",
+            "Stonehenge",
+            "Machu Picchu"
+          ],
+          "pantheon": "Mystic Rituals",
+          "founder_beliefs": [
+            "Kotel",
+            "Indulgences",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Guruship",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ouni0",
@@ -7795,7 +9965,12 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [],
+          "pantheon": "Rite of Spring",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -7836,7 +10011,26 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Alhambra",
+            "Leaning Tower of Pisa",
+            "Porcelain Tower",
+            "Big Ben",
+            "Colossus",
+            "Great Mosque of Djenne"
+          ],
+          "pantheon": "Ocean's Bounty",
+          "founder_beliefs": [
+            "Mithraea",
+            "Jizya",
+            "Apostolic Palace"
+          ],
+          "follower_beliefs": [
+            "Mosques",
+            "Feed the World"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "VlaterRogue",
@@ -7872,7 +10066,20 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Angkor Wat"
+          ],
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Initiation Rites",
+            "Religious Troubadours"
+          ],
+          "follower_beliefs": [
+            "Synagogues",
+            "Followers of Refined Crafts"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "REPUNZEL2882",
@@ -7909,7 +10116,22 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 3,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Sistine Chapel",
+            "Mausoleum of Halicarnassus",
+            "Petra"
+          ],
+          "pantheon": "Desert Folklore",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Religious Unity"
+          ],
+          "follower_beliefs": [
+            "Divine inspiration",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "konoval_mik",
@@ -7945,7 +10167,21 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Statue of Zeus"
+          ],
+          "pantheon": "One with Nature",
+          "founder_beliefs": [
+            "Just War",
+            "Sacred Sites",
+            "Church Property"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Cathedrals"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Fanfblrik",
@@ -7981,7 +10217,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Terracotta Army"
+          ],
+          "pantheon": "Religious Idols",
+          "founder_beliefs": [
+            "Zakat"
+          ],
+          "follower_beliefs": [
+            "Pagodas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Lvxvcs",
@@ -8017,7 +10264,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "The Great Lighthouse"
+          ],
+          "pantheon": "Goddess of the Hunt",
+          "founder_beliefs": [
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Peace Gardens"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Overslidishe",
@@ -8050,7 +10308,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 4
+          "wars_received": 4,
+          "wonders_built": [],
+          "pantheon": "Oral Tradition",
+          "founder_beliefs": [
+            "City of God",
+            "Messiah",
+            "Unity of the Prophets"
+          ],
+          "follower_beliefs": [
+            "Choral Music",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "PVL01011900",
@@ -8083,7 +10353,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "Work Spirituals",
+          "founder_beliefs": [
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Devout Performers"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -8116,7 +10395,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "Ritual Sacrifice",
+          "founder_beliefs": [
+            "Missionary Zeal"
+          ],
+          "follower_beliefs": [
+            "Devoted Elite"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "gif": "Replays/Game_24.gif",
@@ -8220,7 +10508,24 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 6,
-          "wars_received": 0
+          "wars_received": 0,
+          "wonders_built": [
+            "Himeji Castle",
+            "Great Mosque of Djenne",
+            "Hagia Sophia",
+            "Petra"
+          ],
+          "pantheon": "Earth Mother",
+          "founder_beliefs": [
+            "Messiah",
+            "Unity of the Prophets"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Mosques",
+            "City of God"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "n9306867842",
@@ -8261,7 +10566,25 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 3,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [
+            "Hanging Gardens",
+            "Porcelain Tower",
+            "Taj Mahal",
+            "Chichen Itza",
+            "Eiffel Tower",
+            "Stonehenge"
+          ],
+          "pantheon": "Altars of Worship",
+          "founder_beliefs": [
+            "Mithraea",
+            "Defender of the Faith"
+          ],
+          "follower_beliefs": [
+            "Devout Performers",
+            "Viharas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Lvxvcs",
@@ -8302,7 +10625,25 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [
+            "Brandenburg Gate",
+            "Angkor Wat",
+            "Colossus",
+            "Kremlin",
+            "Machu Picchu",
+            "Leaning Tower of Pisa"
+          ],
+          "pantheon": "Goddess of Love",
+          "founder_beliefs": [
+            "Religious Troubadours",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Peace Gardens",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -8345,7 +10686,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [
+            "Alhambra",
+            "Temple of Artemis"
+          ],
+          "pantheon": "Ritual Sacrifice",
+          "founder_beliefs": [
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Synagogues"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "konoval_mik",
@@ -8383,7 +10736,21 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "Mausoleum of Halicarnassus",
+            "The Great Library",
+            "Statue of Zeus",
+            "The Pyramids"
+          ],
+          "pantheon": "Vision Quests",
+          "founder_beliefs": [
+            "Church Property"
+          ],
+          "follower_beliefs": [
+            "Feed the World"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Click4x",
@@ -8420,7 +10787,22 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [
+            "The Oracle",
+            "Sistine Chapel"
+          ],
+          "pantheon": "Seafood Rituals",
+          "founder_beliefs": [
+            "Hajj",
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Houses of Worship",
+            "Liturgical Drama",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "REPUNZEL2882",
@@ -8454,7 +10836,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "Tears of the Gods",
+          "founder_beliefs": [
+            "Just War",
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Religious Community",
+            "Pagodas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ouni0",
@@ -8487,7 +10880,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "Mystic Rituals",
+          "founder_beliefs": [
+            "Zakat"
+          ],
+          "follower_beliefs": [
+            "Guruship"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "PVL01011900",
@@ -8520,7 +10922,16 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "Sacred Path",
+          "founder_beliefs": [
+            "World Church"
+          ],
+          "follower_beliefs": [
+            "Choral Music"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "gif": "Replays/Game_25.gif",
@@ -8633,7 +11044,23 @@
           ],
           "wars": [],
           "wars_declared": 4,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [
+            "Terracotta Army",
+            "Great Firewall",
+            "Temple of Artemis",
+            "CN Tower"
+          ],
+          "pantheon": "God of War",
+          "founder_beliefs": [
+            "Reliquary",
+            "Disciples"
+          ],
+          "follower_beliefs": [
+            "Mandirs",
+            "Holy Warriors"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "AlexUnderHill",
@@ -8679,7 +11106,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 3,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "Mystic Rituals",
+          "founder_beliefs": [
+            "Sanctified Innovations",
+            "Ceremonial Burial"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Devout Performers",
+            "Jesuit Education"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "den_stu",
@@ -8731,7 +11170,30 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [
+            "Leaning Tower of Pisa",
+            "The Oracle",
+            "Angkor Wat",
+            "Forbidden Palace",
+            "Himeji Castle",
+            "Stonehenge",
+            "Hagia Sophia",
+            "Pentagon",
+            "Machu Picchu",
+            "Brandenburg Gate",
+            "Kremlin"
+          ],
+          "pantheon": "God of the Open Sky",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Pagodas",
+            "Guruship"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "REPUNZEL2882",
@@ -8771,7 +11233,24 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [
+            "Statue of Zeus",
+            "Statue of Liberty",
+            "The Great Library",
+            "The Louvre",
+            "Great Wall"
+          ],
+          "pantheon": "God of the Sea",
+          "founder_beliefs": [
+            "Just War",
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Divine inspiration",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "konoval_mik",
@@ -8804,7 +11283,19 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 2,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [
+            "Kotel",
+            "Church Property"
+          ],
+          "follower_beliefs": [
+            "Choral Music",
+            "Work Ethic",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Ouni0",
@@ -8838,7 +11329,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 0,
-          "wars_received": 3
+          "wars_received": 3,
+          "wonders_built": [],
+          "pantheon": "Ritual Sacrifice",
+          "founder_beliefs": [
+            "Mithraea",
+            "Hajj"
+          ],
+          "follower_beliefs": [
+            "Cathedrals",
+            "Liturgical Drama"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "PVL01011900",
@@ -8872,7 +11374,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 1,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "Rite of Spring",
+          "founder_beliefs": [
+            "Unity of the Prophets",
+            "Religious Unity"
+          ],
+          "follower_beliefs": [
+            "Synagogues",
+            "Sacred Waters"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Bahahanchiklkm",
@@ -8905,7 +11418,18 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 3,
-          "wars_received": 2
+          "wars_received": 2,
+          "wonders_built": [],
+          "pantheon": "Earth Mother",
+          "founder_beliefs": [
+            "Religious Troubadours",
+            "Dawah"
+          ],
+          "follower_beliefs": [
+            "Mosques",
+            "Viharas"
+          ],
+          "enhancer_beliefs": []
         },
         {
           "name": "Lvxvcs",
@@ -8938,303 +11462,23 @@
           "spaceship": [],
           "wars": [],
           "wars_declared": 8,
-          "wars_received": 1
+          "wars_received": 1,
+          "wonders_built": [],
+          "pantheon": "Goddess of Love",
+          "founder_beliefs": [
+            "Zakat",
+            "Karma"
+          ],
+          "follower_beliefs": [
+            "Indulgences",
+            "Feed the World",
+            "Peace Gardens"
+          ],
+          "enhancer_beliefs": []
         }
       ],
       "gif": "Replays/Game_26.gif",
       "flags": []
-    },
-    {
-      "id": 27,
-      "version": "4.20.15 (Build 1229)",
-      "number": "Game 27",
-      "players": [
-        {
-          "name": "Click4x",
-          "nation": "Япония"
-        },
-        {
-          "name": "Bahahanchiklkm",
-          "nation": "Буры"
-        },
-        {
-          "name": "EmperorPenguin01",
-          "nation": "Ацтеки"
-        },
-        {
-          "name": "AlexUnderHill",
-          "nation": "Дания"
-        },
-        {
-          "name": "konoval_mik",
-          "nation": "Колумбия"
-        },
-        {
-          "name": "REPUNZEL2882",
-          "nation": "Бруней"
-        }
-      ],
-      "winner": "Ацтеки",
-      "map": "Pangaea",
-      "playerCount": 6,
-      "endedOnTurn": "125",
-      "victoryType": "CC",
-      "survivors": [
-        {
-          "name": "EmperorPenguin01",
-          "nation": "Ацтеки",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [
-            {
-              "nation": "Буры",
-              "city": "Pretoria"
-            }
-          ],
-          "ideology": "Автократия",
-          "wonders": [
-            "Alhambra",
-            "Hanging Gardens",
-            "Taj Mahal",
-            "Temple of Artemis",
-            "Chichen Itza",
-            "Mausoleum of Halicarnassus",
-            "Stonehenge",
-            "Machu Picchu",
-            "Sistine Chapel",
-            "The Oracle"
-          ],
-          "techs": 49,
-          "policies": 24,
-          "policy_branches": [
-            "Традиция",
-            "Честь",
-            "Рационализм"
-          ],
-          "first_policy": "",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 1080,
-          "units": 61,
-          "strength": 20240,
-          "science": 467,
-          "cities": 15,
-          "population": 222,
-          "religion": "Islam",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 4,
-          "wars_received": 1
-        },
-        {
-          "name": "Click4x",
-          "nation": "Япония",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [],
-          "ideology": "Порядок",
-          "wonders": [
-            "Great Mosque of Djenne",
-            "Brandenburg Gate",
-            "Kremlin",
-            "Himeji Castle",
-            "Great Wall",
-            "Petra"
-          ],
-          "techs": 48,
-          "policies": 23,
-          "policy_branches": [
-            "Воля",
-            "Честь",
-            "Набожность"
-          ],
-          "first_policy": "",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 659,
-          "units": 18,
-          "strength": 4632,
-          "science": 420,
-          "cities": 8,
-          "population": 118,
-          "religion": "Taoism",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 1,
-          "wars_received": 1
-        },
-        {
-          "name": "AlexUnderHill",
-          "nation": "Дания",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [
-            {
-              "nation": "Колумбия",
-              "city": "Bogotá"
-            }
-          ],
-          "ideology": "Свобода",
-          "wonders": [
-            "Leaning Tower of Pisa",
-            "Terracotta Army",
-            "Statue of Zeus",
-            "The Great Lighthouse",
-            "Colossus"
-          ],
-          "techs": 46,
-          "policies": 20,
-          "policy_branches": [
-            "Воля",
-            "Честь",
-            "Исследование"
-          ],
-          "first_policy": "",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 522,
-          "units": 18,
-          "strength": 2588,
-          "science": 290,
-          "cities": 6,
-          "population": 76,
-          "religion": "Датский штурвал",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 1,
-          "wars_received": 1
-        },
-        {
-          "name": "REPUNZEL2882",
-          "nation": "Бруней",
-          "alive": true,
-          "has_capital": true,
-          "capital_taken_by": "",
-          "conquered_capitals": [],
-          "ideology": "Свобода",
-          "wonders": [
-            "The Great Library",
-            "The Pyramids",
-            "Angkor Wat",
-            "Notre Dame"
-          ],
-          "techs": 43,
-          "policies": 16,
-          "policy_branches": [
-            "Воля",
-            "Исследование"
-          ],
-          "first_policy": "Воля",
-          "eliminated_turn": null,
-          "capital_lost_turn": null,
-          "era": "Индустриальная",
-          "score": 497,
-          "units": 21,
-          "strength": 1705,
-          "science": 266,
-          "cities": 7,
-          "population": 95,
-          "religion": "Tengriism",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 0,
-          "wars_received": 1
-        },
-        {
-          "name": "konoval_mik",
-          "nation": "Колумбия",
-          "alive": false,
-          "has_capital": false,
-          "capital_taken_by": "Дания",
-          "conquered_capitals": [],
-          "ideology": "",
-          "wonders": [],
-          "techs": 17,
-          "policies": 7,
-          "policy_branches": [
-            "Традиция"
-          ],
-          "first_policy": "Традиция",
-          "eliminated_turn": 69,
-          "capital_lost_turn": 69,
-          "era": "Античность",
-          "score": 182,
-          "units": 0,
-          "strength": 259,
-          "science": 20,
-          "cities": 0,
-          "population": 18,
-          "religion": "Zoroastrianism",
-          "religion_state": "Religion",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 0,
-          "wars_received": 1
-        },
-        {
-          "name": "Bahahanchiklkm",
-          "nation": "Буры",
-          "alive": false,
-          "has_capital": false,
-          "capital_taken_by": "Ацтеки",
-          "conquered_capitals": [],
-          "ideology": "",
-          "wonders": [],
-          "techs": 34,
-          "policies": 12,
-          "policy_branches": [
-            "Традиция",
-            "Эстетика"
-          ],
-          "first_policy": "Традиция",
-          "eliminated_turn": 106,
-          "capital_lost_turn": 106,
-          "era": "Возрождение",
-          "score": 162,
-          "units": 0,
-          "strength": 110,
-          "science": 30,
-          "cities": 0,
-          "population": 12,
-          "religion": "Christianity",
-          "religion_state": "Усилена",
-          "ideology_turn": null,
-          "spaceship": [],
-          "wars": [],
-          "wars_declared": 0,
-          "wars_received": 1
-        }
-      ],
-      "league": {
-        "cc": {
-          "nation": "Ацтеки",
-          "start": 125,
-          "plus": [
-            "Япония",
-            "Бруней",
-            "Дания"
-          ],
-          "minus": [],
-          "abstain": [],
-          "stop": true
-        }
-      },
-      "gif": "Replays/Game_27.gif"
     }
   ]
 }

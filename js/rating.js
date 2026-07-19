@@ -9,6 +9,7 @@
   'use strict';
 
   const START_ELO = 1000;
+  const START_ELO_ZERO = 0;
   const START_K = 24;
   const ALLOWED_K = [20, 24, 32];
 
@@ -74,9 +75,10 @@
     return 1 / (1 + Math.pow(10, (rj - ri) / 400));
   }
 
-  function ensureRatings(map, names) {
+  function ensureRatings(map, names, startElo) {
+    const start = Number.isFinite(startElo) ? startElo : START_ELO;
     names.forEach((n) => {
-      if (!map.has(n)) map.set(n, START_ELO);
+      if (!map.has(n)) map.set(n, start);
     });
   }
 
@@ -86,14 +88,15 @@
     return ALLOWED_K.includes(n) ? n : START_K;
   }
 
-  function rateFfaLinear(games, k) {
+  function rateFfaLinear(games, k, startElo) {
     const K = normalizeK(k);
+    const start = Number.isFinite(startElo) ? startElo : START_ELO;
     const ratings = new Map();
     const gamesPlayed = new Map();
     for (const game of eligibleGames(games)) {
       const order = placementOrder(game);
       if (order.length < 2) continue;
-      ensureRatings(ratings, order);
+      ensureRatings(ratings, order, start);
       const n = order.length;
       const actual = order.map((_, i) => (n === 1 ? 1 : (n - 1 - i) / (n - 1)));
       const expected = order.map((name, i) => {
@@ -116,14 +119,15 @@
   }
 
   /** Method B: pairwise Elo — each higher place beats each lower. */
-  function ratePairwise(games, k) {
+  function ratePairwise(games, k, startElo) {
     const K = normalizeK(k);
+    const start = Number.isFinite(startElo) ? startElo : START_ELO;
     const ratings = new Map();
     const gamesPlayed = new Map();
     for (const game of eligibleGames(games)) {
       const order = placementOrder(game);
       if (order.length < 2) continue;
-      ensureRatings(ratings, order);
+      ensureRatings(ratings, order, start);
       const n = order.length;
       const pairs = (n * (n - 1)) / 2;
       const kPair = pairs > 0 ? K / pairs : K;
@@ -150,14 +154,15 @@
    * Each game awards points from place (1.0 best … 0.0 worst), scaled by lobby size;
    * running Elo-like average toward target 1000 + 400*(avgPlaceScore - 0.5).
    */
-  function rateFinishPlace(games) {
+  function rateFinishPlace(games, options) {
+    const zeroBase = options && options.zeroBase;
     const ratings = new Map();
     const gamesPlayed = new Map();
     const placeSum = new Map();
     for (const game of eligibleGames(games)) {
       const order = placementOrder(game);
       if (order.length < 2) continue;
-      ensureRatings(ratings, order);
+      ensureRatings(ratings, order, zeroBase ? START_ELO_ZERO : START_ELO);
       const n = order.length;
       order.forEach((name, i) => {
         const placeScore = (n - 1 - i) / (n - 1);
@@ -167,11 +172,16 @@
         placeSum.set(name, nextSum);
         gamesPlayed.set(name, gp);
         const avg = nextSum / gp;
-        // Blend toward place-based rating; more games → closer to long-run avg.
-        const target = START_ELO + 400 * (avg - 0.5);
-        const w = Math.min(1, gp / 8);
-        const cur = ratings.get(name);
-        ratings.set(name, cur * (1 - w) + target * w);
+        if (zeroBase) {
+          // Pure average place-score on 0..100 (no 1000±400 mapping).
+          ratings.set(name, avg * 100);
+        } else {
+          // Blend toward place-based rating; more games → closer to long-run avg.
+          const target = START_ELO + 400 * (avg - 0.5);
+          const w = Math.min(1, gp / 8);
+          const cur = ratings.get(name);
+          ratings.set(name, cur * (1 - w) + target * w);
+        }
       });
     }
     return toRows(ratings, gamesPlayed);
@@ -202,11 +212,13 @@
     return m;
   }
 
-  function computeAll(games, k) {
+  function computeAll(games, k, options) {
     const K = normalizeK(k);
-    const ffa = rateFfaLinear(games, K);
-    const pairwise = ratePairwise(games, K);
-    const finish = rateFinishPlace(games);
+    const zeroBase = !!(options && options.zeroBase);
+    const start = zeroBase ? START_ELO_ZERO : START_ELO;
+    const ffa = rateFfaLinear(games, K, start);
+    const pairwise = ratePairwise(games, K, start);
+    const finish = rateFinishPlace(games, { zeroBase });
     const rFfa = ratingMap(ffa);
     const rPair = ratingMap(pairwise);
     const rFin = ratingMap(finish);
@@ -229,7 +241,7 @@
       const avgRating =
         ratings.length > 0
           ? Math.round((ratings.reduce((a, b) => a + b, 0) / ratings.length) * 100) / 100
-          : START_ELO;
+          : start;
       const avgPlace =
         places.length > 0
           ? Math.round((places.reduce((a, b) => a + b, 0) / places.length) * 100) / 100
@@ -264,6 +276,7 @@
       finish,
       combined,
       k: K,
+      zeroBase,
       eligibleCount: eligibleGames(games).length,
       excludedCount: (games || []).filter(isExcludedGame).length,
     };
@@ -271,6 +284,7 @@
 
   global.IronLeagueRating = {
     START_ELO,
+    START_ELO_ZERO,
     START_K,
     ALLOWED_K,
     normalizeK,
