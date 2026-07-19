@@ -62,12 +62,20 @@
 
         .site-brand-sub {
             display: block;
-            margin-top: 2px;
+            margin-top: 4px;
             font-family: 'Cinzel', 'Times New Roman', serif;
-            font-size: 0.55em;
-            letter-spacing: 0.55em;
-            text-indent: 0.55em;
-            opacity: 0.92;
+            font-size: 0.42em;
+            font-weight: 700;
+            letter-spacing: 0.45em;
+            text-indent: 0.45em;
+            line-height: 1.2;
+            text-transform: uppercase;
+            color: #ffd700;
+            background: none;
+            -webkit-background-clip: border-box;
+            background-clip: border-box;
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.35));
+            opacity: 0.95;
         }
 
         .site-nav {
@@ -137,6 +145,7 @@
         }
 
         #viewArchive::before { background-image: url('../bg/archive.png'); }
+        #viewHome::before { background-image: url('../bg/home.png'); }
         #viewStats::before { background-image: url('../bg/stats.png'); }
         #viewTierlist::before { background-image: url('../bg/tierlist.png'); }
         #viewFaq::before { background-image: url('../bg/faq.png'); }
@@ -811,6 +820,49 @@
             color: #ffd700;
         }
 
+        .replay-preview {
+            position: relative;
+            margin-top: 14px;
+            border: 2px solid rgba(255, 215, 0, 0.55);
+            border-radius: 10px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.4);
+            min-height: 120px;
+        }
+
+        .replay-preview-canvas,
+        .replay-preview-fallback {
+            display: block;
+            width: 100%;
+            max-height: 180px;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+
+        .replay-preview-canvas[hidden],
+        .replay-preview-fallback[hidden] {
+            display: none !important;
+        }
+
+        .replay-preview-badge {
+            position: absolute;
+            left: 8px;
+            bottom: 8px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            color: #ffd700;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            pointer-events: none;
+        }
+
+        .replay-preview-badge[hidden] {
+            display: none !important;
+        }
+
         .replay-button {
             width: 100%;
             padding: 12px;
@@ -826,7 +878,7 @@
             justify-content: center;
             gap: 10px;
             transition: opacity 0.3s;
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         .replay-button:hover {
@@ -1497,23 +1549,32 @@
 
         .record-card {
             display: grid;
-            grid-template-columns: 64px 1fr;
-            grid-template-rows: auto auto auto auto auto;
+            grid-template-columns: 72px 1fr;
             column-gap: 14px;
+            row-gap: 0;
             border: 1px solid rgba(255, 215, 0, 0.28);
             background: linear-gradient(165deg, rgba(28, 24, 40, 0.92), rgba(16, 14, 26, 0.88));
             padding: 16px 16px 14px;
             position: relative;
+            align-items: start;
+        }
+
+        .record-card-media {
+            grid-column: 1;
+            grid-row: 1 / span 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            width: 72px;
         }
 
         .record-card-icon {
-            grid-column: 1;
-            grid-row: 1 / span 3;
             width: 64px;
             height: 64px;
             border-radius: 50%;
             object-fit: cover;
-            align-self: start;
+            flex-shrink: 0;
             box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.35), 0 0 14px rgba(255, 215, 0, 0.18);
             background: #1a1624;
         }
@@ -1544,24 +1605,28 @@
         .record-card-player {
             grid-column: 2;
             grid-row: 3;
-            margin: 0 0 4px;
+            margin: 0;
             color: #fff;
             font-size: 1.15rem;
             font-weight: 700;
+            align-self: end;
         }
 
         .record-card-value {
-            grid-column: 1 / -1;
-            margin: 8px 0 8px;
+            margin: 0;
             color: rgba(255, 215, 0, 0.95);
-            font-size: 1.35rem;
+            font-size: 1.05rem;
             font-weight: 700;
             letter-spacing: 0.02em;
+            text-align: center;
+            line-height: 1.15;
+            max-width: 72px;
+            word-break: break-word;
         }
 
         .record-card-body {
             grid-column: 1 / -1;
-            margin: 0;
+            margin: 12px 0 0;
             color: rgba(255, 255, 255, 0.72);
             font-size: 0.92rem;
             line-height: 1.45;
@@ -1768,4 +1833,137 @@
             /* marker for IntersectionObserver */
         }
 
-    
+        .home-section {
+            margin: 0 0 28px;
+            padding: 18px 18px 16px;
+            border: 1px solid rgba(255, 215, 0, 0.22);
+            background: rgba(0, 0, 0, 0.28);
+        }
+
+        .home-section h2 {
+            margin: 0 0 12px;
+            color: #ffd700;
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            letter-spacing: 0.04em;
+        }
+
+        .home-lead {
+            margin: 0 0 12px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+
+        .home-list {
+            margin: 0;
+            padding-left: 1.2em;
+            color: rgba(255, 255, 255, 0.78);
+            line-height: 1.55;
+        }
+
+        .home-list li + li {
+            margin-top: 6px;
+        }
+
+        .home-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+        }
+
+        .home-card {
+            text-align: left;
+            border: 1px solid rgba(255, 215, 0, 0.28);
+            background: rgba(20, 18, 32, 0.85);
+            color: #fff;
+            padding: 14px 14px 12px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: border-color 0.15s ease, background 0.15s ease;
+        }
+
+        .home-card:hover {
+            border-color: rgba(255, 215, 0, 0.55);
+            background: rgba(36, 30, 48, 0.92);
+        }
+
+        .home-card-title {
+            display: block;
+            color: #ffd700;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .home-card-text {
+            display: block;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .home-downloads {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 12px;
+        }
+
+        .home-download {
+            display: block;
+            text-decoration: none;
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            background: rgba(255, 215, 0, 0.08);
+            padding: 14px 16px;
+            border-radius: 10px;
+            color: #ffd700;
+            transition: background 0.15s ease, border-color 0.15s ease;
+        }
+
+        .home-download:hover {
+            background: rgba(255, 215, 0, 0.16);
+            border-color: rgba(255, 215, 0, 0.6);
+        }
+
+        .home-download-label {
+            display: block;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+
+        .home-download-meta {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.88rem;
+        }
+
+        .home-contacts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+        }
+
+        .home-contact-card {
+            border: 1px dashed rgba(255, 215, 0, 0.35);
+            background: rgba(14, 14, 24, 0.55);
+            padding: 14px;
+            border-radius: 10px;
+            min-height: 110px;
+        }
+
+        .home-contact-role {
+            margin: 0 0 10px;
+            color: #ffd700;
+            font-size: 1rem;
+        }
+
+        .home-contact-placeholder {
+            margin: 0 0 6px;
+            color: rgba(255, 255, 255, 0.45);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .site-brand[data-go-view] {
+            cursor: pointer;
+        }

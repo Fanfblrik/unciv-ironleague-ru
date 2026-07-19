@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=records-bg-1">
+    <link rel="stylesheet" href="css/site.css?v=policy-art-1">
 
 </head>
 <body>
@@ -24,14 +24,15 @@
 </div>
 <button type="button" class="back-to-top" id="backToTop" data-i18n="backTop">Наверх</button>
 <div class="container">
-    <div class="site-brand" aria-label="Iron League">
+    <div class="site-brand" aria-label="Iron League" role="button" tabindex="0" data-go-view="home" title="Iron League">
         IronLeague
         <span class="site-brand-sub">Unciv</span>
     </div>
-    <h1 id="pageTitle">⚔️ Архив игр 🛡️</h1>
+    <h1 id="pageTitle">🏠 Главная</h1>
 
     <nav class="site-nav" data-i18n-aria="nav.aria" aria-label="Разделы сайта">
-        <button type="button" class="site-nav-btn active" data-view="archive" data-i18n="nav.archive">Архив игр</button>
+        <button type="button" class="site-nav-btn active" data-view="home" data-i18n="nav.home">Главная</button>
+        <button type="button" class="site-nav-btn" data-view="archive" data-i18n="nav.archive">Архив игр</button>
         <button type="button" class="site-nav-btn" data-view="stats" data-i18n="nav.stats">Статистика</button>
         <button type="button" class="site-nav-btn" data-view="rating" data-i18n="nav.rating">Рейтинг</button>
         <button type="button" class="site-nav-btn" data-view="tierlist" data-i18n="nav.tierlist">Тирлист</button>
@@ -39,7 +40,94 @@
         <button type="button" class="site-nav-btn" data-view="faq" data-i18n="nav.faq">FAQ</button>
     </nav>
 
-    <div class="view-panel active" id="viewArchive">
+    <div class="view-panel active" id="viewHome">
+        <section class="home-section">
+            <h2 data-i18n="home.leagueTitle">О лиге</h2>
+            <p class="home-lead" data-i18n="home.leagueLead">
+                Iron League — закрытые FFA-игры в Unciv на моде RecMOD / RekMOD iron.
+            </p>
+            <ul class="home-list">
+                <li data-i18n="home.league.1">Периодические FFA в закрытом лобби; партии стабильно доигрываются до конца.</li>
+                <li data-i18n="home.league.2">В лобби обычно 6–10 игроков; старт через драфт наций.</li>
+                <li data-i18n="home.league.3">Сессия в среднем 3–4 недели (около 5–15 полных ходов в день).</li>
+                <li data-i18n="home.league.4">Координация в отдельной Telegram-группе; все лобби 18+.</li>
+                <li data-i18n="home.league.5">Telegram-бот уведомляет о наступлении хода и помогает с драфтом, FAQ и спектатором.</li>
+            </ul>
+        </section>
+
+        <section class="home-section">
+            <h2 data-i18n="home.siteTitle">Что есть на сайте</h2>
+            <div class="home-cards">
+                <button type="button" class="home-card" data-go-view="archive">
+                    <span class="home-card-title" data-i18n="nav.archive">Архив игр</span>
+                    <span class="home-card-text" data-i18n="home.card.archive">Реплеи, финалы, победители и карточки партий.</span>
+                </button>
+                <button type="button" class="home-card" data-go-view="stats">
+                    <span class="home-card-title" data-i18n="nav.stats">Статистика</span>
+                    <span class="home-card-text" data-i18n="home.card.stats">Винрейты, нации, институты, чудеса и верования.</span>
+                </button>
+                <button type="button" class="home-card" data-go-view="rating">
+                    <span class="home-card-title" data-i18n="nav.rating">Рейтинг</span>
+                    <span class="home-card-text" data-i18n="home.card.rating">Elo и очки лобби (шкала от 1000 или от нуля).</span>
+                </button>
+                <button type="button" class="home-card" data-go-view="tierlist">
+                    <span class="home-card-title" data-i18n="nav.tierlist">Тирлист</span>
+                    <span class="home-card-text" data-i18n="home.card.tierlist">Оценка силы наций мода.</span>
+                </button>
+                <button type="button" class="home-card" data-go-view="records">
+                    <span class="home-card-title" data-i18n="nav.records">Рекорды</span>
+                    <span class="home-card-text" data-i18n="home.card.records">Достижения и пики по архиву лиги.</span>
+                </button>
+                <button type="button" class="home-card" data-go-view="faq">
+                    <span class="home-card-title" data-i18n="nav.faq">FAQ</span>
+                    <span class="home-card-text" data-i18n="home.card.faq">Подключение, правила и типичные ошибки.</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="home-section">
+            <h2 data-i18n="home.downloadsTitle">Скачать</h2>
+            <p class="hint" data-i18n="home.downloadsHint">Клиент Unciv и моды. Для лиги обычно нужен Iron-мод (ветка iron2).</p>
+            <div class="home-downloads">
+                <a class="home-download" href="https://github.com/yairm210/Unciv/releases" target="_blank" rel="noopener">
+                    <span class="home-download-label" data-i18n="home.dl.unciv">Unciv</span>
+                    <span class="home-download-meta" data-i18n="home.dl.uncivMeta">Клиент (Windows / Android / …)</span>
+                </a>
+                <a class="home-download" href="https://github.com/DeStup/RekMOD-iron/tree/iron2" target="_blank" rel="noopener">
+                    <span class="home-download-label" data-i18n="home.dl.iron">RekMOD iron</span>
+                    <span class="home-download-meta" data-i18n="home.dl.ironMeta">Мод лиги (ветка iron2)</span>
+                </a>
+                <a class="home-download" href="https://github.com/ravignir/RekMOD" target="_blank" rel="noopener">
+                    <span class="home-download-label" data-i18n="home.dl.rekmod">RekMOD / RecMOD</span>
+                    <span class="home-download-meta" data-i18n="home.dl.rekmodMeta">Базовый мод (репозиторий)</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="home-section">
+            <h2 data-i18n="home.contactsTitle">Организаторы</h2>
+            <p class="hint" data-i18n="home.contactsHint">Контакты появятся позже — сейчас только разметка блоков.</p>
+            <div class="home-contacts">
+                <article class="home-contact-card">
+                    <h3 class="home-contact-role" data-i18n="home.contact.role1">Организатор</h3>
+                    <p class="home-contact-placeholder" data-i18n="home.contact.placeholder">Имя / ник — скоро</p>
+                    <p class="home-contact-placeholder" data-i18n="home.contact.linkPlaceholder">Telegram / Discord — скоро</p>
+                </article>
+                <article class="home-contact-card">
+                    <h3 class="home-contact-role" data-i18n="home.contact.role2">Соорганизатор</h3>
+                    <p class="home-contact-placeholder" data-i18n="home.contact.placeholder">Имя / ник — скоро</p>
+                    <p class="home-contact-placeholder" data-i18n="home.contact.linkPlaceholder">Telegram / Discord — скоро</p>
+                </article>
+                <article class="home-contact-card">
+                    <h3 class="home-contact-role" data-i18n="home.contact.role3">Связь по сайту / боту</h3>
+                    <p class="home-contact-placeholder" data-i18n="home.contact.placeholder">Имя / ник — скоро</p>
+                    <p class="home-contact-placeholder" data-i18n="home.contact.linkPlaceholder">Telegram / Discord — скоро</p>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <div class="view-panel" id="viewArchive">
     <div class="filters">
         <div class="filter-group">
             <label data-i18n="filter.nation">Фильтр по нации</label>
@@ -617,7 +705,6 @@
         <div class="faq-toc" data-i18n-aria="records.toc" aria-label="Разделы рекордов">
             <a href="#records-glory" data-i18n="records.section.glory">Слава</a>
             <a href="#records-war" data-i18n="records.section.war">Война</a>
-            <a href="#records-veteran" data-i18n="records.section.veteran">Ветеран</a>
             <a href="#records-style" data-i18n="records.section.style">Стиль</a>
             <a href="#records-peaks" data-i18n="records.section.peaks">Пики финала</a>
             <a href="#records-curious" data-i18n="records.section.curious">Курьёзы</a>
@@ -629,10 +716,6 @@
         <div class="stats-section" id="records-war">
             <h2 data-i18n="records.section.war">Война</h2>
             <div class="records-grid" id="recordsWar"></div>
-        </div>
-        <div class="stats-section" id="records-veteran">
-            <h2 data-i18n="records.section.veteran">Ветеран</h2>
-            <div class="records-grid" id="recordsVeteran"></div>
         </div>
         <div class="stats-section" id="records-style">
             <h2 data-i18n="records.section.style">Стиль</h2>
@@ -674,7 +757,8 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=veteran-1"></script>
+<script src="js/i18n.js?v=home-2"></script>
+<script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-pergame-1"></script>
 <script src="js/achievements.js?v=veteran-1"></script>
 <script>
@@ -1593,12 +1677,17 @@
                     ${leagueHtml}
                 </div>
                 ${hasGif ? `
+                    <div class="replay-preview" data-gif-preview="${game.gif}">
+                        <canvas class="replay-preview-canvas" hidden></canvas>
+                        <img class="replay-preview-fallback" alt="" loading="lazy" hidden>
+                        <span class="replay-preview-badge" hidden data-i18n="replay.previewTail">хвост реплея</span>
+                    </div>
                     <button class="replay-button" data-replay="${game.gif}">${tt('card.replay')}</button>
                     <div class="replay-wrap">
                         <img class="replay-gif" src="${game.gif}" alt="Replay" data-game-id="${game.id}"
                              title="${tt('replay.title')}"
                              data-replay-src="${game.gif}"
-                             onerror="this.closest('.replay-wrap').style.display='none'; const b=this.closest('.replay-wrap').previousElementSibling; if(b) b.style.display='none';">
+                             onerror="this.closest('.replay-wrap').style.display='none'; const b=this.closest('.replay-wrap').previousElementSibling; if(b) b.style.display='none'; const p=this.closest('.game-card')?.querySelector('.replay-preview'); if(p) p.style.display='none';">
                         <div class="replay-hint">${tt('replay.hint')}</div>
                     </div>
                 ` : ''}
@@ -1642,6 +1731,12 @@
         });
 
         bindReplayRestart(grid);
+        if (window.IronLeagueGifPreview) {
+            IronLeagueGifPreview.mount(grid);
+            grid.querySelectorAll('.replay-preview-badge').forEach((el) => {
+                el.textContent = tt('replay.previewTail');
+            });
+        }
     }
 
     // Фильтрация
@@ -1729,6 +1824,7 @@
 
     function applyViewMeta(view) {
         const titles = {
+            home: viewTitle('title.home', '🏠 Главная'),
             archive: viewTitle('title.archive', '⚔️ Архив игр 🛡️'),
             stats: viewTitle('title.stats', '📊 Статистика лиги'),
             rating: viewTitle('title.rating', '🏅 Рейтинг'),
@@ -1737,6 +1833,7 @@
             faq: viewTitle('title.faq', '❓ FAQ'),
         };
         const footers = {
+            home: viewTitle('footer.home', 'Iron League — главная'),
             archive: viewTitle('footer.archive', 'Данные обновляются автоматически'),
             stats: viewTitle('footer.stats', 'Статистика по играм архива (без teams/scrap)'),
             rating: viewTitle('footer.rating', 'Рейтинг: шкала от 1000 или от нуля'),
@@ -1744,9 +1841,9 @@
             records: viewTitle('footer.records', 'Рекорды и достижения (без teams/scrap)'),
             faq: viewTitle('footer.faq', 'Частые вопросы'),
         };
-        document.getElementById('pageTitle').textContent = titles[view] || titles.archive;
+        document.getElementById('pageTitle').textContent = titles[view] || titles.home;
         const footer = document.querySelector('footer p');
-        if (footer) footer.textContent = footers[view] || footers.archive;
+        if (footer) footer.textContent = footers[view] || footers.home;
     }
 
     const RATING_K_KEY = 'ironleague_rating_k';
@@ -1935,7 +2032,14 @@
     }
 
     const RECORD_SECTIONS = {
-        glory: ['most_wins', 'best_winrate', 'longest_win_streak', 'fastest_win', 'slowest_win'],
+        glory: [
+            'most_wins',
+            'best_winrate',
+            'longest_win_streak',
+            'longest_play_streak',
+            'fastest_win',
+            'slowest_win',
+        ],
         war: [
             'wins_all_with_caps',
             'most_caps_single_win',
@@ -1944,7 +2048,6 @@
             'most_wars_received',
             'most_military_deaths',
         ],
-        veteran: ['longest_play_streak'],
         style: [
             'piety_first_count',
             'piety_first_streak',
@@ -1968,6 +2071,22 @@
         ],
     };
 
+    function recordIconSrc(id) {
+        const pngIds = new Set([
+            'best_winrate',
+            'tradition_first_count',
+            'liberty_first_count',
+            'honor_first_count',
+            'piety_first_count',
+            'piety_first_streak',
+            'ideology_order_count',
+            'ideology_freedom_count',
+            'ideology_autocracy_count',
+        ]);
+        const ext = pngIds.has(id) ? 'png' : 'svg';
+        return `img/records/${id}.${ext}`;
+    }
+
     function formatRecordCard(item) {
         const title = tt(`records.item.${item.id}.title`);
         const flavorKey = `records.item.${item.id}.flavor`;
@@ -1982,13 +2101,15 @@
         if (body === `records.item.${item.id}.body`) {
             body = `${item.player}: ${item.value}`;
         }
-        const iconSrc = `img/records/${item.id}.svg`;
+        const iconSrc = recordIconSrc(item.id);
         return `<article class="record-card" id="record-${item.id}">
-            <img class="record-card-icon" src="${iconSrc}" alt="" width="64" height="64" loading="lazy">
+            <div class="record-card-media">
+                <img class="record-card-icon" src="${iconSrc}" alt="" width="64" height="64" loading="lazy">
+                <p class="record-card-value">${item.value}</p>
+            </div>
             <p class="record-card-flavor">${flavor}</p>
             <h3 class="record-card-title">${title === `records.item.${item.id}.title` ? item.id : title}</h3>
             <p class="record-card-player">${item.player}</p>
-            <p class="record-card-value">${item.value}</p>
             <p class="record-card-body">${body}</p>
         </article>`;
     }
@@ -2000,7 +2121,6 @@
         const map = {
             glory: document.getElementById('recordsGlory'),
             war: document.getElementById('recordsWar'),
-            veteran: document.getElementById('recordsVeteran'),
             style: document.getElementById('recordsStyle'),
             peaks: document.getElementById('recordsPeaks'),
             curious: document.getElementById('recordsCurious'),
@@ -2022,6 +2142,7 @@
     (async function boot() {
         await initAssetCacheBust();
         if (window.IronLeagueI18n) IronLeagueI18n.initLang();
+        applyViewMeta('home');
         loadRatingK();
         loadLobbyElimPenalty();
         loadRatingMinGames();
@@ -2082,26 +2203,40 @@
         renderRecords();
     })();
 
+    function showSiteView(view) {
+        const allowed = new Set(['home', 'archive', 'stats', 'rating', 'tierlist', 'records', 'faq']);
+        const next = allowed.has(view) ? view : 'home';
+        document.querySelectorAll('.site-nav-btn').forEach((b) => {
+            b.classList.toggle('active', b.dataset.view === next);
+        });
+        document.getElementById('viewHome')?.classList.toggle('active', next === 'home');
+        document.getElementById('viewArchive').classList.toggle('active', next === 'archive');
+        document.getElementById('viewStats').classList.toggle('active', next === 'stats');
+        document.getElementById('viewRating')?.classList.toggle('active', next === 'rating');
+        document.getElementById('viewTierlist').classList.toggle('active', next === 'tierlist');
+        document.getElementById('viewRecords')?.classList.toggle('active', next === 'records');
+        document.getElementById('viewFaq').classList.toggle('active', next === 'faq');
+        applyViewMeta(next);
+        if (next === 'stats') renderStatsTables();
+        if (next === 'rating') {
+            applyRatingScale(ratingScale, true);
+            renderRatingTables();
+        }
+        if (next === 'records') renderRecords();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     // Переключение разделов
     document.querySelectorAll('.site-nav-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const view = btn.dataset.view;
-            document.querySelectorAll('.site-nav-btn').forEach(b => {
-                b.classList.toggle('active', b === btn);
-            });
-            document.getElementById('viewArchive').classList.toggle('active', view === 'archive');
-            document.getElementById('viewStats').classList.toggle('active', view === 'stats');
-            document.getElementById('viewRating')?.classList.toggle('active', view === 'rating');
-            document.getElementById('viewTierlist').classList.toggle('active', view === 'tierlist');
-            document.getElementById('viewRecords')?.classList.toggle('active', view === 'records');
-            document.getElementById('viewFaq').classList.toggle('active', view === 'faq');
-            applyViewMeta(view);
-            if (view === 'stats') renderStatsTables();
-            if (view === 'rating') {
-                applyRatingScale(ratingScale, true);
-                renderRatingTables();
+        btn.addEventListener('click', () => showSiteView(btn.dataset.view));
+    });
+    document.querySelectorAll('[data-go-view]').forEach((el) => {
+        el.addEventListener('click', () => showSiteView(el.getAttribute('data-go-view')));
+        el.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                showSiteView(el.getAttribute('data-go-view'));
             }
-            if (view === 'records') renderRecords();
         });
     });
 
@@ -2867,7 +3002,7 @@
             if (!window.IronLeagueI18n) return;
             IronLeagueI18n.setLang(btn.dataset.lang);
             const active = document.querySelector('.site-nav-btn.active');
-            applyViewMeta(active?.dataset.view || 'archive');
+            applyViewMeta(active?.dataset.view || 'home');
             populateNationFilter();
             filterGames();
             renderStatsTables();
