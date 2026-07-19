@@ -136,10 +136,10 @@
             pointer-events: none;
         }
 
-        #viewArchive::before { background-image: url('bg/archive.png'); }
-        #viewStats::before { background-image: url('bg/stats.png'); }
-        #viewTierlist::before { background-image: url('bg/tierlist.png'); }
-        #viewFaq::before { background-image: url('bg/faq.png'); }
+        #viewArchive::before { background-image: url('../bg/archive.png'); }
+        #viewStats::before { background-image: url('../bg/stats.png'); }
+        #viewTierlist::before { background-image: url('../bg/tierlist.png'); }
+        #viewFaq::before { background-image: url('../bg/faq.png'); }
 
         .faq-toolbar {
             display: flex;
@@ -1366,7 +1366,7 @@
         }
 
         #viewRating::before,
-        #viewRatingZero::before { background-image: url('bg/rating.png'); }
+        #viewRatingZero::before { background-image: url('../bg/rating.png'); }
 
         .lang-switch {
             position: fixed;
