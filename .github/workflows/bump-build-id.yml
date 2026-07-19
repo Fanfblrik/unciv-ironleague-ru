@@ -1,10 +1,21 @@
 name: Bump build id
 
+# Bust browser/CDN caches after deploys by rewriting build-id.txt.
+# Also supports manual runs (workflow_dispatch) when a merge somehow
+# skipped the automatic push trigger (seen after PR #61/#62).
+
 on:
   push:
     branches: [main]
     paths-ignore:
       - 'build-id.txt'
+      - 'README.md'
+      - '.gitignore'
+  workflow_dispatch:
+
+concurrency:
+  group: bump-build-id-main
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -14,9 +25,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Need a fresh tip; default fetch is enough for main pushes.
+          fetch-depth: 1
+
       - name: Write build-id.txt
         run: date -u +"%Y-%m-%dT%H-%M-%SZ" > build-id.txt
-      - name: Commit if changed
+
+      - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -26,4 +42,6 @@ jobs:
             exit 0
           fi
           git commit -m "chore: bump build-id after deploy"
+          # Built-in GITHUB_TOKEN pushes do not re-trigger this workflow
+          # (paths-ignore also skips build-id.txt-only pushes).
           git push
