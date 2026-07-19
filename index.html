@@ -1201,7 +1201,8 @@
                 font-size: 0.95rem;
             }
 
-            #viewRating .hint {
+            #viewRating .hint,
+            #viewRatingZero .hint {
                 padding: 10px 12px;
                 font-size: 0.9rem;
             }
@@ -1217,7 +1218,8 @@
                 width: 100%;
             }
 
-            .rating-k-btn {
+            .rating-k-btn,
+            .rating-elim-btn {
                 flex: 1;
                 text-align: center;
             }
@@ -1374,7 +1376,8 @@
             100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
         }
 
-        #viewRating::before { background-image: url('bg/rating.png'); }
+        #viewRating::before,
+        #viewRatingZero::before { background-image: url('bg/rating.png'); }
 
         .lang-switch {
             position: fixed;
@@ -1515,7 +1518,8 @@
             padding: 3px;
         }
 
-        .rating-k-btn {
+        .rating-k-btn,
+        .rating-elim-btn {
             border: none;
             background: transparent;
             color: rgba(255, 255, 255, 0.75);
@@ -1527,7 +1531,8 @@
             letter-spacing: 0.03em;
         }
 
-        .rating-k-btn.active {
+        .rating-k-btn.active,
+        .rating-elim-btn.active {
             background: rgba(255, 215, 0, 0.2);
             color: #ffd700;
         }
@@ -1539,11 +1544,13 @@
 
         .rating-intro,
         #viewRating .hint,
+        #viewRatingZero .hint,
         .rating-k-note {
             white-space: pre-line;
         }
 
-        #viewRating .hint {
+        #viewRating .hint,
+        #viewRatingZero .hint {
             font-size: 0.98rem;
             line-height: 1.55;
             max-width: none;
@@ -1563,7 +1570,8 @@
             box-sizing: border-box;
         }
 
-        #viewRating .rating-k-row {
+        #viewRating .rating-k-row,
+        #viewRatingZero .rating-k-row {
             width: 100%;
             box-sizing: border-box;
         }
@@ -1591,7 +1599,8 @@
     <nav class="site-nav" data-i18n-aria="nav.aria" aria-label="Разделы сайта">
         <button type="button" class="site-nav-btn active" data-view="archive" data-i18n="nav.archive">Архив игр</button>
         <button type="button" class="site-nav-btn" data-view="stats" data-i18n="nav.stats">Статистика</button>
-        <button type="button" class="site-nav-btn" data-view="rating" data-i18n="nav.rating">Рейтинг</button>
+        <button type="button" class="site-nav-btn" data-view="rating" data-i18n="nav.rating">Рейтинг от 1000</button>
+        <button type="button" class="site-nav-btn" data-view="ratingZero" data-i18n="nav.ratingZero">Рейтинг от нуля</button>
         <button type="button" class="site-nav-btn" data-view="tierlist" data-i18n="nav.tierlist">Тирлист</button>
         <button type="button" class="site-nav-btn" data-view="faq" data-i18n="nav.faq">FAQ</button>
     </nav>
@@ -1901,16 +1910,13 @@
                 <button type="button" class="rating-k-btn active" data-k="24">24</button>
                 <button type="button" class="rating-k-btn" data-k="32">32</button>
             </div>
-            <span class="rating-k-note" data-i18n="rating.kHint">Влияет на Elo FFA и pairwise (не на рейтинг по финишу). По умолчанию 24.</span>
+            <span class="rating-k-note" data-i18n="rating.kHint">Влияет на Elo FFA и pairwise. По умолчанию 24.</span>
         </div>
         <div class="faq-toc" data-i18n-aria="rating.toc" aria-label="Разделы рейтинга">
             <a href="#rating-combined" data-i18n="rating.combined">Сводный рейтинг</a>
             <a href="#rating-ffa" data-i18n="rating.ffa">Elo FFA</a>
             <a href="#rating-pairwise" data-i18n="rating.pairwise">Elo pairwise</a>
             <a href="#rating-finish" data-i18n="rating.finish">Рейтинг по финишу</a>
-            <a href="#rating-zero" data-i18n="rating.zero">Рейтинг от нуля</a>
-            <a href="#rating-lobby-win" data-i18n="rating.lobbyWin">Очки лобби (победа)</a>
-            <a href="#rating-lobby-avg" data-i18n="rating.lobbyAvg">Очки лобби (Avg)</a>
         </div>
 
         <div class="stats-section" id="rating-combined">
@@ -1988,10 +1994,36 @@
                 </table>
             </div>
         </div>
+    </div>
+
+    <div class="view-panel" id="viewRatingZero">
+        <p class="rating-intro" id="ratingZeroIntro" data-i18n="rating.introZero">Рейтинг от нуля и очки лобби.</p>
+        <div class="rating-k-row" role="group" data-i18n-aria="rating.kLabel" aria-label="Коэффициент K">
+            <span class="rating-k-label" data-i18n="rating.kLabel">Коэффициент K</span>
+            <div class="rating-k-switch">
+                <button type="button" class="rating-k-btn" data-k="20">20</button>
+                <button type="button" class="rating-k-btn active" data-k="24">24</button>
+                <button type="button" class="rating-k-btn" data-k="32">32</button>
+            </div>
+            <span class="rating-k-note" data-i18n="rating.kHintZero">Влияет на Elo FFA/pairwise от нуля. На очки лобби — нет.</span>
+        </div>
+        <div class="rating-k-row" role="group" data-i18n-aria="rating.elimLabel" aria-label="Штраф за выбывание">
+            <span class="rating-k-label" data-i18n="rating.elimLabel">Штраф за выбывание</span>
+            <div class="rating-k-switch">
+                <button type="button" class="rating-elim-btn active" data-elim="0" data-i18n="rating.elimOff">Выкл</button>
+                <button type="button" class="rating-elim-btn" data-elim="5" data-i18n="rating.elimOn">−5</button>
+            </div>
+            <span class="rating-k-note" data-i18n="rating.elimHint">Только для «Очки лобби». По умолчанию выкл.</span>
+        </div>
+        <div class="faq-toc" data-i18n-aria="rating.tocZero" aria-label="Разделы рейтинга от нуля">
+            <a href="#rating-zero" data-i18n="rating.zeroCombined">Сводный от нуля</a>
+            <a href="#rating-lobby-win" data-i18n="rating.lobbyWin">Очки лобби (победа)</a>
+            <a href="#rating-lobby-avg" data-i18n="rating.lobbyAvg">Очки лобби (Avg)</a>
+        </div>
 
         <div class="stats-section" id="rating-zero">
-            <h2 data-i18n="rating.zero">Рейтинг от нуля</h2>
-            <p class="hint" data-i18n="rating.zeroHint">Те же три метода, но старт Elo = 0 (без базы 1000). Финиш — среднее нормированное место × 100 (0…100).</p>
+            <h2 data-i18n="rating.zeroCombined">Сводный рейтинг от нуля</h2>
+            <p class="hint" data-i18n="rating.zeroHint">Те же три метода, но старт Elo = 0. Финиш — среднее placeScore × 100.</p>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="ratingZeroCombinedTable">
                     <thead>
@@ -2096,8 +2128,8 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=beliefs-combos-1"></script>
-<script src="js/rating.js?v=lobby-points-1"></script>
+<script src="js/i18n.js?v=rating-tabs-1"></script>
+<script src="js/rating.js?v=rating-tabs-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -3144,14 +3176,16 @@
         const titles = {
             archive: viewTitle('title.archive', '⚔️ Архив игр 🛡️'),
             stats: viewTitle('title.stats', '📊 Статистика лиги'),
-            rating: viewTitle('title.rating', '🏅 Рейтинг игроков'),
+            rating: viewTitle('title.rating', '🏅 Рейтинг от 1000'),
+            ratingZero: viewTitle('title.ratingZero', '🏅 Рейтинг от нуля'),
             tierlist: viewTitle('title.tierlist', '⭐ Тирлист наций'),
             faq: viewTitle('title.faq', '❓ FAQ'),
         };
         const footers = {
             archive: viewTitle('footer.archive', 'Данные обновляются автоматически'),
             stats: viewTitle('footer.stats', 'Статистика по играм архива (без teams/scrap)'),
-            rating: viewTitle('footer.rating', 'Рейтинг пересчитывается при каждой загрузке архива'),
+            rating: viewTitle('footer.rating', 'Классическая шкала: старт Elo 1000'),
+            ratingZero: viewTitle('footer.ratingZero', 'Шкала от нуля и очки лобби'),
             tierlist: viewTitle('footer.tierlist', 'Тирлист наций лиги'),
             faq: viewTitle('footer.faq', 'Частые вопросы'),
         };
@@ -3161,25 +3195,27 @@
     }
 
     const RATING_K_KEY = 'ironleague_rating_k';
+    const RATING_ELIM_KEY = 'ironleague_rating_elim_penalty';
     let ratingK = 24;
+    let lobbyElimPenalty = 0;
 
     function loadRatingK() {
         let saved = 24;
         try {
             saved = Number(localStorage.getItem(RATING_K_KEY));
         } catch (e) { /* ignore */ }
-        if (window.IronLeagueRating && IronLeagueRating.normalizeK) {
-            ratingK = IronLeagueRating.normalizeK(saved);
-        } else {
-            ratingK = [20, 24, 32].includes(saved) ? saved : 24;
-        }
-        document.querySelectorAll('.rating-k-btn').forEach((btn) => {
-            btn.classList.toggle('active', Number(btn.dataset.k) === ratingK);
-        });
-        return ratingK;
+        setRatingK(saved, true);
     }
 
-    function setRatingK(next) {
+    function loadLobbyElimPenalty() {
+        let saved = 0;
+        try {
+            saved = Number(localStorage.getItem(RATING_ELIM_KEY));
+        } catch (e) { /* ignore */ }
+        setLobbyElimPenalty(saved, true);
+    }
+
+    function setRatingK(next, silent) {
         if (window.IronLeagueRating && IronLeagueRating.normalizeK) {
             ratingK = IronLeagueRating.normalizeK(next);
         } else {
@@ -3191,13 +3227,28 @@
         document.querySelectorAll('.rating-k-btn').forEach((btn) => {
             btn.classList.toggle('active', Number(btn.dataset.k) === ratingK);
         });
-        renderRatingTables();
+        if (!silent) renderRatingTables();
+    }
+
+    function setLobbyElimPenalty(next, silent) {
+        const n = Number(next);
+        lobbyElimPenalty = n === 5 ? 5 : 0;
+        try {
+            localStorage.setItem(RATING_ELIM_KEY, String(lobbyElimPenalty));
+        } catch (e) { /* ignore */ }
+        document.querySelectorAll('.rating-elim-btn').forEach((btn) => {
+            btn.classList.toggle('active', Number(btn.dataset.elim) === lobbyElimPenalty);
+        });
+        if (!silent) renderRatingTables();
     }
 
     function renderRatingTables() {
         if (!window.IronLeagueRating || !gamesData.length) return;
-        const result = IronLeagueRating.computeAll(gamesData, ratingK);
-        const zero = IronLeagueRating.computeAll(gamesData, ratingK, { zeroBase: true });
+        const result = IronLeagueRating.computeAll(gameData, ratingK);
+        const zero = IronLeagueRating.computeAll(gameData, ratingK, {
+            zeroBase: true,
+            elimPenalty: lobbyElimPenalty,
+        });
         const simpleRow = (r) => `<tr>
             <td class="num">${r.place}</td>
             <td>${r.name}</td>
@@ -3233,14 +3284,14 @@
         );
         fillSortableTable(
             document.getElementById('ratingLobbyWinTable'),
-            result.lobbyWin,
+            zero.lobbyWin,
             simpleRow,
             'rating',
             'desc',
         );
         fillSortableTable(
             document.getElementById('ratingLobbyAvgTable'),
-            result.lobbyAvg,
+            zero.lobbyAvg,
             simpleRow,
             'rating',
             'desc',
@@ -3252,8 +3303,12 @@
         await initAssetCacheBust();
         if (window.IronLeagueI18n) IronLeagueI18n.initLang();
         loadRatingK();
+        loadLobbyElimPenalty();
         document.querySelectorAll('.rating-k-btn').forEach((btn) => {
             btn.addEventListener('click', () => setRatingK(btn.dataset.k));
+        });
+        document.querySelectorAll('.rating-elim-btn').forEach((btn) => {
+            btn.addEventListener('click', () => setLobbyElimPenalty(btn.dataset.elim));
         });
         await loadGamesData();
         await Promise.all([loadFaqData(), loadTierlistData()]);
@@ -3271,11 +3326,12 @@
             document.getElementById('viewArchive').classList.toggle('active', view === 'archive');
             document.getElementById('viewStats').classList.toggle('active', view === 'stats');
             document.getElementById('viewRating')?.classList.toggle('active', view === 'rating');
+            document.getElementById('viewRatingZero')?.classList.toggle('active', view === 'ratingZero');
             document.getElementById('viewTierlist').classList.toggle('active', view === 'tierlist');
             document.getElementById('viewFaq').classList.toggle('active', view === 'faq');
             applyViewMeta(view);
             if (view === 'stats') renderStatsTables();
-            if (view === 'rating') renderRatingTables();
+            if (view === 'rating' || view === 'ratingZero') renderRatingTables();
         });
     });
 
