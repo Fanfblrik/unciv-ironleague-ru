@@ -284,7 +284,8 @@
       'stats.intro':
         'В статистику не входят игры с пометками «командная» (teams) и «скрап» (scrap): они остаются в архиве и показываются с бейджем, но не влияют на винрейт, средние и рейтинг. Фильтр архива позволяет скрыть или показать только такие игры.',
       'stats.winrate': 'Винрейт игроков',
-      'stats.winrateHint': 'Победы / участия только в актуальных играх (без teams/scrap). Минимум 1 игра.',
+      'stats.winrateHint':
+        'Победы / участия только в актуальных играх (без teams/scrap). «Выжил» — alive=true в финале. Минимум 1 игра.',
       'stats.nations': 'Нации: пики и винрейт',
       'stats.nationsHint': 'Все нации мода. Не пикнутые — 0 пиков и 0% винрейта. Только актуальные игры.',
       'stats.detail': 'Игроки: нации и финал',
@@ -320,6 +321,7 @@
       'stats.col.wins': 'Побед',
       'stats.col.winrate': 'Винрейт',
       'stats.col.capitalLosses': 'Потерь столицы',
+      'stats.col.survived': 'Выжил',
       'stats.col.eliminated': 'Выбываний',
       'stats.col.nation': 'Нация',
       'stats.col.picks': 'Пиков',
@@ -571,7 +573,8 @@
       'stats.intro':
         'Statistics exclude games tagged teams or scrap: they stay in the archive with a badge, but do not affect winrates, averages, or ratings. Use the archive filter to hide or show only those games.',
       'stats.winrate': 'Player winrate',
-      'stats.winrateHint': 'Wins / games in ranked archive only (no teams/scrap). Minimum 1 game.',
+      'stats.winrateHint':
+        'Wins / games in ranked archive only (no teams/scrap). “Survived” = alive=true in finale. Minimum 1 game.',
       'stats.nations': 'Nations: picks and winrate',
       'stats.nationsHint': 'All mod nations. Unpicked show 0 picks and 0% winrate. Ranked games only.',
       'stats.detail': 'Players: nations and finale',
@@ -607,6 +610,7 @@
       'stats.col.wins': 'Wins',
       'stats.col.winrate': 'Winrate',
       'stats.col.capitalLosses': 'Capital losses',
+      'stats.col.survived': 'Survived',
       'stats.col.eliminated': 'Eliminations',
       'stats.col.nation': 'Nation',
       'stats.col.picks': 'Picks',

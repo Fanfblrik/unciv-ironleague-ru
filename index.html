@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=records-1">
+    <link rel="stylesheet" href="css/site.css?v=records-2">
 
 </head>
 <body>
@@ -102,7 +102,7 @@
         </div>
         <div class="stats-section" id="stats-winrate">
             <h2 data-i18n="stats.winrate">Винрейт игроков</h2>
-            <p class="hint" data-i18n="stats.winrateHint">Победы / участия в играх из архива. Минимум 1 игра.</p>
+            <p class="hint" data-i18n="stats.winrateHint">Победы / участия в играх из архива (без teams/scrap). «Выжил» — alive=true в финале.</p>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="playerWinrateTable">
                     <thead>
@@ -111,6 +111,7 @@
                             <th class="num" data-sort="games" data-i18n="stats.col.games">Игр</th>
                             <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
                             <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="survived" data-i18n="stats.col.survived">Выжил</th>
                             <th class="num" data-sort="capitalLosses" data-i18n="stats.col.capitalLosses">Потерь столицы</th>
                             <th class="num" data-sort="eliminated" data-i18n="stats.col.eliminated">Выбываний</th>
                         </tr>
@@ -610,7 +611,7 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=records-1"></script>
+<script src="js/i18n.js?v=records-2"></script>
 <script src="js/rating.js?v=lobby-pergame-1"></script>
 <script src="js/achievements.js?v=records-1"></script>
 <script>
@@ -2109,6 +2110,7 @@
                     wins: 0,
                     capitalLosses: 0,
                     eliminated: 0,
+                    survived: 0,
                     nationCounts: new Map(),
                     ideologyCounts: new Map(),
                     wonders: 0,
@@ -2184,6 +2186,7 @@
                 const row = ensurePlayer(name);
                 if (s.has_capital === false) row.capitalLosses += 1;
                 if (s.alive === false) row.eliminated += 1;
+                if (s.alive === true) row.survived += 1;
                 if (Array.isArray(s.wonders)) row.wonders += s.wonders.length;
                 const built = Array.isArray(s.wonders_built) ? s.wonders_built : null;
                 if (built) row.wondersBuilt += built.length;
@@ -2388,6 +2391,7 @@
                 <td class="num">${p.games}</td>
                 <td class="num">${p.wins}</td>
                 <td class="num">${p.winrate}%</td>
+                <td class="num">${p.survived}</td>
                 <td class="num">${p.capitalLosses}</td>
                 <td class="num">${p.eliminated}</td>
             </tr>`,
