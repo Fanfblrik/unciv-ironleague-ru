@@ -11,6 +11,15 @@
   const BARBARIAN_NAMES = new Set(['barbarians', 'варвары']);
   const PIETY_NAMES = new Set(['набожность', 'piety']);
   const TRADITION_NAMES = new Set(['традиция', 'tradition']);
+  const LIBERTY_NAMES = new Set(['воля', 'liberty']);
+  const HONOR_NAMES = new Set(['честь', 'honor', 'honour']);
+  const ORDER_NAMES = new Set(['порядок', 'order']);
+  const FREEDOM_NAMES = new Set(['свобода', 'freedom']);
+  const AUTOCRACY_NAMES = new Set(['автократия', 'самодержавие', 'autocracy']);
+
+  function normSetHas(set, value) {
+    return set.has(String(value || '').trim().toLowerCase());
+  }
 
   function gameFlags(game) {
     return Array.isArray(game.flags) ? game.flags.map(String) : [];
@@ -40,11 +49,31 @@
   }
 
   function isPiety(policy) {
-    return PIETY_NAMES.has(String(policy || '').trim().toLowerCase());
+    return normSetHas(PIETY_NAMES, policy);
   }
 
   function isTradition(policy) {
-    return TRADITION_NAMES.has(String(policy || '').trim().toLowerCase());
+    return normSetHas(TRADITION_NAMES, policy);
+  }
+
+  function isLiberty(policy) {
+    return normSetHas(LIBERTY_NAMES, policy);
+  }
+
+  function isHonor(policy) {
+    return normSetHas(HONOR_NAMES, policy);
+  }
+
+  function isOrder(ideology) {
+    return normSetHas(ORDER_NAMES, ideology);
+  }
+
+  function isFreedom(ideology) {
+    return normSetHas(FREEDOM_NAMES, ideology);
+  }
+
+  function isAutocracy(ideology) {
+    return normSetHas(AUTOCRACY_NAMES, ideology);
   }
 
   function survivorByName(game, name) {
@@ -102,6 +131,11 @@
       pietyStreak: 0,
       pietyRun: 0,
       traditionCount: 0,
+      libertyCount: 0,
+      honorCount: 0,
+      orderCount: 0,
+      freedomCount: 0,
+      autocracyCount: 0,
       winTurns: [],
       maxCapsInWin: 0,
       maxCapsInWinGame: null,
@@ -178,6 +212,11 @@
             piety = true;
           }
           if (isTradition(row.first_policy)) s.traditionCount += 1;
+          if (isLiberty(row.first_policy)) s.libertyCount += 1;
+          if (isHonor(row.first_policy)) s.honorCount += 1;
+          if (isOrder(row.ideology)) s.orderCount += 1;
+          if (isFreedom(row.ideology)) s.freedomCount += 1;
+          if (isAutocracy(row.ideology)) s.autocracyCount += 1;
           if (Number.isFinite(Number(row.wars_declared))) {
             s.warsDeclKnown += 1;
             const wd = Number(row.wars_declared);
@@ -417,6 +456,41 @@
     if (tradition) {
       push('tradition_first_count', tradition, String(tradition.stat.traditionCount), {
         games: tradition.stat.played,
+      });
+    }
+
+    const liberty = pickMax(stats, (s) => s.libertyCount, (s) => s.libertyCount >= 3);
+    if (liberty) {
+      push('liberty_first_count', liberty, String(liberty.stat.libertyCount), {
+        games: liberty.stat.played,
+      });
+    }
+
+    const honor = pickMax(stats, (s) => s.honorCount, (s) => s.honorCount >= 2);
+    if (honor) {
+      push('honor_first_count', honor, String(honor.stat.honorCount), {
+        games: honor.stat.played,
+      });
+    }
+
+    const orderIdeo = pickMax(stats, (s) => s.orderCount, (s) => s.orderCount >= 2);
+    if (orderIdeo) {
+      push('ideology_order_count', orderIdeo, String(orderIdeo.stat.orderCount), {
+        games: orderIdeo.stat.played,
+      });
+    }
+
+    const freedomIdeo = pickMax(stats, (s) => s.freedomCount, (s) => s.freedomCount >= 2);
+    if (freedomIdeo) {
+      push('ideology_freedom_count', freedomIdeo, String(freedomIdeo.stat.freedomCount), {
+        games: freedomIdeo.stat.played,
+      });
+    }
+
+    const autoIdeo = pickMax(stats, (s) => s.autocracyCount, (s) => s.autocracyCount >= 2);
+    if (autoIdeo) {
+      push('ideology_autocracy_count', autoIdeo, String(autoIdeo.stat.autocracyCount), {
+        games: autoIdeo.stat.played,
       });
     }
 

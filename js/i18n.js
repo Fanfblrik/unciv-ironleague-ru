@@ -297,7 +297,14 @@
       'stats.policyBranches': 'Ветки институтов',
       'stats.policyCombos': 'Связки институтов',
       'stats.policyCombosHint':
-        'Полный набор открытых веток из финала (поле policy_branches), в том же порядке, что в карточке игрока. Одна строка = одна связка.',
+        'Полный набор открытых веток из финала (поле policy_branches), в том же порядке, что в карточке игрока. Одна строка = одна связка.\nДлинные связки сокращаются до первых двух веток (+N); полный список — в подсказке при наведении.\nЕсли были победы — рядом с числом побед ссылка на Game N (открывает финал).',
+      'stats.policyFilterLabel': 'Фильтр',
+      'stats.policyFilterAll': 'Все',
+      'stats.policyFilterHideNoise': 'Скрыть разовые без побед',
+      'stats.policyFilterMulti': 'Пиков ≥ 2',
+      'stats.policyFilterWins': 'Только с победами',
+      'stats.winGameOpen': 'Открыть игру с победой',
+      'stats.winGamesMore': 'Побед в {n} разных играх; показана первая',
       'stats.policyIdeologyPairs': 'Пары институт + идеология',
       'stats.policyIdeologyPairsHint':
         'Каждая открытая ветка институтов вместе с принятой идеологией той же партии (если идеология есть).',
@@ -455,6 +462,21 @@
       'records.item.tradition_first_count.title': 'Адепт Традиции',
       'records.item.tradition_first_count.body':
         '{player} чаще всех открывал первым институт «Традиция»: {value} раз(а).',
+      'records.item.liberty_first_count.title': 'Адепт Воли',
+      'records.item.liberty_first_count.body':
+        '{player} чаще всех открывал первым институт «Воля»: {value} раз(а).',
+      'records.item.honor_first_count.title': 'Адепт Чести',
+      'records.item.honor_first_count.body':
+        '{player} чаще всех открывал первым институт «Честь»: {value} раз(а).',
+      'records.item.ideology_order_count.title': 'Порядочный',
+      'records.item.ideology_order_count.body':
+        '{player} чаще всех принимал идеологию «Порядок»: {value} раз(а).',
+      'records.item.ideology_freedom_count.title': 'Свободный',
+      'records.item.ideology_freedom_count.body':
+        '{player} чаще всех принимал идеологию «Свобода»: {value} раз(а).',
+      'records.item.ideology_autocracy_count.title': 'Автократ',
+      'records.item.ideology_autocracy_count.body':
+        '{player} чаще всех принимал идеологию «Автократия»: {value} раз(а).',
       'records.item.most_wonders_built.title': 'Зодчий',
       'records.item.most_wonders_built.body':
         '{player} построил больше всего своих чудес света: {value}.',
@@ -631,7 +653,14 @@
       'stats.policyBranches': 'Policy branches',
       'stats.policyCombos': 'Policy combos',
       'stats.policyCombosHint':
-        'Full set of adopted branches from finale (policy_branches), same order as on the player card. One row = one combo.',
+        'Full set of adopted branches from finale (policy_branches), same order as on the player card. One row = one combo.\nLong combos are shortened to the first two branches (+N); full list is in the hover tooltip.\nIf there were wins — a Game N link next to the win count opens that finale.',
+      'stats.policyFilterLabel': 'Filter',
+      'stats.policyFilterAll': 'All',
+      'stats.policyFilterHideNoise': 'Hide one-pick zero-win',
+      'stats.policyFilterMulti': 'Picks ≥ 2',
+      'stats.policyFilterWins': 'Wins only',
+      'stats.winGameOpen': 'Open a winning game',
+      'stats.winGamesMore': 'Wins in {n} different games; showing the first',
       'stats.policyIdeologyPairs': 'Policy + ideology pairs',
       'stats.policyIdeologyPairsHint':
         'Each adopted policy branch paired with the ideology taken in that game (when an ideology is present).',
@@ -789,6 +818,21 @@
       'records.item.tradition_first_count.title': 'Tradition devotee',
       'records.item.tradition_first_count.body':
         '{player} opened Tradition first most often: {value} time(s).',
+      'records.item.liberty_first_count.title': 'Liberty devotee',
+      'records.item.liberty_first_count.body':
+        '{player} opened Liberty first most often: {value} time(s).',
+      'records.item.honor_first_count.title': 'Honor devotee',
+      'records.item.honor_first_count.body':
+        '{player} opened Honor first most often: {value} time(s).',
+      'records.item.ideology_order_count.title': 'Order adherent',
+      'records.item.ideology_order_count.body':
+        '{player} adopted Order most often: {value} time(s).',
+      'records.item.ideology_freedom_count.title': 'Freedom adherent',
+      'records.item.ideology_freedom_count.body':
+        '{player} adopted Freedom most often: {value} time(s).',
+      'records.item.ideology_autocracy_count.title': 'Autocrat',
+      'records.item.ideology_autocracy_count.body':
+        '{player} adopted Autocracy most often: {value} time(s).',
       'records.item.most_wonders_built.title': 'Wonder builder',
       'records.item.most_wonders_built.body':
         '{player} self-built the most world wonders: {value}.',

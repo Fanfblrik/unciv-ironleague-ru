@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=rating-nav-1">
+    <link rel="stylesheet" href="css/site.css?v=policy-filters-1">
 
 </head>
 <body>
@@ -188,6 +188,17 @@
             <h2 data-i18n="stats.policies">Институты и идеологии</h2>
             <p class="hint" data-i18n="stats.policiesHint">Первый институт, открытые ветки и идеологии. Ср. место — нормированное (1 = победа, 0 = последнее), чтобы уравнять лобби разного размера.</p>
             <h3 data-i18n="stats.firstPolicies">Первый институт</h3>
+            <div class="stats-local-filters" data-policy-filter-for="firstPolicyStatsTable">
+                <label class="stats-local-filter-label">
+                    <span data-i18n="stats.policyFilterLabel">Фильтр</span>
+                    <select class="policy-stats-filter" data-i18n-aria="stats.policyFilterLabel">
+                        <option value="all" data-i18n="stats.policyFilterAll">Все</option>
+                        <option value="hide-noise" selected data-i18n="stats.policyFilterHideNoise">Скрыть разовые без побед</option>
+                        <option value="multi" data-i18n="stats.policyFilterMulti">Пиков ≥ 2</option>
+                        <option value="wins" data-i18n="stats.policyFilterWins">Только с победами</option>
+                    </select>
+                </label>
+            </div>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="firstPolicyStatsTable">
                     <thead>
@@ -203,6 +214,17 @@
                 </table>
             </div>
             <h3 data-i18n="stats.policyBranches">Ветки институтов</h3>
+            <div class="stats-local-filters" data-policy-filter-for="policyBranchStatsTable">
+                <label class="stats-local-filter-label">
+                    <span data-i18n="stats.policyFilterLabel">Фильтр</span>
+                    <select class="policy-stats-filter">
+                        <option value="all" data-i18n="stats.policyFilterAll">Все</option>
+                        <option value="hide-noise" selected data-i18n="stats.policyFilterHideNoise">Скрыть разовые без побед</option>
+                        <option value="multi" data-i18n="stats.policyFilterMulti">Пиков ≥ 2</option>
+                        <option value="wins" data-i18n="stats.policyFilterWins">Только с победами</option>
+                    </select>
+                </label>
+            </div>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="policyBranchStatsTable">
                     <thead>
@@ -218,7 +240,18 @@
                 </table>
             </div>
             <h3 data-i18n="stats.policyCombos">Связки институтов</h3>
-            <p class="hint" data-i18n="stats.policyCombosHint">Полный набор открытых веток из финала, как в архиве.</p>
+            <p class="hint" data-i18n="stats.policyCombosHint">Полный набор открытых веток из финала. Длинные связки сокращаются; полный список — в подсказке. Клик по Game N — финал победы.</p>
+            <div class="stats-local-filters" data-policy-filter-for="policyComboStatsTable">
+                <label class="stats-local-filter-label">
+                    <span data-i18n="stats.policyFilterLabel">Фильтр</span>
+                    <select class="policy-stats-filter">
+                        <option value="all" data-i18n="stats.policyFilterAll">Все</option>
+                        <option value="hide-noise" selected data-i18n="stats.policyFilterHideNoise">Скрыть разовые без побед</option>
+                        <option value="multi" data-i18n="stats.policyFilterMulti">Пиков ≥ 2</option>
+                        <option value="wins" data-i18n="stats.policyFilterWins">Только с победами</option>
+                    </select>
+                </label>
+            </div>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="policyComboStatsTable">
                     <thead>
@@ -235,6 +268,17 @@
             </div>
             <h3 data-i18n="stats.policyIdeologyPairs">Пары институт + идеология</h3>
             <p class="hint" data-i18n="stats.policyIdeologyPairsHint">Каждая открытая ветка вместе с идеологией той же партии.</p>
+            <div class="stats-local-filters" data-policy-filter-for="policyIdeologyPairStatsTable">
+                <label class="stats-local-filter-label">
+                    <span data-i18n="stats.policyFilterLabel">Фильтр</span>
+                    <select class="policy-stats-filter">
+                        <option value="all" data-i18n="stats.policyFilterAll">Все</option>
+                        <option value="hide-noise" selected data-i18n="stats.policyFilterHideNoise">Скрыть разовые без побед</option>
+                        <option value="multi" data-i18n="stats.policyFilterMulti">Пиков ≥ 2</option>
+                        <option value="wins" data-i18n="stats.policyFilterWins">Только с победами</option>
+                    </select>
+                </label>
+            </div>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="policyIdeologyPairStatsTable">
                     <thead>
@@ -625,9 +669,9 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=records-3"></script>
+<script src="js/i18n.js?v=policy-filters-1"></script>
 <script src="js/rating.js?v=lobby-pergame-1"></script>
-<script src="js/achievements.js?v=records-2"></script>
+<script src="js/achievements.js?v=policy-filters-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -1899,6 +1943,11 @@
             'piety_first_count',
             'piety_first_streak',
             'tradition_first_count',
+            'liberty_first_count',
+            'honor_first_count',
+            'ideology_order_count',
+            'ideology_freedom_count',
+            'ideology_autocracy_count',
             'most_wonders_built',
             'most_wonders_owned',
             'most_unique_nations',
@@ -1975,6 +2024,43 @@
         });
         document.getElementById('ratingScaleSelect')?.addEventListener('change', (e) => {
             applyRatingScale(e.target.value);
+        });
+        document.querySelectorAll('.policy-stats-filter').forEach((select) => {
+            select.addEventListener('change', () => {
+                const wrap = select.closest('[data-policy-filter-for]');
+                const tableId = wrap?.getAttribute('data-policy-filter-for');
+                if (!tableId) return;
+                setPolicyFilterMode(tableId, select.value);
+                const cache = window._policyStatsCache;
+                if (!cache) {
+                    renderStatsTables();
+                    return;
+                }
+                const map = {
+                    firstPolicyStatsTable: [cache.firstPolicyRows, cache.policyLabel],
+                    policyBranchStatsTable: [cache.policyBranchRows, cache.policyLabel],
+                    policyComboStatsTable: [cache.policyComboRows, cache.policyComboLabel],
+                    policyIdeologyPairStatsTable: [
+                        cache.policyIdeologyPairRows,
+                        cache.policyPairLabel,
+                    ],
+                };
+                const entry = map[tableId];
+                if (!entry) return;
+                fillSortableTable(
+                    document.getElementById(tableId),
+                    filterPolicyStatRows(entry[0], select.value),
+                    (r) => pickStatRowHtml(r, entry[1]),
+                    'picks',
+                    'desc',
+                );
+            });
+        });
+        document.getElementById('viewStats')?.addEventListener('click', (e) => {
+            const btn = e.target.closest?.('.stats-game-link');
+            if (!btn) return;
+            e.preventDefault();
+            openGameModal(btn.dataset.gameId);
         });
         await loadGamesData();
         await Promise.all([loadFaqData(), loadTierlistData()]);
@@ -2117,17 +2203,33 @@
 
     function ensurePickStat(map, name) {
         if (!map.has(name)) {
-            map.set(name, { name, picks: 0, wins: 0, placeSum: 0, placeN: 0 });
+            map.set(name, {
+                name,
+                picks: 0,
+                wins: 0,
+                placeSum: 0,
+                placeN: 0,
+                winGames: [],
+            });
         }
         return map.get(name);
     }
 
-    function recordPick(map, name, won, placeScore) {
+    function recordPick(map, name, won, placeScore, gameRef) {
         const key = String(name || '').trim();
         if (!key) return;
         const row = ensurePickStat(map, key);
         row.picks += 1;
-        if (won) row.wins += 1;
+        if (won) {
+            row.wins += 1;
+            if (gameRef && row.winGames.length < 8) {
+                const id = gameRef.id != null ? String(gameRef.id) : '';
+                const number = gameRef.number != null ? Number(gameRef.number) : null;
+                if (id && !row.winGames.some((g) => String(g.id) === id)) {
+                    row.winGames.push({ id, number });
+                }
+            }
+        }
         if (placeScore !== null && placeScore !== undefined && Number.isFinite(placeScore)) {
             row.placeSum += placeScore;
             row.placeN += 1;
@@ -2142,6 +2244,47 @@
         }));
     }
 
+    function filterPolicyStatRows(rows, mode) {
+        const list = Array.isArray(rows) ? rows : [];
+        if (mode === 'wins') return list.filter((r) => Number(r.wins || 0) > 0);
+        if (mode === 'multi') return list.filter((r) => Number(r.picks || 0) >= 2);
+        if (mode === 'hide-noise') {
+            return list.filter((r) => Number(r.wins || 0) > 0 || Number(r.picks || 0) >= 2);
+        }
+        return list;
+    }
+
+    function policyFilterModeFor(tableId) {
+        const key = `ironleague_policy_filter_${tableId}`;
+        let mode = 'hide-noise';
+        try {
+            mode = localStorage.getItem(key) || 'hide-noise';
+        } catch (e) { /* ignore */ }
+        const allowed = new Set(['all', 'hide-noise', 'multi', 'wins']);
+        return allowed.has(mode) ? mode : 'hide-noise';
+    }
+
+    function setPolicyFilterMode(tableId, mode) {
+        const key = `ironleague_policy_filter_${tableId}`;
+        try {
+            localStorage.setItem(key, mode);
+        } catch (e) { /* ignore */ }
+    }
+
+    function pickWinGameHtml(row) {
+        if (!row.wins || !Array.isArray(row.winGames) || !row.winGames.length) {
+            return `<td class="num">${row.wins}</td>`;
+        }
+        const g = row.winGames[0];
+        const label = Number.isFinite(g.number) ? `Game ${g.number}` : 'Game';
+        const extra = row.winGames.length > 1
+            ? ` title="${tt('stats.winGamesMore', { n: String(row.winGames.length) })}"`
+            : ` title="${tt('stats.winGameOpen')}"`;
+        return `<td class="num">${row.wins}
+            <button type="button" class="stats-game-link" data-game-id="${g.id}"${extra}>${label}</button>
+        </td>`;
+    }
+
     function pickStatRowHtml(row, labelFn) {
         const label = labelFn ? labelFn(row.name) : row.name;
         const avg = row.avgPlace === null || row.avgPlace === undefined
@@ -2150,7 +2293,7 @@
         return `<tr>
             <td>${label}</td>
             <td class="num">${row.picks}</td>
-            <td class="num">${row.wins}</td>
+            ${pickWinGameHtml(row)}
             <td class="num">${row.winrate}%</td>
             <td class="num">${avg}</td>
         </tr>`;
@@ -2297,40 +2440,45 @@
                     ? (lobbyN - 1 - idx) / (lobbyN - 1)
                     : null;
                 const won = (s.nation || '') === winnerNation;
+                const gNum = (window.IronLeagueRating && IronLeagueRating.parseGameNum)
+                    ? IronLeagueRating.parseGameNum(game)
+                    : Number((String(game.number || '').match(/(\d+)/) || [])[1]) || null;
+                const gameRef = { id: game.id, number: gNum };
 
-                if (firstPol) recordPick(firstPolicyStats, firstPol, won, placeScore);
+                if (firstPol) recordPick(firstPolicyStats, firstPol, won, placeScore, gameRef);
                 const branches = (Array.isArray(s.policy_branches) ? s.policy_branches : [])
                     .map((b) => String(b || '').trim())
                     .filter(Boolean);
                 for (const branch of branches) {
-                    recordPick(policyBranchStats, branch, won, placeScore);
+                    recordPick(policyBranchStats, branch, won, placeScore, gameRef);
                 }
                 if (branches.length) {
                     // Same order as archive finale card (policy_branches).
-                    recordPick(policyComboStats, branches.join(' · '), won, placeScore);
+                    recordPick(policyComboStats, branches.join(' · '), won, placeScore, gameRef);
                 }
                 if (ideology) {
-                    recordPick(ideologyStats, ideology, won, placeScore);
+                    recordPick(ideologyStats, ideology, won, placeScore, gameRef);
                     for (const branch of branches) {
                         recordPick(
                             policyIdeologyPairStats,
                             `${branch} + ${ideology}`,
                             won,
                             placeScore,
+                            gameRef,
                         );
                     }
                 }
                 for (const wonder of (built || [])) {
-                    recordPick(wonderBuiltStats, wonder, won, placeScore);
+                    recordPick(wonderBuiltStats, wonder, won, placeScore, gameRef);
                 }
                 if ((s.pantheon || '').trim()) {
-                    recordPick(pantheonStats, s.pantheon, won, placeScore);
+                    recordPick(pantheonStats, s.pantheon, won, placeScore, gameRef);
                 }
                 for (const belief of (Array.isArray(s.founder_beliefs) ? s.founder_beliefs : [])) {
-                    recordPick(founderBeliefStats, belief, won, placeScore);
+                    recordPick(founderBeliefStats, belief, won, placeScore, gameRef);
                 }
                 for (const belief of (Array.isArray(s.follower_beliefs) ? s.follower_beliefs : [])) {
-                    recordPick(followerBeliefStats, belief, won, placeScore);
+                    recordPick(followerBeliefStats, belief, won, placeScore, gameRef);
                 }
             }
         }
@@ -2517,10 +2665,13 @@
         );
 
         const policyLabel = (name) => displayPolicyName(name);
-        const policyComboLabel = (name) => String(name || '')
-            .split(' · ')
-            .map((part) => displayPolicyName(part))
-            .join(' · ');
+        const policyComboLabel = (name) => {
+            const parts = String(name || '').split(' · ').filter(Boolean).map((p) => displayPolicyName(p));
+            if (parts.length <= 2) return parts.join(' · ');
+            const shortLabel = `${parts.slice(0, 2).join(' · ')} · +${parts.length - 2}`;
+            const full = parts.join(' · ').replace(/"/g, '&quot;');
+            return `<span title="${full}">${shortLabel}</span>`;
+        };
         const policyPairLabel = (name) => {
             const raw = String(name || '');
             const sep = ' + ';
@@ -2529,33 +2680,39 @@
             return `${displayPolicyName(raw.slice(0, idx))}${sep}${displayPolicyName(raw.slice(idx + sep.length))}`;
         };
         const wonderLabel = (name) => wonderNameRu(name);
-        fillSortableTable(
-            document.getElementById('firstPolicyStatsTable'),
+
+        window._policyStatsCache = {
             firstPolicyRows,
-            (r) => pickStatRowHtml(r, policyLabel),
-            'picks',
-            'desc',
-        );
-        fillSortableTable(
-            document.getElementById('policyBranchStatsTable'),
             policyBranchRows,
-            (r) => pickStatRowHtml(r, policyLabel),
-            'picks',
-            'desc',
-        );
-        fillSortableTable(
-            document.getElementById('policyComboStatsTable'),
             policyComboRows,
-            (r) => pickStatRowHtml(r, policyComboLabel),
-            'picks',
-            'desc',
-        );
-        fillSortableTable(
-            document.getElementById('policyIdeologyPairStatsTable'),
             policyIdeologyPairRows,
-            (r) => pickStatRowHtml(r, policyPairLabel),
-            'picks',
-            'desc',
+            policyLabel,
+            policyComboLabel,
+            policyPairLabel,
+        };
+
+        const fillPolicyTable = (tableId, rows, labelFn) => {
+            const mode = policyFilterModeFor(tableId);
+            const select = document.querySelector(
+                `[data-policy-filter-for="${tableId}"] .policy-stats-filter`,
+            );
+            if (select) select.value = mode;
+            fillSortableTable(
+                document.getElementById(tableId),
+                filterPolicyStatRows(rows, mode),
+                (r) => pickStatRowHtml(r, labelFn),
+                'picks',
+                'desc',
+            );
+        };
+
+        fillPolicyTable('firstPolicyStatsTable', firstPolicyRows, policyLabel);
+        fillPolicyTable('policyBranchStatsTable', policyBranchRows, policyLabel);
+        fillPolicyTable('policyComboStatsTable', policyComboRows, policyComboLabel);
+        fillPolicyTable(
+            'policyIdeologyPairStatsTable',
+            policyIdeologyPairRows,
+            policyPairLabel,
         );
         fillSortableTable(
             document.getElementById('ideologyStatsTable'),
@@ -2719,7 +2876,13 @@
     });
 
     window.onIronLeagueLangChange = function () {
-        // static data-i18n already refreshed in setLang
+        // static data-i18n already refreshed in setLang; refresh dynamic tables/titles
+        if (document.getElementById('viewStats')?.classList.contains('active')) {
+            renderStatsTables();
+        }
+        if (document.getElementById('viewRecords')?.classList.contains('active')) {
+            renderRecords();
+        }
     };
 
     // Back to top when site nav scrolls out of view

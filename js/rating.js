@@ -391,6 +391,7 @@
     isEliminated,
     eligibleGames,
     placementOrder,
+    parseGameNum,
     rateLobbyWinBonus,
     rateLobbyAvgBonus,
     computeAll,
