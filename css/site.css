@@ -1867,13 +1867,14 @@
         }
 
         .home-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 12px;
         }
 
         .home-card {
-            text-align: left;
+            text-align: center;
             border: 1px solid rgba(255, 215, 0, 0.28);
             background: rgba(20, 18, 32, 0.85);
             color: #fff;
@@ -1881,6 +1882,8 @@
             cursor: pointer;
             border-radius: 10px;
             transition: border-color 0.15s ease, background 0.15s ease;
+            flex: 0 1 220px;
+            max-width: 260px;
         }
 
         .home-card:hover {
@@ -1902,10 +1905,15 @@
             line-height: 1.4;
         }
 
+        .home-section > .hint {
+            margin: 0 0 16px;
+        }
+
         .home-downloads {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             gap: 12px;
+            margin-top: 4px;
         }
 
         .home-download {
@@ -1941,6 +1949,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 12px;
+            margin-top: 4px;
         }
 
         .home-contact-card {
