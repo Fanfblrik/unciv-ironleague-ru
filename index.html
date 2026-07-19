@@ -633,6 +633,25 @@
             padding: 10px 12px;
         }
 
+        .stats-section h3 {
+            color: #ffe9a8;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 2rem 0 0.85rem;
+            padding-top: 0.35rem;
+            border-top: 1px solid rgba(255, 215, 0, 0.18);
+        }
+
+        .stats-section > h3:first-of-type {
+            margin-top: 0.35rem;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .stats-section h3 + .hint {
+            margin-top: -0.25rem;
+        }
+
         .stats-table-wrap {
             overflow-x: auto;
         }
@@ -1753,6 +1772,38 @@
                     <tbody></tbody>
                 </table>
             </div>
+            <h3 data-i18n="stats.policyCombos">Связки институтов</h3>
+            <p class="hint" data-i18n="stats.policyCombosHint">Полный набор открытых веток из финала, как в архиве.</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="policyComboStatsTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name" data-i18n="stats.col.combo">Связка</th>
+                            <th class="num" data-sort="picks" data-i18n="stats.col.picks">Пиков</th>
+                            <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
+                            <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="avgPlace" data-i18n="stats.col.avgPlaceNorm">Ср. место</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <h3 data-i18n="stats.policyIdeologyPairs">Пары институт + идеология</h3>
+            <p class="hint" data-i18n="stats.policyIdeologyPairsHint">Каждая открытая ветка вместе с идеологией той же партии.</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="policyIdeologyPairStatsTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name" data-i18n="stats.col.pair">Пара</th>
+                            <th class="num" data-sort="picks" data-i18n="stats.col.picks">Пиков</th>
+                            <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
+                            <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="avgPlace" data-i18n="stats.col.avgPlaceNorm">Ср. место</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
             <h3 data-i18n="stats.ideologies">Идеологии</h3>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="ideologyStatsTable">
@@ -1858,6 +1909,8 @@
             <a href="#rating-pairwise" data-i18n="rating.pairwise">Elo pairwise</a>
             <a href="#rating-finish" data-i18n="rating.finish">Рейтинг по финишу</a>
             <a href="#rating-zero" data-i18n="rating.zero">Рейтинг от нуля</a>
+            <a href="#rating-lobby-win" data-i18n="rating.lobbyWin">Очки лобби (победа)</a>
+            <a href="#rating-lobby-avg" data-i18n="rating.lobbyAvg">Очки лобби (Avg)</a>
         </div>
 
         <div class="stats-section" id="rating-combined">
@@ -1957,6 +2010,42 @@
                 </table>
             </div>
         </div>
+
+        <div class="stats-section" id="rating-lobby-win">
+            <h2 data-i18n="rating.lobbyWin">Очки лобби (победа)</h2>
+            <p class="hint" data-i18n="rating.lobbyWinHint">Накопительный рейтинг от нуля: участие N−1, победителю +10.</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="ratingLobbyWinTable">
+                    <thead>
+                        <tr>
+                            <th class="num" data-sort="place" data-i18n="rating.col.place">#</th>
+                            <th data-sort="name" data-i18n="rating.col.player">Игрок</th>
+                            <th class="num" data-sort="rating" data-i18n="rating.col.rating">Рейтинг</th>
+                            <th class="num" data-sort="games" data-i18n="rating.col.games">Игр</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="stats-section" id="rating-lobby-avg">
+            <h2 data-i18n="rating.lobbyAvg">Очки лобби (Avg)</h2>
+            <p class="hint" data-i18n="rating.lobbyAvgHint">Накопительный рейтинг от нуля: (N−1) + Avg по финальным показателям.</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="ratingLobbyAvgTable">
+                    <thead>
+                        <tr>
+                            <th class="num" data-sort="place" data-i18n="rating.col.place">#</th>
+                            <th data-sort="name" data-i18n="rating.col.player">Игрок</th>
+                            <th class="num" data-sort="rating" data-i18n="rating.col.rating">Рейтинг</th>
+                            <th class="num" data-sort="games" data-i18n="rating.col.games">Игр</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <div class="view-panel" id="viewTierlist">
@@ -2007,8 +2096,8 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=wonders-split-2"></script>
-<script src="js/rating.js?v=stats-zero-1"></script>
+<script src="js/i18n.js?v=beliefs-combos-1"></script>
+<script src="js/rating.js?v=lobby-points-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -3142,6 +3231,20 @@
             'rating',
             'desc',
         );
+        fillSortableTable(
+            document.getElementById('ratingLobbyWinTable'),
+            result.lobbyWin,
+            simpleRow,
+            'rating',
+            'desc',
+        );
+        fillSortableTable(
+            document.getElementById('ratingLobbyAvgTable'),
+            result.lobbyAvg,
+            simpleRow,
+            'rating',
+            'desc',
+        );
     }
 
     // Запуск
@@ -3331,6 +3434,8 @@
         const nationStats = new Map();
         const firstPolicyStats = new Map();
         const policyBranchStats = new Map();
+        const policyComboStats = new Map();
+        const policyIdeologyPairStats = new Map();
         const ideologyStats = new Map();
         const wonderBuiltStats = new Map();
         const pantheonStats = new Map();
@@ -3455,10 +3560,27 @@
                 const won = (s.nation || '') === winnerNation;
 
                 if (firstPol) recordPick(firstPolicyStats, firstPol, won, placeScore);
-                for (const branch of (Array.isArray(s.policy_branches) ? s.policy_branches : [])) {
+                const branches = (Array.isArray(s.policy_branches) ? s.policy_branches : [])
+                    .map((b) => String(b || '').trim())
+                    .filter(Boolean);
+                for (const branch of branches) {
                     recordPick(policyBranchStats, branch, won, placeScore);
                 }
-                if (ideology) recordPick(ideologyStats, ideology, won, placeScore);
+                if (branches.length) {
+                    // Same order as archive finale card (policy_branches).
+                    recordPick(policyComboStats, branches.join(' · '), won, placeScore);
+                }
+                if (ideology) {
+                    recordPick(ideologyStats, ideology, won, placeScore);
+                    for (const branch of branches) {
+                        recordPick(
+                            policyIdeologyPairStats,
+                            `${branch} + ${ideology}`,
+                            won,
+                            placeScore,
+                        );
+                    }
+                }
                 for (const wonder of (built || [])) {
                     recordPick(wonderBuiltStats, wonder, won, placeScore);
                 }
@@ -3511,6 +3633,8 @@
             nationRows,
             firstPolicyRows: finalizePickRows(firstPolicyStats),
             policyBranchRows: finalizePickRows(policyBranchStats),
+            policyComboRows: finalizePickRows(policyComboStats),
+            policyIdeologyPairRows: finalizePickRows(policyIdeologyPairStats),
             ideologyRows: finalizePickRows(ideologyStats),
             wonderBuiltRows: finalizePickRows(wonderBuiltStats),
             pantheonRows: finalizePickRows(pantheonStats),
@@ -3578,6 +3702,8 @@
             nationRows,
             firstPolicyRows,
             policyBranchRows,
+            policyComboRows,
+            policyIdeologyPairRows,
             ideologyRows,
             wonderBuiltRows,
             pantheonRows,
@@ -3650,6 +3776,17 @@
         );
 
         const policyLabel = (name) => displayPolicyName(name);
+        const policyComboLabel = (name) => String(name || '')
+            .split(' · ')
+            .map((part) => displayPolicyName(part))
+            .join(' · ');
+        const policyPairLabel = (name) => {
+            const raw = String(name || '');
+            const sep = ' + ';
+            const idx = raw.indexOf(sep);
+            if (idx < 0) return displayPolicyName(raw);
+            return `${displayPolicyName(raw.slice(0, idx))}${sep}${displayPolicyName(raw.slice(idx + sep.length))}`;
+        };
         const wonderLabel = (name) => wonderNameRu(name);
         fillSortableTable(
             document.getElementById('firstPolicyStatsTable'),
@@ -3662,6 +3799,20 @@
             document.getElementById('policyBranchStatsTable'),
             policyBranchRows,
             (r) => pickStatRowHtml(r, policyLabel),
+            'picks',
+            'desc',
+        );
+        fillSortableTable(
+            document.getElementById('policyComboStatsTable'),
+            policyComboRows,
+            (r) => pickStatRowHtml(r, policyComboLabel),
+            'picks',
+            'desc',
+        );
+        fillSortableTable(
+            document.getElementById('policyIdeologyPairStatsTable'),
+            policyIdeologyPairRows,
+            (r) => pickStatRowHtml(r, policyPairLabel),
             'picks',
             'desc',
         );

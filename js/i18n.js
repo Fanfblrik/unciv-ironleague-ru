@@ -1,6 +1,6 @@
 /**
  * RU/EN UI strings for Iron League site.
- * Civ terminology kept in English where Unciv uses it (Piety, Tradition, …).
+ * Policies/ideologies are stored in Russian (mod); beliefs often in English (Unciv).
  */
 (function (global) {
   'use strict';
@@ -40,6 +40,105 @@
     'Атомная': 'Atomic',
     'Информационная': 'Information',
     'Будущее': 'Future',
+  };
+
+  /**
+   * English Unciv/mod belief names → Russian (as in-game with the mod).
+   * Built from Unciv Russian.properties + Iron League / BNW extras.
+   */
+  const BELIEF_RU = {
+    'Altars of Worship': 'Алтари поклонения',
+    'Alters of Worship': 'Алтари поклонения',
+    'Ancestor Worship': 'Культ предков',
+    'Apostolic Palace': 'Апостольский дворец',
+    'Cathedrals': 'Соборы',
+    'Ceremonial Burial': 'Ритуальное погребение',
+    'Choral Music': 'Хоралы',
+    'Church Property': 'Церковная собственность',
+    'City of God': 'Град Божий',
+    'Dance of the Aurora': 'Танец Авроры',
+    'Dawah': 'Даава',
+    'Defender of the Faith': 'Защитник веры',
+    'Desert Folklore': 'Легенда пустыни',
+    'Devoted Elite': 'Преданная элита',
+    'Devout Performers': 'Набожные исполнители',
+    'Dharma': 'Дхарма',
+    'Disciples': 'Ученики',
+    'Divine inspiration': 'Божественное вдохновение',
+    'Divine Inspiration': 'Божественное вдохновение',
+    'Earth Mother': 'Мать-Земля',
+    'Feed the World': 'Накорми мир',
+    'Followers of Refined Crafts': 'Последователи изящных ремёсел',
+    'God of Craftsman': 'Бог ремесленников',
+    'God of Craftsmen': 'Бог ремесленников',
+    'God of the Open Sky': 'Бог открытого неба',
+    'God of the Sea': 'Бог моря',
+    'God of War': 'Бог войны',
+    'God-King': 'Бог-царь',
+    'Goddess of Love': 'Богиня любви',
+    'Goddess of Protection': 'Богиня защиты',
+    'Goddess of the Fields': 'Богиня полей',
+    'Goddess of the Hunt': 'Богиня охоты',
+    'Gurdwaras': 'Гурдвары',
+    'Guruship': 'Наставничество',
+    'Hajj': 'Хадж',
+    'Harvest Festival': 'Праздник урожая',
+    'Holy Warriors': 'Священные воины',
+    'Houses of Worship': 'Дома поклонения',
+    'Indulgences': 'Индульгенции',
+    'Initiation Rites': 'Обряды посвящения',
+    'Jesuit Education': 'Иезуитское образование',
+    'Jizya': 'Джизья',
+    'Just War': 'Справедливая война',
+    'Karma': 'Карма',
+    'Kotel': 'Котель',
+    'Liturgical Drama': 'Литургическая драма',
+    'Mandirs': 'Мандиры',
+    'Messenger of the Gods': 'Посланник богов',
+    'Messiah': 'Мессия',
+    'Missionary Zeal': 'Миссионерское усердие',
+    'Mithraea': 'Митреумы',
+    'Mosques': 'Мечети',
+    'Mystic Rituals': 'Мистические ритуалы',
+    "Ocean's Bounty": 'Дары океана',
+    'One with Nature': 'Единение с природой',
+    'Oral Tradition': 'Устное предание',
+    'Pagodas': 'Пагоды',
+    'Peace Gardens': 'Сады мира',
+    'Rain Dancing': 'Танец дождя',
+    'Religious Art': 'Религиозное искусство',
+    'Religious Center': 'Религиозный центр',
+    'Religious Community': 'Религиозное сообщество',
+    'Religious Idols': 'Религиозные идолы',
+    'Religious Settlements': 'Религиозные поселения',
+    'Religious Troubadours': 'Религиозные трубадуры',
+    'Religious Unity': 'Религиозное единство',
+    'Reliquary': 'Реликварий',
+    'Rite of Spring': 'Весенний обряд',
+    'Ritual Sacrifice': 'Ритуальное жертвоприношение',
+    'Sacred Path': 'Священный путь',
+    'Sacred Sites': 'Священные места',
+    'Sacred Waters': 'Священные воды',
+    'Salat': 'Салят',
+    'Sanctified Innovations': 'Освящённые новшества',
+    'Seafood Rituals': 'Ритуалы даров моря',
+    'Spirit Animals': 'Духи-животные',
+    'Spirit Trees': 'Духи деревьев',
+    'Starlight Guidance': 'Звёздное водительство',
+    'Stone Circles': 'Каменные круги',
+    'Sun God': 'Бог солнца',
+    'Swords into Ploughshares': 'Мечи на орала',
+    'Synagogues': 'Синагоги',
+    'Tears of the Gods': 'Слёзы богов',
+    'Tithe': 'Десятина',
+    'Underground Sect': 'Подпольная секта',
+    'Unity of the Prophets': 'Единство пророков',
+    'Viharas': 'Вихары',
+    'Vision Quests': 'Поиски видений',
+    'Work Ethic': 'Трудовая этика',
+    'Work Spirituals': 'Трудовые спиричуэлы',
+    'World Church': 'Всемирная церковь',
+    'Zakat': 'Закят',
   };
 
   /** Spaceship buildings are stored in English in Games.json. */
@@ -187,10 +286,18 @@
       'stats.averagesHint': 'Средние по финалу (survivors) только по актуальным играм. Топ‑3 первых институтов — по первому открытому институту.',
       'stats.policies': 'Институты и идеологии',
       'stats.policiesHint':
-        'Первый институт, открытые ветки и идеологии по финалу.\n«Ср. место» — нормированное placeScore (1 = победа … 0 = последнее), чтобы уравнять лобби разного размера.\nВинрейт — доля побед среди пиков этой опции (не среди всех игроков партии).',
+        'Первый институт, открытые ветки, полные связки веток (как в финале архива), пары «ветка + идеология» и сами идеологии.\n«Ср. место» — нормированное placeScore (1 = победа … 0 = последнее), чтобы уравнять лобби разного размера.\nВинрейт — доля побед среди пиков этой опции (не среди всех игроков партии).',
       'stats.firstPolicies': 'Первый институт',
       'stats.policyBranches': 'Ветки институтов',
+      'stats.policyCombos': 'Связки институтов',
+      'stats.policyCombosHint':
+        'Полный набор открытых веток из финала (поле policy_branches), в том же порядке, что в карточке игрока. Одна строка = одна связка.',
+      'stats.policyIdeologyPairs': 'Пары институт + идеология',
+      'stats.policyIdeologyPairsHint':
+        'Каждая открытая ветка институтов вместе с принятой идеологией той же партии (если идеология есть).',
       'stats.ideologies': 'Идеологии',
+      'stats.col.combo': 'Связка',
+      'stats.col.pair': 'Пара',
       'stats.wondersBuilt': 'Чудеса (свои)',
       'stats.wondersBuiltHint':
         'Только чудеса в городах, основанных этой цивилизацией (поле wonders_built).\nЗахваченные чудеса (в чужих foundingCiv) сюда не входят — их смотрите в финале в блоке «Захваченные чудеса».',
@@ -230,7 +337,7 @@
       'stats.col.belief': 'Верование',
       'stats.col.avgPlaceNorm': 'Ср. место',
       'rating.intro':
-        'Рейтинг считается в браузере из Games.json при каждой загрузке страницы (добавили или убрали игру в архиве — таблицы пересчитаются сами).\n\nКакие игры входят\n• Только актуальные FFA без флагов teams / scrap (и без excludeFromStats).\n• Игры обрабатываются по номеру по возрастанию (хронология лиги).\n\nКак определяется место в одной партии\n1) Победитель (нация winner) — всегда 1-е место.\n2) Среди остальных: сначала живые, потом выбывшие.\n3) Внутри группы — по очкам финала (score) по убыванию; если очков нет — по нику.\n\nДве шкалы на странице\n• Классическая (таблицы выше): все стартуют с 1000; финиш мапится на ~1000 ± 400.\n• «Рейтинг от нуля» (отдельный блок ниже): Elo стартует с 0; финиш — чистое среднее placeScore × 100 (без базы 1000).\nОдинаковые методы (FFA / pairwise / финиш / сводная), разный ноль шкалы — удобно сравнивать «насколько ушёл от старта».',
+        'Рейтинг считается в браузере из Games.json при каждой загрузке страницы (добавили или убрали игру в архиве — таблицы пересчитаются сами).\n\nКакие игры входят\n• Только актуальные FFA без флагов teams / scrap (и без excludeFromStats).\n• Игры обрабатываются по номеру по возрастанию (хронология лиги).\n\nКак определяется место в одной партии\n1) Победитель (нация winner) — всегда 1-е место.\n2) Среди остальных: сначала живые, потом выбывшие.\n3) Внутри группы — по очкам финала (score) по убыванию; если очков нет — по нику.\n\nШкалы на странице\n• Классическая (таблицы выше): все стартуют с 1000; финиш мапится на ~1000 ± 400.\n• «Рейтинг от нуля»: Elo стартует с 0; финиш — чистое среднее placeScore × 100 (без базы 1000).\n• «Очки лобби»: отдельные накопительные шкалы от нуля — за размер лобби N и либо бонус победителю +10, либо Avg финальных показателей (см. блоки ниже).\nОдинаковые методы Elo (FFA / pairwise / финиш / сводная) на двух шкалах; очки лобби — отдельная логика, не Elo.',
       'rating.toc': 'Разделы рейтинга',
       'rating.combined': 'Сводный рейтинг',
       'rating.combinedHint':
@@ -243,13 +350,19 @@
         'Классический FFA-Elo с нулевой суммой по парам.\n\nВ лобби из N игроков строится C(N,2) = N(N−1)/2 виртуальных дуэлей: каждый вышестоящий «побеждает» каждого нижестоящего.\nНа одну дуэль идёт k_pair = K / C(N,2), чтобы суммарный масштаб за игру оставался порядка K.\n\nДля пары (выше A, ниже B):\nΔA = k_pair × (1 − E(A,B)),  ΔB = k_pair × (0 − (1 − E(A,B))) = −ΔA,\nгде E(A,B) = 1 / (1 + 10^((Rb−Ra)/400)).\n\nИтог за игру — сумма Δ по всем парам. Сумма изменений рейтинга по всем игрокам партии = 0.',
       'rating.kLabel': 'Коэффициент K',
       'rating.kHint':
-        'K задаёт «жёсткость» обновления Elo за одну игру для FFA и pairwise (и в классике, и в «рейтинге от нуля»).\n• 20 — спокойнее, меньше скачков.\n• 24 — значение по умолчанию.\n• 32 — как в старом Google Sheet ratingv2, сильнее реагирует на результат.\nНа «Рейтинг по финишу» и на finish-часть «от нуля» K не влияет. Выбор сохраняется в браузере.',
+        'K задаёт «жёсткость» обновления Elo за одну игру для FFA и pairwise (и в классике, и в «рейтинге от нуля»).\n• 20 — спокойнее, меньше скачков.\n• 24 — значение по умолчанию.\n• 32 — как в старом Google Sheet ratingv2, сильнее реагирует на результат.\nНа «Рейтинг по финишу», finish-часть «от нуля» и на «Очки лобби» этот K не влияет. Выбор сохраняется в браузере.',
       'rating.finish': 'Рейтинг по финишу',
       'rating.finishHint':
         'Не Elo, а оценка среднего финиша на шкале ~1000.\n\nВ каждой игре место даёт placeScore = (N−1−i)/(N−1) (1 = победа … 0 = последнее).\nСчитается среднее placeScore по всем учтённым играм игрока: avg.\nЦелевой рейтинг: target = 1000 + 400 × (avg − 0.5)\n(стабильно первые ≈ 1200, стабильно последние ≈ 800).\n\nСмешивание с текущим значением: вес w = min(1, games/8), R ← R×(1−w) + target×w — чем больше игр, тем ближе к долгосрочному среднему.\nK на этот метод не влияет.',
       'rating.zero': 'Рейтинг от нуля',
       'rating.zeroHint':
         'Та же тройка методов и сводная таблица, но без стартовой константы 1000 — чтобы числа читались как «накопившийся результат», а не как Elo вокруг тысячи.\n\nЧем отличается от классики\n• Elo FFA / pairwise: старт = 0 (в классике 1000). Формулы Expected и K те же; у сильных игроков рейтинг уходит в плюс, у слабых — в минус.\n• Финиш: просто среднее placeScore × 100 (примерно 0…100). Нет target = 1000 ± 400 и нет смешивания w = games/8 — только сырое среднее нормированного места.\n• Сводная «от нуля» = среднее трёх zero-based чисел (не смешивается с классической сводной).\n\nКлассические таблицы выше не меняются: смотрите обе шкалы рядом.',
+      'rating.lobbyWin': 'Очки лобби (победа)',
+      'rating.lobbyWinHint':
+        'Накопительный рейтинг от нуля (не Elo). N — число игроков в лобби этой партии.\n\nЗа каждую учтённую игру:\n• всем участникам: +(N − 1)\n• победителю дополнительно: +10\n  то есть победитель получает (N − 1) + 10, остальные — ровно (N − 1).\n\nПример: лобби из 8 → всем по 7, победителю 17. Очки суммируются по играм по возрастанию номера. Коэффициент Elo K сюда не входит.',
+      'rating.lobbyAvg': 'Очки лобби (Avg)',
+      'rating.lobbyAvgHint':
+        'Накопительный рейтинг от нуля, похожий на «Очки лобби (победа)», но вместо бонуса +10 у победителя у каждого игрока своя надбавка Avg.\n\nЗа каждую учтённую игру игрок получает: (N − 1) + Avg,\nгде N — размер лобби, Avg — среднее арифметическое доступных финальных показателей из survivors: технологии (techs), институты (policies), города (cities). Отсутствующие/нечисловые поля в среднее не входят; если данных нет — Avg = 0 (остаётся только участие N−1).\n\nОтличие от варианта с победой: здесь нет отдельного +10 за win — сильнее развитие в финале даёт больше очков всем местам. Elo K не влияет.',
       'rating.col.place': '#',
       'rating.col.player': 'Игрок',
       'rating.col.rating': 'Рейтинг',
@@ -390,10 +503,18 @@
       'stats.averagesHint': 'Finale averages (survivors) for ranked games only. Top-3 opener policies from first unlocked policy branch.',
       'stats.policies': 'Policies & ideologies',
       'stats.policiesHint':
-        'First policy opener, adopted branches, and ideologies from finale data.\n“Avg place” is normalized placeScore (1 = win … 0 = last) so lobbies of different sizes are comparable.\nWin rate is wins among picks of that option (not among every player in the lobby).',
+        'First policy opener, adopted branches, full branch combos (as in archive finale), “branch + ideology” pairs, and ideologies.\n“Avg place” is normalized placeScore (1 = win … 0 = last) so lobbies of different sizes are comparable.\nWin rate is wins among picks of that option (not among every player in the lobby).',
       'stats.firstPolicies': 'First policy',
       'stats.policyBranches': 'Policy branches',
+      'stats.policyCombos': 'Policy combos',
+      'stats.policyCombosHint':
+        'Full set of adopted branches from finale (policy_branches), same order as on the player card. One row = one combo.',
+      'stats.policyIdeologyPairs': 'Policy + ideology pairs',
+      'stats.policyIdeologyPairsHint':
+        'Each adopted policy branch paired with the ideology taken in that game (when an ideology is present).',
       'stats.ideologies': 'Ideologies',
+      'stats.col.combo': 'Combo',
+      'stats.col.pair': 'Pair',
       'stats.wondersBuilt': 'Wonders (self-built)',
       'stats.wondersBuiltHint':
         'Only wonders in cities founded by that civ (wonders_built).\nConquered wonders (foreign foundingCiv) are excluded here — see them in Finale under “Conquered wonders”.',
@@ -433,7 +554,7 @@
       'stats.col.belief': 'Belief',
       'stats.col.avgPlaceNorm': 'Avg place',
       'rating.intro':
-        'Ratings are computed in the browser from Games.json on every page load (adding/removing an archive game recalculates the tables).\n\nWhich games count\n• Ranked FFA only — no teams / scrap flags (and no excludeFromStats).\n• Games are processed in ascending game-number order (league chronology).\n\nPlacement inside one game\n1) The winner (winner nation) is always 1st.\n2) Among the rest: living players first, then eliminated.\n3) Within a group — by finale score descending; if score is missing — by nickname.\n\nTwo scales on this page\n• Classic tables above: everyone starts at 1000; finish maps onto ~1000 ± 400.\n• “Zero-based rating” (separate block below): Elo starts at 0; finish is raw mean placeScore × 100 (no 1000 baseline).\nSame methods (FFA / pairwise / finish / combined), different zero — useful to read “how far from start” without the artificial 1000 floor.',
+        'Ratings are computed in the browser from Games.json on every page load (adding/removing an archive game recalculates the tables).\n\nWhich games count\n• Ranked FFA only — no teams / scrap flags (and no excludeFromStats).\n• Games are processed in ascending game-number order (league chronology).\n\nPlacement inside one game\n1) The winner (winner nation) is always 1st.\n2) Among the rest: living players first, then eliminated.\n3) Within a group — by finale score descending; if score is missing — by nickname.\n\nScales on this page\n• Classic tables above: everyone starts at 1000; finish maps onto ~1000 ± 400.\n• “Zero-based rating”: Elo starts at 0; finish is raw mean placeScore × 100 (no 1000 baseline).\n• “Lobby points”: separate cumulative zero-based scales — lobby size N plus either a +10 win bonus or Avg of finale stats (see blocks below).\nSame Elo methods (FFA / pairwise / finish / combined) on two scales; lobby points are a different, non-Elo system.',
       'rating.toc': 'Rating sections',
       'rating.combined': 'Combined rating',
       'rating.combinedHint':
@@ -446,13 +567,19 @@
         'Classic zero-sum FFA Elo via pairs.\n\nIn a lobby of N players there are C(N,2) = N(N−1)/2 virtual duels: each higher place “beats” each lower place.\nEach duel uses k_pair = K / C(N,2) so the total scale per game stays about K.\n\nFor pair (higher A, lower B):\nΔA = k_pair × (1 − E(A,B)),  ΔB = −ΔA,\nwhere E(A,B) = 1 / (1 + 10^((Rb−Ra)/400)).\n\nA player’s game delta is the sum over all pairs. Sum of rating changes in the lobby = 0.',
       'rating.kLabel': 'K factor',
       'rating.kHint':
-        'K controls how hard Elo moves after one game for FFA and pairwise (classic and zero-based alike).\n• 20 — calmer, smaller swings.\n• 24 — default.\n• 32 — as in the old Google Sheet ratingv2, more reactive.\nFinish-place rating and the finish part of zero-based ignore K. Your choice is stored in the browser.',
+        'K controls how hard Elo moves after one game for FFA and pairwise (classic and zero-based alike).\n• 20 — calmer, smaller swings.\n• 24 — default.\n• 32 — as in the old Google Sheet ratingv2, more reactive.\nFinish-place rating, the finish part of zero-based, and Lobby points ignore this K. Your choice is stored in the browser.',
       'rating.finish': 'Finish-place rating',
       'rating.finishHint':
         'Not Elo — a finish-average mapped onto a ~1000 scale.\n\nEach game awards placeScore = (N−1−i)/(N−1) (1 = win … 0 = last).\navg = mean placeScore over the player’s counted games.\ntarget = 1000 + 400 × (avg − 0.5)\n(always 1st ≈ 1200, always last ≈ 800).\n\nBlend: w = min(1, games/8), R ← R×(1−w) + target×w — more games pull toward the long-run average.\nK does not affect this method.',
       'rating.zero': 'Zero-based rating',
       'rating.zeroHint':
         'The same three methods plus a combined table, but without the 1000 starting constant — so numbers read as accumulated results rather than Elo clustered around a thousand.\n\nHow it differs from classic\n• FFA / pairwise Elo: start = 0 (classic starts at 1000). Same Expected formula and K; strong players go positive, weak players go negative.\n• Finish: plain mean placeScore × 100 (roughly 0…100). No target = 1000 ± 400 and no w = games/8 blend — only the raw average normalized place.\n• Zero-based combined = mean of the three zero-based numbers (not mixed with the classic combined table).\n\nClassic tables above stay unchanged; compare both scales side by side.',
+      'rating.lobbyWin': 'Lobby points (win)',
+      'rating.lobbyWinHint':
+        'Cumulative zero-based rating (not Elo). N is the lobby size for that game.\n\nEach counted game awards:\n• every participant: +(N − 1)\n• the winner an extra: +10\n  so the winner gets (N − 1) + 10, everyone else exactly (N − 1).\n\nExample: 8-player lobby → 7 each, winner 17. Points sum across games in ascending game-number order. Elo K does not apply.',
+      'rating.lobbyAvg': 'Lobby points (Avg)',
+      'rating.lobbyAvgHint':
+        'Cumulative zero-based rating, similar to “Lobby points (win)”, but instead of a flat +10 for the winner each player gets their own Avg bonus.\n\nEach counted game awards: (N − 1) + Avg,\nwhere N is lobby size and Avg is the arithmetic mean of available finale survivor stats: techs, policies, cities. Missing/non-numeric fields are skipped; if none are available Avg = 0 (participation N−1 only).\n\nUnlike the win variant there is no separate +10 for winning — stronger finale development yields more points at every place. Elo K does not apply.',
       'rating.col.place': '#',
       'rating.col.player': 'Player',
       'rating.col.rating': 'Rating',
@@ -496,8 +623,14 @@
   }
 
   function translateTerm(name) {
-    if (lang !== 'en' || name == null || name === '') return name;
-    return TERM_EN[name] || name;
+    if (name == null || name === '') return name;
+    const raw = String(name).trim();
+    if (!raw) return name;
+    if (lang === 'en') {
+      return TERM_EN[raw] || raw;
+    }
+    // RU UI: beliefs are often English in Games.json — show mod/in-game Russian.
+    return BELIEF_RU[raw] || raw;
   }
 
   /** @deprecated use translateTerm */
