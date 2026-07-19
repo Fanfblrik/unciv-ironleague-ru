@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=records-2">
+    <link rel="stylesheet" href="css/site.css?v=rating-nav-1">
 
 </head>
 <body>
@@ -33,8 +33,7 @@
     <nav class="site-nav" data-i18n-aria="nav.aria" aria-label="Разделы сайта">
         <button type="button" class="site-nav-btn active" data-view="archive" data-i18n="nav.archive">Архив игр</button>
         <button type="button" class="site-nav-btn" data-view="stats" data-i18n="nav.stats">Статистика</button>
-        <button type="button" class="site-nav-btn" data-view="rating" data-i18n="nav.rating">Рейтинг от 1000</button>
-        <button type="button" class="site-nav-btn" data-view="ratingZero" data-i18n="nav.ratingZero">Рейтинг от нуля</button>
+        <button type="button" class="site-nav-btn" data-view="rating" data-i18n="nav.rating">Рейтинг</button>
         <button type="button" class="site-nav-btn" data-view="tierlist" data-i18n="nav.tierlist">Тирлист</button>
         <button type="button" class="site-nav-btn" data-view="records" data-i18n="nav.records">Рекорды</button>
         <button type="button" class="site-nav-btn" data-view="faq" data-i18n="nav.faq">FAQ</button>
@@ -339,6 +338,15 @@
 
 
     <div class="view-panel" id="viewRating">
+        <div class="rating-scale-row" role="group" data-i18n-aria="rating.scaleLabel" aria-label="Шкала рейтинга">
+            <span class="rating-k-label" data-i18n="rating.scaleLabel">Шкала</span>
+            <select id="ratingScaleSelect" class="rating-scale-select" aria-label="Шкала рейтинга">
+                <option value="1000" data-i18n="rating.scale1000">от 1000</option>
+                <option value="zero" data-i18n="rating.scaleZero">от нуля</option>
+            </select>
+            <span class="rating-k-note" data-i18n="rating.scaleHint">Классический Elo (старт 1000) или шкала от нуля и очки лобби.</span>
+        </div>
+        <div id="ratingPane1000" class="rating-scale-pane">
         <p class="rating-intro" id="ratingIntro" data-i18n="rating.intro">Рейтинг считается из архива при каждой загрузке.</p>
         <div class="rating-k-row" role="group" data-i18n-aria="rating.kLabel" aria-label="Коэффициент K">
             <span class="rating-k-label" data-i18n="rating.kLabel">Коэффициент K</span>
@@ -439,9 +447,9 @@
                 </table>
             </div>
         </div>
-    </div>
+        </div>
 
-    <div class="view-panel" id="viewRatingZero">
+        <div id="ratingPaneZero" class="rating-scale-pane" hidden>
         <p class="rating-intro" id="ratingZeroIntro" data-i18n="rating.introZero">Рейтинг от нуля и очки лобби.</p>
         <div class="rating-k-row" role="group" data-i18n-aria="rating.kLabel" aria-label="Коэффициент K">
             <span class="rating-k-label" data-i18n="rating.kLabel">Коэффициент K</span>
@@ -533,6 +541,7 @@
                 </table>
             </div>
         </div>
+        </div>
     </div>
 
     <div class="view-panel" id="viewTierlist">
@@ -611,7 +620,7 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=records-2"></script>
+<script src="js/i18n.js?v=rating-nav-1"></script>
 <script src="js/rating.js?v=lobby-pergame-1"></script>
 <script src="js/achievements.js?v=records-1"></script>
 <script>
@@ -1668,8 +1677,7 @@
         const titles = {
             archive: viewTitle('title.archive', '⚔️ Архив игр 🛡️'),
             stats: viewTitle('title.stats', '📊 Статистика лиги'),
-            rating: viewTitle('title.rating', '🏅 Рейтинг от 1000'),
-            ratingZero: viewTitle('title.ratingZero', '🏅 Рейтинг от нуля'),
+            rating: viewTitle('title.rating', '🏅 Рейтинг'),
             tierlist: viewTitle('title.tierlist', '⭐ Тирлист наций'),
             records: viewTitle('title.records', '🏆 Рекорды'),
             faq: viewTitle('title.faq', '❓ FAQ'),
@@ -1677,8 +1685,7 @@
         const footers = {
             archive: viewTitle('footer.archive', 'Данные обновляются автоматически'),
             stats: viewTitle('footer.stats', 'Статистика по играм архива (без teams/scrap)'),
-            rating: viewTitle('footer.rating', 'Классическая шкала: старт Elo 1000'),
-            ratingZero: viewTitle('footer.ratingZero', 'Шкала от нуля и очки лобби'),
+            rating: viewTitle('footer.rating', 'Рейтинг: шкала от 1000 или от нуля'),
             tierlist: viewTitle('footer.tierlist', 'Тирлист наций лиги'),
             records: viewTitle('footer.records', 'Рекорды и достижения (без teams/scrap)'),
             faq: viewTitle('footer.faq', 'Частые вопросы'),
@@ -1691,9 +1698,36 @@
     const RATING_K_KEY = 'ironleague_rating_k';
     const RATING_ELIM_KEY = 'ironleague_rating_elim_penalty';
     const RATING_MIN_GAMES_KEY = 'ironleague_rating_min_games';
+    const RATING_SCALE_KEY = 'ironleague_rating_scale';
     let ratingK = 24;
     let lobbyElimPenalty = 0;
     let ratingMinGames = 0;
+    let ratingScale = '1000';
+
+    function loadRatingScale() {
+        let saved = '1000';
+        try {
+            saved = localStorage.getItem(RATING_SCALE_KEY) || '1000';
+        } catch (e) { /* ignore */ }
+        applyRatingScale(saved, true);
+    }
+
+    function applyRatingScale(next, silent) {
+        ratingScale = next === 'zero' ? 'zero' : '1000';
+        try {
+            localStorage.setItem(RATING_SCALE_KEY, ratingScale);
+        } catch (e) { /* ignore */ }
+        const select = document.getElementById('ratingScaleSelect');
+        if (select) select.value = ratingScale;
+        const pane1000 = document.getElementById('ratingPane1000');
+        const paneZero = document.getElementById('ratingPaneZero');
+        if (pane1000) pane1000.hidden = ratingScale !== '1000';
+        if (paneZero) paneZero.hidden = ratingScale !== 'zero';
+        if (!silent) {
+            applyViewMeta('rating');
+            renderRatingTables();
+        }
+    }
 
     function loadRatingK() {
         let saved = 24;
@@ -1902,6 +1936,7 @@
         loadRatingK();
         loadLobbyElimPenalty();
         loadRatingMinGames();
+        loadRatingScale();
         document.querySelectorAll('.rating-k-btn').forEach((btn) => {
             btn.addEventListener('click', () => setRatingK(btn.dataset.k));
         });
@@ -1910,6 +1945,9 @@
         });
         document.querySelectorAll('.rating-mingames-btn').forEach((btn) => {
             btn.addEventListener('click', () => setRatingMinGames(btn.dataset.mingames));
+        });
+        document.getElementById('ratingScaleSelect')?.addEventListener('change', (e) => {
+            applyRatingScale(e.target.value);
         });
         await loadGamesData();
         await Promise.all([loadFaqData(), loadTierlistData()]);
@@ -1928,13 +1966,15 @@
             document.getElementById('viewArchive').classList.toggle('active', view === 'archive');
             document.getElementById('viewStats').classList.toggle('active', view === 'stats');
             document.getElementById('viewRating')?.classList.toggle('active', view === 'rating');
-            document.getElementById('viewRatingZero')?.classList.toggle('active', view === 'ratingZero');
             document.getElementById('viewTierlist').classList.toggle('active', view === 'tierlist');
             document.getElementById('viewRecords')?.classList.toggle('active', view === 'records');
             document.getElementById('viewFaq').classList.toggle('active', view === 'faq');
             applyViewMeta(view);
             if (view === 'stats') renderStatsTables();
-            if (view === 'rating' || view === 'ratingZero') renderRatingTables();
+            if (view === 'rating') {
+                applyRatingScale(ratingScale, true);
+                renderRatingTables();
+            }
             if (view === 'records') renderRecords();
         });
     });
