@@ -10,6 +10,7 @@
 
   const BARBARIAN_NAMES = new Set(['barbarians', 'варвары']);
   const PIETY_NAMES = new Set(['набожность', 'piety']);
+  const TRADITION_NAMES = new Set(['традиция', 'tradition']);
 
   function gameFlags(game) {
     return Array.isArray(game.flags) ? game.flags.map(String) : [];
@@ -40,6 +41,10 @@
 
   function isPiety(policy) {
     return PIETY_NAMES.has(String(policy || '').trim().toLowerCase());
+  }
+
+  function isTradition(policy) {
+    return TRADITION_NAMES.has(String(policy || '').trim().toLowerCase());
   }
 
   function survivorByName(game, name) {
@@ -88,16 +93,44 @@
       winsNoCaps: 0,
       caps: 0,
       deaths: 0,
+      deathsKnownGames: 0,
       wondersBuilt: 0,
+      wondersOwned: 0,
       elim: 0,
       finaleGames: 0,
       pietyCount: 0,
       pietyStreak: 0,
       pietyRun: 0,
+      traditionCount: 0,
       winTurns: [],
       maxCapsInWin: 0,
       maxCapsInWinGame: null,
+      warsDeclared: 0,
+      warsReceived: 0,
+      warsDeclZero: 0,
+      warsDeclKnown: 0,
+      nations: new Set(),
+      survivedNoCap: 0,
+      winStreak: 0,
+      winRun: 0,
+      maxCities: 0,
+      maxCitiesGame: null,
+      maxScore: 0,
+      maxScoreGame: null,
+      maxUnits: 0,
+      maxUnitsGame: null,
+      maxTechs: 0,
+      maxTechsGame: null,
     };
+  }
+
+  function bumpPeak(s, key, gameKey, value, gNum) {
+    const n = Number(value);
+    if (!Number.isFinite(n)) return;
+    if (n > s[key]) {
+      s[key] = n;
+      s[gameKey] = gNum;
+    }
   }
 
   function buildStats(games) {
@@ -117,27 +150,59 @@
         const s = ensure(name);
         s.played += 1;
         const row = survivorByName(game, name);
+        const won = name === wp;
         let piety = false;
+
+        if (won) {
+          s.wins += 1;
+          s.winRun += 1;
+          s.winStreak = Math.max(s.winStreak, s.winRun);
+        } else {
+          s.winRun = 0;
+        }
+
         if (row) {
           s.finaleGames += 1;
           const caps = Array.isArray(row.conquered_capitals) ? row.conquered_capitals.length : 0;
           s.caps += caps;
-          s.deaths += Number(row.military_deaths) || 0;
+          if (Number.isFinite(Number(row.military_deaths))) {
+            s.deathsKnownGames += 1;
+            s.deaths += Number(row.military_deaths);
+          }
           s.wondersBuilt += Array.isArray(row.wonders_built) ? row.wonders_built.length : 0;
+          s.wondersOwned += Array.isArray(row.wonders) ? row.wonders.length : 0;
           if (row.alive === false) s.elim += 1;
+          if (row.alive === true && row.has_capital === false) s.survivedNoCap += 1;
           if (isPiety(row.first_policy)) {
             s.pietyCount += 1;
             piety = true;
           }
+          if (isTradition(row.first_policy)) s.traditionCount += 1;
+          if (Number.isFinite(Number(row.wars_declared))) {
+            s.warsDeclKnown += 1;
+            const wd = Number(row.wars_declared);
+            s.warsDeclared += wd;
+            if (wd === 0) s.warsDeclZero += 1;
+          }
+          if (Number.isFinite(Number(row.wars_received))) {
+            s.warsReceived += Number(row.wars_received);
+          }
+          const nat = String(row.nation || '').trim();
+          if (nat) s.nations.add(nat);
+          bumpPeak(s, 'maxCities', 'maxCitiesGame', row.cities, gNum);
+          bumpPeak(s, 'maxScore', 'maxScoreGame', row.score, gNum);
+          bumpPeak(s, 'maxUnits', 'maxUnitsGame', row.units, gNum);
+          bumpPeak(s, 'maxTechs', 'maxTechsGame', row.techs, gNum);
         }
+
         if (piety) {
           s.pietyRun += 1;
           s.pietyStreak = Math.max(s.pietyStreak, s.pietyRun);
         } else {
           s.pietyRun = 0;
         }
-        if (name === wp) {
-          s.wins += 1;
+
+        if (won) {
           const caps = Array.isArray((row || {}).conquered_capitals)
             ? row.conquered_capitals.length
             : 0;
@@ -174,6 +239,24 @@
     return best;
   }
 
+  function pickMin(stats, scoreFn, filterFn) {
+    let best = null;
+    let bestScore = Infinity;
+    for (const [name, s] of stats) {
+      if (filterFn && !filterFn(s)) continue;
+      const score = scoreFn(s);
+      if (!Number.isFinite(score)) continue;
+      if (
+        score < bestScore
+        || (score === bestScore && best && name.localeCompare(best.player) < 0)
+      ) {
+        bestScore = score;
+        best = { player: name, stat: s, score };
+      }
+    }
+    return best;
+  }
+
   /**
    * Compute league records from archive games.
    * Считает рекорды лиги по архиву.
@@ -195,7 +278,6 @@
       push('most_wins', mostWins, String(mostWins.stat.wins), { games: mostWins.stat.played });
     }
 
-    // Prefer perfect winrate (min 3 games), most wins; else best rate among min-3.
     let winrateHit = pickMax(
       stats,
       (s) => s.wins,
@@ -216,6 +298,46 @@
         `${winrateHit.stat.wins}/${winrateHit.stat.played} (${pct}%)`,
         { perfect: winrateHit.stat.wins === winrateHit.stat.played },
       );
+    }
+
+    const winStreak = pickMax(stats, (s) => s.winStreak, (s) => s.winStreak >= 2);
+    if (winStreak) push('longest_win_streak', winStreak, String(winStreak.stat.winStreak));
+
+    let fastest = null;
+    let slowest = null;
+    for (const [name, s] of stats) {
+      for (const w of s.winTurns) {
+        if (
+          !fastest
+          || w.turn < fastest.turn
+          || (w.turn === fastest.turn && name < fastest.player)
+        ) {
+          fastest = { player: name, turn: w.turn, game: w.game };
+        }
+        if (
+          !slowest
+          || w.turn > slowest.turn
+          || (w.turn === slowest.turn && name < slowest.player)
+        ) {
+          slowest = { player: name, turn: w.turn, game: w.game };
+        }
+      }
+    }
+    if (fastest) {
+      out.push({
+        id: 'fastest_win',
+        player: fastest.player,
+        value: String(fastest.turn),
+        gameNumber: fastest.game,
+      });
+    }
+    if (slowest) {
+      out.push({
+        id: 'slowest_win',
+        player: slowest.player,
+        value: String(slowest.turn),
+        gameNumber: slowest.game,
+      });
     }
 
     const allCapsWins = pickMax(
@@ -239,24 +361,43 @@
     const mostCaps = pickMax(stats, (s) => s.caps, (s) => s.caps > 0);
     if (mostCaps) push('most_caps', mostCaps, String(mostCaps.stat.caps));
 
-    let fastest = null;
-    for (const [name, s] of stats) {
-      for (const w of s.winTurns) {
-        if (
-          !fastest
-          || w.turn < fastest.turn
-          || (w.turn === fastest.turn && name < fastest.player)
-        ) {
-          fastest = { player: name, turn: w.turn, game: w.game };
-        }
-      }
+    const warmonger = pickMax(
+      stats,
+      (s) => s.warsDeclared,
+      (s) => s.warsDeclKnown >= 3 && s.warsDeclared > 0,
+    );
+    if (warmonger) {
+      push('most_wars_declared', warmonger, String(warmonger.stat.warsDeclared), {
+        games: warmonger.stat.warsDeclKnown,
+      });
     }
-    if (fastest) {
-      out.push({
-        id: 'fastest_win',
-        player: fastest.player,
-        value: String(fastest.turn),
-        gameNumber: fastest.game,
+
+    const attacked = pickMax(
+      stats,
+      (s) => s.warsReceived,
+      (s) => s.finaleGames >= 3 && s.warsReceived > 0,
+    );
+    if (attacked) {
+      push('most_wars_received', attacked, String(attacked.stat.warsReceived), {
+        games: attacked.stat.finaleGames,
+      });
+    }
+
+    const deaths = pickMax(
+      stats,
+      (s) => s.deaths,
+      (s) => s.deathsKnownGames >= 1 && s.deaths > 0,
+    );
+    if (deaths) push('most_military_deaths', deaths, String(deaths.stat.deaths));
+
+    const fewestDeaths = pickMin(
+      stats,
+      (s) => s.deaths,
+      (s) => s.deathsKnownGames >= 5,
+    );
+    if (fewestDeaths) {
+      push('fewest_military_deaths', fewestDeaths, String(fewestDeaths.stat.deaths), {
+        games: fewestDeaths.stat.deathsKnownGames,
       });
     }
 
@@ -272,11 +413,31 @@
       push('piety_first_streak', pietyStreak, String(pietyStreak.stat.pietyStreak));
     }
 
+    const tradition = pickMax(stats, (s) => s.traditionCount, (s) => s.traditionCount >= 3);
+    if (tradition) {
+      push('tradition_first_count', tradition, String(tradition.stat.traditionCount), {
+        games: tradition.stat.played,
+      });
+    }
+
     const wonders = pickMax(stats, (s) => s.wondersBuilt, (s) => s.wondersBuilt > 0);
     if (wonders) push('most_wonders_built', wonders, String(wonders.stat.wondersBuilt));
 
-    const deaths = pickMax(stats, (s) => s.deaths, (s) => s.deaths > 0);
-    if (deaths) push('most_military_deaths', deaths, String(deaths.stat.deaths));
+    const wondersOwned = pickMax(stats, (s) => s.wondersOwned, (s) => s.wondersOwned > 0);
+    if (wondersOwned) {
+      push('most_wonders_owned', wondersOwned, String(wondersOwned.stat.wondersOwned));
+    }
+
+    const uniqueNations = pickMax(
+      stats,
+      (s) => s.nations.size,
+      (s) => s.played >= 5 && s.nations.size >= 5,
+    );
+    if (uniqueNations) {
+      push('most_unique_nations', uniqueNations, String(uniqueNations.stat.nations.size), {
+        games: uniqueNations.stat.played,
+      });
+    }
 
     const noWin = pickMax(stats, (s) => s.played, (s) => s.played >= 5 && s.wins === 0);
     if (noWin) push('most_games_no_win', noWin, String(noWin.stat.played));
@@ -287,6 +448,57 @@
       (s) => s.finaleGames >= 3 && s.elim === 0,
     );
     if (survivor) push('never_eliminated', survivor, String(survivor.stat.finaleGames));
+
+    const pacifist = pickMax(
+      stats,
+      (s) => s.warsDeclZero,
+      (s) => s.warsDeclKnown >= 5,
+    );
+    if (pacifist) {
+      push(
+        'pacifist_games',
+        pacifist,
+        `${pacifist.stat.warsDeclZero}/${pacifist.stat.warsDeclKnown}`,
+        { games: pacifist.stat.warsDeclKnown },
+      );
+    }
+
+    const noCapSurvive = pickMax(
+      stats,
+      (s) => s.survivedNoCap,
+      (s) => s.survivedNoCap >= 1,
+    );
+    if (noCapSurvive) {
+      push('survived_no_capital', noCapSurvive, String(noCapSurvive.stat.survivedNoCap));
+    }
+
+    const maxCities = pickMax(stats, (s) => s.maxCities, (s) => s.maxCities > 0);
+    if (maxCities) {
+      push('max_cities_finale', maxCities, String(maxCities.stat.maxCities), {
+        gameNumber: maxCities.stat.maxCitiesGame,
+      });
+    }
+
+    const maxScore = pickMax(stats, (s) => s.maxScore, (s) => s.maxScore > 0);
+    if (maxScore) {
+      push('max_score_finale', maxScore, String(maxScore.stat.maxScore), {
+        gameNumber: maxScore.stat.maxScoreGame,
+      });
+    }
+
+    const maxUnits = pickMax(stats, (s) => s.maxUnits, (s) => s.maxUnits > 0);
+    if (maxUnits) {
+      push('max_units_finale', maxUnits, String(maxUnits.stat.maxUnits), {
+        gameNumber: maxUnits.stat.maxUnitsGame,
+      });
+    }
+
+    const maxTechs = pickMax(stats, (s) => s.maxTechs, (s) => s.maxTechs > 0);
+    if (maxTechs) {
+      push('max_techs_finale', maxTechs, String(maxTechs.stat.maxTechs), {
+        gameNumber: maxTechs.stat.maxTechsGame,
+      });
+    }
 
     return out;
   }

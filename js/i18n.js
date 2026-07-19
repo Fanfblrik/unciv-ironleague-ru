@@ -408,6 +408,7 @@
       'records.section.glory': 'Слава',
       'records.section.war': 'Война',
       'records.section.style': 'Стиль',
+      'records.section.peaks': 'Пики финала',
       'records.section.curious': 'Курьёзы',
       'records.item.most_wins.title': 'Больше всего побед',
       'records.item.most_wins.body':
@@ -415,9 +416,15 @@
       'records.item.best_winrate.title': 'Идеальный винрейт',
       'records.item.best_winrate.body':
         '{player} выиграл все учтённые игры: {value}.',
+      'records.item.longest_win_streak.title': 'Стрик побед',
+      'records.item.longest_win_streak.body':
+        'У {player} самый длинный стрик побед подряд: {value}.',
       'records.item.fastest_win.title': 'Самая быстрая победа',
       'records.item.fastest_win.body':
         '{player} закрыл Game {game} на ходу {value}.',
+      'records.item.slowest_win.title': 'Самая долгая победа',
+      'records.item.slowest_win.body':
+        '{player} дожал Game {game} аж на ходу {value}.',
       'records.item.wins_all_with_caps.title': 'Победы только с трофеями',
       'records.item.wins_all_with_caps.body':
         'У {player} все {value} побед — с захватом хотя бы одной чужой столицы.',
@@ -427,24 +434,60 @@
       'records.item.most_caps.title': 'Охотник за столицами',
       'records.item.most_caps.body':
         '{player} суммарно захватил больше всего столиц: {value}.',
+      'records.item.most_wars_declared.title': 'Ястреб войны',
+      'records.item.most_wars_declared.body':
+        '{player} объявил больше всего войн живым игрокам: {value} (по данным финала).',
+      'records.item.most_wars_received.title': 'Магнит для объявлений',
+      'records.item.most_wars_received.body':
+        'На {player} чаще всего объявляли войну: {value} раз(а).',
       'records.item.most_military_deaths.title': 'Мясорубка',
       'records.item.most_military_deaths.body':
         '{player} потерял больше всего юнитов в бою: {value}.',
+      'records.item.fewest_military_deaths.title': 'Бережливый полководец',
+      'records.item.fewest_military_deaths.body':
+        'У {player} меньше всего боевых потерь среди игроков с ≥5 играми с данными: {value} (за {games} игр).',
       'records.item.piety_first_count.title': 'Адепт Набожности',
       'records.item.piety_first_count.body':
         '{player} чаще всех открывал первым институт «Набожность»: {value} раз(а).',
       'records.item.piety_first_streak.title': 'Стрик Набожности',
       'records.item.piety_first_streak.body':
         'У {player} самый длинный стрик игр с первым институтом «Набожность»: {value}.',
+      'records.item.tradition_first_count.title': 'Адепт Традиции',
+      'records.item.tradition_first_count.body':
+        '{player} чаще всех открывал первым институт «Традиция»: {value} раз(а).',
       'records.item.most_wonders_built.title': 'Зодчий',
       'records.item.most_wonders_built.body':
         '{player} построил больше всего своих чудес света: {value}.',
+      'records.item.most_wonders_owned.title': 'Коллекционер чудес',
+      'records.item.most_wonders_owned.body':
+        '{player} владел суммарно большим числом чудес (свои + трофеи): {value}.',
+      'records.item.most_unique_nations.title': 'Турист по нациям',
+      'records.item.most_unique_nations.body':
+        '{player} сыграл наибольшим числом разных наций: {value} (из {games} игр).',
       'records.item.most_games_no_win.title': 'Долгий путь к трону',
       'records.item.most_games_no_win.body':
         '{player} сыграл больше всех без единой победы: {value} игр.',
       'records.item.never_eliminated.title': 'Неуязвимый',
       'records.item.never_eliminated.body':
         '{player} ни разу не выбывал в финале ({value} игр с данными финала).',
+      'records.item.pacifist_games.title': 'Пацифист по бумагам',
+      'records.item.pacifist_games.body':
+        'У {player} больше всего партий без объявленных войн живым (wars_declared=0): {value}.',
+      'records.item.survived_no_capital.title': 'Жизнь без столицы',
+      'records.item.survived_no_capital.body':
+        '{player} чаще всех дожил до финала уже без столицы: {value} раз(а).',
+      'records.item.max_score_finale.title': 'Рекорд очков',
+      'records.item.max_score_finale.body':
+        '{player} набрал больше всего очков в одном финале: {value} (Game {game}).',
+      'records.item.max_cities_finale.title': 'Империя городов',
+      'records.item.max_cities_finale.body':
+        '{player} держал больше всего городов в одном финале: {value} (Game {game}).',
+      'records.item.max_units_finale.title': 'Армия на финале',
+      'records.item.max_units_finale.body':
+        '{player} вывел больше всего юнитов в одном финале: {value} (Game {game}).',
+      'records.item.max_techs_finale.title': 'Технологический пик',
+      'records.item.max_techs_finale.body':
+        '{player} открыл больше всего технологий к одному финалу: {value} (Game {game}).',
       'tier.title': 'Тирлист наций',
       'tier.col.nation': 'Нация',
       'tier.col.avg': 'Среднее',
@@ -699,6 +742,7 @@
       'records.section.glory': 'Glory',
       'records.section.war': 'War',
       'records.section.style': 'Style',
+      'records.section.peaks': 'Finale peaks',
       'records.section.curious': 'Oddities',
       'records.item.most_wins.title': 'Most wins',
       'records.item.most_wins.body':
@@ -706,9 +750,15 @@
       'records.item.best_winrate.title': 'Perfect win rate',
       'records.item.best_winrate.body':
         '{player} won every counted game: {value}.',
+      'records.item.longest_win_streak.title': 'Win streak',
+      'records.item.longest_win_streak.body':
+        '{player} holds the longest consecutive win streak: {value}.',
       'records.item.fastest_win.title': 'Fastest win',
       'records.item.fastest_win.body':
         '{player} finished Game {game} on turn {value}.',
+      'records.item.slowest_win.title': 'Longest win',
+      'records.item.slowest_win.body':
+        '{player} finally closed Game {game} on turn {value}.',
       'records.item.wins_all_with_caps.title': 'Trophy wins only',
       'records.item.wins_all_with_caps.body':
         'All of {player}’s {value} wins came with at least one captured capital.',
@@ -718,24 +768,60 @@
       'records.item.most_caps.title': 'Capital hunter',
       'records.item.most_caps.body':
         '{player} captured the most capitals in total: {value}.',
+      'records.item.most_wars_declared.title': 'War hawk',
+      'records.item.most_wars_declared.body':
+        '{player} declared the most wars on living players: {value} (finale data).',
+      'records.item.most_wars_received.title': 'Declaration magnet',
+      'records.item.most_wars_received.body':
+        '{player} had the most wars declared on them: {value}.',
       'records.item.most_military_deaths.title': 'Meat grinder',
       'records.item.most_military_deaths.body':
         '{player} lost the most military units: {value}.',
+      'records.item.fewest_military_deaths.title': 'Careful commander',
+      'records.item.fewest_military_deaths.body':
+        '{player} has the fewest combat losses among players with ≥5 games of death data: {value} (across {games} games).',
       'records.item.piety_first_count.title': 'Piety devotee',
       'records.item.piety_first_count.body':
         '{player} opened Piety first most often: {value} time(s).',
       'records.item.piety_first_streak.title': 'Piety streak',
       'records.item.piety_first_streak.body':
         '{player} holds the longest streak of games opening Piety first: {value}.',
+      'records.item.tradition_first_count.title': 'Tradition devotee',
+      'records.item.tradition_first_count.body':
+        '{player} opened Tradition first most often: {value} time(s).',
       'records.item.most_wonders_built.title': 'Wonder builder',
       'records.item.most_wonders_built.body':
         '{player} self-built the most world wonders: {value}.',
+      'records.item.most_wonders_owned.title': 'Wonder collector',
+      'records.item.most_wonders_owned.body':
+        '{player} owned the most wonders in total (built + captured): {value}.',
+      'records.item.most_unique_nations.title': 'Nation tourist',
+      'records.item.most_unique_nations.body':
+        '{player} played the most different nations: {value} (across {games} games).',
       'records.item.most_games_no_win.title': 'Long road to the throne',
       'records.item.most_games_no_win.body':
         '{player} played the most games without a win: {value}.',
       'records.item.never_eliminated.title': 'Never eliminated',
       'records.item.never_eliminated.body':
         '{player} was never eliminated in finale ({value} games with finale data).',
+      'records.item.pacifist_games.title': 'Paper pacifist',
+      'records.item.pacifist_games.body':
+        '{player} has the most games with zero wars declared on living players (wars_declared=0): {value}.',
+      'records.item.survived_no_capital.title': 'Alive without a capital',
+      'records.item.survived_no_capital.body':
+        '{player} most often reached finale already without a capital: {value} time(s).',
+      'records.item.max_score_finale.title': 'Score peak',
+      'records.item.max_score_finale.body':
+        '{player} posted the highest finale score: {value} (Game {game}).',
+      'records.item.max_cities_finale.title': 'City empire',
+      'records.item.max_cities_finale.body':
+        '{player} held the most cities in one finale: {value} (Game {game}).',
+      'records.item.max_units_finale.title': 'Finale army',
+      'records.item.max_units_finale.body':
+        '{player} fielded the most units in one finale: {value} (Game {game}).',
+      'records.item.max_techs_finale.title': 'Tech peak',
+      'records.item.max_techs_finale.body':
+        '{player} had the most techs in one finale: {value} (Game {game}).',
       'tier.title': 'Nation tier list',
       'tier.col.nation': 'Nation',
       'tier.col.avg': 'Average',

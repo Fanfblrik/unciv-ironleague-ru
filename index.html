@@ -574,6 +574,7 @@
             <a href="#records-glory" data-i18n="records.section.glory">Слава</a>
             <a href="#records-war" data-i18n="records.section.war">Война</a>
             <a href="#records-style" data-i18n="records.section.style">Стиль</a>
+            <a href="#records-peaks" data-i18n="records.section.peaks">Пики финала</a>
             <a href="#records-curious" data-i18n="records.section.curious">Курьёзы</a>
         </div>
         <div class="stats-section" id="records-glory">
@@ -587,6 +588,10 @@
         <div class="stats-section" id="records-style">
             <h2 data-i18n="records.section.style">Стиль</h2>
             <div class="records-grid" id="recordsStyle"></div>
+        </div>
+        <div class="stats-section" id="records-peaks">
+            <h2 data-i18n="records.section.peaks">Пики финала</h2>
+            <div class="records-grid" id="recordsPeaks"></div>
         </div>
         <div class="stats-section" id="records-curious">
             <h2 data-i18n="records.section.curious">Курьёзы</h2>
@@ -620,9 +625,9 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=rating-nav-1"></script>
+<script src="js/i18n.js?v=records-3"></script>
 <script src="js/rating.js?v=lobby-pergame-1"></script>
-<script src="js/achievements.js?v=records-1"></script>
+<script src="js/achievements.js?v=records-2"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -1881,10 +1886,31 @@
     }
 
     const RECORD_SECTIONS = {
-        glory: ['most_wins', 'best_winrate', 'fastest_win'],
-        war: ['wins_all_with_caps', 'most_caps_single_win', 'most_caps', 'most_military_deaths'],
-        style: ['piety_first_count', 'piety_first_streak', 'most_wonders_built'],
-        curious: ['most_games_no_win', 'never_eliminated'],
+        glory: ['most_wins', 'best_winrate', 'longest_win_streak', 'fastest_win', 'slowest_win'],
+        war: [
+            'wins_all_with_caps',
+            'most_caps_single_win',
+            'most_caps',
+            'most_wars_declared',
+            'most_wars_received',
+            'most_military_deaths',
+        ],
+        style: [
+            'piety_first_count',
+            'piety_first_streak',
+            'tradition_first_count',
+            'most_wonders_built',
+            'most_wonders_owned',
+            'most_unique_nations',
+        ],
+        peaks: ['max_score_finale', 'max_cities_finale', 'max_units_finale', 'max_techs_finale'],
+        curious: [
+            'most_games_no_win',
+            'never_eliminated',
+            'pacifist_games',
+            'survived_no_capital',
+            'fewest_military_deaths',
+        ],
     };
 
     function formatRecordCard(item) {
@@ -1914,6 +1940,7 @@
             glory: document.getElementById('recordsGlory'),
             war: document.getElementById('recordsWar'),
             style: document.getElementById('recordsStyle'),
+            peaks: document.getElementById('recordsPeaks'),
             curious: document.getElementById('recordsCurious'),
         };
         Object.keys(RECORD_SECTIONS).forEach((section) => {
