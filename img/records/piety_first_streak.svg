@@ -1,12 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="g-piety-streak" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#ffe566"/>
       <stop offset="100%" stop-color="#c9a000"/>
     </linearGradient>
   </defs>
-  <circle cx="48" cy="48" r="44" fill="#1a1624" stroke="url(#g)" stroke-width="4"/>
-  <g fill="none" stroke="url(#g)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M48 28 v40"/><path d="M36 42 h24"/><path d="M34 64 h10 M52 64 h10"/>
+  <circle cx="48" cy="48" r="44" fill="#1a1624" stroke="url(#g-piety-streak)" stroke-width="4"/>
+  <g fill="none" stroke="url(#g-piety-streak)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 34 v20 M22 42 h12"/>
+    <path d="M48 28 v28 M40 40 h16"/>
+    <path d="M68 34 v20 M62 42 h12"/>
+    <path d="M24 68 h48"/>
+    <path d="M34 68 l14-10 14 10"/>
   </g>
 </svg>
