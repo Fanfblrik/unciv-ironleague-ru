@@ -13,7 +13,7 @@ https://destup.github.io/unciv-ironleague-ru/
 |------|------------|
 | `index.html` | Разметка и клиентская логика UI |
 | `css/site.css` | Стили сайта |
-| `js/` | `i18n.js` (RU/EN), `rating.js` (Elo / очки лобби) |
+| `js/` | `i18n.js` (RU/EN), `rating.js` (Elo / очки лобби), `achievements.js` (рекорды) |
 | `Games.json` | Архив игр (корень — стабильный URL для бота и сайта) |
 | `data/` | FAQ, тирлист, цвета наций, RU-имена чудес |
 | `Nation_icons/`, `Wonder_icons/` | Иконки |
@@ -40,6 +40,8 @@ npx --yes serve -l 3000 .
 3. Страница читает `build-id.txt` и добавляет `?v=…` к запросам `Games.json` и др., чтобы не залипала старая копия в браузере/CDN.
 
 Если после merge в `main` билд не стартовал: в Actions вручную **Run workflow** у `Bump build id` (`workflow_dispatch`), либо сделай пустой/минимальный push в `main`.
+
+Вкладка **Рекорды** считает ачивки клиентски из `Games.json` (без teams/scrap), как рейтинг.
 
 ## Синхронизация с ботом
 

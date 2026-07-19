@@ -190,11 +190,16 @@
   }
 
   function toRows(ratings, gamesPlayed) {
-    const rows = [...ratings.entries()].map(([name, rating]) => ({
-      name,
-      rating: Math.round(rating * 100) / 100,
-      games: gamesPlayed.get(name) || 0,
-    }));
+    const rows = [...ratings.entries()].map(([name, rating]) => {
+      const games = gamesPlayed.get(name) || 0;
+      const rounded = Math.round(rating * 100) / 100;
+      return {
+        name,
+        rating: rounded,
+        games,
+        perGame: games > 0 ? Math.round((rounded / games) * 100) / 100 : null,
+      };
+    });
     rows.sort((a, b) => b.rating - a.rating || a.name.localeCompare(b.name, 'en'));
     rows.forEach((r, i) => {
       r.place = i + 1;
@@ -386,6 +391,7 @@
     isEliminated,
     eligibleGames,
     placementOrder,
+    parseGameNum,
     rateLobbyWinBonus,
     rateLobbyAvgBonus,
     computeAll,

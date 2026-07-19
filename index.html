@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=tidy-1">
+    <link rel="stylesheet" href="css/site.css?v=policy-filters-1">
 
 </head>
 <body>
@@ -33,9 +33,9 @@
     <nav class="site-nav" data-i18n-aria="nav.aria" aria-label="Разделы сайта">
         <button type="button" class="site-nav-btn active" data-view="archive" data-i18n="nav.archive">Архив игр</button>
         <button type="button" class="site-nav-btn" data-view="stats" data-i18n="nav.stats">Статистика</button>
-        <button type="button" class="site-nav-btn" data-view="rating" data-i18n="nav.rating">Рейтинг от 1000</button>
-        <button type="button" class="site-nav-btn" data-view="ratingZero" data-i18n="nav.ratingZero">Рейтинг от нуля</button>
+        <button type="button" class="site-nav-btn" data-view="rating" data-i18n="nav.rating">Рейтинг</button>
         <button type="button" class="site-nav-btn" data-view="tierlist" data-i18n="nav.tierlist">Тирлист</button>
+        <button type="button" class="site-nav-btn" data-view="records" data-i18n="nav.records">Рекорды</button>
         <button type="button" class="site-nav-btn" data-view="faq" data-i18n="nav.faq">FAQ</button>
     </nav>
 
@@ -101,7 +101,7 @@
         </div>
         <div class="stats-section" id="stats-winrate">
             <h2 data-i18n="stats.winrate">Винрейт игроков</h2>
-            <p class="hint" data-i18n="stats.winrateHint">Победы / участия в играх из архива. Минимум 1 игра.</p>
+            <p class="hint" data-i18n="stats.winrateHint">Победы / участия в играх из архива (без teams/scrap). «Выжил» — alive=true в финале.</p>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="playerWinrateTable">
                     <thead>
@@ -110,6 +110,7 @@
                             <th class="num" data-sort="games" data-i18n="stats.col.games">Игр</th>
                             <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
                             <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="survived" data-i18n="stats.col.survived">Выжил</th>
                             <th class="num" data-sort="capitalLosses" data-i18n="stats.col.capitalLosses">Потерь столицы</th>
                             <th class="num" data-sort="eliminated" data-i18n="stats.col.eliminated">Выбываний</th>
                         </tr>
@@ -187,6 +188,17 @@
             <h2 data-i18n="stats.policies">Институты и идеологии</h2>
             <p class="hint" data-i18n="stats.policiesHint">Первый институт, открытые ветки и идеологии. Ср. место — нормированное (1 = победа, 0 = последнее), чтобы уравнять лобби разного размера.</p>
             <h3 data-i18n="stats.firstPolicies">Первый институт</h3>
+            <div class="stats-local-filters" data-policy-filter-for="firstPolicyStatsTable">
+                <label class="stats-local-filter-label">
+                    <span data-i18n="stats.policyFilterLabel">Фильтр</span>
+                    <select class="policy-stats-filter" data-i18n-aria="stats.policyFilterLabel">
+                        <option value="all" data-i18n="stats.policyFilterAll">Все</option>
+                        <option value="hide-noise" selected data-i18n="stats.policyFilterHideNoise">Скрыть разовые без побед</option>
+                        <option value="multi" data-i18n="stats.policyFilterMulti">Пиков ≥ 2</option>
+                        <option value="wins" data-i18n="stats.policyFilterWins">Только с победами</option>
+                    </select>
+                </label>
+            </div>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="firstPolicyStatsTable">
                     <thead>
@@ -202,6 +214,17 @@
                 </table>
             </div>
             <h3 data-i18n="stats.policyBranches">Ветки институтов</h3>
+            <div class="stats-local-filters" data-policy-filter-for="policyBranchStatsTable">
+                <label class="stats-local-filter-label">
+                    <span data-i18n="stats.policyFilterLabel">Фильтр</span>
+                    <select class="policy-stats-filter">
+                        <option value="all" data-i18n="stats.policyFilterAll">Все</option>
+                        <option value="hide-noise" selected data-i18n="stats.policyFilterHideNoise">Скрыть разовые без побед</option>
+                        <option value="multi" data-i18n="stats.policyFilterMulti">Пиков ≥ 2</option>
+                        <option value="wins" data-i18n="stats.policyFilterWins">Только с победами</option>
+                    </select>
+                </label>
+            </div>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="policyBranchStatsTable">
                     <thead>
@@ -217,7 +240,18 @@
                 </table>
             </div>
             <h3 data-i18n="stats.policyCombos">Связки институтов</h3>
-            <p class="hint" data-i18n="stats.policyCombosHint">Полный набор открытых веток из финала, как в архиве.</p>
+            <p class="hint" data-i18n="stats.policyCombosHint">Полный набор открытых веток из финала. Длинные связки сокращаются; полный список — в подсказке. Клик по Game N — финал победы.</p>
+            <div class="stats-local-filters" data-policy-filter-for="policyComboStatsTable">
+                <label class="stats-local-filter-label">
+                    <span data-i18n="stats.policyFilterLabel">Фильтр</span>
+                    <select class="policy-stats-filter">
+                        <option value="all" data-i18n="stats.policyFilterAll">Все</option>
+                        <option value="hide-noise" selected data-i18n="stats.policyFilterHideNoise">Скрыть разовые без побед</option>
+                        <option value="multi" data-i18n="stats.policyFilterMulti">Пиков ≥ 2</option>
+                        <option value="wins" data-i18n="stats.policyFilterWins">Только с победами</option>
+                    </select>
+                </label>
+            </div>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="policyComboStatsTable">
                     <thead>
@@ -234,6 +268,17 @@
             </div>
             <h3 data-i18n="stats.policyIdeologyPairs">Пары институт + идеология</h3>
             <p class="hint" data-i18n="stats.policyIdeologyPairsHint">Каждая открытая ветка вместе с идеологией той же партии.</p>
+            <div class="stats-local-filters" data-policy-filter-for="policyIdeologyPairStatsTable">
+                <label class="stats-local-filter-label">
+                    <span data-i18n="stats.policyFilterLabel">Фильтр</span>
+                    <select class="policy-stats-filter">
+                        <option value="all" data-i18n="stats.policyFilterAll">Все</option>
+                        <option value="hide-noise" selected data-i18n="stats.policyFilterHideNoise">Скрыть разовые без побед</option>
+                        <option value="multi" data-i18n="stats.policyFilterMulti">Пиков ≥ 2</option>
+                        <option value="wins" data-i18n="stats.policyFilterWins">Только с победами</option>
+                    </select>
+                </label>
+            </div>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="policyIdeologyPairStatsTable">
                     <thead>
@@ -337,6 +382,15 @@
 
 
     <div class="view-panel" id="viewRating">
+        <div class="rating-scale-row" role="group" data-i18n-aria="rating.scaleLabel" aria-label="Шкала рейтинга">
+            <span class="rating-k-label" data-i18n="rating.scaleLabel">Шкала</span>
+            <select id="ratingScaleSelect" class="rating-scale-select" aria-label="Шкала рейтинга">
+                <option value="1000" data-i18n="rating.scale1000">от 1000</option>
+                <option value="zero" data-i18n="rating.scaleZero">от нуля</option>
+            </select>
+            <span class="rating-k-note" data-i18n="rating.scaleHint">Классический Elo (старт 1000) или шкала от нуля и очки лобби.</span>
+        </div>
+        <div id="ratingPane1000" class="rating-scale-pane">
         <p class="rating-intro" id="ratingIntro" data-i18n="rating.intro">Рейтинг считается из архива при каждой загрузке.</p>
         <div class="rating-k-row" role="group" data-i18n-aria="rating.kLabel" aria-label="Коэффициент K">
             <span class="rating-k-label" data-i18n="rating.kLabel">Коэффициент K</span>
@@ -437,9 +491,9 @@
                 </table>
             </div>
         </div>
-    </div>
+        </div>
 
-    <div class="view-panel" id="viewRatingZero">
+        <div id="ratingPaneZero" class="rating-scale-pane" hidden>
         <p class="rating-intro" id="ratingZeroIntro" data-i18n="rating.introZero">Рейтинг от нуля и очки лобби.</p>
         <div class="rating-k-row" role="group" data-i18n-aria="rating.kLabel" aria-label="Коэффициент K">
             <span class="rating-k-label" data-i18n="rating.kLabel">Коэффициент K</span>
@@ -504,6 +558,7 @@
                             <th class="num" data-sort="place" data-i18n="rating.col.place">#</th>
                             <th data-sort="name" data-i18n="rating.col.player">Игрок</th>
                             <th class="num" data-sort="rating" data-i18n="rating.col.rating">Рейтинг</th>
+                            <th class="num" data-sort="perGame" data-i18n="rating.col.perGame">За игру</th>
                             <th class="num" data-sort="games" data-i18n="rating.col.games">Игр</th>
                         </tr>
                     </thead>
@@ -522,12 +577,14 @@
                             <th class="num" data-sort="place" data-i18n="rating.col.place">#</th>
                             <th data-sort="name" data-i18n="rating.col.player">Игрок</th>
                             <th class="num" data-sort="rating" data-i18n="rating.col.rating">Рейтинг</th>
+                            <th class="num" data-sort="perGame" data-i18n="rating.col.perGame">За игру</th>
                             <th class="num" data-sort="games" data-i18n="rating.col.games">Игр</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
             </div>
+        </div>
         </div>
     </div>
 
@@ -550,6 +607,39 @@
                     <tbody></tbody>
                 </table>
             </div>
+        </div>
+    </div>
+
+    <div class="view-panel" id="viewRecords">
+        <p class="rating-intro" data-i18n="records.intro">
+            Рекорды считаются из архива при каждой загрузке. Игры с флагами teams / scrap не учитываются.
+        </p>
+        <div class="faq-toc" data-i18n-aria="records.toc" aria-label="Разделы рекордов">
+            <a href="#records-glory" data-i18n="records.section.glory">Слава</a>
+            <a href="#records-war" data-i18n="records.section.war">Война</a>
+            <a href="#records-style" data-i18n="records.section.style">Стиль</a>
+            <a href="#records-peaks" data-i18n="records.section.peaks">Пики финала</a>
+            <a href="#records-curious" data-i18n="records.section.curious">Курьёзы</a>
+        </div>
+        <div class="stats-section" id="records-glory">
+            <h2 data-i18n="records.section.glory">Слава</h2>
+            <div class="records-grid" id="recordsGlory"></div>
+        </div>
+        <div class="stats-section" id="records-war">
+            <h2 data-i18n="records.section.war">Война</h2>
+            <div class="records-grid" id="recordsWar"></div>
+        </div>
+        <div class="stats-section" id="records-style">
+            <h2 data-i18n="records.section.style">Стиль</h2>
+            <div class="records-grid" id="recordsStyle"></div>
+        </div>
+        <div class="stats-section" id="records-peaks">
+            <h2 data-i18n="records.section.peaks">Пики финала</h2>
+            <div class="records-grid" id="recordsPeaks"></div>
+        </div>
+        <div class="stats-section" id="records-curious">
+            <h2 data-i18n="records.section.curious">Курьёзы</h2>
+            <div class="records-grid" id="recordsCurious"></div>
         </div>
     </div>
 
@@ -579,8 +669,9 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=rating-min5-1"></script>
-<script src="js/rating.js?v=rating-tabs-1"></script>
+<script src="js/i18n.js?v=policy-filters-1"></script>
+<script src="js/rating.js?v=lobby-pergame-1"></script>
+<script src="js/achievements.js?v=policy-filters-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -1635,17 +1726,17 @@
         const titles = {
             archive: viewTitle('title.archive', '⚔️ Архив игр 🛡️'),
             stats: viewTitle('title.stats', '📊 Статистика лиги'),
-            rating: viewTitle('title.rating', '🏅 Рейтинг от 1000'),
-            ratingZero: viewTitle('title.ratingZero', '🏅 Рейтинг от нуля'),
+            rating: viewTitle('title.rating', '🏅 Рейтинг'),
             tierlist: viewTitle('title.tierlist', '⭐ Тирлист наций'),
+            records: viewTitle('title.records', '🏆 Рекорды'),
             faq: viewTitle('title.faq', '❓ FAQ'),
         };
         const footers = {
             archive: viewTitle('footer.archive', 'Данные обновляются автоматически'),
             stats: viewTitle('footer.stats', 'Статистика по играм архива (без teams/scrap)'),
-            rating: viewTitle('footer.rating', 'Классическая шкала: старт Elo 1000'),
-            ratingZero: viewTitle('footer.ratingZero', 'Шкала от нуля и очки лобби'),
+            rating: viewTitle('footer.rating', 'Рейтинг: шкала от 1000 или от нуля'),
             tierlist: viewTitle('footer.tierlist', 'Тирлист наций лиги'),
+            records: viewTitle('footer.records', 'Рекорды и достижения (без teams/scrap)'),
             faq: viewTitle('footer.faq', 'Частые вопросы'),
         };
         document.getElementById('pageTitle').textContent = titles[view] || titles.archive;
@@ -1656,9 +1747,36 @@
     const RATING_K_KEY = 'ironleague_rating_k';
     const RATING_ELIM_KEY = 'ironleague_rating_elim_penalty';
     const RATING_MIN_GAMES_KEY = 'ironleague_rating_min_games';
+    const RATING_SCALE_KEY = 'ironleague_rating_scale';
     let ratingK = 24;
     let lobbyElimPenalty = 0;
     let ratingMinGames = 0;
+    let ratingScale = '1000';
+
+    function loadRatingScale() {
+        let saved = '1000';
+        try {
+            saved = localStorage.getItem(RATING_SCALE_KEY) || '1000';
+        } catch (e) { /* ignore */ }
+        applyRatingScale(saved, true);
+    }
+
+    function applyRatingScale(next, silent) {
+        ratingScale = next === 'zero' ? 'zero' : '1000';
+        try {
+            localStorage.setItem(RATING_SCALE_KEY, ratingScale);
+        } catch (e) { /* ignore */ }
+        const select = document.getElementById('ratingScaleSelect');
+        if (select) select.value = ratingScale;
+        const pane1000 = document.getElementById('ratingPane1000');
+        const paneZero = document.getElementById('ratingPaneZero');
+        if (pane1000) pane1000.hidden = ratingScale !== '1000';
+        if (paneZero) paneZero.hidden = ratingScale !== 'zero';
+        if (!silent) {
+            applyViewMeta('rating');
+            renderRatingTables();
+        }
+    }
 
     function loadRatingK() {
         let saved = 24;
@@ -1743,6 +1861,13 @@
             <td class="num">${r.rating.toFixed(2)}</td>
             <td class="num">${r.games}</td>
         </tr>`;
+        const lobbyRow = (r) => `<tr>
+            <td class="num">${r.place}</td>
+            <td>${r.name}</td>
+            <td class="num">${r.rating.toFixed(2)}</td>
+            <td class="num">${r.perGame != null ? r.perGame.toFixed(2) : '—'}</td>
+            <td class="num">${r.games}</td>
+        </tr>`;
         const combinedRow = (r) => `<tr>
             <td class="num">${r.place}</td>
             <td>${r.name}</td>
@@ -1791,17 +1916,93 @@
         fillSortableTable(
             document.getElementById('ratingLobbyWinTable'),
             filterRatingRows(zero.lobbyWin),
-            simpleRow,
+            lobbyRow,
             'rating',
             'desc',
         );
         fillSortableTable(
             document.getElementById('ratingLobbyAvgTable'),
             filterRatingRows(zero.lobbyAvg),
-            simpleRow,
+            lobbyRow,
             'rating',
             'desc',
         );
+    }
+
+    const RECORD_SECTIONS = {
+        glory: ['most_wins', 'best_winrate', 'longest_win_streak', 'fastest_win', 'slowest_win'],
+        war: [
+            'wins_all_with_caps',
+            'most_caps_single_win',
+            'most_caps',
+            'most_wars_declared',
+            'most_wars_received',
+            'most_military_deaths',
+        ],
+        style: [
+            'piety_first_count',
+            'piety_first_streak',
+            'tradition_first_count',
+            'liberty_first_count',
+            'honor_first_count',
+            'ideology_order_count',
+            'ideology_freedom_count',
+            'ideology_autocracy_count',
+            'most_wonders_built',
+            'most_wonders_owned',
+            'most_unique_nations',
+        ],
+        peaks: ['max_score_finale', 'max_cities_finale', 'max_units_finale', 'max_techs_finale'],
+        curious: [
+            'most_games_no_win',
+            'never_eliminated',
+            'pacifist_games',
+            'survived_no_capital',
+            'fewest_military_deaths',
+        ],
+    };
+
+    function formatRecordCard(item) {
+        const title = tt(`records.item.${item.id}.title`);
+        let body = tt(`records.item.${item.id}.body`, {
+            player: item.player,
+            value: item.value,
+            games: item.games != null ? String(item.games) : '',
+            game: item.gameNumber != null ? String(item.gameNumber) : '',
+        });
+        if (body === `records.item.${item.id}.body`) {
+            body = `${item.player}: ${item.value}`;
+        }
+        return `<article class="record-card" id="record-${item.id}">
+            <h3 class="record-card-title">${title === `records.item.${item.id}.title` ? item.id : title}</h3>
+            <p class="record-card-player">${item.player}</p>
+            <p class="record-card-value">${item.value}</p>
+            <p class="record-card-body">${body}</p>
+        </article>`;
+    }
+
+    function renderRecords() {
+        if (!window.IronLeagueAchievements || !gamesData.length) return;
+        const items = IronLeagueAchievements.computeAchievements(gamesData);
+        const byId = new Map(items.map((x) => [x.id, x]));
+        const map = {
+            glory: document.getElementById('recordsGlory'),
+            war: document.getElementById('recordsWar'),
+            style: document.getElementById('recordsStyle'),
+            peaks: document.getElementById('recordsPeaks'),
+            curious: document.getElementById('recordsCurious'),
+        };
+        Object.keys(RECORD_SECTIONS).forEach((section) => {
+            const el = map[section];
+            if (!el) return;
+            const cards = RECORD_SECTIONS[section]
+                .map((id) => byId.get(id))
+                .filter(Boolean)
+                .map(formatRecordCard);
+            el.innerHTML = cards.length
+                ? cards.join('')
+                : `<p class="hint">${tt('records.empty')}</p>`;
+        });
     }
 
     // Запуск
@@ -1811,6 +2012,7 @@
         loadRatingK();
         loadLobbyElimPenalty();
         loadRatingMinGames();
+        loadRatingScale();
         document.querySelectorAll('.rating-k-btn').forEach((btn) => {
             btn.addEventListener('click', () => setRatingK(btn.dataset.k));
         });
@@ -1820,10 +2022,51 @@
         document.querySelectorAll('.rating-mingames-btn').forEach((btn) => {
             btn.addEventListener('click', () => setRatingMinGames(btn.dataset.mingames));
         });
+        document.getElementById('ratingScaleSelect')?.addEventListener('change', (e) => {
+            applyRatingScale(e.target.value);
+        });
+        document.querySelectorAll('.policy-stats-filter').forEach((select) => {
+            select.addEventListener('change', () => {
+                const wrap = select.closest('[data-policy-filter-for]');
+                const tableId = wrap?.getAttribute('data-policy-filter-for');
+                if (!tableId) return;
+                setPolicyFilterMode(tableId, select.value);
+                const cache = window._policyStatsCache;
+                if (!cache) {
+                    renderStatsTables();
+                    return;
+                }
+                const map = {
+                    firstPolicyStatsTable: [cache.firstPolicyRows, cache.policyLabel],
+                    policyBranchStatsTable: [cache.policyBranchRows, cache.policyLabel],
+                    policyComboStatsTable: [cache.policyComboRows, cache.policyComboLabel],
+                    policyIdeologyPairStatsTable: [
+                        cache.policyIdeologyPairRows,
+                        cache.policyPairLabel,
+                    ],
+                };
+                const entry = map[tableId];
+                if (!entry) return;
+                fillSortableTable(
+                    document.getElementById(tableId),
+                    filterPolicyStatRows(entry[0], select.value),
+                    (r) => pickStatRowHtml(r, entry[1]),
+                    'picks',
+                    'desc',
+                );
+            });
+        });
+        document.getElementById('viewStats')?.addEventListener('click', (e) => {
+            const btn = e.target.closest?.('.stats-game-link');
+            if (!btn) return;
+            e.preventDefault();
+            openGameModal(btn.dataset.gameId);
+        });
         await loadGamesData();
         await Promise.all([loadFaqData(), loadTierlistData()]);
         renderStatsTables();
         renderRatingTables();
+        renderRecords();
     })();
 
     // Переключение разделов
@@ -1836,12 +2079,16 @@
             document.getElementById('viewArchive').classList.toggle('active', view === 'archive');
             document.getElementById('viewStats').classList.toggle('active', view === 'stats');
             document.getElementById('viewRating')?.classList.toggle('active', view === 'rating');
-            document.getElementById('viewRatingZero')?.classList.toggle('active', view === 'ratingZero');
             document.getElementById('viewTierlist').classList.toggle('active', view === 'tierlist');
+            document.getElementById('viewRecords')?.classList.toggle('active', view === 'records');
             document.getElementById('viewFaq').classList.toggle('active', view === 'faq');
             applyViewMeta(view);
             if (view === 'stats') renderStatsTables();
-            if (view === 'rating' || view === 'ratingZero') renderRatingTables();
+            if (view === 'rating') {
+                applyRatingScale(ratingScale, true);
+                renderRatingTables();
+            }
+            if (view === 'records') renderRecords();
         });
     });
 
@@ -1956,17 +2203,33 @@
 
     function ensurePickStat(map, name) {
         if (!map.has(name)) {
-            map.set(name, { name, picks: 0, wins: 0, placeSum: 0, placeN: 0 });
+            map.set(name, {
+                name,
+                picks: 0,
+                wins: 0,
+                placeSum: 0,
+                placeN: 0,
+                winGames: [],
+            });
         }
         return map.get(name);
     }
 
-    function recordPick(map, name, won, placeScore) {
+    function recordPick(map, name, won, placeScore, gameRef) {
         const key = String(name || '').trim();
         if (!key) return;
         const row = ensurePickStat(map, key);
         row.picks += 1;
-        if (won) row.wins += 1;
+        if (won) {
+            row.wins += 1;
+            if (gameRef && row.winGames.length < 8) {
+                const id = gameRef.id != null ? String(gameRef.id) : '';
+                const number = gameRef.number != null ? Number(gameRef.number) : null;
+                if (id && !row.winGames.some((g) => String(g.id) === id)) {
+                    row.winGames.push({ id, number });
+                }
+            }
+        }
         if (placeScore !== null && placeScore !== undefined && Number.isFinite(placeScore)) {
             row.placeSum += placeScore;
             row.placeN += 1;
@@ -1981,6 +2244,47 @@
         }));
     }
 
+    function filterPolicyStatRows(rows, mode) {
+        const list = Array.isArray(rows) ? rows : [];
+        if (mode === 'wins') return list.filter((r) => Number(r.wins || 0) > 0);
+        if (mode === 'multi') return list.filter((r) => Number(r.picks || 0) >= 2);
+        if (mode === 'hide-noise') {
+            return list.filter((r) => Number(r.wins || 0) > 0 || Number(r.picks || 0) >= 2);
+        }
+        return list;
+    }
+
+    function policyFilterModeFor(tableId) {
+        const key = `ironleague_policy_filter_${tableId}`;
+        let mode = 'hide-noise';
+        try {
+            mode = localStorage.getItem(key) || 'hide-noise';
+        } catch (e) { /* ignore */ }
+        const allowed = new Set(['all', 'hide-noise', 'multi', 'wins']);
+        return allowed.has(mode) ? mode : 'hide-noise';
+    }
+
+    function setPolicyFilterMode(tableId, mode) {
+        const key = `ironleague_policy_filter_${tableId}`;
+        try {
+            localStorage.setItem(key, mode);
+        } catch (e) { /* ignore */ }
+    }
+
+    function pickWinGameHtml(row) {
+        if (!row.wins || !Array.isArray(row.winGames) || !row.winGames.length) {
+            return `<td class="num">${row.wins}</td>`;
+        }
+        const g = row.winGames[0];
+        const label = Number.isFinite(g.number) ? `Game ${g.number}` : 'Game';
+        const extra = row.winGames.length > 1
+            ? ` title="${tt('stats.winGamesMore', { n: String(row.winGames.length) })}"`
+            : ` title="${tt('stats.winGameOpen')}"`;
+        return `<td class="num">${row.wins}
+            <button type="button" class="stats-game-link" data-game-id="${g.id}"${extra}>${label}</button>
+        </td>`;
+    }
+
     function pickStatRowHtml(row, labelFn) {
         const label = labelFn ? labelFn(row.name) : row.name;
         const avg = row.avgPlace === null || row.avgPlace === undefined
@@ -1989,7 +2293,7 @@
         return `<tr>
             <td>${label}</td>
             <td class="num">${row.picks}</td>
-            <td class="num">${row.wins}</td>
+            ${pickWinGameHtml(row)}
             <td class="num">${row.winrate}%</td>
             <td class="num">${avg}</td>
         </tr>`;
@@ -2016,6 +2320,7 @@
                     wins: 0,
                     capitalLosses: 0,
                     eliminated: 0,
+                    survived: 0,
                     nationCounts: new Map(),
                     ideologyCounts: new Map(),
                     wonders: 0,
@@ -2091,6 +2396,7 @@
                 const row = ensurePlayer(name);
                 if (s.has_capital === false) row.capitalLosses += 1;
                 if (s.alive === false) row.eliminated += 1;
+                if (s.alive === true) row.survived += 1;
                 if (Array.isArray(s.wonders)) row.wonders += s.wonders.length;
                 const built = Array.isArray(s.wonders_built) ? s.wonders_built : null;
                 if (built) row.wondersBuilt += built.length;
@@ -2134,40 +2440,45 @@
                     ? (lobbyN - 1 - idx) / (lobbyN - 1)
                     : null;
                 const won = (s.nation || '') === winnerNation;
+                const gNum = (window.IronLeagueRating && IronLeagueRating.parseGameNum)
+                    ? IronLeagueRating.parseGameNum(game)
+                    : Number((String(game.number || '').match(/(\d+)/) || [])[1]) || null;
+                const gameRef = { id: game.id, number: gNum };
 
-                if (firstPol) recordPick(firstPolicyStats, firstPol, won, placeScore);
+                if (firstPol) recordPick(firstPolicyStats, firstPol, won, placeScore, gameRef);
                 const branches = (Array.isArray(s.policy_branches) ? s.policy_branches : [])
                     .map((b) => String(b || '').trim())
                     .filter(Boolean);
                 for (const branch of branches) {
-                    recordPick(policyBranchStats, branch, won, placeScore);
+                    recordPick(policyBranchStats, branch, won, placeScore, gameRef);
                 }
                 if (branches.length) {
                     // Same order as archive finale card (policy_branches).
-                    recordPick(policyComboStats, branches.join(' · '), won, placeScore);
+                    recordPick(policyComboStats, branches.join(' · '), won, placeScore, gameRef);
                 }
                 if (ideology) {
-                    recordPick(ideologyStats, ideology, won, placeScore);
+                    recordPick(ideologyStats, ideology, won, placeScore, gameRef);
                     for (const branch of branches) {
                         recordPick(
                             policyIdeologyPairStats,
                             `${branch} + ${ideology}`,
                             won,
                             placeScore,
+                            gameRef,
                         );
                     }
                 }
                 for (const wonder of (built || [])) {
-                    recordPick(wonderBuiltStats, wonder, won, placeScore);
+                    recordPick(wonderBuiltStats, wonder, won, placeScore, gameRef);
                 }
                 if ((s.pantheon || '').trim()) {
-                    recordPick(pantheonStats, s.pantheon, won, placeScore);
+                    recordPick(pantheonStats, s.pantheon, won, placeScore, gameRef);
                 }
                 for (const belief of (Array.isArray(s.founder_beliefs) ? s.founder_beliefs : [])) {
-                    recordPick(founderBeliefStats, belief, won, placeScore);
+                    recordPick(founderBeliefStats, belief, won, placeScore, gameRef);
                 }
                 for (const belief of (Array.isArray(s.follower_beliefs) ? s.follower_beliefs : [])) {
-                    recordPick(followerBeliefStats, belief, won, placeScore);
+                    recordPick(followerBeliefStats, belief, won, placeScore, gameRef);
                 }
             }
         }
@@ -2295,6 +2606,7 @@
                 <td class="num">${p.games}</td>
                 <td class="num">${p.wins}</td>
                 <td class="num">${p.winrate}%</td>
+                <td class="num">${p.survived}</td>
                 <td class="num">${p.capitalLosses}</td>
                 <td class="num">${p.eliminated}</td>
             </tr>`,
@@ -2353,10 +2665,13 @@
         );
 
         const policyLabel = (name) => displayPolicyName(name);
-        const policyComboLabel = (name) => String(name || '')
-            .split(' · ')
-            .map((part) => displayPolicyName(part))
-            .join(' · ');
+        const policyComboLabel = (name) => {
+            const parts = String(name || '').split(' · ').filter(Boolean).map((p) => displayPolicyName(p));
+            if (parts.length <= 2) return parts.join(' · ');
+            const shortLabel = `${parts.slice(0, 2).join(' · ')} · +${parts.length - 2}`;
+            const full = parts.join(' · ').replace(/"/g, '&quot;');
+            return `<span title="${full}">${shortLabel}</span>`;
+        };
         const policyPairLabel = (name) => {
             const raw = String(name || '');
             const sep = ' + ';
@@ -2365,33 +2680,39 @@
             return `${displayPolicyName(raw.slice(0, idx))}${sep}${displayPolicyName(raw.slice(idx + sep.length))}`;
         };
         const wonderLabel = (name) => wonderNameRu(name);
-        fillSortableTable(
-            document.getElementById('firstPolicyStatsTable'),
+
+        window._policyStatsCache = {
             firstPolicyRows,
-            (r) => pickStatRowHtml(r, policyLabel),
-            'picks',
-            'desc',
-        );
-        fillSortableTable(
-            document.getElementById('policyBranchStatsTable'),
             policyBranchRows,
-            (r) => pickStatRowHtml(r, policyLabel),
-            'picks',
-            'desc',
-        );
-        fillSortableTable(
-            document.getElementById('policyComboStatsTable'),
             policyComboRows,
-            (r) => pickStatRowHtml(r, policyComboLabel),
-            'picks',
-            'desc',
-        );
-        fillSortableTable(
-            document.getElementById('policyIdeologyPairStatsTable'),
             policyIdeologyPairRows,
-            (r) => pickStatRowHtml(r, policyPairLabel),
-            'picks',
-            'desc',
+            policyLabel,
+            policyComboLabel,
+            policyPairLabel,
+        };
+
+        const fillPolicyTable = (tableId, rows, labelFn) => {
+            const mode = policyFilterModeFor(tableId);
+            const select = document.querySelector(
+                `[data-policy-filter-for="${tableId}"] .policy-stats-filter`,
+            );
+            if (select) select.value = mode;
+            fillSortableTable(
+                document.getElementById(tableId),
+                filterPolicyStatRows(rows, mode),
+                (r) => pickStatRowHtml(r, labelFn),
+                'picks',
+                'desc',
+            );
+        };
+
+        fillPolicyTable('firstPolicyStatsTable', firstPolicyRows, policyLabel);
+        fillPolicyTable('policyBranchStatsTable', policyBranchRows, policyLabel);
+        fillPolicyTable('policyComboStatsTable', policyComboRows, policyComboLabel);
+        fillPolicyTable(
+            'policyIdeologyPairStatsTable',
+            policyIdeologyPairRows,
+            policyPairLabel,
         );
         fillSortableTable(
             document.getElementById('ideologyStatsTable'),
@@ -2538,6 +2859,7 @@
             filterGames();
             renderStatsTables();
             renderRatingTables();
+            renderRecords();
             if (tierlistData) loadTierlistData();
             loadFaqData();
             const openModal = document.getElementById('gameModal');
@@ -2554,7 +2876,13 @@
     });
 
     window.onIronLeagueLangChange = function () {
-        // static data-i18n already refreshed in setLang
+        // static data-i18n already refreshed in setLang; refresh dynamic tables/titles
+        if (document.getElementById('viewStats')?.classList.contains('active')) {
+            renderStatsTables();
+        }
+        if (document.getElementById('viewRecords')?.classList.contains('active')) {
+            renderRecords();
+        }
     };
 
     // Back to top when site nav scrolls out of view

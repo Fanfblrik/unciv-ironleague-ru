@@ -172,23 +172,23 @@
     ru: {
       'nav.archive': 'Архив игр',
       'nav.stats': 'Статистика',
-      'nav.rating': 'Рейтинг от 1000',
-      'nav.ratingZero': 'Рейтинг от нуля',
+      'nav.rating': 'Рейтинг',
       'nav.tierlist': 'Тирлист',
+      'nav.records': 'Рекорды',
       'nav.faq': 'FAQ',
       'nav.aria': 'Разделы сайта',
       'title.archive': '⚔️ Архив игр 🛡️',
       'title.stats': '📊 Статистика лиги',
-      'title.rating': '🏅 Рейтинг от 1000',
-      'title.ratingZero': '🏅 Рейтинг от нуля',
+      'title.rating': '🏅 Рейтинг',
       'title.tierlist': '⭐ Тирлист наций',
+      'title.records': '🏆 Рекорды',
       'title.faq': '❓ FAQ',
       'title.doc': 'Iron League — Архив и FAQ',
       'footer.archive': 'Данные обновляются автоматически',
       'footer.stats': 'Статистика по играм архива (без teams/scrap)',
-      'footer.rating': 'Классическая шкала: старт Elo 1000',
-      'footer.ratingZero': 'Шкала от нуля и очки лобби',
+      'footer.rating': 'Рейтинг: шкала от 1000 или от нуля',
       'footer.tierlist': 'Тирлист наций лиги',
+      'footer.records': 'Рекорды и достижения (без teams/scrap)',
       'footer.faq': 'Частые вопросы',
       'footer.default': '📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF',
       'filter.nation': 'Фильтр по нации',
@@ -281,7 +281,8 @@
       'stats.intro':
         'В статистику не входят игры с пометками «командная» (teams) и «скрап» (scrap): они остаются в архиве и показываются с бейджем, но не влияют на винрейт, средние и рейтинг. Фильтр архива позволяет скрыть или показать только такие игры.',
       'stats.winrate': 'Винрейт игроков',
-      'stats.winrateHint': 'Победы / участия только в актуальных играх (без teams/scrap). Минимум 1 игра.',
+      'stats.winrateHint':
+        'Победы / участия только в актуальных играх (без teams/scrap). «Выжил» — alive=true в финале. Минимум 1 игра.',
       'stats.nations': 'Нации: пики и винрейт',
       'stats.nationsHint': 'Все нации мода. Не пикнутые — 0 пиков и 0% винрейта. Только актуальные игры.',
       'stats.detail': 'Игроки: нации и финал',
@@ -296,7 +297,14 @@
       'stats.policyBranches': 'Ветки институтов',
       'stats.policyCombos': 'Связки институтов',
       'stats.policyCombosHint':
-        'Полный набор открытых веток из финала (поле policy_branches), в том же порядке, что в карточке игрока. Одна строка = одна связка.',
+        'Полный набор открытых веток из финала (поле policy_branches), в том же порядке, что в карточке игрока. Одна строка = одна связка.\nДлинные связки сокращаются до первых двух веток (+N); полный список — в подсказке при наведении.\nЕсли были победы — рядом с числом побед ссылка на Game N (открывает финал).',
+      'stats.policyFilterLabel': 'Фильтр',
+      'stats.policyFilterAll': 'Все',
+      'stats.policyFilterHideNoise': 'Скрыть разовые без побед',
+      'stats.policyFilterMulti': 'Пиков ≥ 2',
+      'stats.policyFilterWins': 'Только с победами',
+      'stats.winGameOpen': 'Открыть игру с победой',
+      'stats.winGamesMore': 'Побед в {n} разных играх; показана первая',
       'stats.policyIdeologyPairs': 'Пары институт + идеология',
       'stats.policyIdeologyPairsHint':
         'Каждая открытая ветка институтов вместе с принятой идеологией той же партии (если идеология есть).',
@@ -317,6 +325,7 @@
       'stats.col.wins': 'Побед',
       'stats.col.winrate': 'Винрейт',
       'stats.col.capitalLosses': 'Потерь столицы',
+      'stats.col.survived': 'Выжил',
       'stats.col.eliminated': 'Выбываний',
       'stats.col.nation': 'Нация',
       'stats.col.picks': 'Пиков',
@@ -343,9 +352,14 @@
       'stats.col.belief': 'Верование',
       'stats.col.avgPlaceNorm': 'Ср. место',
       'rating.intro':
-        'Классический рейтинг считается в браузере из Games.json при каждой загрузке страницы.\n\nКакие игры входят\n• Только актуальные FFA без флагов teams / scrap (и без excludeFromStats).\n• Игры обрабатываются по номеру по возрастанию (хронология лиги).\n\nКак определяется место в одной партии\n1) Победитель (нация winner) — всегда 1-е место.\n2) Среди остальных: сначала живые, потом выбывшие.\n3) Внутри группы — по очкам финала (score) по убыванию; если очков нет — по нику.\n\nШкала этой вкладки\n• Все стартуют с 1000 (Elo FFA / pairwise).\n• Финиш мапится на ~1000 ± 400.\n• Сводный = среднее трёх методов на этой шкале.\n\nОтдельная вкладка «Рейтинг от нуля» — те же Elo-методы без базы 1000 и накопительные «Очки лобби».',
+        'Классический рейтинг считается в браузере из Games.json при каждой загрузке страницы.\n\nКакие игры входят\n• Только актуальные FFA без флагов teams / scrap (и без excludeFromStats).\n• Игры обрабатываются по номеру по возрастанию (хронология лиги).\n\nКак определяется место в одной партии\n1) Победитель (нация winner) — всегда 1-е место.\n2) Среди остальных: сначала живые, потом выбывшие.\n3) Внутри группы — по очкам финала (score) по убыванию; если очков нет — по нику.\n\nШкала «от 1000»\n• Все стартуют с 1000 (Elo FFA / pairwise).\n• Финиш мапится на ~1000 ± 400.\n• Сводный = среднее трёх методов на этой шкале.\n\nШкалу «от нуля» и очки лобби можно выбрать в выпадающем списке сверху.',
       'rating.introZero':
-        'Рейтинг от нуля и очки лобби считаются в браузере из Games.json при каждой загрузке.\n\nКакие игры входят и как считается место — как на вкладке «Рейтинг от 1000» (только FFA без teams/scrap; победитель → живые → выбывшие → score).\n\nЧто на этой вкладке\n• Сводный Elo от нуля: FFA / pairwise стартуют с 0; финиш = среднее placeScore × 100 (без базы 1000).\n• Очки лобби (победа): всем +(N−1), победителю +(N−1)+10.\n• Очки лобби (Avg): всем +(N−1)+Avg (techs/policies/cities).\n\nФильтры\n• K — только для Elo FFA/pairwise в сводной таблице от нуля.\n• Штраф за выбывание (−5 при alive=false) — только для двух таблиц «Очки лобби»; по умолчанию выключен.',
+        'Рейтинг от нуля и очки лобби считаются в браузере из Games.json при каждой загрузке.\n\nКакие игры входят и как считается место — как на шкале «от 1000» (только FFA без teams/scrap; победитель → живые → выбывшие → score).\n\nЧто на этой шкале\n• Сводный Elo от нуля: FFA / pairwise стартуют с 0; финиш = среднее placeScore × 100 (без базы 1000).\n• Очки лобби (победа): всем +(N−1), победителю +(N−1)+10.\n• Очки лобби (Avg): всем +(N−1)+Avg (techs/policies/cities).\n\nФильтры\n• K — только для Elo FFA/pairwise в сводной таблице от нуля.\n• Штраф за выбывание (−5 при alive=false) — только для двух таблиц «Очки лобби»; по умолчанию выключен.',
+      'rating.scaleLabel': 'Шкала',
+      'rating.scale1000': 'от 1000',
+      'rating.scaleZero': 'от нуля',
+      'rating.scaleHint':
+        'Выбор внутри вкладки «Рейтинг»: классический Elo (старт 1000) или шкала от нуля и очки лобби. Сохраняется в браузере.',
       'rating.toc': 'Разделы рейтинга',
       'rating.tocZero': 'Разделы рейтинга от нуля',
       'rating.combined': 'Сводный рейтинг',
@@ -388,11 +402,114 @@
       'rating.col.place': '#',
       'rating.col.player': 'Игрок',
       'rating.col.rating': 'Рейтинг',
+      'rating.col.perGame': 'За игру',
       'rating.col.games': 'Игр',
       'rating.col.avgPlace': 'Ср. место',
       'rating.col.pFfa': 'Место FFA',
       'rating.col.pPair': 'Место pair',
       'rating.col.pFin': 'Место finish',
+      'records.intro':
+        'Рекорды считаются из архива при каждой загрузке. Игры с флагами teams / scrap не учитываются.',
+      'records.toc': 'Разделы рекордов',
+      'records.empty': 'Пока нет данных для этого раздела.',
+      'records.section.glory': 'Слава',
+      'records.section.war': 'Война',
+      'records.section.style': 'Стиль',
+      'records.section.peaks': 'Пики финала',
+      'records.section.curious': 'Курьёзы',
+      'records.item.most_wins.title': 'Больше всего побед',
+      'records.item.most_wins.body':
+        '{player} лидирует по числу побед: {value} (из {games} учтённых игр).',
+      'records.item.best_winrate.title': 'Идеальный винрейт',
+      'records.item.best_winrate.body':
+        '{player} выиграл все учтённые игры: {value}.',
+      'records.item.longest_win_streak.title': 'Стрик побед',
+      'records.item.longest_win_streak.body':
+        'У {player} самый длинный стрик побед подряд: {value}.',
+      'records.item.fastest_win.title': 'Самая быстрая победа',
+      'records.item.fastest_win.body':
+        '{player} закрыл Game {game} на ходу {value}.',
+      'records.item.slowest_win.title': 'Самая долгая победа',
+      'records.item.slowest_win.body':
+        '{player} дожал Game {game} аж на ходу {value}.',
+      'records.item.wins_all_with_caps.title': 'Победы только с трофеями',
+      'records.item.wins_all_with_caps.body':
+        'У {player} все {value} побед — с захватом хотя бы одной чужой столицы.',
+      'records.item.most_caps_single_win.title': 'Триумфальный разгром',
+      'records.item.most_caps_single_win.body':
+        '{player} в одной победе (Game {game}) забрал больше всего столиц: {value}.',
+      'records.item.most_caps.title': 'Охотник за столицами',
+      'records.item.most_caps.body':
+        '{player} суммарно захватил больше всего столиц: {value}.',
+      'records.item.most_wars_declared.title': 'Ястреб войны',
+      'records.item.most_wars_declared.body':
+        '{player} объявил больше всего войн живым игрокам: {value} (по данным финала).',
+      'records.item.most_wars_received.title': 'Магнит для объявлений',
+      'records.item.most_wars_received.body':
+        'На {player} чаще всего объявляли войну: {value} раз(а).',
+      'records.item.most_military_deaths.title': 'Мясорубка',
+      'records.item.most_military_deaths.body':
+        '{player} потерял больше всего юнитов в бою: {value}.',
+      'records.item.fewest_military_deaths.title': 'Бережливый полководец',
+      'records.item.fewest_military_deaths.body':
+        'У {player} меньше всего боевых потерь среди игроков с ≥5 играми с данными: {value} (за {games} игр).',
+      'records.item.piety_first_count.title': 'Адепт Набожности',
+      'records.item.piety_first_count.body':
+        '{player} чаще всех открывал первым институт «Набожность»: {value} раз(а).',
+      'records.item.piety_first_streak.title': 'Стрик Набожности',
+      'records.item.piety_first_streak.body':
+        'У {player} самый длинный стрик игр с первым институтом «Набожность»: {value}.',
+      'records.item.tradition_first_count.title': 'Адепт Традиции',
+      'records.item.tradition_first_count.body':
+        '{player} чаще всех открывал первым институт «Традиция»: {value} раз(а).',
+      'records.item.liberty_first_count.title': 'Адепт Воли',
+      'records.item.liberty_first_count.body':
+        '{player} чаще всех открывал первым институт «Воля»: {value} раз(а).',
+      'records.item.honor_first_count.title': 'Адепт Чести',
+      'records.item.honor_first_count.body':
+        '{player} чаще всех открывал первым институт «Честь»: {value} раз(а).',
+      'records.item.ideology_order_count.title': 'Порядочный',
+      'records.item.ideology_order_count.body':
+        '{player} чаще всех принимал идеологию «Порядок»: {value} раз(а).',
+      'records.item.ideology_freedom_count.title': 'Свободный',
+      'records.item.ideology_freedom_count.body':
+        '{player} чаще всех принимал идеологию «Свобода»: {value} раз(а).',
+      'records.item.ideology_autocracy_count.title': 'Автократ',
+      'records.item.ideology_autocracy_count.body':
+        '{player} чаще всех принимал идеологию «Автократия»: {value} раз(а).',
+      'records.item.most_wonders_built.title': 'Зодчий',
+      'records.item.most_wonders_built.body':
+        '{player} построил больше всего своих чудес света: {value}.',
+      'records.item.most_wonders_owned.title': 'Коллекционер чудес',
+      'records.item.most_wonders_owned.body':
+        '{player} владел суммарно большим числом чудес (свои + трофеи): {value}.',
+      'records.item.most_unique_nations.title': 'Турист по нациям',
+      'records.item.most_unique_nations.body':
+        '{player} сыграл наибольшим числом разных наций: {value} (из {games} игр).',
+      'records.item.most_games_no_win.title': 'Долгий путь к трону',
+      'records.item.most_games_no_win.body':
+        '{player} сыграл больше всех без единой победы: {value} игр.',
+      'records.item.never_eliminated.title': 'Неуязвимый',
+      'records.item.never_eliminated.body':
+        '{player} ни разу не выбывал в финале ({value} игр с данными финала).',
+      'records.item.pacifist_games.title': 'Пацифист по бумагам',
+      'records.item.pacifist_games.body':
+        'У {player} больше всего партий без объявленных войн живым (wars_declared=0): {value}.',
+      'records.item.survived_no_capital.title': 'Жизнь без столицы',
+      'records.item.survived_no_capital.body':
+        '{player} чаще всех дожил до финала уже без столицы: {value} раз(а).',
+      'records.item.max_score_finale.title': 'Рекорд очков',
+      'records.item.max_score_finale.body':
+        '{player} набрал больше всего очков в одном финале: {value} (Game {game}).',
+      'records.item.max_cities_finale.title': 'Империя городов',
+      'records.item.max_cities_finale.body':
+        '{player} держал больше всего городов в одном финале: {value} (Game {game}).',
+      'records.item.max_units_finale.title': 'Армия на финале',
+      'records.item.max_units_finale.body':
+        '{player} вывел больше всего юнитов в одном финале: {value} (Game {game}).',
+      'records.item.max_techs_finale.title': 'Технологический пик',
+      'records.item.max_techs_finale.body':
+        '{player} открыл больше всего технологий к одному финалу: {value} (Game {game}).',
       'tier.title': 'Тирлист наций',
       'tier.col.nation': 'Нация',
       'tier.col.avg': 'Среднее',
@@ -411,23 +528,23 @@
     en: {
       'nav.archive': 'Archive',
       'nav.stats': 'Statistics',
-      'nav.rating': 'Rating from 1000',
-      'nav.ratingZero': 'Zero-based rating',
+      'nav.rating': 'Rating',
       'nav.tierlist': 'Tier list',
+      'nav.records': 'Records',
       'nav.faq': 'FAQ',
       'nav.aria': 'Site sections',
       'title.archive': '⚔️ Game archive 🛡️',
       'title.stats': '📊 League statistics',
-      'title.rating': '🏅 Rating from 1000',
-      'title.ratingZero': '🏅 Zero-based rating',
+      'title.rating': '🏅 Rating',
       'title.tierlist': '⭐ Nation tier list',
+      'title.records': '🏆 Records',
       'title.faq': '❓ FAQ',
       'title.doc': 'Iron League — Archive & FAQ',
       'footer.archive': 'Data updates automatically',
       'footer.stats': 'Stats from archive games (excluding teams/scrap)',
-      'footer.rating': 'Classic scale: Elo starts at 1000',
-      'footer.ratingZero': 'Zero-based scale and lobby points',
+      'footer.rating': 'Rating: scale from 1000 or from zero',
       'footer.tierlist': 'League nation tier list',
+      'footer.records': 'Records and achievements (excluding teams/scrap)',
       'footer.faq': 'Frequently asked questions',
       'footer.default': '📁 Replay storage | Click “Watch replay” to load a GIF',
       'filter.nation': 'Filter by nation',
@@ -520,7 +637,8 @@
       'stats.intro':
         'Statistics exclude games tagged teams or scrap: they stay in the archive with a badge, but do not affect winrates, averages, or ratings. Use the archive filter to hide or show only those games.',
       'stats.winrate': 'Player winrate',
-      'stats.winrateHint': 'Wins / games in ranked archive only (no teams/scrap). Minimum 1 game.',
+      'stats.winrateHint':
+        'Wins / games in ranked archive only (no teams/scrap). “Survived” = alive=true in finale. Minimum 1 game.',
       'stats.nations': 'Nations: picks and winrate',
       'stats.nationsHint': 'All mod nations. Unpicked show 0 picks and 0% winrate. Ranked games only.',
       'stats.detail': 'Players: nations and finale',
@@ -535,7 +653,14 @@
       'stats.policyBranches': 'Policy branches',
       'stats.policyCombos': 'Policy combos',
       'stats.policyCombosHint':
-        'Full set of adopted branches from finale (policy_branches), same order as on the player card. One row = one combo.',
+        'Full set of adopted branches from finale (policy_branches), same order as on the player card. One row = one combo.\nLong combos are shortened to the first two branches (+N); full list is in the hover tooltip.\nIf there were wins — a Game N link next to the win count opens that finale.',
+      'stats.policyFilterLabel': 'Filter',
+      'stats.policyFilterAll': 'All',
+      'stats.policyFilterHideNoise': 'Hide one-pick zero-win',
+      'stats.policyFilterMulti': 'Picks ≥ 2',
+      'stats.policyFilterWins': 'Wins only',
+      'stats.winGameOpen': 'Open a winning game',
+      'stats.winGamesMore': 'Wins in {n} different games; showing the first',
       'stats.policyIdeologyPairs': 'Policy + ideology pairs',
       'stats.policyIdeologyPairsHint':
         'Each adopted policy branch paired with the ideology taken in that game (when an ideology is present).',
@@ -556,6 +681,7 @@
       'stats.col.wins': 'Wins',
       'stats.col.winrate': 'Winrate',
       'stats.col.capitalLosses': 'Capital losses',
+      'stats.col.survived': 'Survived',
       'stats.col.eliminated': 'Eliminations',
       'stats.col.nation': 'Nation',
       'stats.col.picks': 'Picks',
@@ -582,9 +708,14 @@
       'stats.col.belief': 'Belief',
       'stats.col.avgPlaceNorm': 'Avg place',
       'rating.intro':
-        'Classic ratings are computed in the browser from Games.json on every page load.\n\nWhich games count\n• Ranked FFA only — no teams / scrap flags (and no excludeFromStats).\n• Games are processed in ascending game-number order (league chronology).\n\nPlacement inside one game\n1) The winner (winner nation) is always 1st.\n2) Among the rest: living players first, then eliminated.\n3) Within a group — by finale score descending; if score is missing — by nickname.\n\nScale on this tab\n• Everyone starts at 1000 (FFA / pairwise Elo).\n• Finish maps onto ~1000 ± 400.\n• Combined = mean of the three methods on this scale.\n\nSee the separate “Zero-based rating” tab for Elo without the 1000 baseline and for cumulative Lobby points.',
+        'Classic ratings are computed in the browser from Games.json on every page load.\n\nWhich games count\n• Ranked FFA only — no teams / scrap flags (and no excludeFromStats).\n• Games are processed in ascending game-number order (league chronology).\n\nPlacement inside one game\n1) The winner (winner nation) is always 1st.\n2) Among the rest: living players first, then eliminated.\n3) Within a group — by finale score descending; if score is missing — by nickname.\n\n“From 1000” scale\n• Everyone starts at 1000 (FFA / pairwise Elo).\n• Finish maps onto ~1000 ± 400.\n• Combined = mean of the three methods on this scale.\n\nUse the dropdown at the top for the zero-based scale and Lobby points.',
       'rating.introZero':
-        'Zero-based ratings and lobby points are computed in the browser from Games.json on every page load.\n\nWhich games count and how placement works match the “Rating from 1000” tab (ranked FFA only; winner → living → eliminated → score).\n\nWhat is on this tab\n• Zero-based combined Elo: FFA / pairwise start at 0; finish = mean placeScore × 100 (no 1000 baseline).\n• Lobby points (win): everyone +(N−1), winner +(N−1)+10.\n• Lobby points (Avg): everyone +(N−1)+Avg (techs/policies/cities).\n\nFilters\n• K — only for Elo FFA/pairwise inside the zero-based combined table.\n• Elimination penalty (−5 when alive=false) — only for the two Lobby points tables; off by default.',
+        'Zero-based ratings and lobby points are computed in the browser from Games.json on every page load.\n\nWhich games count and how placement works match the “from 1000” scale (ranked FFA only; winner → living → eliminated → score).\n\nWhat is on this scale\n• Zero-based combined Elo: FFA / pairwise start at 0; finish = mean placeScore × 100 (no 1000 baseline).\n• Lobby points (win): everyone +(N−1), winner +(N−1)+10.\n• Lobby points (Avg): everyone +(N−1)+Avg (techs/policies/cities).\n\nFilters\n• K — only for Elo FFA/pairwise inside the zero-based combined table.\n• Elimination penalty (−5 when alive=false) — only for the two Lobby points tables; off by default.',
+      'rating.scaleLabel': 'Scale',
+      'rating.scale1000': 'from 1000',
+      'rating.scaleZero': 'from zero',
+      'rating.scaleHint':
+        'Inside the Rating tab: classic Elo (start 1000) or zero-based scale and lobby points. Stored in the browser.',
       'rating.toc': 'Rating sections',
       'rating.tocZero': 'Zero-based rating sections',
       'rating.combined': 'Combined rating',
@@ -627,11 +758,114 @@
       'rating.col.place': '#',
       'rating.col.player': 'Player',
       'rating.col.rating': 'Rating',
+      'rating.col.perGame': 'Per game',
       'rating.col.games': 'Games',
       'rating.col.avgPlace': 'Avg place',
       'rating.col.pFfa': 'FFA place',
       'rating.col.pPair': 'Pair place',
       'rating.col.pFin': 'Finish place',
+      'records.intro':
+        'Records are computed from the archive on every load. Games flagged teams / scrap are ignored.',
+      'records.toc': 'Records sections',
+      'records.empty': 'No data for this section yet.',
+      'records.section.glory': 'Glory',
+      'records.section.war': 'War',
+      'records.section.style': 'Style',
+      'records.section.peaks': 'Finale peaks',
+      'records.section.curious': 'Oddities',
+      'records.item.most_wins.title': 'Most wins',
+      'records.item.most_wins.body':
+        '{player} leads in wins: {value} (across {games} counted games).',
+      'records.item.best_winrate.title': 'Perfect win rate',
+      'records.item.best_winrate.body':
+        '{player} won every counted game: {value}.',
+      'records.item.longest_win_streak.title': 'Win streak',
+      'records.item.longest_win_streak.body':
+        '{player} holds the longest consecutive win streak: {value}.',
+      'records.item.fastest_win.title': 'Fastest win',
+      'records.item.fastest_win.body':
+        '{player} finished Game {game} on turn {value}.',
+      'records.item.slowest_win.title': 'Longest win',
+      'records.item.slowest_win.body':
+        '{player} finally closed Game {game} on turn {value}.',
+      'records.item.wins_all_with_caps.title': 'Trophy wins only',
+      'records.item.wins_all_with_caps.body':
+        'All of {player}’s {value} wins came with at least one captured capital.',
+      'records.item.most_caps_single_win.title': 'Single-game capital haul',
+      'records.item.most_caps_single_win.body':
+        '{player} took the most capitals in one win (Game {game}): {value}.',
+      'records.item.most_caps.title': 'Capital hunter',
+      'records.item.most_caps.body':
+        '{player} captured the most capitals in total: {value}.',
+      'records.item.most_wars_declared.title': 'War hawk',
+      'records.item.most_wars_declared.body':
+        '{player} declared the most wars on living players: {value} (finale data).',
+      'records.item.most_wars_received.title': 'Declaration magnet',
+      'records.item.most_wars_received.body':
+        '{player} had the most wars declared on them: {value}.',
+      'records.item.most_military_deaths.title': 'Meat grinder',
+      'records.item.most_military_deaths.body':
+        '{player} lost the most military units: {value}.',
+      'records.item.fewest_military_deaths.title': 'Careful commander',
+      'records.item.fewest_military_deaths.body':
+        '{player} has the fewest combat losses among players with ≥5 games of death data: {value} (across {games} games).',
+      'records.item.piety_first_count.title': 'Piety devotee',
+      'records.item.piety_first_count.body':
+        '{player} opened Piety first most often: {value} time(s).',
+      'records.item.piety_first_streak.title': 'Piety streak',
+      'records.item.piety_first_streak.body':
+        '{player} holds the longest streak of games opening Piety first: {value}.',
+      'records.item.tradition_first_count.title': 'Tradition devotee',
+      'records.item.tradition_first_count.body':
+        '{player} opened Tradition first most often: {value} time(s).',
+      'records.item.liberty_first_count.title': 'Liberty devotee',
+      'records.item.liberty_first_count.body':
+        '{player} opened Liberty first most often: {value} time(s).',
+      'records.item.honor_first_count.title': 'Honor devotee',
+      'records.item.honor_first_count.body':
+        '{player} opened Honor first most often: {value} time(s).',
+      'records.item.ideology_order_count.title': 'Order adherent',
+      'records.item.ideology_order_count.body':
+        '{player} adopted Order most often: {value} time(s).',
+      'records.item.ideology_freedom_count.title': 'Freedom adherent',
+      'records.item.ideology_freedom_count.body':
+        '{player} adopted Freedom most often: {value} time(s).',
+      'records.item.ideology_autocracy_count.title': 'Autocrat',
+      'records.item.ideology_autocracy_count.body':
+        '{player} adopted Autocracy most often: {value} time(s).',
+      'records.item.most_wonders_built.title': 'Wonder builder',
+      'records.item.most_wonders_built.body':
+        '{player} self-built the most world wonders: {value}.',
+      'records.item.most_wonders_owned.title': 'Wonder collector',
+      'records.item.most_wonders_owned.body':
+        '{player} owned the most wonders in total (built + captured): {value}.',
+      'records.item.most_unique_nations.title': 'Nation tourist',
+      'records.item.most_unique_nations.body':
+        '{player} played the most different nations: {value} (across {games} games).',
+      'records.item.most_games_no_win.title': 'Long road to the throne',
+      'records.item.most_games_no_win.body':
+        '{player} played the most games without a win: {value}.',
+      'records.item.never_eliminated.title': 'Never eliminated',
+      'records.item.never_eliminated.body':
+        '{player} was never eliminated in finale ({value} games with finale data).',
+      'records.item.pacifist_games.title': 'Paper pacifist',
+      'records.item.pacifist_games.body':
+        '{player} has the most games with zero wars declared on living players (wars_declared=0): {value}.',
+      'records.item.survived_no_capital.title': 'Alive without a capital',
+      'records.item.survived_no_capital.body':
+        '{player} most often reached finale already without a capital: {value} time(s).',
+      'records.item.max_score_finale.title': 'Score peak',
+      'records.item.max_score_finale.body':
+        '{player} posted the highest finale score: {value} (Game {game}).',
+      'records.item.max_cities_finale.title': 'City empire',
+      'records.item.max_cities_finale.body':
+        '{player} held the most cities in one finale: {value} (Game {game}).',
+      'records.item.max_units_finale.title': 'Finale army',
+      'records.item.max_units_finale.body':
+        '{player} fielded the most units in one finale: {value} (Game {game}).',
+      'records.item.max_techs_finale.title': 'Tech peak',
+      'records.item.max_techs_finale.body':
+        '{player} had the most techs in one finale: {value} (Game {game}).',
       'tier.title': 'Nation tier list',
       'tier.col.nation': 'Nation',
       'tier.col.avg': 'Average',
