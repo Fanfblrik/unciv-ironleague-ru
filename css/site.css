@@ -1565,13 +1565,13 @@
 
         .record-card-media {
             grid-column: 1;
-            grid-row: 1 / span 3;
+            grid-row: 1 / -1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            align-self: stretch;
             width: 96px;
-            align-self: start;
+            min-height: 100%;
         }
 
         .record-card-icon {
@@ -1621,9 +1621,14 @@
         }
 
         .record-card-value {
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 0;
+            padding: 10px 0;
             color: rgba(255, 215, 0, 0.95);
-            font-size: 0.98rem;
+            font-size: 1.05rem;
             font-weight: 700;
             letter-spacing: 0.02em;
             text-align: center;
@@ -1633,7 +1638,8 @@
         }
 
         .record-card-body {
-            grid-column: 1 / -1;
+            grid-column: 2;
+            grid-row: 4;
             margin: 14px 0 0;
             color: rgba(255, 255, 255, 0.72);
             font-size: 0.92rem;
@@ -2187,19 +2193,36 @@
             border: 1px solid rgba(255, 215, 0, 0.25);
             background: rgba(0, 0, 0, 0.28);
             border-radius: 8px;
-            padding: 8px 12px;
+            padding: 12px 14px;
             display: flex;
             flex-direction: column;
-            gap: 2px;
-            min-width: 120px;
+            justify-content: space-between;
+            gap: 10px;
+            min-width: 132px;
+            min-height: 72px;
         }
         .profile-rating-card span {
             font-size: 0.75rem;
             color: rgba(255, 255, 255, 0.65);
+            line-height: 1.25;
         }
         .profile-rating-card b {
             color: #ffd700;
-            font-size: 1.05rem;
+            font-size: 1.15rem;
+            line-height: 1.2;
+            margin-top: auto;
+        }
+        .profile-avg-hint {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.88rem;
+            padding: 8px 0 4px;
+            border-bottom: none !important;
+        }
+        #profileSummaryTable .nation-cell {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-right: 4px;
         }
         .profile-charts {
             display: grid;
