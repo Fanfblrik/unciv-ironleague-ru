@@ -2128,29 +2128,35 @@
             display: flex;
             flex-direction: column;
             gap: 6px;
-            min-width: 180px;
-            flex: 1 1 200px;
+            flex: 0 1 auto;
+            max-width: 100%;
         }
         .il-pie-legend-row {
-            display: grid;
-            grid-template-columns: 12px 1fr auto;
+            display: flex;
+            flex-wrap: nowrap;
             gap: 8px;
             align-items: center;
             font-size: 0.85rem;
+            width: max-content;
+            max-width: 100%;
         }
         .il-pie-swatch {
             width: 12px;
             height: 12px;
             border-radius: 2px;
+            flex-shrink: 0;
         }
         .il-pie-legend-label {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            max-width: 14em;
         }
         .il-pie-legend-value {
             color: rgba(255, 255, 255, 0.7);
             font-variant-numeric: tabular-nums;
+            flex-shrink: 0;
+            white-space: nowrap;
         }
         .map-preview {
             width: 48px;
