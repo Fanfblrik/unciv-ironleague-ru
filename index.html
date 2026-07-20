@@ -882,12 +882,12 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=site-polish-4"></script>
+<script src="js/i18n.js?v=site-polish-5"></script>
 <script src="js/player-meta.js?v=1"></script>
 <script src="js/stats-charts.js?v=2"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
-<script src="js/achievements.js?v=veteran-1"></script>
+<script src="js/achievements.js?v=deaths-fix-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -2747,6 +2747,10 @@
             Yugoslavia: 'Югославия',
             Chile: 'Чили',
             Colombia: 'Колумбия',
+            Ottomans: 'Османы',
+            'The Ottomans': 'Османы',
+            Moors: 'Мавры',
+            'The Moors': 'Мавры',
         };
         return aliases[eng] || eng;
     }
@@ -2761,11 +2765,26 @@
         if (!tierlistData || !Array.isArray(tierlistData.entries)) return null;
         const ru = String(nationRu || '').trim();
         if (!ru) return null;
-        const eng = String(rusToEngNation(ru) || '').trim().toLowerCase();
+        const engRaw = String(rusToEngNation(ru) || '').trim();
+        const eng = engRaw.toLowerCase().replace(/^the\s+/, '');
+        const engAliases = {
+            yugoslavia: 'yugolslavia',
+            yugolslavia: 'yugolslavia',
+            aztecs: 'aztec',
+            ottomans: 'ottomans',
+            moors: 'moors',
+        };
+        const engKey = engAliases[eng] || eng;
         for (const e of tierlistData.entries) {
             const civ = String(e.civ || '').trim();
+            const civNorm = civ.toLowerCase().replace(/^the\s+/, '');
             const civRu = engToRusNation(civ);
-            if (civRu === ru || civ.toLowerCase() === eng || civ.toLowerCase() === ru.toLowerCase()) {
+            if (
+                civRu === ru
+                || civNorm === eng
+                || civNorm === engKey
+                || civ.toLowerCase() === ru.toLowerCase()
+            ) {
                 const avg = Number(e.avg);
                 return Number.isFinite(avg) ? avg : null;
             }

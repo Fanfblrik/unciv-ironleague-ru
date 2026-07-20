@@ -580,8 +580,8 @@
       'records.item.most_wars_declared.flavor': 'Дипломатия по-спартански',
       'records.item.most_wars_declared.body':
         '{player} объявил больше всего войн живым игрокам: {value} (по данным финала).',
-      'records.item.most_wars_received.title': 'Магнит для объявлений',
-      'records.item.most_wars_received.flavor': 'Магнит для объявлений',
+      'records.item.most_wars_received.title': 'Не нравится мне твоя рожа',
+      'records.item.most_wars_received.flavor': 'Я вам что? А?',
       'records.item.most_wars_received.body':
         'На {player} чаще всего объявляли войну: {value} раз(а).',
       'records.item.most_military_deaths.title': 'Мясорубка',
@@ -1068,8 +1068,8 @@
       'records.item.most_wars_declared.flavor': 'Spartan diplomacy',
       'records.item.most_wars_declared.body':
         '{player} declared the most wars on living players: {value} (finale data).',
-      'records.item.most_wars_received.title': 'Declaration magnet',
-      'records.item.most_wars_received.flavor': 'Declaration magnet',
+      'records.item.most_wars_received.title': "I don't like your face",
+      'records.item.most_wars_received.flavor': 'What am I to you?',
       'records.item.most_wars_received.body':
         '{player} had the most wars declared on them: {value}.',
       'records.item.most_military_deaths.title': 'Meat grinder',
