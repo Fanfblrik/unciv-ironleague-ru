@@ -333,26 +333,19 @@
       push('most_wins', mostWins, String(mostWins.stat.wins), { games: mostWins.stat.played });
     }
 
-    let winrateHit = pickMax(
+    const winrateHit = pickMax(
       stats,
-      (s) => s.wins,
-      (s) => s.played >= 3 && s.wins === s.played,
+      // Prefer higher winrate; on a tie, prefer more games.
+      // При равном винрейте предпочитаем больше игр.
+      (s) => s.wins / s.played + s.played * 1e-9,
+      (s) => s.played >= 3 && s.wins > 0,
     );
-    if (!winrateHit) {
-      winrateHit = pickMax(
-        stats,
-        (s) => s.wins / s.played,
-        (s) => s.played >= 3 && s.wins > 0,
-      );
-    }
     if (winrateHit) {
       const pct = Math.round((winrateHit.stat.wins / winrateHit.stat.played) * 1000) / 10;
-      push(
-        'best_winrate',
-        winrateHit,
-        `${winrateHit.stat.wins}/${winrateHit.stat.played} (${pct}%)`,
-        { perfect: winrateHit.stat.wins === winrateHit.stat.played },
-      );
+      push('best_winrate', winrateHit, `${pct}%`, {
+        games: winrateHit.stat.played,
+        wins: winrateHit.stat.wins,
+      });
     }
 
     const winStreak = pickMax(stats, (s) => s.winStreak, (s) => s.winStreak >= 2);
