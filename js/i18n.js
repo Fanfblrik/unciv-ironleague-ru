@@ -168,6 +168,32 @@
     Archipelago: 'Архипелаги',
   };
 
+  /**
+   * Canonical English map type for dedupe / filters.
+   * Канонический EN-тип карты для дедупа и фильтров.
+   */
+  function canonicalizeMap(name) {
+    const raw = String(name || '').trim();
+    if (!raw) return '';
+    const lower = raw.toLowerCase();
+    for (const [en, ru] of Object.entries(MAP_RU)) {
+      if (en.toLowerCase() === lower || String(ru).toLowerCase() === lower) return en;
+    }
+    for (const [ru, en] of Object.entries(MAP_EN)) {
+      if (String(ru).toLowerCase() === lower || String(en).toLowerCase() === lower) return en;
+    }
+    return raw;
+  }
+
+  function translateMap(name) {
+    if (name == null || name === '') return name;
+    const raw = String(name).trim();
+    if (!raw) return name;
+    const canon = canonicalizeMap(raw) || raw;
+    if (lang === 'en') return canon;
+    return MAP_RU[canon] || canon;
+  }
+
   const I18N = {
     ru: {
 
@@ -232,7 +258,8 @@
       'footer.default': '📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF',
       'filter.nation': 'Фильтр по нации',
       'filter.nationAll': 'Все нации',
-      'filter.player': 'Поиск по игроку',
+      'filter.player': 'Игрок',
+      'filter.playerAll': 'Все игроки',
       'filter.playerPh': 'Введите никнейм...',
       'filter.sort': 'Сортировка',
       'filter.newest': 'Сначала новые',
@@ -711,7 +738,8 @@
       'footer.default': '📁 Replay storage | Click “Watch replay” to load a GIF',
       'filter.nation': 'Filter by nation',
       'filter.nationAll': 'All nations',
-      'filter.player': 'Search player',
+      'filter.player': 'Player',
+      'filter.playerAll': 'All players',
       'filter.playerPh': 'Enter nickname...',
       'filter.sort': 'Sort',
       'filter.newest': 'Newest first',
@@ -1168,20 +1196,6 @@
     return SPACESHIP_RU[name] || name;
   }
 
-  function translateMap(name) {
-    if (name == null || name === '') return name;
-    const raw = String(name).trim();
-    if (!raw) return name;
-    if (lang === 'en') {
-      if (MAP_EN[raw]) return MAP_EN[raw];
-      const hit = Object.keys(MAP_EN).find((k) => k.toLowerCase() === raw.toLowerCase());
-      return hit ? MAP_EN[hit] : raw;
-    }
-    if (MAP_RU[raw]) return MAP_RU[raw];
-    const key = Object.keys(MAP_RU).find((k) => k.toLowerCase() === raw.toLowerCase());
-    return key ? MAP_RU[key] : raw;
-  }
-
   function setLang(next) {
     lang = next === 'en' ? 'en' : 'ru';
     try {
@@ -1226,6 +1240,7 @@
     translateTerm,
     translateSpaceship,
     translateMap,
+    canonicalizeMap,
     TERM_EN,
     POLICY_EN: TERM_EN,
   };
