@@ -2041,3 +2041,205 @@
             border-left: 2px solid rgba(255,215,0,0.35);
         }
         .filters { flex-wrap: wrap; }
+
+        /* Site polish: titles, charts, profiles, maps */
+        #pageTitle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .page-title-icon img,
+        .page-title-sep img {
+            display: block;
+            vertical-align: middle;
+        }
+        .page-title-sep {
+            opacity: 0.9;
+        }
+        .stats-game-links-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 12px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.92rem;
+            cursor: pointer;
+        }
+        .stats-toc {
+            margin: 8px 0 16px;
+        }
+        .player-link-wrap {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .player-flag {
+            display: inline-flex;
+            width: 18px;
+            height: 12px;
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            flex-shrink: 0;
+        }
+        .player-flag svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .il-chart-shell { margin: 10px 0 14px; }
+        .il-chart-toolbar {
+            display: inline-flex;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+        .il-chart-mode-btn {
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            background: rgba(20, 18, 32, 0.85);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .il-chart-mode-btn.active {
+            border-color: rgba(255, 215, 0, 0.7);
+            color: #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+        .il-pie-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px 24px;
+        }
+        .il-pie-svg { flex: 0 0 auto; }
+        .il-pie-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            min-width: 180px;
+            flex: 1 1 200px;
+        }
+        .il-pie-legend-row {
+            display: grid;
+            grid-template-columns: 12px 1fr auto;
+            gap: 8px;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+        .il-pie-swatch {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+        }
+        .il-pie-legend-label {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .il-pie-legend-value {
+            color: rgba(255, 255, 255, 0.7);
+            font-variant-numeric: tabular-nums;
+        }
+        .map-preview {
+            width: 48px;
+            height: 48px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            background: #0d1f2d;
+        }
+        .map-preview-cell { width: 56px; }
+        .profile-hero {
+            border: 1px solid rgba(255, 215, 0, 0.28);
+            border-radius: 12px;
+            padding: 18px 20px 14px;
+            margin-bottom: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+        .profile-hero-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .profile-hero h2 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .profile-flags .player-flag {
+            width: 28px;
+            height: 18px;
+        }
+        .profile-rating {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .profile-rating-card {
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            background: rgba(0, 0, 0, 0.28);
+            border-radius: 8px;
+            padding: 8px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-width: 120px;
+        }
+        .profile-rating-card span {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.65);
+        }
+        .profile-rating-card b {
+            color: #ffd700;
+            font-size: 1.05rem;
+        }
+        .profile-charts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-top: 14px;
+        }
+        .profile-chart-block h4 {
+            margin: 0 0 6px;
+            color: #ffd700;
+            font-size: 0.95rem;
+        }
+        .profile-achievements {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .profile-ach-card {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 215, 0, 0.28);
+            background: rgba(20, 18, 32, 0.85);
+            border-radius: 10px;
+            padding: 8px 10px;
+            max-width: 260px;
+        }
+        .profile-ach-card img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+        .profile-ach-card span {
+            font-size: 0.85rem;
+            color: #fff;
+        }
+        .profile-ach-card small {
+            display: block;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+        }
+

@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=records-card-2">
+    <link rel="stylesheet" href="css/site.css?v=site-polish-2">
 
 </head>
 <body>
@@ -28,7 +28,7 @@
         IronLeague
         <span class="site-brand-sub">Unciv</span>
     </div>
-    <h1 id="pageTitle">🏠 Главная</h1>
+    <h1 id="pageTitle"><span class="page-title-icon" aria-hidden="true"><img src="img/icons/capital.svg" alt="" width="28" height="28"></span><span class="page-title-sep" aria-hidden="true"><img src="img/icons/rekmod-iron.svg" alt="" width="22" height="22"></span><span class="page-title-text">Главная</span></h1>
 
     <nav class="site-nav" data-i18n-aria="nav.aria" aria-label="Разделы сайта">
         <button type="button" class="site-nav-btn active" data-view="home" data-i18n="nav.home">Главная</button>
@@ -44,7 +44,7 @@
         <section class="home-section">
             <h2 data-i18n="home.leagueTitle">О лиге</h2>
             <p class="home-lead" data-i18n="home.leagueLead">
-                Iron League — закрытые FFA-игры в Unciv на моде RecMOD / RekMOD iron.
+                Iron League — закрытые FFA-игры в Unciv на моде RekMOD / RekMOD iron.
             </p>
             <ul class="home-list">
                 <li data-i18n="home.league.1">Периодические FFA в закрытом лобби; партии стабильно доигрываются до конца.</li>
@@ -98,7 +98,7 @@
                     <span class="home-download-meta" data-i18n="home.dl.ironMeta">Мод лиги (ветка iron2)</span>
                 </a>
                 <a class="home-download" href="https://github.com/ravignir/RekMOD" target="_blank" rel="noopener">
-                    <span class="home-download-label" data-i18n="home.dl.rekmod">RekMOD / RecMOD</span>
+                    <span class="home-download-label" data-i18n="home.dl.rekmod">RekMOD</span>
                     <span class="home-download-meta" data-i18n="home.dl.rekmodMeta">Базовый мод (репозиторий)</span>
                 </a>
             </div>
@@ -190,8 +190,14 @@
 
         <div class="view-panel" id="viewProfile">
         <button type="button" class="stats-subnav-btn profile-back" id="profileBackBtn" data-i18n="profile.back">← К статистике</button>
-        <h2 id="profileTitle">Игрок</h2>
-        <div class="profile-meta" id="profileMeta"></div>
+        <div class="profile-hero" id="profileHero">
+            <div class="profile-hero-top">
+                <h2 id="profileTitle">Игрок</h2>
+                <div class="profile-flags" id="profileFlags"></div>
+            </div>
+            <div class="profile-meta" id="profileMeta"></div>
+            <div class="profile-rating" id="profileRating"></div>
+        </div>
         <div class="stats-section">
             <h3 data-i18n="profile.summary">Сводка</h3>
             <div class="stats-table-wrap">
@@ -199,6 +205,11 @@
                     <tbody></tbody>
                 </table>
             </div>
+            <div id="profileCharts" class="profile-charts"></div>
+        </div>
+        <div class="stats-section">
+            <h3 data-i18n="profile.achievements">Достижения</h3>
+            <div class="profile-achievements" id="profileAchievements"></div>
         </div>
         <div class="stats-section">
             <h3 data-i18n="profile.games">Игры</h3>
@@ -210,6 +221,8 @@
                             <th data-i18n="stats.col.nation">Нация</th>
                             <th data-i18n="stats.col.result">Итог</th>
                             <th data-i18n="filter.map">Карта</th>
+                            <th class="num" data-i18n="stats.col.units">Юниты</th>
+                            <th class="num" data-i18n="stats.col.cities">Города</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -220,6 +233,10 @@
 
 <div class="view-panel" id="viewStats">
         <p class="stats-intro" id="statsIntro" data-i18n="stats.intro">В статистику не входят игры с пометками «командная» (teams) и «скрап» (scrap).</p>
+        <label class="stats-game-links-toggle">
+            <input type="checkbox" id="statsShowGameLinks">
+            <span data-i18n="stats.showGameLinks">Показывать ссылки на игры в таблицах</span>
+        </label>
         <div class="stats-subnav" id="statsSubnav" role="tablist" data-i18n-aria="stats.toc" aria-label="Разделы статистики">
             <button type="button" class="stats-subnav-btn active" data-stats-tab="players" data-i18n="stats.tab.players">Игроки</button>
             <button type="button" class="stats-subnav-btn" data-stats-tab="nations" data-i18n="stats.tab.nations">Нации</button>
@@ -229,7 +246,11 @@
             <button type="button" class="stats-subnav-btn" data-stats-tab="maps" data-i18n="stats.tab.maps">Карты</button>
         </div>
         <div class="stats-section" id="stats-winrate" data-stats-group="players">
-            <h2 data-i18n="stats.winrate">Винрейт игроков</h2>
+            <div class="faq-toc stats-toc" id="playersToc">
+                <a href="#stats-winrate-table" data-i18n="stats.winrate">Винрейт игроков</a>
+                <a href="#stats-player-detail" data-i18n="stats.playerDetail">Детали игроков</a>
+            </div>
+            <h2 id="stats-winrate-table" data-i18n="stats.winrate">Винрейт игроков</h2>
             <p class="hint" data-i18n="stats.winrateHint">Победы / участия в играх из архива (без teams/scrap). «Выжил» — alive=true в финале.</p>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="playerWinrateTable">
@@ -250,7 +271,11 @@
         </div>
 
         <div class="stats-section" id="stats-nations" data-stats-group="nations">
-            <h2 data-i18n="stats.nations">Нации: пики и винрейт</h2>
+            <div class="faq-toc stats-toc" id="nationsToc">
+                <a href="#stats-nations-picks" data-i18n="stats.nations">Нации: пики и винрейт</a>
+                <a href="#stats-winner-nations" data-i18n="stats.winnerNations">Нации-победители</a>
+            </div>
+            <h2 id="stats-nations-picks" data-i18n="stats.nations">Нации: пики и винрейт</h2>
             <p class="hint" data-i18n="stats.nationsHint">Все нации мода. Не пикнутые — 0 пиков и 0% винрейта.</p>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="nationStatsTable">
@@ -278,6 +303,7 @@
                             <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
                             <th class="num" data-sort="picks" data-i18n="stats.col.picks">Пиков</th>
                             <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="tierAvg" data-i18n="stats.col.tierAvg">Тирлист</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -331,10 +357,17 @@
             </div>
         </div>
 
-        <div class="stats-section" id="stats-policies" data-stats-group="policies">
+                <div class="stats-section" id="stats-policies" data-stats-group="policies">
             <h2 data-i18n="stats.policies">Институты и идеологии</h2>
-            <p class="hint" data-i18n="stats.policiesHint">Первый институт, открытые ветки и идеологии. Ср. место — нормированное (1 = победа, 0 = последнее), чтобы уравнять лобби разного размера.</p>
-            <h3 data-i18n="stats.firstPolicies">Первый институт</h3>
+            <p class="hint" data-i18n="stats.policiesHint">Первый институт, открытые ветки и идеологии. Ср. место — нормированное (1 = победа, 0 = последнее), чтобы уравнять лобби разного размера. Коммерция не может быть первым институтом и исключается из этой таблицы.</p>
+            <div class="faq-toc stats-toc" id="policiesToc" aria-label="Разделы институтов">
+                <a href="#stats-first-policy" data-i18n="stats.firstPolicies">Первый институт</a>
+                <a href="#stats-ideologies" data-i18n="stats.ideologies">Идеологии</a>
+                <a href="#stats-policy-branches" data-i18n="stats.policyBranches">Ветки институтов</a>
+                <a href="#stats-policy-combos" data-i18n="stats.policyCombos">Связки институтов</a>
+                <a href="#stats-policy-pairs" data-i18n="stats.policyIdeologyPairs">Пары институт + идеология</a>
+            </div>
+            <h3 id="stats-first-policy" data-i18n="stats.firstPolicies">Первый институт</h3>
             <div id="firstPolicyChart"></div>
             <div class="stats-local-filters" data-policy-filter-for="firstPolicyStatsTable">
                 <label class="stats-local-filter-label">
@@ -361,7 +394,23 @@
                     <tbody></tbody>
                 </table>
             </div>
-            <h3 data-i18n="stats.policyBranches">Ветки институтов</h3>
+            <h3 id="stats-ideologies" data-i18n="stats.ideologies">Идеологии</h3>
+            <div id="ideologyChart"></div>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="ideologyStatsTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name" data-i18n="stats.col.ideology">Идеология</th>
+                            <th class="num" data-sort="picks" data-i18n="stats.col.picks">Пиков</th>
+                            <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
+                            <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="avgPlace" data-i18n="stats.col.avgPlaceNorm">Ср. место</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <h3 id="stats-policy-branches" data-i18n="stats.policyBranches">Ветки институтов</h3>
             <div class="stats-local-filters" data-policy-filter-for="policyBranchStatsTable">
                 <label class="stats-local-filter-label">
                     <span data-i18n="stats.policyFilterLabel">Фильтр</span>
@@ -387,7 +436,7 @@
                     <tbody></tbody>
                 </table>
             </div>
-            <h3 data-i18n="stats.policyCombos">Связки институтов</h3>
+            <h3 id="stats-policy-combos" data-i18n="stats.policyCombos">Связки институтов</h3>
             <p class="hint" data-i18n="stats.policyCombosHint">Полный набор открытых веток из финала. Длинные связки сокращаются; полный список — в подсказке. Клик по Game N — финал победы.</p>
             <div class="stats-local-filters" data-policy-filter-for="policyComboStatsTable">
                 <label class="stats-local-filter-label">
@@ -414,7 +463,7 @@
                     <tbody></tbody>
                 </table>
             </div>
-            <h3 data-i18n="stats.policyIdeologyPairs">Пары институт + идеология</h3>
+            <h3 id="stats-policy-pairs" data-i18n="stats.policyIdeologyPairs">Пары институт + идеология</h3>
             <p class="hint" data-i18n="stats.policyIdeologyPairsHint">Каждая открытая ветка вместе с идеологией той же партии.</p>
             <div class="stats-local-filters" data-policy-filter-for="policyIdeologyPairStatsTable">
                 <label class="stats-local-filter-label">
@@ -441,24 +490,9 @@
                     <tbody></tbody>
                 </table>
             </div>
-            <h3 data-i18n="stats.ideologies">Идеологии</h3>
-            <div class="stats-table-wrap">
-                <table class="stats-table" id="ideologyStatsTable">
-                    <thead>
-                        <tr>
-                            <th data-sort="name" data-i18n="stats.col.ideology">Идеология</th>
-                            <th class="num" data-sort="picks" data-i18n="stats.col.picks">Пиков</th>
-                            <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
-                            <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
-                            <th class="num" data-sort="avgPlace" data-i18n="stats.col.avgPlaceNorm">Ср. место</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
         </div>
 
-        <div class="stats-section" id="stats-wonders" data-stats-group="wonders">
+<div class="stats-section" id="stats-wonders" data-stats-group="wonders">
             <h2 data-i18n="stats.wondersBuilt">Чудеса (свои)</h2>
             <p class="hint" data-i18n="stats.wondersBuiltHint">Только чудеса в городах, основанных этой цивилизацией (без захваченных). Нужно поле wonders_built в Games.json.</p>
             <div class="stats-table-wrap">
@@ -480,7 +514,12 @@
         <div class="stats-section" id="stats-beliefs" data-stats-group="religion">
             <h2 data-i18n="stats.beliefs">Религиозные верования</h2>
             <p class="hint" data-i18n="stats.beliefsHint">Пантеоны, верования основателя и последователей из финального сейва.</p>
-            <h3 data-i18n="stats.pantheons">Пантеоны</h3>
+            <div class="faq-toc stats-toc" id="religionToc">
+                <a href="#stats-pantheons" data-i18n="stats.pantheons">Пантеоны</a>
+                <a href="#stats-founder-beliefs" data-i18n="stats.founderBeliefs">Верования основателя</a>
+                <a href="#stats-follower-beliefs" data-i18n="stats.followerBeliefs">Верования последователей</a>
+            </div>
+            <h3 id="stats-pantheons" data-i18n="stats.pantheons">Пантеоны</h3>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="pantheonStatsTable">
                     <thead>
@@ -495,7 +534,7 @@
                     <tbody></tbody>
                 </table>
             </div>
-            <h3 data-i18n="stats.founderBeliefs">Верования основателя</h3>
+            <h3 id="stats-founder-beliefs" data-i18n="stats.founderBeliefs">Верования основателя</h3>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="founderBeliefStatsTable">
                     <thead>
@@ -510,7 +549,7 @@
                     <tbody></tbody>
                 </table>
             </div>
-            <h3 data-i18n="stats.followerBeliefs">Верования последователей</h3>
+            <h3 id="stats-follower-beliefs" data-i18n="stats.followerBeliefs">Верования последователей</h3>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="followerBeliefStatsTable">
                     <thead>
@@ -526,18 +565,19 @@
                 </table>
             </div>
         </div>
-    </div>
-
-
-    
         <div class="stats-section" id="stats-maps" data-stats-group="maps" hidden>
             <h2 data-i18n="stats.maps">Карты</h2>
             <p class="hint" data-i18n="stats.mapsHint">Распределение партий по типу карты из Games.json. Размер карты в архиве пока не хранится отдельно.</p>
+            <div class="faq-toc stats-toc" id="mapsToc">
+                <a href="#mapTypeChart" data-i18n="stats.mapsChart">Диаграмма</a>
+                <a href="#mapStatsTable" data-i18n="stats.mapsTable">Таблица</a>
+            </div>
             <div id="mapTypeChart"></div>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="mapStatsTable">
                     <thead>
                         <tr>
+                            <th data-i18n="stats.col.preview">Превью</th>
                             <th data-sort="name" data-i18n="stats.col.map">Карта</th>
                             <th class="num" data-sort="games" data-i18n="stats.col.games">Игр</th>
                             <th class="num" data-sort="share" data-i18n="stats.col.share">Доля</th>
@@ -547,6 +587,11 @@
                 </table>
             </div>
         </div>
+
+    </div>
+
+
+    
 
 <div class="view-panel" id="viewRating">
         <div class="rating-scale-row" role="group" data-i18n-aria="rating.scaleLabel" aria-label="Шкала рейтинга">
@@ -717,7 +762,7 @@
 
         <div class="stats-section" id="rating-lobby-win">
             <h2 data-i18n="rating.lobbyWin">Очки лобби (победа)</h2>
-            <p class="hint" data-i18n="rating.lobbyWinHint">Накопительный рейтинг от нуля: участие N−1, победителю +10.</p>
+            <p class="hint" data-i18n="rating.lobbyWinHint">Накопительный рейтинг от нуля: участие N−1, победителю +10, плюс бонус аутсайдера по форме (рейтинг/игры).</p>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="ratingLobbyWinTable">
                     <thead>
@@ -736,7 +781,7 @@
 
         <div class="stats-section" id="rating-lobby-avg">
             <h2 data-i18n="rating.lobbyAvg">Очки лобби (Avg)</h2>
-            <p class="hint" data-i18n="rating.lobbyAvgHint">Накопительный рейтинг от нуля: (N−1) + Avg по финальным показателям.</p>
+            <p class="hint" data-i18n="rating.lobbyAvgHint">Накопительный рейтинг от нуля: (N−1) + Avg по финальным показателям; победителю — бонус аутсайдера по форме.</p>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="ratingLobbyAvgTable">
                     <thead>
@@ -753,6 +798,7 @@
             </div>
         </div>
         </div>
+
     </div>
 
     <div class="view-panel" id="viewTierlist">
@@ -767,8 +813,6 @@
                             <th data-sort="civ" data-i18n="tier.col.nation">Нация</th>
                             <th class="num" data-sort="avg" data-i18n="tier.col.avg">Среднее</th>
                             <th class="num" data-sort="Community">Community</th>
-                            <th class="num" data-sort="Click">Click</th>
-                            <th class="num" data-sort="Sharpe">Sharpe</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -836,10 +880,11 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=stats-overhaul-1"></script>
-<script src="js/stats-charts.js?v=1"></script>
+<script src="js/i18n.js?v=site-polish-2"></script>
+<script src="js/player-meta.js?v=1"></script>
+<script src="js/stats-charts.js?v=2"></script>
 <script src="js/gif-preview.js?v=1"></script>
-<script src="js/rating.js?v=lobby-pergame-1"></script>
+<script src="js/rating.js?v=lobby-opp-1"></script>
 <script src="js/achievements.js?v=veteran-1"></script>
 <script>
     // Конфигурация
@@ -1391,7 +1436,54 @@
 
     function playerLinkHtml(name) {
         const safe = String(name || '').replace(/"/g, '&quot;');
-        return `<button type="button" class="player-link" data-player="${safe}">${safe}</button>`;
+        const flag = (window.IronLeaguePlayerMeta && IronLeaguePlayerMeta.flagHtml)
+            ? IronLeaguePlayerMeta.flagHtml(name, { lang: (window.IronLeagueI18n && IronLeagueI18n.getLang()) || 'ru' })
+            : '';
+        return `<span class="player-link-wrap">${flag}<button type="button" class="player-link" data-player="${safe}">${safe}</button></span>`;
+    }
+
+    function isInvalidFirstPolicy(name) {
+        const s = String(name || '').trim().toLowerCase();
+        return s === 'commerce' || s === 'коммерция';
+    }
+
+    function showStatsGameLinks() {
+        const el = document.getElementById('statsShowGameLinks');
+        return !!(el && el.checked);
+    }
+
+    function applyStatsGameLinksVisibility() {
+        const on = showStatsGameLinks();
+        document.body.classList.toggle('stats-game-links-on', on);
+        try {
+            localStorage.setItem('ironleague_stats_game_links', on ? '1' : '0');
+        } catch (e) { /* ignore */ }
+    }
+
+    function initStatsGameLinksToggle() {
+        const el = document.getElementById('statsShowGameLinks');
+        if (!el) return;
+        try {
+            el.checked = localStorage.getItem('ironleague_stats_game_links') === '1';
+        } catch (e) {
+            el.checked = false;
+        }
+        applyStatsGameLinksVisibility();
+        el.addEventListener('change', () => {
+            applyStatsGameLinksVisibility();
+            renderStatsTables();
+        });
+    }
+
+    function topCounted(mapObj, n) {
+        const entries = [...(mapObj || new Map()).entries()]
+            .sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0])));
+        return entries.slice(0, n || 3);
+    }
+
+    function avgOrDash(sum, count) {
+        if (!count) return '—';
+        return (sum / count).toFixed(1);
     }
 
     function openPlayerProfile(playerName) {
@@ -1402,9 +1494,27 @@
         const row = playerRows.find((p) => p.name === name);
         const title = document.getElementById('profileTitle');
         const meta = document.getElementById('profileMeta');
+        const flagsEl = document.getElementById('profileFlags');
+        const hero = document.getElementById('profileHero');
+        const ratingEl = document.getElementById('profileRating');
+        const achEl = document.getElementById('profileAchievements');
+        const chartsEl = document.getElementById('profileCharts');
         const summaryBody = document.querySelector('#profileSummaryTable tbody');
         const gamesBody = document.querySelector('#profileGamesTable tbody');
-        if (title) title.textContent = tt('profile.title', { name });
+        const lang = (window.IronLeagueI18n && IronLeagueI18n.getLang()) || 'ru';
+
+        if (hero && window.IronLeaguePlayerMeta) {
+            hero.setAttribute('style', IronLeaguePlayerMeta.profileBackgroundStyle(name));
+        }
+        if (title) {
+            const flag = (window.IronLeaguePlayerMeta && IronLeaguePlayerMeta.flagHtml)
+                ? IronLeaguePlayerMeta.flagHtml(name, { lang })
+                : '';
+            title.innerHTML = `${flag} <span>${tt('profile.title', { name })}</span>`;
+        }
+        if (flagsEl && window.IronLeaguePlayerMeta) {
+            flagsEl.innerHTML = IronLeaguePlayerMeta.flagHtml(name, { lang });
+        }
         if (meta) {
             meta.innerHTML = row
                 ? `<span>${tt('stats.col.games')}: <b>${row.games}</b></span>
@@ -1414,15 +1524,102 @@
                    <span>${tt('stats.col.eliminated')}: <b>${row.eliminated}</b></span>`
                 : '';
         }
+
+        if (ratingEl && window.IronLeagueRating) {
+            try {
+                const scaleEl = document.getElementById('ratingScaleSelect');
+                const zeroBase = scaleEl ? scaleEl.value === 'zero' : false;
+                const all = IronLeagueRating.computeAll(ranked, ratingK, {
+                    zeroBase,
+                    elimPenalty: lobbyElimPenalty,
+                });
+                const find = (rows) => (rows || []).find((r) => r.name === name);
+                const comb = find(all.combined);
+                const lob = find(all.lobbyWin);
+                const lobAvg = find(all.lobbyAvg);
+                ratingEl.innerHTML = `
+                    <div class="profile-rating-card"><span>${tt('profile.ratingElo')}</span><b>${comb ? Number(comb.rating).toFixed(1) : '—'}</b></div>
+                    <div class="profile-rating-card"><span>${tt('profile.ratingLobbyWin')}</span><b>${lob ? Number(lob.rating).toFixed(1) : '—'}</b></div>
+                    <div class="profile-rating-card"><span>${tt('profile.ratingLobbyAvg')}</span><b>${lobAvg ? Number(lobAvg.rating).toFixed(1) : '—'}</b></div>
+                `;
+            } catch (e) {
+                ratingEl.innerHTML = '';
+            }
+        }
+
+        if (achEl && window.IronLeagueAchievements) {
+            try {
+                const items = IronLeagueAchievements.computeAchievements(ranked) || [];
+                const owned = items.filter((it) => it.player === name);
+                achEl.innerHTML = owned.length
+                    ? owned.map((it) => {
+                        const label = tt(`records.item.${it.id}.title`);
+                        const titleText = label.startsWith('records.') ? it.id : label;
+                        const iconSrc = `img/records/${it.id}.png`;
+                        const iconFb = `img/records/${it.id}.svg`;
+                        return `<div class="profile-ach-card" title="${String(it.value || '').replace(/"/g, '&quot;')}">
+                            <img src="${iconSrc}" alt="" width="40" height="40" loading="lazy"
+                                 onerror="this.onerror=null;this.src='${iconFb}'">
+                            <span>${titleText}</span>
+                            <small>${it.value || ''}</small>
+                        </div>`;
+                    }).join('')
+                    : `<p class="hint">${tt('profile.noAchievements')}</p>`;
+            } catch (e) {
+                achEl.innerHTML = '';
+            }
+        }
+
         if (summaryBody) {
+            const topPol = topCounted(row && row.firstPolicyCounts, 3)
+                .map(([k, v]) => `${displayPolicyName(k)} (${v})`).join(', ') || '—';
+            const topWonders = topCounted(row && row.wonderCounts, 5)
+                .map(([k, v]) => `${k} (${v})`).join(', ') || '—';
+            const topNations = topCounted(row && row.nationCounts, 3)
+                .map(([k, v]) => `${displayNationName(k)} (${v})`).join(', ') || '—';
             summaryBody.innerHTML = row ? `
                 <tr><th>${tt('stats.col.topNation')}</th><td>${displayNationName(row.topNation) || '—'}</td></tr>
+                <tr><th>${tt('profile.favNations')}</th><td>${topNations}</td></tr>
                 <tr><th>${tt('stats.col.topIdeology')}</th><td>${displayPolicyName(row.topIdeology) || '—'}</td></tr>
+                <tr><th>${tt('profile.favPolicies')}</th><td>${topPol}</td></tr>
+                <tr><th>${tt('stats.col.topPolicies')}</th><td>${row.topPolicies || '—'}</td></tr>
+                <tr><th>${tt('profile.favWonders')}</th><td>${topWonders}</td></tr>
                 <tr><th>${tt('stats.col.wondersBuilt')}</th><td>${row.wondersBuilt}</td></tr>
                 <tr><th>${tt('stats.col.conquered')}</th><td>${row.conquered}</td></tr>
-                <tr><th>${tt('stats.col.topPolicies')}</th><td>${row.topPolicies || '—'}</td></tr>
+                <tr><th>${tt('stats.col.units')}</th><td>${avgOrDash(row.sumUnits, row.nUnits)}</td></tr>
+                <tr><th>${tt('stats.col.cities')}</th><td>${avgOrDash(row.sumCities, row.nCities)}</td></tr>
+                <tr><th>${tt('stats.col.population')}</th><td>${avgOrDash(row.sumPopulation, row.nPopulation)}</td></tr>
+                <tr><th>${tt('stats.col.techs')}</th><td>${avgOrDash(row.sumTechs, row.nTechs)}</td></tr>
+                <tr><th>${tt('stats.col.science')}</th><td>${avgOrDash(row.sumScience, row.nScience)}</td></tr>
+                <tr><th>${tt('stats.col.strength')}</th><td>${avgOrDash(row.sumStrength, row.nStrength)}</td></tr>
             ` : '';
         }
+
+        if (chartsEl && window.IronLeagueCharts && row) {
+            const polRows = topCounted(row.firstPolicyCounts, 8).map(([label, value]) => ({
+                label: displayPolicyName(label), value,
+            }));
+            const natRows = topCounted(row.nationCounts, 8).map(([label, value]) => ({
+                label: displayNationName(label), value,
+            }));
+            chartsEl.innerHTML = `
+                <div class="profile-chart-block"><h4>${tt('profile.chartPolicies')}</h4><div id="profilePolicyChart"></div></div>
+                <div class="profile-chart-block"><h4>${tt('profile.chartNations')}</h4><div id="profileNationChart"></div></div>
+            `;
+            if (IronLeagueCharts.renderChartWithToggle) {
+                IronLeagueCharts.renderChartWithToggle(
+                    document.getElementById('profilePolicyChart'), polRows,
+                    { storageKey: 'il_profile_pol_chart', pieLabel: tt('chart.pie'), barLabel: tt('chart.bar') },
+                );
+                IronLeagueCharts.renderChartWithToggle(
+                    document.getElementById('profileNationChart'), natRows,
+                    { storageKey: 'il_profile_nat_chart', pieLabel: tt('chart.pie'), barLabel: tt('chart.bar') },
+                );
+            }
+        } else if (chartsEl) {
+            chartsEl.innerHTML = '';
+        }
+
         if (gamesBody) {
             const rows = [];
             for (const game of ranked) {
@@ -1430,18 +1627,24 @@
                 const me = roster.find((p) => (p.name || '').trim() === name);
                 if (!me) continue;
                 const won = (me.nation || '') === (game.winner || '');
+                const surv = (game.survivors || []).find((s) => (s.name || '').trim() === name);
+                const units = surv && Number.isFinite(Number(surv.units)) ? surv.units : '—';
+                const cities = surv && Number.isFinite(Number(surv.cities)) ? surv.cities : '—';
                 rows.push(`<tr>
                     <td><button type="button" class="stats-game-link" data-game-id="${game.id}">#${game.number || game.id}</button></td>
                     <td>${renderNationPortrait(me.nation, 'player-nation-mini')}${displayNationName(me.nation)}</td>
                     <td>${won ? tt('profile.win') : tt('profile.loss')}</td>
                     <td>${displayMapName(game.map) || '—'}</td>
+                    <td class="num">${units}</td>
+                    <td class="num">${cities}</td>
                 </tr>`);
             }
-            gamesBody.innerHTML = rows.join('') || `<tr><td colspan="4">—</td></tr>`;
+            gamesBody.innerHTML = rows.join('') || `<tr><td colspan="6">—</td></tr>`;
             hydrateNationPortraits(gamesBody);
         }
         showSiteView('profile');
     }
+
 
 
     // Обновляем статистику
@@ -2043,14 +2246,18 @@
     }
 
     function applyViewMeta(view) {
+        const homeTitle = `<span class="page-title-icon" aria-hidden="true"><img src="img/icons/capital.svg" alt="" width="28" height="28"></span>`
+            + `<span class="page-title-sep" aria-hidden="true"><img src="img/icons/rekmod-iron.svg" alt="" width="22" height="22"></span>`
+            + `<span class="page-title-text">${viewTitle('title.home', 'Главная')}</span>`;
         const titles = {
-            home: viewTitle('title.home', '🏠 Главная'),
-            archive: viewTitle('title.archive', '⚔️ Архив игр 🛡️'),
-            stats: viewTitle('title.stats', '📊 Статистика лиги'),
-            rating: viewTitle('title.rating', '🏅 Рейтинг'),
-            tierlist: viewTitle('title.tierlist', '⭐ Тирлист наций'),
-            records: viewTitle('title.records', '🏆 Рекорды'),
-            faq: viewTitle('title.faq', '❓ FAQ'),
+            home: homeTitle,
+            archive: viewTitle('title.archive', 'Архив игр'),
+            stats: viewTitle('title.stats', 'Статистика лиги'),
+            rating: viewTitle('title.rating', 'Рейтинг'),
+            tierlist: viewTitle('title.tierlist', 'Тирлист наций'),
+            records: viewTitle('title.records', 'Рекорды'),
+            faq: viewTitle('title.faq', 'FAQ'),
+            profile: viewTitle('title.profile', 'Профиль'),
         };
         const footers = {
             home: viewTitle('footer.home', 'Iron League — главная'),
@@ -2060,8 +2267,14 @@
             tierlist: viewTitle('footer.tierlist', 'Тирлист наций лиги'),
             records: viewTitle('footer.records', 'Рекорды и достижения (без teams/scrap)'),
             faq: viewTitle('footer.faq', 'Частые вопросы'),
+            profile: viewTitle('footer.profile', 'Профиль игрока'),
         };
-        document.getElementById('pageTitle').textContent = titles[view] || titles.home;
+        const titleEl = document.getElementById('pageTitle');
+        if (titleEl) {
+            const next = titles[view] || titles.home;
+            if (view === 'home') titleEl.innerHTML = next;
+            else titleEl.textContent = next;
+        }
         const footer = document.querySelector('footer p');
         if (footer) footer.textContent = footers[view] || footers.home;
     }
@@ -2407,6 +2620,7 @@
             e.preventDefault();
             openGameModal(btn.dataset.gameId);
         });
+        initStatsGameLinksToggle();
         await loadGamesData();
         await Promise.all([loadFaqData(), loadTierlistData()]);
         renderStatsTables();
@@ -2477,6 +2691,23 @@
     function rusToEngNation(rus) {
         const hit = nations.find(n => n.rus === rus);
         return hit ? hit.eng : rus;
+    }
+
+    /** Tierlist average for a Russian nation name (or null). */
+    function tierlistAvgForNation(nationRu) {
+        if (!tierlistData || !Array.isArray(tierlistData.entries)) return null;
+        const ru = String(nationRu || '').trim();
+        if (!ru) return null;
+        const eng = String(rusToEngNation(ru) || '').trim().toLowerCase();
+        for (const e of tierlistData.entries) {
+            const civ = String(e.civ || '').trim();
+            const civRu = engToRusNation(civ);
+            if (civRu === ru || civ.toLowerCase() === eng || civ.toLowerCase() === ru.toLowerCase()) {
+                const avg = Number(e.avg);
+                return Number.isFinite(avg) ? avg : null;
+            }
+        }
+        return null;
     }
 
     function displayNationName(russianName) {
@@ -2638,6 +2869,9 @@
         if (!row.wins || !Array.isArray(row.winGames) || !row.winGames.length) {
             return `<td class="num">${row.wins}</td>`;
         }
+        if (!showStatsGameLinks()) {
+            return `<td class="num">${row.wins}</td>`;
+        }
         const g = row.winGames[0];
         const label = Number.isFinite(g.number) ? `Game ${g.number}` : 'Game';
         const extra = row.winGames.length > 1
@@ -2706,6 +2940,7 @@
                     nPopulation: 0,
                     nTechs: 0,
                     firstPolicyCounts: new Map(),
+                    wonderCounts: new Map(),
                 });
             }
             return players.get(name);
@@ -2762,7 +2997,14 @@
                 if (s.alive === true) row.survived += 1;
                 if (Array.isArray(s.wonders)) row.wonders += s.wonders.length;
                 const built = Array.isArray(s.wonders_built) ? s.wonders_built : null;
-                if (built) row.wondersBuilt += built.length;
+                if (built) {
+                    row.wondersBuilt += built.length;
+                    for (const w of built) {
+                        const wn = String(w || '').trim();
+                        if (!wn) continue;
+                        row.wonderCounts.set(wn, (row.wonderCounts.get(wn) || 0) + 1);
+                    }
+                }
                 if (Array.isArray(s.conquered_capitals)) row.conquered += s.conquered_capitals.length;
                 if (Number.isFinite(Number(s.military_deaths))) {
                     row.militaryDeaths += Number(s.military_deaths);
@@ -2784,7 +3026,7 @@
                 add('sumTechs', 'nTechs', s.techs);
 
                 const firstPol = (s.first_policy || '').trim();
-                if (firstPol) {
+                if (firstPol && !isInvalidFirstPolicy(firstPol)) {
                     row.firstPolicyCounts.set(
                         firstPol,
                         (row.firstPolicyCounts.get(firstPol) || 0) + 1,
@@ -2808,7 +3050,9 @@
                     : Number((String(game.number || '').match(/(\d+)/) || [])[1]) || null;
                 const gameRef = { id: game.id, number: gNum };
 
-                if (firstPol) recordPick(firstPolicyStats, firstPol, won, placeScore, gameRef);
+                if (firstPol && !isInvalidFirstPolicy(firstPol)) {
+                    recordPick(firstPolicyStats, firstPol, won, placeScore, gameRef);
+                }
                 const branches = (Array.isArray(s.policy_branches) ? s.policy_branches : [])
                     .map((b) => String(b || '').trim())
                     .filter(Boolean);
@@ -2992,12 +3236,15 @@
 
         fillSortableTable(
             document.getElementById('winnerNationsTable'),
-            nationRows.filter((n) => n.wins > 0),
+            nationRows.filter((n) => n.wins > 0).map((n) => Object.assign({}, n, {
+                tierAvg: tierlistAvgForNation(n.nation),
+            })),
             (n) => `<tr>
                 <td><span class="nation-cell">${renderNationPortrait(n.nation, 'player-nation-mini')}${displayNationName(n.nation)}</span></td>
                 <td class="num">${n.wins}</td>
                 <td class="num">${n.picks}</td>
                 <td class="num">${n.winrate}%</td>
+                <td class="num">${n.tierAvg != null ? Number(n.tierAvg).toFixed(2) : '—'}</td>
             </tr>`,
             'wins',
             'desc',
@@ -3126,16 +3373,37 @@
             'desc',
         );
 
-        // Charts: opening policies + maps
-        if (window.IronLeagueCharts && IronLeagueCharts.renderBarChart) {
-            IronLeagueCharts.renderBarChart(
+        // Charts: opening policies, ideologies, maps
+        const chartOpts = {
+            pieLabel: tt('chart.pie'),
+            barLabel: tt('chart.bar'),
+            emptyText: '—',
+        };
+        if (window.IronLeagueCharts && IronLeagueCharts.renderChartWithToggle) {
+            IronLeagueCharts.renderChartWithToggle(
                 document.getElementById('firstPolicyChart'),
                 firstPolicyRows.map((r) => ({
                     label: displayPolicyName(r.name),
                     value: r.picks,
                 })),
-                { aria: tt('stats.firstPolicyChart'), emptyText: '—' },
+                Object.assign({}, chartOpts, {
+                    aria: tt('stats.firstPolicyChart'),
+                    storageKey: 'il_chart_first_policy',
+                }),
             );
+            IronLeagueCharts.renderChartWithToggle(
+                document.getElementById('ideologyChart'),
+                ideologyRows.map((r) => ({
+                    label: displayPolicyName(r.name),
+                    value: r.picks,
+                })),
+                Object.assign({}, chartOpts, {
+                    aria: tt('stats.ideologies'),
+                    storageKey: 'il_chart_ideology',
+                }),
+            );
+        }
+        {
             const mapCounts = new Map();
             for (const game of rankedGamesOnly(gamesData)) {
                 const m = String(game.map || '').trim();
@@ -3149,15 +3417,24 @@
             }));
             const mapTotal = mapRows.reduce((s, r) => s + r.games, 0) || 1;
             for (const r of mapRows) r.share = Math.round((r.games / mapTotal) * 1000) / 10;
-            IronLeagueCharts.renderBarChart(
-                document.getElementById('mapTypeChart'),
-                mapRows.map((r) => ({ label: displayMapName(r.name), value: r.games })),
-                { aria: tt('stats.maps'), emptyText: '—' },
-            );
+            if (window.IronLeagueCharts && IronLeagueCharts.renderChartWithToggle) {
+                IronLeagueCharts.renderChartWithToggle(
+                    document.getElementById('mapTypeChart'),
+                    mapRows.map((r) => ({ label: displayMapName(r.name), value: r.games })),
+                    Object.assign({}, chartOpts, {
+                        aria: tt('stats.maps'),
+                        storageKey: 'il_chart_maps',
+                    }),
+                );
+            }
+            const preview = (raw) => (window.IronLeaguePlayerMeta && IronLeaguePlayerMeta.mapPreviewHtml)
+                ? IronLeaguePlayerMeta.mapPreviewHtml(raw)
+                : '';
             fillSortableTable(
                 document.getElementById('mapStatsTable'),
                 mapRows,
                 (r) => `<tr>
+                    <td class="map-preview-cell">${preview(r.name)}</td>
                     <td>${displayMapName(r.name)}</td>
                     <td class="num">${r.games}</td>
                     <td class="num">${r.share}%</td>
@@ -3194,8 +3471,6 @@
                 civRu: engToRusNation(e.civ),
                 avg: e.avg || 0,
                 Community: e.ratings?.Community,
-                Click: e.ratings?.Click,
-                Sharpe: e.ratings?.Sharpe,
                 note: e.note || '',
             }));
 
@@ -3206,12 +3481,11 @@
                     <td><span class="nation-cell">${renderNationPortrait(r.civRu, 'player-nation-mini')}${displayNationName(r.civRu)}</span></td>
                     <td class="num">${r.avg ? r.avg.toFixed(2) : '—'}</td>
                     <td class="num">${starsHtml(r.Community)}</td>
-                    <td class="num">${starsHtml(r.Click)}</td>
-                    <td class="num">${starsHtml(r.Sharpe)}</td>
                 </tr>`,
                 'avg',
                 'desc',
             );
+            if (gamesData && gamesData.length) renderStatsTables();
         } catch (error) {
             console.error('Tierlist error:', error);
             sourceEl.textContent = tt('error.tierlist');
