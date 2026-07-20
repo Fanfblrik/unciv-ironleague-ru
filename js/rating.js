@@ -239,8 +239,47 @@
   }
 
   /**
+   * Strength for lobby opponent adjustment: rating / games (form).
+   * Сила для поправки за оппонентов: рейтинг / число игр (форма).
+   *
+   * Using form (not raw sum) so veterans with many games are not
+   * automatically "stronger" than efficient newcomers.
+   * Форма, а не сырая сумма: ветераны с кучей игр не сильнее
+   * эффективных новичков автоматически.
+   */
+  function lobbyForm(ratings, gamesPlayed, name) {
+    const r = Number(ratings.get(name) || 0);
+    const g = Number(gamesPlayed.get(name) || 0);
+    return g > 0 ? r / g : r;
+  }
+
+  /**
+   * Underdog bonus for the winner vs stronger opponents (by form).
+   * Бонус аутсайдеру-победителю против более сильных (по форме).
+   *
+   * sum(form_opp − form_me) for opp with form > me, / count of such opps.
+   * Сумма (форма_опп − форма_я) для опп сильнее меня / число таких опп.
+   */
+  function winnerOpponentBonus(ratings, gamesPlayed, order) {
+    if (!order || order.length < 2) return 0;
+    const winner = order[0];
+    const myForm = lobbyForm(ratings, gamesPlayed, winner);
+    let sumDiff = 0;
+    let stronger = 0;
+    for (let i = 1; i < order.length; i += 1) {
+      const oppForm = lobbyForm(ratings, gamesPlayed, order[i]);
+      if (oppForm > myForm) {
+        sumDiff += oppForm - myForm;
+        stronger += 1;
+      }
+    }
+    return stronger > 0 ? sumDiff / stronger : 0;
+  }
+
+  /**
    * Zero-based lobby points: participation (N−1) for everyone;
-   * winner gets an extra +10. Optional elimPenalty subtracted if alive===false.
+   * winner gets an extra +10 plus underdog bonus vs stronger forms.
+   * Optional elimPenalty subtracted if alive===false.
    * N = lobby size (player count).
    */
   function rateLobbyWinBonus(games, options) {
@@ -253,8 +292,9 @@
       ensureRatings(ratings, order, START_ELO_ZERO);
       const n = order.length;
       const base = n - 1;
+      const underdog = winnerOpponentBonus(ratings, gamesPlayed, order);
       order.forEach((name, i) => {
-        let delta = i === 0 ? base + 10 : base;
+        let delta = i === 0 ? base + 10 + underdog : base;
         if (elimPenalty && isEliminated(survivorByName(game, name))) {
           delta -= elimPenalty;
         }
@@ -268,6 +308,7 @@
   /**
    * Zero-based lobby points: (N−1) + Avg for every player,
    * where Avg is the mean of available techs / policies / cities from finale.
+   * Winner also gets underdog bonus vs stronger forms.
    * Optional elimPenalty subtracted if alive===false.
    */
   function rateLobbyAvgBonus(games, options) {
@@ -280,9 +321,11 @@
       ensureRatings(ratings, order, START_ELO_ZERO);
       const n = order.length;
       const base = n - 1;
-      order.forEach((name) => {
+      const underdog = winnerOpponentBonus(ratings, gamesPlayed, order);
+      order.forEach((name, i) => {
         const avg = finaleMetricsAvg(survivorByName(game, name));
         let delta = base + avg;
+        if (i === 0) delta += underdog;
         if (elimPenalty && isEliminated(survivorByName(game, name))) {
           delta -= elimPenalty;
         }
