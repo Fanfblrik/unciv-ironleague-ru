@@ -25,58 +25,6 @@
             z-index: 1;
         }
 
-        /* Full dossier backdrop for player profiles (margins + wash behind content). */
-        .profile-page-bg {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        .profile-page-bg[hidden] {
-            display: none !important;
-        }
-        .profile-page-bg-wash {
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(180deg, rgba(14, 12, 20, 0.62), rgba(14, 12, 20, 0.78)),
-                url('img/profiles/dossier-bg.jpg') center top / cover no-repeat;
-            opacity: 0.92;
-        }
-        .profile-page-bg-side {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            /* Fill the empty gutters outside the 1200px container. */
-            width: max(140px, calc((100vw - 1240px) / 2));
-            background:
-                linear-gradient(90deg, rgba(10, 8, 14, 0.15), rgba(10, 8, 14, 0.05) 40%, rgba(10, 8, 14, 0.35)),
-                url('img/profiles/dossier-bg.jpg') center / cover no-repeat;
-            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.35);
-            border-color: rgba(255, 215, 0, 0.22);
-            border-style: solid;
-            border-width: 0;
-            opacity: 1;
-        }
-        .profile-page-bg-side--left {
-            left: 0;
-            border-right-width: 1px;
-        }
-        .profile-page-bg-side--right {
-            right: 0;
-            border-left-width: 1px;
-            transform: scaleX(-1);
-        }
-        body.profile-view-open {
-            background-color: #1a1620;
-        }
-        @media (max-width: 1100px) {
-            .profile-page-bg-side {
-                width: max(72px, 9vw);
-            }
-        }
-
         h1 {
             text-align: center;
             font-size: clamp(1.45rem, 5vw, 2.5rem);
@@ -203,6 +151,11 @@
         #viewStats::before { background-image: url('../bg/stats.png'); }
         #viewTierlist::before { background-image: url('../bg/tierlist.png'); }
         #viewFaq::before { background-image: url('../bg/faq.png'); }
+        #viewProfile::before { background-image: url('../img/profiles/dossier-bg.jpg'); }
+        /* Profile dossier: lighter veil so parchment stays visible in page margins. */
+        #viewProfile.active::after {
+            background: linear-gradient(180deg, rgba(14,14,24,0.45), rgba(14,14,24,0.62));
+        }
 
         .faq-toolbar {
             display: flex;
@@ -2303,7 +2256,7 @@
             margin: 0 auto;
             background:
                 radial-gradient(circle at 50% 42%, rgba(40, 32, 20, 0.35) 0%, rgba(12, 10, 16, 0.55) 62%),
-                url('img/profiles/emblem-frame.png') center / cover no-repeat;
+                url('../img/profiles/emblem-frame.png') center / cover no-repeat;
             border-radius: 12px;
             box-shadow:
                 0 0 0 1px rgba(255, 215, 0, 0.28),
