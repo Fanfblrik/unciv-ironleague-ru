@@ -3931,7 +3931,7 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 2742
+          "military_deaths": null
         },
         {
           "name": "VlaterRogue",
@@ -3997,7 +3997,7 @@
             "Pagodas"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 2899
+          "military_deaths": null
         },
         {
           "name": "YukiHino98",
@@ -4055,7 +4055,7 @@
             "Religious Community"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 1668
+          "military_deaths": null
         },
         {
           "name": "Fanfblrik",
@@ -4103,7 +4103,7 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 1339
+          "military_deaths": null
         },
         {
           "name": "AlexUnderHill",
@@ -4150,7 +4150,7 @@
             "Holy Warriors"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 1995
+          "military_deaths": null
         },
         {
           "name": "Overslidishe",
@@ -4193,7 +4193,7 @@
             "Synagogues"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 369
+          "military_deaths": null
         },
         {
           "name": "Barbarians",
@@ -4229,7 +4229,7 @@
           "wars": [],
           "wars_declared": null,
           "wars_received": null,
-          "military_deaths": 2793,
+          "military_deaths": null,
           "is_barbarian": true
         }
       ],
@@ -4358,7 +4358,7 @@
             "Guruship"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 3771
+          "military_deaths": null
         },
         {
           "name": "Click4x",
@@ -4430,7 +4430,7 @@
             "Devoted Elite"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 2702
+          "military_deaths": null
         },
         {
           "name": "YukiHino98",
@@ -4486,7 +4486,7 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 1328
+          "military_deaths": null
         },
         {
           "name": "VlaterRogue",
@@ -4542,7 +4542,7 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 1382
+          "military_deaths": null
         },
         {
           "name": "n9306867842",
@@ -4594,7 +4594,7 @@
             "Sacred Waters"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 2527
+          "military_deaths": null
         },
         {
           "name": "Overslidishe",
@@ -4645,7 +4645,7 @@
             "Viharas"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 1506
+          "military_deaths": null
         },
         {
           "name": "den_stu",
@@ -4693,7 +4693,7 @@
             "Holy Warriors"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 3249
+          "military_deaths": null
         },
         {
           "name": "munlait21",
@@ -4740,7 +4740,7 @@
             "Religious Center"
           ],
           "enhancer_beliefs": [],
-          "military_deaths": 722
+          "military_deaths": null
         },
         {
           "name": "AlexUnderHill",
@@ -4779,7 +4779,7 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 434
+          "military_deaths": null
         },
         {
           "name": "Ouni0",
@@ -4818,7 +4818,7 @@
           "founder_beliefs": [],
           "follower_beliefs": [],
           "enhancer_beliefs": [],
-          "military_deaths": 899
+          "military_deaths": null
         },
         {
           "name": "Barbarians",
@@ -4854,7 +4854,7 @@
           "wars": [],
           "wars_declared": null,
           "wars_received": null,
-          "military_deaths": 5611,
+          "military_deaths": null,
           "is_barbarian": true
         }
       ],

@@ -38,6 +38,16 @@
       "avg": 5.0
     },
     {
+      "civ": "Chile",
+      "ratings": {
+        "Community": 3,
+        "Click": null,
+        "Sharpe": null
+      },
+      "avg": 3.6,
+      "note": "Community poll (10 votes): 5★×1, 4★×4, 3★×5"
+    },
+    {
       "civ": "Philippines",
       "ratings": {
         "Community": 5,
