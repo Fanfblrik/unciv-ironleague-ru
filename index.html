@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=site-polish-8">
+    <link rel="stylesheet" href="css/site.css?v=site-polish-9">
 
 </head>
 <body>
@@ -1327,6 +1327,30 @@
             `<span>${ru}</span></li>`;
     }
 
+    /** Wonder icon + localized name for chips/tables (no &lt;li&gt;). */
+    function renderWonderLabel(englishName) {
+        const raw = String(englishName || '').trim();
+        if (!raw) return '—';
+        const ru = wonderNameRu(raw);
+        const safe = ru.replace(/"/g, '&quot;');
+        const src = wonderIconUrl(raw);
+        return `<span class="wonder-label">` +
+            `<span class="wonder-icon-wrap wonder-icon-wrap--mini">` +
+            `<img class="wonder-icon" src="${src}" alt="${safe}" title="${safe}" ` +
+            `loading="lazy" onerror="this.closest('.wonder-icon-wrap').style.display='none'">` +
+            `</span>` +
+            `<span class="wonder-label-text">${ru}</span></span>`;
+    }
+
+    /** Nation portrait + name with consistent gap/alignment. */
+    function renderNationLabel(russianName, extraClass) {
+        const name = String(russianName || '').trim();
+        if (!name || name === '—') return '—';
+        const cls = extraClass || 'player-nation-mini';
+        return `<span class="nation-cell">${renderNationPortrait(name, cls)}` +
+            `<span class="nation-cell-name">${displayNationName(name)}</span></span>`;
+    }
+
     function renderNationPortrait(russianName, extraClass) {
         const size = extraClass && extraClass.includes('player-nation-mini') ? 20 : 24;
         const cls = ['nation-portrait', extraClass].filter(Boolean).join(' ');
@@ -1628,16 +1652,13 @@
         }
 
         if (summaryBody) {
-            const nationCell = (nationRu) => {
-                if (!nationRu || nationRu === '—') return '—';
-                return `<span class="nation-cell">${renderNationPortrait(nationRu, 'player-nation-mini')}${displayNationName(nationRu)}</span>`;
-            };
+            const nationCell = (nationRu) => renderNationLabel(nationRu);
             const chip = (labelHtml, count) =>
                 `<span class="profile-chip">${labelHtml}<span class="profile-chip-count">${count}</span></span>`;
             const topPol = topCounted(row && row.firstPolicyCounts, 3)
                 .map(([k, v]) => chip(displayPolicyName(k), v)).join('') || '—';
             const topWonders = topCounted(row && row.wonderCounts, 5)
-                .map(([k, v]) => chip(wonderNameRu(k), v)).join('') || '—';
+                .map(([k, v]) => chip(renderWonderLabel(k), v)).join('') || '—';
             const topNations = topCounted(row && row.nationCounts, 3)
                 .map(([k, v]) => chip(nationCell(k), v)).join('') || '—';
             const topIdeologies = topCounted(row && row.ideologyCounts, 3)
@@ -1708,7 +1729,7 @@
                 const cities = surv && Number.isFinite(Number(surv.cities)) ? surv.cities : '—';
                 rows.push(`<tr>
                     <td><button type="button" class="stats-game-link" data-game-id="${game.id}">#${game.number || game.id}</button></td>
-                    <td>${renderNationPortrait(me.nation, 'player-nation-mini')}${displayNationName(me.nation)}</td>
+                    <td>${renderNationLabel(me.nation)}</td>
                     <td>${won ? tt('profile.win') : tt('profile.loss')}</td>
                     <td>${displayMapName(game.map) || '—'}</td>
                     <td class="num">${units}</td>
