@@ -14,10 +14,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=dossier-3">
+    <link rel="stylesheet" href="css/site.css?v=dossier-4">
 
 </head>
 <body>
+<div id="profilePageBg" class="profile-page-bg" hidden aria-hidden="true">
+    <div class="profile-page-bg-wash"></div>
+    <div class="profile-page-bg-side profile-page-bg-side--left"></div>
+    <div class="profile-page-bg-side profile-page-bg-side--right"></div>
+</div>
 <div class="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="Язык">
     <button type="button" class="lang-btn active" data-lang="ru" title="Русский"><span class="lang-flag" aria-hidden="true"><svg viewBox="0 0 9 6" xmlns="http://www.w3.org/2000/svg"><rect width="9" height="6" fill="#fff"/><rect y="2" width="9" height="2" fill="#0039a6"/><rect y="4" width="9" height="2" fill="#d52b1e"/></svg></span>RU</button>
     <button type="button" class="lang-btn" data-lang="en" title="English">EN<span class="lang-flag" aria-hidden="true"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><clipPath id="s"><path d="M0,0v30h60V0z"/></clipPath><g clip-path="url(#s)"><path d="M0,0v30h60V0z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></g></svg></span></button>
@@ -2777,6 +2782,8 @@
         document.getElementById('viewStats').classList.toggle('active', next === 'stats');
         document.getElementById('viewProfile')?.classList.toggle('active', next === 'profile');
         document.body.classList.toggle('profile-view-open', next === 'profile');
+        const profileBg = document.getElementById('profilePageBg');
+        if (profileBg) profileBg.hidden = next !== 'profile';
         document.getElementById('viewRating')?.classList.toggle('active', next === 'rating');
         document.getElementById('viewTierlist').classList.toggle('active', next === 'tierlist');
         document.getElementById('viewRecords')?.classList.toggle('active', next === 'records');

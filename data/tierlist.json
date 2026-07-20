@@ -48,6 +48,16 @@
       "note": "Community poll (10 votes): 5★×1, 4★×4, 3★×5"
     },
     {
+      "civ": "Colombia",
+      "ratings": {
+        "Community": 4,
+        "Click": null,
+        "Sharpe": null
+      },
+      "avg": 4.0,
+      "note": "Community poll (9): 5★×3, 4★×3, 3★×3"
+    },
+    {
       "civ": "Gaul",
       "ratings": {
         "Community": 3,
