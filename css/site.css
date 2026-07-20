@@ -728,6 +728,32 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            vertical-align: middle;
+        }
+
+        .nation-cell-name {
+            line-height: 1.2;
+        }
+
+        .wonder-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            vertical-align: middle;
+        }
+
+        .wonder-label-text {
+            line-height: 1.2;
+        }
+
+        .wonder-icon-wrap--mini {
+            width: 22px;
+            height: 22px;
+        }
+
+        .wonder-icon-wrap--mini .wonder-icon {
+            width: 16px;
+            height: 16px;
         }
 
         .tier-legend {
@@ -2226,11 +2252,22 @@
             padding: 8px 0 4px;
             border-bottom: none !important;
         }
-        #profileSummaryTable .nation-cell {
+        #profileSummaryTable .nation-cell,
+        #profileGamesTable .nation-cell,
+        #profileSummaryTable .wonder-label {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            margin-right: 4px;
+            gap: 8px;
+        }
+        .profile-chip .nation-cell,
+        .profile-chip .wonder-label {
+            gap: 8px;
+        }
+        .profile-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
         }
         .profile-charts {
             display: grid;
