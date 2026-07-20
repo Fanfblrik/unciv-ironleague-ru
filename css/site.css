@@ -2053,16 +2053,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 0.35em;
             flex-wrap: wrap;
         }
-        .page-title-icon img,
-        .page-title-sep img {
-            display: block;
-            vertical-align: middle;
+        .page-title-icon {
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
         }
-        .page-title-sep {
-            opacity: 0.9;
+        .page-title-icon img {
+            display: block;
+            width: 1.15em;
+            height: 1.15em;
         }
         .stats-game-links-toggle {
             display: inline-flex;
