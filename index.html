@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=site-polish-4">
+    <link rel="stylesheet" href="css/site.css?v=site-polish-10">
 
 </head>
 <body>
@@ -28,7 +28,7 @@
         Iron League
         <span class="site-brand-sub">Unciv</span>
     </div>
-    <h1 id="pageTitle"><span class="page-title-icon" aria-hidden="true"><img src="img/icons/capital.svg" alt="" width="28" height="28"></span><span class="page-title-sep" aria-hidden="true"><img src="img/icons/rekmod-iron.svg" alt="" width="22" height="22"></span><span class="page-title-text">Главная</span></h1>
+    <h1 id="pageTitle"><span class="page-title-icon" aria-hidden="true"><img src="img/icons/capital.svg" alt=""></span><span class="page-title-text">Главная</span></h1>
 
     <nav class="site-nav" data-i18n-aria="nav.aria" aria-label="Разделы сайта">
         <button type="button" class="site-nav-btn active" data-view="home" data-i18n="nav.home">Главная</button>
@@ -882,7 +882,7 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=site-polish-5"></script>
+<script src="js/i18n.js?v=site-polish-8"></script>
 <script src="js/player-meta.js?v=1"></script>
 <script src="js/stats-charts.js?v=2"></script>
 <script src="js/gif-preview.js?v=1"></script>
@@ -1265,6 +1265,7 @@
             Scientific: 'victory.science',
             Science: 'victory.science',
             Cultural: 'victory.culture',
+            Culture: 'victory.culture',
             Domination: 'victory.domination',
             Diplomatic: 'victory.diplomatic',
             Time: 'victory.time',
@@ -1272,7 +1273,9 @@
             SS: 'victory.cc',
         };
         if (!key) return tt('victory.cc');
-        return map[key] ? tt(map[key]) : key;
+        if (map[key]) return tt(map[key]);
+        const hit = Object.keys(map).find((k) => k.toLowerCase() === key.toLowerCase());
+        return hit ? tt(map[hit]) : key;
     }
     const victoryTypeRu = victoryTypeLabel;
 
@@ -1322,6 +1325,30 @@
             `loading="lazy" onerror="this.closest('.wonder-icon-wrap').style.display='none'">` +
             `</span>` +
             `<span>${ru}</span></li>`;
+    }
+
+    /** Wonder icon + localized name for chips/tables (no &lt;li&gt;). */
+    function renderWonderLabel(englishName) {
+        const raw = String(englishName || '').trim();
+        if (!raw) return '—';
+        const ru = wonderNameRu(raw);
+        const safe = ru.replace(/"/g, '&quot;');
+        const src = wonderIconUrl(raw);
+        return `<span class="wonder-label">` +
+            `<span class="wonder-icon-wrap wonder-icon-wrap--mini">` +
+            `<img class="wonder-icon" src="${src}" alt="${safe}" title="${safe}" ` +
+            `loading="lazy" onerror="this.closest('.wonder-icon-wrap').style.display='none'">` +
+            `</span>` +
+            `<span class="wonder-label-text">${ru}</span></span>`;
+    }
+
+    /** Nation portrait + name with consistent gap/alignment. */
+    function renderNationLabel(russianName, extraClass) {
+        const name = String(russianName || '').trim();
+        if (!name || name === '—') return '—';
+        const cls = extraClass || 'player-nation-mini';
+        return `<span class="nation-cell">${renderNationPortrait(name, cls)}` +
+            `<span class="nation-cell-name">${displayNationName(name)}</span></span>`;
     }
 
     function renderNationPortrait(russianName, extraClass) {
@@ -1421,7 +1448,9 @@
             const prev = victorySelect.value;
             const values = [...new Set(
                 gamesData.map((g) => String(g.victoryType || '').trim()).filter(Boolean)
-            )].sort((a, b) => a.localeCompare(b, localeTag()));
+            )].sort((a, b) =>
+                victoryTypeLabel(a).localeCompare(victoryTypeLabel(b), localeTag())
+            );
             victorySelect.innerHTML = '';
             const all = document.createElement('option');
             all.value = 'all';
@@ -1431,7 +1460,7 @@
             for (const v of values) {
                 const opt = document.createElement('option');
                 opt.value = v;
-                opt.textContent = v;
+                opt.textContent = victoryTypeLabel(v);
                 victorySelect.appendChild(opt);
             }
             if ([...victorySelect.options].some((o) => o.value === prev)) {
@@ -1610,8 +1639,10 @@
                         return `<div class="profile-ach-card" title="${String(it.value || '').replace(/"/g, '&quot;')}">
                             <img src="${iconSrc}" alt="" width="40" height="40" loading="lazy"
                                  onerror="this.onerror=null;this.src='${iconFb}'">
-                            <span>${titleText}</span>
-                            <small>${it.value || ''}</small>
+                            <div class="profile-ach-main">
+                                <span class="profile-ach-title">${titleText}</span>
+                                <span class="profile-ach-value">${it.value || ''}</span>
+                            </div>
                         </div>`;
                     }).join('')
                     : `<p class="hint">${tt('profile.noAchievements')}</p>`;
@@ -1621,23 +1652,25 @@
         }
 
         if (summaryBody) {
-            const nationCell = (nationRu) => {
-                if (!nationRu || nationRu === '—') return '—';
-                return `<span class="nation-cell">${renderNationPortrait(nationRu, 'player-nation-mini')}${displayNationName(nationRu)}</span>`;
-            };
+            const nationCell = (nationRu) => renderNationLabel(nationRu);
+            const chip = (labelHtml, count) =>
+                `<span class="profile-chip">${labelHtml}<span class="profile-chip-count">${count}</span></span>`;
             const topPol = topCounted(row && row.firstPolicyCounts, 3)
-                .map(([k, v]) => `${displayPolicyName(k)} (${v})`).join(', ') || '—';
+                .map(([k, v]) => chip(displayPolicyName(k), v)).join('') || '—';
             const topWonders = topCounted(row && row.wonderCounts, 5)
-                .map(([k, v]) => `${wonderNameRu(k)} (${v})`).join(', ') || '—';
+                .map(([k, v]) => chip(renderWonderLabel(k), v)).join('') || '—';
             const topNations = topCounted(row && row.nationCounts, 3)
-                .map(([k, v]) => `${nationCell(k)} (${v})`).join(', ') || '—';
+                .map(([k, v]) => chip(nationCell(k), v)).join('') || '—';
+            const topIdeologies = topCounted(row && row.ideologyCounts, 3)
+                .map(([k, v]) => chip(displayPolicyName(k), v)).join('') || '—';
             summaryBody.innerHTML = row ? `
                 <tr><th>${tt('stats.col.topNation')}</th><td>${nationCell(row.topNation)}</td></tr>
-                <tr><th>${tt('profile.favNations')}</th><td>${topNations}</td></tr>
+                <tr><th>${tt('profile.favNations')}</th><td class="profile-chip-cell">${topNations}</td></tr>
                 <tr><th>${tt('stats.col.topIdeology')}</th><td>${displayPolicyName(row.topIdeology) || '—'}</td></tr>
-                <tr><th>${tt('profile.favPolicies')}</th><td>${topPol}</td></tr>
+                <tr><th>${tt('profile.favIdeologies')}</th><td class="profile-chip-cell">${topIdeologies}</td></tr>
+                <tr><th>${tt('profile.favPolicies')}</th><td class="profile-chip-cell">${topPol}</td></tr>
                 <tr><th>${tt('stats.col.topPolicies')}</th><td>${row.topPolicies || '—'}</td></tr>
-                <tr><th>${tt('profile.favWonders')}</th><td>${topWonders}</td></tr>
+                <tr><th>${tt('profile.favWonders')}</th><td class="profile-chip-cell">${topWonders}</td></tr>
                 <tr><th>${tt('stats.col.wondersBuilt')}</th><td>${row.wondersBuilt}</td></tr>
                 <tr><th>${tt('stats.col.conquered')}</th><td>${row.conquered}</td></tr>
                 <tr><td colspan="2" class="profile-avg-hint">${tt('profile.avgHint')}</td></tr>
@@ -1658,14 +1691,22 @@
             const natRows = topCounted(row.nationCounts, 8).map(([label, value]) => ({
                 label: displayNationName(label), value,
             }));
+            const ideoRows = topCounted(row.ideologyCounts, 8).map(([label, value]) => ({
+                label: displayPolicyName(label), value,
+            }));
             chartsEl.innerHTML = `
                 <div class="profile-chart-block"><h4>${tt('profile.chartPolicies')}</h4><div id="profilePolicyChart"></div></div>
+                <div class="profile-chart-block"><h4>${tt('profile.chartIdeologies')}</h4><div id="profileIdeologyChart"></div></div>
                 <div class="profile-chart-block"><h4>${tt('profile.chartNations')}</h4><div id="profileNationChart"></div></div>
             `;
             if (IronLeagueCharts.renderChartWithToggle) {
                 IronLeagueCharts.renderChartWithToggle(
                     document.getElementById('profilePolicyChart'), polRows,
                     { storageKey: 'il_profile_pol_chart', pieLabel: tt('chart.pie'), barLabel: tt('chart.bar') },
+                );
+                IronLeagueCharts.renderChartWithToggle(
+                    document.getElementById('profileIdeologyChart'), ideoRows,
+                    { storageKey: 'il_profile_ideo_chart', pieLabel: tt('chart.pie'), barLabel: tt('chart.bar') },
                 );
                 IronLeagueCharts.renderChartWithToggle(
                     document.getElementById('profileNationChart'), natRows,
@@ -1688,7 +1729,7 @@
                 const cities = surv && Number.isFinite(Number(surv.cities)) ? surv.cities : '—';
                 rows.push(`<tr>
                     <td><button type="button" class="stats-game-link" data-game-id="${game.id}">#${game.number || game.id}</button></td>
-                    <td>${renderNationPortrait(me.nation, 'player-nation-mini')}${displayNationName(me.nation)}</td>
+                    <td>${renderNationLabel(me.nation)}</td>
                     <td>${won ? tt('profile.win') : tt('profile.loss')}</td>
                     <td>${displayMapName(game.map) || '—'}</td>
                     <td class="num">${units}</td>
@@ -2307,8 +2348,7 @@
     }
 
     function applyViewMeta(view) {
-        const homeTitle = `<span class="page-title-icon" aria-hidden="true"><img src="img/icons/capital.svg" alt="" width="28" height="28"></span>`
-            + `<span class="page-title-sep" aria-hidden="true"><img src="img/icons/rekmod-iron.svg" alt="" width="22" height="22"></span>`
+        const homeTitle = `<span class="page-title-icon" aria-hidden="true"><img src="img/icons/capital.svg" alt=""></span>`
             + `<span class="page-title-text">${viewTitle('title.home', 'Главная')}</span>`;
         const titles = {
             home: homeTitle,
