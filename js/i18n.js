@@ -436,9 +436,15 @@
       'stats.ideologies': 'Идеологии',
       'stats.col.combo': 'Связка',
       'stats.col.pair': 'Пара',
+      'stats.wonders': 'Чудеса',
+      'stats.wondersSectionHint':
+        'Две таблицы по финалу учтённых игр (без teams/scrap).\n«Ср. место» — среднее нормированного placeScore по лобби, где это чудо было у игрока: placeScore = (N−1−i)/(N−1), где i = 0 у победителя и N−1 у последнего (1 = победа … 0 = последнее). Чем выше число, тем лучше в среднем финишировали владельцы/строители чуда. Винрейт — доля побед среди таких пиков.',
       'stats.wondersBuilt': 'Построенные чудеса',
       'stats.wondersBuiltHint':
-        'Только чудеса в городах, основанных этой цивилизацией (поле wonders_built).\nЗахваченные чудеса (в чужих foundingCiv) сюда не входят — их смотрите в финале в блоке «Захваченные чудеса».',
+        'Только чудеса в городах, основанных этой цивилизацией (поле wonders_built).\nЗахваченные чудеса сюда не входят — см. таблицу «Чудеса во владении» ниже и блок «Захваченные чудеса» в финале архива.',
+      'stats.wondersOwned': 'Чудеса во владении',
+      'stats.wondersOwnedHint':
+        'Все чудеса в городах цивилизации на финале (поле wonders): построенные своими руками и захваченные вместе с городами.\nКолонка «Владений» — сколько раз чудо было у игрока к финалу; винрейт и «Ср. место» считаются по этим же партиям.',
       'stats.beliefs': 'Религиозные верования',
       'stats.beliefsHint':
         'Пантеоны, верования основателя и последователей из финального сейва.\n«Ср. место» — то же нормированное placeScore, что в таблицах институтов.',
@@ -455,6 +461,7 @@
       'stats.col.nation': 'Нация',
       'stats.col.picks': 'Пиков',
       'stats.col.builds': 'Построек',
+      'stats.col.owned': 'Владений',
       'stats.col.topNation': 'Чаще всего',
       'stats.col.topIdeology': 'Идеология',
       'stats.col.uniqueNations': 'Уник. наций',
@@ -931,9 +938,15 @@
       'stats.ideologies': 'Ideologies',
       'stats.col.combo': 'Combo',
       'stats.col.pair': 'Pair',
+      'stats.wonders': 'Wonders',
+      'stats.wondersSectionHint':
+        'Two tables from ranked finales (no teams/scrap).\n“Avg place” is the mean normalized placeScore in lobbies where the player had that wonder: placeScore = (N−1−i)/(N−1), with i = 0 for the winner and N−1 for last (1 = win … 0 = last). Higher is better. Win rate is wins among those picks.',
       'stats.wondersBuilt': 'Built wonders',
       'stats.wondersBuiltHint':
-        'Only wonders in cities founded by that civ (wonders_built).\nConquered wonders (foreign foundingCiv) are excluded here — see them in Finale under “Conquered wonders”.',
+        'Only wonders in cities founded by that civ (wonders_built).\nConquered wonders are excluded here — see “Wonders owned” below and Finale “Conquered wonders”.',
+      'stats.wondersOwned': 'Wonders owned',
+      'stats.wondersOwnedHint':
+        'Every wonder in the civ’s cities at finale (wonders field): self-built and captured with cities.\n“Owned” counts how often the wonder was held at finale; win rate and avg place use those same games.',
       'stats.beliefs': 'Religious beliefs',
       'stats.beliefsHint':
         'Pantheons, founder and follower beliefs from the final save.\n“Avg place” uses the same normalized placeScore as the policy tables.',
@@ -950,6 +963,7 @@
       'stats.col.nation': 'Nation',
       'stats.col.picks': 'Picks',
       'stats.col.builds': 'Built',
+      'stats.col.owned': 'Owned',
       'stats.col.topNation': 'Most picked',
       'stats.col.topIdeology': 'Ideology',
       'stats.col.uniqueNations': 'Unique nations',

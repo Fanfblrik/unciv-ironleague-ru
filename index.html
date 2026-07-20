@@ -498,14 +498,36 @@
         </div>
 
 <div class="stats-section" id="stats-wonders" data-stats-group="wonders">
-            <h2 data-i18n="stats.wondersBuilt">Чудеса (свои)</h2>
-            <p class="hint" data-i18n="stats.wondersBuiltHint">Только чудеса в городах, основанных этой цивилизацией (без захваченных). Нужно поле wonders_built в Games.json.</p>
+            <h2 data-i18n="stats.wonders">Чудеса</h2>
+            <p class="hint" data-i18n="stats.wondersSectionHint">Две таблицы: только свои постройки и все чудеса во владении на финале (свои + захваченные).</p>
+            <div class="faq-toc stats-toc" id="wondersToc">
+                <a href="#stats-wonders-built" data-i18n="stats.wondersBuilt">Построенные чудеса</a>
+                <a href="#stats-wonders-owned" data-i18n="stats.wondersOwned">Чудеса во владении</a>
+            </div>
+            <h3 id="stats-wonders-built" data-i18n="stats.wondersBuilt">Построенные чудеса</h3>
+            <p class="hint" data-i18n="stats.wondersBuiltHint">Только чудеса в городах, основанных этой цивилизацией (поле wonders_built), без захваченных.</p>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="wonderBuiltStatsTable">
                     <thead>
                         <tr>
                             <th data-sort="name" data-i18n="stats.col.wonder">Чудо</th>
                             <th class="num" data-sort="picks" data-i18n="stats.col.builds">Построек</th>
+                            <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
+                            <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
+                            <th class="num" data-sort="avgPlace" data-i18n="stats.col.avgPlaceNorm">Ср. место</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <h3 id="stats-wonders-owned" data-i18n="stats.wondersOwned">Чудеса во владении</h3>
+            <p class="hint" data-i18n="stats.wondersOwnedHint">Все чудеса в городах цивилизации на финале (поле wonders): и построенные, и захваченные.</p>
+            <div class="stats-table-wrap">
+                <table class="stats-table" id="wonderOwnedStatsTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name" data-i18n="stats.col.wonder">Чудо</th>
+                            <th class="num" data-sort="picks" data-i18n="stats.col.owned">Владений</th>
                             <th class="num" data-sort="wins" data-i18n="stats.col.wins">Побед</th>
                             <th class="num" data-sort="winrate" data-i18n="stats.col.winrate">Винрейт</th>
                             <th class="num" data-sort="avgPlace" data-i18n="stats.col.avgPlaceNorm">Ср. место</th>
@@ -885,7 +907,7 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=dossier-2"></script>
+<script src="js/i18n.js?v=wonders-owned-1"></script>
 <script src="js/player-meta.js?v=dossier-1"></script>
 <script src="js/stats-charts.js?v=2"></script>
 <script src="js/gif-preview.js?v=1"></script>
@@ -3108,6 +3130,7 @@
         const policyIdeologyPairStats = new Map();
         const ideologyStats = new Map();
         const wonderBuiltStats = new Map();
+        const wonderOwnedStats = new Map();
         const pantheonStats = new Map();
         const founderBeliefStats = new Map();
         const followerBeliefStats = new Map();
@@ -3281,6 +3304,9 @@
                 for (const wonder of (built || [])) {
                     recordPick(wonderBuiltStats, wonder, won, placeScore, gameRef);
                 }
+                for (const wonder of (Array.isArray(s.wonders) ? s.wonders : [])) {
+                    recordPick(wonderOwnedStats, wonder, won, placeScore, gameRef);
+                }
                 if ((s.pantheon || '').trim()) {
                     recordPick(pantheonStats, s.pantheon, won, placeScore, gameRef);
                 }
@@ -3334,6 +3360,7 @@
             policyIdeologyPairRows: finalizePickRows(policyIdeologyPairStats),
             ideologyRows: finalizePickRows(ideologyStats),
             wonderBuiltRows: finalizePickRows(wonderBuiltStats),
+            wonderOwnedRows: finalizePickRows(wonderOwnedStats),
             pantheonRows: finalizePickRows(pantheonStats),
             founderBeliefRows: finalizePickRows(founderBeliefStats),
             followerBeliefRows: finalizePickRows(followerBeliefStats),
@@ -3403,6 +3430,7 @@
             policyIdeologyPairRows,
             ideologyRows,
             wonderBuiltRows,
+            wonderOwnedRows,
             pantheonRows,
             founderBeliefRows,
             followerBeliefRows,
@@ -3550,6 +3578,13 @@
         fillSortableTable(
             document.getElementById('wonderBuiltStatsTable'),
             wonderBuiltRows,
+            (r) => pickStatRowHtml(r, wonderLabel),
+            'picks',
+            'desc',
+        );
+        fillSortableTable(
+            document.getElementById('wonderOwnedStatsTable'),
+            wonderOwnedRows,
             (r) => pickStatRowHtml(r, wonderLabel),
             'picks',
             'desc',
