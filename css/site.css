@@ -2197,12 +2197,36 @@
         }
         .map-preview-cell { width: 56px; }
         .profile-hero {
-            border: 1px solid rgba(255, 215, 0, 0.28);
+            border: 1px solid rgba(255, 215, 0, 0.38);
             border-radius: 12px;
             padding: 18px 20px 14px;
             margin-bottom: 18px;
             position: relative;
             overflow: hidden;
+            box-shadow:
+                inset 0 0 0 1px rgba(201, 160, 0, 0.18),
+                inset 0 0 40px rgba(0, 0, 0, 0.35),
+                0 8px 24px rgba(0, 0, 0, 0.35);
+            /* dossier art comes from inline style; keep readable fallback */
+            background-color: #1a1420;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #f2efe6;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+        }
+        .profile-hero::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(255, 215, 0, 0.16);
+            border-radius: 8px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .profile-hero > * {
+            position: relative;
+            z-index: 1;
         }
         .profile-hero-top {
             display: flex;
