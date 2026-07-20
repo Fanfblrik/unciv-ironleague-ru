@@ -1,4 +1,4 @@
-        * {
+﻿        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -1591,13 +1591,14 @@
 
         .record-card-media {
             grid-column: 1;
-            grid-row: 1 / -1;
+            grid-row: 1 / 4;
             display: flex;
             flex-direction: column;
             align-items: center;
             align-self: stretch;
             width: 96px;
             min-height: 100%;
+            gap: 0;
         }
 
         .record-card-icon {
