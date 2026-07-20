@@ -208,8 +208,16 @@
           const caps = Array.isArray(row.conquered_capitals) ? row.conquered_capitals.length : 0;
           s.caps += caps;
           if (Number.isFinite(Number(row.military_deaths))) {
-            s.deathsKnownGames += 1;
-            s.deaths += Number(row.military_deaths);
+            const deathsVal = Number(row.military_deaths);
+            // Games 12–13 had corrupt tallies (thousands of “deaths”);
+            // skip absurd per-game values vs turn length.
+            const endedTurn = Number(game.endedOnTurn);
+            const turnCap = Number.isFinite(endedTurn) ? endedTurn * 3 : 400;
+            const cap = Math.max(250, turnCap);
+            if (deathsVal >= 0 && deathsVal <= cap) {
+              s.deathsKnownGames += 1;
+              s.deaths += deathsVal;
+            }
           }
           s.wondersBuilt += Array.isArray(row.wonders_built) ? row.wonders_built.length : 0;
           s.wondersOwned += Array.isArray(row.wonders) ? row.wonders.length : 0;

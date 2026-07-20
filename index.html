@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=site-polish-2">
+    <link rel="stylesheet" href="css/site.css?v=site-polish-4">
 
 </head>
 <body>
@@ -25,7 +25,7 @@
 <button type="button" class="back-to-top" id="backToTop" data-i18n="backTop">Наверх</button>
 <div class="container">
     <div class="site-brand" aria-label="Iron League" role="button" tabindex="0" data-go-view="home" title="Iron League">
-        IronLeague
+        Iron League
         <span class="site-brand-sub">Unciv</span>
     </div>
     <h1 id="pageTitle"><span class="page-title-icon" aria-hidden="true"><img src="img/icons/capital.svg" alt="" width="28" height="28"></span><span class="page-title-sep" aria-hidden="true"><img src="img/icons/rekmod-iron.svg" alt="" width="22" height="22"></span><span class="page-title-text">Главная</span></h1>
@@ -136,8 +136,10 @@
             </select>
         </div>
         <div class="filter-group">
-            <label data-i18n="filter.player">Поиск по игроку</label>
-            <input type="text" id="playerSearch" data-i18n-placeholder="filter.playerPh" placeholder="Введите никнейм...">
+            <label data-i18n="filter.player">Игрок</label>
+            <select id="playerFilter">
+                <option value="all" data-i18n="filter.playerAll">Все игроки</option>
+            </select>
         </div>
         <div class="filter-group">
             <label data-i18n="filter.sort">Сортировка</label>
@@ -294,7 +296,7 @@
 
         <div class="stats-section" id="stats-winner-nations" data-stats-group="nations">
             <h2 data-i18n="stats.winnerNations">Нации-победители</h2>
-            <p class="hint" data-i18n="stats.winnerNationsHint">Сколько раз нация выигрывала партию (поле winner), без teams/scrap.</p>
+            <p class="hint" data-i18n="stats.winnerNationsHint">Сколько раз нация побеждала (поле winner), без teams/scrap. Колонка «Тирлист» — среднее из тирлиста; «—» значит, что нации ещё нет в тирлисте.</p>
             <div class="stats-table-wrap">
                 <table class="stats-table" id="winnerNationsTable">
                     <thead>
@@ -880,12 +882,12 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=site-polish-2"></script>
+<script src="js/i18n.js?v=site-polish-5"></script>
 <script src="js/player-meta.js?v=1"></script>
 <script src="js/stats-charts.js?v=2"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
-<script src="js/achievements.js?v=veteran-1"></script>
+<script src="js/achievements.js?v=deaths-fix-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -1376,6 +1378,42 @@
     }
 
 
+    function canonicalizeMapName(name) {
+        if (window.IronLeagueI18n && IronLeagueI18n.canonicalizeMap) {
+            return IronLeagueI18n.canonicalizeMap(name);
+        }
+        return String(name || '').trim();
+    }
+
+    function populatePlayerFilter() {
+        const select = document.getElementById('playerFilter');
+        if (!select) return;
+        const prev = select.value;
+        const names = new Set();
+        for (const game of gamesData || []) {
+            for (const p of game.players || []) {
+                const n = String(p.name || '').trim();
+                if (n) names.add(n);
+            }
+        }
+        const sorted = [...names].sort((a, b) => a.localeCompare(b, localeTag()));
+        select.innerHTML = '';
+        const all = document.createElement('option');
+        all.value = 'all';
+        all.setAttribute('data-i18n', 'filter.playerAll');
+        all.textContent = tt('filter.playerAll');
+        select.appendChild(all);
+        for (const name of sorted) {
+            const opt = document.createElement('option');
+            opt.value = name;
+            opt.textContent = name;
+            select.appendChild(opt);
+        }
+        if ([...select.options].some((o) => o.value === prev)) {
+            select.value = prev;
+        }
+    }
+
     function populateExtraFilters() {
         const victorySelect = document.getElementById('victoryFilter');
         const mapSelect = document.getElementById('mapFilter');
@@ -1402,23 +1440,35 @@
         }
         if (mapSelect) {
             const prev = mapSelect.value;
-            const values = [...new Set(
-                gamesData.map((g) => String(g.map || '').trim()).filter(Boolean)
-            )].sort((a, b) => displayMapName(a).localeCompare(displayMapName(b), localeTag()));
+            const byCanon = new Map();
+            for (const g of gamesData || []) {
+                const raw = String(g.map || '').trim();
+                if (!raw) continue;
+                const canon = canonicalizeMapName(raw) || raw;
+                if (!byCanon.has(canon)) byCanon.set(canon, raw);
+            }
+            const values = [...byCanon.keys()].sort((a, b) =>
+                displayMapName(a).localeCompare(displayMapName(b), localeTag())
+            );
             mapSelect.innerHTML = '';
             const all = document.createElement('option');
             all.value = 'all';
             all.setAttribute('data-i18n', 'filter.mapAll');
             all.textContent = tt('filter.mapAll');
             mapSelect.appendChild(all);
-            for (const v of values) {
+            for (const canon of values) {
                 const opt = document.createElement('option');
-                opt.value = v;
-                opt.textContent = displayMapName(v) || v;
+                opt.value = canon;
+                opt.textContent = displayMapName(canon) || canon;
                 mapSelect.appendChild(opt);
             }
             if ([...mapSelect.options].some((o) => o.value === prev)) {
                 mapSelect.value = prev;
+            } else if (prev && prev !== 'all') {
+                const canonPrev = canonicalizeMapName(prev);
+                if ([...mapSelect.options].some((o) => o.value === canonPrev)) {
+                    mapSelect.value = canonPrev;
+                }
             }
         }
     }
@@ -1571,14 +1621,18 @@
         }
 
         if (summaryBody) {
+            const nationCell = (nationRu) => {
+                if (!nationRu || nationRu === '—') return '—';
+                return `<span class="nation-cell">${renderNationPortrait(nationRu, 'player-nation-mini')}${displayNationName(nationRu)}</span>`;
+            };
             const topPol = topCounted(row && row.firstPolicyCounts, 3)
                 .map(([k, v]) => `${displayPolicyName(k)} (${v})`).join(', ') || '—';
             const topWonders = topCounted(row && row.wonderCounts, 5)
-                .map(([k, v]) => `${k} (${v})`).join(', ') || '—';
+                .map(([k, v]) => `${wonderNameRu(k)} (${v})`).join(', ') || '—';
             const topNations = topCounted(row && row.nationCounts, 3)
-                .map(([k, v]) => `${displayNationName(k)} (${v})`).join(', ') || '—';
+                .map(([k, v]) => `${nationCell(k)} (${v})`).join(', ') || '—';
             summaryBody.innerHTML = row ? `
-                <tr><th>${tt('stats.col.topNation')}</th><td>${displayNationName(row.topNation) || '—'}</td></tr>
+                <tr><th>${tt('stats.col.topNation')}</th><td>${nationCell(row.topNation)}</td></tr>
                 <tr><th>${tt('profile.favNations')}</th><td>${topNations}</td></tr>
                 <tr><th>${tt('stats.col.topIdeology')}</th><td>${displayPolicyName(row.topIdeology) || '—'}</td></tr>
                 <tr><th>${tt('profile.favPolicies')}</th><td>${topPol}</td></tr>
@@ -1586,13 +1640,15 @@
                 <tr><th>${tt('profile.favWonders')}</th><td>${topWonders}</td></tr>
                 <tr><th>${tt('stats.col.wondersBuilt')}</th><td>${row.wondersBuilt}</td></tr>
                 <tr><th>${tt('stats.col.conquered')}</th><td>${row.conquered}</td></tr>
-                <tr><th>${tt('stats.col.units')}</th><td>${avgOrDash(row.sumUnits, row.nUnits)}</td></tr>
-                <tr><th>${tt('stats.col.cities')}</th><td>${avgOrDash(row.sumCities, row.nCities)}</td></tr>
-                <tr><th>${tt('stats.col.population')}</th><td>${avgOrDash(row.sumPopulation, row.nPopulation)}</td></tr>
-                <tr><th>${tt('stats.col.techs')}</th><td>${avgOrDash(row.sumTechs, row.nTechs)}</td></tr>
-                <tr><th>${tt('stats.col.science')}</th><td>${avgOrDash(row.sumScience, row.nScience)}</td></tr>
-                <tr><th>${tt('stats.col.strength')}</th><td>${avgOrDash(row.sumStrength, row.nStrength)}</td></tr>
+                <tr><td colspan="2" class="profile-avg-hint">${tt('profile.avgHint')}</td></tr>
+                <tr><th>${tt('profile.avgUnits')}</th><td>${avgOrDash(row.sumUnits, row.nUnits)}</td></tr>
+                <tr><th>${tt('profile.avgCities')}</th><td>${avgOrDash(row.sumCities, row.nCities)}</td></tr>
+                <tr><th>${tt('profile.avgPopulation')}</th><td>${avgOrDash(row.sumPopulation, row.nPopulation)}</td></tr>
+                <tr><th>${tt('profile.avgTechs')}</th><td>${avgOrDash(row.sumTechs, row.nTechs)}</td></tr>
+                <tr><th>${tt('profile.avgScience')}</th><td>${avgOrDash(row.sumScience, row.nScience)}</td></tr>
+                <tr><th>${tt('profile.avgStrength')}</th><td>${avgOrDash(row.sumStrength, row.nStrength)}</td></tr>
             ` : '';
+            hydrateNationPortraits(summaryBody);
         }
 
         if (chartsEl && window.IronLeagueCharts && row) {
@@ -2034,7 +2090,8 @@
             return;
         }
 
-        const searchQuery = document.getElementById('playerSearch').value.toLowerCase();
+        const searchQuery = document.getElementById('playerFilter')?.value || 'all';
+        const highlightName = searchQuery !== 'all' ? searchQuery : '';
 
         gamesToShow.forEach(game => {
             const card = document.createElement('div');
@@ -2042,7 +2099,8 @@
 
             const playersHtml = (Array.isArray(game.players) ? game.players : []).map(player => {
                 const isWinner = player.nation === game.winner;
-                const isHighlighted = searchQuery && player.name.toLowerCase().includes(searchQuery);
+                const isHighlighted = highlightName
+                    && String(player.name || '').trim() === highlightName;
 
                 return `
                     <div class="player-item ${isHighlighted ? 'highlighted' : ''}">
@@ -2157,7 +2215,7 @@
     // Фильтрация
     function filterGames() {
         const nationFilter = document.getElementById('nationFilter').value;
-        const playerSearch = document.getElementById('playerSearch').value.toLowerCase();
+        const playerFilter = document.getElementById('playerFilter')?.value || 'all';
         const sortFilter = document.getElementById('sortFilter').value;
         const relevanceEl = document.getElementById('relevanceFilter');
         const relevance = relevanceEl ? relevanceEl.value : 'hide';
@@ -2172,12 +2230,14 @@
             if (relevance === 'only' && !excluded) return false;
             if (nationFilter !== 'all' && !roster.some(p => p.nation === nationFilter))
                 return false;
-            if (playerSearch && !roster.some(p => (p.name || '').toLowerCase().includes(playerSearch)))
+            if (playerFilter !== 'all' && !roster.some(p => String(p.name || '').trim() === playerFilter))
                 return false;
             if (victoryFilter !== 'all' && String(game.victoryType || '') !== victoryFilter)
                 return false;
-            if (mapFilter !== 'all' && String(game.map || '').trim() !== mapFilter)
-                return false;
+            if (mapFilter !== 'all') {
+                const gameMap = canonicalizeMapName(game.map);
+                if (gameMap !== mapFilter) return false;
+            }
             return true;
         });
 
@@ -2220,6 +2280,7 @@
             });
 
             populateNationFilter();
+            populatePlayerFilter();
             populateExtraFilters();
             updateStats();
             filterGames();
@@ -2684,6 +2745,12 @@
             'The Netherlands': 'Нидерланды',
             Yugolslavia: 'Югославия',
             Yugoslavia: 'Югославия',
+            Chile: 'Чили',
+            Colombia: 'Колумбия',
+            Ottomans: 'Османы',
+            'The Ottomans': 'Османы',
+            Moors: 'Мавры',
+            'The Moors': 'Мавры',
         };
         return aliases[eng] || eng;
     }
@@ -2698,11 +2765,26 @@
         if (!tierlistData || !Array.isArray(tierlistData.entries)) return null;
         const ru = String(nationRu || '').trim();
         if (!ru) return null;
-        const eng = String(rusToEngNation(ru) || '').trim().toLowerCase();
+        const engRaw = String(rusToEngNation(ru) || '').trim();
+        const eng = engRaw.toLowerCase().replace(/^the\s+/, '');
+        const engAliases = {
+            yugoslavia: 'yugolslavia',
+            yugolslavia: 'yugolslavia',
+            aztecs: 'aztec',
+            ottomans: 'ottomans',
+            moors: 'moors',
+        };
+        const engKey = engAliases[eng] || eng;
         for (const e of tierlistData.entries) {
             const civ = String(e.civ || '').trim();
+            const civNorm = civ.toLowerCase().replace(/^the\s+/, '');
             const civRu = engToRusNation(civ);
-            if (civRu === ru || civ.toLowerCase() === eng || civ.toLowerCase() === ru.toLowerCase()) {
+            if (
+                civRu === ru
+                || civNorm === eng
+                || civNorm === engKey
+                || civ.toLowerCase() === ru.toLowerCase()
+            ) {
                 const avg = Number(e.avg);
                 return Number.isFinite(avg) ? avg : null;
             }
@@ -3244,7 +3326,7 @@
                 <td class="num">${n.wins}</td>
                 <td class="num">${n.picks}</td>
                 <td class="num">${n.winrate}%</td>
-                <td class="num">${n.tierAvg != null ? Number(n.tierAvg).toFixed(2) : '—'}</td>
+                <td class="num" title="${n.tierAvg != null ? '' : tt('stats.tierMissing')}">${n.tierAvg != null ? Number(n.tierAvg).toFixed(2) : '—'}</td>
             </tr>`,
             'wins',
             'desc',
@@ -3406,7 +3488,7 @@
         {
             const mapCounts = new Map();
             for (const game of rankedGamesOnly(gamesData)) {
-                const m = String(game.map || '').trim();
+                const m = canonicalizeMapName(game.map);
                 if (!m) continue;
                 mapCounts.set(m, (mapCounts.get(m) || 0) + 1);
             }
@@ -3536,7 +3618,7 @@
 
     // События фильтров
     document.getElementById('nationFilter').addEventListener('change', filterGames);
-    document.getElementById('playerSearch').addEventListener('input', filterGames);
+    document.getElementById('playerFilter')?.addEventListener('change', filterGames);
     document.getElementById('sortFilter').addEventListener('change', filterGames);
     document.getElementById('relevanceFilter')?.addEventListener('change', filterGames);
     document.getElementById('victoryFilter')?.addEventListener('change', filterGames);
@@ -3565,6 +3647,7 @@
             const active = document.querySelector('.site-nav-btn.active');
             applyViewMeta(active?.dataset.view || 'home');
             populateNationFilter();
+            populatePlayerFilter();
             populateExtraFilters();
             filterGames();
             renderStatsTables();

@@ -168,6 +168,32 @@
     Archipelago: 'Архипелаги',
   };
 
+  /**
+   * Canonical English map type for dedupe / filters.
+   * Канонический EN-тип карты для дедупа и фильтров.
+   */
+  function canonicalizeMap(name) {
+    const raw = String(name || '').trim();
+    if (!raw) return '';
+    const lower = raw.toLowerCase();
+    for (const [en, ru] of Object.entries(MAP_RU)) {
+      if (en.toLowerCase() === lower || String(ru).toLowerCase() === lower) return en;
+    }
+    for (const [ru, en] of Object.entries(MAP_EN)) {
+      if (String(ru).toLowerCase() === lower || String(en).toLowerCase() === lower) return en;
+    }
+    return raw;
+  }
+
+  function translateMap(name) {
+    if (name == null || name === '') return name;
+    const raw = String(name).trim();
+    if (!raw) return name;
+    const canon = canonicalizeMap(raw) || raw;
+    if (lang === 'en') return canon;
+    return MAP_RU[canon] || canon;
+  }
+
   const I18N = {
     ru: {
 
@@ -232,7 +258,8 @@
       'footer.default': '📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF',
       'filter.nation': 'Фильтр по нации',
       'filter.nationAll': 'Все нации',
-      'filter.player': 'Поиск по игроку',
+      'filter.player': 'Игрок',
+      'filter.playerAll': 'Все игроки',
       'filter.playerPh': 'Введите никнейм...',
       'filter.sort': 'Сортировка',
       'filter.newest': 'Сначала новые',
@@ -252,7 +279,7 @@
       'stats.tab.religion': 'Религия',
       'stats.tab.maps': 'Карты',
       'stats.winnerNations': 'Нации-победители',
-      'stats.winnerNationsHint': 'Сколько раз нация выигрывала партию (поле winner), без teams/scrap.',
+      'stats.winnerNationsHint': 'Сколько раз нация побеждала (поле winner), без teams/scrap. Колонка «Тирлист» — среднее из тирлиста; «—» значит, что нации ещё нет в тирлисте.',
       'stats.maps': 'Карты',
       'stats.mapsHint': 'Распределение партий по типу карты. Размер карты в архиве пока не хранится отдельно.',
       'stats.col.map': 'Карта',
@@ -277,6 +304,14 @@
       'profile.ratingElo': 'Elo (комбо)',
       'profile.ratingLobbyWin': 'Очки лобби (победа)',
       'profile.ratingLobbyAvg': 'Очки лобби (Avg)',
+      'profile.avgHint': 'Ниже — средние показатели по финалам учтённых игр.',
+      'profile.avgUnits': 'Юниты (среднее)',
+      'profile.avgCities': 'Города (среднее)',
+      'profile.avgPopulation': 'Население (среднее)',
+      'profile.avgTechs': 'Технологии (среднее)',
+      'profile.avgScience': 'Наука (среднее)',
+      'profile.avgStrength': 'Сила (среднее)',
+      'stats.tierMissing': 'нет в тирлисте',
       'title.profile': 'Профиль',
       'footer.profile': 'Профиль игрока',
       'chart.pie': 'Круговая',
@@ -545,8 +580,8 @@
       'records.item.most_wars_declared.flavor': 'Дипломатия по-спартански',
       'records.item.most_wars_declared.body':
         '{player} объявил больше всего войн живым игрокам: {value} (по данным финала).',
-      'records.item.most_wars_received.title': 'Магнит для объявлений',
-      'records.item.most_wars_received.flavor': 'Магнит для объявлений',
+      'records.item.most_wars_received.title': 'Не нравится мне твоя рожа',
+      'records.item.most_wars_received.flavor': 'Я вам что? А?',
       'records.item.most_wars_received.body':
         'На {player} чаще всего объявляли войну: {value} раз(а).',
       'records.item.most_military_deaths.title': 'Мясорубка',
@@ -556,7 +591,7 @@
       'records.item.fewest_military_deaths.title': 'Бережливый полководец',
       'records.item.fewest_military_deaths.flavor': 'Юниты на вес золота',
       'records.item.fewest_military_deaths.body':
-        'У {player} меньше всего боевых потерь среди игроков с ≥5 играми с данными: {value} (за {games} игр).',
+        '{player} потерял в бою меньше всего юнитов среди игроков с данными минимум по 5 партиям: {value} потерь за {games} игр.',
       'records.item.piety_first_count.title': 'Свидетель Иегов',
       'records.item.piety_first_count.flavor': 'Amen.',
       'records.item.piety_first_count.body':
@@ -711,7 +746,8 @@
       'footer.default': '📁 Replay storage | Click “Watch replay” to load a GIF',
       'filter.nation': 'Filter by nation',
       'filter.nationAll': 'All nations',
-      'filter.player': 'Search player',
+      'filter.player': 'Player',
+      'filter.playerAll': 'All players',
       'filter.playerPh': 'Enter nickname...',
       'filter.sort': 'Sort',
       'filter.newest': 'Newest first',
@@ -731,7 +767,7 @@
       'stats.tab.religion': 'Religion',
       'stats.tab.maps': 'Maps',
       'stats.winnerNations': 'Winning nations',
-      'stats.winnerNationsHint': 'How often a nation won (winner field), excluding teams/scrap.',
+      'stats.winnerNationsHint': 'How often a nation won (winner field), excluding teams/scrap. “Tier list” is the sheet average; “—” means the nation is not in the tier list yet.',
       'stats.maps': 'Maps',
       'stats.mapsHint': 'Games by map type. Map size is not stored separately in the archive yet.',
       'stats.col.map': 'Map',
@@ -756,6 +792,14 @@
       'profile.ratingElo': 'Elo (combined)',
       'profile.ratingLobbyWin': 'Lobby points (win)',
       'profile.ratingLobbyAvg': 'Lobby points (Avg)',
+      'profile.avgHint': 'Below: averages from finales of ranked games.',
+      'profile.avgUnits': 'Units (avg)',
+      'profile.avgCities': 'Cities (avg)',
+      'profile.avgPopulation': 'Population (avg)',
+      'profile.avgTechs': 'Techs (avg)',
+      'profile.avgScience': 'Science (avg)',
+      'profile.avgStrength': 'Strength (avg)',
+      'stats.tierMissing': 'not in tier list',
       'title.profile': 'Profile',
       'footer.profile': 'Player profile',
       'chart.pie': 'Pie',
@@ -1024,8 +1068,8 @@
       'records.item.most_wars_declared.flavor': 'Spartan diplomacy',
       'records.item.most_wars_declared.body':
         '{player} declared the most wars on living players: {value} (finale data).',
-      'records.item.most_wars_received.title': 'Declaration magnet',
-      'records.item.most_wars_received.flavor': 'Declaration magnet',
+      'records.item.most_wars_received.title': "I don't like your face",
+      'records.item.most_wars_received.flavor': 'What am I to you?',
       'records.item.most_wars_received.body':
         '{player} had the most wars declared on them: {value}.',
       'records.item.most_military_deaths.title': 'Meat grinder',
@@ -1035,7 +1079,7 @@
       'records.item.fewest_military_deaths.title': 'Careful commander',
       'records.item.fewest_military_deaths.flavor': 'Units are precious',
       'records.item.fewest_military_deaths.body':
-        '{player} has the fewest combat losses among players with ≥5 games of death data: {value} (across {games} games).',
+        '{player} lost the fewest combat units among players with data in at least 5 games: {value} losses over {games} games.',
       'records.item.piety_first_count.title': "Jehovah's Witness",
       'records.item.piety_first_count.flavor': 'Amen.',
       'records.item.piety_first_count.body':
@@ -1168,20 +1212,6 @@
     return SPACESHIP_RU[name] || name;
   }
 
-  function translateMap(name) {
-    if (name == null || name === '') return name;
-    const raw = String(name).trim();
-    if (!raw) return name;
-    if (lang === 'en') {
-      if (MAP_EN[raw]) return MAP_EN[raw];
-      const hit = Object.keys(MAP_EN).find((k) => k.toLowerCase() === raw.toLowerCase());
-      return hit ? MAP_EN[hit] : raw;
-    }
-    if (MAP_RU[raw]) return MAP_RU[raw];
-    const key = Object.keys(MAP_RU).find((k) => k.toLowerCase() === raw.toLowerCase());
-    return key ? MAP_RU[key] : raw;
-  }
-
   function setLang(next) {
     lang = next === 'en' ? 'en' : 'ru';
     try {
@@ -1226,6 +1256,7 @@
     translateTerm,
     translateSpaceship,
     translateMap,
+    canonicalizeMap,
     TERM_EN,
     POLICY_EN: TERM_EN,
   };
