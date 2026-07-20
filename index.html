@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=dossier-2">
+    <link rel="stylesheet" href="css/site.css?v=dossier-3">
 
 </head>
 <body>
@@ -1378,7 +1378,7 @@
 
     function renderNationPortrait(russianName, extraClass) {
         let size = 24;
-        if (extraClass && extraClass.includes('profile-emblem-portrait')) size = 112;
+        if (extraClass && extraClass.includes('profile-emblem-portrait')) size = 100;
         else if (extraClass && extraClass.includes('player-nation-mini')) size = 20;
         const cls = ['nation-portrait', extraClass].filter(Boolean).join(' ');
         const safe = String(russianName || '').replace(/"/g, '&quot;');
@@ -2776,6 +2776,7 @@
         document.getElementById('viewArchive').classList.toggle('active', next === 'archive');
         document.getElementById('viewStats').classList.toggle('active', next === 'stats');
         document.getElementById('viewProfile')?.classList.toggle('active', next === 'profile');
+        document.body.classList.toggle('profile-view-open', next === 'profile');
         document.getElementById('viewRating')?.classList.toggle('active', next === 'rating');
         document.getElementById('viewTierlist').classList.toggle('active', next === 'tierlist');
         document.getElementById('viewRecords')?.classList.toggle('active', next === 'records');
@@ -2941,7 +2942,7 @@
                 </div>
                 ${ideoBadge ? `<img class="profile-emblem-badge profile-emblem-badge--ideo" src="${ideoBadge}" alt="" title="${(displayPolicyName(ideology) || '').replace(/"/g, '&quot;')}" width="40" height="40" loading="lazy" onerror="this.style.display='none'">` : ''}
                 ${polBadge ? `<img class="profile-emblem-badge profile-emblem-badge--policy" src="${polBadge}" alt="" title="${(displayPolicyName(topPolicy) || '').replace(/"/g, '&quot;')}" width="40" height="40" loading="lazy" onerror="this.style.display='none'">` : ''}
-                ${wonderSrc ? `<span class="profile-emblem-badge profile-emblem-badge--wonder wonder-icon-wrap wonder-icon-wrap--mini"><img class="wonder-icon" src="${wonderSrc}" alt="" title="${String(wonderRu).replace(/"/g, '&quot;')}" loading="lazy" onerror="this.closest('.profile-emblem-badge--wonder').style.display='none'"></span>` : ''}
+                ${wonderSrc ? `<span class="profile-emblem-badge profile-emblem-badge--wonder"><img class="wonder-icon" src="${wonderSrc}" alt="" title="${String(wonderRu).replace(/"/g, '&quot;')}" loading="lazy" onerror="this.closest('.profile-emblem-badge--wonder').style.display='none'"></span>` : ''}
             </div>
             <div class="profile-emblem-caption">
                 <strong>${nationLabel}</strong>
