@@ -546,10 +546,10 @@
       'records.item.most_wins.flavor': 'Пришёл. Увидел. Победил.',
       'records.item.most_wins.body':
         '{player} лидирует по числу побед: {value} (из {games} учтённых игр).',
-      'records.item.best_winrate.title': 'Идеальный винрейт',
+      'records.item.best_winrate.title': 'Наибольший винрейт',
       'records.item.best_winrate.flavor': 'Остановите его кто-нибудь',
       'records.item.best_winrate.body':
-        '{player} выиграл все учтённые игры: {value}.',
+        '{player} лидирует по винрейту: {value} ({wins}/{games}).',
       'records.item.longest_win_streak.title': 'Стрик побед',
       'records.item.longest_win_streak.flavor': 'And again. And again.',
       'records.item.longest_win_streak.body':
@@ -566,6 +566,10 @@
       'records.item.slowest_win.flavor': 'Дорогу осилит идущий',
       'records.item.slowest_win.body':
         '{player} дожал Game {game} аж на ходу {value}.',
+      'records.item.most_achievements.title': 'Самый титулованный',
+      'records.item.most_achievements.flavor': 'Чей-чей генерал?',
+      'records.item.most_achievements.body':
+        '{player} держит больше всего рекордов лиги сразу: {value}. Орденская планка не выдерживает.',
       'records.item.wins_all_with_caps.title': 'Победы только с трофеями',
       'records.item.wins_all_with_caps.flavor': 'Без столиц не бывает',
       'records.item.wins_all_with_caps.body':
@@ -1036,10 +1040,10 @@
       'records.item.most_wins.flavor': 'Veni. Vidi. Vici.',
       'records.item.most_wins.body':
         '{player} leads in wins: {value} (across {games} counted games).',
-      'records.item.best_winrate.title': 'Perfect win rate',
+      'records.item.best_winrate.title': 'Highest win rate',
       'records.item.best_winrate.flavor': 'Somebody stop him',
       'records.item.best_winrate.body':
-        '{player} won every counted game: {value}.',
+        '{player} leads in win rate: {value} ({wins}/{games}).',
       'records.item.longest_win_streak.title': 'Win streak',
       'records.item.longest_win_streak.flavor': 'And again. And again.',
       'records.item.longest_win_streak.body':
@@ -1056,6 +1060,10 @@
       'records.item.slowest_win.flavor': 'The path belongs to those who walk',
       'records.item.slowest_win.body':
         '{player} finally closed Game {game} on turn {value}.',
+      'records.item.most_achievements.title': 'Most decorated',
+      'records.item.most_achievements.flavor': 'Whose general is this?',
+      'records.item.most_achievements.body':
+        '{player} holds the most Iron League records at once: {value}. The medal rack is running out of space.',
       'records.item.wins_all_with_caps.title': 'Trophy wins only',
       'records.item.wins_all_with_caps.flavor': 'No crown without capitals',
       'records.item.wins_all_with_caps.body':

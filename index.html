@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=site-polish-10">
+    <link rel="stylesheet" href="css/site.css?v=site-polish-11">
 
 </head>
 <body>
@@ -882,12 +882,12 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=site-polish-8"></script>
+<script src="js/i18n.js?v=most-ach-1"></script>
 <script src="js/player-meta.js?v=1"></script>
 <script src="js/stats-charts.js?v=2"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
-<script src="js/achievements.js?v=deaths-fix-1"></script>
+<script src="js/achievements.js?v=most-ach-1"></script>
 <script>
     // Конфигурация
     function tt(key, vars) {
@@ -2573,6 +2573,7 @@
             'longest_play_streak',
             'fastest_win',
             'slowest_win',
+            'most_achievements',
         ],
         war: [
             'wins_all_with_caps',
@@ -2619,6 +2620,7 @@
             player: item.player,
             value: item.value,
             games: item.games != null ? String(item.games) : '',
+            wins: item.wins != null ? String(item.wins) : '',
             game: item.gameNumber != null ? String(item.gameNumber) : '',
         });
         if (body === `records.item.${item.id}.body`) {
@@ -2627,14 +2629,18 @@
         const iconSrc = recordIconSrc(item.id);
         const iconFallback = `img/records/${item.id}.svg`;
         return `<article class="record-card" id="record-${item.id}">
-            <div class="record-card-media">
-                <img class="record-card-icon" src="${iconSrc}" alt="" width="80" height="80" loading="lazy"
-                     onerror="this.onerror=null;this.src='${iconFallback}'">
-                <p class="record-card-value">${item.value}</p>
+            <div class="record-card-top">
+                <div class="record-card-media">
+                    <img class="record-card-icon" src="${iconSrc}" alt="" width="80" height="80" loading="lazy"
+                         onerror="this.onerror=null;this.src='${iconFallback}'">
+                    <p class="record-card-value">${item.value}</p>
+                </div>
+                <div class="record-card-meta">
+                    <p class="record-card-flavor">${flavor}</p>
+                    <h3 class="record-card-title">${title === `records.item.${item.id}.title` ? item.id : title}</h3>
+                    <p class="record-card-player">${item.player}</p>
+                </div>
             </div>
-            <p class="record-card-flavor">${flavor}</p>
-            <h3 class="record-card-title">${title === `records.item.${item.id}.title` ? item.id : title}</h3>
-            <p class="record-card-player">${item.player}</p>
             <p class="record-card-body">${body}</p>
         </article>`;
     }

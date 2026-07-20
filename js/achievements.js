@@ -333,26 +333,19 @@
       push('most_wins', mostWins, String(mostWins.stat.wins), { games: mostWins.stat.played });
     }
 
-    let winrateHit = pickMax(
+    const winrateHit = pickMax(
       stats,
-      (s) => s.wins,
-      (s) => s.played >= 3 && s.wins === s.played,
+      // Prefer higher winrate; on a tie, prefer more games.
+      // При равном винрейте предпочитаем больше игр.
+      (s) => s.wins / s.played + s.played * 1e-9,
+      (s) => s.played >= 3 && s.wins > 0,
     );
-    if (!winrateHit) {
-      winrateHit = pickMax(
-        stats,
-        (s) => s.wins / s.played,
-        (s) => s.played >= 3 && s.wins > 0,
-      );
-    }
     if (winrateHit) {
       const pct = Math.round((winrateHit.stat.wins / winrateHit.stat.played) * 1000) / 10;
-      push(
-        'best_winrate',
-        winrateHit,
-        `${winrateHit.stat.wins}/${winrateHit.stat.played} (${pct}%)`,
-        { perfect: winrateHit.stat.wins === winrateHit.stat.played },
-      );
+      push('best_winrate', winrateHit, `${pct}%`, {
+        games: winrateHit.stat.played,
+        wins: winrateHit.stat.wins,
+      });
     }
 
     const winStreak = pickMax(stats, (s) => s.winStreak, (s) => s.winStreak >= 2);
@@ -595,6 +588,29 @@
       push('max_techs_finale', maxTechs, String(maxTechs.stat.maxTechs), {
         gameNumber: maxTechs.stat.maxTechsGame,
       });
+    }
+
+    // Meta-record: most other records held (computed after the rest).
+    // Мета-рекорд: больше всего остальных рекордов (считаем после остальных).
+    const achCounts = new Map();
+    for (const item of out) {
+      const name = item && item.player;
+      if (!name) continue;
+      achCounts.set(name, (achCounts.get(name) || 0) + 1);
+    }
+    let mostTitled = null;
+    let mostTitledCount = 0;
+    for (const [player, count] of achCounts) {
+      if (
+        count > mostTitledCount
+        || (count === mostTitledCount && mostTitled && player.localeCompare(mostTitled.player) < 0)
+      ) {
+        mostTitledCount = count;
+        mostTitled = { player, stat: { count } };
+      }
+    }
+    if (mostTitled && mostTitledCount >= 2) {
+      push('most_achievements', mostTitled, String(mostTitledCount));
     }
 
     return out;
