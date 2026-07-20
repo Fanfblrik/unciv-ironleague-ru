@@ -590,6 +590,29 @@
       });
     }
 
+    // Meta-record: most other records held (computed after the rest).
+    // Мета-рекорд: больше всего остальных рекордов (считаем после остальных).
+    const achCounts = new Map();
+    for (const item of out) {
+      const name = item && item.player;
+      if (!name) continue;
+      achCounts.set(name, (achCounts.get(name) || 0) + 1);
+    }
+    let mostTitled = null;
+    let mostTitledCount = 0;
+    for (const [player, count] of achCounts) {
+      if (
+        count > mostTitledCount
+        || (count === mostTitledCount && mostTitled && player.localeCompare(mostTitled.player) < 0)
+      ) {
+        mostTitledCount = count;
+        mostTitled = { player, stat: { count } };
+      }
+    }
+    if (mostTitled && mostTitledCount >= 2) {
+      push('most_achievements', mostTitled, String(mostTitledCount));
+    }
+
     return out;
   }
 

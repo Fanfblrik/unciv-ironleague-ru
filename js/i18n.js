@@ -566,6 +566,10 @@
       'records.item.slowest_win.flavor': 'Дорогу осилит идущий',
       'records.item.slowest_win.body':
         '{player} дожал Game {game} аж на ходу {value}.',
+      'records.item.most_achievements.title': 'Самый титулованный',
+      'records.item.most_achievements.flavor': 'Чей-чей генерал?',
+      'records.item.most_achievements.body':
+        '{player} держит больше всего рекордов лиги сразу: {value}. Орденская планка не выдерживает.',
       'records.item.wins_all_with_caps.title': 'Победы только с трофеями',
       'records.item.wins_all_with_caps.flavor': 'Без столиц не бывает',
       'records.item.wins_all_with_caps.body':
@@ -1056,6 +1060,10 @@
       'records.item.slowest_win.flavor': 'The path belongs to those who walk',
       'records.item.slowest_win.body':
         '{player} finally closed Game {game} on turn {value}.',
+      'records.item.most_achievements.title': 'Most decorated',
+      'records.item.most_achievements.flavor': 'Whose general is this?',
+      'records.item.most_achievements.body':
+        '{player} holds the most Iron League records at once: {value}. The medal rack is running out of space.',
       'records.item.wins_all_with_caps.title': 'Trophy wins only',
       'records.item.wins_all_with_caps.flavor': 'No crown without capitals',
       'records.item.wins_all_with_caps.body':
