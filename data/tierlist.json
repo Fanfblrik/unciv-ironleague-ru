@@ -48,6 +48,36 @@
       "note": "Community poll (10 votes): 5★×1, 4★×4, 3★×5"
     },
     {
+      "civ": "Gaul",
+      "ratings": {
+        "Community": 3,
+        "Click": null,
+        "Sharpe": null
+      },
+      "avg": 2.89,
+      "note": "Community poll (9): 3★×8, 2★×1"
+    },
+    {
+      "civ": "Georgia",
+      "ratings": {
+        "Community": 3,
+        "Click": null,
+        "Sharpe": null
+      },
+      "avg": 3.3,
+      "note": "Community poll (10): 5★×1, 4★×2, 3★×6, 2★×1"
+    },
+    {
+      "civ": "Nabataea",
+      "ratings": {
+        "Community": 5,
+        "Click": null,
+        "Sharpe": null
+      },
+      "avg": 4.18,
+      "note": "Community poll (11): 5★×5, 4★×3, 3★×3"
+    },
+    {
       "civ": "Philippines",
       "ratings": {
         "Community": 5,
