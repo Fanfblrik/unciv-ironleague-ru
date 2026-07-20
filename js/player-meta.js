@@ -55,8 +55,8 @@
   }
 
   /**
-   * Deterministic CSS background for a player profile card.
-   * Детерминированный CSS-фон карточки профиля.
+   * Deterministic CSS background for a player profile card (Civ5 dossier base + tint).
+   * Детерминированный CSS-фон карточки профиля (база «личное дело» Civ5 + оттенок).
    */
   function profileBackgroundStyle(name) {
     const h = hashName(name);
@@ -65,9 +65,10 @@
     const x = 20 + (h % 50);
     const y = 15 + ((h >> 3) % 55);
     return `background-image:
-      radial-gradient(ellipse 70% 55% at ${x}% ${y}%, ${pal[1]}aa 0%, transparent 55%),
-      radial-gradient(ellipse 50% 40% at ${100 - x}% ${100 - y}%, ${pal[2]}99 0%, transparent 50%),
-      linear-gradient(${angle}deg, ${pal[0]}, #0c0c14 70%);`;
+      radial-gradient(ellipse 70% 55% at ${x}% ${y}%, ${pal[1]}66 0%, transparent 55%),
+      radial-gradient(ellipse 50% 40% at ${100 - x}% ${100 - y}%, ${pal[2]}55 0%, transparent 50%),
+      linear-gradient(${angle}deg, rgba(12,10,18,0.72), rgba(8,8,14,0.78) 70%),
+      url('img/profiles/dossier-bg.jpg');`;
   }
 
   /**

@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css?v=site-polish-11">
+    <link rel="stylesheet" href="css/site.css?v=dossier-2">
 
 </head>
 <body>
@@ -202,10 +202,13 @@
         </div>
         <div class="stats-section">
             <h3 data-i18n="profile.summary">Сводка</h3>
-            <div class="stats-table-wrap">
-                <table class="stats-table" id="profileSummaryTable">
-                    <tbody></tbody>
-                </table>
+            <div class="profile-summary-layout">
+                <div class="stats-table-wrap profile-summary-table-wrap">
+                    <table class="stats-table" id="profileSummaryTable">
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <aside class="profile-emblem" id="profileEmblem" hidden></aside>
             </div>
             <div id="profileCharts" class="profile-charts"></div>
         </div>
@@ -882,8 +885,8 @@
     <p data-i18n="footer.default">📁 Хранилище реплеев | Нажмите на кнопку «Смотреть реплей», чтобы загрузить GIF</p>
 </footer>
 
-<script src="js/i18n.js?v=most-ach-1"></script>
-<script src="js/player-meta.js?v=1"></script>
+<script src="js/i18n.js?v=dossier-2"></script>
+<script src="js/player-meta.js?v=dossier-1"></script>
 <script src="js/stats-charts.js?v=2"></script>
 <script src="js/gif-preview.js?v=1"></script>
 <script src="js/rating.js?v=lobby-opp-1"></script>
@@ -1352,7 +1355,9 @@
     }
 
     function renderNationPortrait(russianName, extraClass) {
-        const size = extraClass && extraClass.includes('player-nation-mini') ? 20 : 24;
+        let size = 24;
+        if (extraClass && extraClass.includes('profile-emblem-portrait')) size = 112;
+        else if (extraClass && extraClass.includes('player-nation-mini')) size = 20;
         const cls = ['nation-portrait', extraClass].filter(Boolean).join(' ');
         const safe = String(russianName || '').replace(/"/g, '&quot;');
         const shown = String(displayNationName(russianName) || russianName || '').replace(/"/g, '&quot;');
@@ -1646,9 +1651,13 @@
                         </div>`;
                     }).join('')
                     : `<p class="hint">${tt('profile.noAchievements')}</p>`;
+                renderProfileEmblem(row, owned.length);
             } catch (e) {
                 achEl.innerHTML = '';
+                renderProfileEmblem(row, 0);
             }
+        } else {
+            renderProfileEmblem(row, 0);
         }
 
         if (summaryBody) {
@@ -2853,6 +2862,72 @@
             return IronLeagueI18n.translatePolicy(name);
         }
         return name;
+    }
+
+    /** Map first policy / ideology name → record badge asset id. */
+    function profileTraitBadgeId(raw) {
+        const s = String(raw || '').trim().toLowerCase();
+        if (!s || s === '—') return '';
+        if (s.includes('tradition') || s.includes('традиц')) return 'tradition_first_count';
+        if (s.includes('liberty') || s.includes('воля')) return 'liberty_first_count';
+        if (s.includes('honor') || s.includes('honour') || s.includes('честь')) return 'honor_first_count';
+        if (s.includes('piety') || s.includes('набож')) return 'piety_first_count';
+        if (s.includes('order') || s.includes('порядок')) return 'ideology_order_count';
+        if (s.includes('autocracy') || s.includes('автократ') || s.includes('самодерж')) {
+            return 'ideology_autocracy_count';
+        }
+        if (s.includes('freedom') || s.includes('свобод')) return 'ideology_freedom_count';
+        return '';
+    }
+
+    function profileBadgeSrc(id) {
+        if (!id) return '';
+        return `img/records/${id}.png`;
+    }
+
+    /**
+     * Dossier emblem: top nation portrait + ideology/policy/wonder badges + ach count.
+     * Эмблема «личного дела»: портрет частой нации + бейджи + число ачивок.
+     */
+    function renderProfileEmblem(row, achCount) {
+        const el = document.getElementById('profileEmblem');
+        if (!el) return;
+        if (!row || !row.topNation || row.topNation === '—') {
+            el.hidden = true;
+            el.innerHTML = '';
+            return;
+        }
+        const nation = row.topNation;
+        const nationLabel = displayNationName(nation) || nation;
+        const topPolicy = (topCounted(row.firstPolicyCounts, 1)[0] || [])[0] || '';
+        const ideology = row.topIdeology || '';
+        const topWonder = (topCounted(row.wonderCounts, 1)[0] || [])[0] || '';
+        const ideoBadge = profileBadgeSrc(profileTraitBadgeId(ideology));
+        const polBadge = profileBadgeSrc(profileTraitBadgeId(topPolicy));
+        const wonderSrc = topWonder ? wonderIconUrl(topWonder) : '';
+        const wonderRu = topWonder ? wonderNameRu(topWonder) : '';
+        const subBits = [
+            ideology ? displayPolicyName(ideology) : '',
+            topPolicy ? displayPolicyName(topPolicy) : '',
+        ].filter(Boolean);
+        const ach = Number(achCount) || 0;
+        el.hidden = false;
+        el.innerHTML = `
+            <div class="profile-emblem-plate" title="${nationLabel.replace(/"/g, '&quot;')}">
+                <div class="profile-emblem-nation">
+                    ${renderNationPortrait(nation, 'profile-emblem-portrait')}
+                </div>
+                ${ideoBadge ? `<img class="profile-emblem-badge profile-emblem-badge--ideo" src="${ideoBadge}" alt="" title="${(displayPolicyName(ideology) || '').replace(/"/g, '&quot;')}" width="40" height="40" loading="lazy" onerror="this.style.display='none'">` : ''}
+                ${polBadge ? `<img class="profile-emblem-badge profile-emblem-badge--policy" src="${polBadge}" alt="" title="${(displayPolicyName(topPolicy) || '').replace(/"/g, '&quot;')}" width="40" height="40" loading="lazy" onerror="this.style.display='none'">` : ''}
+                ${wonderSrc ? `<span class="profile-emblem-badge profile-emblem-badge--wonder wonder-icon-wrap wonder-icon-wrap--mini"><img class="wonder-icon" src="${wonderSrc}" alt="" title="${String(wonderRu).replace(/"/g, '&quot;')}" loading="lazy" onerror="this.closest('.profile-emblem-badge--wonder').style.display='none'"></span>` : ''}
+            </div>
+            <div class="profile-emblem-caption">
+                <strong>${nationLabel}</strong>
+                ${subBits.length ? `<span>${subBits.join(' · ')}</span>` : ''}
+                ${ach > 0 ? `<span class="profile-emblem-ach">${tt('profile.emblemAchievements', { n: String(ach) })}</span>` : ''}
+            </div>
+        `;
+        hydrateNationPortraits(el);
     }
 
     function displaySpaceshipPart(name) {
