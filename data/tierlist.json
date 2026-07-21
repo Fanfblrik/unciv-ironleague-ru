@@ -88,6 +88,16 @@
       "note": "Community poll (11): 5★×5, 4★×3, 3★×3"
     },
     {
+      "civ": "Aksum",
+      "ratings": {
+        "Community": 1,
+        "Click": null,
+        "Sharpe": null
+      },
+      "avg": 1.63,
+      "note": "Community poll (8): 3★×2, 2★×1, 1★×5"
+    },
+    {
       "civ": "Philippines",
       "ratings": {
         "Community": 5,
