@@ -12582,6 +12582,439 @@
         }
       },
       "gif": "Replays/Game_27.gif"
+    },
+    {
+      "id": 28,
+      "version": "4.20.19 (Build 1234)",
+      "number": "Game 28",
+      "players": [
+        {
+          "name": "Laste2187",
+          "nation": "Шошоны"
+        },
+        {
+          "name": "Click4x",
+          "nation": "Аравия"
+        },
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Марокко"
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Персия"
+        },
+        {
+          "name": "den_stu",
+          "nation": "Бельгия"
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Инки"
+        }
+      ],
+      "winner": "Марокко",
+      "map": "Pangaea",
+      "playerCount": 6,
+      "endedOnTurn": "129",
+      "victoryType": "CC",
+      "survivors": [
+        {
+          "name": "Bahahanchiklkm",
+          "nation": "Марокко",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Бельгия",
+              "city": "Brussels"
+            },
+            {
+              "nation": "Персия",
+              "city": "Persepolis"
+            }
+          ],
+          "ideology": "Автократия",
+          "wonders": [
+            "Himeji Castle",
+            "Colossus",
+            "Notre Dame",
+            "The Oracle",
+            "The Great Lighthouse",
+            "Great Wall"
+          ],
+          "wonders_built": [
+            "Himeji Castle",
+            "Colossus",
+            "Notre Dame"
+          ],
+          "techs": 49,
+          "policies": 23,
+          "policy_branches": [
+            "Традиция",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Современность",
+          "score": 999,
+          "units": 62,
+          "strength": 25640,
+          "science": 495,
+          "cities": 16,
+          "population": 218,
+          "religion": "Confucianism",
+          "religion_state": "Усилена",
+          "pantheon": "Sun God",
+          "founder_beliefs": [
+            "Mithraea",
+            "Hajj"
+          ],
+          "follower_beliefs": [
+            "Guruship",
+            "Liturgical Drama"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 109,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 5,
+          "wars_received": 0,
+          "military_deaths": 35
+        },
+        {
+          "name": "O8DD_ff",
+          "nation": "Инки",
+          "alive": true,
+          "has_capital": true,
+          "capital_taken_by": "",
+          "conquered_capitals": [
+            {
+              "nation": "Аравия",
+              "city": "Mecca"
+            }
+          ],
+          "ideology": "Автократия",
+          "wonders": [
+            "Terracotta Army",
+            "Taj Mahal",
+            "Brandenburg Gate",
+            "Temple of Artemis",
+            "Sistine Chapel",
+            "Mausoleum of Halicarnassus",
+            "Alhambra",
+            "Chichen Itza",
+            "Hanging Gardens",
+            "Angkor Wat"
+          ],
+          "wonders_built": [
+            "Terracotta Army",
+            "Taj Mahal",
+            "Brandenburg Gate",
+            "Temple of Artemis",
+            "Sistine Chapel"
+          ],
+          "techs": 49,
+          "policies": 19,
+          "policy_branches": [
+            "Традиция",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "Индустриальная",
+          "score": 766,
+          "units": 29,
+          "strength": 14717,
+          "science": 414,
+          "cities": 8,
+          "population": 131,
+          "religion": "Buddhism",
+          "religion_state": "Усилена",
+          "pantheon": "Goddess of the Fields",
+          "founder_beliefs": [
+            "Kotel",
+            "Salat"
+          ],
+          "follower_beliefs": [
+            "Gurdwaras",
+            "Religious Community"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 109,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 2,
+          "military_deaths": 47
+        },
+        {
+          "name": "den_stu",
+          "nation": "Бельгия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Марокко",
+          "conquered_capitals": [
+            {
+              "nation": "Шошоны",
+              "city": "Moson Kahni"
+            }
+          ],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 41,
+          "policies": 15,
+          "policy_branches": [
+            "Традиция",
+            "Честь",
+            "Коммерция"
+          ],
+          "first_policy": "",
+          "eliminated_turn": 121,
+          "capital_lost_turn": 121,
+          "era": "Индустриальная",
+          "score": 439,
+          "units": 13,
+          "strength": 3737,
+          "science": 79,
+          "cities": 5,
+          "population": 72,
+          "religion": "Sikhism",
+          "religion_state": "Усилена",
+          "pantheon": "Mystic Rituals",
+          "founder_beliefs": [
+            "Ceremonial Burial",
+            "Karma"
+          ],
+          "follower_beliefs": [
+            "Mosques",
+            "Followers of Refined Crafts"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 3,
+          "wars_received": 1,
+          "military_deaths": 26
+        },
+        {
+          "name": "Click4x",
+          "nation": "Аравия",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "Инки",
+          "conquered_capitals": [],
+          "ideology": "Автократия",
+          "wonders": [
+            "Statue of Zeus",
+            "Petra",
+            "Leaning Tower of Pisa",
+            "Big Ben"
+          ],
+          "wonders_built": [
+            "Statue of Zeus",
+            "Petra",
+            "Leaning Tower of Pisa",
+            "Big Ben"
+          ],
+          "techs": 48,
+          "policies": 20,
+          "policy_branches": [
+            "Традиция",
+            "Коммерция",
+            "Рационализм"
+          ],
+          "first_policy": "Традиция",
+          "eliminated_turn": null,
+          "capital_lost_turn": 123,
+          "era": "Современность",
+          "score": 423,
+          "units": 21,
+          "strength": 5825,
+          "science": 217,
+          "cities": 4,
+          "population": 47,
+          "religion": "Islam",
+          "religion_state": "Усилена",
+          "pantheon": "Stone Circles",
+          "founder_beliefs": [
+            "Zakat",
+            "Religious Troubadours"
+          ],
+          "follower_beliefs": [
+            "Viharas",
+            "Pagodas"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 109,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 3,
+          "wars_received": 3,
+          "military_deaths": 70
+        },
+        {
+          "name": "Laste2187",
+          "nation": "Шошоны",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Бельгия",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 34,
+          "policies": 11,
+          "policy_branches": [
+            "Традиция",
+            "Честь",
+            "Коммерция"
+          ],
+          "first_policy": "",
+          "eliminated_turn": 129,
+          "capital_lost_turn": 129,
+          "era": "Возрождение",
+          "score": 243,
+          "units": 10,
+          "strength": 518,
+          "science": 98,
+          "cities": 3,
+          "population": 48,
+          "religion": "Christianity",
+          "religion_state": "Усилена",
+          "pantheon": "Goddess of Festivals",
+          "founder_beliefs": [
+            "Sanctified Innovations",
+            "Church Property"
+          ],
+          "follower_beliefs": [
+            "Feed the World",
+            "Religious Center"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 1,
+          "wars_received": 4,
+          "military_deaths": 22
+        },
+        {
+          "name": "REPUNZEL2882",
+          "nation": "Персия",
+          "alive": false,
+          "has_capital": false,
+          "capital_taken_by": "Марокко",
+          "conquered_capitals": [],
+          "ideology": "Автократия",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": 44,
+          "policies": 18,
+          "policy_branches": [
+            "Традиция",
+            "Честь"
+          ],
+          "first_policy": "",
+          "eliminated_turn": 125,
+          "capital_lost_turn": 123,
+          "era": "Индустриальная",
+          "score": 196,
+          "units": 0,
+          "strength": 1,
+          "science": 72,
+          "cities": 0,
+          "population": 6,
+          "religion": "Zoroastrianism",
+          "religion_state": "Усилена",
+          "pantheon": "One with Nature",
+          "founder_beliefs": [
+            "Defender of the Faith",
+            "Tithe"
+          ],
+          "follower_beliefs": [
+            "Divine inspiration",
+            "Devout Performers"
+          ],
+          "enhancer_beliefs": [],
+          "ideology_turn": 115,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": 0,
+          "wars_received": 3,
+          "military_deaths": 35
+        },
+        {
+          "name": "Barbarians",
+          "nation": "Варвары",
+          "alive": true,
+          "has_capital": false,
+          "capital_taken_by": "",
+          "conquered_capitals": [],
+          "ideology": "",
+          "wonders": [],
+          "wonders_built": [],
+          "techs": null,
+          "policies": null,
+          "policy_branches": [],
+          "first_policy": "",
+          "eliminated_turn": null,
+          "capital_lost_turn": null,
+          "era": "",
+          "score": null,
+          "units": null,
+          "strength": null,
+          "science": null,
+          "cities": null,
+          "population": null,
+          "religion": "",
+          "religion_state": "",
+          "pantheon": "",
+          "founder_beliefs": [],
+          "follower_beliefs": [],
+          "enhancer_beliefs": [],
+          "ideology_turn": null,
+          "spaceship": [],
+          "wars": [],
+          "wars_declared": null,
+          "wars_received": null,
+          "military_deaths": 152,
+          "is_barbarian": true
+        }
+      ],
+      "league": {
+        "cc": {
+          "nation": "Марокко",
+          "start": 129,
+          "plus": [
+            "Инки",
+            "Аравия"
+          ],
+          "minus": [],
+          "abstain": [],
+          "stop": true
+        },
+        "capital_lost_turns": {
+          "Аравия": 123,
+          "Персия": 123
+        },
+        "eliminated_turns": {
+          "Бельгия": 121,
+          "Персия": 125
+        },
+        "ideology_turns": {
+          "Аравия": 109,
+          "Марокко": 109,
+          "Инки": 109,
+          "Персия": 115
+        }
+      },
+      "gif": "Replays/Game_28.gif"
     }
   ]
 }
