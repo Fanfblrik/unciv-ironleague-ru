@@ -895,7 +895,7 @@
       'nav.records': 'Records',
       'nav.faq': 'FAQ',
       'nav.aria': 'Site sections',
-      'title.paths': 'Techs & policies',
+      'title.paths': '🔬 Techs & policies',
       'footer.paths': 'Unlock order from turn backups (where archives exist)',
       'home.card.paths': 'Tech and policy unlock order, and common first picks.',
       'paths.lead': 'Unlock order reconstructed from turn backups. Missing archives: games 4–11 and 14. “First unlock” stats use complete archives only.',
